@@ -1,43 +1,42 @@
-name: Generate Final M3U
+name: Generate IPTV M3U Files
 
 on:
   workflow_dispatch:
+  schedule:
+    - cron: '0 20 * * *'  # 每天 04:00 Asia/Taipei (UTC 20:00 previous day)
 
 permissions:
   contents: write
 
 jobs:
-  csv_to_m3u:
+  build:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v3
-
-      - name: Cache pip
-        uses: actions/cache@v3
+      - name: Checkout repo
+        uses: actions/checkout@v4
         with:
-          path: ~/.cache/pip
-          key: ${{ runner.os }}-pip-${{ hashFiles('**/requirements.txt') }}
-          restore-keys: |
-            ${{ runner.os }}-pip-
+          fetch-depth: 0
 
       - name: Setup Python
         uses: actions/setup-python@v5
         with:
-          python-version: "3.11"
+          python-version: '3.10'
 
       - name: Install dependencies
         run: |
-          pip install --upgrade pip
-          pip install requests opencc-python-reimplemented
+          python -m pip install --upgrade pip
+          pip install pandas requests python-slugify unidecode pypinyin
 
-      - name: Generate final M3U files
+      - name: Run iptv merge script
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
-          python scripts/csv_to_m3u.py
+          python3 scripts/iptv_merge.py
 
-      - name: Commit & push M3U
+      - name: Commit output
         run: |
           git config user.name "github-actions"
-          git config user.email "github-actions@github.com"
-          git add output/*.m3u output/sum_cvs/*.csv
-          git commit -m "🤖 Auto update IPTV M3U on $(date '+%Y-%m-%d')" || echo "No changes to commit"
-          git push
+          git config user.email "actions@github.com"
+          git add output/*.m3u input/channel.csv || true
+          git commit -m "Auto: generate m3u & update channel cache [skip ci]" || echo "No changes to commit"
+          git push || echo "Push failed (maybe no permission)"
