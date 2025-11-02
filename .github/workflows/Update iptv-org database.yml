@@ -1,0 +1,37 @@
+name: Update iptv-org database
+
+on:
+  schedule:
+    - cron: '0 3 1 * *'  # 每月1号凌晨3点执行
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  update_db:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v3
+        with:
+          fetch-depth: 0
+
+      - name: Remove old iptv-database
+        run: rm -rf iptv-database
+
+      - name: Clone iptv-org database fresh
+        run: git clone https://github.com/iptv-org/database.git iptv-database
+
+      - name: Commit and push updated database
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add iptv-database
+          if ! git diff --cached --quiet; then
+            git commit -m "Monthly update iptv-org database"
+            git push
+          else
+            echo "No changes in database"
+          fi
