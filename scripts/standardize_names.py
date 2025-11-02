@@ -2,6 +2,7 @@ import csv
 import os
 import pandas as pd
 
+# 直接用仓库中已经存在的本地数据库路径
 IPTV_DB_PATH = "./iptv-database"
 
 def load_name_map():
@@ -31,25 +32,19 @@ def standardize_csv(file_path, has_header=True):
     else:
         df = pd.read_csv(file_path, header=None)
 
-    # 取第一列为原始频道名
     original_names = df.iloc[:, 0].astype(str).str.strip()
 
-    # 获取标准名（不区分大小写）
     def get_std_name(name):
         return name_map.get(name.lower(), name)
 
     std_names = original_names.apply(get_std_name)
 
-    # 插入新第一列为标准名
     df.insert(0, 'standard_name', std_names)
 
-    # 保存回文件，保留header状态
     df.to_csv(file_path, index=False, header=has_header)
 
 def main():
-    # 自有源 my_sum.csv 无表头
     standardize_csv("input/mysource/my_sum.csv", has_header=False)
-    # 网络源 working.csv 有表头
     standardize_csv("output/working.csv", has_header=True)
 
 if __name__ == "__main__":
