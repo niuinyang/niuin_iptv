@@ -20,17 +20,11 @@ def load_name_map():
                     name_map[alias.lower()] = std_name
     return name_map
 
-def standardize_csv(file_path, has_header=True):
-    """
-    标准化CSV文件第一列频道名，新增final_name列作为第一列，原列后移
-    """
+def standardize_csv(file_path):
+    """标准化CSV第一列频道名，新增final_name列为第一列，原列后移"""
     name_map = load_name_map()
 
-    if has_header:
-        df = pd.read_csv(file_path)
-    else:
-        df = pd.read_csv(file_path, header=None)
-
+    df = pd.read_csv(file_path)
     original_names = df.iloc[:, 0].astype(str).str.strip()
 
     def get_std_name(name):
@@ -43,13 +37,11 @@ def standardize_csv(file_path, has_header=True):
 
     df.insert(0, 'final_name', std_names)
 
-    df.to_csv(file_path, index=False, header=has_header)
+    df.to_csv(file_path, index=False)
 
 def main():
-    # 标准化无表头文件
-    standardize_csv("input/mysource/my_sum.csv", has_header=False)
-    # 标准化有表头文件
-    standardize_csv("output/working.csv", has_header=True)
+    standardize_csv("input/mysource/my_sum.csv")
+    standardize_csv("output/working.csv")
 
 if __name__ == "__main__":
     main()
