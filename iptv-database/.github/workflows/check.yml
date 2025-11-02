@@ -1,0 +1,39 @@
+name: check
+on:
+  workflow_dispatch:
+  pull_request:
+    types: [opened, synchronize, reopened, edited]
+jobs:
+  main:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22.12.0'
+          cache: 'npm'
+      - name: changed files
+        id: files
+        run: |
+          git fetch origin master:master
+          ANY_CHANGED=false
+          ALL_CHANGED_FILES=$(git diff --name-only master -- data/ | tr '\n' ' ')
+          if [ -n "${ALL_CHANGED_FILES}" ]; then
+            ANY_CHANGED=true
+          fi
+          echo "all_changed_files=$ALL_CHANGED_FILES" >> "$GITHUB_OUTPUT"
+          echo "any_changed=$ANY_CHANGED" >> "$GITHUB_OUTPUT"
+      - name: install dependencies
+        if: steps.files.outputs.any_changed == 'true'
+        run: npm install
+      - name: check if files are crlf
+        uses: kforeverisback/check-crlf-extended@v2
+        continue-on-error: false
+        with:
+          directory: ./data
+          line_ending_type: 'CRLF'
+          include_pattern: '*.csv'
+          pattern_type: 'shell_glob'
+      - name: validate
+        if: steps.files.outputs.any_changed == 'true'
+        run: npm run db:validate
