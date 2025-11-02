@@ -1,0 +1,48 @@
+name: Standardize IPTV Channel Names
+
+on:
+  workflow_dispatch:
+  schedule:
+    - cron: '0 1 * * *'  # 每天凌晨1点执行
+
+permissions:
+  contents: write  # 允许写入仓库文件
+
+jobs:
+  standardize:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v3
+
+      - name: Clone iptv-org database
+        run: |
+          if [ ! -d iptv-database ]; then
+            git clone https://github.com/iptv-org/database.git iptv-database
+          else
+            cd iptv-database && git pull
+          fi
+
+      - name: Setup Python environment
+        uses: actions/setup-python@v4
+        with:
+          python-version: '3.9'
+
+      - name: Install dependencies
+        run: pip install pandas
+
+      - name: Run standardization script
+        run: python scripts/standardize_names.py
+
+      - name: Commit and push changes if any
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add input/mysource/my_sum.csv output/working.csv
+          if ! git diff --cached --quiet; then
+            git commit -m "Standardize channel names with iptv-org database"
+            git push
+          else
+            echo "No changes detected"
+          fi
