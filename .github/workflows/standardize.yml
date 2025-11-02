@@ -6,7 +6,7 @@ on:
     - cron: '0 1 * * *'  # 每天凌晨1点执行
 
 permissions:
-  contents: write  # 允许写入仓库文件
+  contents: write
 
 jobs:
   standardize:
@@ -15,14 +15,8 @@ jobs:
     steps:
       - name: Checkout repository
         uses: actions/checkout@v3
-
-      - name: Clone iptv-org database
-        run: |
-          if [ ! -d iptv-database ]; then
-            git clone https://github.com/iptv-org/database.git iptv-database
-          else
-            cd iptv-database && git pull
-          fi
+        with:
+          fetch-depth: 0
 
       - name: Setup Python environment
         uses: actions/setup-python@v4
