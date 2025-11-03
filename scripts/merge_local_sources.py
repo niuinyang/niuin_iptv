@@ -24,7 +24,7 @@ SKIPPED_LOG = os.path.join(LOG_DIR, "skipped.log")
 # ==============================
 
 def normalize_channel_name(name: str) -> str:
-    """标准化频道名（去除空白符号、大小写统一等）"""
+    """标准化频道名（仍保留，用于内部匹配，但不写入CSV）"""
     if not name:
         return ""
     name = unicodedata.normalize("NFKC", name)
@@ -63,10 +63,9 @@ def read_m3u_file(file_path: str):
                 else:
                     display_name = "未知频道"
 
-                icon_path = get_icon_path(normalize_channel_name(tvg_name or display_name), tvg_logo_url)
+                icon_path = get_icon_path(tvg_name or display_name, tvg_logo_url)
 
                 channels.append({
-                    "tvg_name": tvg_name,
                     "display_name": display_name,
                     "url": url_line,
                     "logo": icon_path
@@ -101,7 +100,6 @@ def read_txt_multi_section_csv(file_path: str):
                 if not url.startswith("http"):
                     continue
                 channels.append({
-                    "tvg_name": display_name,
                     "display_name": display_name,
                     "url": url,
                     "logo": ""
@@ -135,18 +133,16 @@ def write_output_files(channels):
     with open(OUTPUT_M3U, "w", encoding="utf-8") as f:
         f.write("#EXTM3U\n")
         for ch in valid_channels:
-            tvg_name_norm = normalize_channel_name(ch["tvg_name"] or ch["display_name"])
             display_name = ch["display_name"]
             url = ch["url"]
-            f.write(f'#EXTINF:-1 tvg-name="{tvg_name_norm}",{display_name}\n{url}\n')
+            f.write(f'#EXTINF:-1,{display_name}\n{url}\n')
 
-    # 写 CSV（去掉第二列空列）
+    # ✅ 写 CSV（去掉 standard_name 列）
     with open(OUTPUT_CSV, "w", newline="", encoding="utf-8-sig") as f:
         writer = csv.writer(f)
-        writer.writerow(["standard_name", "url", "source", "original_name", "logo"])
+        writer.writerow(["display_name", "url", "source", "logo"])
         for ch in valid_channels:
-            standard_name = normalize_channel_name(ch["tvg_name"] or ch["display_name"])
-            writer.writerow([standard_name, ch["url"], "网络源", ch["display_name"], ch.get("logo", "")])
+            writer.writerow([ch["display_name"], ch["url"], "网络源", ch.get("logo", "")])
 
     # 写跳过日志
     with open(SKIPPED_LOG, "w", encoding="utf-8") as f:
