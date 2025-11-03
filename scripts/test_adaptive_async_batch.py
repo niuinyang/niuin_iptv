@@ -38,7 +38,8 @@ HEADERS = {
                   "Chrome/120.0 Safari/537.36",
 }
 
-LOW_RES_KEYWORDS = ["vga", "480p", "576p"]
+# ✅ 包含低清晰度关键字（720p以下都跳过）
+LOW_RES_KEYWORDS = ["vga", "480p", "576p", "720p"]
 BLOCK_KEYWORDS = ["espanol"]
 WHITELIST_PATTERNS = [".ctv", ".sdserver", ".sdn.", ".sda.", ".sdstream", "sdhd", "hdsd"]
 
@@ -54,15 +55,28 @@ def log_suspect(reason, url):
         f.write(f"{reason} -> {url}\n")
 
 def is_allowed(title, url):
+    """
+    检查是否允许检测：
+    - 白名单优先通过
+    - 若匹配低清晰度关键词（包括720p），直接跳过
+    - 若匹配黑名单关键词（如espanol），跳过
+    """
     text = f"{title} {url}".lower()
+
+    # ✅ 白名单通过
     if any(w in text for w in WHITELIST_PATTERNS):
         return True
+
+    # 🚫 跳过低清晰度源（<=720p）
     if any(kw in text for kw in LOW_RES_KEYWORDS):
-        log_skip("LOW_RES", title, url)
+        log_skip("LOW_RES_SKIP", title, url)
         return False
+
+    # 🚫 屏蔽黑名单关键词
     if any(kw in text for kw in BLOCK_KEYWORDS):
         log_skip("BLOCK_KEYWORD", title, url)
         return False
+
     return True
 
 def quick_check(url):
@@ -173,9 +187,9 @@ if __name__ == "__main__":
             if title and url:
                 pairs.append((title, url, original_name, logo))
 
-    # 过滤
+    # ✅ 检测前过滤（低清源与黑名单全部剔除）
     filtered_pairs = [p for p in pairs if is_allowed(p[0], p[1])]
-    print(f"🚫 跳过源: {len(pairs)-len(filtered_pairs)} 条")
+    print(f"🚫 跳过源: {len(pairs)-len(filtered_pairs)} 条（低于1080p或黑名单）")
 
     total = len(filtered_pairs)
     threads = detect_optimal_threads()
