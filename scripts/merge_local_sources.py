@@ -137,10 +137,10 @@ def write_output_files(channels):
             url = ch["url"]
             f.write(f'#EXTINF:-1,{display_name}\n{url}\n')
 
-    # ✅ 写 CSV（去掉 standard_name 列）
+    # 写 CSV，表头为中文
     with open(OUTPUT_CSV, "w", newline="", encoding="utf-8-sig") as f:
         writer = csv.writer(f)
-        writer.writerow(["display_name", "url", "source", "logo"])
+        writer.writerow(["频道名", "地址", "来源", "图标"])
         for ch in valid_channels:
             writer.writerow([ch["display_name"], ch["url"], "网络源", ch.get("logo", "")])
 
