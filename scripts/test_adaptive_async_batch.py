@@ -8,7 +8,7 @@ from aiohttp import ClientTimeout
 # ==============================
 # 配置区
 # ==============================
-INPUT_FILE = "input/network/network_sources.csv"
+INPUT_FILE = "output/merge_total.csv"
 WORKING_CSV = "output/working.csv"
 WORKING_M3U = "output/working.m3u"
 SKIPPED_LOG = "output/skipped.log"
