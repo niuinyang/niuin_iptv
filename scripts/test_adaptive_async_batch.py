@@ -19,7 +19,7 @@ os.makedirs(OUTPUT_DIR, exist_ok=True)
 os.makedirs(MIDDLE_DIR, exist_ok=True)
 os.makedirs(LOG_DIR, exist_ok=True)
 
-CSV_FILE = os.path.join(OUTPUT_DIR, "merge_total.csv")  # 输入 CSV 文件（4列：频道名、地址、来源、图标）
+CSV_FILE = os.path.join(OUTPUT_DIR, "merge_total.csv")  # 输入 CSV 文件
 OUTPUT_M3U = os.path.join(OUTPUT_DIR, "working.m3u")
 WORKING_CSV = os.path.join(OUTPUT_DIR, "working.csv")
 PROGRESS_FILE = os.path.join(MIDDLE_DIR, "progress.json")
@@ -38,7 +38,8 @@ HEADERS = {
                   "Chrome/120.0 Safari/537.36",
 }
 
-LOW_RES_KEYWORDS = ["vga", "480p", "576p"]
+# 低清晰度关键词，包含1080p以下分辨率
+LOW_RES_KEYWORDS = ["vga", "480p", "576p", "720p"]
 BLOCK_KEYWORDS = ["espanol"]
 WHITELIST_PATTERNS = [".ctv", ".sdserver", ".sdn.", ".sda.", ".sdstream", "sdhd", "hdsd"]
 
@@ -55,11 +56,14 @@ def log_suspect(reason, url):
 
 def is_allowed(title, url):
     text = f"{title} {url}".lower()
+    # 白名单优先放行
     if any(w in text for w in WHITELIST_PATTERNS):
         return True
+    # 低清晰度关键词过滤，跳过检测
     if any(kw in text for kw in LOW_RES_KEYWORDS):
-        log_skip("LOW_RES", title, url)
+        log_skip("LOW_RESOLUTION_FILTER", title, url)
         return False
+    # 关键词屏蔽
     if any(kw in text for kw in BLOCK_KEYWORDS):
         log_skip("BLOCK_KEYWORD", title, url)
         return False
@@ -98,19 +102,22 @@ def ffprobe_check(url):
     elapsed = round(time.time() - start, 3)
     return ok, elapsed, url
 
+def extract_name(title):
+    return title.split(",")[-1].strip() if "," in title else title.strip()
+
 def test_stream(entry):
-    title, url, source, logo = entry
+    title, url, original_name, logo = entry
     url = url.strip()
     try:
         ok, elapsed, final_url = quick_check(url)
         if not ok:
             ok, elapsed, final_url = ffprobe_check(url)
-        return (ok, elapsed, final_url, title, source, logo)
+        return (ok, elapsed, final_url, title, original_name, logo)
     except Exception as e:
         log_skip("EXCEPTION", title, url)
         if DEBUG:
             print(f"❌ EXCEPTION {title} -> {url} | {e}")
-        return (False, 0, url, title, source, logo)
+        return (False, 0, url, title, original_name, logo)
 
 def detect_optimal_threads():
     test_urls = ["https://www.apple.com","https://www.google.com","https://www.microsoft.com"]
@@ -124,11 +131,11 @@ def detect_optimal_threads():
         times.append(time.time()-t0)
     avg = mean(times)
     cpu_threads = multiprocessing.cpu_count()*5
-    if avg<0.5:
+    if avg < 0.5:
         return min(MAX_THREADS, cpu_threads)
-    elif avg<1:
+    elif avg < 1:
         return min(150, cpu_threads)
-    elif avg<2:
+    elif avg < 2:
         return min(100, cpu_threads)
     else:
         return BASE_THREADS
@@ -136,11 +143,11 @@ def detect_optimal_threads():
 def write_working_csv(all_working):
     with open(WORKING_CSV, "w", newline="", encoding="utf-8-sig") as f:
         writer = csv.writer(f)
-        # 表头：频道名、地址、来源、检测时间、图标
-        writer.writerow(["频道名", "地址", "来源", "检测时间", "图标"])
-        for ok, elapsed, url, title, source, logo in all_working:
+        # 表头改为：频道名、地址、来源、检测时间、图标、分组
+        writer.writerow(["频道名", "地址", "来源", "检测时间", "图标", "分组"])
+        for ok, elapsed, url, title, original_name, logo in all_working:
             if ok:
-                writer.writerow([title, url, source, elapsed, logo])
+                writer.writerow([title, url, "网络源", elapsed, logo, original_name])
     print(f"📁 生成 working.csv: {WORKING_CSV}")
 
 # ==============================
@@ -166,14 +173,14 @@ if __name__ == "__main__":
         for row in reader:
             title = row.get("频道名", "").strip()
             url = row.get("地址", "").strip()
-            source = row.get("来源", "").strip()
+            original_name = row.get("来源", "").strip()
             logo = row.get("图标", "").strip()
             if title and url:
-                pairs.append((title, url, source, logo))
+                pairs.append((title, url, original_name, logo))
 
-    # 过滤
+    # 过滤低清晰度及黑名单
     filtered_pairs = [p for p in pairs if is_allowed(p[0], p[1])]
-    print(f"🚫 跳过源: {len(pairs)-len(filtered_pairs)} 条")
+    print(f"🚫 跳过源: {len(pairs)-len(filtered_pairs)} 条（包含低清晰度和关键词过滤）")
 
     total = len(filtered_pairs)
     threads = detect_optimal_threads()
@@ -186,7 +193,7 @@ if __name__ == "__main__":
 
     if os.path.exists(PROGRESS_FILE):
         try:
-            done_index = json.load(open(PROGRESS_FILE,encoding="utf-8")).get("done",0)
+            done_index = json.load(open(PROGRESS_FILE, encoding="utf-8")).get("done", 0)
             print(f"🔄 恢复进度，从第 {done_index} 条继续")
         except:
             pass
@@ -198,14 +205,14 @@ if __name__ == "__main__":
             for future in as_completed(futures):
                 entry = futures[future]
                 try:
-                    ok, elapsed, final_url, title, source, logo = future.result()
+                    ok, elapsed, final_url, title, original_name, logo = future.result()
                     if ok:
-                        all_working.append((ok, elapsed, final_url, title, source, logo))
+                        all_working.append((ok, elapsed, final_url, title, original_name, logo))
                         if DEBUG:
-                            print(f"✅ {title} ({elapsed}s)")
+                            print(f"✅ {extract_name(title)} ({elapsed}s)")
                     else:
                         log_skip("FAILED_CHECK", title, entry[1])
-                except Exception as e:
+                except Exception:
                     log_skip("EXCEPTION", entry[0], entry[1])
         json.dump({"done": min(batch_start + BATCH_SIZE, total)}, open(PROGRESS_FILE, "w", encoding="utf-8"))
         print(f"🧮 本批完成：{len(all_working)}/{min(batch_start + BATCH_SIZE, total)} 可用流 | 已完成 {min(batch_start + BATCH_SIZE, total)}/{total}")
@@ -216,8 +223,9 @@ if __name__ == "__main__":
     if all_working:
         # 写 M3U
         grouped = defaultdict(list)
-        for ok, elapsed, url, title, source, logo in all_working:
-            grouped[title.lower()].append((title, url, elapsed, source, logo))
+        for ok, elapsed, url, title, original_name, logo in all_working:
+            name = extract_name(title).lower()
+            grouped[name].append((title, url, elapsed, original_name, logo))
 
         if os.path.exists(OUTPUT_M3U):
             os.remove(OUTPUT_M3U)
@@ -232,7 +240,6 @@ if __name__ == "__main__":
 
         # 写 working.csv
         write_working_csv(all_working)
-
     else:
         print("⚠️ 没有可用流，working.m3u 和 working.csv 未更新")
 
