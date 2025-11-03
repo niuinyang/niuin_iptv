@@ -3,11 +3,11 @@ import csv
 import time
 import json
 import requests
+import subprocess
 from concurrent.futures import ThreadPoolExecutor, as_completed
 from collections import defaultdict
 from statistics import mean
 import multiprocessing
-import subprocess
 
 # ==============================
 # 配置区
@@ -19,7 +19,7 @@ os.makedirs(OUTPUT_DIR, exist_ok=True)
 os.makedirs(MIDDLE_DIR, exist_ok=True)
 os.makedirs(LOG_DIR, exist_ok=True)
 
-CSV_FILE = os.path.join(OUTPUT_DIR, "merge_total.csv")  # 输入 CSV 文件
+CSV_FILE = os.path.join(OUTPUT_DIR, "merge_total.csv")  # 输入 CSV 文件（4列：频道名、地址、来源、图标）
 OUTPUT_M3U = os.path.join(OUTPUT_DIR, "working.m3u")
 WORKING_CSV = os.path.join(OUTPUT_DIR, "working.csv")
 PROGRESS_FILE = os.path.join(MIDDLE_DIR, "progress.json")
@@ -38,8 +38,7 @@ HEADERS = {
                   "Chrome/120.0 Safari/537.36",
 }
 
-# 跳过低于1080p的关键词
-LOW_RES_KEYWORDS = ["vga", "480p", "576p", "720p", "540p"]
+LOW_RES_KEYWORDS = ["vga", "480p", "576p"]
 BLOCK_KEYWORDS = ["espanol"]
 WHITELIST_PATTERNS = [".ctv", ".sdserver", ".sdn.", ".sda.", ".sdstream", "sdhd", "hdsd"]
 
@@ -100,18 +99,18 @@ def ffprobe_check(url):
     return ok, elapsed, url
 
 def test_stream(entry):
-    title, url, original_name, logo = entry
+    title, url, source, logo = entry
     url = url.strip()
     try:
         ok, elapsed, final_url = quick_check(url)
         if not ok:
             ok, elapsed, final_url = ffprobe_check(url)
-        return (ok, elapsed, final_url, title, original_name, logo)
+        return (ok, elapsed, final_url, title, source, logo)
     except Exception as e:
         log_skip("EXCEPTION", title, url)
         if DEBUG:
             print(f"❌ EXCEPTION {title} -> {url} | {e}")
-        return (False, 0, url, title, original_name, logo)
+        return (False, 0, url, title, source, logo)
 
 def detect_optimal_threads():
     test_urls = ["https://www.apple.com","https://www.google.com","https://www.microsoft.com"]
@@ -134,16 +133,14 @@ def detect_optimal_threads():
     else:
         return BASE_THREADS
 
-def extract_name(title):
-    return title.split(",")[-1].strip() if "," in title else title.strip()
-
 def write_working_csv(all_working):
     with open(WORKING_CSV, "w", newline="", encoding="utf-8-sig") as f:
         writer = csv.writer(f)
-        writer.writerow(["频道名", "地址", "来源", "检测时间", "图标", "分组"])
-        for ok, elapsed, url, title, original_name, logo in all_working:
+        # 表头：频道名、地址、来源、检测时间、图标
+        writer.writerow(["频道名", "地址", "来源", "检测时间", "图标"])
+        for ok, elapsed, url, title, source, logo in all_working:
             if ok:
-                writer.writerow([title, url, "网络源", elapsed, logo, ""])
+                writer.writerow([title, url, source, elapsed, logo])
     print(f"📁 生成 working.csv: {WORKING_CSV}")
 
 # ==============================
@@ -161,7 +158,7 @@ if __name__ == "__main__":
         reader = csv.DictReader(f)
         fieldnames = reader.fieldnames
         print("CSV 字段:", fieldnames)
-        required_cols = ["频道名", "地址", "来源", "检测时间", "图标", "分组"]
+        required_cols = ["频道名", "地址", "来源", "图标"]
         for col in required_cols:
             if col not in fieldnames:
                 raise ValueError(f"CSV 文件缺少 required 列: '{col}'")
@@ -169,14 +166,14 @@ if __name__ == "__main__":
         for row in reader:
             title = row.get("频道名", "").strip()
             url = row.get("地址", "").strip()
-            original_name = title  # 用频道名填充原始名，保持检测接口兼容
+            source = row.get("来源", "").strip()
             logo = row.get("图标", "").strip()
             if title and url:
-                pairs.append((title, url, original_name, logo))
+                pairs.append((title, url, source, logo))
 
-    # 过滤跳过低于1080p的
+    # 过滤
     filtered_pairs = [p for p in pairs if is_allowed(p[0], p[1])]
-    print(f"🚫 跳过源: {len(pairs)-len(filtered_pairs)} 条（低于1080p或黑名单）")
+    print(f"🚫 跳过源: {len(pairs)-len(filtered_pairs)} 条")
 
     total = len(filtered_pairs)
     threads = detect_optimal_threads()
@@ -201,11 +198,11 @@ if __name__ == "__main__":
             for future in as_completed(futures):
                 entry = futures[future]
                 try:
-                    ok, elapsed, final_url, title, original_name, logo = future.result()
+                    ok, elapsed, final_url, title, source, logo = future.result()
                     if ok:
-                        all_working.append((ok, elapsed, final_url, title, original_name, logo))
+                        all_working.append((ok, elapsed, final_url, title, source, logo))
                         if DEBUG:
-                            print(f"✅ {extract_name(title)} ({elapsed}s)")
+                            print(f"✅ {title} ({elapsed}s)")
                     else:
                         log_skip("FAILED_CHECK", title, entry[1])
                 except Exception as e:
@@ -217,11 +214,10 @@ if __name__ == "__main__":
         os.remove(PROGRESS_FILE)
 
     if all_working:
-        # 写 M3U 文件，按频道名分组
+        # 写 M3U
         grouped = defaultdict(list)
-        for ok, elapsed, url, title, original_name, logo in all_working:
-            name = extract_name(title).lower()
-            grouped[name].append((title, url, elapsed, original_name, logo))
+        for ok, elapsed, url, title, source, logo in all_working:
+            grouped[title.lower()].append((title, url, elapsed, source, logo))
 
         if os.path.exists(OUTPUT_M3U):
             os.remove(OUTPUT_M3U)
