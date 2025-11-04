@@ -7,7 +7,7 @@ on:
 
 permissions:
   contents: write
-  
+
 jobs:
   standardize:
     runs-on: ubuntu-latest
@@ -21,15 +21,17 @@ jobs:
           python-version: "3.11"
 
       - name: Install dependencies
-        run: pip install pandas rapidfuzz requests
+        run: pip install pandas rapidfuzz requests chardet
 
       - name: Run standardization script
         run: python scripts/3.5standardize_names.py
 
       - name: Commit and push results
+        env:
+          PAT_TOKEN: ${{ secrets.PAT_TOKEN }}
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
-          git add output/ input/channel.csv input/mysource/my_sum_standardized.csv output/working_standardized.csv || true
-          git commit -m "Auto standardized channel names and update total.csv & channel.csv [ci skip]" || echo "No changes to commit"
-          git push https://x-access-token:${PAT_TOKEN}@github.com/niuinyang/niuin_iptv.git HEAD:main
+          git add output/ input/channel.csv input/mysource/my_sum_standardized.csv output/working_standardized.csv
+          git diff --cached --quiet || git commit -m "Auto standardized channel names and update total.csv & channel.csv [ci skip]"
+          git push https://${PAT_TOKEN}@github.com/niuinyang/niuin_iptv.git HEAD:refs/heads/main
