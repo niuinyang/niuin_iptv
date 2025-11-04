@@ -1,188 +1,133 @@
-#!/usr/bin/env python3
-# -*- coding: utf-8 -*-
-
 import os
 import csv
-import pandas as pd
-import requests
-from rapidfuzz import process
+import re
+import time
+from rapidfuzz import fuzz, process
 
-IPTV_DB_URL = "https://raw.githubusercontent.com/iptv-org/database/master/data/channels.csv"
-IPTV_DB_FILE = "channels.csv"
-OUTPUT_DIR = "output"
-INPUT_CHANNEL_CSV = "input/channel.csv"
-THRESHOLD = 95  # 匹配阈值
+# ==============================
+# 配置区
+# ==============================
+INPUT_MY_SUM = "input/mysource/my_sum.csv"       # 自有源
+INPUT_WORKING = "output/working.csv"             # 网络源
+INPUT_NETWORK = "output/sum_network.csv"         # 网络匹配源
+OUTPUT_TOTAL = "output/total.csv"                # 最终汇总输出
+OUTPUT_CHANNEL = "input/channel.csv"             # 标准化映射输出
+OUTPUT_UNMATCHED = "output/unmatched_channels.txt"
 
-match_cache = {}
+# ==============================
+# 工具函数
+# ==============================
+def clean_channel_name(name):
+    """去除频道名中括号或中括号内的无关标识"""
+    if not name:
+        return name
+    name = re.sub(r'（.*?）', '', name)  # 中文括号
+    name = re.sub(r'\(.*?\)', '', name)  # 英文括号
+    name = re.sub(r'\[.*?\]', '', name)  # 中括号
+    return name.strip()
 
-def update_database():
-    if os.path.exists(IPTV_DB_FILE):
-        print(f"✅ 数据库文件 {IPTV_DB_FILE} 已存在，跳过下载")
-        return
-    print("🔽 正在下载最新 channels.csv ...")
-    try:
-        r = requests.get(IPTV_DB_URL, timeout=30)
-        r.raise_for_status()
-        with open(IPTV_DB_FILE, "wb") as f:
-            f.write(r.content)
-        print("✅ 数据库下载完成")
-    except Exception as e:
-        print(f"⚠️ 下载失败: {e}")
-        if not os.path.exists(IPTV_DB_FILE):
-            raise SystemExit("❌ 没有可用的频道数据库")
+def read_csv(file_path):
+    """读取CSV，返回列表"""
+    if not os.path.exists(file_path):
+        return []
+    with open(file_path, "r", encoding="utf-8", errors="ignore") as f:
+        reader = csv.reader(f)
+        rows = [row for row in reader if row]
+    return rows
 
-def load_name_map():
-    """加载网络库频道名及别名映射"""
-    name_map = {}
-    with open(IPTV_DB_FILE, encoding="utf-8") as f:
-        reader = csv.DictReader(f)
-        for row in reader:
-            std = row["name"].strip()
-            name_map[std.lower()] = std
-            aliases = row.get("aliases", "") or row.get("other_names", "")
-            for alias in aliases.replace("|", ",").split(","):
-                alias = alias.strip()
-                if alias:
-                    name_map[alias.lower()] = std
-    print(f"📚 已加载 {len(name_map)} 个名称映射")
-    return name_map
+def write_csv(file_path, rows):
+    """写入CSV"""
+    os.makedirs(os.path.dirname(file_path), exist_ok=True)
+    with open(file_path, "w", encoding="utf-8", newline="") as f:
+        writer = csv.writer(f)
+        writer.writerows(rows)
 
-def read_csv_auto(path, encodings=None):
-    if encodings is None:
-        encodings = ['utf-8-sig', 'utf-8', 'gbk', 'latin1']
-    for enc in encodings:
-        try:
-            df = pd.read_csv(path, encoding=enc)
-            print(f"✅ 使用编码 {enc} 读取文件成功: {path}")
-            return df
-        except UnicodeDecodeError:
-            print(f"⚠️ 编码 {enc} 读取失败，尝试下一个...")
-    raise UnicodeDecodeError(f"无法用备选编码读取文件: {path}")
-
-def build_local_name_map(df_my_sum):
-    """从my_sum.csv构建本地频道名映射，key为小写，value为原名"""
-    local_map = {}
-    for name in df_my_sum.iloc[:, 0].astype(str):
-        local_map[name.lower()] = name
-    return local_map
-
-def match_name_working(name, local_map, network_map):
-    """
-    对working.csv频道名匹配：
-    1. 先和本地my_sum名模糊匹配
-    2. 如果未达阈值，再和网络库模糊匹配
-    """
-    n = name.strip()
-    if not n:
-        return n, "空名"
-    if n in match_cache:
-        return match_cache[n]
-
-    key = n.lower()
-
-    # 1. 本地库模糊匹配
-    local_candidates = list(local_map.keys())
-    match_local, score_local, _ = process.extractOne(key, local_candidates)
-    if score_local >= THRESHOLD:
-        res = (local_map[match_local], f"本地库模糊匹配({score_local:.0f})")
-        match_cache[n] = res
-        return res
-
-    # 2. 网络库匹配
-    if key in network_map:
-        res = (network_map[key], "网络库精确匹配")
-        match_cache[n] = res
-        return res
-
-    network_candidates = list(network_map.keys())
-    match_net, score_net, _ = process.extractOne(key, network_candidates)
-    if score_net >= THRESHOLD:
-        res = (network_map[match_net], f"网络库模糊匹配({score_net:.0f})")
-    else:
-        res = (n, f"匹配度低({max(score_local, score_net):.0f})，保留原名")
-
-    match_cache[n] = res
-    return res
-
-def standardize_my_sum(path):
-    """my_sum.csv不匹配，直接输出原名作为标准名"""
-    print(f"📂 正在读取 my_sum.csv (不匹配): {path}")
-    df = read_csv_auto(path)
-    df.insert(0, "标准频道名", df.iloc[:, 0].astype(str))
-    df.insert(1, "匹配状态", ["未匹配-跳过"] * len(df))
-    out_path = path.replace(".csv", "_standardized.csv")
-    df.to_csv(out_path, index=False, encoding="utf-8-sig")
-    print(f"✅ 已生成: {out_path}")
-    return df
-
-def standardize_working(path, local_map, network_map):
-    """working.csv匹配处理，先本地后网络"""
-    print(f"📂 正在处理 working.csv (匹配): {path}")
-    df = read_csv_auto(path)
-    unmatched = set()
-    std_names, statuses = [], []
-
-    for name in df.iloc[:, 0].astype(str):
-        std, status = match_name_working(name, local_map, network_map)
-        std_names.append(std)
-        statuses.append(status)
-        if status.startswith("匹配度低"):
-            unmatched.add(name)
-
-    df.insert(0, "标准频道名", std_names)
-    df.insert(1, "匹配状态", statuses)
-
-    out_path = path.replace(".csv", "_standardized.csv")
-    df.to_csv(out_path, index=False, encoding="utf-8-sig")
-    print(f"✅ 已生成: {out_path}")
-    return df, unmatched
-
+# ==============================
+# 主逻辑
+# ==============================
 def main():
-    os.makedirs(OUTPUT_DIR, exist_ok=True)
-    update_database()
-    network_map = load_name_map()
+    start_time = time.time()
+    print("🚀 开始执行标准化匹配流程...")
+    print(f"读取源文件：\n  📁 {INPUT_MY_SUM}\n  📁 {INPUT_WORKING}\n  📁 {INPUT_NETWORK}")
 
-    my_sum_path = "input/mysource/my_sum.csv"
-    working_path = "output/working.csv"
+    # 读取文件
+    my_sum_rows = read_csv(INPUT_MY_SUM)
+    working_rows = read_csv(INPUT_WORKING)
+    network_rows = read_csv(INPUT_NETWORK)
 
-    if not os.path.exists(my_sum_path):
-        print(f"⚠️ 文件不存在: {my_sum_path}")
-        return
-    if not os.path.exists(working_path):
-        print(f"⚠️ 文件不存在: {working_path}")
-        return
+    # 提取 my_sum 的频道名列表
+    my_sum_names = [r[0].strip() for r in my_sum_rows if len(r) > 0]
+    network_names = [r[0].strip() for r in network_rows if len(r) > 0]
 
-    # 1. 读取并“标准化”my_sum.csv（不匹配）
-    df_my_sum = standardize_my_sum(my_sum_path)
-    # 2. 构建本地名称映射，用于匹配working.csv
-    local_map = build_local_name_map(df_my_sum)
-    # 3. 标准化working.csv，先匹配本地再匹配网络库
-    df_working, unmatched_working = standardize_working(working_path, local_map, network_map)
+    total_output = []
+    unmatched_channels = set()
+    channel_map = []
 
-    # 4. 合并两个结果生成总表
-    total_df = pd.concat([df_my_sum, df_working], ignore_index=True)
-    total_csv_path = os.path.join(OUTPUT_DIR, "total.csv")
-    total_df.to_csv(total_csv_path, index=False, encoding="utf-8-sig")
-    print(f"✅ 已生成总表: {total_csv_path}")
+    # ========== 处理 my_sum.csv ==========
+    print(f"📦 处理自有源 my_sum.csv 共 {len(my_sum_rows)} 条")
+    for row in my_sum_rows:
+        if len(row) < 4:
+            continue
+        name, group, url, source = row[:4]
+        total_output.append([name, url, source, "", name, "自有源", "100.0"])
+        channel_map.append([name, group])
 
-    # 5. 生成频道名-分组映射表
-    if "分组" in total_df.columns:
-        channel_df = total_df[["标准频道名", "分组"]].drop_duplicates()
-        os.makedirs(os.path.dirname(INPUT_CHANNEL_CSV), exist_ok=True)
-        channel_df.to_csv(INPUT_CHANNEL_CSV, index=False, encoding="utf-8-sig")
-        print(f"✅ 已生成频道分组映射: {INPUT_CHANNEL_CSV}")
-    else:
-        print("⚠️ 总表中未找到“分组”列，无法生成频道分组映射文件")
+    # ========== 处理 working.csv ==========
+    print(f"🌐 处理网络源 working.csv 共 {len(working_rows)} 条")
+    for idx, row in enumerate(working_rows, 1):
+        if len(row) < 4:
+            continue
+        name, group, url, source = row[:4]
+        cleaned_name = clean_channel_name(name)
 
-    # 6. unmatched频道输出
-    if unmatched_working:
-        report_path = os.path.join(OUTPUT_DIR, "unmatched_channels.txt")
-        with open(report_path, "w", encoding="utf-8") as f:
-            for ch in sorted(unmatched_working):
-                f.write(ch + "\n")
-        print(f"⚠️ working.csv 中匹配度低的频道 {len(unmatched_working)} 个，已保存至 {report_path}")
-    else:
-        print("🎉 working.csv 中所有频道匹配度达标")
+        # Step 1: 优先匹配 my_sum.csv
+        match_my, score_my = process.extractOne(
+            cleaned_name, my_sum_names, scorer=fuzz.partial_ratio
+        ) if my_sum_names else (None, 0)
+
+        if score_my >= 95:
+            standardized_name = match_my
+            match_source = "my_sum匹配"
+            score = score_my
+        else:
+            # Step 2: 再与网络匹配
+            match_network, score_network = process.extractOne(
+                cleaned_name, network_names, scorer=fuzz.partial_ratio
+            ) if network_names else (None, 0)
+            if score_network >= 95:
+                standardized_name = match_network
+                match_source = "网络匹配"
+                score = score_network
+            else:
+                standardized_name = name
+                match_source = "未匹配"
+                score = 0.0
+                unmatched_channels.add(name)
+
+        total_output.append([
+            name, url, source, group,
+            standardized_name, match_source,
+            f"{score:.1f}"
+        ])
+        channel_map.append([standardized_name, group])
+
+        # 日志输出
+        if idx % 100 == 0 or idx == len(working_rows):
+            print(f"✅ 已处理 {idx}/{len(working_rows)} 条...")
+
+    # 写入输出文件
+    write_csv(OUTPUT_TOTAL, total_output)
+    write_csv(OUTPUT_CHANNEL, channel_map)
+    os.makedirs(os.path.dirname(OUTPUT_UNMATCHED), exist_ok=True)
+    with open(OUTPUT_UNMATCHED, "w", encoding="utf-8") as f:
+        f.write("\n".join(sorted(unmatched_channels)))
+
+    duration = time.time() - start_time
+    print(f"\n🎯 匹配完成，共处理 {len(total_output)} 条记录")
+    print(f"📂 输出文件：{OUTPUT_TOTAL}")
+    print(f"📂 标准化映射：{OUTPUT_CHANNEL}")
+    print(f"⚠️ 未匹配频道数：{len(unmatched_channels)}（详情见 unmatched_channels.txt）")
+    print(f"⏱️ 总耗时：{duration:.2f} 秒")
 
 if __name__ == "__main__":
     main()
