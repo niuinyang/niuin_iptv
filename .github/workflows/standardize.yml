@@ -5,6 +5,8 @@ on:
   schedule:
     - cron: "0 12 * * 0"  # 每周日中午 12:00 UTC 自动运行（北京时间 20:00）
 
+permissions:
+  contents: write
 jobs:
   standardize:
     runs-on: ubuntu-latest
