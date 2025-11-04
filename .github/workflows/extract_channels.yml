@@ -32,7 +32,7 @@ jobs:
 
       - name: Extract regional channels
         run: |
-          python scripts/extract_channels.py
+          python scripts/3.4extract_channels.py
 
       - name: Commit and push CSV results
         run: |
