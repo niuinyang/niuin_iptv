@@ -1,59 +1,128 @@
-import csv
-import os
-import pandas as pd
+#!/usr/bin/env python3
+# -*- coding: utf-8 -*-
+
+"""
+standardize_channels.py
+使用 iptv-org/database 自动标准化频道名，生成总表和频道分组映射。
+"""
+
+import os, csv, pandas as pd, requests
 from rapidfuzz import process
 
-IPTV_DB_PATH = "./iptv-database"
+IPTV_DB_URL = "https://raw.githubusercontent.com/iptv-org/database/master/data/channels.csv"
+IPTV_DB_FILE = "channels.csv"
+OUTPUT_DIR = "output"
+INPUT_CHANNEL_CSV = "input/channel.csv"
+THRESHOLD = 85
+
+def update_database():
+    print("🔽 正在下载最新 channels.csv ...")
+    try:
+        r = requests.get(IPTV_DB_URL, timeout=30)
+        r.raise_for_status()
+        with open(IPTV_DB_FILE, "wb") as f:
+            f.write(r.content)
+        print("✅ 数据库下载完成")
+    except Exception as e:
+        print(f"⚠️ 下载失败: {e}")
+        if not os.path.exists(IPTV_DB_FILE):
+            raise SystemExit("❌ 没有可用的频道数据库")
 
 def load_name_map():
-    """加载iptv-org数据库频道名和别名映射"""
     name_map = {}
-    path = os.path.join(IPTV_DB_PATH, "data", "channels.csv")
-    with open(path, encoding="utf-8") as f:
+    with open(IPTV_DB_FILE, encoding="utf-8") as f:
         reader = csv.DictReader(f)
         for row in reader:
-            std_name = row["name"].strip()
-            name_map[std_name.lower()] = std_name
-            others = row.get("other_names", "")
-            for alias in others.split(","):
+            std = row["name"].strip()
+            name_map[std.lower()] = std
+            aliases = row.get("aliases", "") or row.get("other_names", "")
+            for alias in aliases.replace("|", ",").split(","):
                 alias = alias.strip()
                 if alias:
-                    name_map[alias.lower()] = std_name
+                    name_map[alias.lower()] = std
+    print(f"📚 已加载 {len(name_map)} 个名称映射")
     return name_map
 
-def get_std_name(name, name_map, threshold=80):
-    """
-    先尝试精确匹配，找不到时用模糊匹配：
-    返回匹配度大于阈值的最相似标准名，否则返回原名
-    """
-    name_lower = name.lower()
-    if name_lower in name_map:
-        return name_map[name_lower]
+def match_name(name, name_map):
+    n = name.strip()
+    if not n:
+        return n, "空名"
+    key = n.lower()
+    if key in name_map:
+        return name_map[key], "精确匹配"
+    match, score, _ = process.extractOne(key, list(name_map.keys()))
+    if score >= THRESHOLD:
+        return name_map[match], f"模糊匹配({score:.0f})"
+    return n, "未匹配"
 
-    # 模糊匹配
-    choices = list(name_map.keys())
-    match, score, _ = process.extractOne(name_lower, choices)
-    if score >= threshold:
-        return name_map[match]
-    else:
-        return name
+def standardize_csv(path, name_map):
+    print(f"📂 正在处理: {path}")
+    df = pd.read_csv(path)
+    unmatched = set()
+    std_names, statuses = [], []
 
-def standardize_csv(file_path, name_map):
-    """标准化CSV第一列频道名，新增final_name列为第一列，原列后移"""
-    df = pd.read_csv(file_path)
-    original_names = df.iloc[:, 0].astype(str).str.strip()
-    std_names = original_names.apply(lambda x: get_std_name(x, name_map))
+    for name in df.iloc[:, 0].astype(str):
+        std, status = match_name(name, name_map)
+        std_names.append(std)
+        statuses.append(status)
+        if status == "未匹配":
+            unmatched.add(name)
 
-    if 'final_name' in df.columns:
-        df.drop(columns=['final_name'], inplace=True)
+    df.insert(0, "标准频道名", std_names)
+    df.insert(1, "匹配状态", statuses)
 
-    df.insert(0, 'final_name', std_names)
-    df.to_csv(file_path, index=False)
+    out_path = path.replace(".csv", "_standardized.csv")
+    df.to_csv(out_path, index=False, encoding="utf-8-sig")
+    print(f"✅ 已生成: {out_path}")
+
+    return df, unmatched
 
 def main():
+    os.makedirs(OUTPUT_DIR, exist_ok=True)
+    update_database()
     name_map = load_name_map()
-    standardize_csv("input/mysource/my_sum.csv", name_map)
-    standardize_csv("output/working.csv", name_map)
+
+    input_files = [
+        "input/mysource/my_sum.csv",
+        "output/working.csv"
+    ]
+
+    all_unmatched = set()
+    dfs = []
+
+    for f in input_files:
+        if os.path.exists(f):
+            df, unmatched = standardize_csv(f, name_map)
+            all_unmatched |= unmatched
+            dfs.append(df)
+        else:
+            print(f"⚠️ 文件不存在: {f}")
+
+    # 合并所有数据，生成总表
+    if dfs:
+        total_df = pd.concat(dfs, ignore_index=True)
+        total_csv_path = os.path.join(OUTPUT_DIR, "total.csv")
+        total_df.to_csv(total_csv_path, index=False, encoding="utf-8-sig")
+        print(f"✅ 已生成总表: {total_csv_path}")
+
+        # 提取 标准频道名 + 分组 两列，去重后保存
+        if "分组" in total_df.columns:
+            channel_df = total_df[["标准频道名", "分组"]].drop_duplicates()
+            os.makedirs(os.path.dirname(INPUT_CHANNEL_CSV), exist_ok=True)
+            channel_df.to_csv(INPUT_CHANNEL_CSV, index=False, encoding="utf-8-sig")
+            print(f"✅ 已生成频道分组映射: {INPUT_CHANNEL_CSV}")
+        else:
+            print("⚠️ 总表中未找到“分组”列，无法生成频道分组映射文件")
+
+    # 输出未匹配报告
+    if all_unmatched:
+        report_path = os.path.join(OUTPUT_DIR, "unmatched_channels.txt")
+        with open(report_path, "w", encoding="utf-8") as f:
+            for ch in sorted(all_unmatched):
+                f.write(ch + "\n")
+        print(f"⚠️ 未匹配频道 {len(all_unmatched)} 个，已保存至 {report_path}")
+    else:
+        print("🎉 所有频道均已匹配")
 
 if __name__ == "__main__":
     main()
