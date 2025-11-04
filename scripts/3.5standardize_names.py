@@ -81,9 +81,9 @@ def main():
         cleaned_name = clean_channel_name(name)
 
         # Step 1: 优先匹配 my_sum.csv
-        match_my, score_my = process.extractOne(
+        match_my, score_my, _ = process.extractOne(
             cleaned_name, my_sum_names, scorer=fuzz.partial_ratio
-        ) if my_sum_names else (None, 0)
+        ) if my_sum_names else (None, 0, None)
 
         if score_my >= 95:
             standardized_name = match_my
@@ -91,9 +91,9 @@ def main():
             score = score_my
         else:
             # Step 2: 再与网络匹配
-            match_network, score_network = process.extractOne(
+            match_network, score_network, _ = process.extractOne(
                 cleaned_name, network_names, scorer=fuzz.partial_ratio
-            ) if network_names else (None, 0)
+            ) if network_names else (None, 0, None)
             if score_network >= 95:
                 standardized_name = match_network
                 match_source = "网络匹配"
