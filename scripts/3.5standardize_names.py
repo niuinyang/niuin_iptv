@@ -1,133 +1,142 @@
 import os
 import csv
 import re
-import time
-from rapidfuzz import fuzz, process
+import pandas as pd
+from rapidfuzz import process, fuzz
 
 # ==============================
-# 配置区
+# 配置路径
 # ==============================
-INPUT_MY_SUM = "input/mysource/my_sum.csv"       # 自有源
-INPUT_WORKING = "output/working.csv"             # 网络源
-INPUT_NETWORK = "output/sum_network.csv"         # 网络匹配源
-OUTPUT_TOTAL = "output/total.csv"                # 最终汇总输出
-OUTPUT_CHANNEL = "input/channel.csv"             # 标准化映射输出
+INPUT_MY = "input/mysource/my_sum.csv"
+INPUT_WORKING = "output/working.csv"
+INPUT_NETWORK = "output/sum_network.csv"
+OUTPUT_TOTAL = "output/total.csv"
+OUTPUT_CHANNEL = "input/channel.csv"
 OUTPUT_UNMATCHED = "output/unmatched_channels.txt"
 
+os.makedirs("output", exist_ok=True)
+os.makedirs("input", exist_ok=True)
+os.makedirs("input/mysource", exist_ok=True)
+
 # ==============================
-# 工具函数
+# 清理频道名中括号内容
 # ==============================
 def clean_channel_name(name):
-    """去除频道名中括号或中括号内的无关标识"""
-    if not name:
-        return name
-    name = re.sub(r'（.*?）', '', name)  # 中文括号
-    name = re.sub(r'\(.*?\)', '', name)  # 英文括号
-    name = re.sub(r'\[.*?\]', '', name)  # 中括号
+    if not isinstance(name, str):
+        return ""
+    # 去除括号及其中内容
+    name = re.sub(r"[\[\(（【〔].*?[\]\)）】〕]", "", name)
+    # 去掉多余空格和特殊符号
     return name.strip()
-
-def read_csv(file_path):
-    """读取CSV，返回列表"""
-    if not os.path.exists(file_path):
-        return []
-    with open(file_path, "r", encoding="utf-8", errors="ignore") as f:
-        reader = csv.reader(f)
-        rows = [row for row in reader if row]
-    return rows
-
-def write_csv(file_path, rows):
-    """写入CSV"""
-    os.makedirs(os.path.dirname(file_path), exist_ok=True)
-    with open(file_path, "w", encoding="utf-8", newline="") as f:
-        writer = csv.writer(f)
-        writer.writerows(rows)
 
 # ==============================
 # 主逻辑
 # ==============================
 def main():
-    start_time = time.time()
-    print("🚀 开始执行标准化匹配流程...")
-    print(f"读取源文件：\n  📁 {INPUT_MY_SUM}\n  📁 {INPUT_WORKING}\n  📁 {INPUT_NETWORK}")
+    print("🚀 开始执行标准化匹配流程...\n")
 
-    # 读取文件
-    my_sum_rows = read_csv(INPUT_MY_SUM)
-    working_rows = read_csv(INPUT_WORKING)
-    network_rows = read_csv(INPUT_NETWORK)
+    print("读取源文件：")
+    print(f"  📁 {INPUT_MY}")
+    print(f"  📁 {INPUT_WORKING}")
+    print(f"  📁 {INPUT_NETWORK}\n")
 
-    # 提取 my_sum 的频道名列表
-    my_sum_names = [r[0].strip() for r in my_sum_rows if len(r) > 0]
-    network_names = [r[0].strip() for r in network_rows if len(r) > 0]
+    # 读取CSV文件（使用UTF-8防止乱码）
+    my_df = pd.read_csv(INPUT_MY, encoding="utf-8")
+    working_df = pd.read_csv(INPUT_WORKING, encoding="utf-8")
+    network_df = pd.read_csv(INPUT_NETWORK, encoding="utf-8")
 
-    total_output = []
-    unmatched_channels = set()
-    channel_map = []
+    print(f"📦 处理自有源 my_sum.csv 共 {len(my_df)} 条")
+    print(f"🌐 处理网络源 working.csv 共 {len(working_df)} 条\n")
 
-    # ========== 处理 my_sum.csv ==========
-    print(f"📦 处理自有源 my_sum.csv 共 {len(my_sum_rows)} 条")
-    for row in my_sum_rows:
-        if len(row) < 4:
+    # 清理频道名
+    working_df["频道名"] = working_df["频道名"].apply(clean_channel_name)
+    network_df["频道名"] = network_df["频道名"].apply(clean_channel_name)
+
+    # 获取所有自有源频道名
+    my_channels = my_df["频道名"].dropna().unique().tolist()
+
+    results = []
+    unmatched_channels = []
+
+    # ====== Step 1: 自有源，直接输出 ======
+    for _, row in my_df.iterrows():
+        results.append({
+            "原频道名": row["频道名"],
+            "来源": "自有源",
+            "匹配值": 100.0,
+            "标准化名": row["频道名"],
+            "分组": "自有源"
+        })
+
+    # ====== Step 2: working.csv 匹配 ======
+    network_channels = network_df["频道名"].dropna().unique().tolist()
+
+    for _, row in working_df.iterrows():
+        ch_name = str(row["频道名"]).strip()
+        clean_name = clean_channel_name(ch_name)
+
+        # 优先匹配自有源
+        match_my = process.extractOne(
+            clean_name, my_channels, scorer=fuzz.token_sort_ratio, score_cutoff=95
+        )
+
+        if match_my:
+            matched_name, score_my, _ = match_my
+            results.append({
+                "原频道名": ch_name,
+                "来源": "working",
+                "匹配值": score_my,
+                "标准化名": matched_name,
+                "分组": "匹配自有源"
+            })
             continue
-        name, group, url, source = row[:4]
-        total_output.append([name, url, source, "", name, "自有源", "100.0"])
-        channel_map.append([name, group])
 
-    # ========== 处理 working.csv ==========
-    print(f"🌐 处理网络源 working.csv 共 {len(working_rows)} 条")
-    for idx, row in enumerate(working_rows, 1):
-        if len(row) < 4:
-            continue
-        name, group, url, source = row[:4]
-        cleaned_name = clean_channel_name(name)
+        # 再匹配网络源
+        match_net = process.extractOne(
+            clean_name, network_channels, scorer=fuzz.token_sort_ratio
+        )
 
-        # Step 1: 优先匹配 my_sum.csv
-        match_my, score_my, _ = process.extractOne(
-            cleaned_name, my_sum_names, scorer=fuzz.partial_ratio
-        ) if my_sum_names else (None, 0, None)
-
-        if score_my >= 95:
-            standardized_name = match_my
-            match_source = "my_sum匹配"
-            score = score_my
-        else:
-            # Step 2: 再与网络匹配
-            match_network, score_network, _ = process.extractOne(
-                cleaned_name, network_names, scorer=fuzz.partial_ratio
-            ) if network_names else (None, 0, None)
-            if score_network >= 95:
-                standardized_name = match_network
-                match_source = "网络匹配"
-                score = score_network
+        if match_net:
+            matched_name, score_net, _ = match_net
+            if score_net < 95:
+                matched_name = ch_name  # 低于95直接保留原名
+                note = f"未高匹配({score_net})"
             else:
-                standardized_name = name
-                match_source = "未匹配"
-                score = 0.0
-                unmatched_channels.add(name)
+                note = "匹配网络源"
+            results.append({
+                "原频道名": ch_name,
+                "来源": "working",
+                "匹配值": score_net,
+                "标准化名": matched_name,
+                "分组": note
+            })
+        else:
+            results.append({
+                "原频道名": ch_name,
+                "来源": "working",
+                "匹配值": 0,
+                "标准化名": ch_name,
+                "分组": "未匹配"
+            })
+            unmatched_channels.append(ch_name)
 
-        total_output.append([
-            name, url, source, group,
-            standardized_name, match_source,
-            f"{score:.1f}"
-        ])
-        channel_map.append([standardized_name, group])
+    # ====== 保存结果 ======
+    total_df = pd.DataFrame(results)
+    total_df.to_csv(OUTPUT_TOTAL, index=False, encoding="utf-8-sig")  # ✅ 修复乱码
+    print(f"✅ 已生成标准化结果文件：{OUTPUT_TOTAL}")
 
-        # 日志输出
-        if idx % 100 == 0 or idx == len(working_rows):
-            print(f"✅ 已处理 {idx}/{len(working_rows)} 条...")
+    # 提取标准化名和分组
+    channel_df = total_df[["标准化名", "分组"]].drop_duplicates()
+    channel_df.to_csv(OUTPUT_CHANNEL, index=False, encoding="utf-8-sig")
+    print(f"✅ 已生成频道名映射文件：{OUTPUT_CHANNEL}")
 
-    # 写入输出文件
-    write_csv(OUTPUT_TOTAL, total_output)
-    write_csv(OUTPUT_CHANNEL, channel_map)
-    os.makedirs(os.path.dirname(OUTPUT_UNMATCHED), exist_ok=True)
-    with open(OUTPUT_UNMATCHED, "w", encoding="utf-8") as f:
-        f.write("\n".join(sorted(unmatched_channels)))
+    # 保存未匹配列表
+    if unmatched_channels:
+        with open(OUTPUT_UNMATCHED, "w", encoding="utf-8-sig") as f:
+            f.write("\n".join(unmatched_channels))
+        print(f"⚠️ 未匹配频道已保存：{OUTPUT_UNMATCHED}")
 
-    duration = time.time() - start_time
-    print(f"\n🎯 匹配完成，共处理 {len(total_output)} 条记录")
-    print(f"📂 输出文件：{OUTPUT_TOTAL}")
-    print(f"📂 标准化映射：{OUTPUT_CHANNEL}")
-    print(f"⚠️ 未匹配频道数：{len(unmatched_channels)}（详情见 unmatched_channels.txt）")
-    print(f"⏱️ 总耗时：{duration:.2f} 秒")
+    print("\n🎯 全部完成！")
 
 if __name__ == "__main__":
     main()
