@@ -1,43 +1,32 @@
-name: Standardize IPTV Channel Names
+name: Standardize Channel Names
 
 on:
   workflow_dispatch:
   schedule:
-    - cron: '0 1 * * *'  # 每天凌晨1点执行
-
-permissions:
-  contents: write
+    - cron: "0 12 * * 0"  # 每周日中午 12:00 UTC 自动运行（北京时间 20:00）
 
 jobs:
   standardize:
     runs-on: ubuntu-latest
-
     steps:
       - name: Checkout repository
-        uses: actions/checkout@v3
-        with:
-          fetch-depth: 0
+        uses: actions/checkout@v4
 
       - name: Setup Python
-        uses: actions/setup-python@v4
+        uses: actions/setup-python@v5
         with:
-          python-version: '3.9'
+          python-version: "3.11"
 
       - name: Install dependencies
-        run: |
-          pip install pandas rapidfuzz
+        run: pip install pandas rapidfuzz requests
 
       - name: Run standardization script
-        run: python scripts/standardize_names.py
+        run: python scripts/3.5standardize_names.py
 
-      - name: Commit and push changes if any
+      - name: Commit and push results
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
-          git add input/mysource/my_sum.csv output/working.csv
-          if ! git diff --cached --quiet; then
-            git commit -m "Standardize channel names with iptv-org database and fuzzy matching"
-            git push
-          else
-            echo "No changes detected"
-          fi
+          git add output/ total.csv input/channel.csv input/mysource/my_sum_standardized.csv output/working_standardized.csv || true
+          git commit -m "Auto standardized channel names and update total.csv & channel.csv [ci skip]" || echo "No changes to commit"
+          git push
