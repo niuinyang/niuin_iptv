@@ -37,7 +37,7 @@ jobs:
       # 5️⃣ 运行 IPTV 流检测脚本
       - name: Test streams and generate working.m3u
         run: |
-          python scripts/test_adaptive_async_batch.py
+          python scripts/3.3test_adaptive_async_batch.py
 
       # 6️⃣ 提交生成的文件和日志
       - name: Commit generated files
