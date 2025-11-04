@@ -32,7 +32,7 @@ jobs:
       - name: Install dependencies
         run: |
           pip install --upgrade pip
-          pip install requests opencc-python-reimplemented aiohttp
+          pip install requests opencc-python-reimplemented aiohttp pillow ffmpeg-python
 
       # 5️⃣ 运行 IPTV 流检测脚本
       - name: Test streams and generate working.m3u
@@ -44,6 +44,6 @@ jobs:
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
-          git add output/working.m3u output/working.csv output/log/*
+          git add output/working.m3u output/working.csv output/log/* || true
           git commit -m "🤖 Auto update working files on $(date '+%Y-%m-%d')" || echo "No changes to commit"
           git push
