@@ -7,6 +7,7 @@ on:
 
 permissions:
   contents: write
+  
 jobs:
   standardize:
     runs-on: ubuntu-latest
