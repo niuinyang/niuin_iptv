@@ -32,7 +32,7 @@ jobs:
       - name: Install dependencies
         run: |
           pip install --upgrade pip
-          pip install requests opencc-python-reimplemented aiohttp pillow ffmpeg-python
+          pip install requests opencc-python-reimplemented aiohttp pillow ffmpeg-python imagehash
 
       # 5️⃣ 运行 IPTV 流检测脚本
       - name: Test streams and generate working.m3u
