@@ -1,176 +1,152 @@
 import os
 import re
 import pandas as pd
+import csv
 import chardet
 from rapidfuzz import process
 
-# 文件路径配置
+IPTV_DB_PATH = "./iptv-database"
 INPUT_MY = "input/mysource/my_sum.csv"
 INPUT_WORKING = "output/working.csv"
 OUTPUT_TOTAL = "output/total.csv"
 OUTPUT_CHANNEL = "input/channel.csv"
 
-IPTV_DB_PATH = "./iptv-database"
-
-def safe_read_csv(path):
-    """自动检测编码读取csv，并统一保存为utf-8编码"""
-    if not os.path.exists(path):
-        print(f"文件不存在: {path}")
-        return None
-
-    with open(path, "rb") as f:
-        data = f.read()
-        result = chardet.detect(data)
-        enc = result["encoding"]
-
-    try:
-        df = pd.read_csv(path, encoding=enc)
-        if enc.lower() != "utf-8":
-            # 转码为utf-8覆盖原文件
-            df.to_csv(path, index=False, encoding="utf-8-sig")
-            print(f"✅ 转码并覆盖保存为 UTF-8: {path}")
-        return df
-    except Exception as e:
-        print(f"读取文件失败: {path}, 错误: {e}")
-        return None
+def detect_encoding_and_convert_utf8(filepath):
+    """检测文件编码，非utf-8时转为utf-8并覆盖"""
+    with open(filepath, "rb") as f:
+        rawdata = f.read()
+    result = chardet.detect(rawdata)
+    enc = result['encoding']
+    if enc is None:
+        enc = 'utf-8'
+    if enc.lower() != 'utf-8':
+        print(f"🔄 检测到 {filepath} 编码为 {enc}，正在转换为 UTF-8...")
+        text = rawdata.decode(enc)
+        with open(filepath, "w", encoding="utf-8") as f:
+            f.write(text)
+        print(f"✅ 已转码并覆盖保存为 UTF-8: {filepath}")
+    else:
+        print(f"✅ 文件 {filepath} 已是 UTF-8 编码")
 
 def load_name_map():
     """加载iptv-org数据库频道名和别名映射"""
     name_map = {}
     path = os.path.join(IPTV_DB_PATH, "data", "channels.csv")
-    if not os.path.exists(path):
-        print(f"iptv数据库文件不存在: {path}")
-        return name_map
-
     with open(path, encoding="utf-8") as f:
-        for row in pd.read_csv(f).itertuples():
-            std_name = getattr(row, "name").strip()
+        reader = csv.DictReader(f)
+        for row in reader:
+            std_name = row["name"].strip()
             name_map[std_name.lower()] = std_name
-            others = getattr(row, "other_names", "")
-            if pd.isna(others):
-                continue
+            others = row.get("other_names", "")
             for alias in others.split(","):
                 alias = alias.strip()
                 if alias:
                     name_map[alias.lower()] = std_name
+    print(f"📚 已加载 {len(name_map)} 个名称映射")
     return name_map
 
-def clean_channel_name(name):
-    """去除频道名中括号内的说明，如 (1080p)、[Geo-blocked]、[Not 24/7]"""
-    # 去除中英文括号及里面内容
-    cleaned = re.sub(r"[\(\[（【][^\)\]）】]*[\)\]）】]", "", name)
-    return cleaned.strip()
+def clean_channel_name(name: str) -> str:
+    """去除频道名中括号()和中括号[]及里面内容"""
+    if not isinstance(name, str):
+        return ""
+    name = re.sub(r'\([^)]*?\)', '', name)  # 去除()
+    name = re.sub(r'\[[^\]]*?\]', '', name)  # 去除[]
+    return name.strip()
 
-def get_std_name(name, name_map, threshold=95):
-    """先尝试精确匹配，失败则模糊匹配，匹配度低于阈值返回原名并标注"""
+def get_std_name_with_score(name, name_map, threshold=80):
     name_lower = name.lower()
     if name_lower in name_map:
-        return name_map[name_lower], 100.0, "精确匹配"
-
+        return name_map[name_lower], 100
     choices = list(name_map.keys())
     match, score, _ = process.extractOne(name_lower, choices)
     if score >= threshold:
-        return name_map[match], score, f"模糊匹配({score:.1f})"
+        return name_map[match], score
     else:
-        return name, score, f"匹配度低({score:.1f})"
+        return name, score
 
 def standardize_my_sum(file_path):
-    """my_sum.csv不做匹配，标准化名即原名"""
-    df = safe_read_csv(file_path)
-    if df is None:
-        return pd.DataFrame()
-    df["标准频道名"] = df.iloc[:, 0].astype(str).str.strip()
-    df["匹配信息"] = "自有源原名"
+    """my_sum.csv 不匹配，标准名即为原名，保留检测时间"""
+    df = pd.read_csv(file_path, encoding="utf-8")
+    original_names = df.iloc[:, 0].astype(str).str.strip()
+    df.insert(0, 'final_name', original_names)
+    # 不改变检测时间列
+    df.to_csv(file_path.replace(".csv", "_standardized.csv"), index=False, encoding="utf-8")
+    print(f"✅ {file_path} 标准化完成，输出到 {file_path.replace('.csv', '_standardized.csv')}")
     return df
 
-def standardize_working(file_path, my_df, name_map):
-    """working.csv先去除括号信息，然后优先匹配my_sum，再匹配iptv-org库"""
-    df = safe_read_csv(file_path)
-    if df is None:
-        return pd.DataFrame()
-
-    # 去除括号字段
-    df["处理频道名"] = df.iloc[:, 0].astype(str).apply(clean_channel_name)
-
-    # 用 my_sum.csv 标准名映射，构建快速匹配字典（key是my_sum的原名，value是标准名）
-    my_name_map = {name.lower(): std_name for name, std_name in zip(my_df.iloc[:, 0].str.lower(), my_df["标准频道名"])}
+def standardize_working(file_path, name_map, my_sum_names_set):
+    """working.csv 先清理名字，再匹配（优先匹配my_sum.csv名字），保留检测时间"""
+    df = pd.read_csv(file_path, encoding="utf-8")
+    original_names = df.iloc[:, 0].astype(str).str.strip()
+    clean_names = original_names.apply(clean_channel_name)
 
     std_names = []
-    scores = []
-    notes = []
-
-    choices_my = list(my_name_map.keys())
-    choices_iptv = list(name_map.keys())
-
-    for ch_name in df["处理频道名"]:
-        ch_name_lower = ch_name.lower()
-
-        # 优先尝试自有源my_sum匹配（精确+模糊）
-        if ch_name_lower in my_name_map:
-            std_names.append(my_name_map[ch_name_lower])
-            scores.append(100.0)
-            notes.append("自有源精确匹配")
-            continue
-
-        match_my = process.extractOne(ch_name_lower, choices_my)
-        if match_my and match_my[1] >= 95:
-            std_names.append(my_name_map[match_my[0]])
-            scores.append(match_my[1])
-            notes.append(f"自有源模糊匹配({match_my[1]:.1f})")
-            continue
-
-        # 自有源没匹配上，再匹配iptv-org库
-        match_iptv = process.extractOne(ch_name_lower, choices_iptv)
-        if match_iptv and match_iptv[1] >= 95:
-            std_names.append(name_map[match_iptv[0]])
-            scores.append(match_iptv[1])
-            notes.append(f"iptv-org模糊匹配({match_iptv[1]:.1f})")
+    remarks = []
+    for orig_name, clean_name in zip(original_names, clean_names):
+        if orig_name in my_sum_names_set:
+            std_names.append(orig_name)
+            remarks.append("自有源优先")
         else:
-            std_names.append(df.iloc[:, 0].astype(str).values[len(std_names)])  # 保留原名
-            scores.append(match_iptv[1] if match_iptv else 0)
-            notes.append(f"匹配度低({match_iptv[1]:.1f})" if match_iptv else "无匹配")
-
-    df["标准频道名"] = std_names
-    df["匹配得分"] = scores
-    df["匹配信息"] = notes
-
+            std_name, score = get_std_name_with_score(clean_name, name_map)
+            if score < 95:
+                std_names.append(orig_name)
+                remarks.append(f"模糊匹配({score:.0f})低于95")
+            else:
+                std_names.append(std_name)
+                remarks.append(f"模糊匹配({score:.0f})")
+    df.insert(0, "final_name", std_names)
+    df["match_remark"] = remarks
+    # 保留检测时间原列，不做修改
+    df.to_csv(file_path.replace(".csv", "_standardized.csv"), index=False, encoding="utf-8")
+    print(f"✅ {file_path} 标准化完成，输出到 {file_path.replace('.csv', '_standardized.csv')}")
     return df
 
+def save_channel_csv(my_sum_df, working_df):
+    """提取标准化名和分组两列合并输出到 channel.csv"""
+    dfs = []
+    for df in [my_sum_df, working_df]:
+        cols = df.columns.tolist()
+        # 频道名在final_name，分组列可能是“分组”或者“group”，尝试识别
+        group_col = None
+        for c in ["分组", "group"]:
+            if c in df.columns:
+                group_col = c
+                break
+        if group_col is None:
+            raise ValueError("无法找到分组列")
+        dfs.append(df[["final_name", group_col]].rename(columns={group_col:"分组"}))
+    combined = pd.concat(dfs, ignore_index=True)
+    combined.drop_duplicates(inplace=True)
+    combined.to_csv(OUTPUT_CHANNEL, index=False, encoding="utf-8")
+    print(f"✅ 已输出频道名和分组到 {OUTPUT_CHANNEL}")
+
+def save_total_csv(my_sum_df, working_df):
+    """合并两个df，输出total.csv"""
+    combined = pd.concat([my_sum_df, working_df], ignore_index=True)
+    combined.to_csv(OUTPUT_TOTAL, index=False, encoding="utf-8")
+    print(f"✅ 已输出合并总表到 {OUTPUT_TOTAL}")
+
 def main():
-    print("🚀 开始执行标准化匹配流程...\n")
-    print("读取源文件：")
-    print(f"  📁 {INPUT_MY}")
-    print(f"  📁 {INPUT_WORKING}\n")
+    print("🚀 开始执行标准化匹配流程...")
 
-    my_df = standardize_my_sum(INPUT_MY)
+    # 先确保输入文件编码正确
+    for f in [INPUT_MY, INPUT_WORKING]:
+        detect_encoding_and_convert_utf8(f)
+
     name_map = load_name_map()
-    print(f"📚 已加载 {len(name_map)} 个频道映射\n")
 
-    working_df = standardize_working(INPUT_WORKING, my_df, name_map)
+    # 处理my_sum.csv，直接标准化为原名
+    my_sum_df = standardize_my_sum(INPUT_MY)
+    my_sum_names_set = set(my_sum_df.iloc[:, 0].astype(str).str.strip())
 
-    # 合并两个数据框，my_sum优先，后面是working
-    total_df = pd.concat([my_df, working_df], ignore_index=True)
-    total_df.to_csv(OUTPUT_TOTAL, index=False, encoding="utf-8-sig")
-    print(f"✅ 已生成汇总文件: {OUTPUT_TOTAL}")
+    # 处理working.csv，先清理再匹配，优先匹配my_sum名
+    working_df = standardize_working(INPUT_WORKING, name_map, my_sum_names_set)
 
-    # 输出频道名和分组两列到 input/channel.csv
-    # 尽量兼容分组列，默认是第6列或叫“分组”
-    group_col = None
-    for col_name in total_df.columns:
-        if col_name in ["分组", "group"]:
-            group_col = col_name
-            break
-    if not group_col:
-        group_col = total_df.columns[5] if len(total_df.columns) > 5 else None
+    # 生成频道名和分组的channel.csv
+    save_channel_csv(my_sum_df, working_df)
 
-    if group_col:
-        channel_df = total_df[["标准频道名", group_col]]
-        channel_df.to_csv(OUTPUT_CHANNEL, index=False, encoding="utf-8-sig")
-        print(f"✅ 已提取频道映射: {OUTPUT_CHANNEL}")
-    else:
-        print("⚠️ 未找到分组列，未生成频道映射文件")
-
-    print("\n🎉 全部处理完成！")
+    # 合并输出total.csv
+    save_total_csv(my_sum_df, working_df)
 
 if __name__ == "__main__":
     main()
