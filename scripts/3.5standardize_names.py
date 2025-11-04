@@ -3,7 +3,7 @@
 
 """
 standardize_channels.py
-使用 iptv-org/database 自动标准化频道名，生成总表和频道分组映射。
+使用 iptv-org/database 自动标准化频道名，自动适配文件编码，生成总表和频道分组映射。
 """
 
 import os, csv, pandas as pd, requests
@@ -43,6 +43,24 @@ def load_name_map():
     print(f"📚 已加载 {len(name_map)} 个名称映射")
     return name_map
 
+def read_csv_auto(path, encodings=None):
+    """
+    尝试多种编码读取 CSV 文件，返回 DataFrame。
+    默认尝试 ['utf-8-sig', 'utf-8', 'gbk', 'latin1']。
+    """
+    if encodings is None:
+        encodings = ['utf-8-sig', 'utf-8', 'gbk', 'latin1']
+
+    for enc in encodings:
+        try:
+            df = pd.read_csv(path, encoding=enc)
+            print(f"✅ 使用编码 {enc} 读取文件成功: {path}")
+            return df
+        except UnicodeDecodeError:
+            print(f"⚠️ 编码 {enc} 读取失败，尝试下一个...")
+    # 全失败才抛异常
+    raise UnicodeDecodeError(f"无法用备选编码读取文件: {path}")
+
 def match_name(name, name_map):
     n = name.strip()
     if not n:
@@ -57,7 +75,7 @@ def match_name(name, name_map):
 
 def standardize_csv(path, name_map):
     print(f"📂 正在处理: {path}")
-    df = pd.read_csv(path)
+    df = read_csv_auto(path)
     unmatched = set()
     std_names, statuses = [], []
 
@@ -98,14 +116,12 @@ def main():
         else:
             print(f"⚠️ 文件不存在: {f}")
 
-    # 合并所有数据，生成总表
     if dfs:
         total_df = pd.concat(dfs, ignore_index=True)
         total_csv_path = os.path.join(OUTPUT_DIR, "total.csv")
         total_df.to_csv(total_csv_path, index=False, encoding="utf-8-sig")
         print(f"✅ 已生成总表: {total_csv_path}")
 
-        # 提取 标准频道名 + 分组 两列，去重后保存
         if "分组" in total_df.columns:
             channel_df = total_df[["标准频道名", "分组"]].drop_duplicates()
             os.makedirs(os.path.dirname(INPUT_CHANNEL_CSV), exist_ok=True)
@@ -114,7 +130,6 @@ def main():
         else:
             print("⚠️ 总表中未找到“分组”列，无法生成频道分组映射文件")
 
-    # 输出未匹配报告
     if all_unmatched:
         report_path = os.path.join(OUTPUT_DIR, "unmatched_channels.txt")
         with open(report_path, "w", encoding="utf-8") as f:
