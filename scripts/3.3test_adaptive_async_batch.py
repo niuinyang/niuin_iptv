@@ -23,7 +23,10 @@ MAX_CONCURRENCY = 40  # 异步并发数量
 TIMEOUT = 8           # 超时时间(秒)
 
 # 清晰度过滤：跳过 1080p 以下
-LOW_RES_KEYWORDS = ["vga", "480p", "576p", "720p", "sd"]
+LOW_RES_KEYWORDS = [
+    "vga", "270p", "360p", "396p", "406p", "480p",
+    "540p", "576p", "576i", "614p", "720p", "sd"
+]
 BLOCK_KEYWORDS = ["espanol"]
 WHITELIST_PATTERNS = [".ctv", ".sdserver", ".sdn.", ".sda.", ".sdstream", "sdhd", "hdsd"]
 
