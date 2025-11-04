@@ -30,6 +30,6 @@ jobs:
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
-          git add output/ total.csv input/channel.csv input/mysource/my_sum_standardized.csv output/working_standardized.csv || true
+          git add output/ input/channel.csv input/mysource/my_sum_standardized.csv output/working_standardized.csv || true
           git commit -m "Auto standardized channel names and update total.csv & channel.csv [ci skip]" || echo "No changes to commit"
-          git push
+          git push https://x-access-token:${PAT_TOKEN}@github.com/niuinyang/niuin_iptv.git HEAD:main
