@@ -28,18 +28,24 @@ jobs:
         with:
           python-version: "3.11"
 
-      # 4️⃣ 安装依赖
-      - name: Install dependencies
+      # 4️⃣ 安装系统依赖（ffmpeg + ffprobe）
+      - name: Install ffmpeg tools
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y ffmpeg
+
+      # 5️⃣ 安装 Python 依赖
+      - name: Install Python dependencies
         run: |
           pip install --upgrade pip
           pip install requests opencc-python-reimplemented aiohttp pillow ffmpeg-python imagehash
 
-      # 5️⃣ 运行 IPTV 流检测脚本
+      # 6️⃣ 运行 IPTV 流检测脚本
       - name: Test streams and generate working.m3u
         run: |
           python scripts/3.3test_adaptive_async_batch.py
 
-      # 6️⃣ 提交生成的文件和日志
+      # 7️⃣ 提交生成的文件和日志
       - name: Commit generated files
         run: |
           git config user.name "github-actions[bot]"
