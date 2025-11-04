@@ -1,123 +1,136 @@
-import aiohttp
-import asyncio
 import csv
+import re
+import unicodedata
+from opencc import OpenCC
 import os
-import time
-from datetime import datetime
+import difflib
 
 # ==============================
 # 配置区
 # ==============================
-INPUT_FILE = "output/merge_total.csv"
-OUTPUT_DIR = "output"
-WORKING_FILE = os.path.join(OUTPUT_DIR, "working.csv")
-WORKING_M3U = os.path.join(OUTPUT_DIR, "working.m3u")
-LOG_DIR = os.path.join(OUTPUT_DIR, "log")
-os.makedirs(LOG_DIR, exist_ok=True)
+M3U_FILE = "output/working.m3u"          # 输入 M3U
+FIND_DIR = "input/network/find"          # 搜索 CSV 目录
+OUTPUT_DIR = os.path.join("output", "sum_cvs")
+os.makedirs(OUTPUT_DIR, exist_ok=True)
 
-SKIPPED_FILE = os.path.join(LOG_DIR, "skipped.log")
-ERROR_FILE = os.path.join(LOG_DIR, "error.log")
+# 简繁转换器（繁体 -> 简体）
+cc = OpenCC('t2s')
 
-# 并发参数
-MAX_CONCURRENCY = 40  # 异步并发数量
-TIMEOUT = 8           # 超时时间(秒)
-
-# 清晰度过滤：跳过 1080p 以下
-LOW_RES_KEYWORDS = ["vga", "480p", "576p", "720p", "sd"]
-BLOCK_KEYWORDS = ["espanol"]
-WHITELIST_PATTERNS = [".ctv", ".sdserver", ".sdn.", ".sda.", ".sdstream", "sdhd", "hdsd"]
+# 文件名到中文地区映射
+REGION_MAP = {
+    "intl": "国际",
+    "tw": "台湾",
+    "hk": "香港",
+    "mo": "澳门"
+}
 
 # ==============================
-# 工具函数
+# 文本标准化函数
 # ==============================
-def log_to_file(path, msg):
-    with open(path, "a", encoding="utf-8") as f:
-        f.write(msg + "\n")
 
-def is_allowed(title, url):
-    text = f"{title} {url}".lower()
-    if any(w in text for w in WHITELIST_PATTERNS):
-        return True
-    if any(kw in text for kw in LOW_RES_KEYWORDS):
-        log_to_file(SKIPPED_FILE, f"LOW_RESOLUTION_FILTER -> {title} | {url}")
-        return False
-    if any(kw in text for kw in BLOCK_KEYWORDS):
-        log_to_file(SKIPPED_FILE, f"BLOCK_KEYWORD -> {title} | {url}")
-        return False
-    return True
+def normalize_text(text):
+    if not text:
+        return ""
+    text = cc.convert(text)  # 繁转简
+    text = unicodedata.normalize("NFKC", text)
+    text = ''.join(
+        c for c in text
+        if not (c.isspace() or unicodedata.category(c).startswith(('P', 'S')))
+    )
+    return text.lower()
 
 # ==============================
-# 核心异步检测
+# 提取频道函数
 # ==============================
-async def check_stream(session, sem, row):
-    async with sem:
-        name, url, source, logo = row
-        if not is_allowed(name, url):
-            return None
 
-        headers = {
-            "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64)",
-            "Referer": "https://www.google.com/",
-            "Accept": "*/*",
-            "Connection": "keep-alive",
-        }
+def extract_channels(find_csv_path, region_name, output_file):
+    # 读取搜索列表
+    with open(find_csv_path, "r", encoding="utf-8") as f:
+        reader = csv.reader(f)
+        search_names = [row[0].strip() for row in reader if row]
 
-        try:
-            async with session.get(url, headers=headers, timeout=TIMEOUT) as resp:
-                if resp.status == 200:
-                    detect_time = datetime.now().strftime("%Y-%m-%d %H:%M:%S")
-                    print(f"✅ 成功: {name}")
-                    return [name, url, source, logo, detect_time, "网络源"]
-                else:
-                    log_to_file(ERROR_FILE, f"{resp.status} ❌ {name} -> {url}")
-                    return None
-        except Exception as e:
-            log_to_file(ERROR_FILE, f"异常 {name} -> {url} | {str(e)}")
-            return None
+    search_norm = [normalize_text(name) for name in search_names]
 
-# ==============================
-# 主任务控制
-# ==============================
-async def main():
-    if not os.path.exists(INPUT_FILE):
-        print(f"❌ 未找到输入文件: {INPUT_FILE}")
-        return
+    # 存储匹配结果
+    matches_dict = {name: [] for name in search_names}
+    seen_urls = set()  # 去重 URL
 
-    with open(INPUT_FILE, "r", encoding="utf-8-sig") as f:
-        reader = csv.DictReader(f)
-        required_cols = ["频道名", "地址", "来源", "图标"]
-        for col in required_cols:
-            if col not in reader.fieldnames:
-                raise ValueError(f"CSV 文件缺少 required 列: '{col}'")
+    # 读取 M3U 文件
+    with open(M3U_FILE, "r", encoding="utf-8") as f:
+        lines = f.readlines()
 
-        rows = [[r["频道名"], r["地址"], r["来源"], r["图标"]] for r in reader]
+    i = 0
+    while i < len(lines):
+        line = lines[i].strip()
+        if line.startswith("#EXTINF:"):
+            info_line = line
+            url_line = lines[i + 1].strip() if i + 1 < len(lines) else ""
+            if not url_line.startswith("http") or url_line in seen_urls:
+                i += 2
+                continue
 
-    print(f"📊 读取源: {len(rows)} 条")
-    sem = asyncio.Semaphore(MAX_CONCURRENCY)
+            # 尝试提取 tvg-name
+            match_name = re.search(r'tvg-name="([^"]+)"', info_line)
+            tvg_name_original = match_name.group(1).strip() if match_name else ""
 
-    async with aiohttp.ClientSession() as session:
-        tasks = [check_stream(session, sem, row) for row in rows]
-        results = await asyncio.gather(*tasks)
+            # 如果没有 tvg-name，取逗号后内容
+            if not tvg_name_original and "," in info_line:
+                tvg_name_original = info_line.split(",")[-1].strip()
 
-    working = [r for r in results if r]
-    print(f"\n✅ 有效源: {len(working)} 条")
+            tvg_norm = normalize_text(tvg_name_original)
 
-    # 写 CSV
-    with open(WORKING_FILE, "w", newline="", encoding="utf-8-sig") as f:
+            for idx, name_norm in enumerate(search_norm):
+                matched = False
+
+                # 1️⃣ 完全包含
+                if name_norm in tvg_norm:
+                    matched = True
+
+                # 2️⃣ 正则匹配
+                if not matched:
+                    pattern = re.escape(name_norm)
+                    if re.search(pattern, tvg_norm):
+                        matched = True
+
+                # 3️⃣ 模糊匹配（相似度 > 80%）
+                if not matched:
+                    ratio = difflib.SequenceMatcher(None, name_norm, tvg_norm).ratio()
+                    if ratio > 0.8:
+                        matched = True
+
+                if matched:
+                    matches_dict[search_names[idx]].append([
+                        search_names[idx],
+                        region_name,
+                        url_line,
+                        "手动/查找源",
+                        tvg_name_original
+                    ])
+                    seen_urls.add(url_line)
+                    break
+            i += 2
+        else:
+            i += 1
+
+    # 写入 CSV
+    output_path = os.path.join(OUTPUT_DIR, output_file)
+    with open(output_path, "w", newline="", encoding="utf-8-sig") as f:
         writer = csv.writer(f)
-        writer.writerow(["频道名", "地址", "来源", "图标", "检测时间", "分组"])
-        writer.writerows(working)
+        writer.writerow(["tvg-name", "地区", "URL", "来源", "原始tvg-name"])
+        for name in search_names:
+            writer.writerows(matches_dict[name])
 
-    # 写 M3U
-    with open(WORKING_M3U, "w", encoding="utf-8") as f:
-        f.write("#EXTM3U\n")
-        for name, url, src, logo, t, grp in working:
-            f.write(f'#EXTINF:-1 tvg-logo="{logo}",{name}\n{url}\n')
+    total_matches = sum(len(v) for v in matches_dict.values())
+    print(f"✅ {region_name} 匹配完成，共 {total_matches} 个频道，输出: {output_path}")
 
-    print(f"📁 输出: {WORKING_FILE} 和 {WORKING_M3U}")
-    print(f"🕒 检测完成，共 {len(working)} 条有效源。")
-
+# ==============================
+# 遍历文件夹并执行提取
+# ==============================
 if __name__ == "__main__":
-    start = time.time()
-    asyncio.run(main())
-    print(f"\n⏱️ 总耗时: {time.time() - start:.2f} 秒")
+    for file in os.listdir(FIND_DIR):
+        if file.endswith(".csv"):
+            key = file.replace("find_", "").replace(".csv", "")
+            region_name = REGION_MAP.get(key, key)
+            output_file = f"find_{key}_sum.csv"
+            csv_path = os.path.join(FIND_DIR, file)
+            extract_channels(csv_path, region_name, output_file)
