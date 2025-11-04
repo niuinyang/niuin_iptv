@@ -1,12 +1,10 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
 
-"""
-standardize_channels.py
-使用 iptv-org/database 自动标准化频道名，自动适配文件编码，生成总表和频道分组映射。
-"""
-
-import os, csv, pandas as pd, requests
+import os
+import csv
+import pandas as pd
+import requests
 from rapidfuzz import process
 
 IPTV_DB_URL = "https://raw.githubusercontent.com/iptv-org/database/master/data/channels.csv"
@@ -15,7 +13,14 @@ OUTPUT_DIR = "output"
 INPUT_CHANNEL_CSV = "input/channel.csv"
 THRESHOLD = 85
 
+# 缓存匹配结果，避免重复模糊匹配
+match_cache = {}
+
 def update_database():
+    """下载最新频道数据库，如果本地已存在则跳过"""
+    if os.path.exists(IPTV_DB_FILE):
+        print(f"✅ 数据库文件 {IPTV_DB_FILE} 已存在，跳过下载")
+        return
     print("🔽 正在下载最新 channels.csv ...")
     try:
         r = requests.get(IPTV_DB_URL, timeout=30)
@@ -29,6 +34,7 @@ def update_database():
             raise SystemExit("❌ 没有可用的频道数据库")
 
 def load_name_map():
+    """加载频道名和别名映射"""
     name_map = {}
     with open(IPTV_DB_FILE, encoding="utf-8") as f:
         reader = csv.DictReader(f)
@@ -44,13 +50,9 @@ def load_name_map():
     return name_map
 
 def read_csv_auto(path, encodings=None):
-    """
-    尝试多种编码读取 CSV 文件，返回 DataFrame。
-    默认尝试 ['utf-8-sig', 'utf-8', 'gbk', 'latin1']。
-    """
+    """尝试多种编码读取CSV，返回DataFrame"""
     if encodings is None:
         encodings = ['utf-8-sig', 'utf-8', 'gbk', 'latin1']
-
     for enc in encodings:
         try:
             df = pd.read_csv(path, encoding=enc)
@@ -58,20 +60,31 @@ def read_csv_auto(path, encodings=None):
             return df
         except UnicodeDecodeError:
             print(f"⚠️ 编码 {enc} 读取失败，尝试下一个...")
-    # 全失败才抛异常
     raise UnicodeDecodeError(f"无法用备选编码读取文件: {path}")
 
 def match_name(name, name_map):
+    """带缓存的名称匹配"""
     n = name.strip()
     if not n:
         return n, "空名"
+    if n in match_cache:
+        return match_cache[n]
+
     key = n.lower()
     if key in name_map:
-        return name_map[key], "精确匹配"
+        res = (name_map[key], "精确匹配")
+        match_cache[n] = res
+        return res
+
     match, score, _ = process.extractOne(key, list(name_map.keys()))
     if score >= THRESHOLD:
-        return name_map[match], f"模糊匹配({score:.0f})"
-    return n, "未匹配"
+        res = (name_map[match], f"模糊匹配({score:.0f})")
+        match_cache[n] = res
+        return res
+
+    res = (n, "未匹配")
+    match_cache[n] = res
+    return res
 
 def standardize_csv(path, name_map):
     print(f"📂 正在处理: {path}")
