@@ -2,54 +2,64 @@ import csv
 import os
 from tqdm import tqdm
 
-INPUT_FILE = "output/middle/stage2b_verified.csv"
-OUTPUT_FILE = "output/middle/stage2c_final.csv"
-WORKING_FILE = "output/working.csv"
-CHECKPOINT_FILE = "output/middle/stage2c_checkpoint.csv"
+INPUT_CSV = "output/middle/stage2b_verified.csv"
+OUTPUT_SNAPSHOT = "output/middle/stage2c_final.csv"
+OUTPUT_FINAL = "output/working.csv"
+
 SAVE_INTERVAL = 500
 
-def is_fake_source(name, url):
-    name_l, url_l = name.lower(), url.lower()
-    keywords = ["test", "ad", "demo", "sample", "fake", "error"]
-    return any(k in name_l or k in url_l for k in keywords)
+def process_item(item):
+    # 这里示例根据 ffprobe 结果做最终判断或处理，具体你自己写逻辑
+    # 例如只保留有效且无错误的
+    if "✅有效" in item and "❌错误" not in item:
+        return item
+    return None
 
 def main():
-    os.makedirs(os.path.dirname(OUTPUT_FILE), exist_ok=True)
-    print("🚀 开始第3阶段检测（假源过滤与结果合并）")
+    if os.path.exists(OUTPUT_SNAPSHOT):
+        print(f"🔄 恢复检测，从快照加载：{OUTPUT_SNAPSHOT}")
+        with open(OUTPUT_SNAPSHOT, newline='', encoding='utf-8') as f:
+            rows = list(csv.reader(f))
+    else:
+        print(f"🚀 开始第3阶段最终处理")
+        with open(INPUT_CSV, newline='', encoding='utf-8') as f:
+            rows = list(csv.reader(f))
 
-    completed_urls = set()
-    if os.path.exists(CHECKPOINT_FILE):
-        with open(CHECKPOINT_FILE, newline='', encoding='utf-8') as f:
-            completed_urls = {r[1] for r in csv.reader(f)}
-        print(f"🔄 检测到已有 {len(completed_urls)} 条快照，将跳过这些源")
+    total = len(rows)
+    results = []
+    start_idx = 0
 
-    with open(INPUT_FILE, newline='', encoding='utf-8') as f:
-        reader = list(csv.reader(f))
-        header = reader[0] + ["假源检测"]
-        rows = [r for r in reader[1:] if r[1] not in completed_urls]
+    if os.path.exists(OUTPUT_SNAPSHOT):
+        start_idx = len(rows)
+        if start_idx >= total:
+            print("✔️ 快照已完成检测，跳过")
+            return
 
-    print(f"📦 当前待检测源数：{len(rows)}")
+    pbar = tqdm(total=total, desc="处理进度", unit="条", initial=start_idx)
+    for idx in range(start_idx, total):
+        item = rows[idx]
+        processed = process_item(item)
+        if processed:
+            results.append(processed)
+        pbar.update(1)
 
-    results, count = [], 0
-    with tqdm(total=len(rows), ncols=90, desc="检测进度") as pbar:
-        for row in rows:
-            fake = "❌假源" if is_fake_source(row[0], row[1]) else "✅正常"
-            results.append(row + [fake])
-            count += 1
-            pbar.update(1)
-            if count % SAVE_INTERVAL == 0:
-                with open(CHECKPOINT_FILE, 'w', newline='', encoding='utf-8') as f:
-                    csv.writer(f).writerows(results)
-                print(f"💾 已保存快照：{count}/{len(rows)}")
+        if (idx + 1) % SAVE_INTERVAL == 0 or (idx + 1) == total:
+            with open(OUTPUT_SNAPSHOT, 'w', newline='', encoding='utf-8') as f:
+                writer = csv.writer(f)
+                writer.writerows(results)
+            print(f"💾 已保存快照：{len(results)}/{total}")
 
-    # 输出最终结果
-    for path in [OUTPUT_FILE, WORKING_FILE]:
-        with open(path, 'w', newline='', encoding='utf-8') as f:
-            writer = csv.writer(f)
-            writer.writerow(header)
-            writer.writerows(results)
+    pbar.close()
 
-    print(f"✅ 阶段3完成，最终文件输出：{WORKING_FILE}")
+    with open(OUTPUT_FINAL, 'w', newline='', encoding='utf-8') as f:
+        writer = csv.writer(f)
+        writer.writerows(results)
+
+    if os.path.exists(OUTPUT_SNAPSHOT):
+        os.remove(OUTPUT_SNAPSHOT)
+        print(f"🗑️ 快照文件已删除：{OUTPUT_SNAPSHOT}")
+
+    print(f"✅ 阶段3完成，结果输出：{OUTPUT_FINAL}")
 
 if __name__ == "__main__":
     main()
