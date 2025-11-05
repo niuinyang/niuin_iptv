@@ -4,14 +4,12 @@ from tqdm import tqdm
 import asyncio
 import aiohttp
 
-INPUT_CSV = "output/merge_total.csv"
-OUTPUT_SNAPSHOT = "output/middle/stage2a_valid.csv"
+INPUT_CSV = "input/merge_total.csv"
+OUTPUT_SNAPSHOT = "output/middle/stage2a_valid_snapshot.csv"
 OUTPUT_FINAL = "output/middle/stage2a_valid.csv"
 
-BATCH_SIZE = 1000
 SAVE_INTERVAL = 500  # 每500条保存快照
 
-# 异步检测函数示例（你自己补充具体逻辑）
 async def check_source(session, item):
     url = item[1]
     try:
@@ -26,26 +24,19 @@ async def check_source(session, item):
     return item + [result]
 
 async def main():
-    # 读取快照或输入文件
     if os.path.exists(OUTPUT_SNAPSHOT):
         print(f"🔄 恢复检测，加载快照文件：{OUTPUT_SNAPSHOT}")
         with open(OUTPUT_SNAPSHOT, newline='', encoding='utf-8') as f:
             rows = list(csv.reader(f))
+        start_idx = len(rows)
     else:
         print(f"🚀 开始第1阶段快速检测")
         with open(INPUT_CSV, newline='', encoding='utf-8') as f:
             rows = list(csv.reader(f))
+        start_idx = 0
 
     total = len(rows)
-    results = []
-    start_idx = 0
-
-    # 如果快照存在，跳过已完成部分
-    if os.path.exists(OUTPUT_SNAPSHOT):
-        start_idx = len(rows)
-        if start_idx >= total:
-            print("✔️ 快照已完成检测，跳过")
-            return
+    results = [] if start_idx == 0 else rows
 
     async with aiohttp.ClientSession() as session:
         pbar = tqdm(total=total, desc="检测进度", unit="条", initial=start_idx)
@@ -55,7 +46,6 @@ async def main():
             results.append(checked)
             pbar.update(1)
 
-            # 每500条保存快照
             if (idx + 1) % SAVE_INTERVAL == 0 or (idx + 1) == total:
                 with open(OUTPUT_SNAPSHOT, 'w', newline='', encoding='utf-8') as f:
                     writer = csv.writer(f)
@@ -64,12 +54,10 @@ async def main():
 
         pbar.close()
 
-    # 写最终文件
     with open(OUTPUT_FINAL, 'w', newline='', encoding='utf-8') as f:
         writer = csv.writer(f)
         writer.writerows(results)
 
-    # 删除快照文件
     if os.path.exists(OUTPUT_SNAPSHOT):
         os.remove(OUTPUT_SNAPSHOT)
         print(f"🗑️ 快照文件已删除：{OUTPUT_SNAPSHOT}")
