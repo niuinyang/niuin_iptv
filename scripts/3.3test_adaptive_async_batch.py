@@ -58,12 +58,12 @@ def is_allowed(title, url):
     return True
 
 async def ffprobe_check(url):
-    """使用 ffprobe 获取流信息"""
+    """使用 ffprobe 获取流信息，只返回第一条视频流信息，避免重复和换行"""
     try:
         cmd = [
             "ffprobe", "-v", "error",
             "-select_streams", "v:0",
-            "-show_entries", "stream=width,height,codec_name",
+            "-show_entries", "stream=codec_name,width,height",
             "-of", "csv=p=0", url
         ]
         proc = await asyncio.create_subprocess_exec(
@@ -71,7 +71,9 @@ async def ffprobe_check(url):
         )
         stdout, _ = await proc.communicate()
         if stdout:
-            return stdout.decode().strip()
+            lines = stdout.decode().strip().splitlines()
+            if lines:
+                return lines[0]
         return None
     except Exception:
         return None
