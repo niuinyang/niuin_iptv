@@ -10,34 +10,22 @@ SAVE_INTERVAL = 500
 
 def process_item(item):
     # 这里示例根据 ffprobe 结果做最终判断或处理，具体你自己写逻辑
-    # 例如只保留有效且无错误的
     if "✅有效" in item and "❌错误" not in item:
         return item
     return None
 
 def main():
-    if os.path.exists(OUTPUT_SNAPSHOT):
-        print(f"🔄 恢复检测，从快照加载：{OUTPUT_SNAPSHOT}")
-        with open(OUTPUT_SNAPSHOT, newline='', encoding='utf-8') as f:
-            rows = list(csv.reader(f))
-    else:
-        print(f"🚀 开始第3阶段最终处理")
-        with open(INPUT_CSV, newline='', encoding='utf-8') as f:
-            rows = list(csv.reader(f))
+    print(f"🚀 开始第3阶段最终处理")
+    with open(INPUT_CSV, newline='', encoding='utf-8') as f:
+        rows = list(csv.reader(f))
 
     total = len(rows)
     results = []
     start_idx = 0
 
-    if os.path.exists(OUTPUT_SNAPSHOT):
-        start_idx = len(rows)
-        if start_idx >= total:
-            print("✔️ 快照已完成检测，跳过")
-            return
+    pbar = tqdm(total=total, desc="处理进度", unit="条")
 
-    pbar = tqdm(total=total, desc="处理进度", unit="条", initial=start_idx)
-    for idx in range(start_idx, total):
-        item = rows[idx]
+    for idx, item in enumerate(rows):
         processed = process_item(item)
         if processed:
             results.append(processed)
@@ -55,6 +43,7 @@ def main():
         writer = csv.writer(f)
         writer.writerows(results)
 
+    # 运行结束后删除快照文件
     if os.path.exists(OUTPUT_SNAPSHOT):
         os.remove(OUTPUT_SNAPSHOT)
         print(f"🗑️ 快照文件已删除：{OUTPUT_SNAPSHOT}")
