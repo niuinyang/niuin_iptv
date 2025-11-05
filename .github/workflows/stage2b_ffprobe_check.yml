@@ -1,42 +1,37 @@
-name: Stage2B - FFprobe Verification
+name: Stage 2B - Verification
 
 on:
   workflow_dispatch:
-  workflow_run:
-    workflows: ["Stage2A - Fast HTTP Check"]
-    types:
-      - completed
 
 permissions:
   contents: write
 
 jobs:
-  ffprobe_check:
+  run-stage2b:
     runs-on: ubuntu-latest
+    timeout-minutes: 360  # 6小时
+
     steps:
-      - name: Checkout repository
-        uses: actions/checkout@v4
+    - name: Checkout repository
+      uses: actions/checkout@v4
 
-      - name: Download Stage2A artifact
-        uses: actions/download-artifact@v4
-        with:
-          name: stage2a_result
-          path: output/middle/
+    - name: Set up Python
+      uses: actions/setup-python@v5
+      with:
+        python-version: '3.11'
 
-      - name: Install FFmpeg
-        run: sudo apt-get update && sudo apt-get install -y ffmpeg
+    - name: Install dependencies
+      run: |
+        pip install --upgrade pip
+        pip install tqdm aiohttp ffmpeg-python requests
 
-      - name: Setup Python
-        uses: actions/setup-python@v5
-        with:
-          python-version: "3.11"
+    - name: Run Stage 2B Verification
+      run: python scripts/stage2b_verify.py
 
-      - name: Run Stage2B FFprobe check
-        run: |
-          python scripts/stage2b_ffprobe_check.py
-
-      - name: Upload Stage2B result
-        uses: actions/upload-artifact@v4
-        with:
-          name: stage2b_result
-          path: output/middle/stage2b_verified.csv
+    - name: Commit and Push Results
+      run: |
+        git config --global user.name "github-actions[bot]"
+        git config --global user.email "github-actions[bot]@users.noreply.github.com"
+        git add output/middle/stage2b_verified.csv
+        git commit -m "Update stage2b_verified.csv [skip ci]" || echo "No changes to commit"
+        git push
