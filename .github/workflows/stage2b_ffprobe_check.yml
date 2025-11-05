@@ -1,0 +1,42 @@
+name: Stage2B - FFprobe Verification
+
+on:
+  workflow_dispatch:
+  workflow_run:
+    workflows: ["Stage2A - Fast HTTP Check"]
+    types:
+      - completed
+
+permissions:
+  contents: write
+
+jobs:
+  ffprobe_check:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Download Stage2A artifact
+        uses: actions/download-artifact@v4
+        with:
+          name: stage2a_result
+          path: output/middle/
+
+      - name: Install FFmpeg
+        run: sudo apt-get update && sudo apt-get install -y ffmpeg
+
+      - name: Setup Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      - name: Run Stage2B FFprobe check
+        run: |
+          python scripts/stage2b_ffprobe_check.py
+
+      - name: Upload Stage2B result
+        uses: actions/upload-artifact@v4
+        with:
+          name: stage2b_result
+          path: output/middle/stage2b_verified.csv
