@@ -166,6 +166,9 @@ def export_unmatched_for_manual(working_df, manual_map_path=MANUAL_MAP_PATH):
     unmatched_df.rename(columns={'original_channel_name':'原始名称'}, inplace=True)
     unmatched_df['标准名称'] = ""
 
+    # 只保留3列，且顺序固定
+    unmatched_df = unmatched_df[['原始名称', '标准名称', '拟匹配频道']]
+
     # 读取已存在的 manual_map，避免重复写入
     if os.path.exists(manual_map_path):
         existing = pd.read_csv(manual_map_path, encoding="utf-8-sig")
@@ -183,7 +186,7 @@ def export_unmatched_for_manual(working_df, manual_map_path=MANUAL_MAP_PATH):
     new_rows = unmatched_df[~unmatched_df['原始名称'].str.lower().isin(existing_names)]
 
     if not new_rows.empty:
-        # 追加写入文件
+        # 追加写入文件，只写这3列
         new_rows.to_csv(manual_map_path, mode='a', index=False, header=not os.path.exists(manual_map_path), encoding="utf-8-sig")
         print(f"🔔 有 {len(new_rows)} 个未匹配或低匹配频道写入到 {manual_map_path}，请手动补全标准名称。")
     else:
