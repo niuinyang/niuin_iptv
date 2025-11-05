@@ -15,15 +15,18 @@ jobs:
     - name: Checkout repository
       uses: actions/checkout@v4
 
+    - name: Install system dependencies
+      run: sudo apt-get update && sudo apt-get install -y ffmpeg
+
     - name: Set up Python
       uses: actions/setup-python@v5
       with:
         python-version: '3.11'
 
-    - name: Install dependencies
+    - name: Install Python dependencies
       run: |
         pip install --upgrade pip
-        pip install tqdm aiohttp ffmpeg-python requests
+        pip install --no-cache-dir tqdm aiohttp ffmpeg-python requests
 
     - name: Run Stage 2B Verification
       run: python scripts/stage2b_verify.py
