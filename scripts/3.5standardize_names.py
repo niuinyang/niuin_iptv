@@ -10,7 +10,8 @@ IPTV_DB_PATH = "./iptv-database"
 INPUT_MY = "input/mysource/my_sum.csv"
 INPUT_WORKING = "output/working.csv"
 OUTPUT_TOTAL = "output/total.csv"
-OUTPUT_CHANNEL = "input/channel.csv"
+INPUT_CHANNEL = "input/channel.csv"   # 作为输入的channel.csv
+OUTPUT_CHANNEL = "input/channel.csv"  # 覆盖写回channel.csv
 
 def safe_read_csv(path):
     with open(path, "rb") as f:
@@ -97,7 +98,6 @@ def standardize_working(working_df, my_sum_df, name_map):
         else:
             std_name, score, info = get_std_name(clean_name, name_map)
             if score < 95:
-                # 使用去除连接符和空格且首字母大写的规范名
                 std_name = normalize_name_for_match(clean_name).title()
                 match_info = "未匹配"
                 unmatched_count += 1
@@ -177,19 +177,29 @@ def main():
     total_df.to_csv(OUTPUT_TOTAL, index=False, encoding="utf-8-sig")
     print(f"✅ 已生成合并文件: {OUTPUT_TOTAL}")
 
-    # 先取 my_sum_df 的频道名和分组，去重
-    my_channels = my_sum_out.loc[:, ["频道名", "分组"]].drop_duplicates()
-    my_channel_names = set(my_channels["频道名"].tolist())
+    # 读取已有频道列表作为输入
+    if os.path.exists(INPUT_CHANNEL):
+        existing_channel_df = pd.read_csv(INPUT_CHANNEL, encoding="utf-8-sig")
+        existing_channels = existing_channel_df["频道名"].tolist()
+    else:
+        existing_channel_df = pd.DataFrame(columns=["频道名", "分组"])
+        existing_channels = []
 
-    # 再取 working_out 中不在 my_sum_df 的频道
-    working_channels = working_out.loc[~working_out["频道名"].isin(my_channel_names), ["频道名", "分组"]].drop_duplicates()
+    # total 中所有频道
+    total_channels = total_df[["频道名", "分组"]]
 
-    # 合并两个 DataFrame
-    channel_df = pd.concat([my_channels, working_channels], ignore_index=True)
+    # 筛选出total中不存在于已有channel的频道
+    new_channels_df = total_channels[~total_channels["频道名"].isin(existing_channels)]
 
-    # 保存频道列表文件
-    channel_df.to_csv(OUTPUT_CHANNEL, index=False, encoding="utf-8-sig")
-    print(f"✅ 已生成频道列表文件: {OUTPUT_CHANNEL}")
+    # 给新频道统一标记“未分类”
+    new_channels_df = new_channels_df.copy()
+    new_channels_df["分组"] = "未分类"
+
+    # 合并原有频道和新增频道，保持原频道顺序和追加新频道顺序
+    combined_channel_df = pd.concat([existing_channel_df, new_channels_df], ignore_index=True)
+
+    combined_channel_df.to_csv(OUTPUT_CHANNEL, index=False, encoding="utf-8-sig")
+    print(f"✅ 已更新频道列表文件: {OUTPUT_CHANNEL}")
 
 if __name__ == "__main__":
     main()
