@@ -1,4 +1,4 @@
-name: Stage 2C - Final Check
+name: Stage 3 - Fake Source Detection
 
 on:
   workflow_dispatch:
@@ -7,31 +7,33 @@ permissions:
   contents: write
 
 jobs:
-  run-stage2c:
+  stage3-fake-detection:
     runs-on: ubuntu-latest
-    timeout-minutes: 360  # 6小时
+    timeout-minutes: 360
 
     steps:
     - name: Checkout repository
       uses: actions/checkout@v4
 
-    - name: Set up Python
+    - name: Setup Python 3.11
       uses: actions/setup-python@v5
       with:
-        python-version: '3.11'
+        python-version: 3.11
 
-    - name: Install dependencies
+    - name: Install dependencies and system libs
       run: |
+        sudo apt-get update
+        sudo apt-get install -y ffmpeg libmagic-dev
         pip install --upgrade pip
-        pip install tqdm aiohttp ffmpeg-python requests
+        pip install tqdm aiohttp pillow imagehash
 
-    - name: Run Stage 2C Final Check
-      run: python scripts/stage2c_final_check.py
+    - name: Run Stage 3 Fake Source Detection
+      run: python scripts/stage3_fake_detection.py
 
-    - name: Commit and Push Results
+    - name: Commit and Push results
       run: |
         git config --global user.name "github-actions[bot]"
         git config --global user.email "github-actions[bot]@users.noreply.github.com"
-        git add output/middle/stage2c_final.csv
-        git commit -m "Update stage2c_final.csv [skip ci]" || echo "No changes to commit"
+        git add output/working.csv
+        git commit -m "Update working.csv [skip ci]" || echo "No changes to commit"
         git push
