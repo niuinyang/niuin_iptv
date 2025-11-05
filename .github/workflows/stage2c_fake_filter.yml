@@ -1,39 +1,37 @@
-name: Stage2C - Fake Source Filter
+name: Stage 2C - Final Check
 
 on:
   workflow_dispatch:
-  workflow_run:
-    workflows: ["Stage2B - FFprobe Verification"]
-    types:
-      - completed
 
 permissions:
   contents: write
 
 jobs:
-  fake_filter:
+  run-stage2c:
     runs-on: ubuntu-latest
+    timeout-minutes: 360  # 6小时
+
     steps:
-      - name: Checkout repository
-        uses: actions/checkout@v4
+    - name: Checkout repository
+      uses: actions/checkout@v4
 
-      - name: Download Stage2B artifact
-        uses: actions/download-artifact@v4
-        with:
-          name: stage2b_result
-          path: output/middle/
+    - name: Set up Python
+      uses: actions/setup-python@v5
+      with:
+        python-version: '3.11'
 
-      - name: Setup Python
-        uses: actions/setup-python@v5
-        with:
-          python-version: "3.11"
+    - name: Install dependencies
+      run: |
+        pip install --upgrade pip
+        pip install tqdm aiohttp ffmpeg-python requests
 
-      - name: Run Stage2C fake filter
-        run: |
-          python scripts/stage2c_fake_filter.py
+    - name: Run Stage 2C Final Check
+      run: python scripts/stage2c_final_check.py
 
-      - name: Upload final working.csv
-        uses: actions/upload-artifact@v4
-        with:
-          name: working_final
-          path: output/working.csv
+    - name: Commit and Push Results
+      run: |
+        git config --global user.name "github-actions[bot]"
+        git config --global user.email "github-actions[bot]@users.noreply.github.com"
+        git add output/middle/stage2c_final.csv
+        git commit -m "Update stage2c_final.csv [skip ci]" || echo "No changes to commit"
+        git push
