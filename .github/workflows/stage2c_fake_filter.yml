@@ -1,0 +1,39 @@
+name: Stage2C - Fake Source Filter
+
+on:
+  workflow_dispatch:
+  workflow_run:
+    workflows: ["Stage2B - FFprobe Verification"]
+    types:
+      - completed
+
+permissions:
+  contents: write
+
+jobs:
+  fake_filter:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Download Stage2B artifact
+        uses: actions/download-artifact@v4
+        with:
+          name: stage2b_result
+          path: output/middle/
+
+      - name: Setup Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      - name: Run Stage2C fake filter
+        run: |
+          python scripts/stage2c_fake_filter.py
+
+      - name: Upload final working.csv
+        uses: actions/upload-artifact@v4
+        with:
+          name: working_final
+          path: output/working.csv
