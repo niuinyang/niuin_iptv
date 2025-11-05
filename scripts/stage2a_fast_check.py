@@ -5,7 +5,7 @@ import csv
 import time
 import os
 
-INPUT_CSV = "input/sources.csv"  # 你实际的输入路径
+INPUT_CSV = "output/merge_total.csv"  # 你实际的输入路径
 OUTPUT_CSV = "output/middle/stage2a_valid.csv"
 
 MAX_CONCURRENT_REQUESTS = 100  # 并发数，机器网络好可以调大点
