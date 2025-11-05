@@ -105,33 +105,39 @@ def standardize_working(working_df, my_sum_df, name_map):
     return working_df
 
 def build_total_df(df):
-    def safe_col(name):
-        return df[name] if name in df.columns else pd.Series([""] * len(df))
+    def safe_col(name_list):
+        for name in name_list:
+            if name in df.columns:
+                return df[name]
+        return pd.Series([""] * len(df))
 
     return pd.DataFrame({
         "频道名": df.get("final_name", df.iloc[:, 0]),
-        "地址": safe_col("地址"),
-        "来源": safe_col("来源"),
-        "检测时间": safe_col("检测时间"),
-        "图标": safe_col("图标"),
-        "分组": safe_col("分组"),
-        "匹配信息": safe_col("match_info"),
-        "原始频道名": safe_col("original_channel_name")
+        "地址": safe_col(["地址"]),
+        "来源": safe_col(["来源"]),
+        "检测时间": safe_col(["检测时间", "检测时间(延迟)"]),
+        "图标": safe_col(["图标"]),
+        "分组": safe_col(["分组"]),
+        "匹配信息": safe_col(["match_info"]),
+        "原始频道名": safe_col(["original_channel_name"])
     })
 
 def save_standardized_my_sum(df):
-    def safe_col(name):
-        return df[name] if name in df.columns else pd.Series([""] * len(df))
+    def safe_col(name_list):
+        for name in name_list:
+            if name in df.columns:
+                return df[name]
+        return pd.Series([""] * len(df))
 
     out_df = pd.DataFrame({
         "频道名": df.get("final_name", df.iloc[:, 0]),
-        "地址": safe_col("地址"),
-        "来源": safe_col("来源"),
-        "检测时间": safe_col("检测时间"),
-        "图标": safe_col("图标"),
-        "分组": safe_col("分组"),
-        "匹配信息": safe_col("match_info"),
-        "原始频道名": safe_col("original_channel_name")
+        "地址": safe_col(["地址"]),
+        "来源": safe_col(["来源"]),
+        "检测时间": safe_col(["检测时间", "检测时间(延迟)"]),
+        "图标": safe_col(["图标"]),
+        "分组": safe_col(["分组"]),
+        "匹配信息": safe_col(["match_info"]),
+        "原始频道名": safe_col(["original_channel_name"])
     })
     out_df.to_csv("input/mysource/my_sum_standardized.csv", index=False, encoding="utf-8-sig")
     print("✅ 已生成标准化自有源文件: input/mysource/my_sum_standardized.csv")
@@ -149,7 +155,6 @@ def main():
 
     my_sum_df = standardize_my_sum(my_sum_df)
 
-    # 只改这里，保存标准化自有源文件，列名中文，顺序固定
     save_standardized_my_sum(my_sum_df)
 
     working_df = standardize_working(working_df, my_sum_df, name_map)
@@ -161,7 +166,6 @@ def main():
     total_df.to_csv(OUTPUT_TOTAL, index=False, encoding="utf-8-sig")
     print(f"✅ 已生成合并文件: {OUTPUT_TOTAL}")
 
-    # 输出 channel.csv 两列，列名用中文
     channel_list = []
     for df in [my_sum_df, working_df]:
         for _, row in df.iterrows():
