@@ -163,19 +163,12 @@ def main():
     working_out = build_total_df(working_df)
 
     total_df = pd.concat([my_sum_out, working_out], ignore_index=True)
+
     total_df.to_csv(OUTPUT_TOTAL, index=False, encoding="utf-8-sig")
     print(f"✅ 已生成合并文件: {OUTPUT_TOTAL}")
 
-    channel_list = []
-    for df in [my_sum_df, working_df]:
-        for _, row in df.iterrows():
-            final_name = row['final_name']
-            group = ""
-            if len(row) > 5:
-                group = row.iloc[5] if isinstance(row, pd.Series) else (row[5] if len(row) > 5 else "")
-            channel_list.append((final_name, group))
-    channel_df = pd.DataFrame(channel_list, columns=["频道名", "分组"])
-    channel_df.drop_duplicates(inplace=True)
+    # 从合并后的 total_df 取频道名和分组，去重，输出 channel.csv
+    channel_df = total_df.loc[:, ["频道名", "分组"]].drop_duplicates()
     channel_df.to_csv(OUTPUT_CHANNEL, index=False, encoding="utf-8-sig")
     print(f"✅ 已生成频道列表文件: {OUTPUT_CHANNEL}")
 
