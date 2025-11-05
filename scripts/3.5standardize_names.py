@@ -87,7 +87,7 @@ def standardize_working(working_df, my_sum_df, name_map):
         else:
             std_name, score, info = get_std_name(clean_name, name_map)
             if score < 95:
-                std_name = orig_name
+                std_name = clean_name  # 修改点：用清理后的名称替代原名
                 match_info = "未匹配"
                 unmatched_count += 1
             else:
