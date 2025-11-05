@@ -12,15 +12,9 @@ def process_item(item):
     detect_result = item[4] if len(item) > 4 else ""
     ffprobe_result = item[5] if len(item) > 5 else ""
 
-    # 仅打印前10条用于调试
-    if process_item.counter < 10:
-        print(f"检测结果列: {detect_result}, ffprobe结果列: {ffprobe_result}")
-        process_item.counter += 1
-
     if "✅有效" in detect_result and "❌错误" not in ffprobe_result:
         return item
     return None
-process_item.counter = 0
 
 def main():
     print(f"🚀 开始第3阶段最终处理")
@@ -50,9 +44,10 @@ def main():
         writer = csv.writer(f)
         writer.writerows(results)
 
-    if os.path.exists(OUTPUT_SNAPSHOT):
-        os.remove(OUTPUT_SNAPSHOT)
-        print(f"🗑️ 快照文件已删除：{OUTPUT_SNAPSHOT}")
+    # 注释掉删除快照，保留文件，避免 git 报错
+    # if os.path.exists(OUTPUT_SNAPSHOT):
+    #     os.remove(OUTPUT_SNAPSHOT)
+    #     print(f"🗑️ 快照文件已删除：{OUTPUT_SNAPSHOT}")
 
     print(f"✅ 阶段3完成，结果输出：{OUTPUT_FINAL}")
 
