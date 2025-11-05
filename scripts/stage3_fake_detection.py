@@ -8,7 +8,7 @@ import imagehash
 import tempfile
 
 INPUT_FILE = "output/middle/stage2b_verified.csv"
-OUTPUT_DIR = "output/middle"
+OUTPUT_DIR = "output"
 os.makedirs(OUTPUT_DIR, exist_ok=True)
 
 OUTPUT_CSV = os.path.join(OUTPUT_DIR, "stage3_final_checked.csv")
@@ -17,8 +17,10 @@ OUTPUT_M3U = os.path.join(OUTPUT_DIR, "stage3_final_checked.m3u")
 MAX_CONCURRENCY = 40
 CHECK_TIMES = 2
 INTERVAL_BETWEEN_CHECKS = 1.5
-
+TIMEOUT = 8
 FAKE_HASH_DIFF_THRESHOLD = 5
+
+sem = asyncio.Semaphore(MAX_CONCURRENCY)
 
 def log(msg):
     print(msg)
@@ -82,7 +84,7 @@ async def ffprobe_check(url):
     except Exception:
         return ""
 
-async def check_stream_multiple(session, sem, row):
+async def check_stream_multiple(session, row):
     async with sem:
         name, url, source, logo = row
         phashes = []
@@ -121,24 +123,24 @@ async def main():
     total = len(rows)
     print(f"📦 总源数: {total} 条，开始第3阶段多次检测...")
 
-    sem = asyncio.Semaphore(MAX_CONCURRENCY)
-    start_time = time.time()
-    completed = 0
     valid_results = []
+    start_time = time.time()
+    pbar = tqdm(total=total, desc="检测进度", unit="条")
 
     async with aiohttp.ClientSession() as session:
-        tasks = [check_stream_multiple(session, sem, row) for row in rows]
-        for coro in asyncio.as_completed(tasks):
-            result = await coro
-            completed += 1
+        for idx, row in enumerate(rows):
+            result = await check_stream_multiple(session, row)
             if result:
                 valid_results.append(result)
+            pbar.update(1)
 
-            if completed % 100 == 0 or completed == total:
+            if (idx + 1) % 100 == 0 or (idx + 1) == total:
                 elapsed = time.time() - start_time
-                rate = completed / elapsed if elapsed > 0 else 0
-                eta = (total - completed) / rate if rate > 0 else 0
-                print(f"📈 进度: {completed}/{total} | 有效: {len(valid_results)} | 速率: {rate:.2f}/s | 预计剩余: {eta/60:.1f} 分钟")
+                speed = (idx + 1) / elapsed if elapsed > 0 else 0
+                eta = (total - idx - 1) / speed if speed > 0 else 0
+                print(f"进度: {idx + 1}/{total} | 有效: {len(valid_results)} | 速率: {speed:.2f}条/s | 预计剩余: {eta/60:.1f} 分钟")
+
+    pbar.close()
 
     with open(OUTPUT_CSV, "w", newline="", encoding="utf-8-sig") as f:
         writer = csv.writer(f)
@@ -156,4 +158,5 @@ async def main():
     print(f"🕒 总耗时: {total_time:.2f} 秒")
 
 if __name__ == "__main__":
+    import tqdm
     asyncio.run(main())
