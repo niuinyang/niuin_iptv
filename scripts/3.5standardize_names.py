@@ -46,7 +46,17 @@ def clean_channel_name(name):
     # 去除（）和【】及里面内容
     name = re.sub(r"[\(\（][^\)\）]*[\)\）]", "", name)
     name = re.sub(r"[\[\【][^\]\】]*[\]\】]", "", name)
+    # 去除 24/7、7*24、7x24，以及带 not 的情况（不区分大小写）
+    name = re.sub(r"\b(not\s*)?(24/7|7\*24|7x24)\b", "", name, flags=re.I)
     return name.strip()
+
+def normalize_name_for_match(name):
+    if not isinstance(name, str):
+        return ""
+    name = clean_channel_name(name)
+    # 去除连字符和空格，方便匹配
+    name = re.sub(r"[-\s]", "", name)
+    return name.lower()
 
 def get_std_name(name, name_map, threshold=95):
     name_lower = name.lower()
@@ -68,7 +78,7 @@ def standardize_my_sum(my_sum_df):
 def standardize_working(working_df, my_sum_df, name_map):
     working_df['original_channel_name'] = working_df.iloc[:, 0].astype(str)
     working_df['clean_name'] = working_df['original_channel_name'].apply(clean_channel_name)
-    my_name_dict = dict(zip(my_sum_df.iloc[:,0].str.lower(), my_sum_df['final_name']))
+    my_name_dict = dict(zip(my_sum_df.iloc[:,0].apply(normalize_name_for_match), my_sum_df['final_name']))
 
     total = len(working_df)
     final_names = []
@@ -79,7 +89,7 @@ def standardize_working(working_df, my_sum_df, name_map):
     print(f"🔄 开始对 working.csv 共 {total} 条记录进行标准化匹配...")
 
     for idx, (orig_name, clean_name) in enumerate(zip(working_df['original_channel_name'], working_df['clean_name']), 1):
-        clean_name_lower = clean_name.lower()
+        clean_name_lower = normalize_name_for_match(clean_name)
         if clean_name_lower in my_name_dict:
             std_name = my_name_dict[clean_name_lower]
             match_info = "自有源匹配"
@@ -87,7 +97,8 @@ def standardize_working(working_df, my_sum_df, name_map):
         else:
             std_name, score, info = get_std_name(clean_name, name_map)
             if score < 95:
-                std_name = clean_name  # 修改点：用清理后的名称替代原名
+                # 使用去除连接符和空格且首字母大写的规范名
+                std_name = normalize_name_for_match(clean_name).title()
                 match_info = "未匹配"
                 unmatched_count += 1
             else:
@@ -154,7 +165,6 @@ def main():
     print(f"✅ 数据库加载完成，映射总数：{len(name_map)}")
 
     my_sum_df = standardize_my_sum(my_sum_df)
-
     save_standardized_my_sum(my_sum_df)
 
     working_df = standardize_working(working_df, my_sum_df, name_map)
@@ -167,8 +177,17 @@ def main():
     total_df.to_csv(OUTPUT_TOTAL, index=False, encoding="utf-8-sig")
     print(f"✅ 已生成合并文件: {OUTPUT_TOTAL}")
 
-    # 从合并后的 total_df 取频道名和分组，去重，输出 channel.csv
-    channel_df = total_df.loc[:, ["频道名", "分组"]].drop_duplicates()
+    # 先取 my_sum_df 的频道名和分组，去重
+    my_channels = my_sum_out.loc[:, ["频道名", "分组"]].drop_duplicates()
+    my_channel_names = set(my_channels["频道名"].tolist())
+
+    # 再取 working_out 中不在 my_sum_df 的频道
+    working_channels = working_out.loc[~working_out["频道名"].isin(my_channel_names), ["频道名", "分组"]].drop_duplicates()
+
+    # 合并两个 DataFrame
+    channel_df = pd.concat([my_channels, working_channels], ignore_index=True)
+
+    # 保存频道列表文件
     channel_df.to_csv(OUTPUT_CHANNEL, index=False, encoding="utf-8-sig")
     print(f"✅ 已生成频道列表文件: {OUTPUT_CHANNEL}")
 
