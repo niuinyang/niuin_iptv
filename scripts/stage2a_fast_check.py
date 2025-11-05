@@ -1,76 +1,80 @@
-import asyncio
-import aiohttp
 import csv
 import os
-import time
 from tqdm import tqdm
+import asyncio
+import aiohttp
 
-INPUT_FILE = "output/merge_total.csv"
-OUTPUT_FILE = "output/middle/stage2a_valid.csv"
-CHECKPOINT_FILE = "output/middle/stage2a_checkpoint.csv"
-TIMEOUT = 8
-CONCURRENT_LIMIT = 200
-SAVE_INTERVAL = 500  # 每500条保存一次
+INPUT_CSV = "output/merge_total.csv"
+OUTPUT_SNAPSHOT = "output/middle/stage2a_valid.csv"
+OUTPUT_FINAL = "output/middle/stage2a_valid.csv"
 
-async def check_channel(session, row):
-    url = row[1]
+BATCH_SIZE = 1000
+SAVE_INTERVAL = 500  # 每500条保存快照
+
+# 异步检测函数示例（你自己补充具体逻辑）
+async def check_source(session, item):
+    url = item[1]
     try:
-        async with session.get(url, timeout=TIMEOUT) as resp:
-            if resp.status == 200:
-                return row + ["✅有效"]
-            else:
-                return row + [f"❌状态{resp.status}"]
+        async with session.head(url, timeout=10) as resp:
+            status = resp.status
+        if status == 200:
+            result = "✅有效"
+        else:
+            result = f"❌状态{status}"
     except Exception as e:
-        return row + [f"❌错误:{str(e)[:30]}"]
+        result = f"❌错误:{e}"
+    return item + [result]
 
 async def main():
-    os.makedirs(os.path.dirname(OUTPUT_FILE), exist_ok=True)
-    print("🚀 开始第1阶段检测（HTTP快速检测）")
+    # 读取快照或输入文件
+    if os.path.exists(OUTPUT_SNAPSHOT):
+        print(f"🔄 恢复检测，加载快照文件：{OUTPUT_SNAPSHOT}")
+        with open(OUTPUT_SNAPSHOT, newline='', encoding='utf-8') as f:
+            rows = list(csv.reader(f))
+    else:
+        print(f"🚀 开始第1阶段快速检测")
+        with open(INPUT_CSV, newline='', encoding='utf-8') as f:
+            rows = list(csv.reader(f))
 
-    # --- 自动恢复 ---
-    completed_urls = set()
-    if os.path.exists(CHECKPOINT_FILE):
-        with open(CHECKPOINT_FILE, newline='', encoding='utf-8') as f:
-            completed_urls = {r[1] for r in csv.reader(f)}
-        print(f"🔄 检测到已有 {len(completed_urls)} 条快照，将跳过这些源")
+    total = len(rows)
+    results = []
+    start_idx = 0
 
-    # --- 加载输入 ---
-    with open(INPUT_FILE, newline='', encoding='utf-8') as f:
-        reader = list(csv.reader(f))
-        header = reader[0] + ["检测结果"]
-        rows = [r for r in reader[1:] if r[1] not in completed_urls]
-
-    print(f"📦 当前待检测源数：{len(rows)}")
-
-    sem = asyncio.Semaphore(CONCURRENT_LIMIT)
-    results, count = [], 0
+    # 如果快照存在，跳过已完成部分
+    if os.path.exists(OUTPUT_SNAPSHOT):
+        start_idx = len(rows)
+        if start_idx >= total:
+            print("✔️ 快照已完成检测，跳过")
+            return
 
     async with aiohttp.ClientSession() as session:
-        async def sem_task(row):
-            async with sem:
-                return await check_channel(session, row)
+        pbar = tqdm(total=total, desc="检测进度", unit="条", initial=start_idx)
+        for idx in range(start_idx, total):
+            item = rows[idx]
+            checked = await check_source(session, item)
+            results.append(checked)
+            pbar.update(1)
 
-        with tqdm(total=len(rows), ncols=90, desc="检测进度") as pbar:
-            for i in range(0, len(rows), CONCURRENT_LIMIT):
-                batch = rows[i:i + CONCURRENT_LIMIT]
-                res = await asyncio.gather(*[sem_task(r) for r in batch])
-                results.extend(res)
-                count += len(batch)
-                pbar.update(len(batch))
+            # 每500条保存快照
+            if (idx + 1) % SAVE_INTERVAL == 0 or (idx + 1) == total:
+                with open(OUTPUT_SNAPSHOT, 'w', newline='', encoding='utf-8') as f:
+                    writer = csv.writer(f)
+                    writer.writerows(results)
+                print(f"💾 已保存快照：{len(results)}/{total}")
 
-                # 每500条保存一次快照
-                if count % SAVE_INTERVAL == 0:
-                    with open(CHECKPOINT_FILE, 'w', newline='', encoding='utf-8') as f:
-                        csv.writer(f).writerows(results)
-                    print(f"💾 已保存快照：{count}/{len(rows)}")
+        pbar.close()
 
-    # --- 写出最终结果 ---
-    with open(OUTPUT_FILE, 'w', newline='', encoding='utf-8') as f:
+    # 写最终文件
+    with open(OUTPUT_FINAL, 'w', newline='', encoding='utf-8') as f:
         writer = csv.writer(f)
-        writer.writerow(header)
         writer.writerows(results)
 
-    print(f"✅ 阶段1完成，结果输出：{OUTPUT_FILE}")
+    # 删除快照文件
+    if os.path.exists(OUTPUT_SNAPSHOT):
+        os.remove(OUTPUT_SNAPSHOT)
+        print(f"🗑️ 快照文件已删除：{OUTPUT_SNAPSHOT}")
+
+    print(f"✅ 阶段1完成，结果输出：{OUTPUT_FINAL}")
 
 if __name__ == "__main__":
     asyncio.run(main())
