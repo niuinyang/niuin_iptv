@@ -12,6 +12,8 @@ INPUT_WORKING = "output/working.csv"
 OUTPUT_TOTAL = "output/total.csv"
 INPUT_CHANNEL = "input/channel.csv"   # 作为输入的channel.csv
 OUTPUT_CHANNEL = "input/channel.csv"  # 覆盖写回channel.csv
+MANUAL_MAP_PATH = "input/manual_map.csv"    # 人工映射文件路径
+UNMATCHED_PATH = "unmatched_channels.csv"  # 导出未匹配频道列表（备用）
 
 def safe_read_csv(path):
     with open(path, "rb") as f:
@@ -40,6 +42,25 @@ def load_name_map():
                 if alias:
                     name_map[alias.lower()] = std_name
     return name_map
+
+def load_manual_map(path=MANUAL_MAP_PATH):
+    manual_map = {}
+    if not os.path.exists(path):
+        # 文件不存在时，创建带表头的空文件
+        os.makedirs(os.path.dirname(path), exist_ok=True)
+        with open(path, "w", encoding="utf-8-sig", newline='') as f:
+            writer = csv.writer(f)
+            writer.writerow(["原始名称", "标准名称", "拟匹配频道"])
+        return manual_map
+
+    with open(path, encoding="utf-8") as f:
+        reader = csv.DictReader(f)
+        for row in reader:
+            raw_name = row.get("原始名称", "").strip()
+            std_name = row.get("标准名称", "").strip()
+            if raw_name and std_name:
+                manual_map[raw_name.lower()] = std_name
+    return manual_map
 
 def clean_channel_name(name):
     if not isinstance(name, str):
@@ -76,7 +97,7 @@ def standardize_my_sum(my_sum_df):
     my_sum_df['original_channel_name'] = my_sum_df.iloc[:,0].astype(str)
     return my_sum_df
 
-def standardize_working(working_df, my_sum_df, name_map):
+def standardize_working(working_df, my_sum_df, name_map, manual_map):
     working_df['original_channel_name'] = working_df.iloc[:, 0].astype(str)
     working_df['clean_name'] = working_df['original_channel_name'].apply(clean_channel_name)
     my_name_dict = dict(zip(my_sum_df.iloc[:,0].apply(normalize_name_for_match), my_sum_df['final_name']))
@@ -90,20 +111,34 @@ def standardize_working(working_df, my_sum_df, name_map):
     print(f"🔄 开始对 working.csv 共 {total} 条记录进行标准化匹配...")
 
     for idx, (orig_name, clean_name) in enumerate(zip(working_df['original_channel_name'], working_df['clean_name']), 1):
+        orig_name_lower = orig_name.lower()
         clean_name_lower = normalize_name_for_match(clean_name)
-        if clean_name_lower in my_name_dict:
+
+        # 优先检查人工映射
+        if orig_name_lower in manual_map:
+            std_name = manual_map[orig_name_lower]
+            match_info = "人工匹配"
+            matched_count += 1
+        elif clean_name_lower in my_name_dict:
             std_name = my_name_dict[clean_name_lower]
             match_info = "自有源匹配"
             matched_count += 1
         else:
-            std_name, score, info = get_std_name(clean_name, name_map)
-            if score < 95:
-                std_name = normalize_name_for_match(clean_name).title()
-                match_info = "未匹配"
+            # 这里用 process.extractOne 找最接近的匹配项
+            choices = list(name_map.keys())
+            match, score, _ = process.extractOne(clean_name_lower, choices)
+            if score >= 95:
+                std_name = name_map[match]
+                match_info = "模糊匹配"
+                matched_count += 1
+            elif score > 0:  # 低匹配但不是0分，视为低匹配，写拟匹配频道名
+                std_name = clean_name.title()  # 用初步标准名
+                match_info = f"低匹配;拟匹配频道:{name_map[match]}"
                 unmatched_count += 1
             else:
-                match_info = info
-                matched_count += 1
+                std_name = clean_name.title()
+                match_info = "未匹配"
+                unmatched_count += 1
 
         final_names.append(std_name)
         match_infos.append(match_info)
@@ -114,6 +149,45 @@ def standardize_working(working_df, my_sum_df, name_map):
     working_df['final_name'] = final_names
     working_df['match_info'] = match_infos
     return working_df
+
+def export_unmatched_for_manual(working_df, manual_map_path=MANUAL_MAP_PATH):
+    # 选出未匹配和低匹配的记录
+    unmatched_df = working_df[working_df['match_info'].str.contains("未匹配|低匹配")]
+
+    # 取原始频道名和拟匹配频道（如果有）
+    # 拟匹配频道从 match_info 字段中提取
+    def extract_candidate(info):
+        import re
+        m = re.search(r"拟匹配频道:(.*)", info)
+        return m.group(1).strip() if m else ""
+
+    unmatched_df = unmatched_df[['original_channel_name', 'match_info']].drop_duplicates()
+    unmatched_df['拟匹配频道'] = unmatched_df['match_info'].apply(extract_candidate)
+    unmatched_df.rename(columns={'original_channel_name':'原始名称'}, inplace=True)
+    unmatched_df['标准名称'] = ""
+
+    # 读取已存在的 manual_map，避免重复写入
+    if os.path.exists(manual_map_path):
+        existing = pd.read_csv(manual_map_path, encoding="utf-8-sig")
+        existing_names = existing['原始名称'].str.lower().tolist()
+    else:
+        # 文件不存在时，创建带表头的空文件
+        os.makedirs(os.path.dirname(manual_map_path), exist_ok=True)
+        with open(manual_map_path, "w", encoding="utf-8-sig", newline='') as f:
+            writer = csv.writer(f)
+            writer.writerow(["原始名称", "标准名称", "拟匹配频道"])
+        existing = pd.DataFrame(columns=["原始名称", "标准名称", "拟匹配频道"])
+        existing_names = []
+
+    # 过滤掉已存在的原始名称
+    new_rows = unmatched_df[~unmatched_df['原始名称'].str.lower().isin(existing_names)]
+
+    if not new_rows.empty:
+        # 追加写入文件
+        new_rows.to_csv(manual_map_path, mode='a', index=False, header=not os.path.exists(manual_map_path), encoding="utf-8-sig")
+        print(f"🔔 有 {len(new_rows)} 个未匹配或低匹配频道写入到 {manual_map_path}，请手动补全标准名称。")
+    else:
+        print(f"🔔 无新增未匹配或低匹配频道写入 {manual_map_path}。")
 
 def build_total_df(df):
     def safe_col(name_list):
@@ -162,12 +236,15 @@ def main():
     print(f"读取源文件：\n  📁 {INPUT_MY}\n  📁 {INPUT_WORKING}")
 
     name_map = load_name_map()
-    print(f"✅ 数据库加载完成，映射总数：{len(name_map)}")
+    manual_map = load_manual_map()
+    print(f"✅ 数据库加载完成，映射总数：{len(name_map)}，人工映射条数：{len(manual_map)}")
 
     my_sum_df = standardize_my_sum(my_sum_df)
     save_standardized_my_sum(my_sum_df)
 
-    working_df = standardize_working(working_df, my_sum_df, name_map)
+    working_df = standardize_working(working_df, my_sum_df, name_map, manual_map)
+
+    export_unmatched_for_manual(working_df)
 
     my_sum_out = build_total_df(my_sum_df)
     working_out = build_total_df(working_df)
