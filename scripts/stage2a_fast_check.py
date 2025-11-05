@@ -4,7 +4,7 @@ from tqdm import tqdm
 import asyncio
 import aiohttp
 
-INPUT_CSV = "input/merge_total.csv"
+INPUT_CSV = "output/merge_total.csv"
 OUTPUT_SNAPSHOT = "output/middle/stage2a_valid_snapshot.csv"
 OUTPUT_FINAL = "output/middle/stage2a_valid.csv"
 
