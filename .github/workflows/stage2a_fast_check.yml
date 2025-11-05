@@ -1,0 +1,30 @@
+name: Stage2A - Fast HTTP Check
+
+on:
+  workflow_dispatch:
+
+jobs:
+  fast_check:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Setup Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      - name: Install dependencies
+        run: |
+          python -m pip install --upgrade pip aiohttp
+
+      - name: Run Stage2A fast check
+        run: |
+          python scripts/stage2a_fast_check.py
+
+      - name: Upload Stage2A result
+        uses: actions/upload-artifact@v4
+        with:
+          name: stage2a_result
+          path: output/middle/stage2a_valid.csv
