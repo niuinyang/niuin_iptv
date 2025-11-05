@@ -198,6 +198,9 @@ def main():
     # 合并原有频道和新增频道，保持原频道顺序和追加新频道顺序
     combined_channel_df = pd.concat([existing_channel_df, new_channels_df], ignore_index=True)
 
+    # 按频道名去重，保留首次出现（原有频道优先）
+    combined_channel_df.drop_duplicates(subset=["频道名"], keep="first", inplace=True)
+
     combined_channel_df.to_csv(OUTPUT_CHANNEL, index=False, encoding="utf-8-sig")
     print(f"✅ 已更新频道列表文件: {OUTPUT_CHANNEL}")
 
