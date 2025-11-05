@@ -27,7 +27,7 @@ TIMEOUT = 8
 
 LOW_RES_KEYWORDS = [
     "vga", "270p", "360p", "396p", "406p", "480p",
-    "540p", "576p", "576i", "614p", "720p", "sd"
+    "540p", "576p", "576i", "614p"
 ]
 BLOCK_KEYWORDS = ["espanol"]
 WHITELIST_PATTERNS = [".ctv", ".sdserver", ".sdn.", ".sda.", ".sdstream", "sdhd", "hdsd"]
