@@ -8,7 +8,7 @@ from tqdm import tqdm
 INPUT_CSV = "output/merge_total.csv"
 OUTPUT_FINAL = "output/middle/stage2a_valid.csv"
 
-MAX_CONCURRENCY = 200   # 并发数，根据情况调节
+MAX_CONCURRENCY = 500   # 并发数，根据情况调节
 
 sem = asyncio.Semaphore(MAX_CONCURRENCY)
 
