@@ -1,98 +1,75 @@
 import csv
-import subprocess
-import concurrent.futures
-from tqdm import tqdm
 import os
+from tqdm import tqdm
+import asyncio
+import aiohttp
+import ffmpeg
 
 INPUT_CSV = "output/middle/stage2a_valid.csv"
-OUTPUT_CSV = "output/middle/stage2b_verified.csv"
-SNAPSHOT_INTERVAL = 500
-MAX_WORKERS = 20  # 并发线程数，视服务器调整
+OUTPUT_SNAPSHOT = "output/middle/stage2b_verified.csv"
+OUTPUT_FINAL = "output/middle/stage2b_verified.csv"
 
-def run_ffprobe(url):
-    """调用 ffprobe 验证流，返回结果字符串或错误信息"""
+SAVE_INTERVAL = 500
+
+async def ffprobe_check(session, url):
     try:
-        # ffprobe 命令，-v quiet 静默，-show_format 显示格式信息
-        # timeout 10秒防止卡住
-        cmd = [
-            "ffprobe", "-v", "quiet",
-            "-print_format", "json",
-            "-show_format",
-            "-show_streams",
-            url
-        ]
-        result = subprocess.run(cmd, capture_output=True, text=True, timeout=10)
-        if result.returncode == 0:
-            return "✅有效"
-        else:
-            return f"❌错误: {result.stderr.strip()[:100]}"
-    except subprocess.TimeoutExpired:
-        return "❌超时"
-    except Exception as e:
-        return f"❌异常: {str(e)}"
+        # 这里示例调用 ffmpeg probe 检测, 你需根据自己代码调整
+        # 异步或同步均可，这里用同步调用示范：
+        probe = ffmpeg.probe(url)
+        return "✅有效", probe
+    except ffmpeg.Error as e:
+        return "❌错误", str(e)
 
-def process_row(row):
-    url = row['地址']
-    ffprobe_result = run_ffprobe(url)
-    return {**row, 'ffprobe结果': ffprobe_result}
+async def check_item(session, item):
+    url = item[1]
+    result, detail = await ffprobe_check(session, url)
+    return item + [result, detail]
 
-def save_snapshot(data, filename):
-    with open(filename, "w", newline="", encoding="utf-8") as f:
-        writer = csv.DictWriter(f, fieldnames=data[0].keys())
-        writer.writeheader()
-        writer.writerows(data)
-
-def main():
-    if not os.path.exists("output/middle"):
-        os.makedirs("output/middle")
-
-    # 读取待检测数据
-    with open(INPUT_CSV, newline="", encoding="utf-8") as f:
-        reader = csv.DictReader(f)
-        rows = list(reader)
-
-    results = []
-    start_index = 0
-
-    # 恢复检测，若快照文件存在则加载继续
-    if os.path.exists(OUTPUT_CSV):
-        with open(OUTPUT_CSV, newline="", encoding="utf-8") as f:
-            reader = csv.DictReader(f)
-            results = list(reader)
-        start_index = len(results)
-        print(f"恢复检测，从第 {start_index} 条开始，共 {len(rows)} 条")
+async def main():
+    if os.path.exists(OUTPUT_SNAPSHOT):
+        print(f"🔄 恢复检测，从快照加载：{OUTPUT_SNAPSHOT}")
+        with open(OUTPUT_SNAPSHOT, newline='', encoding='utf-8') as f:
+            rows = list(csv.reader(f))
+    else:
+        print(f"🚀 开始第2阶段检测（FFprobe验证）")
+        with open(INPUT_CSV, newline='', encoding='utf-8') as f:
+            rows = list(csv.reader(f))
 
     total = len(rows)
-    print(f"🚀 开始第2阶段检测（FFprobe验证）")
-    print(f"📦 当前待检测源数：{total - start_index}")
+    results = []
+    start_idx = 0
 
-    with concurrent.futures.ThreadPoolExecutor(max_workers=MAX_WORKERS) as executor:
-        # 提交剩余任务
-        future_to_index = {
-            executor.submit(process_row, rows[i]): i
-            for i in range(start_index, total)
-        }
+    if os.path.exists(OUTPUT_SNAPSHOT):
+        start_idx = len(rows)
+        if start_idx >= total:
+            print("✔️ 快照已完成检测，跳过")
+            return
 
-        # 使用 tqdm 进度条监控
-        for future in tqdm(concurrent.futures.as_completed(future_to_index), total=total - start_index, desc="检测进度"):
-            idx = future_to_index[future]
-            try:
-                res = future.result()
-                results.append(res)
-            except Exception as e:
-                # 出错时返回错误信息
-                row = rows[idx]
-                row['ffprobe结果'] = f"❌异常: {str(e)}"
-                results.append(row)
+    async with aiohttp.ClientSession() as session:
+        pbar = tqdm(total=total, desc="检测进度", unit="条", initial=start_idx)
+        for idx in range(start_idx, total):
+            item = rows[idx]
+            checked = await check_item(session, item)
+            results.append(checked)
+            pbar.update(1)
 
-            # 每500条保存快照，防止意外中断丢失进度
-            if len(results) % SNAPSHOT_INTERVAL == 0:
-                save_snapshot(results, OUTPUT_CSV)
+            if (idx + 1) % SAVE_INTERVAL == 0 or (idx + 1) == total:
+                with open(OUTPUT_SNAPSHOT, 'w', newline='', encoding='utf-8') as f:
+                    writer = csv.writer(f)
+                    writer.writerows(results)
                 print(f"💾 已保存快照：{len(results)}/{total}")
 
-    # 全部完成后保存最终结果
-    save_snapshot(results, OUTPUT_CSV)
-    print(f"✅ 阶段2完成，结果输出：{OUTPUT_CSV}")
+        pbar.close()
+
+    with open(OUTPUT_FINAL, 'w', newline='', encoding='utf-8') as f:
+        writer = csv.writer(f)
+        writer.writerows(results)
+
+    if os.path.exists(OUTPUT_SNAPSHOT):
+        os.remove(OUTPUT_SNAPSHOT)
+        print(f"🗑️ 快照文件已删除：{OUTPUT_SNAPSHOT}")
+
+    print(f"✅ 阶段2完成，结果输出：{OUTPUT_FINAL}")
 
 if __name__ == "__main__":
-    main()
+    asyncio.run(main())
