@@ -3,6 +3,9 @@ name: Stage2A - Fast HTTP Check
 on:
   workflow_dispatch:
 
+permissions:
+  contents: write
+
 jobs:
   fast_check:
     runs-on: ubuntu-latest
