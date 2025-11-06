@@ -4,6 +4,7 @@ import asyncio
 import csv
 import json
 import argparse
+import time    # 新增导入time
 from asyncio.subprocess import create_subprocess_exec, PIPE
 from tqdm.asyncio import tqdm_asyncio
 from asyncio import Semaphore
@@ -64,7 +65,9 @@ def parse_probe(probe):
 async def probe_one(row, sem, timeout):
     async with sem:
         url = row["地址"]
+        start = time.perf_counter()  # 计时开始
         res = await ffprobe_json(url, timeout=timeout)
+        elapsed = time.perf_counter() - start  # 计时结束，计算耗时
         if "probe" in res:
             parsed = parse_probe(res["probe"])
             result = dict(row)
@@ -77,7 +80,8 @@ async def probe_one(row, sem, timeout):
                 "frame_rate": parsed["frame_rate"] or "",
                 "duration": parsed["duration"] or "",
                 "bit_rate": parsed["bit_rate"] or "",
-                "error": ""
+                "error": "",
+                "elapsed": elapsed  # 新增字段
             })
             return result, True
         else:
@@ -91,7 +95,8 @@ async def probe_one(row, sem, timeout):
                 "frame_rate": "",
                 "duration": "",
                 "bit_rate": "",
-                "error": res.get("error", "unknown")
+                "error": res.get("error", "unknown"),
+                "elapsed": elapsed  # 新增字段
             })
             return result, False
 
@@ -144,7 +149,8 @@ async def deep_scan(input_file, output_ok, output_fail, concurrency, timeout):
                 "地址": r.get("地址",""),
                 "来源": r.get("来源",""),
                 "图标": r.get("图标",""),
-                "检测时间": r.get("检测时间",""),
+                # 这里检测时间赋值为耗时，保留三位小数
+                "检测时间": f"{r.get('elapsed', 0):.3f}",
                 "分组": r.get("分组",""),
                 "视频编码": r.get("video_codec",""),
                 "分辨率": format_resolution(r),
@@ -159,7 +165,7 @@ async def deep_scan(input_file, output_ok, output_fail, concurrency, timeout):
                 "地址": r.get("地址",""),
                 "来源": r.get("来源",""),
                 "图标": r.get("图标",""),
-                "检测时间": r.get("检测时间",""),
+                "检测时间": f"{r.get('elapsed', 0):.3f}",
                 "分组": r.get("分组",""),
                 "视频编码": r.get("video_codec",""),
                 "分辨率": format_resolution(r),
