@@ -10,7 +10,7 @@ from tqdm.asyncio import tqdm_asyncio
 from tqdm import tqdm
 from asyncio import Semaphore
 
-DEFAULT_INPUT = "output/ merge_total.csv"
+DEFAULT_INPUT = "output/merge_total.csv"
 OUTPUT = "output/middle/fast_scan.csv"
 
 # helper to find url column name
