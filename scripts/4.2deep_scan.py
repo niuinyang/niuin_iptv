@@ -12,6 +12,8 @@ import time
 INPUT = "output/middle/fast_scan.csv"
 OUTPUT = "output/middle/deep_scan.csv"
 
+PROGRESS_LOG_INTERVAL = 0.01  # 每1%输出一次日志
+
 async def ffprobe_json(url, timeout=20):
     cmd = ["ffprobe","-v","quiet","-print_format","json","-show_streams","-show_format", url]
     try:
@@ -70,26 +72,24 @@ async def probe_one(url, sem, timeout):
 
 async def run_all(urls, concurrency=30, timeout=20):
     sem = Semaphore(concurrency)
-    tasks = [probe_one(u, sem, timeout) for u in urls]
+    total = len(urls)
     results = []
-
-    total = len(tasks)
     checked = 0
-    has_video_count = 0
-    last_log_time = time.time()
-    log_interval = 2  # 每2秒打印一次状态
+    last_log_percent = 0
+    start_time = time.time()
 
+    tasks = [probe_one(u, sem, timeout) for u in urls]
     for fut in tqdm_asyncio.as_completed(tasks, desc="deep-scan", total=total):
         r = await fut
         results.append(r)
         checked += 1
-        if r.get("has_video"):
-            has_video_count += 1
 
-        now = time.time()
-        if now - last_log_time >= log_interval or checked == total:
-            print(f"deep-scan: {checked}/{total} done, has_video: {has_video_count} ({has_video_count/checked:.1%}), concurrency={concurrency}, timeout={timeout}s")
-            last_log_time = now
+        percent = checked / total
+        if percent - last_log_percent >= PROGRESS_LOG_INTERVAL or checked == total:
+            elapsed = time.time() - start_time
+            rate = checked / elapsed if elapsed > 0 else 0
+            print(f"deep-scan: {percent:.0%} done, concurrency={concurrency}, checked={checked}/{total}, speed={rate:.1f} urls/s")
+            last_log_percent = percent
 
     return results
 
