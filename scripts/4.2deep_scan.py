@@ -4,10 +4,8 @@ import asyncio
 import csv
 import json
 import argparse
-import shlex
 from asyncio.subprocess import create_subprocess_exec, PIPE
 from tqdm.asyncio import tqdm_asyncio
-from tqdm import tqdm
 from asyncio import Semaphore
 
 INPUT = "output/middle/fast_scan.csv"
@@ -44,7 +42,6 @@ def parse_probe(probe):
             info["video_codec"] = s.get("codec_name")
             info["width"] = s.get("width")
             info["height"] = s.get("height")
-            # frame_rate might be reported like "25/1"
             r = s.get("avg_frame_rate") or s.get("r_frame_rate")
             if r and "/" in str(r):
                 num, den = r.split("/")
@@ -55,7 +52,6 @@ def parse_probe(probe):
     fmt = probe.get("format", {})
     info["duration"] = float(fmt.get("duration")) if fmt.get("duration") else None
     info["bit_rate"] = int(fmt.get("bit_rate")) if fmt.get("bit_rate") else None
-    # audio presence
     if any(s.get("codec_type") == "audio" for s in streams):
         info["has_audio"] = True
     return info
@@ -71,7 +67,7 @@ async def probe_one(url, sem, timeout):
         else:
             return {"url": url, "has_video": False, "has_audio": False, "video_codec": None, "width": None, "height": None, "frame_rate": None, "duration": None, "bit_rate": None, "error": res.get("error","unknown")}
 
-async def run_all(urls, concurrency=10, timeout=20):
+async def run_all(urls, concurrency=30, timeout=20):
     sem = Semaphore(concurrency)
     tasks = [probe_one(u, sem, timeout) for u in urls]
     results = []
@@ -91,19 +87,23 @@ def read_fast_scan(path):
     return urls
 
 def write_out(results, outpath=OUTPUT):
-    fieldnames = ["url","has_video","has_audio","video_codec","width","height","frame_rate","duration","bit_rate","error"]
+    fieldnames = ["url","has_video","has_audio","video_codec","width","height","frame_rate","duration","bit_rate","error","视频信息"]
     with open(outpath, "w", newline='', encoding='utf-8') as f:
         w = csv.DictWriter(f, fieldnames=fieldnames)
         w.writeheader()
         for r in results:
-            row = {k: r.get(k, "") for k in fieldnames}
+            video_info_str = ""
+            if r.get("has_video"):
+                video_info_str = f"{r.get('width') or '?'}x{r.get('height') or '?'} @{r.get('frame_rate') or '?'}fps, duration {r.get('duration') or '?'}s, bitrate {r.get('bit_rate') or '?'}bps"
+            row = {k: r.get(k, "") for k in fieldnames[:-1]}
+            row["视频信息"] = video_info_str
             w.writerow(row)
 
 def main():
     p = argparse.ArgumentParser()
     p.add_argument("--input", "-i", default=INPUT)
     p.add_argument("--output", "-o", default=OUTPUT)
-    p.add_argument("--concurrency", type=int, default=10)
+    p.add_argument("--concurrency", type=int, default=30)
     p.add_argument("--timeout", type=int, default=20)
     args = p.parse_args()
 
