@@ -43,8 +43,7 @@ async def check_source(semaphore, session, row, timeout):
                     "图标": icon,
                     "检测时间": rtt,
                     "分组": "未分组",
-                    "视频信息": "",
-                    "状态": "成功"
+                    "视频信息": ""
                 }
             await asyncio.sleep(0.2 * (attempt + 1))
         return {
@@ -69,7 +68,7 @@ async def run_all(rows, output_valid, output_invalid, concurrency, timeout):
         tasks = [check_source(semaphore, session, row, timeout) for row in rows]
         for f in tqdm(asyncio.as_completed(tasks), total=len(tasks), ncols=80, desc="fast-scan"):
             res = await f
-            if res["状态"] == "成功":
+            if "状态" not in res:
                 valid_rows.append(res)
             else:
                 invalid_rows.append(res)
@@ -86,10 +85,15 @@ async def run_all(rows, output_valid, output_invalid, concurrency, timeout):
     os.makedirs(os.path.dirname(output_valid), exist_ok=True)
     with open(output_valid, "w", newline='', encoding="utf-8") as f_ok, \
          open(output_invalid, "w", newline='', encoding="utf-8") as f_fail:
-        writer_ok = csv.DictWriter(f_ok, fieldnames=["频道名", "地址", "来源", "图标", "检测时间", "分组", "视频信息"])
-        writer_fail = csv.DictWriter(f_fail, fieldnames=["频道名", "地址", "来源", "图标", "检测时间", "分组", "视频信息", "状态"])
+        fieldnames_valid = ["频道名", "地址", "来源", "图标", "检测时间", "分组", "视频信息"]
+        fieldnames_invalid = ["频道名", "地址", "来源", "图标", "检测时间", "分组", "视频信息", "状态"]
+
+        writer_ok = csv.DictWriter(f_ok, fieldnames=fieldnames_valid)
+        writer_fail = csv.DictWriter(f_fail, fieldnames=fieldnames_invalid)
+
         writer_ok.writeheader()
         writer_fail.writeheader()
+
         writer_ok.writerows(valid_rows)
         writer_fail.writerows(invalid_rows)
 
