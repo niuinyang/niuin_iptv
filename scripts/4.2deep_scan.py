@@ -9,8 +9,8 @@ from tqdm.asyncio import tqdm_asyncio
 from asyncio import Semaphore
 
 INPUT = "output/middle/fast_scan.csv"
-OUTPUT = "output/middle/deep_scan.csv"
-OUTPUT_INVALID = "output/middle/deep_scan_invalid.csv"
+OUTPUT_OK = "output/middle/deep_scan.csv"
+OUTPUT_FAIL = "output/middle/deep_scan_invalid.csv"
 
 async def ffprobe_json(url, timeout=20):
     cmd = ["ffprobe","-v","quiet","-print_format","json","-show_streams","-show_format", url]
@@ -57,33 +57,20 @@ def parse_probe(probe):
         info["has_audio"] = True
     return info
 
-async def probe_one(row, sem, timeout):
-    url = row["地址"]
+async def probe_one(item, sem, timeout):
+    """
+    item 是字典，包含原始行所有字段，至少有 url(地址)
+    """
+    url = item.get("地址") or item.get("url") or item.get("URL")
     async with sem:
         res = await ffprobe_json(url, timeout=timeout)
         if "probe" in res:
             parsed = parse_probe(res["probe"])
-            parsed.update({
-                "频道名": row.get("频道名",""),
-                "地址": url,
-                "来源": row.get("来源",""),
-                "图标": row.get("图标",""),
-                "检测时间": row.get("检测时间",""),
-                "分组": row.get("分组","未分组"),
-                "视频信息": "",
-                "error": "",
-            })
+            parsed.update(item)
+            parsed["error"] = ""
             return parsed
         else:
-            return {
-                "频道名": row.get("频道名",""),
-                "地址": url,
-                "来源": row.get("来源",""),
-                "图标": row.get("图标",""),
-                "检测时间": row.get("检测时间",""),
-                "分组": row.get("分组","未分组"),
-                "视频信息": "",
-                "error": res.get("error","unknown"),
+            r = {
                 "has_video": False,
                 "has_audio": False,
                 "video_codec": None,
@@ -92,71 +79,68 @@ async def probe_one(row, sem, timeout):
                 "frame_rate": None,
                 "duration": None,
                 "bit_rate": None,
+                "error": res.get("error", "unknown"),
             }
+            r.update(item)
+            return r
 
-async def run_all(rows, output, output_invalid, concurrency=30, timeout=20):
+async def run_all(items, output_ok, output_fail, concurrency=30, timeout=20):
     sem = Semaphore(concurrency)
-    tasks = [probe_one(row, sem, timeout) for row in rows]
+    tasks = [probe_one(item, sem, timeout) for item in items]
     results = []
-    for fut in tqdm_asyncio.as_completed(tasks, desc="deep-scan", total=len(tasks), ncols=80):
+    for fut in tqdm_asyncio.as_completed(tasks, desc="deep-scan", total=len(tasks)):
         r = await fut
         results.append(r)
-    # 分离有效和无效
-    valid = [r for r in results if r.get("has_video")]
-    invalid = [r for r in results if not r.get("has_video")]
 
-    # 生成视频信息字段
-    def gen_video_info(r):
-        if r.get("has_video"):
-            return f"{r.get('width') or '?'}x{r.get('height') or '?'} @{r.get('frame_rate') or '?'}fps, duration {r.get('duration') or '?'}s, bitrate {r.get('bit_rate') or '?'}bps"
-        else:
-            return ""
+    # 写入文件
+    import os
+    os.makedirs(os.path.dirname(output_ok), exist_ok=True)
+    os.makedirs(os.path.dirname(output_fail), exist_ok=True)
 
-    for r in valid:
-        r["视频信息"] = gen_video_info(r)
-    for r in invalid:
-        r["视频信息"] = ""
+    fieldnames = ["频道名","地址","来源","图标","检测时间","分组","视频信息","has_video","has_audio","video_codec","width","height","frame_rate","duration","bit_rate","error"]
 
-    fieldnames = ["频道名","地址","来源","图标","检测时间","分组","视频信息"]
+    with open(output_ok, "w", encoding="utf-8", newline='') as f_ok, \
+         open(output_fail, "w", encoding="utf-8", newline='') as f_fail:
+        writer_ok = csv.DictWriter(f_ok, fieldnames=fieldnames)
+        writer_fail = csv.DictWriter(f_fail, fieldnames=fieldnames)
+        writer_ok.writeheader()
+        writer_fail.writeheader()
+        for r in results:
+            # 生成视频信息字符串
+            if r.get("has_video"):
+                r["视频信息"] = f"{r.get('width') or '?'}x{r.get('height') or '?'} @{r.get('frame_rate') or '?'}fps, duration {r.get('duration') or '?'}s, bitrate {r.get('bit_rate') or '?'}bps"
+            else:
+                r["视频信息"] = ""
 
-    # 写成功文件
-    with open(output, "w", newline="", encoding="utf-8") as f:
-        writer = csv.DictWriter(f, fieldnames=fieldnames)
-        writer.writeheader()
-        for r in valid:
-            writer.writerow({k: r.get(k, "") for k in fieldnames})
-
-    # 写失败文件，增加 error 列
-    fieldnames_invalid = fieldnames + ["error"]
-    with open(output_invalid, "w", newline="", encoding="utf-8") as f:
-        writer = csv.DictWriter(f, fieldnames=fieldnames_invalid)
-        writer.writeheader()
-        for r in invalid:
-            writer.writerow({k: r.get(k, "") for k in fieldnames_invalid})
-
-    print(f"Deep scan finished: {len(valid)}/{len(results)} have video. Wrote {output} and {output_invalid}", flush=True)
+            if r.get("has_video"):
+                writer_ok.writerow(r)
+            else:
+                writer_fail.writerow(r)
+    print(f"Deep scan finished: {sum(1 for r in results if r.get('has_video'))}/{len(results)} have video. Wrote {output_ok} and {output_fail}")
 
 def read_fast_scan(path):
-    rows = []
-    with open(path, newline='', encoding='utf-8') as f:
+    with open(path, encoding="utf-8") as f:
         reader = csv.DictReader(f)
-        for r in reader:
-            # 不再判断检测时间，全部读取
-            rows.append(r)
-    return rows
+        items = []
+        for row in reader:
+            # 过滤检测时间，非空且不为0的才检测
+            dt = row.get("检测时间", "")
+            if dt and dt != "0":
+                items.append(row)
+        return items
 
 def main():
     p = argparse.ArgumentParser()
     p.add_argument("--input", "-i", default=INPUT)
-    p.add_argument("--output", "-o", default=OUTPUT)
-    p.add_argument("--invalid", default=OUTPUT_INVALID)
-    p.add_argument("--concurrency", type=int, default=30)
-    p.add_argument("--timeout", type=int, default=20)
+    p.add_argument("--output_ok", default=OUTPUT_OK, help="成功输出文件")
+    p.add_argument("--output_fail", default=OUTPUT_FAIL, help="失败输出文件")
+    p.add_argument("--concurrency", "-c", type=int, default=30)
+    p.add_argument("--timeout", "-t", type=int, default=20)
     args = p.parse_args()
 
-    rows = read_fast_scan(args.input)
-    print(f"Probing {len(rows)} urls with concurrency={args.concurrency}")
-    asyncio.run(run_all(rows, args.output, args.invalid, args.concurrency, args.timeout))
+    items = read_fast_scan(args.input)
+    print(f"Probing {len(items)} urls with concurrency={args.concurrency}")
+    asyncio.run(run_all(items, args.output_ok, args.output_fail, args.concurrency, args.timeout))
 
 if __name__ == "__main__":
     main()
