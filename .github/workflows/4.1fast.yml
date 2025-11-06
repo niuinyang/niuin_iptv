@@ -29,7 +29,7 @@ jobs:
       - name: Run Fast Scan (宽松模式)
         run: |
           echo "🚀 开始 IPTV 快速检测 (宽松模式)..."
-          python scripts/4.1fast_scan_loose.py \
+          python scripts/4.1fast_scan.py \
             --input output/merge_total.csv \
             --output output/middle/fast_scan.csv \
             --invalid output/middle/fast_scan_invalid.csv \
