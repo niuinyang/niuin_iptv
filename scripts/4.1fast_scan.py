@@ -82,18 +82,18 @@ async def run_all(urls,
                 success_count += 1
                 total_rtt += res["rtt_ms"]
 
+            success_rate = success_count / checked if checked else 0
+            avg_rtt = total_rtt / success_count if success_count else timeout_seconds * 1000
+
             # 每100条数据或结尾时调整参数
             if checked % 100 == 0 or checked == total:
-                success_rate = success_count / checked if checked else 0
-                avg_rtt = total_rtt / success_count if success_count else timeout_seconds * 1000
-
                 old_concurrency = concurrency
                 if success_rate > 0.8 and concurrency < max_conc:
                     concurrency = min(max_conc, int(concurrency * 1.2))
                 elif success_rate < 0.5 and concurrency > min_conc:
                     concurrency = max(min_conc, int(concurrency * 0.7))
                 if concurrency != old_concurrency:
-                    sem = Semaphore(concurrency)  # 重新创建信号量控制并发（注意仅对后续请求生效）
+                    sem = Semaphore(concurrency)  # 重新创建信号量控制并发（仅后续请求生效）
 
                 # 动态调整timeout
                 if avg_rtt > timeout_seconds * 1000 * 0.8 and timeout_seconds < max_timeout:
@@ -142,17 +142,17 @@ def read_urls(input_path):
                 urls.append(u)
     return urls
 
-def write_results(results, outpath=OUTPUT, input_path=DEFAULT_INPUT):
+def write_results(results, outpath=OUTPUT):
     fieldnames = ["频道名","地址","来源","图标","检测时间","分组","视频信息"]
     # 读输入文件拿对应信息，补全字段，统一格式输出
+    # 这里要先从输入文件里读取对应 url 行信息，建立 url->行映射
+    # 方便输出额外列
     url_map = {}
-    with open(input_path, newline='', encoding='utf-8') as f:
+    with open(DEFAULT_INPUT, newline='', encoding='utf-8') as f:
         reader = csv.DictReader(f)
         rows = list(reader)
         for row in rows:
-            key = row.get("url") or row.get("地址") or row.get("address")
-            if key:
-                url_map[key] = row
+            url_map[row.get("url") or row.get("地址") or row.get("address")] = row
 
     with open(outpath, "w", newline='', encoding='utf-8') as f:
         w = csv.DictWriter(f, fieldnames=fieldnames)
@@ -178,15 +178,15 @@ def main():
     p.add_argument("--timeout", type=int, default=INITIAL_TIMEOUT)
     args = p.parse_args()
 
-    # 不用 global，直接传参数
-    input_path = args.input
+    global DEFAULT_INPUT
+    DEFAULT_INPUT = args.input
 
-    urls = read_urls(input_path)
-    print(f"Loaded {len(urls)} urls from {input_path}")
+    urls = read_urls(args.input)
+    print(f"Loaded {len(urls)} urls from {args.input}")
     results = asyncio.run(run_all(urls,
                                   initial_concurrency=args.concurrency,
                                   initial_timeout=args.timeout))
-    write_results(results, args.output, input_path=input_path)
+    write_results(results, args.output)
     ok_count = sum(1 for r in results if r.get("ok"))
     print(f"Fast scan finished: {ok_count}/{len(results)} OK -> wrote {args.output}")
 
