@@ -73,7 +73,7 @@ async def run_all(urls,
     async with aiohttp.ClientSession(connector=connector) as session:
 
         async def run_check(url):
-            nonlocal success_count, total_rtt, checked, concurrency, timeout_seconds, sem
+            nonlocal success_count, total_rtt, checked, concurrency, timeout_seconds, sem, last_log_percent
 
             res = await check_one(session, url, ClientTimeout(total=timeout_seconds), sem)
             checked += 1
@@ -104,7 +104,6 @@ async def run_all(urls,
             percent = checked / total
             if percent - last_log_percent >= PROGRESS_LOG_INTERVAL or checked == total:
                 print(f"fast-scan: {percent:.0%} done, concurrency={concurrency}, timeout={timeout_seconds}s, success_rate={success_rate:.2%}, avg_rtt={int(avg_rtt)}ms")
-                nonlocal last_log_percent
                 last_log_percent = percent
 
             return res
@@ -143,14 +142,19 @@ def read_urls(input_path):
                 urls.append(u)
     return urls
 
-def write_results(results, input_path, outpath=OUTPUT):
+def write_results(results, outpath=OUTPUT):
     fieldnames = ["频道名","地址","来源","图标","检测时间","分组","视频信息"]
+    # 读输入文件拿对应信息，补全字段，统一格式输出
+    # 这里要先从输入文件里读取对应 url 行信息，建立 url->行映射
+    # 方便输出额外列
     url_map = {}
-    with open(input_path, newline='', encoding='utf-8') as f:
+    with open(DEFAULT_INPUT, newline='', encoding='utf-8') as f:
         reader = csv.DictReader(f)
         rows = list(reader)
         for row in rows:
-            url_map[row.get("url") or row.get("地址") or row.get("address")] = row
+            key_url = row.get("url") or row.get("地址") or row.get("address")
+            if key_url:
+                url_map[key_url] = row
 
     with open(outpath, "w", newline='', encoding='utf-8') as f:
         w = csv.DictWriter(f, fieldnames=fieldnames)
@@ -176,14 +180,15 @@ def main():
     p.add_argument("--timeout", type=int, default=INITIAL_TIMEOUT)
     args = p.parse_args()
 
-    input_path = args.input  # 改成局部变量
+    global DEFAULT_INPUT
+    DEFAULT_INPUT = args.input
 
-    urls = read_urls(input_path)
-    print(f"Loaded {len(urls)} urls from {input_path}")
+    urls = read_urls(args.input)
+    print(f"Loaded {len(urls)} urls from {args.input}")
     results = asyncio.run(run_all(urls,
                                   initial_concurrency=args.concurrency,
                                   initial_timeout=args.timeout))
-    write_results(results, input_path, args.output)
+    write_results(results, args.output)
     ok_count = sum(1 for r in results if r.get("ok"))
     print(f"Fast scan finished: {ok_count}/{len(results)} OK -> wrote {args.output}")
 
