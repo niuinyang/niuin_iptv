@@ -41,7 +41,7 @@ jobs:
       # 5. 运行下载脚本
       - name: Run download script
         run: |
-          python scripts/download_network_m3u.py
+          python scripts/2download_network_m3u.py
 
       # 6. 配置 Git 用户信息
       - name: Configure Git
