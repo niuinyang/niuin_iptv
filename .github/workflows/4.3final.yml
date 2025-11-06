@@ -1,0 +1,35 @@
+name: IPTV Final Scan
+
+on:
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  final_scan:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v3
+
+      - name: Setup Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: '3.11'
+
+      - name: Install dependencies
+        run: pip install pillow tqdm
+
+      - name: Create output directories
+        run: |
+          mkdir -p output/middle
+          mkdir -p output/working
+
+      - name: Run final scan
+        run: |
+          python scripts/4.3final_scan.py --input output/middle/deep_scan.csv --final output/middle/final_scan.csv --working output/working.csv --concurrency 6 --timeout 20
+
+      - name: Show sample results
+        run: head -10 output/middle/final_scan.csv || true
