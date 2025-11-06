@@ -8,243 +8,131 @@ import time
 import argparse
 import os
 from aiohttp import ClientTimeout
-from tqdm.asyncio import tqdm_asyncio
 from asyncio import Semaphore
 
 DEFAULT_INPUT = "output/merge_total.csv"
 OUTPUT = "output/middle/fast_scan.csv"
 FAILED_OUTPUT = "output/middle/fast_scan_failed.csv"
 
-# 可能的 URL 列名
-POSSIBLE_URL_COLS = ("url","address","地址","stream","地址/url","link")
+# =============== 工具函数 ===============
 
-# 并发和timeout参数区间配置
-INITIAL_CONCURRENCY = 100
-MIN_CONCURRENCY = 20
-MAX_CONCURRENCY = 200
+def normalize_header(h):
+    if not h:
+        return ""
+    return h.strip().replace("\ufeff", "").replace(" ", "").lower()
 
-INITIAL_TIMEOUT = 8
-MIN_TIMEOUT = 4
-MAX_TIMEOUT = 15
+def find_colname(headers, candidates):
+    """根据候选列名在 headers 中查找匹配项"""
+    norm_headers = {normalize_header(h): h for h in headers}
+    for c in candidates:
+        key = normalize_header(c)
+        if key in norm_headers:
+            return norm_headers[key]
+    return None
 
-PROGRESS_LOG_INTERVAL = 0.01  # 每1%输出一次日志
+# =============== 异步检测核心函数 ===============
 
 async def check_one(session, url, timeout, sem, retries=2):
     async with sem:
-        last_exc = None
         for attempt in range(retries):
             start = time.time()
             try:
-                # 尝试 HEAD 请求
                 async with session.head(url, timeout=timeout) as resp:
-                    rtt = (time.time() - start) * 1000
-                    return {"url": url, "status": resp.status, "rtt_ms": int(rtt), "method": "HEAD", "ok": 200 <= resp.status < 400}
+                    ms = int((time.time() - start) * 1000)
+                    return True, ms, resp.status
             except Exception:
-                # HEAD 失败则尝试 GET 请求
                 try:
                     start2 = time.time()
                     async with session.get(url, timeout=timeout) as resp:
-                        rtt = (time.time() - start2) * 1000
-                        return {"url": url, "status": resp.status, "rtt_ms": int(rtt), "method": "GET", "ok": 200 <= resp.status < 400}
+                        ms = int((time.time() - start2) * 1000)
+                        return True, ms, resp.status
                 except Exception as e:
-                    last_exc = e
-                    await asyncio.sleep(0.1 * (attempt + 1))
-        # 多次尝试失败
-        return {"url": url, "status": None, "rtt_ms": None, "method": None, "ok": False, "error": str(last_exc)}
+                    last_error = str(e)
+        return False, None, last_error
 
-async def run_all(urls,
-                  initial_concurrency=INITIAL_CONCURRENCY,
-                  min_conc=MIN_CONCURRENCY,
-                  max_conc=MAX_CONCURRENCY,
-                  initial_timeout=INITIAL_TIMEOUT,
-                  min_timeout=MIN_TIMEOUT,
-                  max_timeout=MAX_TIMEOUT):
+# =============== 主逻辑 ===============
 
-    concurrency = initial_concurrency
-    timeout_seconds = initial_timeout
+async def fast_scan(input_file, output_file, failed_file, concurrency, timeout):
+    os.makedirs(os.path.dirname(output_file), exist_ok=True)
+    os.makedirs(os.path.dirname(failed_file), exist_ok=True)
 
-    total = len(urls)
-    sem = Semaphore(concurrency)
-    connector = aiohttp.TCPConnector(limit=max_conc, ssl=False)  # limit设为最大，避免受限
-    results = []
-    success_count = 0
-    total_rtt = 0
-    checked = 0
-    last_log_percent = 0
-
-    async with aiohttp.ClientSession(connector=connector) as session:
-
-        async def run_check(url):
-            nonlocal success_count, total_rtt, checked, concurrency, timeout_seconds, sem, last_log_percent
-
-            res = await check_one(session, url, ClientTimeout(total=timeout_seconds), sem)
-            checked += 1
-
-            if res.get("ok") and res.get("rtt_ms") is not None:
-                success_count += 1
-                total_rtt += res["rtt_ms"]
-
-            # 预先计算，避免未定义问题
-            success_rate = success_count / checked if checked else 0
-            avg_rtt = total_rtt / success_count if success_count else timeout_seconds * 1000
-
-            # 每100条数据或结尾时调整参数
-            if checked % 100 == 0 or checked == total:
-                old_concurrency = concurrency
-                if success_rate > 0.8 and concurrency < max_conc:
-                    concurrency = min(max_conc, int(concurrency * 1.2))
-                elif success_rate < 0.5 and concurrency > min_conc:
-                    concurrency = max(min_conc, int(concurrency * 0.7))
-                if concurrency != old_concurrency:
-                    sem = Semaphore(concurrency)  # 重新创建信号量控制并发（对后续请求生效）
-
-                # 动态调整timeout
-                if avg_rtt > timeout_seconds * 1000 * 0.8 and timeout_seconds < max_timeout:
-                    timeout_seconds = min(max_timeout, timeout_seconds + 1)
-                elif avg_rtt < timeout_seconds * 1000 * 0.5 and timeout_seconds > min_timeout:
-                    timeout_seconds = max(min_timeout, timeout_seconds - 1)
-
-                percent = checked / total
-                if percent - last_log_percent >= PROGRESS_LOG_INTERVAL or checked == total:
-                    print(f"fast-scan: {percent:.0%} done, concurrency={concurrency}, timeout={timeout_seconds}s, success_rate={success_rate:.2%}, avg_rtt={int(avg_rtt)}ms")
-                    last_log_percent = percent
-
-            return res
-
-        tasks = [run_check(url) for url in urls]
-
-        for fut in tqdm_asyncio.as_completed(tasks, desc="fast-scan", total=total):
-            res = await fut
-            results.append(res)
-
-    return results
-
-def read_urls(input_path):
-    urls = []
-    with open(input_path, newline='', encoding='utf-8') as f:
+    with open(input_file, newline='', encoding='utf-8') as f:
         reader = csv.DictReader(f)
-        fieldnames = reader.fieldnames or []
-        url_col = None
-        # 找可能的 URL 列名
-        for c in fieldnames:
-            if c.lower() in POSSIBLE_URL_COLS or c in POSSIBLE_URL_COLS:
-                url_col = c
-                break
-        # 兜底选含 http 的列或第一列
-        if not url_col:
-            for c in fieldnames:
-                if "http" in c.lower() or "地址" in c:
-                    url_col = c
-                    break
-        if not url_col and fieldnames:
-            url_col = fieldnames[0]
-        # 读取所有 URL 字符串（只加入非空地址行）
-        f.seek(0)
-        reader = csv.DictReader(f)
-        for r in reader:
-            u = r.get(url_col,"").strip() if r.get(url_col) is not None else ""
-            if u:
-                urls.append(u)
-    return urls
+        headers = reader.fieldnames or []
 
-def write_results(results, input_path, outpath=OUTPUT, failed_path=FAILED_OUTPUT):
-    """
-    按输入文件顺序（仅包含有地址的行）与 results 一一对应输出：
-      - 有效源写 outpath（字段: 频道名,地址,来源,图标,检测时间,分组,视频信息）
-      - 无效源写 failed_path（字段: 频道名,地址,来源,图标,失败原因）
-    保证输入中被 read_urls() 过滤（即只有有地址的行）后的顺序与 results 对齐。
-    """
-    fieldnames_ok = ["频道名","地址","来源","图标","检测时间","分组","视频信息"]
-    fieldnames_failed = ["频道名","地址","来源","图标","失败原因"]
+        # 识别输入列名
+        col_name = find_colname(headers, ["频道名", "name", "channel", "title"])
+        col_url = find_colname(headers, ["地址", "url", "link", "stream", "播放地址"])
+        col_source = find_colname(headers, ["来源", "source", "origin"])
+        col_icon = find_colname(headers, ["图标", "icon", "logo"])
 
-    # 读取输入文件所有行（记住 header）
-    with open(input_path, newline='', encoding='utf-8') as f:
-        reader = csv.DictReader(f)
-        fieldnames = reader.fieldnames or []
+        if not col_url:
+            raise ValueError("❌ 未找到地址列！请确认输入文件中包含 '地址' 或 'url' 等字段。")
+
         rows = list(reader)
 
-    # 找出与 read_urls() 同样的 url 列名
-    url_col = None
-    for c in fieldnames:
-        if c.lower() in POSSIBLE_URL_COLS or c in POSSIBLE_URL_COLS:
-            url_col = c
-            break
-    if not url_col:
-        for c in fieldnames:
-            if "http" in c.lower() or "地址" in c:
-                url_col = c
-                break
-    if not url_col and fieldnames:
-        url_col = fieldnames[0]
+    sem = Semaphore(concurrency)
+    connector = aiohttp.TCPConnector(limit=concurrency, ssl=False)
+    results_ok, results_fail = [], []
 
-    # 过滤出只包含有地址的输入行（顺序与 read_urls 一致）
-    filtered_rows = []
-    for r in rows:
-        val = (r.get(url_col) or "").strip()
-        if val:
-            filtered_rows.append(r)
+    async with aiohttp.ClientSession(connector=connector) as session:
+        tasks = []
+        for row in rows:
+            url = row.get(col_url, "").strip()
+            if not url:
+                continue
+            tasks.append(asyncio.create_task(check_one(session, url, ClientTimeout(total=timeout), sem)))
 
-    # 准备输出目录（如果不存在就创建）
-    ok_dir = os.path.dirname(outpath)
-    failed_dir = os.path.dirname(failed_path)
-    if ok_dir and not os.path.exists(ok_dir):
-        os.makedirs(ok_dir, exist_ok=True)
-    if failed_dir and not os.path.exists(failed_dir):
-        os.makedirs(failed_dir, exist_ok=True)
+        for row, task in zip(rows, await asyncio.gather(*tasks)):
+            ok, ms, info = task
+            name = row.get(col_name, "").strip() if col_name else ""
+            src = row.get(col_source, "").strip() if col_source else ""
+            icon = row.get(col_icon, "").strip() if col_icon else ""
+            addr = row.get(col_url, "").strip()
 
-    # 写入两个文件：有效/失败
-    with open(outpath, "w", newline='', encoding='utf-8') as f_ok, \
-         open(failed_path, "w", newline='', encoding='utf-8') as f_failed:
-
-        w_ok = csv.DictWriter(f_ok, fieldnames=fieldnames_ok)
-        w_failed = csv.DictWriter(f_failed, fieldnames=fieldnames_failed)
-
-        w_ok.writeheader()
-        w_failed.writeheader()
-
-        # 以 filtered_rows 与 results 对应索引
-        for idx, res in enumerate(results):
-            row = filtered_rows[idx] if idx < len(filtered_rows) else {}
-
-            if res.get("ok"):
-                out_row = {
-                    "频道名": row.get("频道名",""),
-                    "地址": row.get("地址",""),
-                    "来源": row.get("来源",""),
-                    "图标": row.get("图标",""),
-                    "检测时间": res.get("rtt_ms") or "",
+            if ok:
+                results_ok.append({
+                    "频道名": name,
+                    "地址": addr,
+                    "来源": src,
+                    "图标": icon,
+                    "检测时间": ms,
                     "分组": "未分组",
                     "视频信息": ""
-                }
-                w_ok.writerow(out_row)
+                })
             else:
-                out_row = {
-                    "频道名": row.get("频道名",""),
-                    "地址": row.get("地址",""),
-                    "来源": row.get("来源",""),
-                    "图标": row.get("图标",""),
-                    "失败原因": res.get("error") or "未知错误"
-                }
-                w_failed.writerow(out_row)
+                results_fail.append({
+                    "频道名": name,
+                    "地址": addr,
+                    "来源": src,
+                    "图标": icon,
+                    "失败原因": info
+                })
 
-def main():
-    p = argparse.ArgumentParser()
-    p.add_argument("--input", "-i", default=DEFAULT_INPUT)
-    p.add_argument("--output", "-o", default=OUTPUT)
-    p.add_argument("--concurrency", type=int, default=INITIAL_CONCURRENCY)
-    p.add_argument("--timeout", type=int, default=INITIAL_TIMEOUT)
-    args = p.parse_args()
+    # 写入输出
+    with open(output_file, "w", newline="", encoding="utf-8") as f_ok:
+        writer = csv.DictWriter(f_ok, fieldnames=["频道名", "地址", "来源", "图标", "检测时间", "分组", "视频信息"])
+        writer.writeheader()
+        writer.writerows(results_ok)
 
-    input_path = args.input
+    if results_fail:
+        with open(failed_file, "w", newline="", encoding="utf-8") as f_fail:
+            writer = csv.DictWriter(f_fail, fieldnames=["频道名", "地址", "来源", "图标", "失败原因"])
+            writer.writeheader()
+            writer.writerows(results_fail)
 
-    urls = read_urls(input_path)
-    print(f"Loaded {len(urls)} urls from {input_path}")
-    results = asyncio.run(run_all(urls,
-                                  initial_concurrency=args.concurrency,
-                                  initial_timeout=args.timeout))
-    write_results(results, input_path, args.output)
-    ok_count = sum(1 for r in results if r.get("ok"))
-    print(f"Fast scan finished: {ok_count}/{len(results)} OK -> wrote {args.output} and {FAILED_OUTPUT}")
+    print(f"✅ 有效源 {len(results_ok)} 条，已写入 {output_file}")
+    print(f"❌ 无效源 {len(results_fail)} 条，已写入 {failed_file}")
+
+# =============== 命令行入口 ===============
 
 if __name__ == "__main__":
-    main()
+    parser = argparse.ArgumentParser()
+    parser.add_argument("--input", default=DEFAULT_INPUT, help="输入文件路径")
+    parser.add_argument("--output", default=OUTPUT, help="输出文件路径")
+    parser.add_argument("--failed", default=FAILED_OUTPUT, help="失败输出文件路径")
+    parser.add_argument("--concurrency", type=int, default=100, help="并发数")
+    parser.add_argument("--timeout", type=int, default=8, help="超时时间（秒）")
+    args = parser.parse_args()
+
+    asyncio.run(fast_scan(args.input, args.output, args.failed, args.concurrency, args.timeout))
