@@ -1,4 +1,4 @@
-name: IPTV Fast Scan
+name: IPTV Fast Scan (宽松模式)
 
 on:
   workflow_dispatch:
@@ -20,8 +20,7 @@ jobs:
           python-version: '3.11'
 
       - name: Install dependencies
-        run: |
-          pip install aiohttp tqdm
+        run: pip install aiohttp tqdm
 
       - name: Create output directory
         run: mkdir -p output/middle
@@ -29,35 +28,23 @@ jobs:
       - name: Run Fast Scan (宽松模式)
         run: |
           echo "🚀 开始 IPTV 快速检测 (宽松模式)..."
-          python scripts/4.1fast_scan.py \
+          PYTHONUNBUFFERED=1 stdbuf -oL python scripts/4.1fast_scan.py \
             --input output/merge_total.csv \
             --output output/middle/fast_scan.csv \
             --invalid output/middle/fast_scan_invalid.csv \
             --concurrency 100 \
-            --timeout 15
+            --timeout 12
           echo "✅ 快速检测完成"
 
-      - name: Show valid results sample
+      - name: Show sample results
         run: |
-          echo "📄 有效源样例 (前10行):"
-          head -10 output/middle/fast_scan.csv || echo "⚠️ 未找到有效源文件"
+          echo "📊 有效源预览："
+          head -10 output/middle/fast_scan.csv || true
+          echo ""
+          echo "⚠️ 无效源预览："
+          head -10 output/middle/fast_scan_invalid.csv || true
 
-      - name: Show invalid results sample
-        run: |
-          echo "❌ 无效源样例 (前10行):"
-          head -10 output/middle/fast_scan_invalid.csv || echo "⚠️ 未找到无效源文件"
-
-      - name: Summary Statistics
-        run: |
-          echo "📊 检测结果统计："
-          VALID_COUNT=$(($(wc -l < output/middle/fast_scan.csv)-1))
-          INVALID_COUNT=$(($(wc -l < output/middle/fast_scan_invalid.csv)-1))
-          TOTAL=$((VALID_COUNT + INVALID_COUNT))
-          echo "有效源数量: ${VALID_COUNT}"
-          echo "无效源数量: ${INVALID_COUNT}"
-          echo "总检测数量: ${TOTAL}"
-
-      - name: Commit and Push Results
+      - name: Commit and push results
         run: |
           git config --global user.name "github-actions[bot]"
           git config --global user.email "github-actions[bot]@users.noreply.github.com"
