@@ -78,15 +78,16 @@ async def run_all(urls,
             res = await check_one(session, url, ClientTimeout(total=timeout_seconds), sem)
             checked += 1
 
-            if res.get("ok") and res.get("rtt_ms"):
+            if res.get("ok") and res.get("rtt_ms") is not None:
                 success_count += 1
                 total_rtt += res["rtt_ms"]
 
+            # 预先定义变量，防止未赋值访问错误
+            success_rate = success_count / checked if checked else 0
+            avg_rtt = total_rtt / success_count if success_count else timeout_seconds * 1000
+
             # 每100条数据或结尾时调整参数
             if checked % 100 == 0 or checked == total:
-                success_rate = success_count / checked if checked else 0
-                avg_rtt = total_rtt / success_count if success_count else timeout_seconds * 1000
-
                 old_concurrency = concurrency
                 if success_rate > 0.8 and concurrency < max_conc:
                     concurrency = min(max_conc, int(concurrency * 1.2))
