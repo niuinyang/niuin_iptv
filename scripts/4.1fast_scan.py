@@ -9,12 +9,13 @@ import argparse
 import os
 from aiohttp import ClientTimeout
 from asyncio import Semaphore
+from tqdm import tqdm
 
 DEFAULT_INPUT = "output/merge_total.csv"
 OUTPUT = "output/middle/fast_scan.csv"
 FAILED_OUTPUT = "output/middle/fast_scan_failed.csv"
 
-# =============== 工具函数 ===============
+# ================= 工具函数 =================
 
 def normalize_header(h):
     if not h:
@@ -22,7 +23,6 @@ def normalize_header(h):
     return h.strip().replace("\ufeff", "").replace(" ", "").lower()
 
 def find_colname(headers, candidates):
-    """根据候选列名在 headers 中查找匹配项"""
     norm_headers = {normalize_header(h): h for h in headers}
     for c in candidates:
         key = normalize_header(c)
@@ -30,7 +30,7 @@ def find_colname(headers, candidates):
             return norm_headers[key]
     return None
 
-# =============== 异步检测核心函数 ===============
+# ================= 核心检测函数 =================
 
 async def check_one(session, url, timeout, sem, retries=2):
     async with sem:
@@ -50,7 +50,7 @@ async def check_one(session, url, timeout, sem, retries=2):
                     last_error = str(e)
         return False, None, last_error
 
-# =============== 主逻辑 ===============
+# ================= 主逻辑 =================
 
 async def fast_scan(input_file, output_file, failed_file, concurrency, timeout):
     os.makedirs(os.path.dirname(output_file), exist_ok=True)
@@ -60,7 +60,6 @@ async def fast_scan(input_file, output_file, failed_file, concurrency, timeout):
         reader = csv.DictReader(f)
         headers = reader.fieldnames or []
 
-        # 识别输入列名
         col_name = find_colname(headers, ["频道名", "name", "channel", "title"])
         col_url = find_colname(headers, ["地址", "url", "link", "stream", "播放地址"])
         col_source = find_colname(headers, ["来源", "source", "origin"])
@@ -81,10 +80,14 @@ async def fast_scan(input_file, output_file, failed_file, concurrency, timeout):
             url = row.get(col_url, "").strip()
             if not url:
                 continue
-            tasks.append(asyncio.create_task(check_one(session, url, ClientTimeout(total=timeout), sem)))
+            tasks.append((row, asyncio.create_task(check_one(session, url, ClientTimeout(total=timeout), sem))))
 
-        for row, task in zip(rows, await asyncio.gather(*tasks)):
-            ok, ms, info = task
+        pbar = tqdm(total=len(tasks), desc="fast-scan", unit="条", ncols=100)
+        completed = 0
+        success_times = []
+
+        for row, task in tasks:
+            ok, ms, info = await task
             name = row.get(col_name, "").strip() if col_name else ""
             src = row.get(col_source, "").strip() if col_source else ""
             icon = row.get(col_icon, "").strip() if col_icon else ""
@@ -100,6 +103,7 @@ async def fast_scan(input_file, output_file, failed_file, concurrency, timeout):
                     "分组": "未分组",
                     "视频信息": ""
                 })
+                success_times.append(ms)
             else:
                 results_fail.append({
                     "频道名": name,
@@ -109,7 +113,22 @@ async def fast_scan(input_file, output_file, failed_file, concurrency, timeout):
                     "失败原因": info
                 })
 
-    # 写入输出
+            completed += 1
+            pbar.update(1)
+
+            if completed % 100 == 0 or completed == len(tasks):
+                success_rate = len(success_times) / completed if completed > 0 else 0
+                avg_rtt = sum(success_times) / len(success_times) if success_times else 0
+                pbar.set_postfix({
+                    "成功率": f"{success_rate:.1%}",
+                    "平均延迟": f"{avg_rtt:.0f}ms",
+                    "并发": concurrency,
+                    "超时": f"{timeout}s"
+                })
+
+        pbar.close()
+
+    # 写入输出文件
     with open(output_file, "w", newline="", encoding="utf-8") as f_ok:
         writer = csv.DictWriter(f_ok, fieldnames=["频道名", "地址", "来源", "图标", "检测时间", "分组", "视频信息"])
         writer.writeheader()
@@ -121,10 +140,10 @@ async def fast_scan(input_file, output_file, failed_file, concurrency, timeout):
             writer.writeheader()
             writer.writerows(results_fail)
 
-    print(f"✅ 有效源 {len(results_ok)} 条，已写入 {output_file}")
+    print(f"\n✅ 有效源 {len(results_ok)} 条，已写入 {output_file}")
     print(f"❌ 无效源 {len(results_fail)} 条，已写入 {failed_file}")
 
-# =============== 命令行入口 ===============
+# ================= 命令行入口 =================
 
 if __name__ == "__main__":
     parser = argparse.ArgumentParser()
