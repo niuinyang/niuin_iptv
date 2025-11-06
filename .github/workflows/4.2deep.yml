@@ -33,7 +33,7 @@ jobs:
       - name: Run deep validation
         run: |
           python scripts/4.2deep_scan.py \
-            --input output/middle/fast_scan.csv \
+            --input output/merge_total.csv \
             --output output/middle/deep_scan.csv \
             --invalid output/middle/deep_scan_invalid.csv \
             --concurrency 30 \
