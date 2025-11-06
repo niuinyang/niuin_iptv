@@ -25,7 +25,7 @@ jobs:
           sudo apt-get install -y ffmpeg
 
       - name: Install dependencies
-        run: pip install tqdm ffmpeg-python
+        run: pip install tqdm ffmpeg-python aiohttp
 
       - name: Create output directory
         run: mkdir -p output/middle
@@ -40,13 +40,18 @@ jobs:
             --timeout 20
 
       - name: Show sample results
-        run: head -10 output/middle/deep_scan.csv || true
+        run: |
+          echo "✅ 成功结果（前10行）："
+          head -10 output/middle/deep_scan.csv || true
+          echo ""
+          echo "❌ 失败结果（前10行）："
+          head -10 output/middle/deep_scan_invalid.csv || true
 
       - name: Commit and push results
         run: |
           git config --global user.name "github-actions[bot]"
           git config --global user.email "github-actions[bot]@users.noreply.github.com"
+          git pull --rebase
           git add output/middle/deep_scan.csv output/middle/deep_scan_invalid.csv
           git commit -m "Update deep scan results [ci skip]" || echo "No changes to commit"
-          git pull --rebase || git pull --no-rebase
           git push
