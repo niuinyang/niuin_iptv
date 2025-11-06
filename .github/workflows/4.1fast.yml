@@ -20,22 +20,47 @@ jobs:
           python-version: '3.11'
 
       - name: Install dependencies
-        run: pip install aiohttp tqdm
+        run: |
+          pip install aiohttp tqdm
 
       - name: Create output directory
         run: mkdir -p output/middle
 
-      - name: Run fast scan
+      - name: Run Fast Scan (宽松模式)
         run: |
-          python scripts/4.1fast_scan.py --input output/merge_total.csv --output output/middle/fast_scan.csv --concurrency 100 --timeout 8
+          echo "🚀 开始 IPTV 快速检测 (宽松模式)..."
+          python scripts/4.1fast_scan_loose.py \
+            --input output/merge_total.csv \
+            --output output/middle/fast_scan.csv \
+            --invalid output/middle/fast_scan_invalid.csv \
+            --concurrency 100 \
+            --timeout 15
+          echo "✅ 快速检测完成"
 
-      - name: Show sample results
-        run: head -10 output/middle/fast_scan.csv || true
+      - name: Show valid results sample
+        run: |
+          echo "📄 有效源样例 (前10行):"
+          head -10 output/middle/fast_scan.csv || echo "⚠️ 未找到有效源文件"
 
-      - name: Commit and push results
+      - name: Show invalid results sample
+        run: |
+          echo "❌ 无效源样例 (前10行):"
+          head -10 output/middle/fast_scan_invalid.csv || echo "⚠️ 未找到无效源文件"
+
+      - name: Summary Statistics
+        run: |
+          echo "📊 检测结果统计："
+          VALID_COUNT=$(($(wc -l < output/middle/fast_scan.csv)-1))
+          INVALID_COUNT=$(($(wc -l < output/middle/fast_scan_invalid.csv)-1))
+          TOTAL=$((VALID_COUNT + INVALID_COUNT))
+          echo "有效源数量: ${VALID_COUNT}"
+          echo "无效源数量: ${INVALID_COUNT}"
+          echo "总检测数量: ${TOTAL}"
+
+      - name: Commit and Push Results
         run: |
           git config --global user.name "github-actions[bot]"
           git config --global user.email "github-actions[bot]@users.noreply.github.com"
-          git add output/middle/fast_scan.csv
+          git add output/middle/fast_scan.csv output/middle/fast_scan_invalid.csv
           git commit -m "Update fast scan results [ci skip]" || echo "No changes to commit"
           git push
