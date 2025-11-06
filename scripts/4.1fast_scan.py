@@ -6,12 +6,14 @@ import aiohttp
 import csv
 import time
 import argparse
+import os
 from aiohttp import ClientTimeout
 from tqdm.asyncio import tqdm_asyncio
 from asyncio import Semaphore
 
 DEFAULT_INPUT = "output/merge_total.csv"
 OUTPUT = "output/middle/fast_scan.csv"
+FAILED_OUTPUT = "output/middle/fast_scan_failed.csv"
 
 # 可能的 URL 列名
 POSSIBLE_URL_COLS = ("url","address","地址","stream","地址/url","link")
@@ -78,16 +80,15 @@ async def run_all(urls,
             res = await check_one(session, url, ClientTimeout(total=timeout_seconds), sem)
             checked += 1
 
-            if res.get("ok") and res.get("rtt_ms") is not None:
+            if res.get("ok") and res.get("rtt_ms"):
                 success_count += 1
                 total_rtt += res["rtt_ms"]
 
-            # 预先定义变量，防止未赋值访问错误
-            success_rate = success_count / checked if checked else 0
-            avg_rtt = total_rtt / success_count if success_count else timeout_seconds * 1000
-
             # 每100条数据或结尾时调整参数
             if checked % 100 == 0 or checked == total:
+                success_rate = success_count / checked if checked else 0
+                avg_rtt = total_rtt / success_count if success_count else timeout_seconds * 1000
+
                 old_concurrency = concurrency
                 if success_rate > 0.8 and concurrency < max_conc:
                     concurrency = min(max_conc, int(concurrency * 1.2))
@@ -102,10 +103,10 @@ async def run_all(urls,
                 elif avg_rtt < timeout_seconds * 1000 * 0.5 and timeout_seconds > min_timeout:
                     timeout_seconds = max(min_timeout, timeout_seconds - 1)
 
-            percent = checked / total
-            if percent - last_log_percent >= PROGRESS_LOG_INTERVAL or checked == total:
-                print(f"fast-scan: {percent:.0%} done, concurrency={concurrency}, timeout={timeout_seconds}s, success_rate={success_rate:.2%}, avg_rtt={int(avg_rtt)}ms")
-                last_log_percent = percent
+                percent = checked / total
+                if percent - last_log_percent >= PROGRESS_LOG_INTERVAL or checked == total:
+                    print(f"fast-scan: {percent:.0%} done, concurrency={concurrency}, timeout={timeout_seconds}s, success_rate={success_rate:.2%}, avg_rtt={int(avg_rtt)}ms")
+                    last_log_percent = percent
 
             return res
 
@@ -143,32 +144,52 @@ def read_urls(input_path):
                 urls.append(u)
     return urls
 
-def write_results(results, input_path, outpath=OUTPUT):
-    fieldnames = ["频道名","地址","来源","图标","检测时间","分组","视频信息"]
-    url_map = {}
+def write_results(results, input_path, outpath=OUTPUT, failed_path=FAILED_OUTPUT):
+    fieldnames_ok = ["频道名","地址","来源","图标","检测时间","分组","视频信息"]
+    fieldnames_failed = ["频道名","地址","来源","图标","失败原因"]
+
+    # 读取输入文件，保证顺序和结果一一对应
     with open(input_path, newline='', encoding='utf-8') as f:
         reader = csv.DictReader(f)
-        rows = list(reader)
-        for row in rows:
-            key_url = row.get("url") or row.get("地址") or row.get("address")
-            if key_url:
-                url_map[key_url] = row
+        input_rows = list(reader)
 
-    with open(outpath, "w", newline='', encoding='utf-8') as f:
-        w = csv.DictWriter(f, fieldnames=fieldnames)
-        w.writeheader()
-        for r in results:
-            row = url_map.get(r.get("url"), {})
-            out_row = {
-                "频道名": row.get("频道名",""),
-                "地址": r.get("url",""),
-                "来源": "网络源",
-                "图标": row.get("图标",""),
-                "检测时间": r.get("rtt_ms") or "",
-                "分组": "未分组",
-                "视频信息": ""
-            }
-            w.writerow(out_row)
+    # 准备输出目录
+    failed_dir = os.path.dirname(failed_path)
+    if failed_dir and not os.path.exists(failed_dir):
+        os.makedirs(failed_dir)
+
+    with open(outpath, "w", newline='', encoding='utf-8') as f_ok, \
+         open(failed_path, "w", newline='', encoding='utf-8') as f_failed:
+
+        w_ok = csv.DictWriter(f_ok, fieldnames=fieldnames_ok)
+        w_failed = csv.DictWriter(f_failed, fieldnames=fieldnames_failed)
+
+        w_ok.writeheader()
+        w_failed.writeheader()
+
+        for idx, res in enumerate(results):
+            row = input_rows[idx] if idx < len(input_rows) else {}
+
+            if res.get("ok"):
+                out_row = {
+                    "频道名": row.get("频道名",""),
+                    "地址": row.get("地址",""),
+                    "来源": row.get("来源",""),
+                    "图标": row.get("图标",""),
+                    "检测时间": res.get("rtt_ms") or "",
+                    "分组": "未分组",
+                    "视频信息": ""
+                }
+                w_ok.writerow(out_row)
+            else:
+                out_row = {
+                    "频道名": row.get("频道名",""),
+                    "地址": row.get("地址",""),
+                    "来源": row.get("来源",""),
+                    "图标": row.get("图标",""),
+                    "失败原因": res.get("error") or "未知错误"
+                }
+                w_failed.writerow(out_row)
 
 def main():
     p = argparse.ArgumentParser()
@@ -178,14 +199,17 @@ def main():
     p.add_argument("--timeout", type=int, default=INITIAL_TIMEOUT)
     args = p.parse_args()
 
-    urls = read_urls(args.input)
-    print(f"Loaded {len(urls)} urls from {args.input}")
+    # 这里不用 global，直接用参数传递即可
+    input_path = args.input
+
+    urls = read_urls(input_path)
+    print(f"Loaded {len(urls)} urls from {input_path}")
     results = asyncio.run(run_all(urls,
                                   initial_concurrency=args.concurrency,
                                   initial_timeout=args.timeout))
-    write_results(results, args.input, args.output)
+    write_results(results, input_path, args.output)
     ok_count = sum(1 for r in results if r.get("ok"))
-    print(f"Fast scan finished: {ok_count}/{len(results)} OK -> wrote {args.output}")
+    print(f"Fast scan finished: {ok_count}/{len(results)} OK -> wrote {args.output} and {FAILED_OUTPUT}")
 
 if __name__ == "__main__":
     main()
