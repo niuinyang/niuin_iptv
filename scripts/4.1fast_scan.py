@@ -80,22 +80,23 @@ async def run_all(urls,
             res = await check_one(session, url, ClientTimeout(total=timeout_seconds), sem)
             checked += 1
 
-            if res.get("ok") and res.get("rtt_ms"):
+            if res.get("ok") and res.get("rtt_ms") is not None:
                 success_count += 1
                 total_rtt += res["rtt_ms"]
 
+            # 预先计算，避免未定义问题
+            success_rate = success_count / checked if checked else 0
+            avg_rtt = total_rtt / success_count if success_count else timeout_seconds * 1000
+
             # 每100条数据或结尾时调整参数
             if checked % 100 == 0 or checked == total:
-                success_rate = success_count / checked if checked else 0
-                avg_rtt = total_rtt / success_count if success_count else timeout_seconds * 1000
-
                 old_concurrency = concurrency
                 if success_rate > 0.8 and concurrency < max_conc:
                     concurrency = min(max_conc, int(concurrency * 1.2))
                 elif success_rate < 0.5 and concurrency > min_conc:
                     concurrency = max(min_conc, int(concurrency * 0.7))
                 if concurrency != old_concurrency:
-                    sem = Semaphore(concurrency)  # 重新创建信号量控制并发
+                    sem = Semaphore(concurrency)  # 重新创建信号量控制并发（对后续请求生效）
 
                 # 动态调整timeout
                 if avg_rtt > timeout_seconds * 1000 * 0.8 and timeout_seconds < max_timeout:
@@ -129,7 +130,7 @@ def read_urls(input_path):
             if c.lower() in POSSIBLE_URL_COLS or c in POSSIBLE_URL_COLS:
                 url_col = c
                 break
-        # 兜底选第一列或含 http 的列
+        # 兜底选含 http 的列或第一列
         if not url_col:
             for c in fieldnames:
                 if "http" in c.lower() or "地址" in c:
@@ -137,27 +138,61 @@ def read_urls(input_path):
                     break
         if not url_col and fieldnames:
             url_col = fieldnames[0]
-        # 读取所有 URL 字符串
+        # 读取所有 URL 字符串（只加入非空地址行）
+        f.seek(0)
+        reader = csv.DictReader(f)
         for r in reader:
-            u = r.get(url_col,"").strip()
+            u = r.get(url_col,"").strip() if r.get(url_col) is not None else ""
             if u:
                 urls.append(u)
     return urls
 
 def write_results(results, input_path, outpath=OUTPUT, failed_path=FAILED_OUTPUT):
+    """
+    按输入文件顺序（仅包含有地址的行）与 results 一一对应输出：
+      - 有效源写 outpath（字段: 频道名,地址,来源,图标,检测时间,分组,视频信息）
+      - 无效源写 failed_path（字段: 频道名,地址,来源,图标,失败原因）
+    保证输入中被 read_urls() 过滤（即只有有地址的行）后的顺序与 results 对齐。
+    """
     fieldnames_ok = ["频道名","地址","来源","图标","检测时间","分组","视频信息"]
     fieldnames_failed = ["频道名","地址","来源","图标","失败原因"]
 
-    # 读取输入文件，保证顺序和结果一一对应
+    # 读取输入文件所有行（记住 header）
     with open(input_path, newline='', encoding='utf-8') as f:
         reader = csv.DictReader(f)
-        input_rows = list(reader)
+        fieldnames = reader.fieldnames or []
+        rows = list(reader)
 
-    # 准备输出目录
+    # 找出与 read_urls() 同样的 url 列名
+    url_col = None
+    for c in fieldnames:
+        if c.lower() in POSSIBLE_URL_COLS or c in POSSIBLE_URL_COLS:
+            url_col = c
+            break
+    if not url_col:
+        for c in fieldnames:
+            if "http" in c.lower() or "地址" in c:
+                url_col = c
+                break
+    if not url_col and fieldnames:
+        url_col = fieldnames[0]
+
+    # 过滤出只包含有地址的输入行（顺序与 read_urls 一致）
+    filtered_rows = []
+    for r in rows:
+        val = (r.get(url_col) or "").strip()
+        if val:
+            filtered_rows.append(r)
+
+    # 准备输出目录（如果不存在就创建）
+    ok_dir = os.path.dirname(outpath)
     failed_dir = os.path.dirname(failed_path)
+    if ok_dir and not os.path.exists(ok_dir):
+        os.makedirs(ok_dir, exist_ok=True)
     if failed_dir and not os.path.exists(failed_dir):
-        os.makedirs(failed_dir)
+        os.makedirs(failed_dir, exist_ok=True)
 
+    # 写入两个文件：有效/失败
     with open(outpath, "w", newline='', encoding='utf-8') as f_ok, \
          open(failed_path, "w", newline='', encoding='utf-8') as f_failed:
 
@@ -167,8 +202,9 @@ def write_results(results, input_path, outpath=OUTPUT, failed_path=FAILED_OUTPUT
         w_ok.writeheader()
         w_failed.writeheader()
 
+        # 以 filtered_rows 与 results 对应索引
         for idx, res in enumerate(results):
-            row = input_rows[idx] if idx < len(input_rows) else {}
+            row = filtered_rows[idx] if idx < len(filtered_rows) else {}
 
             if res.get("ok"):
                 out_row = {
@@ -199,7 +235,6 @@ def main():
     p.add_argument("--timeout", type=int, default=INITIAL_TIMEOUT)
     args = p.parse_args()
 
-    # 这里不用 global，直接用参数传递即可
     input_path = args.input
 
     urls = read_urls(input_path)
