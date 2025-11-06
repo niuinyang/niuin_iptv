@@ -7,6 +7,7 @@ import argparse
 from asyncio.subprocess import create_subprocess_exec, PIPE
 from tqdm.asyncio import tqdm_asyncio
 from asyncio import Semaphore
+import time
 
 INPUT = "output/middle/fast_scan.csv"
 OUTPUT = "output/middle/deep_scan.csv"
@@ -71,9 +72,25 @@ async def run_all(urls, concurrency=30, timeout=20):
     sem = Semaphore(concurrency)
     tasks = [probe_one(u, sem, timeout) for u in urls]
     results = []
-    for fut in tqdm_asyncio.as_completed(tasks, desc="deep-scan", total=len(tasks)):
+
+    total = len(tasks)
+    checked = 0
+    has_video_count = 0
+    last_log_time = time.time()
+    log_interval = 2  # 每2秒打印一次状态
+
+    for fut in tqdm_asyncio.as_completed(tasks, desc="deep-scan", total=total):
         r = await fut
         results.append(r)
+        checked += 1
+        if r.get("has_video"):
+            has_video_count += 1
+
+        now = time.time()
+        if now - last_log_time >= log_interval or checked == total:
+            print(f"deep-scan: {checked}/{total} done, has_video: {has_video_count} ({has_video_count/checked:.1%}), concurrency={concurrency}, timeout={timeout}s")
+            last_log_time = now
+
     return results
 
 def read_fast_scan(path):
