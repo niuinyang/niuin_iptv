@@ -26,7 +26,7 @@ jobs:
 
       - name: Run merge_local_sources.py script
         run: |
-          python scripts/merge_local_sources.py
+          python scripts/3.1merge_local_sources.py
 
       - name: List output and icon files
         run: |
