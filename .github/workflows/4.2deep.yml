@@ -20,14 +20,22 @@ jobs:
           python-version: '3.11'
 
       - name: Install dependencies
-        run: pip install tqdm
+        run: pip install tqdm ffmpeg-python
 
       - name: Create output directory
         run: mkdir -p output/middle
 
-      - name: Run deep scan
+      - name: Run deep validation
         run: |
           python scripts/4.2deep_scan.py --input output/middle/fast_scan.csv --output output/middle/deep_scan.csv --concurrency 10 --timeout 20
 
       - name: Show sample results
         run: head -10 output/middle/deep_scan.csv || true
+
+      - name: Commit and push results
+        run: |
+          git config --global user.name "github-actions[bot]"
+          git config --global user.email "github-actions[bot]@users.noreply.github.com"
+          git add output/middle/deep_scan.csv
+          git commit -m "Update deep scan results [ci skip]" || echo "No changes to commit"
+          git push
