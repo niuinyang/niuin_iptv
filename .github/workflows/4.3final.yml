@@ -20,7 +20,7 @@ jobs:
           python-version: '3.11'
 
       - name: Install dependencies
-        run: pip install pillow tqdm
+        run: pip install pillow tqdm pandas
 
       - name: Create output directories
         run: |
@@ -33,3 +33,11 @@ jobs:
 
       - name: Show sample results
         run: head -10 output/middle/final_scan.csv || true
+
+      - name: Commit and push results
+        run: |
+          git config --global user.name "github-actions[bot]"
+          git config --global user.email "github-actions[bot]@users.noreply.github.com"
+          git add output/middle/final_scan.csv output/working.csv
+          git commit -m "Update final scan results [ci skip]" || echo "No changes to commit"
+          git push
