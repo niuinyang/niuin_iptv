@@ -19,6 +19,11 @@ jobs:
         with:
           python-version: '3.11'
 
+      - name: Install ffmpeg
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y ffmpeg
+
       - name: Install dependencies
         run: pip install tqdm ffmpeg-python
 
@@ -27,7 +32,11 @@ jobs:
 
       - name: Run deep validation
         run: |
-          python scripts/4.2deep_scan.py --input output/middle/fast_scan.csv --output output/middle/deep_scan.csv --concurrency 10 --timeout 20
+          python scripts/4.2deep_scan.py \
+            --input output/middle/fast_scan.csv \
+            --output output/middle/deep_scan.csv \
+            --concurrency 10 \
+            --timeout 20
 
       - name: Show sample results
         run: head -10 output/middle/deep_scan.csv || true
