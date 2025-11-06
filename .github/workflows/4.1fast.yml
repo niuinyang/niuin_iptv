@@ -1,0 +1,33 @@
+name: IPTV Fast Scan
+
+on:
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  fast_scan:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v3
+
+      - name: Setup Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: '3.11'
+
+      - name: Install dependencies
+        run: pip install aiohttp tqdm
+
+      - name: Create output directory
+        run: mkdir -p output/middle
+
+      - name: Run fast scan
+        run: |
+          python scripts/4.1fast_scan.py --input output/merge_total.csv --output output/middle/fast_scan.csv --concurrency 100 --timeout 8
+
+      - name: Show sample results
+        run: head -10 output/middle/fast_scan.csv || true
