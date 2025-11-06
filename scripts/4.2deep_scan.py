@@ -110,6 +110,7 @@ async def deep_scan(input_file, output_ok, output_fail, concurrency, timeout):
     results_ok = []
     results_fail = []
 
+    # 这里改为普通for循环，await每个future
     for fut in tqdm_asyncio.as_completed(tasks, total=len(tasks), desc="deep-scan"):
         result, ok = await fut
         if ok:
