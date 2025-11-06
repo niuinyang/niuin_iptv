@@ -8,10 +8,13 @@ from PIL import Image
 import io
 from tqdm.asyncio import tqdm_asyncio
 from asyncio import Semaphore
+import json
+import os
 
 DEEP_INPUT = "output/middle/deep_scan.csv"
 FINAL_OUT = "output/middle/final_scan.csv"
 WORKING_OUT = "output/working.csv"
+CACHE_FILE = "output/cache_hashes.json"
 
 # ----- aHash implementation (64-bit) -----
 def image_to_ahash_bytes(img_bytes, hash_size=8):
@@ -44,42 +47,45 @@ async def grab_frame(url, at_time=1, timeout=15):
     except FileNotFoundError:
         return None, "ffmpeg_not_installed"
 
-async def process_one(url, sem, samples=3, interval=600, start_offset=1, timeout=20):
-    async with sem:
-        hashes = []
-        errors = []
-        for i in range(samples):
-            at = start_offset + i * interval
-            img_bytes, err = await grab_frame(url, at_time=at, timeout=timeout)
-            if img_bytes:
-                try:
-                    h = image_to_ahash_bytes(img_bytes)
-                    hashes.append(h)
-                except Exception as e:
-                    errors.append(f"hash_err:{e}")
-            else:
-                errors.append(err)
-        if len(hashes) < max(1, samples//2):
-            # not enough successful captures -> unknown
-            return {"url": url, "status": "insufficient_frames", "hashes": hashes, "errors": errors, "is_fake": False, "similarity": 0.0}
-        # compute pairwise normalized similarity (1 - normalized hamming)
-        bits = 64  # hash_size=8 => 64 bits
-        pairs = 0
-        sim_total = 0.0
-        for i in range(len(hashes)):
-            for j in range(i+1, len(hashes)):
-                pairs += 1
-                d = hamming(hashes[i], hashes[j])
-                sim = 1.0 - (d / bits)
-                sim_total += sim
-        avg_sim = sim_total / pairs if pairs else 0.0
-        # is_fake when avg_sim very high (i.e., frames highly similar). threshold default 0.95 => diff <5%
-        is_fake = avg_sim >= 0.95
-        return {"url": url, "status": "ok", "hashes": hashes, "errors": errors, "is_fake": is_fake, "similarity": avg_sim}
+def load_cache():
+    if os.path.exists(CACHE_FILE):
+        with open(CACHE_FILE, "r", encoding="utf-8") as f:
+            return json.load(f)
+    return {}
 
-async def run_all(urls, concurrency=6, samples=3, interval=600, timeout=20):
+def save_cache(data):
+    os.makedirs(os.path.dirname(CACHE_FILE), exist_ok=True)
+    with open(CACHE_FILE, "w", encoding="utf-8") as f:
+        json.dump(data, f, ensure_ascii=False, indent=2)
+
+async def process_one(url, sem, cache, timeout=20):
+    async with sem:
+        old_hash = cache.get(url)
+        img_bytes, err = await grab_frame(url, at_time=1, timeout=timeout)
+        if not img_bytes:
+            return {"url": url, "status": "error", "errors": [err], "is_fake": False, "similarity": 0.0, "hashes": []}
+        try:
+            new_hash = image_to_ahash_bytes(img_bytes)
+        except Exception as e:
+            return {"url": url, "status": f"hash_error:{e}", "errors": [], "is_fake": False, "similarity": 0.0, "hashes": []}
+
+        if old_hash is not None:
+            bits = 64
+            d = hamming(new_hash, old_hash)
+            sim = 1.0 - (d / bits)
+            is_fake = sim >= 0.95
+        else:
+            sim = 0.0
+            is_fake = False
+
+        # 更新缓存
+        cache[url] = new_hash
+
+        return {"url": url, "status": "ok", "errors": [], "is_fake": is_fake, "similarity": sim, "hashes": [new_hash]}
+
+async def run_all(urls, concurrency=6, cache=None, timeout=20):
     sem = Semaphore(concurrency)
-    tasks = [process_one(u, sem, samples=samples, interval=interval, timeout=timeout) for u in urls]
+    tasks = [process_one(u, sem, cache, timeout=timeout) for u in urls]
     results = []
     for fut in tqdm_asyncio.as_completed(tasks, desc="final-scan", total=len(tasks)):
         r = await fut
@@ -103,7 +109,14 @@ def write_final(results, final_out=FINAL_OUT, working_out=WORKING_OUT):
         w = csv.DictWriter(f, fieldnames=fieldnames)
         w.writeheader()
         for r in results:
-            row = { "url": r["url"], "status": r.get("status",""), "is_fake": r.get("is_fake",False), "similarity": r.get("similarity",0.0), "hashes": "|".join(str(h) for h in r.get("hashes",[])), "errors": "|".join(r.get("errors",[]))}
+            row = {
+                "url": r["url"],
+                "status": r.get("status",""),
+                "is_fake": r.get("is_fake",False),
+                "similarity": r.get("similarity",0.0),
+                "hashes": "|".join(str(h) for h in r.get("hashes",[])),
+                "errors": "|".join(r.get("errors",[]))
+            }
             w.writerow(row)
     # create working.csv: take deep_scan rows but exclude is_fake
     # We'll try to merge deep_scan.csv + final results by url; keep first occurrence per url
@@ -130,20 +143,28 @@ def write_final(results, final_out=FINAL_OUT, working_out=WORKING_OUT):
             row["similarity"] = f.get("similarity") if f else ""
             w.writerow(row)
 
+def ensure_dirs():
+    os.makedirs(os.path.dirname(CACHE_FILE), exist_ok=True)
+    os.makedirs(os.path.dirname(DEEP_INPUT), exist_ok=True)
+    os.makedirs(os.path.dirname(FINAL_OUT), exist_ok=True)
+    os.makedirs(os.path.dirname(WORKING_OUT), exist_ok=True)
+
 def main():
     p = argparse.ArgumentParser()
     p.add_argument("--input", "-i", default=DEEP_INPUT)
     p.add_argument("--final", default=FINAL_OUT)
     p.add_argument("--working", default=WORKING_OUT)
     p.add_argument("--concurrency", type=int, default=6)
-    p.add_argument("--samples", type=int, default=3)
-    p.add_argument("--interval", type=int, default=600, help="seconds between samples (for CI/testing set small value)")
     p.add_argument("--timeout", type=int, default=20)
     args = p.parse_args()
 
+    ensure_dirs()
+
     urls = read_deep_input(args.input)
-    print(f"Final-stage checking {len(urls)} urls (samples={args.samples}, interval={args.interval}s)")
-    results = asyncio.run(run_all(urls, concurrency=args.concurrency, samples=args.samples, interval=args.interval, timeout=args.timeout))
+    print(f"Final-stage checking {len(urls)} urls")
+    cache = load_cache()
+    results = asyncio.run(run_all(urls, concurrency=args.concurrency, cache=cache, timeout=args.timeout))
+    save_cache(cache)
     write_final(results, final_out=args.final, working_out=args.working)
     fake_count = sum(1 for r in results if r.get("is_fake"))
     print(f"Final scan finished. Fake found: {fake_count}/{len(results)}. Wrote {args.final} and {args.working}")
