@@ -1,148 +1,185 @@
+#!/usr/bin/env python3
+# scripts/4.2deep_scan.py
 import asyncio
-import aiohttp
-import ffmpeg
 import csv
+import json
 import argparse
+from asyncio.subprocess import create_subprocess_exec, PIPE
 from tqdm.asyncio import tqdm_asyncio
-from concurrent.futures import ThreadPoolExecutor
+from asyncio import Semaphore
 
-# ==========================
-# 异步 ffprobe 调用
-# ==========================
-def probe_stream(url, timeout):
-    """调用 ffprobe 获取视频流信息"""
+INPUT = "output/middle/fast_scan.csv"
+OUTPUT_OK = "output/middle/deep_scan.csv"
+OUTPUT_FAIL = "output/middle/deep_scan_invalid.csv"
+
+async def ffprobe_json(url, timeout=20):
+    cmd = ["ffprobe","-v","quiet","-print_format","json","-show_streams","-show_format", url]
     try:
-        probe = ffmpeg.probe(
-            url,
-            select_streams='v',
-            v='error',
-            show_entries='stream=codec_name,width,height,r_frame_rate',
-            show_format=True,
-            timeout=timeout,
-        )
-        video_streams = [s for s in probe['streams'] if s.get('codec_type') == 'video']
-        audio_streams = [s for s in probe['streams'] if s.get('codec_type') == 'audio']
-
-        if not video_streams:
-            return None, None, None, "无音频"
-
-        v = video_streams[0]
-        codec = v.get('codec_name', '未知').upper()
-        width = v.get('width', '?')
-        height = v.get('height', '?')
-        frame_rate_raw = v.get('r_frame_rate', '0')
+        proc = await create_subprocess_exec(*cmd, stdout=PIPE, stderr=PIPE)
         try:
-            frame_rate = round(eval(frame_rate_raw), 2) if frame_rate_raw != '0' else 0
-        except Exception:
-            frame_rate = 0
+            stdout, stderr = await asyncio.wait_for(proc.communicate(), timeout=timeout)
+        except asyncio.TimeoutError:
+            proc.kill()
+            return {"url": url, "error": "timeout"}
+        if stdout:
+            try:
+                data = json.loads(stdout.decode('utf-8', errors='ignore'))
+                return {"url": url, "probe": data}
+            except Exception as e:
+                return {"url": url, "error": f"json_parse_error: {e}"}
+        else:
+            return {"url": url, "error": stderr.decode('utf-8', errors='ignore') or "no_output"}
+    except FileNotFoundError:
+        return {"url": url, "error": "ffprobe_not_installed"}
 
-        resolution = f"{width}x{height}"
-        has_audio = "有音频" if audio_streams else "无音频"
-        frame_rate_str = f"{frame_rate}fps" if frame_rate else "未知"
+def parse_probe(probe):
+    info = {
+        "has_video": False, "has_audio": False, "video_codec": None,
+        "width": None, "height": None, "frame_rate": None,
+        "duration": None, "bit_rate": None
+    }
+    if not probe:
+        return info
+    streams = probe.get("streams", [])
+    for s in streams:
+        if s.get("codec_type") == "video":
+            info["has_video"] = True
+            info["video_codec"] = s.get("codec_name")
+            info["width"] = s.get("width")
+            info["height"] = s.get("height")
+            r = s.get("avg_frame_rate") or s.get("r_frame_rate")
+            if r and "/" in str(r):
+                num, den = r.split("/")
+                try:
+                    info["frame_rate"] = float(num) / float(den) if float(den) != 0 else None
+                except Exception:
+                    info["frame_rate"] = None
+    fmt = probe.get("format", {})
+    info["duration"] = float(fmt.get("duration")) if fmt.get("duration") else None
+    info["bit_rate"] = int(fmt.get("bit_rate")) if fmt.get("bit_rate") else None
+    if any(s.get("codec_type") == "audio" for s in streams):
+        info["has_audio"] = True
+    return info
 
-        return codec, resolution, frame_rate_str, has_audio
-    except Exception:
-        return None, None, None, "无音频"
+async def probe_one(row, sem, timeout):
+    async with sem:
+        url = row["地址"]
+        res = await ffprobe_json(url, timeout=timeout)
+        if "probe" in res:
+            parsed = parse_probe(res["probe"])
+            result = dict(row)
+            result.update({
+                "has_video": parsed["has_video"],
+                "has_audio": parsed["has_audio"],
+                "video_codec": parsed["video_codec"] or "",
+                "width": parsed["width"] or "",
+                "height": parsed["height"] or "",
+                "frame_rate": parsed["frame_rate"] or "",
+                "duration": parsed["duration"] or "",
+                "bit_rate": parsed["bit_rate"] or "",
+                "error": ""
+            })
+            return result, True
+        else:
+            result = dict(row)
+            result.update({
+                "has_video": False,
+                "has_audio": False,
+                "video_codec": "",
+                "width": "",
+                "height": "",
+                "frame_rate": "",
+                "duration": "",
+                "bit_rate": "",
+                "error": res.get("error", "unknown")
+            })
+            return result, False
 
-
-# ==========================
-# 异步检测单源
-# ==========================
-async def process_url(session, row, semaphore, executor, timeout):
-    """检测单个频道"""
-    async with semaphore:
-        url = row['地址']
-
-        # Step 1: 检查网络可达
-        try:
-            async with session.head(url, timeout=timeout) as resp:
-                if resp.status >= 400:
-                    raise Exception(f"HTTP状态码 {resp.status}")
-        except Exception as e:
-            return [
-                row['频道名'], row['地址'], row['来源'], row['图标'],
-                row['检测时间'], row['分组'],
-                '', '', '', '', f"无法连接 ({str(e)})"
-            ], False
-
-        # Step 2: ffprobe 视频信息
-        loop = asyncio.get_running_loop()
-        codec, resolution, frame_rate, audio_str = await loop.run_in_executor(
-            executor, probe_stream, url, timeout
-        )
-
-        if not codec:
-            return [
-                row['频道名'], row['地址'], row['来源'], row['图标'],
-                row['检测时间'], row['分组'],
-                '', '', '', '', "无视频流"
-            ], False
-
-        return [
-            row['频道名'], row['地址'], row['来源'], row['图标'],
-            row['检测时间'], row['分组'],
-            codec, resolution, frame_rate, audio_str
-        ], True
-
-
-# ==========================
-# 主检测逻辑
-# ==========================
 async def deep_scan(input_file, output_ok, output_fail, concurrency, timeout):
+    sem = Semaphore(concurrency)
     rows = []
-    with open(input_file, "r", encoding="utf-8") as f:
+    with open(input_file, newline='', encoding='utf-8') as f:
         reader = csv.DictReader(f)
-        for r in reader:
-            if r.get('地址', '').startswith("http"):
-                rows.append(r)
+        for row in reader:
+            # 这里不再判断检测时间，所有行都检测
+            rows.append(row)
 
-    if not rows:
-        print("⚠️ 没有可检测的源")
-        return
+    print(f"Probing {len(rows)} urls with concurrency={concurrency}")
 
-    semaphore = asyncio.Semaphore(concurrency)
-    connector = aiohttp.TCPConnector(limit=concurrency, ssl=False)
-    timeout_cfg = aiohttp.ClientTimeout(total=timeout)
-    executor = ThreadPoolExecutor(max_workers=5)
+    tasks = [probe_one(row, sem, timeout) for row in rows]
+    results_ok = []
+    results_fail = []
 
-    ok_rows, fail_rows = [], []
+    for fut in tqdm_asyncio.as_completed(tasks, total=len(tasks), desc="deep-scan"):
+        result, ok = await fut
+        if ok:
+            results_ok.append(result)
+        else:
+            results_fail.append(result)
 
-    async with aiohttp.ClientSession(connector=connector, timeout=timeout_cfg) as session:
-        tasks = [process_url(session, r, semaphore, executor, timeout) for r in rows]
-        async for result, ok in tqdm_asyncio.as_completed(tasks, total=len(tasks), desc="deep-scan"):
-            if ok:
-                ok_rows.append(result)
-            else:
-                fail_rows.append(result)
+    fieldnames_ok = ["频道名","地址","来源","图标","检测时间","分组","视频编码","分辨率","帧率","音频"]
+    fieldnames_fail = fieldnames_ok + ["失败原因"]
 
-    # 输出结果
-    with open(output_ok, "w", newline="", encoding="utf-8") as f_ok:
-        writer_ok = csv.writer(f_ok)
-        writer_ok.writerow(["频道名", "地址", "来源", "图标", "检测时间", "分组", "视频编码", "分辨率", "帧率", "音频"])
-        writer_ok.writerows(ok_rows)
+    def format_resolution(r):
+        w = r.get("width")
+        h = r.get("height")
+        if w and h:
+            return f"{w}x{h}"
+        return ""
 
-    with open(output_fail, "w", newline="", encoding="utf-8") as f_fail:
-        writer_fail = csv.writer(f_fail)
-        writer_fail.writerow(["频道名", "地址", "来源", "图标", "检测时间", "分组", "视频编码", "分辨率", "帧率", "音频", "失败原因"])
-        writer_fail.writerows(fail_rows)
+    def format_audio(r):
+        return "有音频" if r.get("has_audio") else "无音频"
 
-    print(f"✅ Deep scan 完成：成功 {len(ok_rows)} 条，失败 {len(fail_rows)} 条，总计 {len(rows)} 条")
+    with open(output_ok, "w", newline='', encoding='utf-8') as f_ok, \
+         open(output_fail, "w", newline='', encoding='utf-8') as f_fail:
+        writer_ok = csv.DictWriter(f_ok, fieldnames=fieldnames_ok)
+        writer_fail = csv.DictWriter(f_fail, fieldnames=fieldnames_fail)
+        writer_ok.writeheader()
+        writer_fail.writeheader()
 
+        for r in results_ok:
+            row = {
+                "频道名": r.get("频道名",""),
+                "地址": r.get("地址",""),
+                "来源": r.get("来源",""),
+                "图标": r.get("图标",""),
+                "检测时间": r.get("检测时间",""),
+                "分组": r.get("分组",""),
+                "视频编码": r.get("video_codec",""),
+                "分辨率": format_resolution(r),
+                "帧率": r.get("frame_rate",""),
+                "音频": format_audio(r),
+            }
+            writer_ok.writerow(row)
 
-# ==========================
-# 主入口
-# ==========================
+        for r in results_fail:
+            row = {
+                "频道名": r.get("频道名",""),
+                "地址": r.get("地址",""),
+                "来源": r.get("来源",""),
+                "图标": r.get("图标",""),
+                "检测时间": r.get("检测时间",""),
+                "分组": r.get("分组",""),
+                "视频编码": r.get("video_codec",""),
+                "分辨率": format_resolution(r),
+                "帧率": r.get("frame_rate",""),
+                "音频": format_audio(r),
+                "失败原因": r.get("error",""),
+            }
+            writer_fail.writerow(row)
+
+    print(f"Deep scan finished: {len(results_ok)} success, {len(results_fail)} failed. Wrote {output_ok} and {output_fail}")
+
 def main():
     parser = argparse.ArgumentParser()
-    parser.add_argument("--input", required=True)
-    parser.add_argument("--output", required=True)
-    parser.add_argument("--invalid", default="output/middle/deep_scan_invalid.csv")
+    parser.add_argument("--input", "-i", default=INPUT)
+    parser.add_argument("--output", "-o", default=OUTPUT_OK)
+    parser.add_argument("--invalid", default=OUTPUT_FAIL)
     parser.add_argument("--concurrency", type=int, default=30)
     parser.add_argument("--timeout", type=int, default=20)
     args = parser.parse_args()
 
     asyncio.run(deep_scan(args.input, args.output, args.invalid, args.concurrency, args.timeout))
-
 
 if __name__ == "__main__":
     main()
