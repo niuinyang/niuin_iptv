@@ -1,146 +1,148 @@
-#!/usr/bin/env python3
-# scripts/4.2deep_scan.py
 import asyncio
+import aiohttp
+import ffmpeg
 import csv
-import json
 import argparse
-from asyncio.subprocess import create_subprocess_exec, PIPE
 from tqdm.asyncio import tqdm_asyncio
-from asyncio import Semaphore
+from concurrent.futures import ThreadPoolExecutor
 
-INPUT = "output/middle/fast_scan.csv"
-OUTPUT_OK = "output/middle/deep_scan.csv"
-OUTPUT_FAIL = "output/middle/deep_scan_invalid.csv"
-
-async def ffprobe_json(url, timeout=20):
-    cmd = ["ffprobe","-v","quiet","-print_format","json","-show_streams","-show_format", url]
+# ==========================
+# 异步 ffprobe 调用
+# ==========================
+def probe_stream(url, timeout):
+    """调用 ffprobe 获取视频流信息"""
     try:
-        proc = await create_subprocess_exec(*cmd, stdout=PIPE, stderr=PIPE)
+        probe = ffmpeg.probe(
+            url,
+            select_streams='v',
+            v='error',
+            show_entries='stream=codec_name,width,height,r_frame_rate',
+            show_format=True,
+            timeout=timeout,
+        )
+        video_streams = [s for s in probe['streams'] if s.get('codec_type') == 'video']
+        audio_streams = [s for s in probe['streams'] if s.get('codec_type') == 'audio']
+
+        if not video_streams:
+            return None, None, None, "无音频"
+
+        v = video_streams[0]
+        codec = v.get('codec_name', '未知').upper()
+        width = v.get('width', '?')
+        height = v.get('height', '?')
+        frame_rate_raw = v.get('r_frame_rate', '0')
         try:
-            stdout, stderr = await asyncio.wait_for(proc.communicate(), timeout=timeout)
-        except asyncio.TimeoutError:
-            proc.kill()
-            return {"url": url, "error": "timeout"}
-        if stdout:
-            try:
-                data = json.loads(stdout.decode('utf-8', errors='ignore'))
-                return {"url": url, "probe": data}
-            except Exception as e:
-                return {"url": url, "error": f"json_parse_error: {e}"}
-        else:
-            return {"url": url, "error": stderr.decode('utf-8', errors='ignore') or "no_output"}
-    except FileNotFoundError:
-        return {"url": url, "error": "ffprobe_not_installed"}
+            frame_rate = round(eval(frame_rate_raw), 2) if frame_rate_raw != '0' else 0
+        except Exception:
+            frame_rate = 0
 
-def parse_probe(probe):
-    info = {"has_video": False, "has_audio": False, "video_codec": None, "width": None, "height": None, "frame_rate": None, "duration": None, "bit_rate": None}
-    if not probe: 
-        return info
-    streams = probe.get("streams", [])
-    for s in streams:
-        if s.get("codec_type") == "video":
-            info["has_video"] = True
-            info["video_codec"] = s.get("codec_name")
-            info["width"] = s.get("width")
-            info["height"] = s.get("height")
-            r = s.get("avg_frame_rate") or s.get("r_frame_rate")
-            if r and "/" in str(r):
-                num, den = r.split("/")
-                try:
-                    info["frame_rate"] = float(num) / float(den) if float(den) != 0 else None
-                except Exception:
-                    info["frame_rate"] = None
-    fmt = probe.get("format", {})
-    info["duration"] = float(fmt.get("duration")) if fmt.get("duration") else None
-    info["bit_rate"] = int(fmt.get("bit_rate")) if fmt.get("bit_rate") else None
-    if any(s.get("codec_type") == "audio" for s in streams):
-        info["has_audio"] = True
-    return info
+        resolution = f"{width}x{height}"
+        has_audio = "有音频" if audio_streams else "无音频"
+        frame_rate_str = f"{frame_rate}fps" if frame_rate else "未知"
 
-async def probe_one(item, sem, timeout):
-    """
-    item 是字典，包含原始行所有字段，至少有 url(地址)
-    """
-    url = item.get("地址") or item.get("url") or item.get("URL")
-    async with sem:
-        res = await ffprobe_json(url, timeout=timeout)
-        if "probe" in res:
-            parsed = parse_probe(res["probe"])
-            parsed.update(item)
-            parsed["error"] = ""
-            return parsed
-        else:
-            r = {
-                "has_video": False,
-                "has_audio": False,
-                "video_codec": None,
-                "width": None,
-                "height": None,
-                "frame_rate": None,
-                "duration": None,
-                "bit_rate": None,
-                "error": res.get("error", "unknown"),
-            }
-            r.update(item)
-            return r
+        return codec, resolution, frame_rate_str, has_audio
+    except Exception:
+        return None, None, None, "无音频"
 
-async def run_all(items, output_ok, output_fail, concurrency=30, timeout=20):
-    sem = Semaphore(concurrency)
-    tasks = [probe_one(item, sem, timeout) for item in items]
-    results = []
-    for fut in tqdm_asyncio.as_completed(tasks, desc="deep-scan", total=len(tasks)):
-        r = await fut
-        results.append(r)
 
-    # 写入文件
-    import os
-    os.makedirs(os.path.dirname(output_ok), exist_ok=True)
-    os.makedirs(os.path.dirname(output_fail), exist_ok=True)
+# ==========================
+# 异步检测单源
+# ==========================
+async def process_url(session, row, semaphore, executor, timeout):
+    """检测单个频道"""
+    async with semaphore:
+        url = row['地址']
 
-    fieldnames = ["频道名","地址","来源","图标","检测时间","分组","视频信息","has_video","has_audio","video_codec","width","height","frame_rate","duration","bit_rate","error"]
+        # Step 1: 检查网络可达
+        try:
+            async with session.head(url, timeout=timeout) as resp:
+                if resp.status >= 400:
+                    raise Exception(f"HTTP状态码 {resp.status}")
+        except Exception as e:
+            return [
+                row['频道名'], row['地址'], row['来源'], row['图标'],
+                row['检测时间'], row['分组'],
+                '', '', '', '', f"无法连接 ({str(e)})"
+            ], False
 
-    with open(output_ok, "w", encoding="utf-8", newline='') as f_ok, \
-         open(output_fail, "w", encoding="utf-8", newline='') as f_fail:
-        writer_ok = csv.DictWriter(f_ok, fieldnames=fieldnames)
-        writer_fail = csv.DictWriter(f_fail, fieldnames=fieldnames)
-        writer_ok.writeheader()
-        writer_fail.writeheader()
-        for r in results:
-            # 生成视频信息字符串
-            if r.get("has_video"):
-                r["视频信息"] = f"{r.get('width') or '?'}x{r.get('height') or '?'} @{r.get('frame_rate') or '?'}fps, duration {r.get('duration') or '?'}s, bitrate {r.get('bit_rate') or '?'}bps"
-            else:
-                r["视频信息"] = ""
+        # Step 2: ffprobe 视频信息
+        loop = asyncio.get_running_loop()
+        codec, resolution, frame_rate, audio_str = await loop.run_in_executor(
+            executor, probe_stream, url, timeout
+        )
 
-            if r.get("has_video"):
-                writer_ok.writerow(r)
-            else:
-                writer_fail.writerow(r)
-    print(f"Deep scan finished: {sum(1 for r in results if r.get('has_video'))}/{len(results)} have video. Wrote {output_ok} and {output_fail}")
+        if not codec:
+            return [
+                row['频道名'], row['地址'], row['来源'], row['图标'],
+                row['检测时间'], row['分组'],
+                '', '', '', '', "无视频流"
+            ], False
 
-def read_fast_scan(path):
-    with open(path, encoding="utf-8") as f:
+        return [
+            row['频道名'], row['地址'], row['来源'], row['图标'],
+            row['检测时间'], row['分组'],
+            codec, resolution, frame_rate, audio_str
+        ], True
+
+
+# ==========================
+# 主检测逻辑
+# ==========================
+async def deep_scan(input_file, output_ok, output_fail, concurrency, timeout):
+    rows = []
+    with open(input_file, "r", encoding="utf-8") as f:
         reader = csv.DictReader(f)
-        items = []
-        for row in reader:
-            # 过滤检测时间，非空且不为0的才检测
-            dt = row.get("检测时间", "")
-            if dt and dt != "0":
-                items.append(row)
-        return items
+        for r in reader:
+            if r.get('地址', '').startswith("http"):
+                rows.append(r)
 
+    if not rows:
+        print("⚠️ 没有可检测的源")
+        return
+
+    semaphore = asyncio.Semaphore(concurrency)
+    connector = aiohttp.TCPConnector(limit=concurrency, ssl=False)
+    timeout_cfg = aiohttp.ClientTimeout(total=timeout)
+    executor = ThreadPoolExecutor(max_workers=5)
+
+    ok_rows, fail_rows = [], []
+
+    async with aiohttp.ClientSession(connector=connector, timeout=timeout_cfg) as session:
+        tasks = [process_url(session, r, semaphore, executor, timeout) for r in rows]
+        async for result, ok in tqdm_asyncio.as_completed(tasks, total=len(tasks), desc="deep-scan"):
+            if ok:
+                ok_rows.append(result)
+            else:
+                fail_rows.append(result)
+
+    # 输出结果
+    with open(output_ok, "w", newline="", encoding="utf-8") as f_ok:
+        writer_ok = csv.writer(f_ok)
+        writer_ok.writerow(["频道名", "地址", "来源", "图标", "检测时间", "分组", "视频编码", "分辨率", "帧率", "音频"])
+        writer_ok.writerows(ok_rows)
+
+    with open(output_fail, "w", newline="", encoding="utf-8") as f_fail:
+        writer_fail = csv.writer(f_fail)
+        writer_fail.writerow(["频道名", "地址", "来源", "图标", "检测时间", "分组", "视频编码", "分辨率", "帧率", "音频", "失败原因"])
+        writer_fail.writerows(fail_rows)
+
+    print(f"✅ Deep scan 完成：成功 {len(ok_rows)} 条，失败 {len(fail_rows)} 条，总计 {len(rows)} 条")
+
+
+# ==========================
+# 主入口
+# ==========================
 def main():
-    p = argparse.ArgumentParser()
-    p.add_argument("--input", "-i", default=INPUT)
-    p.add_argument("--output_ok", default=OUTPUT_OK, help="成功输出文件")
-    p.add_argument("--output_fail", default=OUTPUT_FAIL, help="失败输出文件")
-    p.add_argument("--concurrency", "-c", type=int, default=30)
-    p.add_argument("--timeout", "-t", type=int, default=20)
-    args = p.parse_args()
+    parser = argparse.ArgumentParser()
+    parser.add_argument("--input", required=True)
+    parser.add_argument("--output", required=True)
+    parser.add_argument("--invalid", default="output/middle/deep_scan_invalid.csv")
+    parser.add_argument("--concurrency", type=int, default=30)
+    parser.add_argument("--timeout", type=int, default=20)
+    args = parser.parse_args()
 
-    items = read_fast_scan(args.input)
-    print(f"Probing {len(items)} urls with concurrency={args.concurrency}")
-    asyncio.run(run_all(items, args.output_ok, args.output_fail, args.concurrency, args.timeout))
+    asyncio.run(deep_scan(args.input, args.output, args.invalid, args.concurrency, args.timeout))
+
 
 if __name__ == "__main__":
     main()
