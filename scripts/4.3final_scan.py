@@ -14,6 +14,7 @@ import os
 DEEP_INPUT = "output/middle/deep_scan.csv"
 FINAL_OUT = "output/middle/final_scan.csv"
 WORKING_OUT = "output/working.csv"
+FINAL_INVALID_OUT = "output/middle/final_scan_invalid.csv"
 CACHE_FILE = "output/cache_hashes.json"
 
 # ----- aHash implementation (64-bit) -----
@@ -31,7 +32,6 @@ def hamming(a, b):
     return x.bit_count()
 
 async def grab_frame(url, at_time=1, timeout=15):
-    # Use ffmpeg to grab 1 frame at timestamp at_time (seconds)
     cmd = ["ffmpeg", "-ss", str(at_time), "-i", url, "-frames:v", "1", "-f", "image2", "-vcodec", "mjpeg", "pipe:1", "-hide_banner", "-loglevel", "error"]
     try:
         proc = await create_subprocess_exec(*cmd, stdout=PIPE, stderr=PIPE)
@@ -78,7 +78,6 @@ async def process_one(url, sem, cache, timeout=20):
             sim = 0.0
             is_fake = False
 
-        # 更新缓存
         cache[url] = new_hash
 
         return {"url": url, "status": "ok", "errors": [], "is_fake": is_fake, "similarity": sim, "hashes": [new_hash]}
@@ -97,65 +96,79 @@ def read_deep_input(path):
     with open(path, newline='', encoding='utf-8') as f:
         reader = csv.DictReader(f)
         for r in reader:
-            has_video = r.get("has_video","").lower() in ("true","1","yes")
-            if has_video:
-                urls.append(r.get("url"))
+            url = r.get("地址") or r.get("url")
+            if url:
+                urls.append(url)
     return urls
 
-def write_final(results, final_out=FINAL_OUT, working_out=WORKING_OUT):
-    # final csv with per-url result summary
-    fieldnames = ["url","status","is_fake","similarity","hashes","errors"]
-    with open(final_out, "w", newline='', encoding='utf-8') as f:
-        w = csv.DictWriter(f, fieldnames=fieldnames)
-        w.writeheader()
-        for r in results:
-            row = {
-                "url": r["url"],
-                "status": r.get("status",""),
-                "is_fake": r.get("is_fake",False),
-                "similarity": r.get("similarity",0.0),
-                "hashes": "|".join(str(h) for h in r.get("hashes",[])),
-                "errors": "|".join(r.get("errors",[]))
-            }
-            w.writerow(row)
-    # create working.csv: take deep_scan rows but exclude is_fake
-    # We'll try to merge deep_scan.csv + final results by url; keep first occurrence per url
+def write_final(results, input_path, working_out=WORKING_OUT, final_out=FINAL_OUT, final_invalid_out=FINAL_INVALID_OUT):
     final_map = {r["url"]: r for r in results}
-    # read deep_scan, write working_out with deep fields for urls not fake and unique
-    seen = set()
-    with open("output/middle/deep_scan.csv", newline='', encoding='utf-8') as fin, open(working_out, "w", newline='', encoding='utf-8') as fout:
+
+    with open(input_path, newline='', encoding='utf-8') as fin, \
+         open(working_out, "w", newline='', encoding='utf-8') as fworking, \
+         open(final_out, "w", newline='', encoding='utf-8') as fvalid, \
+         open(final_invalid_out, "w", newline='', encoding='utf-8') as finvalid:
+
         reader = csv.DictReader(fin)
-        fieldnames = reader.fieldnames or []
-        # extend with is_fake, similarity
-        out_fields = fieldnames + ["is_fake","similarity"]
-        w = csv.DictWriter(fout, fieldnames=out_fields)
-        w.writeheader()
-        for r in reader:
-            url = r.get("url")
-            if not url or url in seen:
+
+        working_fields = ["频道名","地址","来源","图标","检测时间","分组","视频信息"]
+        valid_fields = working_fields + ["相似度"]
+        invalid_fields = working_fields + ["未通过信息", "相似度"]
+
+        w_working = csv.DictWriter(fworking, fieldnames=working_fields)
+        w_valid = csv.DictWriter(fvalid, fieldnames=valid_fields)
+        w_invalid = csv.DictWriter(finvalid, fieldnames=invalid_fields)
+
+        w_working.writeheader()
+        w_valid.writeheader()
+        w_invalid.writeheader()
+
+        for row in reader:
+            url = row.get("地址") or row.get("url")
+            if not url:
                 continue
-            seen.add(url)
-            f = final_map.get(url)
-            if f and f.get("is_fake"):
-                continue
-            row = {k: r.get(k,"") for k in fieldnames}
-            row["is_fake"] = f.get("is_fake") if f else ""
-            row["similarity"] = f.get("similarity") if f else ""
-            w.writerow(row)
+            r = final_map.get(url)
+            passed = False
+            similarity = ""
+            fail_reason = ""
+
+            if r:
+                if r.get("status") == "ok" and not r.get("is_fake", False):
+                    passed = True
+                    similarity = round(r.get("similarity", 0), 4)
+                else:
+                    fail_reason = r.get("status", "")
+                    if r.get("is_fake", False):
+                        fail_reason += "; 伪源相似度: {:.4f}".format(r.get("similarity", 0))
+                    similarity = round(r.get("similarity", 0), 4)
+
+            if passed:
+                working_row = {k: row.get(k, "") for k in working_fields}
+                w_working.writerow(working_row)
+
+                valid_row = {k: row.get(k, "") for k in working_fields}
+                valid_row["相似度"] = similarity
+                w_valid.writerow(valid_row)
+            else:
+                invalid_row = {k: row.get(k, "") for k in working_fields}
+                invalid_row["未通过信息"] = fail_reason or "未知错误"
+                invalid_row["相似度"] = similarity
+                w_invalid.writerow(invalid_row)
 
 def ensure_dirs():
     os.makedirs(os.path.dirname(CACHE_FILE), exist_ok=True)
     os.makedirs(os.path.dirname(DEEP_INPUT), exist_ok=True)
     os.makedirs(os.path.dirname(FINAL_OUT), exist_ok=True)
     os.makedirs(os.path.dirname(WORKING_OUT), exist_ok=True)
+    os.makedirs(os.path.dirname(FINAL_INVALID_OUT), exist_ok=True)
 
 def main():
     p = argparse.ArgumentParser()
     p.add_argument("--input", "-i", default=DEEP_INPUT)
     p.add_argument("--final", default=FINAL_OUT)
     p.add_argument("--working", default=WORKING_OUT)
-    p.add_argument("--concurrency", type=int, default=6)
     p.add_argument("--timeout", type=int, default=20)
+    p.add_argument("--concurrency", type=int, default=6)
     args = p.parse_args()
 
     ensure_dirs()
@@ -165,9 +178,9 @@ def main():
     cache = load_cache()
     results = asyncio.run(run_all(urls, concurrency=args.concurrency, cache=cache, timeout=args.timeout))
     save_cache(cache)
-    write_final(results, final_out=args.final, working_out=args.working)
+    write_final(results, input_path=args.input, working_out=args.working, final_out=args.final)
     fake_count = sum(1 for r in results if r.get("is_fake"))
-    print(f"Final scan finished. Fake found: {fake_count}/{len(results)}. Wrote {args.final} and {args.working}")
+    print(f"Final scan finished. Fake found: {fake_count}/{len(results)}. Wrote {args.final}, {args.working}, {FINAL_INVALID_OUT}")
 
 if __name__ == "__main__":
     main()
