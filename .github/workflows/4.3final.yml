@@ -13,6 +13,8 @@ jobs:
     steps:
       - name: Checkout code
         uses: actions/checkout@v3
+        with:
+          fetch-depth: 0  # 🔧 允许完整拉取历史，rebase 才能正常工作
 
       - name: Setup Python
         uses: actions/setup-python@v4
@@ -50,11 +52,17 @@ jobs:
       - name: Show sample results (invalid)
         run: head -10 output/middle/final_scan_invalid.csv || true
 
-      # 📝 提交输出文件
-      - name: Commit and push results
+      # 📝 安全提交输出文件
+      - name: Commit and safely push results
         run: |
           git config --global user.name "github-actions[bot]"
           git config --global user.email "github-actions[bot]@users.noreply.github.com"
+
+          # 拉取远程最新 main 分支，避免 push 冲突
+          git fetch origin main
+          git rebase origin/main || git merge origin/main
+
           git add output/middle/final_scan.csv output/middle/final_scan_invalid.csv output/working.csv output/cache_hashes.json
           git commit -m "Update final scan results [ci skip]" || echo "No changes to commit"
-          git push
+
+          git push https://github.com/${{ github.repository }} HEAD:main
