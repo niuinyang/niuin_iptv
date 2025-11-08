@@ -10,6 +10,7 @@ from tqdm.asyncio import tqdm_asyncio
 from asyncio import Semaphore
 import json
 import os
+import chardet  # 新增导入
 
 DEEP_INPUT = "output/middle/deep_scan.csv"
 FINAL_OUT = "output/middle/final_scan.csv"
@@ -104,7 +105,12 @@ def read_deep_input(path):
 def write_final(results, input_path, working_out=WORKING_OUT, final_out=FINAL_OUT, final_invalid_out=FINAL_INVALID_OUT):
     final_map = {r["url"]: r for r in results}
 
-    with open(input_path, newline='', encoding='utf-8') as fin, \
+    # 自动检测输入文件编码，修复working.csv乱码问题
+    with open(input_path, "rb") as fb:
+        raw = fb.read(20000)
+        detected_enc = chardet.detect(raw)["encoding"] or "utf-8"
+
+    with open(input_path, newline='', encoding=detected_enc, errors='ignore') as fin, \
          open(working_out, "w", newline='', encoding='utf-8') as fworking, \
          open(final_out, "w", newline='', encoding='utf-8') as fvalid, \
          open(final_invalid_out, "w", newline='', encoding='utf-8') as finvalid:
@@ -124,7 +130,7 @@ def write_final(results, input_path, working_out=WORKING_OUT, final_out=FINAL_OU
         w_invalid.writeheader()
 
         for row in reader:
-            url = row.get("地址") or row.get("url")
+            url = (row.get("地址") or row.get("url") or "").strip()
             if not url:
                 continue
             r = final_map.get(url)
