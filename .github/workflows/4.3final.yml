@@ -29,14 +29,14 @@ jobs:
 
       # 📦 安装 Python 依赖
       - name: Install dependencies
-        run: pip install pillow tqdm
+        run: pip install pillow tqdm chardet
 
       - name: Create output directories
         run: |
           mkdir -p output/middle
           mkdir -p output/working
 
-      # 🚀 执行检测脚本
+      # 🚀 执行检测脚本（加上 --working_gbk 参数生成 GBK 版本）
       - name: Run final scan
         run: |
           python scripts/4.3final_scan.py \
@@ -44,7 +44,8 @@ jobs:
             --final output/middle/final_scan.csv \
             --working output/working.csv \
             --concurrency 6 \
-            --timeout 20
+            --timeout 20 \
+            --working_gbk
 
       - name: Show sample results (valid)
         run: head -10 output/middle/final_scan.csv || true
@@ -52,7 +53,7 @@ jobs:
       - name: Show sample results (invalid)
         run: head -10 output/middle/final_scan_invalid.csv || true
 
-      # 📝 安全提交输出文件
+      # 📝 安全提交输出文件（包括生成的 working_gbk.csv）
       - name: Commit and safely push results
         run: |
           git config --global user.name "github-actions[bot]"
@@ -62,7 +63,7 @@ jobs:
           git fetch origin main
           git rebase origin/main || git merge origin/main
 
-          git add output/middle/final_scan.csv output/middle/final_scan_invalid.csv output/working.csv output/cache_hashes.json
+          git add output/middle/final_scan.csv output/middle/final_scan_invalid.csv output/working.csv output/working_gbk.csv output/cache_hashes.json
           git commit -m "Update final scan results [ci skip]" || echo "No changes to commit"
 
           git push https://github.com/${{ github.repository }} HEAD:main
