@@ -53,6 +53,16 @@ def load_manual_map(path=MANUAL_MAP_PATH):
             writer.writerow(["原始名称", "标准名称", "拟匹配频道"])
         return manual_map
 
+    # 自动检测编码并转换为utf-8
+    with open(path, "rb") as f:
+        raw = f.read()
+    result = chardet.detect(raw)
+    enc = result.get("encoding", "utf-8")
+    if enc.lower() != "utf-8":
+        text = raw.decode(enc, errors="ignore")
+        with open(path, "w", encoding="utf-8") as f:
+            f.write(text)
+
     with open(path, encoding="utf-8") as f:
         reader = csv.DictReader(f)
         for row in reader:
