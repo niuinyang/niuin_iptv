@@ -102,7 +102,7 @@ def read_deep_input(path):
                 urls.append(url)
     return urls
 
-def write_final(results, input_path, working_out=WORKING_OUT, final_out=FINAL_OUT, final_invalid_out=FINAL_INVALID_OUT):
+def write_final(results, input_path, working_out=WORKING_OUT, final_out=FINAL_OUT, final_invalid_out=FINAL_INVALID_OUT, generate_working_gbk=False):
     final_map = {r["url"]: r for r in results}
 
     # 自动检测输入文件编码，修复working.csv乱码问题
@@ -129,6 +129,16 @@ def write_final(results, input_path, working_out=WORKING_OUT, final_out=FINAL_OU
         w_valid.writeheader()
         w_invalid.writeheader()
 
+        # 预备GBK写入（如果需要）
+        if generate_working_gbk:
+            working_gbk_path = working_out.rsplit(".",1)[0] + "_gbk.csv"
+            fworking_gbk = open(working_gbk_path, "w", newline='', encoding='gbk', errors='ignore')
+            w_working_gbk = csv.DictWriter(fworking_gbk, fieldnames=working_fields)
+            w_working_gbk.writeheader()
+        else:
+            fworking_gbk = None
+            w_working_gbk = None
+
         for row in reader:
             url = (row.get("地址") or row.get("url") or "").strip()
             if not url:
@@ -151,6 +161,12 @@ def write_final(results, input_path, working_out=WORKING_OUT, final_out=FINAL_OU
             if passed:
                 working_row = {k: row.get(k, "") for k in working_fields}
                 w_working.writerow(working_row)
+                if w_working_gbk:
+                    try:
+                        w_working_gbk.writerow(working_row)
+                    except UnicodeEncodeError:
+                        fixed_row = {k: (v.encode('gbk', errors='ignore').decode('gbk') if isinstance(v, str) else v) for k,v in working_row.items()}
+                        w_working_gbk.writerow(fixed_row)
 
                 valid_row = {k: row.get(k, "") for k in working_fields}
                 valid_row["相似度"] = similarity
@@ -160,6 +176,10 @@ def write_final(results, input_path, working_out=WORKING_OUT, final_out=FINAL_OU
                 invalid_row["未通过信息"] = fail_reason or "未知错误"
                 invalid_row["相似度"] = similarity
                 w_invalid.writerow(invalid_row)
+
+        if fworking_gbk:
+            fworking_gbk.close()
+            print(f"✔️ 生成 GBK 编码的 working 文件: {working_gbk_path}")
 
 def ensure_dirs():
     os.makedirs(os.path.dirname(CACHE_FILE), exist_ok=True)
@@ -175,6 +195,7 @@ def main():
     p.add_argument("--working", default=WORKING_OUT)
     p.add_argument("--timeout", type=int, default=20)
     p.add_argument("--concurrency", type=int, default=6)
+    p.add_argument("--working_gbk", action="store_true", help="是否生成 GBK 编码的 working.csv 版本，兼容Windows Excel")
     args = p.parse_args()
 
     ensure_dirs()
@@ -184,7 +205,7 @@ def main():
     cache = load_cache()
     results = asyncio.run(run_all(urls, concurrency=args.concurrency, cache=cache, timeout=args.timeout))
     save_cache(cache)
-    write_final(results, input_path=args.input, working_out=args.working, final_out=args.final)
+    write_final(results, input_path=args.input, working_out=args.working, final_out=args.final, generate_working_gbk=args.working_gbk)
     fake_count = sum(1 for r in results if r.get("is_fake"))
     print(f"Final scan finished. Fake found: {fake_count}/{len(results)}. Wrote {args.final}, {args.working}, {FINAL_INVALID_OUT}")
 
