@@ -28,6 +28,17 @@ def safe_read_csv(path):
             f.write(text)
     return pd.read_csv(path, encoding="utf-8")
 
+def save_csv_with_gbk(df: pd.DataFrame, utf8_path: str):
+    """
+    保存 df 到 utf8_path（utf-8-sig编码），并额外保存一份 gbk 编码文件
+    文件名规则：原文件名 + '_gbk' + 后缀
+    """
+    df.to_csv(utf8_path, index=False, encoding="utf-8-sig")
+    base, ext = os.path.splitext(utf8_path)
+    gbk_path = f"{base}_gbk{ext}"
+    df.to_csv(gbk_path, index=False, encoding="gbk")
+    print(f"✅ 已保存文件：{utf8_path} 和 GBK 版本：{gbk_path}")
+
 def load_name_map():
     name_map = {}
     path = os.path.join(IPTV_DB_PATH, "data", "channels.csv")
@@ -52,16 +63,6 @@ def load_manual_map(path=MANUAL_MAP_PATH):
             writer = csv.writer(f)
             writer.writerow(["原始名称", "标准名称", "拟匹配频道"])
         return manual_map
-
-    # 自动检测编码并转换为utf-8
-    with open(path, "rb") as f:
-        raw = f.read()
-    result = chardet.detect(raw)
-    enc = result.get("encoding", "utf-8")
-    if enc.lower() != "utf-8":
-        text = raw.decode(enc, errors="ignore")
-        with open(path, "w", encoding="utf-8") as f:
-            f.write(text)
 
     with open(path, encoding="utf-8") as f:
         reader = csv.DictReader(f)
@@ -198,7 +199,12 @@ def export_unmatched_for_manual(working_df, manual_map_path=MANUAL_MAP_PATH):
     if not new_rows.empty:
         # 追加写入文件，只写这3列
         new_rows.to_csv(manual_map_path, mode='a', index=False, header=not os.path.exists(manual_map_path), encoding="utf-8-sig")
+        # 额外保存 GBK 版本
+        base, ext = os.path.splitext(manual_map_path)
+        gbk_manual_map = f"{base}_gbk{ext}"
+        new_rows.to_csv(gbk_manual_map, mode='a', index=False, header=not os.path.exists(gbk_manual_map), encoding="gbk")
         print(f"🔔 有 {len(new_rows)} 个未匹配或低匹配频道写入到 {manual_map_path}，请手动补全标准名称。")
+        print(f"🔔 同时生成 GBK 版本文件: {gbk_manual_map}")
     else:
         print(f"🔔 无新增未匹配或低匹配频道写入 {manual_map_path}。")
 
@@ -237,8 +243,8 @@ def save_standardized_my_sum(df):
         "匹配信息": safe_col(["match_info"]),
         "原始频道名": safe_col(["original_channel_name"])
     })
-    out_df.to_csv("input/mysource/my_sum_standardized.csv", index=False, encoding="utf-8-sig")
-    print("✅ 已生成标准化自有源文件: input/mysource/my_sum_standardized.csv")
+    # 使用封装的函数保存并生成 GBK 版本
+    save_csv_with_gbk(out_df, "input/mysource/my_sum_standardized.csv")
 
 def main():
     print("🚀 开始执行标准化匹配流程...")
@@ -264,8 +270,8 @@ def main():
 
     total_df = pd.concat([my_sum_out, working_out], ignore_index=True)
 
-    total_df.to_csv(OUTPUT_TOTAL, index=False, encoding="utf-8-sig")
-    print(f"✅ 已生成合并文件: {OUTPUT_TOTAL}")
+    # 保存合并文件，并生成 GBK 版本
+    save_csv_with_gbk(total_df, OUTPUT_TOTAL)
 
     # 读取已有频道列表作为输入
     if os.path.exists(INPUT_CHANNEL):
@@ -306,9 +312,8 @@ def main():
     # 8. 按频道名去重，保留首次出现（原有频道优先）
     combined_channel_df.drop_duplicates(subset=["频道名"], keep="first", inplace=True)
 
-    # 保存更新的 channel.csv
-    combined_channel_df.to_csv(OUTPUT_CHANNEL, index=False, encoding="utf-8-sig")
-    print(f"✅ 已更新频道列表文件: {OUTPUT_CHANNEL}")
+    # 保存更新的 channel.csv，并生成 GBK 版本
+    save_csv_with_gbk(combined_channel_df, OUTPUT_CHANNEL)
     # -- 新增代码结束 --
 
 if __name__ == "__main__":
