@@ -32,9 +32,16 @@ jobs:
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
-          git add output/total.csv output/ input/channel.csv input/mysource/my_sum_standardized.csv output/working.csv input/manual_map.csv
-          git diff --cached --quiet || git commit -m "Auto standardized channel names and update total.csv & channel.csv & manual_map.csv [ci skip]"
-          # 安全提交：拉取最新再推送
+
+          # 先拉取远程最新代码，避免冲突
           git fetch origin main
-          git pull --rebase origin main
+          git rebase origin/main || git merge origin/main
+
+          # 添加修改文件
+          git add output/total.csv output/ input/channel.csv input/mysource/my_sum_standardized.csv output/working.csv input/manual_map.csv
+
+          # 仅当有变更时提交
+          git diff --cached --quiet || git commit -m "Auto standardized channel names and update total.csv & channel.csv & manual_map.csv [ci skip]"
+
+          # 推送到远程
           git push https://${PAT_TOKEN}@github.com/niuinyang/niuin_iptv.git HEAD:refs/heads/main
