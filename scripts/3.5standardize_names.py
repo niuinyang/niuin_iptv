@@ -53,13 +53,22 @@ def load_manual_map(path=MANUAL_MAP_PATH):
             writer.writerow(["原始名称", "标准名称", "拟匹配频道"])
         return manual_map
 
-    with open(path, encoding="utf-8") as f:
-        reader = csv.DictReader(f)
-        for row in reader:
-            raw_name = row.get("原始名称", "").strip()
-            std_name = row.get("标准名称", "").strip()
-            if raw_name and std_name:
-                manual_map[raw_name.lower()] = std_name
+    # 自动检测编码读取
+    with open(path, "rb") as f:
+        raw = f.read()
+    result = chardet.detect(raw)
+    enc = result["encoding"] if result["encoding"] else "utf-8"
+
+    text = raw.decode(enc, errors="ignore")
+
+    from io import StringIO
+    f = StringIO(text)
+    reader = csv.DictReader(f)
+    for row in reader:
+        raw_name = row.get("原始名称", "").strip()
+        std_name = row.get("标准名称", "").strip()
+        if raw_name and std_name:
+            manual_map[raw_name.lower()] = std_name
     return manual_map
 
 def clean_channel_name(name):
@@ -227,8 +236,9 @@ def save_standardized_my_sum(df):
         "匹配信息": safe_col(["match_info"]),
         "原始频道名": safe_col(["original_channel_name"])
     })
+    # 保存为 utf-8-sig 编码的 CSV 文件
     out_df.to_csv("input/mysource/my_sum_standardized.csv", index=False, encoding="utf-8-sig")
-    print("✅ 已生成标准化自有源文件: input/mysource/my_sum_standardized.csv")
+    print("✅ 已保存文件：input/mysource/my_sum_standardized.csv")
 
 def main():
     print("🚀 开始执行标准化匹配流程...")
@@ -254,8 +264,9 @@ def main():
 
     total_df = pd.concat([my_sum_out, working_out], ignore_index=True)
 
+    # 保存合并文件（utf-8-sig编码）
     total_df.to_csv(OUTPUT_TOTAL, index=False, encoding="utf-8-sig")
-    print(f"✅ 已生成合并文件: {OUTPUT_TOTAL}")
+    print(f"✅ 已保存文件：{OUTPUT_TOTAL}")
 
     # 读取已有频道列表作为输入
     if os.path.exists(INPUT_CHANNEL):
@@ -296,9 +307,9 @@ def main():
     # 8. 按频道名去重，保留首次出现（原有频道优先）
     combined_channel_df.drop_duplicates(subset=["频道名"], keep="first", inplace=True)
 
-    # 保存更新的 channel.csv
+    # 保存更新的 channel.csv（utf-8-sig编码）
     combined_channel_df.to_csv(OUTPUT_CHANNEL, index=False, encoding="utf-8-sig")
-    print(f"✅ 已更新频道列表文件: {OUTPUT_CHANNEL}")
+    print(f"✅ 已保存文件：{OUTPUT_CHANNEL}")
     # -- 新增代码结束 --
 
 if __name__ == "__main__":
