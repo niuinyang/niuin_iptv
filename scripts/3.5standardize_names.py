@@ -260,29 +260,46 @@ def main():
     # 读取已有频道列表作为输入
     if os.path.exists(INPUT_CHANNEL):
         existing_channel_df = pd.read_csv(INPUT_CHANNEL, encoding="utf-8-sig")
-        existing_channels = existing_channel_df["频道名"].tolist()
     else:
         existing_channel_df = pd.DataFrame(columns=["频道名", "分组"])
-        existing_channels = []
 
-    # total 中所有频道
+    # -- 新增代码开始 --
+    # 1. 构造 manual_map 映射字典（小写键）
+    manual_map_lower = {k.lower(): v for k, v in manual_map.items()}
+
+    # 2. 替换 existing_channel_df 中的旧名为标准名，保留分组
+    def replace_name(row):
+        old_name_lower = row["频道名"].lower()
+        if old_name_lower in manual_map_lower:
+            return manual_map_lower[old_name_lower]
+        return row["频道名"]
+
+    existing_channel_df["频道名"] = existing_channel_df.apply(replace_name, axis=1)
+
+    # 3. 去重，保留首次出现（原有频道优先）
+    existing_channel_df.drop_duplicates(subset=["频道名"], keep="first", inplace=True)
+
+    # 4. total_df中的频道名集合
     total_channels = total_df[["频道名", "分组"]]
 
-    # 筛选出total中不存在于已有channel的频道
-    new_channels_df = total_channels[~total_channels["频道名"].isin(existing_channels)]
+    existing_names = set(existing_channel_df["频道名"])
 
-    # 给新频道统一标记“未分类”
-    new_channels_df = new_channels_df.copy()
+    # 5. 找出 total_df 中不存在于 existing_channel_df 的新频道
+    new_channels_df = total_channels[~total_channels["频道名"].isin(existing_names)].copy()
+
+    # 6. 给新频道统一标记“未分类”
     new_channels_df["分组"] = "未分类"
 
-    # 合并原有频道和新增频道，保持原频道顺序和追加新频道顺序
+    # 7. 合并，保持原有频道顺序，追加新频道
     combined_channel_df = pd.concat([existing_channel_df, new_channels_df], ignore_index=True)
 
-    # 按频道名去重，保留首次出现（原有频道优先）
+    # 8. 按频道名去重，保留首次出现（原有频道优先）
     combined_channel_df.drop_duplicates(subset=["频道名"], keep="first", inplace=True)
 
+    # 保存更新的 channel.csv
     combined_channel_df.to_csv(OUTPUT_CHANNEL, index=False, encoding="utf-8-sig")
     print(f"✅ 已更新频道列表文件: {OUTPUT_CHANNEL}")
+    # -- 新增代码结束 --
 
 if __name__ == "__main__":
     main()
