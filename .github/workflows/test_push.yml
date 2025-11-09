@@ -5,7 +5,7 @@ on:
 
 permissions:
   contents: write
-  # workflows: write  # 先注释掉这个
+  workflows: write  # 先注释掉这个
 
 jobs:
   test_push:
