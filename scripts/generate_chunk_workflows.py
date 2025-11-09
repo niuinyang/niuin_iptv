@@ -1,7 +1,7 @@
 import os
 import glob
 
-WORKFLOW_DIR = ".github/workflows/chunks"
+WORKFLOW_DIR = ".github/workflows"  # 直接写这里
 CHUNK_DIR = "output/chunk"
 
 os.makedirs(WORKFLOW_DIR, exist_ok=True)
