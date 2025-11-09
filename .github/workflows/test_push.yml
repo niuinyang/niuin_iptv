@@ -1,38 +1,46 @@
-name: Test Push with PAT
+name: Generate Deep Chunk Workflows (push via PAT)
 
 on:
   workflow_dispatch:
+  schedule:
+    - cron: '0 20 * * *'  # 每天 04:00 CST (UTC 前一天 20:00)
 
 permissions:
   contents: write
-  #workflows: write  # 先注释掉这个
 
 jobs:
-  test_push:
+  generate_and_push:
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout repo
+      - name: Checkout repository
         uses: actions/checkout@v4
         with:
           fetch-depth: 0
 
-      - name: Create test file with timestamp
-        run: |
-          echo "Last update: $(date -u +'%Y-%m-%dT%H:%M:%SZ')" > .github/workflows/test_push.yml
+      - name: Setup Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
 
-      - name: Configure git user
+      - name: Install requirements (if any)
+        run: |
+          python -m pip install --upgrade pip
+          pip install chardet requests || true
+
+      - name: Generate chunk workflows
+        run: |
+          python scripts/generate_chunk_workflows.py --add-timestamp
+
+      - name: Commit generated workflows (if any)
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
-
-      - name: Commit changes
-        run: |
-          git add .github/workflows/test_push.yml
+          git add .github/workflows/chunks/*.yml || true
           if git diff --cached --quiet; then
-            echo "No changes to commit."
-            exit 0
+            echo "No generated workflow changes to commit."
+          else
+            git commit -m "Auto-generate deep chunk workflows $(date -u +'%Y-%m-%dT%H:%M:%SZ')"
           fi
-          git commit -m "Test commit for PAT push"
 
       - name: Push using PAT
         env:
@@ -40,5 +48,10 @@ jobs:
           REPO: ${{ github.repository }}
           TARGET_BRANCH: main
         run: |
+          git fetch origin ${TARGET_BRANCH}
+          if git diff --quiet origin/${TARGET_BRANCH}..HEAD; then
+            echo "No new commits to push."
+            exit 0
+          fi
           git remote set-url origin https://x-access-token:${PUSH_TOKEN}@github.com/${REPO}.git
           git push origin HEAD:${TARGET_BRANCH}
