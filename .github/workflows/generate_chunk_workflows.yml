@@ -44,14 +44,19 @@ jobs:
 
       - name: Push using PAT
         env:
-          PUSH_TOKEN: ${{ secrets.PUSH_TOKEN }}
+          niuyang: ${{ secrets.niuyang }}
           REPO: ${{ github.repository }}
           TARGET_BRANCH: main
         run: |
+          if [ -z "$niuyang" ]; then
+            echo "Error: niuyang token is not set. Please add it to repository secrets."
+            exit 1
+          fi
+
           git fetch origin ${TARGET_BRANCH}
           if git diff --quiet origin/${TARGET_BRANCH}..HEAD; then
             echo "No new commits to push."
             exit 0
           fi
-          git remote set-url origin https://x-access-token:${PUSH_TOKEN}@github.com/${REPO}.git
+          git remote set-url origin https://x-access-token:${niuyang}@github.com/${REPO}.git
           git push origin HEAD:${TARGET_BRANCH}
