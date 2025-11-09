@@ -28,7 +28,6 @@ os.makedirs(ICON_DIR, exist_ok=True)
 OUTPUT_M3U = os.path.join(OUTPUT_DIR, "merge_total.m3u")
 OUTPUT_CSV = os.path.join(OUTPUT_DIR, "merge_total.csv")
 SKIPPED_LOG = os.path.join(LOG_DIR, "skipped.log")
-MALFORMED_LOG = os.path.join(LOG_DIR, "malformed.log")
 
 # ==============================
 # 工具函数
@@ -61,69 +60,42 @@ def get_icon_path(standard_name, tvg_logo_url):
     return tvg_logo_url or ""
 
 def read_m3u_file(file_path: str):
-    """读取 M3U 文件，自动修复逗号位置错误（如 #EXTINF:-1 ,tvg-id=...）"""
+    """读取 M3U 文件，正确提取逗号后作为频道名，避免属性中逗号干扰"""
     channels = []
-    malformed_count = 0
-    os.makedirs(LOG_DIR, exist_ok=True)
-
     try:
         lines = safe_open(file_path)
-        total = len(lines)
         i = 0
-
-        while i < total:
+        while i < len(lines):
             line = lines[i].strip()
-
-            if not line:
-                i += 1
-                continue
-
-            # 🩹 修复错误格式：#EXTINF:-1 ,tvg-id= / ，tvg-id=
-            if line.startswith("#EXTINF") and re.search(r"^#EXTINF:-1\s*[，,]+\s*tvg-", line):
-                malformed_count += 1
-                fixed_line = re.sub(r"^#EXTINF:-1\s*[，,]+\s*", "#EXTINF:-1 ", line)
-                with open(MALFORMED_LOG, "a", encoding="utf-8") as f:
-                    f.write(f"[FIXED comma] {os.path.basename(file_path)}: {line}\n")
-                line = fixed_line
-
-            # ✅ 解析 #EXTINF 行
             if line.startswith("#EXTINF:"):
                 info_line = line
-                url_line = ""
+                url_line = lines[i + 1].strip() if i + 1 < len(lines) else ""
 
-                # 下一行可能是 URL
-                if i + 1 < total:
-                    next_line = lines[i + 1].strip()
-                    if next_line.startswith(("http://", "https://", "rtmp://")):
-                        url_line = next_line
-                        i += 1
+                # 提取属性（不强制使用 tvg-name）
+                tvg_logo_url = ""
+                logo_match = re.search(r'tvg-logo=[\'"]([^\'"]+)[\'"]', info_line)
+                if logo_match:
+                    tvg_logo_url = logo_match.group(1).strip()
 
-                # 提取属性
-                tvg_name = re.search(r'tvg-name=[\'"]([^\'"]+)[\'"]', info_line)
-                tvg_logo = re.search(r'tvg-logo=[\'"]([^\'"]+)[\'"]', info_line)
-                tvg_id = re.search(r'tvg-id=[\'"]([^\'"]+)[\'"]', info_line)
-                group_title = re.search(r'group-title=[\'"]([^\'"]+)[\'"]', info_line)
-
-                tvg_name = tvg_name.group(1).strip() if tvg_name else None
-                tvg_logo_url = tvg_logo.group(1).strip() if tvg_logo else ""
-                tvg_id = tvg_id.group(1).strip() if tvg_id else ""
-                group_title = group_title.group(1).strip() if group_title else ""
-
-                # 提取显示名
-                if "," in info_line:
-                    display_name = info_line.split(",", 1)[1].strip()
+                # 用正则提取逗号后面的频道名（避免属性内逗号干扰）
+                m = re.match(r'#EXTINF:-?\d+\s*(?:.*?),\s*(.*)', info_line)
+                if m:
+                    display_name = m.group(1).strip()
                 else:
-                    display_name = tvg_name or tvg_id or "未知频道"
+                    display_name = "未知频道"
+
+                icon_path = get_icon_path(display_name, tvg_logo_url)
 
                 channels.append({
                     "display_name": display_name,
                     "url": url_line,
-                    "logo": get_icon_path(display_name, tvg_logo_url)
+                    "logo": icon_path
                 })
+                i += 2
+            else:
+                i += 1
 
-            i += 1
-
-        print(f"📡 已加载 {os.path.basename(file_path)}: {len(channels)} 条频道（修复 {malformed_count} 条格式错误）")
+        print(f"📡 已加载 {os.path.basename(file_path)}: {len(channels)} 条频道")
         return channels
 
     except Exception as e:
