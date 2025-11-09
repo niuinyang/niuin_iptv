@@ -1,34 +1,62 @@
-name: Generate Deep Chunk Workflows
+name: Generate Deep Chunk Workflows (push via PAT)
 
 on:
-  schedule:
-    - cron: "0 20 * * *"  # 每天东八区凌晨4:00 (UTC+8)
   workflow_dispatch:
+  schedule:
+    - cron: '0 20 * * *'  # 每天 04:00 CST (UTC 前一天 20:00)
 
 permissions:
   contents: write
-  workflows: write  # ✅ 必须添加这一行
 
 jobs:
-  generate:
+  generate_and_push:
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout code
+      - name: Checkout repository
         uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
 
       - name: Setup Python
         uses: actions/setup-python@v5
         with:
           python-version: '3.11'
 
-      - name: Generate workflows from chunks
+      - name: Install requirements (if any)
         run: |
-          python scripts/generate_chunk_workflows.py
+          python -m pip install --upgrade pip
+          pip install chardet requests || true
 
-      - name: Commit and push generated workflows
+      - name: Generate chunk workflows
+        run: |
+          python scripts/generate_chunk_workflows.py --add-timestamp
+
+      - name: Commit generated workflows (if any)
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
-          git add .github/workflows/chunks/
-          git commit -m "Auto-generate deep chunk workflows" || echo "No changes"
-          git push
+          git add .github/workflows/chunks/*.yml || true
+          # only commit if there are staged changes
+          if git diff --cached --quiet; then
+            echo "No generated workflow changes to commit."
+          else
+            git commit -m "Auto-generate deep chunk workflows $(date -u +'%Y-%m-%dT%H:%M:%SZ')"
+          fi
+
+      - name: Push using PAT
+        env:
+          PUSH_TOKEN: ${{ secrets.PUSH_TOKEN }}
+          REPO: ${{ github.repository }}
+          TARGET_BRANCH: main
+        run: |
+          # 如果没有要推送的提交则直接结束
+          if git rev-parse --verify --quiet HEAD >/dev/null 2>&1; then
+            if git diff --quiet origin/${TARGET_BRANCH}..HEAD; then
+              echo "No new commits to push."
+              exit 0
+            fi
+          fi
+
+          # set remote with token and push
+          git remote set-url origin https://x-access-token:${PUSH_TOKEN}@github.com/${REPO}.git
+          git push origin HEAD:${TARGET_BRANCH}
