@@ -60,7 +60,7 @@ def get_icon_path(standard_name, tvg_logo_url):
     return tvg_logo_url or ""
 
 def read_m3u_file(file_path: str):
-    """读取 M3U 文件，正确提取逗号后作为频道名，避免属性中逗号干扰"""
+    """读取 M3U 文件"""
     channels = []
     try:
         lines = safe_open(file_path)
@@ -71,18 +71,15 @@ def read_m3u_file(file_path: str):
                 info_line = line
                 url_line = lines[i + 1].strip() if i + 1 < len(lines) else ""
 
-                # 提取属性（不强制使用 tvg-name）
-                tvg_logo_url = ""
-                logo_match = re.search(r'tvg-logo=[\'"]([^\'"]+)[\'"]', info_line)
-                if logo_match:
-                    tvg_logo_url = logo_match.group(1).strip()
-
-                # 用正则提取逗号后面的频道名（避免属性内逗号干扰）
+                # 提取频道名为逗号后的所有内容，避免属性内逗号干扰
                 m = re.match(r'#EXTINF:-?\d+\s*(?:.*?),\s*(.*)', info_line)
                 if m:
                     display_name = m.group(1).strip()
                 else:
                     display_name = "未知频道"
+
+                logo_match = re.search(r'tvg-logo=[\'"]([^\'"]+)[\'"]', info_line)
+                tvg_logo_url = logo_match.group(1).strip() if logo_match else ""
 
                 icon_path = get_icon_path(display_name, tvg_logo_url)
 
