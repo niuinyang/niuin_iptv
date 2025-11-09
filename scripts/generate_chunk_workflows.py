@@ -2,12 +2,11 @@ import os
 import glob
 from datetime import datetime, timezone, timedelta
 
-WORKFLOW_DIR = ".github/workflows"
+WORKFLOW_DIR = ".github/workflows"  # workflow 生成目录，GitHub Actions 默认识别这里
 CHUNK_DIR = "output/chunk"
 
 os.makedirs(WORKFLOW_DIR, exist_ok=True)
 
-# 获取当前本地时间（东八区）
 def get_local_iso_timestamp():
     tz = timezone(timedelta(hours=8))
     now = datetime.now(tz)
@@ -19,8 +18,11 @@ name: Deep Validation Chunk {n}
 
 on:
   schedule:
-    - cron: '0 20 * * *'  # 每天 UTC 20:00 触发，相当于东八区凌晨4点
+    - cron: '0 20 * * *'  # 每天 UTC 20:00 触发，东八区凌晨4点
   workflow_dispatch:
+
+permissions:
+  contents: write  # 允许修改仓库文件，删除 workflow 需要
 
 jobs:
   deep_chunk_{n}:
@@ -37,6 +39,19 @@ jobs:
       - name: Run final scan on chunk {n}
         run: |
           python scripts/4.3final_scan.py --input {chunk_file}
+
+      - name: Self delete workflow file
+        env:
+          REPO_TOKEN: ${{{{ secrets.PERSONAL_ACCESS_TOKEN }}}}
+          WORKFLOW_FILE: ".github/workflows/deep_chunk_{n}.yml"
+          GITHUB_REPOSITORY: ${{{{ github.repository }}}}
+          GITHUB_REF: ${{{{ github.ref }}}}
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git rm "$WORKFLOW_FILE"
+          git commit -m "ci: self delete workflow deep_chunk_{n}.yml after run"
+          git push https://x-access-token:${{REPO_TOKEN}}@github.com/${{GITHUB_REPOSITORY}} HEAD:${{GITHUB_REF}}
 """
 
 chunk_files = sorted(glob.glob(os.path.join(CHUNK_DIR, "*.csv")))
