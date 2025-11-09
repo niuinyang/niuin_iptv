@@ -10,7 +10,8 @@ from tqdm import tqdm
 # 配置区
 # ==============================
 RETRY_LIMIT = 2           # 每个源重试次数
-SUCCESS_STATUS = [200, 206]
+# 放行的状态码列表，包括成功、重定向和部分反爬状态码
+SUCCESS_STATUS = [200, 206, 301, 302, 403, 429]  
 DEFAULT_CONCURRENCY = 100
 DEFAULT_TIMEOUT = 8
 MIN_CONCURRENCY = 20
@@ -21,7 +22,8 @@ async def fetch_url(session, url, timeout):
     start = time.time()
     try:
         async with session.get(url, timeout=timeout) as resp:
-            if resp.status in SUCCESS_STATUS:
+            # 放行指定状态码，包括500-599范围
+            if resp.status in SUCCESS_STATUS or (500 <= resp.status <= 599):
                 await resp.content.read(10)
                 return True, int((time.time() - start) * 1000), resp.status
             else:
@@ -43,7 +45,8 @@ async def check_source(semaphore, session, row, timeout):
                     "图标": icon,
                     "检测时间": rtt,
                     "分组": "未分组",
-                    "视频信息": ""
+                    "视频信息": "",
+                    "状态码": status
                 }
             await asyncio.sleep(0.2 * (attempt + 1))
         return {
@@ -54,7 +57,8 @@ async def check_source(semaphore, session, row, timeout):
             "检测时间": "",
             "分组": "未分组",
             "视频信息": "",
-            "状态": f"失败({status})"
+            "状态": f"失败({status})",
+            "状态码": status
         }
 
 
@@ -85,8 +89,8 @@ async def run_all(rows, output_valid, output_invalid, concurrency, timeout):
     os.makedirs(os.path.dirname(output_valid), exist_ok=True)
     with open(output_valid, "w", newline='', encoding="utf-8") as f_ok, \
          open(output_invalid, "w", newline='', encoding="utf-8") as f_fail:
-        fieldnames_valid = ["频道名", "地址", "来源", "图标", "检测时间", "分组", "视频信息"]
-        fieldnames_invalid = ["频道名", "地址", "来源", "图标", "检测时间", "分组", "视频信息", "状态"]
+        fieldnames_valid = ["频道名", "地址", "来源", "图标", "检测时间", "分组", "视频信息", "状态码"]
+        fieldnames_invalid = ["频道名", "地址", "来源", "图标", "检测时间", "分组", "视频信息", "状态", "状态码"]
 
         writer_ok = csv.DictWriter(f_ok, fieldnames=fieldnames_valid)
         writer_fail = csv.DictWriter(f_fail, fieldnames=fieldnames_invalid)
