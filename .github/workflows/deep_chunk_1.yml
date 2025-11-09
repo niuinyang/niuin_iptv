@@ -1,5 +1,5 @@
 # Generated at: 2025-11-09T23:46:05.128312+08:00
-name: Deep Validation Chunk 8
+name: Deep Validation Chunk 1
 
 on:
   schedule:
@@ -7,7 +7,7 @@ on:
   workflow_dispatch:
 
 jobs:
-  deep_chunk_8:
+  deep_chunk_1:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout repo
@@ -18,6 +18,6 @@ jobs:
         with:
           python-version: '3.11'
 
-      - name: Run final scan on chunk 8
+      - name: Run final scan on chunk 1
         run: |
-          python scripts/4.3final_scan.py --input output/chunk/chunk_16.csv
+          python scripts/4.3final_scan.py --input output/chunk/chunk_1.csv
