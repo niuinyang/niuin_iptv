@@ -1,4 +1,3 @@
-# Generated at: 2025-11-09T16:17:35.848205+00:00
 name: Deep Validation Chunk 7
 
 on:
@@ -32,6 +31,18 @@ jobs:
       - name: Run final scan on chunk 7
         run: |
           python scripts/4.3final_scan.py --input output/chunk/chunk_7.csv --output_dir output/chunk_final_scan
+
+      - name: Commit and push scan results
+        env:
+          REPO_TOKEN: ${{ secrets.PERSONAL_ACCESS_TOKEN }}
+          GITHUB_REPOSITORY: ${{ github.repository }}
+          GITHUB_REF: ${{ github.ref }}
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add output/chunk_final_scan/
+          git commit -m "ci: add final scan results chunk 7" || echo "No changes to commit"
+          git push https://x-access-token:${REPO_TOKEN}@github.com/${GITHUB_REPOSITORY} HEAD:${GITHUB_REF}
 
       - name: Self delete workflow file
         env:
