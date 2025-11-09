@@ -1,7 +1,7 @@
 import os
 import glob
 
-WORKFLOW_DIR = ".github/workflows"  # 直接写这里
+WORKFLOW_DIR = ".github/workflows"  # workflow 生成目录，GitHub Actions 默认识别这里
 CHUNK_DIR = "output/chunk"
 
 os.makedirs(WORKFLOW_DIR, exist_ok=True)
@@ -9,6 +9,8 @@ os.makedirs(WORKFLOW_DIR, exist_ok=True)
 template = """name: Deep Validation Chunk {n}
 
 on:
+  schedule:
+    - cron: '0 20 * * *'  # 每天 UTC 20:00 触发，相当于东八区凌晨4点
   workflow_dispatch:
 
 jobs:
@@ -23,9 +25,9 @@ jobs:
         with:
           python-version: '3.11'
 
-      - name: Run deep validation on chunk {n}
+      - name: Run final scan on chunk {n}
         run: |
-          python scripts/stage2_deep_validation.py --input {chunk_file}
+          python scripts/4.3final_scan.py --input {chunk_file}
 """
 
 chunk_files = sorted(glob.glob(os.path.join(CHUNK_DIR, "*.csv")))
