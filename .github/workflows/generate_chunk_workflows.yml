@@ -3,10 +3,10 @@ name: Generate Deep Chunk Workflows (push via PAT)
 on:
   workflow_dispatch:
   schedule:
-    - cron: '0 20 * * *'
+    - cron: '0 20 * * *'  # 每天 04:00 CST (UTC 前一天 20:00)
 
 permissions:
-  contents: write  # 只写 contents，不能写 workflows
+  contents: write
 
 jobs:
   generate_and_push:
@@ -35,7 +35,7 @@ jobs:
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
-          git add .github/workflows/chunks/*.yml || true
+          git add .github/workflows/deep_chunk_*.yml || true
           if git diff --cached --quiet; then
             echo "No generated workflow changes to commit."
             exit 0
@@ -44,9 +44,9 @@ jobs:
 
       - name: Push using PAT
         env:
-          PUSH_TOKEN: ${{ secrets.PUSH_TOKEN1 }}
+          PUSH_TOKEN: ${{ secrets.PUSH_TOKEN }}
           REPO: ${{ github.repository }}
           TARGET_BRANCH: main
         run: |
-          git remote set-url origin https://x-access-token:${PUSH_TOKEN1}@github.com/${REPO}.git
+          git remote set-url origin https://x-access-token:${PUSH_TOKEN}@github.com/${REPO}.git
           git push origin HEAD:${TARGET_BRANCH}
