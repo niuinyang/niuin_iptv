@@ -1,0 +1,44 @@
+name: Test Push with PAT
+
+on:
+  workflow_dispatch:
+
+permissions:
+  contents: write
+  workflows: write
+
+jobs:
+  test_push:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repo
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Create test file with timestamp
+        run: |
+          echo "Last update: $(date -u +'%Y-%m-%dT%H:%M:%SZ')" > .github/workflows/test_push.yml
+
+      - name: Configure git user
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+
+      - name: Commit changes
+        run: |
+          git add .github/workflows/test_push.yml
+          if git diff --cached --quiet; then
+            echo "No changes to commit."
+            exit 0
+          fi
+          git commit -m "Test commit for PAT push"
+
+      - name: Push using PAT
+        env:
+          PUSH_TOKEN: ${{ secrets.PUSH_TOKEN }}
+          REPO: ${{ github.repository }}
+          TARGET_BRANCH: main
+        run: |
+          git remote set-url origin https://x-access-token:${PUSH_TOKEN}@github.com/${REPO}.git
+          git push origin HEAD:${TARGET_BRANCH}
