@@ -71,10 +71,10 @@ def read_m3u_file(file_path: str):
                 info_line = line
                 url_line = lines[i + 1].strip() if i + 1 < len(lines) else ""
 
-                # 提取频道名为逗号后的所有内容，避免属性内逗号干扰
-                m = re.match(r'#EXTINF:-?\d+\s*(?:.*?),\s*(.*)', info_line)
-                if m:
-                    display_name = m.group(1).strip()
+                # 修改处：用最后一个逗号后的内容作为频道名，避免属性中逗号干扰
+                comma_pos = info_line.rfind(',')
+                if comma_pos != -1:
+                    display_name = info_line[comma_pos + 1:].strip()
                 else:
                     display_name = "未知频道"
 
