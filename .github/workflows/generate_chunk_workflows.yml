@@ -7,7 +7,7 @@ on:
 
 permissions:
   contents: write
-
+  workflows: write
 jobs:
   generate_and_push:
     runs-on: ubuntu-latest
