@@ -44,9 +44,9 @@ jobs:
 
       - name: Push using PAT
         env:
-          PUSH_TOKEN: ${{ secrets.PUSH_TOKEN }}
+          PUSH_TOKEN: ${{ secrets.PUSH_TOKEN1 }}
           REPO: ${{ github.repository }}
           TARGET_BRANCH: main
         run: |
-          git remote set-url origin https://x-access-token:${PUSH_TOKEN}@github.com/${REPO}.git
+          git remote set-url origin https://x-access-token:${PUSH_TOKEN1}@github.com/${REPO}.git
           git push origin HEAD:${TARGET_BRANCH}
