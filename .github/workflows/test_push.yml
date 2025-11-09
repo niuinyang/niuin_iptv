@@ -44,7 +44,7 @@ jobs:
 
       - name: Push using PAT
         env:
-          PUSH_TOKEN: ${{ secrets.PUSH_TOKEN }}
+          PUSH_TOKEN: ${{ secrets.PUSH_TOKEN}}
           REPO: ${{ github.repository }}
           TARGET_BRANCH: main
         run: |
