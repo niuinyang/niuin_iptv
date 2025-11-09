@@ -22,21 +22,32 @@ jobs:
       - name: Install dependencies
         run: |
           pip install --upgrade pip
-          pip install requests
+          pip install requests chardet
 
       - name: Run merge_local_sources.py script
         run: |
+          echo "🚀 Running 3.1merge_local_sources.py"
           python scripts/3.1merge_local_sources.py
 
       - name: List output and icon files
         run: |
-          ls -lh output/
-          ls -lh png/
+          echo "📂 Output directory:"
+          ls -lh output/ || true
+          echo "🖼️ Icon directory:"
+          ls -lh png/ || true
 
       - name: Commit and push output files and icons
         run: |
           git config user.name "github-actions"
           git config user.email "github-actions@github.com"
-          git add output/*.m3u output/*.csv output/log/*.log png/* || true
-          git diff --cached --quiet || git commit -m "🤖 Auto merge local sources $(date '+%Y-%m-%d %H:%M:%S')"
-          git push
+          
+          # 添加输出文件（存在才添加）
+          git add output/*.m3u output/*.csv output/log/*.log png/* 2>/dev/null || true
+          
+          # 仅当有更改时提交
+          if ! git diff --cached --quiet; then
+            git commit -m "🤖 Auto merge local sources $(date '+%Y-%m-%d %H:%M:%S')"
+            git push
+          else
+            echo "✅ No changes to commit."
+          fi
