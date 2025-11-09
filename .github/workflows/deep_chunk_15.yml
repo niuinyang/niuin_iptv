@@ -1,4 +1,4 @@
-# Generated at: 2025-11-09T16:02:51.611228+00:00
+# Generated at: 2025-11-09T16:12:27.981394+00:00
 name: Deep Validation Chunk 15
 
 on:
@@ -20,6 +20,14 @@ jobs:
         uses: actions/setup-python@v5
         with:
           python-version: '3.11'
+
+      - name: Install system dependencies
+        run: sudo apt-get update && sudo apt-get install -y ffmpeg
+
+      - name: Install Python dependencies
+        run: |
+          python -m pip install --upgrade pip
+          pip install pillow tqdm chardet
 
       - name: Run final scan on chunk 15
         run: |
