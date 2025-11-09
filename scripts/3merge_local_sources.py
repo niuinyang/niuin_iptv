@@ -71,21 +71,27 @@ def read_m3u_file(file_path: str):
                 info_line = line
                 url_line = lines[i + 1].strip() if i + 1 < len(lines) else ""
 
-                # 去掉开头 #EXTINF:-1 及其后的空白
-                content = re.sub(r'^#EXTINF:-1\s*', '', info_line)
+                # 去掉开头的 '#EXTINF:-1 ' 或 '#EXTINF:'
+                if info_line.startswith("#EXTINF:-1 "):
+                    content = info_line[len("#EXTINF:-1 "):]
+                else:
+                    content = info_line[len("#EXTINF:"):]
 
                 # 匹配所有 key="value" 属性
-                attributes = re.findall(r'\w+=[\'"][^\'"]*[\'"]', content)
+                attributes = re.findall(r'\w+="[^"]*"', content)
 
-                # 删除所有属性字符串
+                # 从 content 中删除所有属性
                 for attr in attributes:
                     content = content.replace(attr, '')
 
-                # 去掉剩余开头逗号和空白即为频道名
-                display_name = content.strip().lstrip(',').strip()
+                # content 中剩余部分，频道名为最后一个逗号后内容
+                if ',' in content:
+                    display_name = content.split(',')[-1].strip()
+                else:
+                    display_name = content.strip()
 
-                # 提取 tvg-logo
-                logo_match = re.search(r'tvg-logo=[\'"]([^\'"]+)[\'"]', info_line)
+                # 提取 tvg-logo 用于图标
+                logo_match = re.search(r'tvg-logo="([^"]+)"', info_line)
                 tvg_logo_url = logo_match.group(1).strip() if logo_match else ""
 
                 icon_path = get_icon_path(display_name, tvg_logo_url)
