@@ -1,6 +1,7 @@
 import os
 import glob
 import re
+from datetime import datetime
 
 WORKFLOW_DIR = ".github/workflows"
 CHUNK_DIR = "output/chunk"
@@ -30,6 +31,14 @@ jobs:
         with:
           python-version: '3.11'
 
+      - name: Install system dependencies
+        run: sudo apt-get update && sudo apt-get install -y ffmpeg
+
+      - name: Install Python dependencies
+        run: |
+          python -m pip install --upgrade pip
+          pip install pillow tqdm chardet
+
       - name: Run final scan on chunk {n}
         run: |
           python scripts/4.3final_scan.py --input {chunk_file}
@@ -47,8 +56,6 @@ jobs:
           git commit -m "ci: self delete workflow deep_chunk_{n}.yml after run"
           git push https://x-access-token:${{REPO_TOKEN}}@github.com/${{GITHUB_REPOSITORY}} HEAD:${{GITHUB_REF}}
 """
-
-from datetime import datetime
 
 chunk_files = sorted(glob.glob(os.path.join(CHUNK_DIR, "chunk_*.csv")))
 
