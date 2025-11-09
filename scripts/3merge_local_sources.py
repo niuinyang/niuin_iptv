@@ -71,13 +71,22 @@ def read_m3u_file(file_path: str):
                 info_line = line
                 url_line = lines[i + 1].strip() if i + 1 < len(lines) else ""
 
-                # 修改处：用最后一个逗号后的内容作为频道名，避免属性中逗号干扰
-                comma_pos = info_line.rfind(',')
-                if comma_pos != -1:
-                    display_name = info_line[comma_pos + 1:].strip()
-                else:
-                    display_name = "未知频道"
+                # 去掉开头 "#EXTINF:-1"
+                content = info_line[len("#EXTINF:"):].strip()
 
+                # 正则去除所有 key="value" 或 key='value' 属性，防止属性内逗号影响
+                content_cleaned = re.sub(r'\w+=[\'"][^\'"]*[\'"]', '', content)
+
+                content_cleaned = content_cleaned.strip()
+
+                # 用最后一个逗号分割，逗号后面是频道名
+                comma_pos = content_cleaned.rfind(',')
+                if comma_pos != -1:
+                    display_name = content_cleaned[comma_pos + 1:].strip()
+                else:
+                    display_name = content_cleaned.strip()
+
+                # 提取 tvg-logo 作为图标 URL
                 logo_match = re.search(r'tvg-logo=[\'"]([^\'"]+)[\'"]', info_line)
                 tvg_logo_url = logo_match.group(1).strip() if logo_match else ""
 
