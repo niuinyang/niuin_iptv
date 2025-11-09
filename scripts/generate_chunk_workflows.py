@@ -8,8 +8,7 @@ CHUNK_DIR = "output/chunk"
 
 os.makedirs(WORKFLOW_DIR, exist_ok=True)
 
-template = """# Generated at: {timestamp}
-name: Deep Validation Chunk {n}
+template = """name: Deep Validation Chunk {n}
 
 on:
   schedule:
@@ -42,6 +41,18 @@ jobs:
       - name: Run final scan on chunk {n}
         run: |
           python scripts/4.3final_scan.py --input {chunk_file} --output_dir output/chunk_final_scan
+
+      - name: Commit and push scan results
+        env:
+          REPO_TOKEN: ${{{{ secrets.PERSONAL_ACCESS_TOKEN }}}}
+          GITHUB_REPOSITORY: ${{{{ github.repository }}}}
+          GITHUB_REF: ${{{{ github.ref }}}}
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add output/chunk_final_scan/
+          git commit -m "ci: add final scan results chunk {n}" || echo "No changes to commit"
+          git push https://x-access-token:${{REPO_TOKEN}}@github.com/${{GITHUB_REPOSITORY}} HEAD:${{GITHUB_REF}}
 
       - name: Self delete workflow file
         env:
