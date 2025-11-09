@@ -5,24 +5,45 @@ import sys
 
 def split_deep_scan(input_path="output/middle/deep_scan.csv",
                     chunk_size=1000,
-                    output_dir="input_chunks"):
-    print("🔍 Current working directory:", os.getcwd())
-    print(f"📄 Input file: {input_path}")
-    print(f"📂 Output directory: {output_dir}")
+                    output_dir="output/chunk"):
+    """
+    将 deep_scan.csv 按 chunk_size 行分割到 output/chunk 目录。
+    如果目录不存在则自动创建。
+    """
+    print("🔍 当前工作目录:", os.getcwd())
+    print(f"📄 输入文件: {input_path}")
+    print(f"📂 输出目录: {output_dir}")
 
+    # 确认输入文件是否存在
     if not os.path.exists(input_path):
-        print(f"❌ Input file not found: {input_path}")
+        print(f"❌ 未找到输入文件: {input_path}")
         sys.exit(1)
 
+    # 自动创建输出目录
     os.makedirs(output_dir, exist_ok=True)
-    with open(input_path, newline='', encoding='utf-8') as f:
-        reader = csv.DictReader(f)
-        headers = reader.fieldnames
-        rows = list(reader)
+
+    # 读取 CSV 内容
+    try:
+        with open(input_path, newline='', encoding='utf-8') as f:
+            reader = csv.DictReader(f)
+            headers = reader.fieldnames
+            rows = list(reader)
+    except UnicodeDecodeError:
+        print("⚠️ UTF-8 解码失败，尝试使用自动检测编码...")
+        import chardet
+        with open(input_path, 'rb') as f:
+            data = f.read()
+            result = chardet.detect(data)
+            encoding = result['encoding'] or 'utf-8'
+        print(f"📘 检测到编码: {encoding}")
+        text = data.decode(encoding, errors='ignore')
+        rows = list(csv.DictReader(text.splitlines()))
+        headers = rows[0].keys() if rows else []
 
     total = len(rows)
-    print(f"✅ Total rows: {total}")
+    print(f"✅ 读取到 {total} 行数据")
 
+    # 按块分割
     for i in range(0, total, chunk_size):
         chunk_rows = rows[i:i + chunk_size]
         chunk_num = i // chunk_size + 1
@@ -34,9 +55,10 @@ def split_deep_scan(input_path="output/middle/deep_scan.csv",
             writer.writeheader()
             writer.writerows(chunk_rows)
 
-        print(f"🧩 Wrote {chunk_path} with {len(chunk_rows)} rows")
+        print(f"🧩 已写入 {chunk_path} ({len(chunk_rows)} 行)")
 
-    print("✅ All chunks written successfully.")
+    print("✅ 所有分片文件写入完成。")
+
 
 if __name__ == "__main__":
     split_deep_scan()
