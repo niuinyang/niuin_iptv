@@ -7,6 +7,7 @@ on:
 
 permissions:
   contents: write
+  workflows: write
 
 jobs:
   generate_and_push:
@@ -36,7 +37,6 @@ jobs:
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
           git add .github/workflows/chunks/*.yml || true
-          # only commit if there are staged changes
           if git diff --cached --quiet; then
             echo "No generated workflow changes to commit."
           else
@@ -49,14 +49,10 @@ jobs:
           REPO: ${{ github.repository }}
           TARGET_BRANCH: main
         run: |
-          # 如果没有要推送的提交则直接结束
-          if git rev-parse --verify --quiet HEAD >/dev/null 2>&1; then
-            if git diff --quiet origin/${TARGET_BRANCH}..HEAD; then
-              echo "No new commits to push."
-              exit 0
-            fi
+          git fetch origin ${TARGET_BRANCH}
+          if git diff --quiet origin/${TARGET_BRANCH}..HEAD; then
+            echo "No new commits to push."
+            exit 0
           fi
-
-          # set remote with token and push
           git remote set-url origin https://x-access-token:${PUSH_TOKEN}@github.com/${REPO}.git
           git push origin HEAD:${TARGET_BRANCH}
