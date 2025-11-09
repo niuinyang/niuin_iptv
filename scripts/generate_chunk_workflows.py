@@ -1,19 +1,13 @@
 import os
 import glob
-from datetime import datetime, timezone, timedelta
+import re
 
-WORKFLOW_DIR = ".github/workflows"  # workflow 生成目录，GitHub Actions 默认识别这里
+WORKFLOW_DIR = ".github/workflows"
 CHUNK_DIR = "output/chunk"
 
 os.makedirs(WORKFLOW_DIR, exist_ok=True)
 
-def get_local_iso_timestamp():
-    tz = timezone(timedelta(hours=8))
-    now = datetime.now(tz)
-    return now.isoformat()
-
-template = """\
-# Generated at: {timestamp}
+template = """# Generated at: {timestamp}
 name: Deep Validation Chunk {n}
 
 on:
@@ -22,7 +16,7 @@ on:
   workflow_dispatch:
 
 permissions:
-  contents: write  # 允许修改仓库文件，删除 workflow 需要
+  contents: write
 
 jobs:
   deep_chunk_{n}:
@@ -54,11 +48,20 @@ jobs:
           git push https://x-access-token:${{REPO_TOKEN}}@github.com/${{GITHUB_REPOSITORY}} HEAD:${{GITHUB_REF}}
 """
 
-chunk_files = sorted(glob.glob(os.path.join(CHUNK_DIR, "*.csv")))
-timestamp = get_local_iso_timestamp()
+from datetime import datetime
 
-for i, f in enumerate(chunk_files, start=1):
-    wf_path = os.path.join(WORKFLOW_DIR, f"deep_chunk_{i}.yml")
-    with open(wf_path, "w", encoding="utf-8") as w:
-        w.write(template.format(n=i, chunk_file=f, timestamp=timestamp))
-    print(f"✅ Created: {wf_path}")
+chunk_files = sorted(glob.glob(os.path.join(CHUNK_DIR, "chunk_*.csv")))
+
+for chunk_file in chunk_files:
+    basename = os.path.basename(chunk_file)
+    match = re.match(r"chunk_(\d+)\.csv", basename)
+    if not match:
+        print(f"跳过不匹配的文件: {basename}")
+        continue
+    n = match.group(1)
+    wf_path = os.path.join(WORKFLOW_DIR, f"deep_chunk_{n}.yml")
+    timestamp = datetime.now().astimezone().isoformat()
+    content = template.format(n=n, chunk_file=chunk_file, timestamp=timestamp)
+    with open(wf_path, "w", encoding="utf-8") as f:
+        f.write(content)
+    print(f"✅ 生成 workflow: {wf_path}")
