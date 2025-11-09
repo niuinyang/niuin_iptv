@@ -7,10 +7,13 @@ on:
 
 permissions:
   contents: write
+  workflows: write
 
 jobs:
   generate_and_push:
     runs-on: ubuntu-latest
+    env:
+      NIUYANG: ${{ secrets.NIUYANG }}
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4
@@ -33,8 +36,8 @@ jobs:
 
       - name: Commit generated workflows (if any)
         run: |
-          git config user.name "github-actions[bot]"
-          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git config user.name "Your Name"
+          git config user.email "your-email@example.com"
           git add .github/workflows/chunks/*.yml || true
           if git diff --cached --quiet; then
             echo "No generated workflow changes to commit."
@@ -43,20 +46,11 @@ jobs:
           fi
 
       - name: Push using PAT
-        env:
-          niuyang: ${{ secrets.NIUYANG }}
-          REPO: ${{ github.repository }}
-          TARGET_BRANCH: main
         run: |
-          if [ -z "$niuyang" ]; then
-            echo "Error: niuyang token is not set. Please add it to repository secrets."
-            exit 1
-          fi
-
-          git fetch origin ${TARGET_BRANCH}
-          if git diff --quiet origin/${TARGET_BRANCH}..HEAD; then
+          git fetch origin main
+          if git diff --quiet origin/main..HEAD; then
             echo "No new commits to push."
             exit 0
           fi
-          git remote set-url origin https://x-access-token:${NIUYANG}@github.com/${REPO}.git
-          git push origin HEAD:${TARGET_BRANCH}
+          git remote set-url origin https://x-access-token:${NIUYANG}@github.com/${{ github.repository }}.git
+          git push origin HEAD:main
