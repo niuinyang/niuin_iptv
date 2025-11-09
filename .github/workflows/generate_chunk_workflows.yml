@@ -7,7 +7,8 @@ on:
   workflow_dispatch:
 
 permissions:
-  contents: write  # 允许修改代码
+  contents: write  # 允许修改代码，GITHUB_TOKEN 的权限
+  # workflows 权限无需在这里声明，PUSH_TOKEN 权限决定
 
 jobs:
   generate_and_push:
