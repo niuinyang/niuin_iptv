@@ -1,10 +1,109 @@
+#!/usr/bin/env python3
+# scripts/4.3final_scan.py
+import argparse
+import csv
+import asyncio
+from asyncio.subprocess import create_subprocess_exec, PIPE
+from PIL import Image
+import io
+from tqdm.asyncio import tqdm_asyncio
+from asyncio import Semaphore
+import json
+import os
+import chardet
+
+DEEP_INPUT = "output/middle/deep_scan.csv"
+CACHE_FILE = "output/cache_hashes.json"
+
+# ----- aHash implementation (64-bit) -----
+def image_to_ahash_bytes(img_bytes, hash_size=8):
+    im = Image.open(io.BytesIO(img_bytes)).convert('L').resize((hash_size, hash_size), Image.Resampling.LANCZOS)
+    pixels = list(im.getdata())
+    avg = sum(pixels) / len(pixels)
+    bits = 0
+    for p in pixels:
+        bits = (bits << 1) | (1 if p > avg else 0)
+    return bits  # integer representing hash
+
+def hamming(a, b):
+    x = a ^ b
+    return x.bit_count()
+
+async def grab_frame(url, at_time=1, timeout=15):
+    cmd = ["ffmpeg", "-ss", str(at_time), "-i", url, "-frames:v", "1", "-f", "image2", "-vcodec", "mjpeg", "pipe:1", "-hide_banner", "-loglevel", "error"]
+    try:
+        proc = await create_subprocess_exec(*cmd, stdout=PIPE, stderr=PIPE)
+        try:
+            stdout, stderr = await asyncio.wait_for(proc.communicate(), timeout=timeout)
+        except asyncio.TimeoutError:
+            proc.kill()
+            return None, "timeout"
+        if stdout:
+            return stdout, ""
+        else:
+            return None, stderr.decode('utf-8', errors='ignore') or "no_output"
+    except FileNotFoundError:
+        return None, "ffmpeg_not_installed"
+
+def load_cache():
+    if os.path.exists(CACHE_FILE):
+        with open(CACHE_FILE, "r", encoding="utf-8") as f:
+            return json.load(f)
+    return {}
+
+def save_cache(data):
+    os.makedirs(os.path.dirname(CACHE_FILE), exist_ok=True)
+    with open(CACHE_FILE, "w", encoding="utf-8") as f:
+        json.dump(data, f, ensure_ascii=False, indent=2)
+
+async def process_one(url, sem, cache, timeout=20):
+    async with sem:
+        old_hash = cache.get(url)
+        img_bytes, err = await grab_frame(url, at_time=1, timeout=timeout)
+        if not img_bytes:
+            return {"url": url, "status": "error", "errors": [err], "is_fake": False, "similarity": 0.0, "hashes": []}
+        try:
+            new_hash = image_to_ahash_bytes(img_bytes)
+        except Exception as e:
+            return {"url": url, "status": f"hash_error:{e}", "errors": [], "is_fake": False, "similarity": 0.0, "hashes": []}
+
+        if old_hash is not None:
+            bits = 64
+            d = hamming(new_hash, old_hash)
+            sim = 1.0 - (d / bits)
+            is_fake = sim >= 0.95
+        else:
+            sim = 0.0
+            is_fake = False
+
+        cache[url] = new_hash
+
+        return {"url": url, "status": "ok", "errors": [], "is_fake": is_fake, "similarity": sim, "hashes": [new_hash]}
+
+async def run_all(urls, concurrency=6, cache=None, timeout=20):
+    sem = Semaphore(concurrency)
+    tasks = [process_one(u, sem, cache, timeout=timeout) for u in urls]
+    results = []
+    for fut in tqdm_asyncio.as_completed(tasks, desc="final-scan", total=len(tasks)):
+        r = await fut
+        results.append(r)
+    return results
+
+def read_deep_input(path):
+    urls = []
+    with open(path, newline='', encoding='utf-8') as f:
+        reader = csv.DictReader(f)
+        for r in reader:
+            url = r.get("地址") or r.get("url")
+            if url:
+                urls.append(url)
+    return urls
+
 def ensure_dirs(input_path):
-    # 确保输入文件所在目录存在，和输出文件夹也放在该目录下
+    # 确保输入文件所在目录存在
     input_dir = os.path.dirname(input_path)
     os.makedirs(input_dir, exist_ok=True)
-    # 输出文件都放同目录
-    os.makedirs(input_dir, exist_ok=True)
-
+    # 输出目录在 main() 中专门创建，不在这里创建
 
 def write_final(results, input_path, working_out=None, final_out=None, final_invalid_out=None, generate_working_gbk=False):
     final_map = {r["url"]: r for r in results}
@@ -13,17 +112,6 @@ def write_final(results, input_path, working_out=None, final_out=None, final_inv
     with open(input_path, "rb") as fb:
         raw = fb.read(20000)
         detected_enc = chardet.detect(raw)["encoding"] or "utf-8"
-
-    # 如果没有传入输出路径，则根据输入文件名构造输出路径，且都放input文件同目录
-    input_dir = os.path.dirname(input_path)
-    input_name = os.path.splitext(os.path.basename(input_path))[0]  # 例如 chunk_1
-
-    if working_out is None:
-        working_out = os.path.join(input_dir, f"{input_name}_working.csv")
-    if final_out is None:
-        final_out = os.path.join(input_dir, f"{input_name}_final.csv")
-    if final_invalid_out is None:
-        final_invalid_out = os.path.join(input_dir, f"{input_name}_final_invalid.csv")
 
     with open(input_path, newline='', encoding=detected_enc, errors='ignore') as fin, \
          open(working_out, "w", newline='', encoding='utf-8') as fworking, \
@@ -44,7 +132,6 @@ def write_final(results, input_path, working_out=None, final_out=None, final_inv
         w_valid.writeheader()
         w_invalid.writeheader()
 
-        # 预备GBK写入（如果需要）
         if generate_working_gbk:
             working_gbk_path = working_out.rsplit(".",1)[0] + "_gbk.csv"
             fworking_gbk = open(working_gbk_path, "w", newline='', encoding='gbk', errors='ignore')
@@ -96,13 +183,10 @@ def write_final(results, input_path, working_out=None, final_out=None, final_inv
             fworking_gbk.close()
             print(f"✔️ 生成 GBK 编码的 working 文件: {working_gbk_path}")
 
-
 def main():
     p = argparse.ArgumentParser()
     p.add_argument("--input", "-i", default=DEEP_INPUT)
-    # 不再默认用固定路径，留空让 write_final 函数自己根据输入文件路径生成
-    p.add_argument("--final", default=None)
-    p.add_argument("--working", default=None)
+    p.add_argument("--output_dir", default="output/chunk_final_scan")  # 统一输出目录
     p.add_argument("--timeout", type=int, default=20)
     p.add_argument("--concurrency", type=int, default=6)
     p.add_argument("--working_gbk", action="store_true", help="是否生成 GBK 编码的 working.csv 版本，兼容Windows Excel")
@@ -115,6 +199,25 @@ def main():
     cache = load_cache()
     results = asyncio.run(run_all(urls, concurrency=args.concurrency, cache=cache, timeout=args.timeout))
     save_cache(cache)
-    write_final(results, input_path=args.input, working_out=args.working, final_out=args.final, generate_working_gbk=args.working_gbk)
+
+    os.makedirs(args.output_dir, exist_ok=True)
+    input_name = os.path.splitext(os.path.basename(args.input))[0]
+
+    working_out = os.path.join(args.output_dir, f"working_{input_name}.csv")
+    final_out = os.path.join(args.output_dir, f"final_{input_name}.csv")
+    final_invalid_out = os.path.join(args.output_dir, f"final_invalid_{input_name}.csv")
+
+    write_final(
+        results,
+        input_path=args.input,
+        working_out=working_out,
+        final_out=final_out,
+        final_invalid_out=final_invalid_out,
+        generate_working_gbk=args.working_gbk,
+    )
+
     fake_count = sum(1 for r in results if r.get("is_fake"))
-    print(f"Final scan finished. Fake found: {fake_count}/{len(results)}. Wrote final and working files in {os.path.dirname(args.input)}")
+    print(f"Final scan finished. Fake found: {fake_count}/{len(results)}. Wrote outputs to {args.output_dir}")
+
+if __name__ == "__main__":
+    main()
