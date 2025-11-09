@@ -9,7 +9,7 @@ from asyncio.subprocess import create_subprocess_exec, PIPE
 from tqdm.asyncio import tqdm_asyncio
 from asyncio import Semaphore
 
-INPUT = "output/merge_total.csv"
+INPUT = "output/middle/fast_scan.csv"
 OUTPUT_OK = "output/middle/deep_scan.csv"
 OUTPUT_FAIL = "output/middle/deep_scan_invalid.csv"
 
