@@ -1,0 +1,20 @@
+name: Deep Validation Chunk 17
+
+on:
+  workflow_dispatch:
+
+jobs:
+  deep_chunk_17:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repo
+        uses: actions/checkout@v4
+
+      - name: Setup Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - name: Run deep validation on chunk 17
+        run: |
+          python scripts/stage2_deep_validation.py --input output/chunk/chunk_6.csv
