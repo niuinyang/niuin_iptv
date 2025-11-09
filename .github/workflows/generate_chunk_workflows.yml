@@ -8,7 +8,6 @@ on:
 
 permissions:
   contents: write  # 允许修改代码
-  workflows: write # 允许修改 workflow 文件
 
 jobs:
   generate_and_push:
