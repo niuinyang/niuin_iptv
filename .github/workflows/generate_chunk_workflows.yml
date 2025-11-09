@@ -44,7 +44,7 @@ jobs:
 
       - name: Push using PAT
         env:
-          niuyang: ${{ secrets.niuyang }}
+          niuyang: ${{ secrets.NIUYANG }}
           REPO: ${{ github.repository }}
           TARGET_BRANCH: main
         run: |
@@ -58,5 +58,5 @@ jobs:
             echo "No new commits to push."
             exit 0
           fi
-          git remote set-url origin https://x-access-token:${niuyang}@github.com/${REPO}.git
+          git remote set-url origin https://x-access-token:${NIUYANG}@github.com/${REPO}.git
           git push origin HEAD:${TARGET_BRANCH}
