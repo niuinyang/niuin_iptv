@@ -1,4 +1,4 @@
-# Generated at: 2025-11-09T23:52:19.926610+08:00
+# Generated at: 2025-11-09T16:02:51.611474+00:00
 name: Deep Validation Chunk 18
 
 on:
@@ -7,7 +7,7 @@ on:
   workflow_dispatch:
 
 permissions:
-  contents: write  # 允许修改仓库文件，删除 workflow 需要
+  contents: write
 
 jobs:
   deep_chunk_18:
@@ -23,7 +23,7 @@ jobs:
 
       - name: Run final scan on chunk 18
         run: |
-          python scripts/4.3final_scan.py --input output/chunk/chunk_7.csv
+          python scripts/4.3final_scan.py --input output/chunk/chunk_18.csv
 
       - name: Self delete workflow file
         env:
