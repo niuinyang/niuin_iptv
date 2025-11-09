@@ -41,7 +41,7 @@ jobs:
 
       - name: Run final scan on chunk {n}
         run: |
-          python scripts/4.3final_scan.py --input {chunk_file}
+          python scripts/4.3final_scan.py --input {chunk_file} --output_dir output/chunk_final_scan
 
       - name: Self delete workflow file
         env:
