@@ -28,6 +28,7 @@ os.makedirs(ICON_DIR, exist_ok=True)
 OUTPUT_M3U = os.path.join(OUTPUT_DIR, "merge_total.m3u")
 OUTPUT_CSV = os.path.join(OUTPUT_DIR, "merge_total.csv")
 SKIPPED_LOG = os.path.join(LOG_DIR, "skipped.log")
+MALFORMED_LOG = os.path.join(LOG_DIR, "malformed.log")
 
 # ==============================
 # 工具函数
@@ -59,28 +60,51 @@ def get_icon_path(standard_name, tvg_logo_url):
     # 不下载图标，仅返回 URL
     return tvg_logo_url or ""
 
+# ==============================
+# M3U 文件解析（增强版）
+# ==============================
+
 def read_m3u_file(file_path: str):
-    """读取 M3U 文件"""
+    """
+    读取 M3U 文件（增强版，自动修复格式错误）
+    支持检测缺少 #EXTINF: 的异常频道定义
+    """
     channels = []
+    malformed_count = 0
+
     try:
         lines = safe_open(file_path)
         i = 0
         while i < len(lines):
             line = lines[i].strip()
+
+            # 🩹 修复格式错误的频道定义（没有 #EXTINF 前缀）
+            if not line.startswith("#EXTINF:") and "tvg-logo=" in line and "," in line:
+                malformed_count += 1
+                with open(MALFORMED_LOG, "a", encoding="utf-8") as f:
+                    f.write(f"[FIXED] {os.path.basename(file_path)}: {line}\n")
+                line = "#EXTINF:-1 " + line
+
             if line.startswith("#EXTINF:"):
                 info_line = line
                 url_line = lines[i + 1].strip() if i + 1 < len(lines) else ""
 
-                tvg_match = re.search(r'tvg-name=[\'"]([^\'"]+)[\'"]', info_line)
-                tvg_name = tvg_match.group(1).strip() if tvg_match else None
+                # 提取频道属性
+                tvg_name = re.search(r'tvg-name=[\'"]([^\'"]+)[\'"]', info_line)
+                tvg_logo = re.search(r'tvg-logo=[\'"]([^\'"]+)[\'"]', info_line)
+                group_title = re.search(r'group-title=[\'"]([^\'"]+)[\'"]', info_line)
+                tvg_id = re.search(r'tvg-id=[\'"]([^\'"]+)[\'"]', info_line)
 
-                logo_match = re.search(r'tvg-logo=[\'"]([^\'"]+)[\'"]', info_line)
-                tvg_logo_url = logo_match.group(1).strip() if logo_match else ""
+                tvg_name = tvg_name.group(1).strip() if tvg_name else None
+                tvg_logo_url = tvg_logo.group(1).strip() if tvg_logo else ""
+                group_title = group_title.group(1).strip() if group_title else ""
+                tvg_id = tvg_id.group(1).strip() if tvg_id else ""
 
+                # 提取显示名
                 if "," in info_line:
                     display_name = info_line.split(",", 1)[1].strip()
                 else:
-                    display_name = "未知频道"
+                    display_name = tvg_name or tvg_id or "未知频道"
 
                 icon_path = get_icon_path(tvg_name or display_name, tvg_logo_url)
 
@@ -93,12 +117,16 @@ def read_m3u_file(file_path: str):
             else:
                 i += 1
 
-        print(f"📡 已加载 {os.path.basename(file_path)}: {len(channels)} 条频道")
+        print(f"📡 已加载 {os.path.basename(file_path)}: {len(channels)} 条频道（修复 {malformed_count} 条异常）")
         return channels
 
     except Exception as e:
         print(f"⚠️ 读取 {file_path} 失败: {e}")
         return []
+
+# ==============================
+# TXT/CSV 文件读取
+# ==============================
 
 def read_txt_multi_section_csv(file_path: str):
     """读取多段标题 TXT/CSV 文件"""
@@ -125,6 +153,10 @@ def read_txt_multi_section_csv(file_path: str):
     except Exception as e:
         print(f"⚠️ 读取 {file_path} 失败: {e}")
         return []
+
+# ==============================
+# 文件输出
+# ==============================
 
 def write_output_files(channels):
     """统一输出 UTF-8 无 BOM"""
@@ -168,6 +200,10 @@ def write_output_files(channels):
 
     print(f"📁 输出文件：{OUTPUT_M3U} 和 {OUTPUT_CSV}")
     print(f"📁 跳过日志：{SKIPPED_LOG}")
+
+# ==============================
+# 主入口
+# ==============================
 
 def merge_all_sources():
     """合并目录内所有 M3U / TXT 源"""
