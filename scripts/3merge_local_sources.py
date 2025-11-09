@@ -71,17 +71,17 @@ def read_m3u_file(file_path: str):
                 info_line = line
                 url_line = lines[i + 1].strip() if i + 1 < len(lines) else ""
 
-                # 去掉开头 "#EXTINF:-1"
-                content = info_line[len("#EXTINF:"):].strip()
+                # 去掉开头 #EXTINF:-1 及其后的空白
+                content = re.sub(r'^#EXTINF:-1\s*', '', info_line)
 
-                # 匹配所有 key="value" 属性（支持属性值内含逗号）
+                # 匹配所有 key="value" 属性
                 attributes = re.findall(r'\w+=[\'"][^\'"]*[\'"]', content)
 
-                # 从 content 中删除所有属性
+                # 删除所有属性字符串
                 for attr in attributes:
                     content = content.replace(attr, '')
 
-                # 剩余部分去除前导逗号和空白即为频道名
+                # 去掉剩余开头逗号和空白即为频道名
                 display_name = content.strip().lstrip(',').strip()
 
                 # 提取 tvg-logo
