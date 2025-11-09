@@ -1,10 +1,13 @@
-# Generated at: 2025-11-09T23:46:05.128312+08:00
+# Generated at: 2025-11-09T23:52:19.926610+08:00
 name: Deep Validation Chunk 20
 
 on:
   schedule:
-    - cron: '0 20 * * *'  # 每天 UTC 20:00 触发，相当于东八区凌晨4点
+    - cron: '0 20 * * *'  # 每天 UTC 20:00 触发，东八区凌晨4点
   workflow_dispatch:
+
+permissions:
+  contents: write  # 允许修改仓库文件，删除 workflow 需要
 
 jobs:
   deep_chunk_20:
@@ -21,3 +24,16 @@ jobs:
       - name: Run final scan on chunk 20
         run: |
           python scripts/4.3final_scan.py --input output/chunk/chunk_9.csv
+
+      - name: Self delete workflow file
+        env:
+          REPO_TOKEN: ${{ secrets.PERSONAL_ACCESS_TOKEN }}
+          WORKFLOW_FILE: ".github/workflows/deep_chunk_20.yml"
+          GITHUB_REPOSITORY: ${{ github.repository }}
+          GITHUB_REF: ${{ github.ref }}
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git rm "$WORKFLOW_FILE"
+          git commit -m "ci: self delete workflow deep_chunk_20.yml after run"
+          git push https://x-access-token:${REPO_TOKEN}@github.com/${GITHUB_REPOSITORY} HEAD:${GITHUB_REF}
