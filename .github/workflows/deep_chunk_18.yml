@@ -1,4 +1,4 @@
-# Generated at: 2025-11-09T16:12:27.981713+00:00
+# Generated at: 2025-11-09T16:17:35.847231+00:00
 name: Deep Validation Chunk 18
 
 on:
@@ -31,7 +31,7 @@ jobs:
 
       - name: Run final scan on chunk 18
         run: |
-          python scripts/4.3final_scan.py --input output/chunk/chunk_18.csv
+          python scripts/4.3final_scan.py --input output/chunk/chunk_18.csv --output_dir output/chunk_final_scan
 
       - name: Self delete workflow file
         env:
