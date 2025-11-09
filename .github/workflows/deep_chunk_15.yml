@@ -1,6 +1,9 @@
+# Generated at: 2025-11-09T23:43:39.049219+08:00
 name: Deep Validation Chunk 15
 
 on:
+  schedule:
+    - cron: '0 20 * * *'  # 每天 UTC 20:00 触发，相当于东八区凌晨4点
   workflow_dispatch:
 
 jobs:
@@ -15,6 +18,6 @@ jobs:
         with:
           python-version: '3.11'
 
-      - name: Run deep validation on chunk 15
+      - name: Run final scan on chunk 15
         run: |
-          python scripts/stage2_deep_validation.py --input output/chunk/chunk_4.csv
+          python scripts/4.3final_scan.py --input output/chunk/chunk_4.csv
