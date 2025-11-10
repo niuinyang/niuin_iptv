@@ -3,11 +3,12 @@ name: Generate Deep Chunk Workflows (push via PAT)
 on:
   workflow_dispatch:
   schedule:
-    - cron: '0 18 * * *'  # 每天 UTC 18:00（CST 次日 02:00）
+    # 每天 03:15 Asia/Taipei (UTC+8) => UTC 前一天 19:15
+    - cron: '15 19 * * *'
 
 permissions:
   contents: write
-  #workflows: write
+  # workflows: write
 
 jobs:
   generate_and_push:
@@ -33,10 +34,18 @@ jobs:
         run: |
           python scripts/generate_chunk_workflows.py --add-timestamp
 
-      - name: Commit generated workflows (if any)
+      - name: Configure git
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
+
+      - name: Pull latest changes (merge remote updates)
+        run: |
+          git fetch origin main
+          git pull --rebase origin main || git rebase --abort
+
+      - name: Commit generated workflows (if any)
+        run: |
           git add .github/workflows/*.yml || true
           if git diff --cached --quiet; then
             echo "No generated workflow changes to commit."
