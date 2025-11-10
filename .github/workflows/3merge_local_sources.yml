@@ -2,8 +2,8 @@ name: Merge Local IPTV Sources
 
 on:
   schedule:
-    # 每天 02:00 Asia/Taipei (UTC+8) => UTC 前一天 18:00
-    - cron: '0 18 * * *'
+    # 每天 01:30 Asia/Taipei (UTC+8) => UTC 前一天 17:30
+    - cron: '30 17 * * *'
   workflow_dispatch:  # 支持手动触发
 
 permissions:
