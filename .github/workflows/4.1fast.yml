@@ -1,6 +1,9 @@
 name: IPTV Fast Scan (宽松模式)
 
 on:
+  schedule:
+    # 每天 02:30 Asia/Taipei (UTC+8) => UTC 前一天 18:30
+    - cron: '30 18 * * *'
   workflow_dispatch:
 
 permissions:
@@ -13,6 +16,8 @@ jobs:
     steps:
       - name: Checkout code
         uses: actions/checkout@v3
+        with:
+          fetch-depth: 0  # 拉取完整历史，便于 rebase 合并
 
       - name: Setup Python
         uses: actions/setup-python@v4
@@ -44,10 +49,22 @@ jobs:
           echo "⚠️ 无效源预览："
           head -10 output/middle/fast_scan_invalid.csv || true
 
+      - name: Configure git
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+
+      - name: Pull latest changes (merge remote updates)
+        run: |
+          git fetch origin main
+          git pull --rebase origin main || git rebase --abort
+
       - name: Commit and push results
         run: |
-          git config --global user.name "github-actions[bot]"
-          git config --global user.email "github-actions[bot]@users.noreply.github.com"
-          git add output/middle/fast_scan.csv output/middle/fast_scan_invalid.csv
-          git commit -m "Update fast scan results [ci skip]" || echo "No changes to commit"
-          git push
+          git add output/middle/fast_scan.csv output/middle/fast_scan_invalid.csv 2>/dev/null || true
+          if ! git diff --cached --quiet; then
+            git commit -m "Update fast scan results [ci skip]"
+            git push origin HEAD:main
+          else
+            echo "✅ No changes to commit."
+          fi
