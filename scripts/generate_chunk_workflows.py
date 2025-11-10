@@ -14,7 +14,7 @@ CACHE_FILE = "output/cache_workflow.json"
 os.makedirs(WORKFLOW_DIR, exist_ok=True)
 os.makedirs("output/cache", exist_ok=True)
 
-# 🧩 模板（已更新：带 git rebase 与重试 push）
+# 🧩 模板（已更新：带 git stash 防护、拉取合并和重试 push）
 TEMPLATE = """name: Deep Validation Chunk {n}
 
 on:
@@ -55,23 +55,32 @@ jobs:
           git add output/chunk_final_scan/working_chunk_{n}.csv output/chunk_final_scan/final_chunk_{n}.csv output/chunk_final_scan/final_invalid_chunk_{n}.csv output/cache/chunk/cache_hashes_chunk_{n}.json || echo "No files to add"
           git commit -m "ci: add final scan results and cache chunk {n}" || echo "No changes to commit"
 
-          # 🔹 安全 push 逻辑：避免远程领先导致推送拒绝
-          git fetch origin main
-          git rebase origin/main || git rebase --abort
-
-          # 🔁 自动重试推送 3 次（间隔 30 秒）
+          # 🔹 安全推送逻辑，带 stash 防护未暂存改动，重试推送
           for i in 1 2 3; do
-            git push https://github-actions:${{ secrets.GITHUB_TOKEN }}@github.com/niuinyang/niuin_iptv.git main && break || (
-              echo "⚠️ Push attempt $i failed, retrying in 30s..."
-              sleep 30
-            )
+            echo "推送尝试第 $i 次"
+            if git push https://github-actions:${{ secrets.GITHUB_TOKEN }}@github.com/niuinyang/niuin_iptv.git main; then
+              echo "推送成功"
+              break
+            else
+              echo "推送失败，尝试拉取远程合并"
+              git stash push -m "ci: stash before pull"
+              if git pull --rebase; then
+                echo "拉取合并成功，准备重试推送"
+                git stash pop || echo "无 stash 可弹出"
+              else
+                echo "拉取合并失败，等待 30 秒后重试"
+                git rebase --abort || true
+                git stash pop || echo "无 stash 可弹出"
+                sleep 30
+              fi
+            fi
           done
 """
 
 # 🧹 清理旧 workflow 文件
 print("🧹 清理旧的 workflow 文件...")
 for f in os.listdir(WORKFLOW_DIR):
-    if re.match(r"deep_chunk_\\d+\\.yml", f):
+    if re.match(r"deep_chunk_\d+\.yml", f):
         os.remove(os.path.join(WORKFLOW_DIR, f))
 
 if os.path.exists(CACHE_FILE):
