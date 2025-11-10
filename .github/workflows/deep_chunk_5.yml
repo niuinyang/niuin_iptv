@@ -1,0 +1,42 @@
+name: Deep Validation Chunk 5
+
+on:
+  schedule:
+    - cron: '10 20 * * *'  # 每天 UTC 20:10 触发
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  deep_validate_chunk_5:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Setup Python 3.11
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      - name: Install ffmpeg
+        run: sudo apt-get update && sudo apt-get install -y ffmpeg
+
+      - name: Install dependencies
+        run: pip install -r requirements.txt
+
+      - name: Run deep validation for chunk 5
+        run: |
+          python scripts/4.3final_scan.py --input output/chunk/chunk_5.csv --chunk_id 5 --cache_dir output/cache
+
+      - name: Commit scan results and cache
+        env:
+          PUSH_TOKEN: ${{ secrets.PUSH_TOKEN }}
+          REPO: ${{ github.repository }}
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add output/chunk_final_scan/working_chunk_5.csv output/chunk_final_scan/final_chunk_5.csv output/chunk_final_scan/final_invalid_chunk_5.csv output/cache/chunk/cache_hashes_chunk_5.json || echo "No files to add"
+          git commit -m "ci: add final scan results and cache chunk 5" || echo "No changes to commit"
+          git push || echo "Push skipped"
