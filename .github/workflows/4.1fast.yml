@@ -2,8 +2,8 @@ name: IPTV Fast Scan (宽松模式)
 
 on:
   schedule:
-    # 每天 02:30 Asia/Taipei (UTC+8) => UTC 前一天 18:30
-    - cron: '30 18 * * *'
+    # 每天 00:50 Asia/Taipei (UTC+8) => UTC 前一天 16:50
+    - cron: '50 16 * * *'
   workflow_dispatch:
 
 permissions:
