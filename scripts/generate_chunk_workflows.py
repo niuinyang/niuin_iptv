@@ -1,10 +1,10 @@
 #!/usr/bin/env python3
+# scripts/generate_chunk_workflows.py
 import os
 import re
-import argparse
 import json
+from datetime import datetime, timedelta
 import subprocess
-import time
 
 WORKFLOW_DIR = ".github/workflows"
 CHUNK_DIR = "output/chunk"
@@ -13,11 +13,12 @@ CACHE_FILE = "output/cache_workflow.json"
 os.makedirs(WORKFLOW_DIR, exist_ok=True)
 os.makedirs("output/cache", exist_ok=True)
 
+# 🧩 模板
 TEMPLATE = """name: Deep Validation Chunk {n}
 
 on:
   schedule:
-    - cron: '{cron_min} {cron_hour} * * *'  # 触发时间，UTC时间
+    - cron: '{cron}'  # 每天 UTC {utc_hour}:{utc_min:02d} 触发
   workflow_dispatch:
 
 permissions:
@@ -29,9 +30,6 @@ jobs:
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4
-        with:
-          fetch-depth: 0
-          persist-credentials: false
 
       - name: Setup Python 3.11
         uses: actions/setup-python@v5
@@ -46,132 +44,76 @@ jobs:
 
       - name: Run deep validation for chunk {n}
         run: |
-          python scripts/4.3final_scan.py --input {chunk_file} --chunk_id {n} --cache_dir output/cache
+          python scripts/4.3final_scan.py --input output/chunk/chunk_{n}.csv --chunk_id {n} --cache_dir output/cache
 
-      - name: Add, commit and push scan results and cache files
+      - name: Commit scan results and cache
         env:
-          PUSH_TOKEN1: ${{{{ secrets.PUSH_TOKEN1 }}}}
+          PUSH_TOKEN: ${{{{ secrets.PUSH_TOKEN }}}}
           REPO: ${{{{ github.repository }}}}
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
-          git remote set-url origin https://x-access-token:${{ secrets.PUSH_TOKEN1 }}@github.com/${{ github.repository }}.git
-
-          max_retries=3
-          wait_seconds=5
-          attempt=1
-
-          while [ $attempt -le $max_retries ]; do
-            echo "尝试拉取远程合并，尝试次数: $attempt"
-            git fetch origin main
-            if git merge --ff-only origin/main; then
-              echo "拉取合并成功"
-              break
-            else
-              echo "合并失败，等待 $wait_seconds 秒后重试..."
-              sleep $wait_seconds
-              attempt=$((attempt + 1))
-            fi
-          done
-
-          if [ $attempt -gt $max_retries ]; then
-            echo "⚠️ 达到最大重试次数，合并失败，跳过推送"
-            exit 0
-          fi
-
-          git add output/chunk_final_scan/working_chunk_{n}.csv output/chunk_final_scan/final_chunk_{n}.csv output/chunk_final_scan/final_invalid_chunk_{n}.csv output/cache/chunk/cache_hashes_chunk_{n}.json || echo "No scan result or cache files to add"
-          git commit -m "ci: add final scan results and cache chunk {n}" || echo "No changes in scan results or cache"
+          git add output/chunk_final_scan/working_chunk_{n}.csv output/chunk_final_scan/final_chunk_{n}.csv output/chunk_final_scan/final_invalid_chunk_{n}.csv output/cache/chunk/cache_hashes_chunk_{n}.json || echo "No files to add"
+          git commit -m "ci: add final scan results and cache chunk {n}" || echo "No changes to commit"
           git push || echo "Push skipped"
 """
 
-def load_cache():
-    if os.path.exists(CACHE_FILE):
-        try:
-            with open(CACHE_FILE, "r", encoding="utf-8") as f:
-                return json.load(f)
-        except json.JSONDecodeError:
-            return {}
-    return {}
+# 🧹 清理旧 workflow 文件
+print("🧹 清理旧的 workflow 文件...")
+for f in os.listdir(WORKFLOW_DIR):
+    if re.match(r"deep_chunk_\d+\.yml", f):
+        os.remove(os.path.join(WORKFLOW_DIR, f))
 
-def save_cache(cache):
-    with open(CACHE_FILE, "w", encoding="utf-8") as f:
-        json.dump(cache, f, indent=2, ensure_ascii=False)
+if os.path.exists(CACHE_FILE):
+    os.remove(CACHE_FILE)
 
-def generate_workflows():
-    cache = load_cache()
+# 🕒 按时间间隔分配 cron
+start_hour = 19  # UTC 基准小时
+start_minute = 30
+interval = 10
+chunks = sorted([f for f in os.listdir(CHUNK_DIR) if f.startswith("chunk_") and f.endswith(".csv")])
+total_chunks = len(chunks)
 
-    chunk_files = []
-    for filename in os.listdir(CHUNK_DIR):
-        match = re.match(r"chunk_(\d+)\.csv$", filename)
-        if not match:
-            print(f"跳过不匹配的文件: {filename}")
-            continue
-        chunk_files.append((int(match.group(1)), filename))
-    chunk_files.sort(key=lambda x: x[0])
+cache_data = {}
 
-    start_hour = 19  # UTC时间 19:30 对应东八区凌晨3:30
-    start_minute = 30
-    interval_min = 10
+for i, chunk_file in enumerate(chunks, start=1):
+    utc_hour = start_hour + ((start_minute + (i - 1) * interval) // 60)
+    utc_min = (start_minute + (i - 1) * interval) % 60
+    if utc_hour >= 24:
+        utc_hour -= 24
+    cron = f"{utc_min} {utc_hour} * * *"
 
-    for idx, (n_int, filename) in enumerate(chunk_files):
-        n = str(n_int)
-        workflow_filename = f"deep_chunk_{n}.yml"
-        workflow_path = os.path.join(WORKFLOW_DIR, workflow_filename)
-        chunk_file_path = os.path.join(CHUNK_DIR, filename)
+    workflow_filename = f"deep_chunk_{i}.yml"
+    workflow_path = os.path.join(WORKFLOW_DIR, workflow_filename)
 
-        total_minutes = start_minute + idx * interval_min
-        cron_hour = start_hour + total_minutes // 60
-        cron_min = total_minutes % 60
-        if cron_hour >= 24:
-            cron_hour = cron_hour % 24
+    with open(workflow_path, "w", encoding="utf-8") as f:
+        f.write(TEMPLATE.format(n=i, cron=cron, utc_hour=utc_hour, utc_min=utc_min))
 
-        cache_key = f"chunk_{n}"
-        if cache.get(cache_key) == workflow_filename and os.path.exists(workflow_path):
-            print(f"已存在且缓存一致: {workflow_filename} 触发时间: {cron_min} {cron_hour} * * *")
-            continue
+    print(f"✅ 已生成 workflow: {workflow_filename} 触发时间: {cron}")
+    cache_data[f"chunk_{i}"] = {"cron": cron, "file": workflow_filename}
 
-        with open(workflow_path, "w", encoding="utf-8") as wf:
-            wf.write(TEMPLATE.format(n=n, chunk_file=chunk_file_path, cron_hour=cron_hour, cron_min=cron_min))
-        cache[cache_key] = workflow_filename
-        print(f"✅ 已生成 workflow: {workflow_filename} 触发时间: {cron_min} {cron_hour} * * *")
+# 写入缓存文件
+with open(CACHE_FILE, "w", encoding="utf-8") as f:
+    json.dump(cache_data, f, indent=2, ensure_ascii=False)
 
-    save_cache(cache)
+print("\n🌀 提交生成的 workflow 和缓存文件到 GitHub...\n")
 
-def git_commit_push():
-    print("\n🌀 提交生成的 workflow 和缓存文件 到 GitHub...")
+# 🧠 安全提交逻辑
+subprocess.run(["git", "add", "-A"], check=False)
+subprocess.run(["git", "status"], check=False)
+commit_msg = "ci: auto-generate deep validation workflows"
+result = subprocess.run(["git", "commit", "-m", commit_msg], text=True)
+if result.returncode == 0:
+    print("✅ 已提交更改，准备推送...")
+else:
+    print("ℹ️ 无更改，跳过提交")
 
-    try:
-        subprocess.run(["git", "reset", "--hard"], check=True)
-        subprocess.run(["git", "clean", "-fd"], check=True)
-
-        subprocess.run(["git", "config", "user.name", "github-actions[bot]"], check=True)
-        subprocess.run(["git", "config", "user.email", "github-actions[bot]@users.noreply.github.com"], check=True)
-
-        subprocess.run(["git", "pull", "--rebase"], check=True)
-
-        subprocess.run(["git", "add", WORKFLOW_DIR], check=True)
-        subprocess.run(["git", "add", "output/cache"], check=True)
-
-        status = subprocess.run(["git", "status", "--porcelain"], capture_output=True, text=True)
-        if status.stdout.strip() == "":
-            print("ℹ️ 没有文件改动，无需提交")
-            return
-
-        subprocess.run(["git", "commit", "-m", "ci: auto-generate deep validation workflows"], check=True)
-        subprocess.run(["git", "push"], check=True)
-
-        print("✅ 成功推送到远程仓库")
-
-    except subprocess.CalledProcessError as e:
-        print(f"❌ Git 操作失败: {e}")
-        exit(1)
-
-if __name__ == "__main__":
-    parser = argparse.ArgumentParser()
-    parser.add_argument("--no-push", action="store_true", help="仅生成，不执行 git push")
-    args = parser.parse_args()
-
-    generate_workflows()
-
-    if not args.no_push:
-        git_commit_push()
+# 多次推送重试（防止偶发冲突）
+for attempt in range(1, 4):
+    print(f"尝试推送，第 {attempt} 次...")
+    code = subprocess.run(["git", "push"], text=True).returncode
+    if code == 0:
+        print("🚀 推送成功")
+        break
+    else:
+        print("⚠️ 推送失败，稍后重试")
