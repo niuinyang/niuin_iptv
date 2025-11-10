@@ -1,35 +1,41 @@
-name: Batch Delete Workflow Runs
+name: Delete All Workflow Runs
 
 on:
   workflow_dispatch:
 
 jobs:
-  delete_runs:
+  delete_all_runs:
     runs-on: ubuntu-latest
     steps:
-      - name: Install jq
+      - name: Install jq and curl
         run: sudo apt-get update && sudo apt-get install -y jq curl
 
-      - name: Delete runs with name containing "deep_validation"
+      - name: Delete all workflow runs
         env:
-          GITHUB_TOKEN: ${{ secrets.PUSH_TOKEN1 }}  # 用你的PAT名
+          GITHUB_TOKEN: ${{ secrets.PUSH_TOKEN1 }}  # 你的 PAT 名
           OWNER: ${{ github.repository_owner }}
           REPO: ${{ github.event.repository.name }}
         run: |
           PER_PAGE=100
-          echo "Fetching runs..."
-          runs_json=$(curl -s -H "Authorization: token $GITHUB_TOKEN" \
-            "https://api.github.com/repos/$OWNER/$REPO/actions/runs?per_page=$PER_PAGE")
+          page=1
 
-          run_ids=$(echo "$runs_json" | jq -r '.workflow_runs[] | select(.name | test("deep_validation")) | .id')
+          while : ; do
+            echo "Fetching page $page of workflow runs..."
+            runs_json=$(curl -s -H "Authorization: token $GITHUB_TOKEN" \
+              "https://api.github.com/repos/$OWNER/$REPO/actions/runs?per_page=$PER_PAGE&page=$page")
 
-          if [ -z "$run_ids" ]; then
-            echo "No matching runs found."
-            exit 0
-          fi
+            run_ids=$(echo "$runs_json" | jq -r '.workflow_runs[].id')
 
-          for id in $run_ids; do
-            echo "Deleting run id: $id"
-            curl -X DELETE -H "Authorization: token $GITHUB_TOKEN" \
-              "https://api.github.com/repos/$OWNER/$REPO/actions/runs/$id"
+            if [ -z "$run_ids" ]; then
+              echo "No more runs found, finished."
+              break
+            fi
+
+            for id in $run_ids; do
+              echo "Deleting run id: $id"
+              curl -X DELETE -H "Authorization: token $GITHUB_TOKEN" \
+                "https://api.github.com/repos/$OWNER/$REPO/actions/runs/$id"
+            done
+
+            ((page++))
           done
