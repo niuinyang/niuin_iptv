@@ -1,10 +1,9 @@
-name: 4.3.2生成chunk文件的workflow
+name: Generate Deep Chunk Workflows
 
 on:
   workflow_dispatch:
   schedule:
-    # 每天 03:15 Asia/Taipei (UTC+8) => UTC 前一天 19:15
-    - cron: '15 19 * * *'
+    - cron: '15 19 * * *'  # 每天 UTC 19:15 触发，东八区凌晨3:15
 
 permissions:
   contents: write
@@ -17,51 +16,27 @@ jobs:
         uses: actions/checkout@v4
         with:
           fetch-depth: 0
-          persist-credentials: false  # 关闭默认凭据，避免用 GITHUB_TOKEN
+          persist-credentials: false   # 禁用默认GITHUB_TOKEN
 
-      - name: Clean local changes before pull
-        run: |
-          git reset --hard
-          git clean -fd
-
-      - name: Pull latest changes (merge remote updates)
-        run: |
-          git fetch origin main
-          git pull --rebase origin main || git rebase --abort
-
-      - name: Setup Python
-        uses: actions/setup-python@v5
-        with:
-          python-version: '3.11'
-
-      - name: Install Python dependencies
-        run: |
-          python -m pip install --upgrade pip
-          pip install chardet pillow tqdm requests
-          
-      - name: Generate chunk workflows
-        run: |
-          python scripts/generate_chunk_workflows.py
-
-      - name: Configure git
+      - name: Set up Git user
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
 
-      - name: Commit generated workflows (if any)
-        run: |
-          git add .github/workflows/*.yml || true
-          if git diff --cached --quiet; then
-            echo "No generated workflow changes to commit."
-          else
-            git commit -m "Auto-generate deep chunk workflows $(date -u +'%Y-%m-%dT%H:%M:%SZ')"
-          fi
-
-      - name: Push using PAT
+      - name: Set git remote URL with PAT
         env:
-          PUSH_TOKEN: ${{ secrets.PUSH_TOKEN }}
+          PUSH_TOKEN1: ${{ secrets.PUSH_TOKEN1 }}
           REPO: ${{ github.repository }}
-          TARGET_BRANCH: main
         run: |
-          git remote set-url origin https://x-access-token:${PUSH_TOKEN}@github.com/${REPO}.git
-          git push origin HEAD:${TARGET_BRANCH}
+          git remote set-url origin https://x-access-token:${PUSH_TOKEN1}@github.com/${REPO}.git
+
+      - name: Setup Python 3.11
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      - name: Install dependencies
+        run: pip install chardet pillow tqdm requests
+
+      - name: Generate chunk workflows and push
+        run: python scripts/generate_chunk_workflows.py
