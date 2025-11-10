@@ -56,6 +56,29 @@ jobs:
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
           git remote set-url origin https://x-access-token:${{ secrets.PUSH_TOKEN1 }}@github.com/${{ github.repository }}.git
+
+          max_retries=3
+          wait_seconds=5
+          attempt=1
+
+          while [ $attempt -le $max_retries ]; do
+            echo "尝试拉取远程合并，尝试次数: $attempt"
+            git fetch origin main
+            if git merge --ff-only origin/main; then
+              echo "拉取合并成功"
+              break
+            else
+              echo "合并失败，等待 $wait_seconds 秒后重试..."
+              sleep $wait_seconds
+              attempt=$((attempt + 1))
+            fi
+          done
+
+          if [ $attempt -gt $max_retries ]; then
+            echo "⚠️ 达到最大重试次数，合并失败，跳过推送"
+            exit 0
+          fi
+
           git add output/chunk_final_scan/working_chunk_{n}.csv output/chunk_final_scan/final_chunk_{n}.csv output/chunk_final_scan/final_invalid_chunk_{n}.csv output/cache/chunk/cache_hashes_chunk_{n}.json || echo "No scan result or cache files to add"
           git commit -m "ci: add final scan results and cache chunk {n}" || echo "No changes in scan results or cache"
           git push || echo "Push skipped"
