@@ -1,6 +1,9 @@
 name: IPTV Deep Scan
 
 on:
+  schedule:
+    # 每天 01:30 Asia/Taipei (UTC+8) => UTC 前一天 17:30
+    - cron: '30 17 * * *'
   workflow_dispatch:
 
 permissions:
@@ -13,6 +16,8 @@ jobs:
     steps:
       - name: Checkout code
         uses: actions/checkout@v3
+        with:
+          fetch-depth: 0  # 确保完整历史，方便 rebase
 
       - name: Setup Python
         uses: actions/setup-python@v4
@@ -42,11 +47,22 @@ jobs:
       - name: Show sample results
         run: head -10 output/middle/deep_scan.csv || true
 
-      - name: Commit, pull with rebase, and push results
+      - name: Configure git
         run: |
-          git config --global user.name "github-actions[bot]"
-          git config --global user.email "github-actions[bot]@users.noreply.github.com"
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+
+      - name: Pull latest changes (merge remote updates)
+        run: |
+          git fetch origin main
+          git pull --rebase origin main || git rebase --abort
+
+      - name: Commit and push results
+        run: |
           git add output/middle/deep_scan.csv output/middle/deep_scan_invalid.csv
-          git commit -m "Update deep scan results [ci skip]" || echo "No changes to commit"
-          git pull --rebase
-          git push
+          if ! git diff --cached --quiet; then
+            git commit -m "Update deep scan results [ci skip]"
+            git push origin HEAD:main
+          else
+            echo "✅ No changes to commit."
+          fi
