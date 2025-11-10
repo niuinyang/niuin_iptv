@@ -50,19 +50,19 @@ jobs:
           git config user.email "github-actions[bot]@users.noreply.github.com"
 
       # 7. 拉取远程更新并合并（避免 push 冲突）
-      - name: Pull latest changes (merge remote updates)
+      - name: Pull latest changes (rebase remote updates)
         run: |
+          git stash push -m "ci: stash before pull"
           git fetch origin main
           git pull --rebase origin main || git rebase --abort
+          git stash pop || echo "No stash to pop"
 
       # 8. 提交并推送更新
       - name: Commit & Push downloaded files
         run: |
-          cd $GITHUB_WORKSPACE
           git add input/network/network_sources
-          git diff --cached --quiet || \
-          git commit -m "Update network M3U sources [ci skip]"
-          git push origin HEAD:main
+          git diff --cached --quiet || git commit -m "Update network M3U sources [ci skip]"
+          git push origin main
 
       # 9. 日志记录
       - name: Log completion
