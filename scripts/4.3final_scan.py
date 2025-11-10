@@ -1,6 +1,5 @@
 #!/usr/bin/env python3
 # scripts/4.3final_scan.py
-
 import argparse
 import csv
 import asyncio
@@ -14,7 +13,10 @@ import os
 import chardet
 
 DEEP_INPUT = "output/middle/deep_scan.csv"
-CACHE_FILE = "output/cache_hashes.json"
+
+CACHE_DIR = "output/cache"
+CHUNK_CACHE_DIR = os.path.join(CACHE_DIR, "chunk")
+CACHE_FILE = os.path.join(CACHE_DIR, "cache_hashes.json")
 
 # ----- aHash implementation (64-bit) -----
 def image_to_ahash_bytes(img_bytes, hash_size=8):
@@ -46,16 +48,27 @@ async def grab_frame(url, at_time=1, timeout=15):
     except FileNotFoundError:
         return None, "ffmpeg_not_installed"
 
-def load_cache():
+def load_cache(chunk_id=None):
+    os.makedirs(CHUNK_CACHE_DIR, exist_ok=True)
+    if chunk_id:
+        chunk_cache_file = os.path.join(CHUNK_CACHE_DIR, f"cache_hashes_chunk_{chunk_id}.json")
+        if os.path.exists(chunk_cache_file):
+            with open(chunk_cache_file, "r", encoding="utf-8") as f:
+                return json.load(f)
     if os.path.exists(CACHE_FILE):
         with open(CACHE_FILE, "r", encoding="utf-8") as f:
             return json.load(f)
     return {}
 
-def save_cache(data, path):
-    os.makedirs(os.path.dirname(path), exist_ok=True)
-    with open(path, "w", encoding="utf-8") as f:
-        json.dump(data, f, ensure_ascii=False, indent=2)
+def save_cache(data, chunk_id=None):
+    os.makedirs(CHUNK_CACHE_DIR, exist_ok=True)
+    if chunk_id:
+        chunk_cache_file = os.path.join(CHUNK_CACHE_DIR, f"cache_hashes_chunk_{chunk_id}.json")
+        with open(chunk_cache_file, "w", encoding="utf-8") as f:
+            json.dump(data, f, ensure_ascii=False, indent=2)
+    else:
+        with open(CACHE_FILE, "w", encoding="utf-8") as f:
+            json.dump(data, f, ensure_ascii=False, indent=2)
 
 async def process_one(url, sem, cache, timeout=20):
     async with sem:
@@ -99,10 +112,6 @@ def read_deep_input(path):
             if url:
                 urls.append(url)
     return urls
-
-def ensure_dirs(input_path):
-    input_dir = os.path.dirname(input_path)
-    os.makedirs(input_dir, exist_ok=True)
 
 def write_final(results, input_path, working_out=None, final_out=None, final_invalid_out=None, generate_working_gbk=False):
     final_map = {r["url"]: r for r in results}
@@ -184,36 +193,35 @@ def write_final(results, input_path, working_out=None, final_out=None, final_inv
 def main():
     p = argparse.ArgumentParser()
     p.add_argument("--input", "-i", default=DEEP_INPUT)
-    p.add_argument("--output_dir", default="output/chunk_final_scan")
+    p.add_argument("--chunk_id", type=str, default=None, help="Chunk ID，用于分块缓存")
+    p.add_argument("--cache_dir", type=str, default="output/cache", help="缓存目录")
     p.add_argument("--timeout", type=int, default=20)
     p.add_argument("--concurrency", type=int, default=6)
-    p.add_argument("--working_gbk", action="store_true", help="是否生成 GBK 编码的 working.csv 版本，兼容Windows Excel")
-    p.add_argument("--chunk_id", default=None, help="chunk id for separate cache saving")
+    p.add_argument("--working_gbk", action="store_true", help="是否生成 GBK 编码的 working.csv")
     args = p.parse_args()
 
-    ensure_dirs(args.input)
+    global CACHE_DIR, CHUNK_CACHE_DIR, CACHE_FILE
+    CACHE_DIR = args.cache_dir
+    CHUNK_CACHE_DIR = os.path.join(CACHE_DIR, "chunk")
+    CACHE_FILE = os.path.join(CACHE_DIR, "cache_hashes.json")
+
+    input_dir = os.path.dirname(args.input)
+    if input_dir:
+        os.makedirs(input_dir, exist_ok=True)
 
     urls = read_deep_input(args.input)
-    print(f"Final-stage checking {len(urls)} urls")
+    print(f"Final-stage checking {len(urls)} urls (chunk_id={args.chunk_id})")
 
-    cache = load_cache()
-
+    cache = load_cache(args.chunk_id)
     results = asyncio.run(run_all(urls, concurrency=args.concurrency, cache=cache, timeout=args.timeout))
+    save_cache(cache, args.chunk_id)
 
-    # 根据 chunk_id 保存独立缓存文件，防止并发写冲突
-    if args.chunk_id:
-        chunk_cache_file = os.path.join("output", f"cache_hashes_chunk_{args.chunk_id}.json")
-    else:
-        chunk_cache_file = CACHE_FILE
-
-    save_cache(cache, chunk_cache_file)
-
-    os.makedirs(args.output_dir, exist_ok=True)
+    os.makedirs("output/chunk_final_scan", exist_ok=True)
     input_name = os.path.splitext(os.path.basename(args.input))[0]
 
-    working_out = os.path.join(args.output_dir, f"working_{input_name}.csv")
-    final_out = os.path.join(args.output_dir, f"final_{input_name}.csv")
-    final_invalid_out = os.path.join(args.output_dir, f"final_invalid_{input_name}.csv")
+    working_out = os.path.join("output/chunk_final_scan", f"working_{input_name}.csv")
+    final_out = os.path.join("output/chunk_final_scan", f"final_{input_name}.csv")
+    final_invalid_out = os.path.join("output/chunk_final_scan", f"final_invalid_{input_name}.csv")
 
     write_final(
         results,
@@ -225,7 +233,7 @@ def main():
     )
 
     fake_count = sum(1 for r in results if r.get("is_fake"))
-    print(f"Final scan finished. Fake found: {fake_count}/{len(results)}. Wrote outputs to {args.output_dir}")
+    print(f"Final scan finished. Fake found: {fake_count}/{len(results)}. Wrote outputs to output/chunk_final_scan")
 
 if __name__ == "__main__":
     main()
