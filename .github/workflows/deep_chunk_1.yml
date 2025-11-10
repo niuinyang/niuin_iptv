@@ -2,7 +2,7 @@ name: Deep Validation Chunk 1
 
 on:
   schedule:
-    - cron: '30 19 * * *'
+    - cron: '30 19 * * *'  # 触发时间，UTC时间
   workflow_dispatch:
 
 permissions:

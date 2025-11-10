@@ -1,15 +1,15 @@
-name: Deep Validation Chunk 8
+name: Deep Validation Chunk 10
 
 on:
   schedule:
-    - cron: '40 20 * * *'  # 触发时间，UTC时间
+    - cron: '0 21 * * *'  # 触发时间，UTC时间
   workflow_dispatch:
 
 permissions:
   contents: write
 
 jobs:
-  deep_validate_chunk_8:
+  deep_validate_chunk_10:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout repository
@@ -27,15 +27,15 @@ jobs:
         run: |
           pip install -r requirements.txt
 
-      - name: Run deep validation for chunk 8
+      - name: Run deep validation for chunk 10
         run: |
-          python scripts/4.3final_scan.py --input output/chunk/chunk_8.csv --chunk_id 8 --cache_dir output/cache
+          python scripts/4.3final_scan.py --input output/chunk/chunk_10.csv --chunk_id 10 --cache_dir output/cache
 
       - name: Delete self workflow file
         env:
           PUSH_TOKEN: ${{ secrets.PUSH_TOKEN }}
           REPO: ${{ github.repository }}
-          FILE: .github/workflows/deep_chunk_8.yml
+          FILE: .github/workflows/deep_chunk_10.yml
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
