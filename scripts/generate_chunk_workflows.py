@@ -13,11 +13,25 @@ CACHE_FILE = "output/cache_workflow.json"
 os.makedirs(WORKFLOW_DIR, exist_ok=True)
 os.makedirs("output", exist_ok=True)
 
+def generate_cron_times(n):
+    """
+    生成 n 个触发时间点，每个间隔 10 分钟，从 UTC 19:30 开始
+    """
+    start_hour = 19  # UTC 时间，东八区凌晨3点对应小时
+    start_minute = 30
+    times = []
+    for i in range(n):
+        total_minutes = start_hour * 60 + start_minute + i * 10
+        hour = total_minutes // 60
+        minute = total_minutes % 60
+        times.append((hour, minute))
+    return times
+
 TEMPLATE = """name: Deep Validation Chunk {n}
 
 on:
   schedule:
-    - cron: '0 20 * * *'  # 每天 UTC 20:00（东八区 04:00）
+    - cron: '{cron}'
   workflow_dispatch:
 
 permissions:
@@ -75,7 +89,10 @@ def save_cache(cache):
 
 def generate_workflows():
     cache = load_cache()
-    for filename in sorted(os.listdir(CHUNK_DIR)):
+    files = sorted(os.listdir(CHUNK_DIR))
+    cron_times = generate_cron_times(len(files))  # 动态生成时间点，保证足够多
+
+    for i, filename in enumerate(files):
         match = re.match(r"chunk_(\d+)\.csv$", filename)
         if not match:
             print(f"跳过不匹配的文件: {filename}")
@@ -83,7 +100,6 @@ def generate_workflows():
 
         n = match.group(1)
         workflow_filename = f"deep_chunk_{n}.yml"
-
         workflow_path = os.path.join(WORKFLOW_DIR, workflow_filename)
         chunk_file_path = os.path.join(CHUNK_DIR, filename)
 
@@ -92,10 +108,15 @@ def generate_workflows():
             print(f"已存在且缓存一致: {workflow_filename}")
             continue
 
+        hour, minute = cron_times[i]
+        cron = f"{minute} {hour} * * *"
+
+        content = TEMPLATE.format(n=n, chunk_file=chunk_file_path, cron=cron)
+
         with open(workflow_path, "w", encoding="utf-8") as wf:
-            wf.write(TEMPLATE.format(n=n, chunk_file=chunk_file_path))
+            wf.write(content)
         cache[cache_key] = workflow_filename
-        print(f"✅ 已生成 workflow: {workflow_filename}")
+        print(f"✅ 已生成 workflow: {workflow_filename} 触发时间: {cron}")
 
     save_cache(cache)
 
