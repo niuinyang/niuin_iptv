@@ -90,7 +90,7 @@ def save_cache(cache):
 def generate_workflows():
     cache = load_cache()
     files = sorted(os.listdir(CHUNK_DIR))
-    cron_times = generate_cron_times(len(files))  # 动态生成时间点，保证足够多
+    cron_times = generate_cron_times(len(files))
 
     for i, filename in enumerate(files):
         match = re.match(r"chunk_(\d+)\.csv$", filename)
