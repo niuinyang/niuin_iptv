@@ -48,7 +48,17 @@ jobs:
         run: |
           python scripts/4.3final_scan.py --input {chunk_file} --chunk_id {n} --cache_dir output/cache
 
-      # 这里不再单独删除 workflow 文件，统一后续处理
+      - name: Add, commit and push scan results and cache files
+        env:
+          PUSH_TOKEN1: ${{{{ secrets.PUSH_TOKEN1 }}}}
+          REPO: ${{{{ github.repository }}}}
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git remote set-url origin https://x-access-token:${{ secrets.PUSH_TOKEN1 }}@github.com/${{ github.repository }}.git
+          git add output/chunk_final_scan/working_chunk_{n}.csv output/chunk_final_scan/final_chunk_{n}.csv output/chunk_final_scan/final_invalid_chunk_{n}.csv output/cache/chunk/cache_hashes_chunk_{n}.json || echo "No scan result or cache files to add"
+          git commit -m "ci: add final scan results and cache chunk {n}" || echo "No changes in scan results or cache"
+          git push || echo "Push skipped"
 """
 
 def load_cache():
