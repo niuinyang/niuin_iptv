@@ -41,7 +41,7 @@ jobs:
           
       - name: Generate chunk workflows
         run: |
-          python scripts/generate_chunk_workflows.py --add-timestamp
+          python scripts/generate_chunk_workflows.py
 
       - name: Configure git
         run: |
