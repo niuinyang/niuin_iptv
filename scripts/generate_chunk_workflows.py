@@ -5,6 +5,7 @@ import re
 import argparse
 import json
 import subprocess
+import time
 
 WORKFLOW_DIR = ".github/workflows"
 CHUNK_DIR = "output/chunk"
@@ -13,25 +14,11 @@ CACHE_FILE = "output/cache_workflow.json"
 os.makedirs(WORKFLOW_DIR, exist_ok=True)
 os.makedirs("output", exist_ok=True)
 
-def generate_cron_times(n):
-    """
-    生成 n 个触发时间点，每个间隔 10 分钟，从 UTC 19:30 开始
-    """
-    start_hour = 19  # UTC 时间，东八区凌晨3点对应小时
-    start_minute = 30
-    times = []
-    for i in range(n):
-        total_minutes = start_hour * 60 + start_minute + i * 10
-        hour = total_minutes // 60
-        minute = total_minutes % 60
-        times.append((hour, minute))
-    return times
-
 TEMPLATE = """name: Deep Validation Chunk {n}
 
 on:
   schedule:
-    - cron: '{cron}'
+    - cron: '{cron_min} {cron_hour} * * *'  # 触发时间，UTC时间
   workflow_dispatch:
 
 permissions:
@@ -89,51 +76,74 @@ def save_cache(cache):
 
 def generate_workflows():
     cache = load_cache()
-    files = sorted(os.listdir(CHUNK_DIR))
-    cron_times = generate_cron_times(len(files))
 
-    for i, filename in enumerate(files):
+    # 统计所有 chunk 文件，排序
+    chunk_files = []
+    for filename in os.listdir(CHUNK_DIR):
         match = re.match(r"chunk_(\d+)\.csv$", filename)
         if not match:
             print(f"跳过不匹配的文件: {filename}")
             continue
+        chunk_files.append((int(match.group(1)), filename))
+    chunk_files.sort(key=lambda x: x[0])
 
-        n = match.group(1)
+    # 计算触发时间，起点 UTC 19:30，对应东八区凌晨3:30，间隔10分钟
+    start_hour = 19
+    start_minute = 30
+    interval_min = 10
+
+    for idx, (n_int, filename) in enumerate(chunk_files):
+        n = str(n_int)
         workflow_filename = f"deep_chunk_{n}.yml"
         workflow_path = os.path.join(WORKFLOW_DIR, workflow_filename)
         chunk_file_path = os.path.join(CHUNK_DIR, filename)
 
+        # 计算cron时间
+        total_minutes = start_minute + idx * interval_min
+        cron_hour = start_hour + total_minutes // 60
+        cron_min = total_minutes % 60
+        if cron_hour >= 24:
+            cron_hour = cron_hour % 24
+
         cache_key = f"chunk_{n}"
         if cache.get(cache_key) == workflow_filename and os.path.exists(workflow_path):
-            print(f"已存在且缓存一致: {workflow_filename}")
+            print(f"已存在且缓存一致: {workflow_filename} 触发时间: {cron_min} {cron_hour} * * *")
             continue
 
-        hour, minute = cron_times[i]
-        cron = f"{minute} {hour} * * *"
-
-        content = TEMPLATE.format(n=n, chunk_file=chunk_file_path, cron=cron)
-
         with open(workflow_path, "w", encoding="utf-8") as wf:
-            wf.write(content)
+            wf.write(TEMPLATE.format(n=n, chunk_file=chunk_file_path, cron_hour=cron_hour, cron_min=cron_min))
         cache[cache_key] = workflow_filename
-        print(f"✅ 已生成 workflow: {workflow_filename} 触发时间: {cron}")
+        print(f"✅ 已生成 workflow: {workflow_filename} 触发时间: {cron_min} {cron_hour} * * *")
 
     save_cache(cache)
 
-def git_commit_push():
+def git_commit_push(max_retries=3, wait_seconds=5):
     print("\n🌀 提交生成的 workflow 到 GitHub...")
     try:
-        # 先清理本地未暂存改动，避免 pull --rebase 失败
-        subprocess.run(["git", "reset", "--hard"], check=True)
-        subprocess.run(["git", "clean", "-fd"], check=True)
-
         subprocess.run(["git", "pull", "--rebase"], check=True)
         subprocess.run(["git", "add", ".github/workflows"], check=True)
         subprocess.run(["git", "commit", "-m", "ci: auto-generate deep validation workflows"], check=False)
-        subprocess.run(["git", "push"], check=False)
-        print("✅ 已推送到远程仓库")
     except subprocess.CalledProcessError as e:
-        print("⚠️ Git 操作失败:", e)
+        print("⚠️ Git 预处理失败:", e)
+        return
+
+    for attempt in range(1, max_retries + 1):
+        try:
+            subprocess.run(["git", "push"], check=True)
+            print("✅ 已成功推送到远程仓库")
+            break
+        except subprocess.CalledProcessError as e:
+            print(f"⚠️ 第 {attempt} 次推送失败:", e)
+            if attempt < max_retries:
+                print(f"⏳ 等待 {wait_seconds} 秒后重试推送...")
+                try:
+                    subprocess.run(["git", "pull", "--rebase"], check=True)
+                except subprocess.CalledProcessError as pull_err:
+                    print("⚠️ 自动拉取远程最新失败，跳过重试:", pull_err)
+                    break
+                time.sleep(wait_seconds)
+            else:
+                print("❌ 达到最大重试次数，推送失败，请手动检查冲突。")
 
 if __name__ == "__main__":
     parser = argparse.ArgumentParser()
