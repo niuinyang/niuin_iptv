@@ -1,0 +1,35 @@
+name: Batch Delete Workflow Runs
+
+on:
+  workflow_dispatch:
+
+jobs:
+  delete_runs:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Install jq
+        run: sudo apt-get update && sudo apt-get install -y jq curl
+
+      - name: Delete runs with name containing "deep_validation"
+        env:
+          GITHUB_TOKEN: ${{ secrets.PUSH_TOKEN1 }}  # 用你的PAT名
+          OWNER: ${{ github.repository_owner }}
+          REPO: ${{ github.event.repository.name }}
+        run: |
+          PER_PAGE=100
+          echo "Fetching runs..."
+          runs_json=$(curl -s -H "Authorization: token $GITHUB_TOKEN" \
+            "https://api.github.com/repos/$OWNER/$REPO/actions/runs?per_page=$PER_PAGE")
+
+          run_ids=$(echo "$runs_json" | jq -r '.workflow_runs[] | select(.name | test("deep_validation")) | .id')
+
+          if [ -z "$run_ids" ]; then
+            echo "No matching runs found."
+            exit 0
+          fi
+
+          for id in $run_ids; do
+            echo "Deleting run id: $id"
+            curl -X DELETE -H "Authorization: token $GITHUB_TOKEN" \
+              "https://api.github.com/repos/$OWNER/$REPO/actions/runs/$id"
+          done
