@@ -46,10 +46,12 @@ jobs:
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
 
-      - name: Pull latest changes (merge remote updates)
+      - name: Pull latest changes (rebase remote updates)
         run: |
+          git stash push -m "ci: stash before pull"
           git fetch origin main
           git pull --rebase origin main || git rebase --abort
+          git stash pop || echo "No stash to pop"
 
       - name: Commit and push output files and icons
         run: |
