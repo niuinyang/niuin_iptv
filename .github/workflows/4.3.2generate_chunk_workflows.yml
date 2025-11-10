@@ -19,6 +19,16 @@ jobs:
           fetch-depth: 0
           persist-credentials: false  # 关闭默认凭据，避免用 GITHUB_TOKEN
 
+      - name: Clean local changes before pull
+        run: |
+          git reset --hard
+          git clean -fd
+
+      - name: Pull latest changes (merge remote updates)
+        run: |
+          git fetch origin main
+          git pull --rebase origin main || git rebase --abort
+
       - name: Setup Python
         uses: actions/setup-python@v5
         with:
@@ -37,16 +47,6 @@ jobs:
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
-
-      - name: Clean local changes before pull
-        run: |
-          git reset --hard
-          git clean -fd
-
-      - name: Pull latest changes (merge remote updates)
-        run: |
-          git fetch origin main
-          git pull --rebase origin main || git rebase --abort
 
       - name: Commit generated workflows (if any)
         run: |
