@@ -1,5 +1,4 @@
 #!/usr/bin/env python3
-# scripts/generate_chunk_workflows.py
 import os
 import re
 import argparse
@@ -12,7 +11,7 @@ CHUNK_DIR = "output/chunk"
 CACHE_FILE = "output/cache_workflow.json"
 
 os.makedirs(WORKFLOW_DIR, exist_ok=True)
-os.makedirs("output", exist_ok=True)
+os.makedirs("output/cache", exist_ok=True)
 
 TEMPLATE = """name: Deep Validation Chunk {n}
 
@@ -30,6 +29,9 @@ jobs:
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+          persist-credentials: false
 
       - name: Setup Python 3.11
         uses: actions/setup-python@v5
@@ -40,12 +42,13 @@ jobs:
         run: sudo apt-get update && sudo apt-get install -y ffmpeg
 
       - name: Install dependencies
-        run: |
-          pip install -r requirements.txt
+        run: pip install -r requirements.txt
 
       - name: Run deep validation for chunk {n}
         run: |
           python scripts/4.3final_scan.py --input {chunk_file} --chunk_id {n} --cache_dir output/cache
+
+      # 这里不再单独删除 workflow 文件，统一后续处理
 """
 
 def load_cache():
@@ -64,7 +67,6 @@ def save_cache(cache):
 def generate_workflows():
     cache = load_cache()
 
-    # 统计所有 chunk 文件，排序
     chunk_files = []
     for filename in os.listdir(CHUNK_DIR):
         match = re.match(r"chunk_(\d+)\.csv$", filename)
@@ -74,8 +76,7 @@ def generate_workflows():
         chunk_files.append((int(match.group(1)), filename))
     chunk_files.sort(key=lambda x: x[0])
 
-    # 计算触发时间，起点 UTC 19:30，对应东八区凌晨3:30，间隔10分钟
-    start_hour = 19
+    start_hour = 19  # UTC时间 19:30 对应东八区凌晨3:30
     start_minute = 30
     interval_min = 10
 
@@ -85,7 +86,6 @@ def generate_workflows():
         workflow_path = os.path.join(WORKFLOW_DIR, workflow_filename)
         chunk_file_path = os.path.join(CHUNK_DIR, filename)
 
-        # 计算cron时间
         total_minutes = start_minute + idx * interval_min
         cron_hour = start_hour + total_minutes // 60
         cron_min = total_minutes % 60
@@ -108,20 +108,17 @@ def git_commit_push(max_retries=3, wait_seconds=5):
     print("\n🌀 提交生成的 workflow 和缓存文件 到 GitHub...")
 
     try:
-        # 保证本地工作区干净
         subprocess.run(["git", "reset", "--hard"], check=True)
         subprocess.run(["git", "clean", "-fd"], check=True)
 
-        # 拉取最新远程代码，避免推送冲突
-        subprocess.run(["git", "pull", "--rebase"], check=True)
+        # 配置 git 用户身份
+        subprocess.run(["git", "config", "user.name", "github-actions[bot]"], check=True)
+        subprocess.run(["git", "config", "user.email", "github-actions[bot]@users.noreply.github.com"], check=True)
 
-        # 添加所有 workflow 文件和缓存文件
+        subprocess.run(["git", "pull", "--rebase"], check=True)
         subprocess.run(["git", "add", WORKFLOW_DIR], check=True)
         subprocess.run(["git", "add", "output/cache"], check=True)
-
-        # 提交变更（无变更不会失败）
         subprocess.run(["git", "commit", "-m", "ci: auto-generate deep validation workflows"], check=False)
-
     except subprocess.CalledProcessError as e:
         print("⚠️ Git 预处理失败:", e)
         return
