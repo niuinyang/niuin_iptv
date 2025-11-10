@@ -39,4 +39,32 @@ jobs:
         run: pip install chardet pillow tqdm requests
 
       - name: Generate chunk workflows and push
-        run: python scripts/generate_chunk_workflows.py
+        run: |
+          python scripts/generate_chunk_workflows.py
+          git add .github/workflows output/cache
+          git commit -m "ci: auto-generate deep validation workflows" || echo "无更改，跳过提交"
+
+          max_retries=3
+          wait_seconds=5
+          attempt=1
+          while [ $attempt -le $max_retries ]; do
+            echo "尝试推送，第 $attempt 次"
+            if git push; then
+              echo "推送成功"
+              break
+            else
+              echo "推送失败，尝试拉取远程合并"
+              if git pull --rebase; then
+                echo "拉取合并成功，准备重试推送"
+              else
+                echo "拉取合并失败，等待 $wait_seconds 秒后重试"
+                sleep $wait_seconds
+              fi
+            fi
+            attempt=$((attempt + 1))
+          done
+
+          if [ $attempt -gt $max_retries ]; then
+            echo "达到最大重试次数，推送失败，请手动处理冲突"
+            exit 1
+          fi
