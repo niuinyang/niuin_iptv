@@ -1,5 +1,6 @@
 #!/usr/bin/env python3
 # scripts/4.3final_scan.py
+
 import argparse
 import csv
 import asyncio
@@ -13,8 +14,7 @@ import os
 import chardet
 
 DEEP_INPUT = "output/middle/deep_scan.csv"
-CACHE_DIR = "output/cache"
-TOTAL_CACHE_FILE = os.path.join(CACHE_DIR, "cache_hashes.json")
+CACHE_FILE = "output/cache_hashes.json"
 
 # ----- aHash implementation (64-bit) -----
 def image_to_ahash_bytes(img_bytes, hash_size=8):
@@ -46,9 +46,9 @@ async def grab_frame(url, at_time=1, timeout=15):
     except FileNotFoundError:
         return None, "ffmpeg_not_installed"
 
-def load_total_cache():
-    if os.path.exists(TOTAL_CACHE_FILE):
-        with open(TOTAL_CACHE_FILE, "r", encoding="utf-8") as f:
+def load_cache():
+    if os.path.exists(CACHE_FILE):
+        with open(CACHE_FILE, "r", encoding="utf-8") as f:
             return json.load(f)
     return {}
 
@@ -101,15 +101,12 @@ def read_deep_input(path):
     return urls
 
 def ensure_dirs(input_path):
-    # 确保输入文件所在目录存在
     input_dir = os.path.dirname(input_path)
     os.makedirs(input_dir, exist_ok=True)
-    # 输出目录在 main() 中专门创建，不在这里创建
 
 def write_final(results, input_path, working_out=None, final_out=None, final_invalid_out=None, generate_working_gbk=False):
     final_map = {r["url"]: r for r in results}
 
-    # 自动检测输入文件编码，修复working.csv乱码问题
     with open(input_path, "rb") as fb:
         raw = fb.read(20000)
         detected_enc = chardet.detect(raw)["encoding"] or "utf-8"
@@ -187,34 +184,28 @@ def write_final(results, input_path, working_out=None, final_out=None, final_inv
 def main():
     p = argparse.ArgumentParser()
     p.add_argument("--input", "-i", default=DEEP_INPUT)
-    p.add_argument("--output_dir", default="output/chunk_final_scan")  # 统一输出目录
+    p.add_argument("--output_dir", default="output/chunk_final_scan")
     p.add_argument("--timeout", type=int, default=20)
     p.add_argument("--concurrency", type=int, default=6)
     p.add_argument("--working_gbk", action="store_true", help="是否生成 GBK 编码的 working.csv 版本，兼容Windows Excel")
-    p.add_argument("--chunk_id", default=None, help="当前chunk的标识，例如 chunk1")
+    p.add_argument("--chunk_id", default=None, help="chunk id for separate cache saving")
     args = p.parse_args()
 
     ensure_dirs(args.input)
 
-    # 先加载总缓存
-    total_cache = load_total_cache()
-    # 拷贝给当前chunk用的缓存（浅复制）
-    cache = dict(total_cache)
-
     urls = read_deep_input(args.input)
     print(f"Final-stage checking {len(urls)} urls")
 
+    cache = load_cache()
+
     results = asyncio.run(run_all(urls, concurrency=args.concurrency, cache=cache, timeout=args.timeout))
 
-    os.makedirs(CACHE_DIR, exist_ok=True)
-
-    # 生成chunk专用缓存文件名
+    # 根据 chunk_id 保存独立缓存文件，防止并发写冲突
     if args.chunk_id:
-        chunk_cache_file = os.path.join(CACHE_DIR, f"{args.chunk_id}_cache_hashes.json")
+        chunk_cache_file = os.path.join("output", f"cache_hashes_chunk_{args.chunk_id}.json")
     else:
-        chunk_cache_file = os.path.join(CACHE_DIR, "default_cache_hashes.json")
+        chunk_cache_file = CACHE_FILE
 
-    # 保存当前chunk的缓存结果
     save_cache(cache, chunk_cache_file)
 
     os.makedirs(args.output_dir, exist_ok=True)
@@ -235,7 +226,6 @@ def main():
 
     fake_count = sum(1 for r in results if r.get("is_fake"))
     print(f"Final scan finished. Fake found: {fake_count}/{len(results)}. Wrote outputs to {args.output_dir}")
-    print(f"Saved chunk cache to {chunk_cache_file}")
 
 if __name__ == "__main__":
     main()
