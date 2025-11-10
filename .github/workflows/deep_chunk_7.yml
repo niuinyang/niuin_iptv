@@ -1,15 +1,15 @@
-name: Deep Validation Chunk 18
+name: Deep Validation Chunk 7
 
 on:
   schedule:
-    - cron: '30 20 * * *'  # 每天 UTC 20:30 触发，东八区4: 30点
+    - cron: '50 21 * * *'  # 每天 UTC 21:50 触发，东八区5: 50点
   workflow_dispatch:
 
 permissions:
   contents: write
 
 jobs:
-  deep_chunk_18:
+  deep_chunk_7:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout repo
@@ -30,9 +30,9 @@ jobs:
           python -m pip install --upgrade pip
           pip install pillow tqdm chardet
 
-      - name: Run final scan on chunk 18
+      - name: Run final scan on chunk 7
         run: |
-          python scripts/4.3final_scan.py --input output/chunk/chunk_18.csv --output_dir output/chunk_final_scan
+          python scripts/4.3final_scan.py --input output/chunk/chunk_7.csv --output_dir output/chunk_final_scan
 
       - name: Commit and push scan results safely
         env:
@@ -48,7 +48,7 @@ jobs:
           git rebase origin/${{ github.ref }} || git rebase --abort
 
           git add output/chunk_final_scan/
-          git commit -m "ci: add final scan results chunk 18" || echo "No changes to commit"
+          git commit -m "ci: add final scan results chunk 7" || echo "No changes to commit"
 
           # 再次拉取，确保无冲突后推送
           git pull --rebase origin ${{ github.ref }} || true
@@ -57,7 +57,7 @@ jobs:
       - name: Self delete workflow file
         env:
           REPO_TOKEN: ${{ secrets.PERSONAL_ACCESS_TOKEN }}
-          WORKFLOW_FILE: ".github/workflows/deep_chunk_18.yml"
+          WORKFLOW_FILE: ".github/workflows/deep_chunk_7.yml"
           GITHUB_REPOSITORY: ${{ github.repository }}
           GITHUB_REF: ${{ github.ref }}
         run: |
@@ -66,6 +66,6 @@ jobs:
           git fetch origin ${{ github.ref }}
           git rebase origin/${{ github.ref }} || git rebase --abort
           git rm "$WORKFLOW_FILE"
-          git commit -m "ci: self delete workflow deep_chunk_18.yml after run"
+          git commit -m "ci: self delete workflow deep_chunk_7.yml after run"
           git pull --rebase origin ${{ github.ref }} || true
           git push https://x-access-token:${REPO_TOKEN}@github.com/${GITHUB_REPOSITORY} HEAD:${GITHUB_REF}
