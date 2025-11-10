@@ -3,6 +3,7 @@
 import os
 import re
 import json
+import time
 from datetime import datetime, timedelta
 import subprocess
 
@@ -13,7 +14,7 @@ CACHE_FILE = "output/cache_workflow.json"
 os.makedirs(WORKFLOW_DIR, exist_ok=True)
 os.makedirs("output/cache", exist_ok=True)
 
-# 🧩 模板
+# 🧩 模板（已更新：带 git rebase 与重试 push）
 TEMPLATE = """name: Deep Validation Chunk {n}
 
 on:
@@ -46,22 +47,31 @@ jobs:
         run: |
           python scripts/4.3final_scan.py --input output/chunk/chunk_{n}.csv --chunk_id {n} --cache_dir output/cache
 
-      - name: Commit scan results and cache
-        env:
-          PUSH_TOKEN: ${{{{ secrets.PUSH_TOKEN }}}}
-          REPO: ${{{{ github.repository }}}}
+      - name: Commit and push changes
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
+
           git add output/chunk_final_scan/working_chunk_{n}.csv output/chunk_final_scan/final_chunk_{n}.csv output/chunk_final_scan/final_invalid_chunk_{n}.csv output/cache/chunk/cache_hashes_chunk_{n}.json || echo "No files to add"
           git commit -m "ci: add final scan results and cache chunk {n}" || echo "No changes to commit"
-          git push || echo "Push skipped"
+
+          # 🔹 安全 push 逻辑：避免远程领先导致推送拒绝
+          git fetch origin main
+          git rebase origin/main || git rebase --abort
+
+          # 🔁 自动重试推送 3 次（间隔 30 秒）
+          for i in 1 2 3; do
+            git push https://github-actions:${{ secrets.GITHUB_TOKEN }}@github.com/niuinyang/niuin_iptv.git main && break || (
+              echo "⚠️ Push attempt $i failed, retrying in 30s..."
+              sleep 30
+            )
+          done
 """
 
 # 🧹 清理旧 workflow 文件
 print("🧹 清理旧的 workflow 文件...")
 for f in os.listdir(WORKFLOW_DIR):
-    if re.match(r"deep_chunk_\d+\.yml", f):
+    if re.match(r"deep_chunk_\\d+\\.yml", f):
         os.remove(os.path.join(WORKFLOW_DIR, f))
 
 if os.path.exists(CACHE_FILE):
@@ -70,7 +80,7 @@ if os.path.exists(CACHE_FILE):
 # 🕒 按时间间隔分配 cron
 start_hour = 19  # UTC 基准小时
 start_minute = 30
-interval = 10
+interval = 10  # 每个 chunk 相隔 10 分钟
 chunks = sorted([f for f in os.listdir(CHUNK_DIR) if f.startswith("chunk_") and f.endswith(".csv")])
 total_chunks = len(chunks)
 
@@ -98,7 +108,7 @@ with open(CACHE_FILE, "w", encoding="utf-8") as f:
 
 print("\n🌀 提交生成的 workflow 和缓存文件到 GitHub...\n")
 
-# 🧠 安全提交逻辑
+# 🧠 自动提交并推送
 subprocess.run(["git", "add", "-A"], check=False)
 subprocess.run(["git", "status"], check=False)
 commit_msg = "ci: auto-generate deep validation workflows"
@@ -116,4 +126,5 @@ for attempt in range(1, 4):
         print("🚀 推送成功")
         break
     else:
-        print("⚠️ 推送失败，稍后重试")
+        print("⚠️ 推送失败，等待 30 秒后重试...")
+        time.sleep(30)
