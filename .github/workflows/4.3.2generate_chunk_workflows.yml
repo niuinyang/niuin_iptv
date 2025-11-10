@@ -1,63 +1,110 @@
-name: Generate Deep Chunk Workflows (push via PAT)
+import os
+import glob
+import re
+from datetime import datetime
+
+WORKFLOW_DIR = ".github/workflows"
+CHUNK_DIR = "output/chunk"
+
+os.makedirs(WORKFLOW_DIR, exist_ok=True)
+
+template = """name: Deep Validation Chunk {n}
 
 on:
-  workflow_dispatch:
   schedule:
-    # 每天 03:15 Asia/Taipei (UTC+8) => UTC 前一天 19:15
-    - cron: '15 19 * * *'
+    - cron: '{cron_schedule}'  # 每天 UTC 19:00开始，每10分钟一次触发
+  workflow_dispatch:
 
 permissions:
   contents: write
-  # workflows: write
 
 jobs:
-  generate_and_push:
+  deep_chunk_{n}:
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout repository
+      - name: Checkout repo
         uses: actions/checkout@v4
         with:
-          fetch-depth: 0
-          persist-credentials: false  # 关闭默认凭据，避免用 GITHUB_TOKEN
+          fetch-depth: 0  # 完整历史，支持 rebase
 
       - name: Setup Python
         uses: actions/setup-python@v5
         with:
           python-version: '3.11'
 
-      - name: Install requirements (if any)
+      - name: Install system dependencies
+        run: sudo apt-get update && sudo apt-get install -y ffmpeg
+
+      - name: Install Python dependencies
         run: |
           python -m pip install --upgrade pip
-          pip install chardet requests || true
+          pip install pillow tqdm chardet
 
-      - name: Generate chunk workflows
+      - name: Run final scan on chunk {n}
         run: |
-          python scripts/generate_chunk_workflows.py --add-timestamp
+          python scripts/4.3final_scan.py --input {chunk_file} --output_dir output/chunk_final_scan
 
-      - name: Configure git
+      - name: Commit generated scan results
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add output/chunk_final_scan/
+          git commit -m "ci: add final scan results chunk {n}" || echo "No changes to commit"
 
-      - name: Pull latest changes (merge remote updates)
+      - name: Pull remote changes and rebase
         run: |
           git fetch origin main
-          git pull --rebase origin main || git rebase --abort
+          git rebase origin/main || (git rebase --abort && exit 1)
 
-      - name: Commit generated workflows (if any)
-        run: |
-          git add .github/workflows/*.yml || true
-          if git diff --cached --quiet; then
-            echo "No generated workflow changes to commit."
-          else
-            git commit -m "Auto-generate deep chunk workflows $(date -u +'%Y-%m-%dT%H:%M:%SZ')"
-          fi
-
-      - name: Push using PAT
+      - name: Push changes
         env:
-          PUSH_TOKEN: ${{ secrets.PUSH_TOKEN }}
-          REPO: ${{ github.repository }}
-          TARGET_BRANCH: main
+          REPO_TOKEN: ${{ secrets.PERSONAL_ACCESS_TOKEN }}
         run: |
-          git remote set-url origin https://x-access-token:${PUSH_TOKEN}@github.com/${REPO}.git
-          git push origin HEAD:${TARGET_BRANCH}
+          git push https://x-access-token:${REPO_TOKEN}@github.com/${{ github.repository }} HEAD:main
+
+      - name: Self delete workflow file
+        env:
+          REPO_TOKEN: ${{ secrets.PERSONAL_ACCESS_TOKEN }}
+          WORKFLOW_FILE: ".github/workflows/deep_chunk_{n}.yml"
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git fetch origin main
+          git rebase origin/main || git rebase --abort
+          git rm "$WORKFLOW_FILE"
+          git commit -m "ci: self delete workflow deep_chunk_{n}.yml after run"
+          git pull --rebase origin main || true
+          git push https://x-access-token:${REPO_TOKEN}@github.com/${{ github.repository }} HEAD:main
+"""
+
+# 生成每天 UTC 19:00 开始，每10分钟一次触发的 cron 列表，最多支持 144 个触发（1天144个10分钟段）
+# 你可以根据 chunk 文件数量限制，或调整时间段
+def generate_cron_list(start_hour=19, start_minute=0, interval_minutes=10, count=20):
+    crons = []
+    hour = start_hour
+    minute = start_minute
+    for _ in range(count):
+        crons.append(f"{minute} {hour} * * *")
+        minute += interval_minutes
+        if minute >= 60:
+            minute -= 60
+            hour = (hour + 1) % 24
+    return crons
+
+chunk_files = sorted(glob.glob(os.path.join(CHUNK_DIR, "chunk_*.csv")))
+
+cron_list = generate_cron_list(count=len(chunk_files))
+
+for i, chunk_file in enumerate(chunk_files):
+    basename = os.path.basename(chunk_file)
+    match = re.match(r"chunk_(\d+)\.csv", basename)
+    if not match:
+        print(f"跳过不匹配的文件: {basename}")
+        continue
+    n = match.group(1)
+    wf_path = os.path.join(WORKFLOW_DIR, f"deep_chunk_{n}.yml")
+    cron_schedule = cron_list[i] if i < len(cron_list) else "0 19 * * *"  # 默认19:00触发
+    content = template.format(n=n, chunk_file=chunk_file, cron_schedule=cron_schedule)
+    with open(wf_path, "w", encoding="utf-8") as f:
+        f.write(content)
+    print(f"✅ 生成 workflow: {wf_path}")
