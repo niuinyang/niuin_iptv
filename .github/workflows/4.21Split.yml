@@ -1,6 +1,9 @@
 name: Split deep_scan.csv and commit
 
 on:
+  schedule:
+    # 每天 03:00 Asia/Taipei (UTC+8) => UTC 前一天 19:00
+    - cron: '0 19 * * *'
   workflow_dispatch:
 
 permissions:
@@ -12,6 +15,8 @@ jobs:
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4
+        with:
+          fetch-depth: 0  # 拉取完整历史，方便 rebase
 
       - name: Setup Python
         uses: actions/setup-python@v5
@@ -29,16 +34,24 @@ jobs:
           echo "📂 输出文件列表："
           ls -lh output/chunk || echo "⚠️ output/chunk 目录不存在"
 
+      - name: Configure git
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+
+      - name: Pull latest changes (merge remote updates)
+        run: |
+          git fetch origin main
+          git pull --rebase origin main || git rebase --abort
+
       - name: Commit and push results (safe)
         env:
           PAT_TOKEN: ${{ secrets.PAT_TOKEN }}
         run: |
-          git config user.name "github-actions[bot]"
-          git config user.email "github-actions[bot]@users.noreply.github.com"
           git add output/chunk/
-          git diff --cached --quiet || (
-            git commit -m "Auto split deep_scan.csv into chunks [ci skip]" &&
-            git fetch origin main &&
-            git pull --rebase origin main &&
+          if ! git diff --cached --quiet; then
+            git commit -m "Auto split deep_scan.csv into chunks [ci skip]"
             git push https://${PAT_TOKEN}@github.com/niuinyang/niuin_iptv.git HEAD:refs/heads/main
-          )
+          else
+            echo "✅ No changes to commit."
+          fi
