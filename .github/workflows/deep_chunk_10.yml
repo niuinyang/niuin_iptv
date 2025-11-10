@@ -31,6 +31,8 @@ jobs:
           python scripts/4.3final_scan.py --input output/chunk/chunk_10.csv --chunk_id 10 --cache_dir output/cache
 
       - name: Commit and push changes
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
@@ -38,20 +40,22 @@ jobs:
           git add output/chunk_final_scan/working_chunk_10.csv output/chunk_final_scan/final_chunk_10.csv output/chunk_final_scan/final_invalid_chunk_10.csv output/cache/chunk/cache_hashes_chunk_10.json || echo "No files to add"
           git commit -m "ci: add final scan results and cache chunk 10" || echo "No changes to commit"
 
-          # 🔹 安全推送逻辑，带 stash 防护未暂存改动，重试推送
+          # 🔹 设置远程并带安全推送重试机制
+          git remote set-url origin https://x-access-token:${GITHUB_TOKEN}@github.com/niuinyang/niuin_iptv.git
+
           for i in 1 2 3; do
             echo "推送尝试第 $i 次"
-            if git push https://github-actions:${ secrets.GITHUB_TOKEN }@github.com/niuinyang/niuin_iptv.git main; then
-              echo "推送成功"
+            if git push origin HEAD:main; then
+              echo "推送成功 ✅"
               break
             else
-              echo "推送失败，尝试拉取远程合并"
+              echo "推送失败，尝试拉取远程合并 🔄"
               git stash push -m "ci: stash before pull"
-              if git pull --rebase; then
-                echo "拉取合并成功，准备重试推送"
+              if git pull --rebase origin main; then
+                echo "拉取成功，准备重试推送"
                 git stash pop || echo "无 stash 可弹出"
               else
-                echo "拉取合并失败，等待 30 秒后重试"
+                echo "拉取失败，等待 30 秒后重试"
                 git rebase --abort || true
                 git stash pop || echo "无 stash 可弹出"
                 sleep 30
