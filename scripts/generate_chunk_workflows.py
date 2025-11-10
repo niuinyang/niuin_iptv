@@ -137,42 +137,34 @@ def generate_workflows():
 
     save_cache(cache)
 
-def git_commit_push(max_retries=3, wait_seconds=5):
+def git_commit_push():
     print("\n🌀 提交生成的 workflow 和缓存文件 到 GitHub...")
 
     try:
         subprocess.run(["git", "reset", "--hard"], check=True)
         subprocess.run(["git", "clean", "-fd"], check=True)
 
-        # 配置 git 用户身份
         subprocess.run(["git", "config", "user.name", "github-actions[bot]"], check=True)
         subprocess.run(["git", "config", "user.email", "github-actions[bot]@users.noreply.github.com"], check=True)
 
         subprocess.run(["git", "pull", "--rebase"], check=True)
+
         subprocess.run(["git", "add", WORKFLOW_DIR], check=True)
         subprocess.run(["git", "add", "output/cache"], check=True)
-        subprocess.run(["git", "commit", "-m", "ci: auto-generate deep validation workflows"], check=False)
-    except subprocess.CalledProcessError as e:
-        print("⚠️ Git 预处理失败:", e)
-        return
 
-    for attempt in range(1, max_retries + 1):
-        try:
-            subprocess.run(["git", "push"], check=True)
-            print("✅ 已成功推送到远程仓库")
-            break
-        except subprocess.CalledProcessError as e:
-            print(f"⚠️ 第 {attempt} 次推送失败:", e)
-            if attempt < max_retries:
-                print(f"⏳ 等待 {wait_seconds} 秒后重试推送...")
-                try:
-                    subprocess.run(["git", "pull", "--rebase"], check=True)
-                except subprocess.CalledProcessError as pull_err:
-                    print("⚠️ 自动拉取远程最新失败，跳过重试:", pull_err)
-                    break
-                time.sleep(wait_seconds)
-            else:
-                print("❌ 达到最大重试次数，推送失败，请手动检查冲突。")
+        status = subprocess.run(["git", "status", "--porcelain"], capture_output=True, text=True)
+        if status.stdout.strip() == "":
+            print("ℹ️ 没有文件改动，无需提交")
+            return
+
+        subprocess.run(["git", "commit", "-m", "ci: auto-generate deep validation workflows"], check=True)
+        subprocess.run(["git", "push"], check=True)
+
+        print("✅ 成功推送到远程仓库")
+
+    except subprocess.CalledProcessError as e:
+        print(f"❌ Git 操作失败: {e}")
+        exit(1)
 
 if __name__ == "__main__":
     parser = argparse.ArgumentParser()
