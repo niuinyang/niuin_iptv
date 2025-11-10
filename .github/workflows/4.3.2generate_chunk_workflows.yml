@@ -1,19 +1,9 @@
-import os
-import glob
-import re
-from datetime import datetime
-
-WORKFLOW_DIR = ".github/workflows"
-CHUNK_DIR = "output/chunk"
-
-os.makedirs(WORKFLOW_DIR, exist_ok=True)
-
-template = """name: Deep Validation Chunk {n}
+name: Deep Validation Chunk {n}
 
 on:
   schedule:
-    - cron: '{cron_schedule}'  # 每天 UTC 19:00开始，每10分钟一次触发
-workflow_dispatch:
+    - cron: '*/10 19 * * *'  # 每10分钟触发一次，UTC 19点开始，东八区凌晨3点开始
+  workflow_dispatch:
 
 permissions:
   contents: write
@@ -54,6 +44,7 @@ jobs:
       - name: Pull remote changes and rebase
         run: |
           git fetch origin main
+          # 保证没有未提交改动，所以能顺利 rebase
           git rebase origin/main || (git rebase --abort && exit 1)
 
       - name: Push changes
@@ -75,34 +66,3 @@ jobs:
           git commit -m "ci: self delete workflow deep_chunk_{n}.yml after run"
           git pull --rebase origin main || true
           git push https://x-access-token:${REPO_TOKEN}@github.com/${{ github.repository }} HEAD:main
-"""
-
-def generate_cron_list(start_hour=19, start_minute=0, interval_minutes=10, count=20):
-    crons = []
-    hour = start_hour
-    minute = start_minute
-    for _ in range(count):
-        crons.append(f"{minute} {hour} * * *")
-        minute += interval_minutes
-        if minute >= 60:
-            minute -= 60
-            hour = (hour + 1) % 24
-    return crons
-
-chunk_files = sorted(glob.glob(os.path.join(CHUNK_DIR, "chunk_*.csv")))
-
-cron_list = generate_cron_list(count=len(chunk_files))
-
-for i, chunk_file in enumerate(chunk_files):
-    basename = os.path.basename(chunk_file)
-    match = re.match(r"chunk_(\d+)\.csv", basename)
-    if not match:
-        print(f"跳过不匹配的文件: {basename}")
-        continue
-    n = match.group(1)
-    wf_path = os.path.join(WORKFLOW_DIR, f"deep_chunk_{n}.yml")
-    cron_schedule = cron_list[i] if i < len(cron_list) else "0 19 * * *"
-    content = template.format(n=n, chunk_file=chunk_file, cron_schedule=cron_schedule)
-    with open(wf_path, "w", encoding="utf-8") as f:
-        f.write(content)
-    print(f"✅ 生成 workflow: {wf_path}")
