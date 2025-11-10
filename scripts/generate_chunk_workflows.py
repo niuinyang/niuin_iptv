@@ -55,9 +55,19 @@ jobs:
           python -m pip install --upgrade pip
           pip install pillow tqdm chardet
 
+      - name: Pull shared cache
+        run: |
+          mkdir -p output/cache
+          git fetch origin ${{{{ github.ref }}}}
+          git checkout origin/${{{{ github.ref }}}} -- output/cache/cache_hashes.json || echo "No shared cache found"
+
       - name: Run final scan on chunk {n}
         run: |
-          python scripts/4.3final_scan.py --input {chunk_file} --output_dir output/chunk_final_scan
+          python scripts/4.3final_scan.py \
+            --input {chunk_file} \
+            --output_dir output/chunk_final_scan \
+            --cache_file output/cache/cache_hashes.json \
+            --chunk_cache output/cache/chunk_{n}_hashes.json
 
       - name: Commit and push scan results safely
         env:
@@ -68,16 +78,17 @@ jobs:
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
 
-          # 拉取远程更新并自动 rebase，避免冲突
-          git fetch origin ${{{{ github.ref }}}}
-          git rebase origin/${{{{ github.ref }}}} || git rebase --abort
-
-          git add output/chunk_final_scan/
-          git commit -m "ci: add final scan results chunk {n}" || echo "No changes to commit"
-
-          # 再次拉取，确保无冲突后推送
-          git pull --rebase origin ${{{{ github.ref }}}} || true
-          git push https://x-access-token:${{REPO_TOKEN}}@github.com/${{GITHUB_REPOSITORY}} HEAD:${{GITHUB_REF}}
+          # 并发安全推送，带重试机制
+          for i in {{1..5}}; do
+            git fetch origin ${{{{ github.ref }}}}
+            git rebase origin/${{{{ github.ref }}}} || (git rebase --abort && sleep 10 && continue)
+            git add output/chunk_final_scan/ output/cache/chunk_{n}_hashes.json
+            git commit -m "ci: add final scan results chunk {n}" || true
+            git pull --rebase origin ${{{{ github.ref }}}} || true
+            git push https://x-access-token:${{{{REPO_TOKEN}}}}@github.com/${{{{GITHUB_REPOSITORY}}}} HEAD:${{{{GITHUB_REF}}}} && break
+            echo "Push failed, retrying ($i)..."
+            sleep $((RANDOM % 20 + 10))
+          done
 
       - name: Self delete workflow file
         env:
@@ -93,14 +104,14 @@ jobs:
           git rm "$WORKFLOW_FILE"
           git commit -m "ci: self delete workflow deep_chunk_{n}.yml after run"
           git pull --rebase origin ${{{{ github.ref }}}} || true
-          git push https://x-access-token:${{REPO_TOKEN}}@github.com/${{GITHUB_REPOSITORY}} HEAD:${{GITHUB_REF}}
+          git push https://x-access-token:${{{{REPO_TOKEN}}}}@github.com/${{{{GITHUB_REPOSITORY}}}} HEAD:${{{{GITHUB_REF}}}}
 """
 
 chunk_files = sorted(glob.glob(os.path.join(CHUNK_DIR, "chunk_*.csv")))
 
 for idx, chunk_file in enumerate(chunk_files):
     basename = os.path.basename(chunk_file)
-    match = re.match(r"chunk_(\d+)\.csv", basename)
+    match = re.match(r"chunk_(\\d+)\\.csv", basename)
     if not match:
         print(f"跳过不匹配的文件: {basename}")
         continue
