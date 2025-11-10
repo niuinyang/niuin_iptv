@@ -1,0 +1,26 @@
+name: Delete Deep Validation Workflows
+
+on:
+  workflow_dispatch:  # 手动触发
+
+jobs:
+  delete_workflows:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Delete deep_validation workflow files
+        run: |
+          FILES=$(find .github/workflows -type f -name "*deep_validation*.yml")
+          if [ -z "$FILES" ]; then
+            echo "No matching workflow files found."
+            exit 0
+          fi
+          echo "Deleting files:"
+          echo "$FILES"
+          git rm $FILES
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git commit -m "Delete deep_validation workflow files"
+          git push
