@@ -1,141 +1,126 @@
+#!/usr/bin/env python3
+# scripts/generate_chunk_workflows.py
 import os
-import glob
 import re
-from datetime import datetime, timedelta
+import argparse
+from datetime import datetime
+import subprocess
+import json
 
 WORKFLOW_DIR = ".github/workflows"
 CHUNK_DIR = "output/chunk"
+CACHE_FILE = "output/cache_workflow.json"
 
 os.makedirs(WORKFLOW_DIR, exist_ok=True)
+os.makedirs("output", exist_ok=True)
 
-# 计算每天从3:00起，每个chunk延迟的分钟数，步长10分钟
-def get_cron_for_index(index):
-    # index从0开始
-    base_hour = 3  # 3点
-    base_minute = 0
-    # 每个 chunk 间隔10分钟
-    total_minutes = base_minute + index * 10
-    hour = base_hour + total_minutes // 60
-    minute = total_minutes % 60
-    # 返回cron字符串，UTC时间(东八区3点=UTC19点)
-    # 注意GitHub Actions cron是UTC时间
-    # 3点(北京时间) = 19点(UTC)
-    utc_hour = (hour - 8) % 24  # 转成UTC小时，保证24小时内循环
-    return f"{minute} {utc_hour} * * *"
-
-template = """name: Deep Validation Chunk {n}
+TEMPLATE = """name: Deep Validation Chunk {n}
 
 on:
   schedule:
-    - cron: '{cron}'  # 每天 UTC {utc_hour}:{minute:02d} 触发，东八区{hour}: {minute:02d}点
+    - cron: '0 20 * * *'  # 每天 UTC 20:00（东八区 04:00）
   workflow_dispatch:
 
 permissions:
   contents: write
 
 jobs:
-  deep_chunk_{n}:
+  deep_validate_chunk_{n}:
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout repo
+      - name: Checkout repository
         uses: actions/checkout@v4
-        with:
-          fetch-depth: 0  # 🔧 允许完整拉取历史记录，确保能 rebase
 
-      - name: Setup Python
+      - name: Setup Python 3.11
         uses: actions/setup-python@v5
         with:
-          python-version: '3.11'
+          python-version: "3.11"
 
-      - name: Install system dependencies
-        run: sudo apt-get update && sudo apt-get install -y ffmpeg
-
-      - name: Install Python dependencies
+      - name: Install dependencies
         run: |
-          python -m pip install --upgrade pip
-          pip install pillow tqdm chardet
+          pip install -r requirements.txt
 
-      - name: Pull shared cache
+      - name: Run deep validation for chunk {n}
         run: |
-          mkdir -p output/cache
-          git fetch origin ${{{{ github.ref }}}}
-          git checkout origin/${{{{ github.ref }}}} -- output/cache/cache_hashes.json || echo "No shared cache found"
+          python scripts/4.3final_scan.py --input {chunk_file}
 
-      - name: Run final scan on chunk {n}
-        run: |
-          python scripts/4.3final_scan.py \
-            --input {chunk_file} \
-            --output_dir output/chunk_final_scan \
-            --cache_file output/cache/cache_hashes.json \
-            --chunk_cache output/cache/chunk_{n}_hashes.json
-
-      - name: Commit and push scan results safely
+      - name: Commit and push results
         env:
-          REPO_TOKEN: ${{{{ secrets.PERSONAL_ACCESS_TOKEN }}}}
-          GITHUB_REPOSITORY: ${{{{ github.repository }}}}
-          GITHUB_REF: ${{{{ github.ref }}}}
+          PUSH_TOKEN: ${{{{ secrets.PUSH_TOKEN }}}}
+          REPO: ${{{{ github.repository }}}}
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
-
-          # 并发安全推送，带重试机制
-          for i in {{1..5}}; do
-            git fetch origin ${{{{ github.ref }}}}
-            git rebase origin/${{{{ github.ref }}}} || (git rebase --abort && sleep 10 && continue)
-            git add output/chunk_final_scan/ output/cache/chunk_{n}_hashes.json
-            git commit -m "ci: add final scan results chunk {n}" || true
-            git pull --rebase origin ${{{{ github.ref }}}} || true
-            git push https://x-access-token:${{{{REPO_TOKEN}}}}@github.com/${{{{GITHUB_REPOSITORY}}}} HEAD:${{{{GITHUB_REF}}}} && break
-            echo "Push failed, retrying ($i)..."
-            sleep $((RANDOM % 20 + 10))
-          done
-
-      - name: Self delete workflow file
-        env:
-          REPO_TOKEN: ${{{{ secrets.PERSONAL_ACCESS_TOKEN }}}}
-          WORKFLOW_FILE: ".github/workflows/deep_chunk_{n}.yml"
-          GITHUB_REPOSITORY: ${{{{ github.repository }}}}
-          GITHUB_REF: ${{{{ github.ref }}}}
-        run: |
-          git config user.name "github-actions[bot]"
-          git config user.email "github-actions[bot]@users.noreply.github.com"
-          git fetch origin ${{{{ github.ref }}}}
-          git rebase origin/${{{{ github.ref }}}} || git rebase --abort
-          git rm "$WORKFLOW_FILE"
-          git commit -m "ci: self delete workflow deep_chunk_{n}.yml after run"
-          git pull --rebase origin ${{{{ github.ref }}}} || true
-          git push https://x-access-token:${{{{REPO_TOKEN}}}}@github.com/${{{{GITHUB_REPOSITORY}}}} HEAD:${{{{GITHUB_REF}}}}
+          git pull --rebase
+          git add output/chunk_final_scan/
+          git commit -m "ci: add final scan results chunk {n}" || echo "No changes"
+          git remote set-url origin https://x-access-token:${{{{ env.PUSH_TOKEN }}}}@github.com/${{{{ env.REPO }}}}.git
+          git push || echo "Push skipped"
 """
 
-chunk_files = sorted(glob.glob(os.path.join(CHUNK_DIR, "chunk_*.csv")))
+def load_cache():
+    if os.path.exists(CACHE_FILE):
+        try:
+            with open(CACHE_FILE, "r", encoding="utf-8") as f:
+                return json.load(f)
+        except json.JSONDecodeError:
+            return {}
+    return {}
 
-for idx, chunk_file in enumerate(chunk_files):
-    basename = os.path.basename(chunk_file)
-    match = re.match(r"chunk_(\\d+)\\.csv", basename)
-    if not match:
-        print(f"跳过不匹配的文件: {basename}")
-        continue
-    n = match.group(1)
+def save_cache(cache):
+    with open(CACHE_FILE, "w", encoding="utf-8") as f:
+        json.dump(cache, f, indent=2, ensure_ascii=False)
 
-    # 计算 cron 表达式
-    cron = get_cron_for_index(idx)
-    # 计算对应的本地东八区小时和分钟，用于注释（便于理解）
-    total_minutes = idx * 10
-    hour_local = 3 + total_minutes // 60
-    minute_local = total_minutes % 60
-    # 转成UTC小时（0-23）
-    utc_hour = (hour_local - 8) % 24
+def generate_workflows(add_timestamp=False):
+    cache = load_cache()
+    for filename in sorted(os.listdir(CHUNK_DIR)):
+        # ✅ 恢复旧版匹配逻辑
+        match = re.match(r"chunk_(\d+)\.csv$", filename)
+        if not match:
+            print(f"跳过不匹配的文件: {filename}")
+            continue
 
-    wf_path = os.path.join(WORKFLOW_DIR, f"deep_chunk_{n}.yml")
-    content = template.format(
-        n=n,
-        chunk_file=chunk_file,
-        cron=cron,
-        hour=hour_local,
-        minute=minute_local,
-        utc_hour=utc_hour,
-        timestamp=datetime.now().astimezone().isoformat()
-    )
-    with open(wf_path, "w", encoding="utf-8") as f:
-        f.write(content)
-    print(f"✅ 生成 workflow: {wf_path}")
+        n = match.group(1)
+        workflow_filename = f"deep_validation_chunk_{n}.yml"
+
+        if add_timestamp:
+            timestamp = datetime.now().strftime("%Y%m%d_%H%M")
+            workflow_filename = f"deep_validation_chunk_{n}_{timestamp}.yml"
+
+        workflow_path = os.path.join(WORKFLOW_DIR, workflow_filename)
+        chunk_file_path = os.path.join(CHUNK_DIR, filename)
+
+        # 判断缓存是否变化（防重复生成）
+        cache_key = f"chunk_{n}"
+        if cache.get(cache_key) == workflow_filename and os.path.exists(workflow_path):
+            print(f"已存在且缓存一致: {workflow_filename}")
+            continue
+
+        with open(workflow_path, "w", encoding="utf-8") as wf:
+            wf.write(TEMPLATE.format(n=n, chunk_file=chunk_file_path))
+        cache[cache_key] = workflow_filename
+        print(f"✅ 已生成 workflow: {workflow_filename}")
+
+    save_cache(cache)
+
+def git_commit_push():
+    print("\n🌀 提交生成的 workflow 到 GitHub...")
+    try:
+        subprocess.run(["git", "pull", "--rebase"], check=True)
+        subprocess.run(["git", "add", ".github/workflows"], check=True)
+        subprocess.run(["git", "commit", "-m", "ci: auto-generate deep validation workflows"], check=False)
+        subprocess.run(["git", "push"], check=False)
+        print("✅ 已推送到远程仓库")
+    except subprocess.CalledProcessError as e:
+        print("⚠️ Git 操作失败:", e)
+
+if __name__ == "__main__":
+    parser = argparse.ArgumentParser()
+    parser.add_argument("--add-timestamp", action="store_true", help="在 workflow 文件名中加入时间戳")
+    parser.add_argument("--no-push", action="store_true", help="仅生成，不执行 git push")
+    args = parser.parse_args()
+
+    generate_workflows(add_timestamp=args.add_timestamp)
+
+    if not args.no_push:
+        git_commit_push()
