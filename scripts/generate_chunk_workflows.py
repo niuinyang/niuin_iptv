@@ -3,9 +3,8 @@
 import os
 import re
 import argparse
-from datetime import datetime
-import subprocess
 import json
+import subprocess
 
 WORKFLOW_DIR = ".github/workflows"
 CHUNK_DIR = "output/chunk"
@@ -45,7 +44,7 @@ jobs:
 
       - name: Run deep validation for chunk {n}
         run: |
-          python scripts/4.3final_scan.py --input {chunk_file}
+          python scripts/4.3final_scan.py --input {chunk_file} --chunk_id {n} --cache_dir output/cache
 
       - name: Commit and push results
         env:
@@ -74,7 +73,7 @@ def save_cache(cache):
     with open(CACHE_FILE, "w", encoding="utf-8") as f:
         json.dump(cache, f, indent=2, ensure_ascii=False)
 
-def generate_workflows(add_timestamp=False):
+def generate_workflows():
     cache = load_cache()
     for filename in sorted(os.listdir(CHUNK_DIR)):
         match = re.match(r"chunk_(\d+)\.csv$", filename)
@@ -83,7 +82,6 @@ def generate_workflows(add_timestamp=False):
             continue
 
         n = match.group(1)
-        # 修改这里，改成 deep_chunk_{n}.yml
         workflow_filename = f"deep_chunk_{n}.yml"
 
         workflow_path = os.path.join(WORKFLOW_DIR, workflow_filename)
@@ -114,11 +112,10 @@ def git_commit_push():
 
 if __name__ == "__main__":
     parser = argparse.ArgumentParser()
-    parser.add_argument("--add-timestamp", action="store_true", help="在 workflow 文件名中加入时间戳（已忽略）")
     parser.add_argument("--no-push", action="store_true", help="仅生成，不执行 git push")
     args = parser.parse_args()
 
-    generate_workflows(add_timestamp=args.add_timestamp)
+    generate_workflows()
 
     if not args.no_push:
         git_commit_push()
