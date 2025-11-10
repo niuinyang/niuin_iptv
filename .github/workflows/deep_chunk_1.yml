@@ -30,13 +30,22 @@ jobs:
         run: |
           python scripts/4.3final_scan.py --input output/chunk/chunk_1.csv --chunk_id 1 --cache_dir output/cache
 
-      - name: Commit scan results and cache
-        env:
-          PUSH_TOKEN: ${{ secrets.PUSH_TOKEN }}
-          REPO: ${{ github.repository }}
+      - name: Commit and push changes
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
+
           git add output/chunk_final_scan/working_chunk_1.csv output/chunk_final_scan/final_chunk_1.csv output/chunk_final_scan/final_invalid_chunk_1.csv output/cache/chunk/cache_hashes_chunk_1.json || echo "No files to add"
           git commit -m "ci: add final scan results and cache chunk 1" || echo "No changes to commit"
-          git push || echo "Push skipped"
+
+          # 🔹 安全 push 逻辑：避免远程领先导致推送拒绝
+          git fetch origin main
+          git rebase origin/main || git rebase --abort
+
+          # 🔁 自动重试推送 3 次（间隔 30 秒）
+          for i in 1 2 3; do
+            git push https://github-actions:${ secrets.GITHUB_TOKEN }@github.com/niuinyang/niuin_iptv.git main && break || (
+              echo "⚠️ Push attempt $i failed, retrying in 30s..."
+              sleep 30
+            )
+          done
