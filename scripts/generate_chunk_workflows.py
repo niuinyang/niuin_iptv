@@ -46,18 +46,18 @@ jobs:
         run: |
           python scripts/4.3final_scan.py --input {chunk_file} --chunk_id {n} --cache_dir output/cache
 
-      - name: Commit and push results
+      - name: Delete self workflow file
         env:
           PUSH_TOKEN: ${{{{ secrets.PUSH_TOKEN }}}}
           REPO: ${{{{ github.repository }}}}
+          FILE: .github/workflows/deep_chunk_{n}.yml
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
-          git pull --rebase
-          git add output/chunk_final_scan/
-          git commit -m "ci: add final scan results chunk {n}" || echo "No changes"
+          git rm "$FILE"
+          git commit -m "ci: remove workflow $FILE"
           git remote set-url origin https://x-access-token:${{{{ env.PUSH_TOKEN }}}}@github.com/${{{{ env.REPO }}}}.git
-          git push || echo "Push skipped"
+          git push || echo "Push failed, possibly no changes"
 """
 
 def load_cache():
