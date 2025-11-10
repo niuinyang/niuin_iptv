@@ -3,7 +3,7 @@ name: Generate Deep Chunk Workflows (push via PAT)
 on:
   workflow_dispatch:
   schedule:
-    - cron: '0 20 * * *'  # 每天 UTC 20:00（CST 次日 04:00）
+    - cron: '0 18 * * *'  # 每天 UTC 18:00（CST 次日 02:00）
 
 permissions:
   contents: write
