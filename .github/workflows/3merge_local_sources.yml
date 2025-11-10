@@ -1,6 +1,9 @@
 name: Merge Local IPTV Sources
 
 on:
+  schedule:
+    # 每天 02:00 Asia/Taipei (UTC+8) => UTC 前一天 18:00
+    - cron: '0 18 * * *'
   workflow_dispatch:  # 支持手动触发
 
 permissions:
@@ -13,6 +16,8 @@ jobs:
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4
+        with:
+          fetch-depth: 0  # 允许完整历史，以便 rebase 使用
 
       - name: Setup Python 3.11
         uses: actions/setup-python@v5
@@ -36,18 +41,25 @@ jobs:
           echo "🖼️ Icon directory:"
           ls -lh png/ || true
 
+      - name: Configure git for push
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+
+      - name: Pull latest changes (merge remote updates)
+        run: |
+          git fetch origin main
+          git pull --rebase origin main || git rebase --abort
+
       - name: Commit and push output files and icons
         run: |
-          git config user.name "github-actions"
-          git config user.email "github-actions@github.com"
-          
           # 添加输出文件（存在才添加）
           git add output/*.m3u output/*.csv output/log/*.log png/* 2>/dev/null || true
           
           # 仅当有更改时提交
           if ! git diff --cached --quiet; then
             git commit -m "🤖 Auto merge local sources $(date '+%Y-%m-%d %H:%M:%S')"
-            git push
+            git push origin HEAD:main
           else
             echo "✅ No changes to commit."
           fi
