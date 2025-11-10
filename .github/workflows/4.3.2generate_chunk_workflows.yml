@@ -1,68 +1,67 @@
-name: Deep Validation Chunk {n}
+name: Generate Deep Chunk Workflows (push via PAT)
 
 on:
-  schedule:
-    - cron: '*/10 19 * * *'  # 每10分钟触发一次，UTC 19点开始，东八区凌晨3点开始
   workflow_dispatch:
+  schedule:
+    # 每天 03:15 Asia/Taipei (UTC+8) => UTC 前一天 19:15
+    - cron: '15 19 * * *'
 
 permissions:
   contents: write
 
 jobs:
-  deep_chunk_{n}:
+  generate_and_push:
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout repo
+      - name: Checkout repository
         uses: actions/checkout@v4
         with:
-          fetch-depth: 0  # 完整历史，支持 rebase
+          fetch-depth: 0
+          persist-credentials: false  # 关闭默认凭据，避免用 GITHUB_TOKEN
 
       - name: Setup Python
         uses: actions/setup-python@v5
         with:
           python-version: '3.11'
 
-      - name: Install system dependencies
-        run: sudo apt-get update && sudo apt-get install -y ffmpeg
-
-      - name: Install Python dependencies
+      - name: Install requirements (if any)
         run: |
           python -m pip install --upgrade pip
-          pip install pillow tqdm chardet
+          pip install chardet requests || true
 
-      - name: Run final scan on chunk {n}
+      - name: Generate chunk workflows
         run: |
-          python scripts/4.3final_scan.py --input {chunk_file} --output_dir output/chunk_final_scan
+          python scripts/generate_chunk_workflows.py --add-timestamp
 
-      - name: Commit generated scan results
-        run: |
-          git config user.name "github-actions[bot]"
-          git config user.email "github-actions[bot]@users.noreply.github.com"
-          git add output/chunk_final_scan/
-          git commit -m "ci: add final scan results chunk {n}" || echo "No changes to commit"
-
-      - name: Pull remote changes and rebase
-        run: |
-          git fetch origin main
-          # 保证没有未提交改动，所以能顺利 rebase
-          git rebase origin/main || (git rebase --abort && exit 1)
-
-      - name: Push changes
-        env:
-          REPO_TOKEN: ${{ secrets.PERSONAL_ACCESS_TOKEN }}
-        run: |
-          git push https://x-access-token:${REPO_TOKEN}@github.com/${{ github.repository }} HEAD:main
-
-      - name: Self delete workflow file
-        env:
-          REPO_TOKEN: ${{ secrets.PERSONAL_ACCESS_TOKEN }}
-          WORKFLOW_FILE: ".github/workflows/deep_chunk_{n}.yml"
+      - name: Configure git
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
+
+      - name: Clean local changes before pull
+        run: |
+          git reset --hard
+          git clean -fd
+
+      - name: Pull latest changes (merge remote updates)
+        run: |
           git fetch origin main
-          git rebase origin/main || git rebase --abort
-          git rm "$WORKFLOW_FILE"
-          git commit -m "ci: self delete workflow deep_chunk_{n}.yml after run"
-          git pull --rebase origin main || true
-          git push https://x-access-token:${REPO_TOKEN}@github.com/${{ github.repository }} HEAD:main
+          git pull --rebase origin main || git rebase --abort
+
+      - name: Commit generated workflows (if any)
+        run: |
+          git add .github/workflows/*.yml || true
+          if git diff --cached --quiet; then
+            echo "No generated workflow changes to commit."
+          else
+            git commit -m "Auto-generate deep chunk workflows $(date -u +'%Y-%m-%dT%H:%M:%SZ')"
+          fi
+
+      - name: Push using PAT
+        env:
+          PUSH_TOKEN: ${{ secrets.PUSH_TOKEN }}
+          REPO: ${{ github.repository }}
+          TARGET_BRANCH: main
+        run: |
+          git remote set-url origin https://x-access-token:${PUSH_TOKEN}@github.com/${REPO}.git
+          git push origin HEAD:${TARGET_BRANCH}
