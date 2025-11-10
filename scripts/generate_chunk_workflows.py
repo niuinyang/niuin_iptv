@@ -14,7 +14,7 @@ CACHE_FILE = "output/cache_workflow.json"
 os.makedirs(WORKFLOW_DIR, exist_ok=True)
 os.makedirs("output/cache", exist_ok=True)
 
-# 🧩 模板（已更新：带 git stash 防护、拉取合并和重试 push）
+# 🧩 模板（修正版：安全推送逻辑 + 支持 secrets.GITHUB_TOKEN 环境变量）
 TEMPLATE = """name: Deep Validation Chunk {n}
 
 on:
@@ -48,6 +48,8 @@ jobs:
           python scripts/4.3final_scan.py --input output/chunk/chunk_{n}.csv --chunk_id {n} --cache_dir output/cache
 
       - name: Commit and push changes
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
@@ -55,20 +57,22 @@ jobs:
           git add output/chunk_final_scan/working_chunk_{n}.csv output/chunk_final_scan/final_chunk_{n}.csv output/chunk_final_scan/final_invalid_chunk_{n}.csv output/cache/chunk/cache_hashes_chunk_{n}.json || echo "No files to add"
           git commit -m "ci: add final scan results and cache chunk {n}" || echo "No changes to commit"
 
-          # 🔹 安全推送逻辑，带 stash 防护未暂存改动，重试推送
+          # 🔹 设置远程并带安全推送重试机制
+          git remote set-url origin https://x-access-token:${GITHUB_TOKEN}@github.com/niuinyang/niuin_iptv.git
+
           for i in 1 2 3; do
             echo "推送尝试第 $i 次"
-            if git push https://github-actions:${{ secrets.GITHUB_TOKEN }}@github.com/niuinyang/niuin_iptv.git main; then
-              echo "推送成功"
+            if git push origin HEAD:main; then
+              echo "推送成功 ✅"
               break
             else
-              echo "推送失败，尝试拉取远程合并"
+              echo "推送失败，尝试拉取远程合并 🔄"
               git stash push -m "ci: stash before pull"
-              if git pull --rebase; then
-                echo "拉取合并成功，准备重试推送"
+              if git pull --rebase origin main; then
+                echo "拉取成功，准备重试推送"
                 git stash pop || echo "无 stash 可弹出"
               else
-                echo "拉取合并失败，等待 30 秒后重试"
+                echo "拉取失败，等待 30 秒后重试"
                 git rebase --abort || true
                 git stash pop || echo "无 stash 可弹出"
                 sleep 30
@@ -80,7 +84,7 @@ jobs:
 # 🧹 清理旧 workflow 文件
 print("🧹 清理旧的 workflow 文件...")
 for f in os.listdir(WORKFLOW_DIR):
-    if re.match(r"deep_chunk_\d+\.yml", f):
+    if re.match(r"deep_chunk_\\d+\\.yml", f):
         os.remove(os.path.join(WORKFLOW_DIR, f))
 
 if os.path.exists(CACHE_FILE):
@@ -115,7 +119,7 @@ for i, chunk_file in enumerate(chunks, start=1):
 with open(CACHE_FILE, "w", encoding="utf-8") as f:
     json.dump(cache_data, f, indent=2, ensure_ascii=False)
 
-print("\n🌀 提交生成的 workflow 和缓存文件到 GitHub...\n")
+print("\\n🌀 提交生成的 workflow 和缓存文件到 GitHub...\\n")
 
 # 🧠 自动提交并推送
 subprocess.run(["git", "add", "-A"], check=False)
