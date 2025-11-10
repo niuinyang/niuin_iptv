@@ -77,8 +77,6 @@ jobs:
           git push https://x-access-token:${REPO_TOKEN}@github.com/${{ github.repository }} HEAD:main
 """
 
-# 生成每天 UTC 19:00 开始，每10分钟一次触发的 cron 列表，最多支持 144 个触发（1天144个10分钟段）
-# 你可以根据 chunk 文件数量限制，或调整时间段
 def generate_cron_list(start_hour=19, start_minute=0, interval_minutes=10, count=20):
     crons = []
     hour = start_hour
@@ -103,7 +101,7 @@ for i, chunk_file in enumerate(chunk_files):
         continue
     n = match.group(1)
     wf_path = os.path.join(WORKFLOW_DIR, f"deep_chunk_{n}.yml")
-    cron_schedule = cron_list[i] if i < len(cron_list) else "0 19 * * *"  # 默认19:00触发
+    cron_schedule = cron_list[i] if i < len(cron_list) else "0 19 * * *"
     content = template.format(n=n, chunk_file=chunk_file, cron_schedule=cron_schedule)
     with open(wf_path, "w", encoding="utf-8") as f:
         f.write(content)
