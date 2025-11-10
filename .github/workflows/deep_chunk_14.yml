@@ -2,7 +2,7 @@ name: Deep Validation Chunk 14
 
 on:
   schedule:
-    - cron: '0 20 * * *'  # 每天 UTC 20:00（东八区 04:00）
+    - cron: '20 20 * * *'
   workflow_dispatch:
 
 permissions:
@@ -29,17 +29,17 @@ jobs:
 
       - name: Run deep validation for chunk 14
         run: |
-          python scripts/4.3final_scan.py --input output/chunk/chunk_14.csv
+          python scripts/4.3final_scan.py --input output/chunk/chunk_14.csv --chunk_id 14 --cache_dir output/cache
 
-      - name: Commit and push results
+      - name: Delete self workflow file
         env:
           PUSH_TOKEN: ${{ secrets.PUSH_TOKEN }}
           REPO: ${{ github.repository }}
+          FILE: .github/workflows/deep_chunk_14.yml
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
-          git pull --rebase
-          git add output/chunk_final_scan/
-          git commit -m "ci: add final scan results chunk 14" || echo "No changes"
+          git rm "$FILE"
+          git commit -m "ci: remove workflow $FILE"
           git remote set-url origin https://x-access-token:${{ env.PUSH_TOKEN }}@github.com/${{ env.REPO }}.git
-          git push || echo "Push skipped"
+          git push || echo "Push failed, possibly no changes"
