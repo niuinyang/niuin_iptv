@@ -1,15 +1,15 @@
-name: Deep Validation Chunk 8
+name: Deep Validation Chunk 15
 
 on:
   schedule:
-    - cron: '40 20 * * *'  # 触发时间，UTC时间
+    - cron: '50 21 * * *'  # 触发时间，UTC时间
   workflow_dispatch:
 
 permissions:
   contents: write
 
 jobs:
-  deep_validate_chunk_8:
+  deep_validate_chunk_15:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout repository
@@ -27,9 +27,9 @@ jobs:
         run: |
           pip install -r requirements.txt
 
-      - name: Run deep validation for chunk 8
+      - name: Run deep validation for chunk 15
         run: |
-          python scripts/4.3final_scan.py --input output/chunk/chunk_8.csv --chunk_id 8 --cache_dir output/cache
+          python scripts/4.3final_scan.py --input output/chunk/chunk_15.csv --chunk_id 15 --cache_dir output/cache
 
       - name: Commit scan results and cache
         env:
@@ -38,6 +38,6 @@ jobs:
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
-          git add output/chunk_final_scan/working_chunk_8.csv output/chunk_final_scan/final_chunk_8.csv output/chunk_final_scan/final_invalid_chunk_8.csv output/cache/chunk/cache_hashes_chunk_8.json || echo "No scan result or cache files to add"
-          git commit -m "ci: add final scan results and cache chunk 8" || echo "No changes in scan results or cache"
+          git add output/chunk_final_scan/working_chunk_15.csv output/chunk_final_scan/final_chunk_15.csv output/chunk_final_scan/final_invalid_chunk_15.csv output/cache/chunk/cache_hashes_chunk_15.json || echo "No scan result or cache files to add"
+          git commit -m "ci: add final scan results and cache chunk 15" || echo "No changes in scan results or cache"
           git push || echo "Push skipped"

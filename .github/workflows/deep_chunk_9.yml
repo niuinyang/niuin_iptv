@@ -31,15 +31,13 @@ jobs:
         run: |
           python scripts/4.3final_scan.py --input output/chunk/chunk_9.csv --chunk_id 9 --cache_dir output/cache
 
-      - name: Delete self workflow file
+      - name: Commit scan results and cache
         env:
           PUSH_TOKEN: ${{ secrets.PUSH_TOKEN }}
           REPO: ${{ github.repository }}
-          FILE: .github/workflows/deep_chunk_9.yml
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
-          git rm "$FILE"
-          git commit -m "ci: remove workflow $FILE"
-          git remote set-url origin https://x-access-token:${{ env.PUSH_TOKEN }}@github.com/${{ env.REPO }}.git
-          git push || echo "Push failed, possibly no changes"
+          git add output/chunk_final_scan/working_chunk_9.csv output/chunk_final_scan/final_chunk_9.csv output/chunk_final_scan/final_invalid_chunk_9.csv output/cache/chunk/cache_hashes_chunk_9.json || echo "No scan result or cache files to add"
+          git commit -m "ci: add final scan results and cache chunk 9" || echo "No changes in scan results or cache"
+          git push || echo "Push skipped"
