@@ -12,7 +12,7 @@ template = """name: Deep Validation Chunk {n}
 
 on:
   schedule:
-    - cron: '0 20 * * *'  # 每天 UTC 20:00 触发，东八区凌晨4点
+    - cron: '0 19 * * *'  # 每天 UTC 19:00 触发，东八区凌晨3点
   workflow_dispatch:
 
 permissions:
