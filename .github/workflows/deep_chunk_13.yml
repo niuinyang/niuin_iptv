@@ -1,0 +1,42 @@
+name: Deep Validation Chunk 13
+
+on:
+  schedule:
+    - cron: '0 20 * * *'  # 每天 UTC 20:00（东八区 04:00）
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  deep_validate_chunk_13:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Setup Python 3.11
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      - name: Install dependencies
+        run: |
+          pip install -r requirements.txt
+
+      - name: Run deep validation for chunk 13
+        run: |
+          python scripts/4.3final_scan.py --input output/chunk/chunk_13.csv
+
+      - name: Commit and push results
+        env:
+          PUSH_TOKEN: ${{ secrets.PUSH_TOKEN }}
+          REPO: ${{ github.repository }}
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git pull --rebase
+          git add output/chunk_final_scan/
+          git commit -m "ci: add final scan results chunk 13" || echo "No changes"
+          git remote set-url origin https://x-access-token:${{ env.PUSH_TOKEN }}@github.com/${{ env.REPO }}.git
+          git push || echo "Push skipped"
