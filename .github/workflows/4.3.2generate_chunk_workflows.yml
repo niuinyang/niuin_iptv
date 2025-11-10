@@ -49,18 +49,28 @@ jobs:
           attempt=1
           while [ $attempt -le $max_retries ]; do
             echo "尝试推送，第 $attempt 次"
+
+            # 先推送
             if git push; then
               echo "推送成功"
               break
             else
               echo "推送失败，尝试拉取远程合并"
+
+              # stash 防止本地未暂存改动阻塞拉取
+              git stash push -m "ci: stash before pull"
+
               if git pull --rebase; then
                 echo "拉取合并成功，准备重试推送"
+                git stash pop || echo "No stash to pop"
               else
                 echo "拉取合并失败，等待 $wait_seconds 秒后重试"
+                git rebase --abort || true
+                git stash pop || echo "No stash to pop"
                 sleep $wait_seconds
               fi
             fi
+
             attempt=$((attempt + 1))
           done
 
