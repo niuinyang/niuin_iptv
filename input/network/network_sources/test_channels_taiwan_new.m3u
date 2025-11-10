@@ -7,7 +7,7 @@ https://stream1.freetv.fun/3shuo-dian-ying-1.ctv
 https://stream1.freetv.fun/77shuo-dian-ying-1.ctv
 #EXTINF:-1 tvg-name="115新天地民俗臺" tvg-id="" tvg-country="台灣" tvg-language="國語" tvg-logo="https://epg.pw/media/images/channel/2022/02/10/large/20220210222702096387_48.png" group-title="其它",[BD]taiwan plus[geo-blocked]
 https://stream1.freetv.fun/taiwan-plus-2.m3u8
-#EXTINF:-1 tvg-name="115新天地民俗臺" tvg-id="" tvg-country="台灣" tvg-language="國語" tvg-logo="https://epg.pw/media/images/channel/2022/02/10/large/20220210222702096387_48.png" group-title="其它",[BD]b站王者荣耀
+#EXTINF:-1 tvg-name="115新天地民俗臺" tvg-id="" tvg-country="台灣" tvg-language="國語" tvg-logo="https://epg.pw/media/images/channel/2022/02/10/large/20220210222702096387_48.png" group-title="其它",[BD]b站王者荣耀[geo-blocked]
 https://stream1.freetv.fun/bzhan-wang-zhe-rong-yao-1.ctv
 #EXTINF:-1 tvg-name="BBC Earth(tw)" tvg-id="" tvg-country="台灣" tvg-language="英文" tvg-logo="https://epg.pw/media/images/channel/2023/07/17/large/20230717234812634336_85.jpg" group-title="知識",[BD]bbc earth
 https://stream1.freetv.fun/bbc-earth-14.m3u8
@@ -33,9 +33,7 @@ https://stream1.freetv.fun/expo-channel-1.m3u8
 https://stream1.freetv.fun/lego-channel-1.ctv
 #EXTINF:-1 tvg-name="CHANNEL [V]" tvg-id="" tvg-country="台灣" tvg-language="英文" tvg-logo="https://epg.pw/media/images/channel/2022/08/06/large/20220806161730161952_53.jpg" group-title="音樂",[BD]mo channel
 https://stream1.freetv.fun/mo-channel-1.m3u8
-#EXTINF:-1 tvg-name="CHANNEL [V]" tvg-id="" tvg-country="台灣" tvg-language="英文" tvg-logo="https://epg.pw/media/images/channel/2022/08/06/large/20220806161730161952_53.jpg" group-title="音樂",[SD]pursuit channel
-https://stream1.freetv.fun/pursuit-channel-1.m3u8
-#EXTINF:-1 tvg-name="CHANNEL [V]" tvg-id="" tvg-country="台灣" tvg-language="英文" tvg-logo="https://epg.pw/media/images/channel/2022/08/06/large/20220806161730161952_53.jpg" group-title="音樂",[BD]rama channel
+#EXTINF:-1 tvg-name="CHANNEL [V]" tvg-id="" tvg-country="台灣" tvg-language="英文" tvg-logo="https://epg.pw/media/images/channel/2022/08/06/large/20220806161730161952_53.jpg" group-title="音樂",[BD]rama channel[geo-blocked]
 https://stream1.freetv.fun/rama-channel-1.m3u8
 #EXTINF:-1 tvg-name="CHANNEL [V]" tvg-id="" tvg-country="台灣" tvg-language="英文" tvg-logo="https://epg.pw/media/images/channel/2022/08/06/large/20220806161730161952_53.jpg" group-title="音樂",[HD]kqsl channel 8
 https://stream1.freetv.fun/kqsl-channel-8-1.m3u8
@@ -119,7 +117,7 @@ https://stream1.freetv.fun/dazn-ringside-1.m3u8
 rtmp://f13h.mine.nu/sat/tv741
 #EXTINF:-1 tvg-name="Discovery(TW)" tvg-id="" tvg-country="台灣" tvg-language="英文" tvg-logo="https://epg.pw/media/images/channel/2023/08/05/large/20230805000246427864_44.png" group-title="知識",[BD]discovery h h
 https://stream1.freetv.fun/discovery-h-h-3.ctv
-#EXTINF:-1 tvg-name="Discovery(TW)" tvg-id="" tvg-country="台灣" tvg-language="英文" tvg-logo="https://epg.pw/media/images/channel/2023/08/05/large/20230805000246427864_44.png" group-title="知識",[HD]discovery(tw) *s[geo-blocked]
+#EXTINF:-1 tvg-name="Discovery(TW)" tvg-id="" tvg-country="台灣" tvg-language="英文" tvg-logo="https://epg.pw/media/images/channel/2023/08/05/large/20230805000246427864_44.png" group-title="知識",[BD]discovery(tw) *s[geo-blocked]
 https://stream1.freetv.fun/discovery--s-1.m3u8
 #EXTINF:-1 tvg-name="Discovery(TW)" tvg-id="" tvg-country="台灣" tvg-language="英文" tvg-logo="https://epg.pw/media/images/channel/2023/08/05/large/20230805000246427864_44.png" group-title="知識",[HD]asharq discovery
 https://stream1.freetv.fun/asharq-discovery-4.m3u8
@@ -215,9 +213,11 @@ https://stream1.freetv.fun/pet-club-tv-1.m3u8
 https://stream1.freetv.fun/ch-ng-pet-club-1.m3u8
 #EXTINF:-1 tvg-name="PET CLUB TV" tvg-id="" tvg-country="台灣" tvg-language="國語" tvg-logo="https://epg.pw/media/images/channel/2022/02/10/large/20220210221839864411_20.png" group-title="其它",[BD]pet club tv
 https://stream1.freetv.fun/pet-club-tv-2.m3u8
+#EXTINF:-1 tvg-name="Rollor TV" tvg-id="" tvg-country="台灣" tvg-language="國語" tvg-logo="https://epg.pw/media/images/channel/2022/05/13/large/20220513163637437470_26.jpg" group-title="綜合",[HD]folklore tv
+https://stream1.freetv.fun/folklore-tv-1.m3u8
 #EXTINF:-1 tvg-name="Smithsonian Channel" tvg-id="" tvg-country="台灣" tvg-language="國語" tvg-logo="https://epg.pw/media/images/channel/2023/07/03/large/20230703010539122476_41.jpeg" group-title="知識",[HD]smithsonian channel east
 https://stream1.freetv.fun/smithsonian-channel-east-1.m3u8
-#EXTINF:-1 tvg-name="Smithsonian Channel" tvg-id="" tvg-country="台灣" tvg-language="國語" tvg-logo="https://epg.pw/media/images/channel/2023/07/03/large/20230703010539122476_41.jpeg" group-title="知識",[SD]smithsonian channel selects[geo-blocked]
+#EXTINF:-1 tvg-name="Smithsonian Channel" tvg-id="" tvg-country="台灣" tvg-language="國語" tvg-logo="https://epg.pw/media/images/channel/2023/07/03/large/20230703010539122476_41.jpeg" group-title="知識",[SD]smithsonian channel selects
 https://stream1.freetv.fun/smithsonian-channel-selects-2.m3u8
 #EXTINF:-1 tvg-name="Smithsonian Channel" tvg-id="" tvg-country="台灣" tvg-language="國語" tvg-logo="https://epg.pw/media/images/channel/2023/07/03/large/20230703010539122476_41.jpeg" group-title="知識",[HD]ca smithsonian channel
 https://stream1.freetv.fun/ca-smithsonian-channel-1.ctv
@@ -225,11 +225,11 @@ https://stream1.freetv.fun/ca-smithsonian-channel-1.ctv
 https://stream1.freetv.fun/smithsonian-channel-2.ctv
 #EXTINF:-1 tvg-name="Smithsonian Channel" tvg-id="" tvg-country="台灣" tvg-language="國語" tvg-logo="https://epg.pw/media/images/channel/2023/07/03/large/20230703010539122476_41.jpeg" group-title="知識",[SD]smithsonian channel =
 https://stream1.freetv.fun/smithsonian-channel-3.ctv
-#EXTINF:-1 tvg-name="Smithsonian Channel" tvg-id="" tvg-country="台灣" tvg-language="國語" tvg-logo="https://epg.pw/media/images/channel/2023/07/03/large/20230703010539122476_41.jpeg" group-title="知識",[HD]smithsonian channel selects[geo-blocked]
+#EXTINF:-1 tvg-name="Smithsonian Channel" tvg-id="" tvg-country="台灣" tvg-language="國語" tvg-logo="https://epg.pw/media/images/channel/2023/07/03/large/20230703010539122476_41.jpeg" group-title="知識",[HD]smithsonian channel selects
 https://stream1.freetv.fun/smithsonian-channel-selects-1.m3u8
 #EXTINF:-1 tvg-name="Star Movies Gold" tvg-id="" tvg-country="台灣" tvg-language="英文" tvg-logo="https://epg.pw/media/images/channel/2022/04/25/large/20220425163927207256_43.png" group-title="電影",[HD]gold star
 https://stream1.freetv.fun/gold-star-1.m3u8
-#EXTINF:-1 tvg-name="Star Movies TW" tvg-id="" tvg-country="台灣" tvg-language="英文" tvg-logo="https://epg.pw/media/images/channel/2022/04/28/large/20220428143809984195_35.png" group-title="電影",[BD]star movies select[geo-blocked]
+#EXTINF:-1 tvg-name="Star Movies TW" tvg-id="" tvg-country="台灣" tvg-language="英文" tvg-logo="https://epg.pw/media/images/channel/2022/04/28/large/20220428143809984195_35.png" group-title="電影",[BD]star movies select
 https://stream1.freetv.fun/star-movies-select-1.ctv
 #EXTINF:-1 tvg-name="TVBS Asia" tvg-id="3509" tvg-country="台灣" tvg-language="國語" tvg-logo="https://epg.pw/media/images/channel/2022/03/02/large/20220302213708363097_69.jpg" group-title="綜合",[BD]tvbs asia
 https://stream1.freetv.fun/tvbs-asia-6.m3u8
@@ -273,7 +273,7 @@ https://stream1.freetv.fun/san-li-tai-wan---wj-1.m3u8
 https://stream1.freetv.fun/san-li-du-hui---wj-1.m3u8
 #EXTINF:-1 tvg-name="中天亞洲FHD" tvg-id="410372" tvg-country="台灣" tvg-language="國語" tvg-logo="https://epg.pw/media/images/channel/2025/01/31/large/20250131032139085563_41.png" group-title="綜合",[HD]中天亚洲
 https://stream1.freetv.fun/zhong-tian-ya-zhou-9.ctv
-#EXTINF:-1 tvg-name="中天娛樂HD" tvg-id="" tvg-country="台灣" tvg-language="國語" tvg-logo="https://epg.pw/media/images/channel/2016/01/14/large/20160114210645647968_28.jpg" group-title="綜藝",[BD]中天娱乐
+#EXTINF:-1 tvg-name="中天娛樂HD" tvg-id="" tvg-country="台灣" tvg-language="國語" tvg-logo="https://epg.pw/media/images/channel/2016/01/14/large/20160114210645647968_28.jpg" group-title="綜藝",[BD]中天娱乐[geo-blocked]
 https://stream1.freetv.fun/zhong-tian-yu-le-6.ctv
 #EXTINF:-1 tvg-name="中天娛樂HD" tvg-id="" tvg-country="台灣" tvg-language="國語" tvg-logo="https://epg.pw/media/images/channel/2016/01/14/large/20160114210645647968_28.jpg" group-title="綜藝",[BD]中天娱乐 *wj
 https://stream1.freetv.fun/zhong-tian-yu-le---wj-3.m3u8
@@ -283,8 +283,6 @@ https://stream1.freetv.fun/zhong-tian-yu-le-5.m3u8
 https://stream1.freetv.fun/zhong-tian-yu-le---wj-1.m3u8
 #EXTINF:-1 tvg-name="中天新聞2臺" tvg-id="" tvg-country="台灣" tvg-language="國語" tvg-logo="https://epg.pw/media/images/channel/2023/07/20/large/20230720202416866497_70.png" group-title="新聞",[VGA]中天新聞台2
 https://stream1.freetv.fun/zhong-tian-xin-wen-tai-2-1.m3u8
-#EXTINF:-1 tvg-name="中天新聞FHD" tvg-id="370177" tvg-country="台灣" tvg-language="國語" tvg-logo="https://epg.pw/media/images/channel/2022/03/05/large/20220305151207450324_69.png" group-title="新聞",[HD]中天新闻 *wj
-https://stream1.freetv.fun/zhong-tian-xin-wen---wj-2.m3u8
 #EXTINF:-1 tvg-name="中天新聞FHD" tvg-id="370177" tvg-country="台灣" tvg-language="國語" tvg-logo="https://epg.pw/media/images/channel/2022/03/05/large/20220305151207450324_69.png" group-title="新聞",[BD]中天新聞
 https://stream1.freetv.fun/zhong-tian-xin-wen-8.m3u8
 #EXTINF:-1 tvg-name="中天新聞FHD" tvg-id="370177" tvg-country="台灣" tvg-language="國語" tvg-logo="https://epg.pw/media/images/channel/2022/03/05/large/20220305151207450324_69.png" group-title="新聞",[BD]中天新闻[geo-blocked]
@@ -303,7 +301,7 @@ rtmp://f13h.mine.nu:1935/sat/tv091
 rtmp://f13h.mine.nu/sat/tv091
 #EXTINF:-1 tvg-name="中視新聞FHD" tvg-id="" tvg-country="台灣" tvg-language="國語" tvg-logo="https://epg.pw/media/images/channel/2023/07/11/large/20230711221833273953_43.jpg" group-title="新聞",[HD]中视新闻
 https://stream1.freetv.fun/zhong-shi-xin-wen-4.ctv
-#EXTINF:-1 tvg-name="中視新聞臺" tvg-id="" tvg-country="台灣" tvg-language="國語" tvg-logo="https://epg.pw/media/images/channel/2022/05/06/large/20220506164553238162_16.png" group-title="新聞",[HD]中视新闻 *wj
+#EXTINF:-1 tvg-name="中視新聞臺" tvg-id="" tvg-country="台灣" tvg-language="國語" tvg-logo="https://epg.pw/media/images/channel/2022/05/06/large/20220506164553238162_16.png" group-title="新聞",[HD]中视新闻 *wj[geo-blocked]
 https://stream1.freetv.fun/zhong-shi-xin-wen---wj-5.m3u8
 #EXTINF:-1 tvg-name="中視新聞臺" tvg-id="" tvg-country="台灣" tvg-language="國語" tvg-logo="https://epg.pw/media/images/channel/2022/05/06/large/20220506164553238162_16.png" group-title="新聞",[HD]中视新闻 *wj
 https://stream1.freetv.fun/zhong-shi-xin-wen---wj-4.m3u8
@@ -349,8 +347,6 @@ https://stream1.freetv.fun/ba-da-di-1-1.ctv
 https://stream1.freetv.fun/ba-da-di-yi---wj-3.m3u8
 #EXTINF:-1 tvg-name="八大第1臺HD" tvg-id="456527" tvg-country="台灣" tvg-language="國語" tvg-logo="https://epg.pw/media/images/channel/2023/07/20/large/20230720154758414370_68.png" group-title="綜藝",[BD]八大第一 *wj
 https://stream1.freetv.fun/ba-da-di-yi---wj-2.m3u8
-#EXTINF:-1 tvg-name="八大綜合" tvg-id="456528" tvg-country="台灣" tvg-language="國語" tvg-logo="https://epg.pw/media/images/channel/2023/07/20/large/20230720154712065553_65.png" group-title="綜合",[BD]八大综合
-https://stream1.freetv.fun/ba-da-zong-he-1.ctv
 #EXTINF:-1 tvg-name="八大綜合" tvg-id="456528" tvg-country="台灣" tvg-language="國語" tvg-logo="https://epg.pw/media/images/channel/2023/07/20/large/20230720154712065553_65.png" group-title="綜合",[BD]八大综合 *wj
 https://stream1.freetv.fun/ba-da-zong-he---wj-4.m3u8
 #EXTINF:-1 tvg-name="八大綜合" tvg-id="456528" tvg-country="台灣" tvg-language="國語" tvg-logo="https://epg.pw/media/images/channel/2023/07/20/large/20230720154712065553_65.png" group-title="綜合",[BD]八大综合 *wj
@@ -433,13 +429,11 @@ https://stream1.freetv.fun/hao-xiao-xi-2--wj-1.m3u8
 https://stream1.freetv.fun/huan-yu-xin-wen-2.ctv
 #EXTINF:-1 tvg-name="年代MUCH" tvg-id="" tvg-country="台灣" tvg-language="國語" tvg-logo="https://epg.pw/media/images/channel/2025/01/28/large/20250128060939949018_34.png" group-title="綜合",[BD]much
 https://stream1.freetv.fun/much-3.m3u8
-#EXTINF:-1 tvg-name="年代新聞HD" tvg-id="456551" tvg-country="台灣" tvg-language="國語" tvg-logo="https://epg.pw/media/img/logo/2013/10/30/8889e6b27f2bf5143f6c0f3b0ec452f6.jpg" group-title="新聞",[BD]年代新闻 *wj[geo-blocked]
+#EXTINF:-1 tvg-name="年代新聞HD" tvg-id="456551" tvg-country="台灣" tvg-language="國語" tvg-logo="https://epg.pw/media/img/logo/2013/10/30/8889e6b27f2bf5143f6c0f3b0ec452f6.jpg" group-title="新聞",[BD]年代新闻 *wj
 https://stream1.freetv.fun/nian-dai-xin-wen---wj-1.m3u8
-#EXTINF:-1 tvg-name="年代新聞HD" tvg-id="456551" tvg-country="台灣" tvg-language="國語" tvg-logo="https://epg.pw/media/img/logo/2013/10/30/8889e6b27f2bf5143f6c0f3b0ec452f6.jpg" group-title="新聞",[BD]年代新闻
-https://stream1.freetv.fun/nian-dai-xin-wen-5.ctv
-#EXTINF:-1 tvg-name="成龍專輯" tvg-id="" tvg-country="台灣" tvg-language="國語" tvg-logo="https://epg.pw/media/images/channel/2019/04/05/large/20190405221540697725_47.jpg" group-title="電影",[HD]成龙
+#EXTINF:-1 tvg-name="成龍專輯" tvg-id="" tvg-country="台灣" tvg-language="國語" tvg-logo="https://epg.pw/media/images/channel/2019/04/05/large/20190405221540697725_47.jpg" group-title="電影",[SD]成龙
 https://stream1.freetv.fun/cheng-long-1.m3u8
-#EXTINF:-1 tvg-name="成龍專輯" tvg-id="" tvg-country="台灣" tvg-language="國語" tvg-logo="https://epg.pw/media/images/channel/2019/04/05/large/20190405221540697725_47.jpg" group-title="電影",[HD]成龙
+#EXTINF:-1 tvg-name="成龍專輯" tvg-id="" tvg-country="台灣" tvg-language="國語" tvg-logo="https://epg.pw/media/images/channel/2019/04/05/large/20190405221540697725_47.jpg" group-title="電影",[SD]成龙
 https://stream1.freetv.fun/cheng-long-2.m3u8
 #EXTINF:-1 tvg-name="東森亞洲新聞" tvg-id="" tvg-country="台灣" tvg-language="國語" tvg-logo="https://epg.pw/media/uploads/tmp_logo/2018/02/17/20180217150650283018_64.jpg" group-title="新聞",[HD]亚洲新闻
 https://stream1.freetv.fun/ya-zhou-xin-wen-1.m3u8
@@ -452,15 +446,11 @@ https://stream1.freetv.fun/dong-sen-xi-ju---wj-2.m3u8
 #EXTINF:-1 tvg-name="東森戲劇" tvg-id="460780" tvg-country="台灣" tvg-language="國語" tvg-logo="https://epg.pw/media/images/channel/2023/07/22/large/20230722110033521210_50.png" group-title="電影",[BD]東森戏剧
 https://stream1.freetv.fun/dong-sen-xi-ju-3.ctv
 #EXTINF:-1 tvg-name="東森新聞臺" tvg-id="" tvg-country="台灣" tvg-language="國語" tvg-logo="https://epg.pw/media/" group-title="新聞",[BD]东森新闻 *wj
-https://stream1.freetv.fun/dong-sen-xin-wen---wj-1.m3u8
-#EXTINF:-1 tvg-name="東森新聞臺" tvg-id="" tvg-country="台灣" tvg-language="國語" tvg-logo="https://epg.pw/media/" group-title="新聞",[BD]东森新闻 *wj
 https://stream1.freetv.fun/dong-sen-xin-wen---wj-3.m3u8
 #EXTINF:-1 tvg-name="東森新聞臺" tvg-id="" tvg-country="台灣" tvg-language="國語" tvg-logo="https://epg.pw/media/" group-title="新聞",[BD]東森新闻
 https://stream1.freetv.fun/dong-sen-xin-wen-7.ctv
 #EXTINF:-1 tvg-name="東森洋片" tvg-id="460925" tvg-country="台灣" tvg-language="英文" tvg-logo="https://epg.pw/media/images/channel/2023/07/22/large/20230722105927706804_92.png" group-title="電影",[BD]东森洋片
 https://stream1.freetv.fun/dong-sen-yang-pian-3.ctv
-#EXTINF:-1 tvg-name="東森洋片" tvg-id="460925" tvg-country="台灣" tvg-language="英文" tvg-logo="https://epg.pw/media/images/channel/2023/07/22/large/20230722105927706804_92.png" group-title="電影",[BD]东森羊片 *wj
-https://stream1.freetv.fun/dong-sen-yang-pian---wj-1.m3u8
 #EXTINF:-1 tvg-name="東森綜合" tvg-id="460830" tvg-country="台灣" tvg-language="國語" tvg-logo="https://epg.pw/media/images/channel/2023/07/22/large/20230722105831030948_83.png" group-title="綜合",[BD]东森综合[geo-blocked]
 https://stream1.freetv.fun/dong-sen-zong-he-4.ctv
 #EXTINF:-1 tvg-name="東森綜合" tvg-id="460830" tvg-country="台灣" tvg-language="國語" tvg-logo="https://epg.pw/media/images/channel/2023/07/22/large/20230722105831030948_83.png" group-title="綜合",[BD]东森综合[geo-blocked]
@@ -473,11 +463,11 @@ https://stream1.freetv.fun/dong-sen-mei-zhou-3.m3u8
 https://stream1.freetv.fun/dong-sen-mei-zhou-2-1.m3u8
 #EXTINF:-1 tvg-name="東森衛視" tvg-id="" tvg-country="台灣" tvg-language="國語" tvg-logo="https://epg.pw/media/images/channel/2022/03/08/large/20220308133519318409_56.jpg" group-title="綜合",[BD]东森美洲新闻台
 https://stream1.freetv.fun/dong-sen-mei-zhou-xin-wen-1.m3u8
-#EXTINF:-1 tvg-name="東森財經" tvg-id="" tvg-country="台灣" tvg-language="國語" tvg-logo="https://epg.pw/media/uploads/tmp_logo/2016/02/13/20160213075202249166_88.jpg" group-title="新聞",[HD]东森财经 *wj[geo-blocked]
+#EXTINF:-1 tvg-name="東森財經" tvg-id="" tvg-country="台灣" tvg-language="國語" tvg-logo="https://epg.pw/media/uploads/tmp_logo/2016/02/13/20160213075202249166_88.jpg" group-title="新聞",[HD]东森财经 *wj
 https://stream1.freetv.fun/dong-sen-cai-jing---wj-1.m3u8
 #EXTINF:-1 tvg-name="東森財經" tvg-id="" tvg-country="台灣" tvg-language="國語" tvg-logo="https://epg.pw/media/uploads/tmp_logo/2016/02/13/20160213075202249166_88.jpg" group-title="新聞",[HD]东森财经 *wj
 https://stream1.freetv.fun/dong-sen-cai-jing---wj-2.m3u8
-#EXTINF:-1 tvg-name="東森財經新聞" tvg-id="" tvg-country="台灣" tvg-language="國語" tvg-logo="https://epg.pw/media/images/channel/2022/11/26/large/20221126212851373992_22.jpg" group-title="新聞",[HD]东森财经新闻 *wj[geo-blocked]
+#EXTINF:-1 tvg-name="東森財經新聞" tvg-id="" tvg-country="台灣" tvg-language="國語" tvg-logo="https://epg.pw/media/images/channel/2022/11/26/large/20221126212851373992_22.jpg" group-title="新聞",[HD]东森财经新闻 *wj
 https://stream1.freetv.fun/dong-sen-cai-jing-xin-wen---wj-2.m3u8
 #EXTINF:-1 tvg-name="東森財經新聞" tvg-id="" tvg-country="台灣" tvg-language="國語" tvg-logo="https://epg.pw/media/images/channel/2022/11/26/large/20221126212851373992_22.jpg" group-title="新聞",[HD]东森财经新闻 *wj
 https://stream1.freetv.fun/dong-sen-cai-jing-xin-wen---wj-1.m3u8
@@ -519,7 +509,9 @@ https://stream1.freetv.fun/min-shi-xin-wen-6.ctv
 https://stream1.freetv.fun/min-shi-xin-wen-13.m3u8
 #EXTINF:-1 tvg-name="民視第一台" tvg-id="" tvg-country="台灣" tvg-language="國語" tvg-logo="https://epg.pw/media/images/channel/2023/07/24/large/20230724152902808091_16.png" group-title="綜合",[HD]民视第一
 https://stream1.freetv.fun/min-shi-di-yi-5.ctv
-#EXTINF:-1 tvg-name="緯來日本" tvg-id="456579" tvg-country="台灣" tvg-language="日語" tvg-logo="https://epg.pw/media/images/channel/2023/07/22/large/20230722105459178241_22.png" group-title="綜藝",[BD]纬来日本[geo-blocked]
+#EXTINF:-1 tvg-name="民視臺灣台" tvg-id="" tvg-country="台灣" tvg-language="國語" tvg-logo="https://epg.pw/media/images/channel/2023/07/24/large/20230724151611469778_92.png" group-title="綜合",[HD]民视台湾
+https://stream1.freetv.fun/min-shi-tai-wan-5.ctv
+#EXTINF:-1 tvg-name="緯來日本" tvg-id="456579" tvg-country="台灣" tvg-language="日語" tvg-logo="https://epg.pw/media/images/channel/2023/07/22/large/20230722105459178241_22.png" group-title="綜藝",[BD]纬来日本
 https://stream1.freetv.fun/wei-lai-ri-ben-4.ctv
 #EXTINF:-1 tvg-name="緯來日本" tvg-id="" tvg-country="台灣" tvg-language="日語" tvg-logo="https://epg.pw/media/images/channel/2022/11/26/large/20221126210817982613_24.jpg" group-title="綜藝",[HD]緯來日本[geo-blocked]
 rtmp://f13h.mine.nu/sat/tv771
@@ -577,7 +569,5 @@ https://stream1.freetv.fun/jing-tian-zi-xun-1.ctv
 https://stream1.freetv.fun/fei-fan-xin-wen-3.ctv
 #EXTINF:-1 tvg-name="非凡新聞HD" tvg-id="456560" tvg-country="台灣" tvg-language="國語" tvg-logo="https://epg.pw/media/images/channel/2016/06/17/large/20160617165249161501_56.png" group-title="新聞",[HD]非凡新聞[geo-blocked]
 rtmp://f13h.mine.nu/sat/tv581
-#EXTINF:-1 tvg-name="非凡新聞HD" tvg-id="456560" tvg-country="台灣" tvg-language="國語" tvg-logo="https://epg.pw/media/images/channel/2016/06/17/large/20160617165249161501_56.png" group-title="新聞",[BD]非凡新闻 *wj
-https://stream1.freetv.fun/fei-fan-xin-wen---wj-1.m3u8
 #EXTINF:-1 tvg-name="非凡新聞HD" tvg-id="456560" tvg-country="台灣" tvg-language="國語" tvg-logo="https://epg.pw/media/images/channel/2016/06/17/large/20160617165249161501_56.png" group-title="新聞",[BD]非凡新闻 *wj
 https://stream1.freetv.fun/fei-fan-xin-wen---wj-3.m3u8
