@@ -13,7 +13,8 @@ import os
 import chardet
 
 DEEP_INPUT = "output/middle/deep_scan.csv"
-CACHE_FILE = "output/cache_hashes.json"
+CACHE_DIR = "output/cache"
+TOTAL_CACHE_FILE = os.path.join(CACHE_DIR, "cache_hashes.json")
 
 # ----- aHash implementation (64-bit) -----
 def image_to_ahash_bytes(img_bytes, hash_size=8):
@@ -45,15 +46,15 @@ async def grab_frame(url, at_time=1, timeout=15):
     except FileNotFoundError:
         return None, "ffmpeg_not_installed"
 
-def load_cache():
-    if os.path.exists(CACHE_FILE):
-        with open(CACHE_FILE, "r", encoding="utf-8") as f:
+def load_total_cache():
+    if os.path.exists(TOTAL_CACHE_FILE):
+        with open(TOTAL_CACHE_FILE, "r", encoding="utf-8") as f:
             return json.load(f)
     return {}
 
-def save_cache(data):
-    os.makedirs(os.path.dirname(CACHE_FILE), exist_ok=True)
-    with open(CACHE_FILE, "w", encoding="utf-8") as f:
+def save_cache(data, path):
+    os.makedirs(os.path.dirname(path), exist_ok=True)
+    with open(path, "w", encoding="utf-8") as f:
         json.dump(data, f, ensure_ascii=False, indent=2)
 
 async def process_one(url, sem, cache, timeout=20):
@@ -190,15 +191,31 @@ def main():
     p.add_argument("--timeout", type=int, default=20)
     p.add_argument("--concurrency", type=int, default=6)
     p.add_argument("--working_gbk", action="store_true", help="是否生成 GBK 编码的 working.csv 版本，兼容Windows Excel")
+    p.add_argument("--chunk_id", default=None, help="当前chunk的标识，例如 chunk1")
     args = p.parse_args()
 
     ensure_dirs(args.input)
 
+    # 先加载总缓存
+    total_cache = load_total_cache()
+    # 拷贝给当前chunk用的缓存（浅复制）
+    cache = dict(total_cache)
+
     urls = read_deep_input(args.input)
     print(f"Final-stage checking {len(urls)} urls")
-    cache = load_cache()
+
     results = asyncio.run(run_all(urls, concurrency=args.concurrency, cache=cache, timeout=args.timeout))
-    save_cache(cache)
+
+    os.makedirs(CACHE_DIR, exist_ok=True)
+
+    # 生成chunk专用缓存文件名
+    if args.chunk_id:
+        chunk_cache_file = os.path.join(CACHE_DIR, f"{args.chunk_id}_cache_hashes.json")
+    else:
+        chunk_cache_file = os.path.join(CACHE_DIR, "default_cache_hashes.json")
+
+    # 保存当前chunk的缓存结果
+    save_cache(cache, chunk_cache_file)
 
     os.makedirs(args.output_dir, exist_ok=True)
     input_name = os.path.splitext(os.path.basename(args.input))[0]
@@ -218,6 +235,7 @@ def main():
 
     fake_count = sum(1 for r in results if r.get("is_fake"))
     print(f"Final scan finished. Fake found: {fake_count}/{len(results)}. Wrote outputs to {args.output_dir}")
+    print(f"Saved chunk cache to {chunk_cache_file}")
 
 if __name__ == "__main__":
     main()
