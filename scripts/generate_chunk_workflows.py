@@ -105,18 +105,23 @@ def generate_workflows():
     save_cache(cache)
 
 def git_commit_push(max_retries=3, wait_seconds=5):
-    print("\n🌀 提交生成的 workflow 到 GitHub...")
+    print("\n🌀 提交生成的 workflow 和缓存文件 到 GitHub...")
 
     try:
-        # 先强制清理本地改动，确保pull不报错
+        # 保证本地工作区干净
         subprocess.run(["git", "reset", "--hard"], check=True)
         subprocess.run(["git", "clean", "-fd"], check=True)
 
+        # 拉取最新远程代码，避免推送冲突
         subprocess.run(["git", "pull", "--rebase"], check=True)
 
-        subprocess.run(["git", "add", ".github/workflows"], check=True)
-        subprocess.run(["git", "add", "output/cache"], check=True)  # 添加缓存目录
+        # 添加所有 workflow 文件和缓存文件
+        subprocess.run(["git", "add", WORKFLOW_DIR], check=True)
+        subprocess.run(["git", "add", "output/cache"], check=True)
+
+        # 提交变更（无变更不会失败）
         subprocess.run(["git", "commit", "-m", "ci: auto-generate deep validation workflows"], check=False)
+
     except subprocess.CalledProcessError as e:
         print("⚠️ Git 预处理失败:", e)
         return
