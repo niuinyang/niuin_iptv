@@ -74,23 +74,18 @@ def save_cache(cache):
 def generate_workflows(add_timestamp=False):
     cache = load_cache()
     for filename in sorted(os.listdir(CHUNK_DIR)):
-        # ✅ 恢复旧版匹配逻辑
         match = re.match(r"chunk_(\d+)\.csv$", filename)
         if not match:
             print(f"跳过不匹配的文件: {filename}")
             continue
 
         n = match.group(1)
-        workflow_filename = f"deep_validation_chunk_{n}.yml"
-
-        if add_timestamp:
-            timestamp = datetime.now().strftime("%Y%m%d_%H%M")
-            workflow_filename = f"deep_validation_chunk_{n}_{timestamp}.yml"
+        # 修改这里，改成 deep_chunk_{n}.yml
+        workflow_filename = f"deep_chunk_{n}.yml"
 
         workflow_path = os.path.join(WORKFLOW_DIR, workflow_filename)
         chunk_file_path = os.path.join(CHUNK_DIR, filename)
 
-        # 判断缓存是否变化（防重复生成）
         cache_key = f"chunk_{n}"
         if cache.get(cache_key) == workflow_filename and os.path.exists(workflow_path):
             print(f"已存在且缓存一致: {workflow_filename}")
@@ -116,7 +111,7 @@ def git_commit_push():
 
 if __name__ == "__main__":
     parser = argparse.ArgumentParser()
-    parser.add_argument("--add-timestamp", action="store_true", help="在 workflow 文件名中加入时间戳")
+    parser.add_argument("--add-timestamp", action="store_true", help="在 workflow 文件名中加入时间戳（已忽略）")
     parser.add_argument("--no-push", action="store_true", help="仅生成，不执行 git push")
     args = parser.parse_args()
 
