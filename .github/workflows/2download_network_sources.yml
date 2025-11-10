@@ -2,8 +2,8 @@ name: Download and Commit M3U Sources (daily)
 
 on:
   schedule:
-    # 每天 04:00 Asia/Taipei (UTC+8) => UTC 20:00 previous day
-    - cron: '0 20 * * *'
+    # 每天 01:30 Asia/Taipei (UTC+8) => UTC 前一天 17:30
+    - cron: '30 17 * * *'
   workflow_dispatch: {}
 
 permissions:
@@ -17,8 +17,8 @@ jobs:
       - name: Checkout repo
         uses: actions/checkout@v4
         with:
-          persist-credentials: true  # 使用 GITHUB_TOKEN 推送的
-          fetch-depth: 0             # 确保完整历史
+          persist-credentials: true  # 使用 GITHUB_TOKEN 推送
+          fetch-depth: 0             # 确保完整历史以便 rebase
 
       # 2. 设置 Python
       - name: Set up Python
@@ -49,11 +49,21 @@ jobs:
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
 
-      # 7. 提交并推送更新
+      # 7. 拉取远程更新并合并（避免 push 冲突）
+      - name: Pull latest changes (merge remote updates)
+        run: |
+          git fetch origin main
+          git pull --rebase origin main || git rebase --abort
+
+      # 8. 提交并推送更新
       - name: Commit & Push downloaded files
         run: |
           cd $GITHUB_WORKSPACE
           git add input/network/network_sources
           git diff --cached --quiet || \
           git commit -m "Update network M3U sources [ci skip]"
-          git push origin HEAD
+          git push origin HEAD:main
+
+      # 9. 日志记录
+      - name: Log completion
+        run: echo "✅ Daily M3U sources download and commit completed."
