@@ -47,18 +47,16 @@ jobs:
         run: |
           python scripts/4.3final_scan.py --input {chunk_file} --chunk_id {n} --cache_dir output/cache
 
-      - name: Delete self workflow file
+      - name: Commit scan results and cache
         env:
           PUSH_TOKEN: ${{{{ secrets.PUSH_TOKEN }}}}
           REPO: ${{{{ github.repository }}}}
-          FILE: .github/workflows/deep_chunk_{n}.yml
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
-          git rm "$FILE"
-          git commit -m "ci: remove workflow $FILE"
-          git remote set-url origin https://x-access-token:${{{{ env.PUSH_TOKEN }}}}@github.com/${{{{ env.REPO }}}}.git
-          git push || echo "Push failed, possibly no changes"
+          git add output/chunk_final_scan/working_chunk_{n}.csv output/chunk_final_scan/final_chunk_{n}.csv output/chunk_final_scan/final_invalid_chunk_{n}.csv output/cache/chunk/cache_hashes_chunk_{n}.json || echo "No scan result or cache files to add"
+          git commit -m "ci: add final scan results and cache chunk {n}" || echo "No changes in scan results or cache"
+          git push || echo "Push skipped"
 """
 
 def load_cache():
@@ -77,7 +75,7 @@ def save_cache(cache):
 def generate_workflows():
     cache = load_cache()
 
-    # 统计所有 chunk 文件，排序
+    # 收集所有 chunk 文件并排序
     chunk_files = []
     for filename in os.listdir(CHUNK_DIR):
         match = re.match(r"chunk_(\d+)\.csv$", filename)
@@ -87,7 +85,7 @@ def generate_workflows():
         chunk_files.append((int(match.group(1)), filename))
     chunk_files.sort(key=lambda x: x[0])
 
-    # 计算触发时间，起点 UTC 19:30，对应东八区凌晨3:30，间隔10分钟
+    # 起始时间 UTC 19:30（对应东八区凌晨3:30），每个 workflow 触发时间间隔 10 分钟
     start_hour = 19
     start_minute = 30
     interval_min = 10
@@ -98,7 +96,6 @@ def generate_workflows():
         workflow_path = os.path.join(WORKFLOW_DIR, workflow_filename)
         chunk_file_path = os.path.join(CHUNK_DIR, filename)
 
-        # 计算cron时间
         total_minutes = start_minute + idx * interval_min
         cron_hour = start_hour + total_minutes // 60
         cron_min = total_minutes % 60
@@ -111,7 +108,12 @@ def generate_workflows():
             continue
 
         with open(workflow_path, "w", encoding="utf-8") as wf:
-            wf.write(TEMPLATE.format(n=n, chunk_file=chunk_file_path, cron_hour=cron_hour, cron_min=cron_min))
+            wf.write(TEMPLATE.format(
+                n=n,
+                chunk_file=chunk_file_path,
+                cron_hour=cron_hour,
+                cron_min=cron_min,
+            ))
         cache[cache_key] = workflow_filename
         print(f"✅ 已生成 workflow: {workflow_filename} 触发时间: {cron_min} {cron_hour} * * *")
 
