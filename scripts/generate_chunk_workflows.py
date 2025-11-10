@@ -123,6 +123,10 @@ def generate_workflows():
 def git_commit_push():
     print("\n🌀 提交生成的 workflow 到 GitHub...")
     try:
+        # 先清理本地未暂存改动，避免 pull --rebase 失败
+        subprocess.run(["git", "reset", "--hard"], check=True)
+        subprocess.run(["git", "clean", "-fd"], check=True)
+
         subprocess.run(["git", "pull", "--rebase"], check=True)
         subprocess.run(["git", "add", ".github/workflows"], check=True)
         subprocess.run(["git", "commit", "-m", "ci: auto-generate deep validation workflows"], check=False)
