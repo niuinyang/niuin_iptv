@@ -38,14 +38,23 @@ jobs:
           git add output/chunk_final_scan/working_chunk_13.csv output/chunk_final_scan/final_chunk_13.csv output/chunk_final_scan/final_invalid_chunk_13.csv output/cache/chunk/cache_hashes_chunk_13.json || echo "No files to add"
           git commit -m "ci: add final scan results and cache chunk 13" || echo "No changes to commit"
 
-          # 🔹 安全 push 逻辑：避免远程领先导致推送拒绝
-          git fetch origin main
-          git rebase origin/main || git rebase --abort
-
-          # 🔁 自动重试推送 3 次（间隔 30 秒）
+          # 🔹 安全推送逻辑，带 stash 防护未暂存改动，重试推送
           for i in 1 2 3; do
-            git push https://github-actions:${ secrets.GITHUB_TOKEN }@github.com/niuinyang/niuin_iptv.git main && break || (
-              echo "⚠️ Push attempt $i failed, retrying in 30s..."
-              sleep 30
-            )
+            echo "推送尝试第 $i 次"
+            if git push https://github-actions:${ secrets.GITHUB_TOKEN }@github.com/niuinyang/niuin_iptv.git main; then
+              echo "推送成功"
+              break
+            else
+              echo "推送失败，尝试拉取远程合并"
+              git stash push -m "ci: stash before pull"
+              if git pull --rebase; then
+                echo "拉取合并成功，准备重试推送"
+                git stash pop || echo "无 stash 可弹出"
+              else
+                echo "拉取合并失败，等待 30 秒后重试"
+                git rebase --abort || true
+                git stash pop || echo "无 stash 可弹出"
+                sleep 30
+              fi
+            fi
           done
