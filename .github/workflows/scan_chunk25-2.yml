@@ -29,16 +29,22 @@ jobs:
       - name: Run fast scan for chunk25-2
         run: |
           mkdir -p output/middle/fast
+          mkdir -p output/middle/fast/ok
+          mkdir -p output/middle/fast/not
           python scripts/4.1fast_scan.py             --input output/middle/chunk/chunk25-2.csv             --output output/middle/fast/ok/fast_chunk25-2.csv             --invalid output/middle/fast/not/fast_chunk25-2-invalid.csv
             
       - name: Run deep scan for chunk25-2
         run: |
           mkdir -p output/middle/deep
+          mkdir -p output/middle/deep/ok
+          mkdir -p output/middle/deep/not
           python scripts/4.2deep_scan.py             --input output/middle/fast/ok/fast_chunk25-2.csv             --output output/middle/deep/ok/deep_chunk25-2.csv             --invalid output/middle/deep/not/deep_chunk25-2-invalid.csv
 
       - name: Run final scan for chunk25-2
         run: |
           mkdir -p output/middle/final
+          mkdir -p output/middle/final/ok
+          mkdir -p output/middle/final/not
           python scripts/4.3final_scan.py             --input output/middle/deep/ok/deep_chunk25-2.csv             --output output/middle/final/ok/final_chunk25-2.csv             --invalid output/middle/final/not/final_chunk25-2-invalid.csv             --chunk_id chunk25-2             --cache_dir output/cache
 
       - name: Commit and push changes
