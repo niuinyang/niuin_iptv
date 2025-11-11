@@ -114,7 +114,7 @@ def read_deep_input(path):
                 urls.append(url)
     return urls
 
-def write_final(results, input_path, working_out=None, final_out=None, final_invalid_out=None):
+def write_final(results, input_path, final_out=None, final_invalid_out=None):
     final_map = {r["url"]: r for r in results}
 
     with open(input_path, "rb") as fb:
@@ -122,7 +122,6 @@ def write_final(results, input_path, working_out=None, final_out=None, final_inv
         detected_enc = chardet.detect(raw)["encoding"] or "utf-8"
 
     with open(input_path, newline='', encoding=detected_enc, errors='ignore') as fin, \
-         open(working_out, "w", newline='', encoding='utf-8') as fworking, \
          open(final_out, "w", newline='', encoding='utf-8') as fvalid, \
          open(final_invalid_out, "w", newline='', encoding='utf-8') as finvalid:
 
@@ -135,11 +134,9 @@ def write_final(results, input_path, working_out=None, final_out=None, final_inv
         valid_fields = working_fields + ["相似度"]
         invalid_fields = working_fields + ["未通过信息", "相似度"]
 
-        w_working = csv.DictWriter(fworking, fieldnames=working_fields)
         w_valid = csv.DictWriter(fvalid, fieldnames=valid_fields)
         w_invalid = csv.DictWriter(finvalid, fieldnames=invalid_fields)
 
-        w_working.writeheader()
         w_valid.writeheader()
         w_invalid.writeheader()
 
@@ -163,9 +160,6 @@ def write_final(results, input_path, working_out=None, final_out=None, final_inv
                     similarity = round(r.get("similarity", 0), 4)
 
             if passed:
-                working_row = {k: row.get(k, "") for k in working_fields}
-                w_working.writerow(working_row)
-
                 valid_row = {k: row.get(k, "") for k in working_fields}
                 valid_row["相似度"] = similarity
                 w_valid.writerow(valid_row)
@@ -205,14 +199,12 @@ def main():
     if output_dir:
         os.makedirs(output_dir, exist_ok=True)
 
-    working_out = f"{args.output}_working.csv"
     final_out = f"{args.output}_final.csv"
     final_invalid_out = f"{args.output}_final_invalid.csv"
 
     write_final(
         results,
         input_path=args.input,
-        working_out=working_out,
         final_out=final_out,
         final_invalid_out=final_invalid_out,
     )
