@@ -48,24 +48,24 @@ jobs:
           mkdir -p output/middle/fast
           python scripts/4.1fast_scan.py \
             --input output/middle/chunk/{n}.csv \
-            --output output/middle/fast/fast_{n}.csv \
-            --invalid output/middle/fast/fast_{n}-invalid.csv
+            --output output/middle/fast/ok/fast_{n}.csv \
+            --invalid output/middle/fast/not/fast_{n}-invalid.csv
             
       - name: Run deep scan for {n}
         run: |
           mkdir -p output/middle/deep
           python scripts/4.2deep_scan.py \
-            --input output/middle/fast/fast_{n}.csv \
-            --output output/middle/deep/deep_{n}.csv \
-            --invalid output/middle/deep/deep_{n}-invalid.csv
+            --input output/middle/fast/ok/fast_{n}.csv \
+            --output output/middle/deep/ok/deep_{n}.csv \
+            --invalid output/middle/deep/not/deep_{n}-invalid.csv
 
       - name: Run final scan for {n}
         run: |
           mkdir -p output/middle/final
           python scripts/4.3final_scan.py \
-            --input output/middle/deep/deep_{n}.csv \
-            --output output/middle/final/final_{n}.csv \
-            --invalid output/middle/final/final_{n}-invalid.csv \
+            --input output/middle/deep/ok/deep_{n}.csv \
+            --output output/middle/final/ok/final_{n}.csv \
+            --invalid output/middle/final/not/final_{n}-invalid.csv \
             --chunk_id {n} \
             --cache_dir output/cache
 
