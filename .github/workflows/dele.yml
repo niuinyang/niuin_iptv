@@ -12,7 +12,7 @@ jobs:
 
       - name: Delete deep_validation workflow files
         run: |
-          FILES=$(find .github/workflows -type f -name "*chunk_chunk*.yml")
+          FILES=$(find .github/workflows -type f -name "*scan_chunk*.yml")
           if [ -z "$FILES" ]; then
             echo "No matching workflow files found."
             exit 0
