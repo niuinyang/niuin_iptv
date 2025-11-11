@@ -15,7 +15,7 @@ os.makedirs(WORKFLOW_DIR, exist_ok=True)
 os.makedirs("output/cache", exist_ok=True)
 
 # 🧩 模板（修正版，满足需求）
-TEMPLATE = """name: Scan Chunk {n}
+TEMPLATE = """name: Scan {n}
 
 on:
   schedule:
@@ -65,7 +65,7 @@ jobs:
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
 
-          git add output/middle/final/final_{n}_working.csv output/middle/final/final_{n}.csv output/middle/final/final_{n}_invalid.csv output/cache/chunk/cache_hashes_{n}.json || echo "No files to add"
+          git add output/middle/fast/fast_{n}.csv output/middle/deep/deep_{n}.csv output/middle/final/final_{n}_working.csv output/middle/final/final_{n}.csv output/middle/final/final_{n}_invalid.csv output/cache/chunk/cache_hashes_{n}.json || echo "No files to add"
           git commit -m "ci: add scan results and cache for {n}" || echo "No changes to commit"
 
           # 🔹 设置远程并带安全推送重试机制
