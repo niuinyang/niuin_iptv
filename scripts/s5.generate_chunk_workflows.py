@@ -65,8 +65,8 @@ jobs:
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
 
-          git add output/middle/final/final_chunk_{n}_working.csv output/middle/final/final_chunk_{n}_final.csv output/middle/final/final_chunk_{n}_final_invalid.csv output/cache/chunk/cache_hashes_chunk_chunk_{n}.json || echo "No files to add"
-          git commit -m "ci: add scan results and cache for chunk {n}" || echo "No changes to commit"
+          git add output/middle/final/final_{n}_working.csv output/middle/final/final_{n}.csv output/middle/final/final_{n}_invalid.csv output/cache/chunk/cache_hashes_{n}.json || echo "No files to add"
+          git commit -m "ci: add scan results and cache for {n}" || echo "No changes to commit"
 
           # 🔹 设置远程并带安全推送重试机制
           git remote set-url origin https://x-access-token:${{GITHUB_TOKEN}}@github.com/niuinyang/niuin_iptv.git
