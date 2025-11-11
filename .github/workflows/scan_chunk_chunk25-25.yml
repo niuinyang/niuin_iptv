@@ -47,8 +47,7 @@ jobs:
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
-
-          git add output/middle/fast/fast_chunk25-25.csv output/middle/deep/deep_chunk25-25.csv output/middle/final/final_chunk25-25_working.csv output/middle/final/final_chunk25-25.csv output/middle/final/final_chunk25-25_invalid.csv output/cache/chunk/cache_hashes_chunk25-25.json || echo "No files to add"
+          git add output/middle/fast/ output/middle/deep/ output/middle/final/ output/cache/chunk/ || echo "No files to add"
           git commit -m "ci: add scan results and cache for chunk25-25" || echo "No changes to commit"
 
           # 🔹 设置远程并带安全推送重试机制
