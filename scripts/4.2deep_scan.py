@@ -9,10 +9,6 @@ from asyncio.subprocess import create_subprocess_exec, PIPE
 from tqdm.asyncio import tqdm_asyncio
 from asyncio import Semaphore
 
-INPUT = "output/middle/fast_scan.csv"
-OUTPUT_OK = "output/middle/deep_scan.csv"
-OUTPUT_FAIL = "output/middle/deep_scan_invalid.csv"
-
 async def ffprobe_json(url, timeout=20):
     cmd = ["ffprobe","-v","quiet","-print_format","json","-show_streams","-show_format", url]
     try:
@@ -179,9 +175,9 @@ async def deep_scan(input_file, output_ok, output_fail, concurrency, timeout):
 
 def main():
     parser = argparse.ArgumentParser()
-    parser.add_argument("--input", "-i", default=INPUT)
-    parser.add_argument("--output", "-o", default=OUTPUT_OK)
-    parser.add_argument("--invalid", default=OUTPUT_FAIL)
+    parser.add_argument("--input", required=True)
+    parser.add_argument("--output", required=True)
+    parser.add_argument("--invalid", required=True)
     parser.add_argument("--concurrency", type=int, default=30)
     parser.add_argument("--timeout", type=int, default=20)
     args = parser.parse_args()
