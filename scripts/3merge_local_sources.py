@@ -147,10 +147,18 @@ def write_output_files(channels):
     for ch in channels:
         url = ch["url"]
         if not url.startswith("http"):
-            skipped_channels.append(ch)
+            skipped_channels.append({
+                "display_name": ch["display_name"],
+                "url": url,
+                "reason": "无效URL（非 http 开头）"
+            })
             continue
         if url in seen_urls:
-            skipped_channels.append(ch)
+            skipped_channels.append({
+                "display_name": ch["display_name"],
+                "url": url,
+                "reason": "重复URL"
+            })
             continue
         seen_urls.add(url)
         valid_channels.append(ch)
@@ -173,10 +181,11 @@ def write_output_files(channels):
         for ch in valid_channels:
             writer.writerow([ch["display_name"], ch["url"], "网络源", ch.get("logo", "")])
 
-    # 写跳过日志（UTF-8 无 BOM）
+    # 写跳过日志（UTF-8 无 BOM），新增写入原因列
     with open(SKIPPED_LOG, "w", encoding="utf-8") as f:
+        f.write("频道名,地址,跳过原因\n")
         for ch in skipped_channels:
-            f.write(f"{ch['display_name']},{ch['url']}\n")
+            f.write(f"{ch['display_name']},{ch['url']},{ch['reason']}\n")
 
     print(f"📁 输出文件：{OUTPUT_M3U} 和 {OUTPUT_CSV}")
     print(f"📁 跳过日志：{SKIPPED_LOG}")
