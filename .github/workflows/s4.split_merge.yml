@@ -1,0 +1,59 @@
+name: s4分割merge_total文件
+
+on:
+  schedule:
+    # 每天 03:00 Asia/Taipei (UTC+8) => UTC 前一天 19:00
+    - cron: '0 19 * * *'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  split_and_commit:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0  # 拉取完整历史，方便 rebase
+
+      - name: Setup Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      - name: Install dependencies
+        run: pip install chardet
+
+      - name: Run split_merge script
+        run: python scripts/s4.split_merge.py
+
+      - name: Debug — list output files
+        run: |
+          echo "📂 输出文件列表："
+          ls -lh output/middle/chunk || echo "⚠️ output/middle/chunk 目录不存在"
+
+      - name: Configure git
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+
+      - name: Pull latest changes (rebase remote updates)
+        run: |
+          git stash push -m "ci: stash before pull"
+          git fetch origin main
+          git pull --rebase origin main || git rebase --abort
+          git stash pop || echo "No stash to pop"
+
+      - name: Commit and push results (safe)
+        env:
+          PAT_TOKEN: ${{ secrets.PAT_TOKEN }}
+        run: |
+          git add output/middle/chunk/
+          if ! git diff --cached --quiet; then
+            git commit -m "Auto split merge_total.csv into chunks [ci skip]"
+            git push https://${PAT_TOKEN}@github.com/${{ github.repository }}.git HEAD:refs/heads/main
+          else
+            echo "✅ No changes to commit."
+          fi
