@@ -1,0 +1,80 @@
+name: s4检测
+
+on:
+  workflow_dispatch:
+  schedule:
+    - cron: '15 19 * * *'  # 每天 UTC 19:15 触发，东八区凌晨3:15
+
+permissions:
+  contents: write
+
+jobs:
+  generate_and_push:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+          persist-credentials: false   # 禁用默认GITHUB_TOKEN
+
+      - name: Set up Git user
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+
+      - name: Set git remote URL with PAT
+        env:
+          PUSH_TOKEN1: ${{ secrets.PUSH_TOKEN1 }}
+          REPO: ${{ github.repository }}
+        run: |
+          git remote set-url origin https://x-access-token:${PUSH_TOKEN1}@github.com/${REPO}.git
+
+      - name: Setup Python 3.11
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      - name: Install dependencies
+        run: pip install chardet pillow tqdm requests
+
+      - name: Generate chunk workflows and push
+        run: |
+          python scripts/4.3.2generate_chunk_workflows.py
+          git add .github/workflows output/cache
+          git commit -m "ci: auto-generate deep validation workflows" || echo "无更改，跳过提交"
+
+          max_retries=3
+          wait_seconds=5
+          attempt=1
+          while [ $attempt -le $max_retries ]; do
+            echo "尝试推送，第 $attempt 次"
+
+            # 先推送
+            if git push; then
+              echo "推送成功"
+              break
+            else
+              echo "推送失败，尝试拉取远程合并"
+
+              # stash 防止本地未暂存改动阻塞拉取
+              git stash push -m "ci: stash before pull"
+
+              if git pull --rebase; then
+                echo "拉取合并成功，准备重试推送"
+                git stash pop || echo "No stash to pop"
+              else
+                echo "拉取合并失败，等待 $wait_seconds 秒后重试"
+                git rebase --abort || true
+                git stash pop || echo "No stash to pop"
+                sleep $wait_seconds
+              fi
+            fi
+
+            attempt=$((attempt + 1))
+          done
+
+          if [ $attempt -gt $max_retries ]; then
+            echo "达到最大重试次数，推送失败，请手动处理冲突"
+            exit 1
+          fi
