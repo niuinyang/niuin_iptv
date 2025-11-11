@@ -1,4 +1,4 @@
-name: 5频道名格式化
+name: 7频道名格式化
 
 on:
   workflow_dispatch:
@@ -24,7 +24,7 @@ jobs:
         run: pip install pandas rapidfuzz requests chardet
 
       - name: Run standardization script
-        run: python scripts/3.5standardize_names.py
+        run: python scripts/7standardize_names.py
 
       - name: Commit and push results
         env:
