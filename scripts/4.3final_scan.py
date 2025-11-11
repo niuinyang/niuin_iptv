@@ -172,7 +172,8 @@ def write_final(results, input_path, final_out=None, final_invalid_out=None):
 def main():
     p = argparse.ArgumentParser()
     p.add_argument("--input", required=True, help="输入文件路径（deep_scan 输出）")
-    p.add_argument("--output", required=True, help="最终输出文件路径前缀（不带扩展名）")
+    p.add_argument("--output", required=True, help="最终有效输出文件完整路径（带后缀）")
+    p.add_argument("--invalid", required=True, help="最终无效输出文件完整路径（带后缀）")
     p.add_argument("--chunk_id", required=True, help="Chunk ID，用于分块缓存")
     p.add_argument("--cache_dir", default="output/cache", help="缓存目录（默认 output/cache）")
     p.add_argument("--timeout", type=int, default=20)
@@ -198,9 +199,12 @@ def main():
     output_dir = os.path.dirname(args.output)
     if output_dir:
         os.makedirs(output_dir, exist_ok=True)
+    invalid_dir = os.path.dirname(args.invalid)
+    if invalid_dir:
+        os.makedirs(invalid_dir, exist_ok=True)
 
-    final_out = f"{args.output}_final.csv"
-    final_invalid_out = f"{args.output}_final_invalid.csv"
+    final_out = args.output
+    final_invalid_out = args.invalid
 
     write_final(
         results,
@@ -210,7 +214,7 @@ def main():
     )
 
     fake_count = sum(1 for r in results if r.get("is_fake"))
-    print(f"Final scan finished. Fake found: {fake_count}/{len(results)}. Wrote outputs to {args.output}*")
+    print(f"Final scan finished. Fake found: {fake_count}/{len(results)}. Wrote outputs to {final_out} and {final_invalid_out}")
 
 if __name__ == "__main__":
     main()
