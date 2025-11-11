@@ -12,8 +12,6 @@ import json
 import os
 import chardet
 
-DEEP_INPUT = "output/middle/deep_scan.csv"
-
 CACHE_DIR = "output/cache"
 CHUNK_CACHE_DIR = os.path.join(CACHE_DIR, "chunk")
 CACHE_FILE = os.path.join(CACHE_DIR, "cache_hashes.json")
@@ -195,7 +193,7 @@ def write_final(results, input_path, working_out=None, final_out=None, final_inv
 
 def main():
     p = argparse.ArgumentParser()
-    p.add_argument("--input", "-i", default=DEEP_INPUT)
+    p.add_argument("--input", "-i", required=True, help="输入文件路径（deep_scan 输出）"))
     p.add_argument("--output", "-o", required=True, help="最终输出文件路径前缀（不带扩展名）")
     p.add_argument("--chunk_id", type=str, default=None, help="Chunk ID，用于分块缓存")
     p.add_argument("--cache_dir", type=str, default="output/cache", help="缓存目录")
