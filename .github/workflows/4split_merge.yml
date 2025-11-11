@@ -27,7 +27,7 @@ jobs:
         run: pip install chardet
 
       - name: Run split_merge script
-        run: python scripts/s4.split_merge.py
+        run: python scripts/4split_merge.py
 
       - name: Debug — list output files
         run: |
