@@ -36,10 +36,10 @@ jobs:
           mkdir -p output/middle/deep
           python scripts/4.2deep_scan.py --input output/middle/fast/fast_chunk25-1.csv --output output/middle/deep/deep_chunk25-1.csv
 
-      - name: Run final scan for chunk25-1
-        run: |
-          mkdir -p output/middle/final
-          python scripts/4.3final_scan.py --input output/middle/deep/deep_chunk25-1.csv --output output/middle/final/final_chunk25-1.csv --chunk_id chunk25-1 --cache_dir output/cache
+    #  - name: Run final scan for chunk25-1
+     #   run: |
+     #     mkdir -p output/middle/final
+     #     python scripts/4.3final_scan.py --input output/middle/deep/deep_chunk25-1.csv --output output/middle/final/final_chunk25-1.csv --chunk_id chunk25-1 --cache_dir output/cache
 
       - name: Commit and push changes
         env:
