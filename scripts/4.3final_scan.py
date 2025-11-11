@@ -114,7 +114,7 @@ def read_deep_input(path):
                 urls.append(url)
     return urls
 
-def write_final(results, input_path, working_out=None, final_out=None, final_invalid_out=None, generate_working_gbk=False):
+def write_final(results, input_path, working_out=None, final_out=None, final_invalid_out=None):
     final_map = {r["url"]: r for r in results}
 
     with open(input_path, "rb") as fb:
@@ -139,15 +139,6 @@ def write_final(results, input_path, working_out=None, final_out=None, final_inv
         w_working.writeheader()
         w_valid.writeheader()
         w_invalid.writeheader()
-
-        if generate_working_gbk:
-            working_gbk_path = working_out.rsplit(".",1)[0] + "_gbk.csv"
-            fworking_gbk = open(working_gbk_path, "w", newline='', encoding='gbk', errors='ignore')
-            w_working_gbk = csv.DictWriter(fworking_gbk, fieldnames=working_fields)
-            w_working_gbk.writeheader()
-        else:
-            fworking_gbk = None
-            w_working_gbk = None
 
         for row in reader:
             url = (row.get("地址") or row.get("url") or "").strip()
