@@ -48,7 +48,7 @@ jobs:
           mkdir -p output/middle/fast
           mkdir -p output/middle/fast/ok
           mkdir -p output/middle/fast/not
-          python scripts/4.1fast_scan.py \
+          python scripts/5.1fast_scan.py \
             --input output/middle/chunk/{n}.csv \
             --output output/middle/fast/ok/fast_{n}.csv \
             --invalid output/middle/fast/not/fast_{n}-invalid.csv
@@ -58,7 +58,7 @@ jobs:
           mkdir -p output/middle/deep
           mkdir -p output/middle/deep/ok
           mkdir -p output/middle/deep/not
-          python scripts/4.2deep_scan.py \
+          python scripts/5.2deep_scan.py \
             --input output/middle/fast/ok/fast_{n}.csv \
             --output output/middle/deep/ok/deep_{n}.csv \
             --invalid output/middle/deep/not/deep_{n}-invalid.csv
@@ -68,7 +68,7 @@ jobs:
           mkdir -p output/middle/final
           mkdir -p output/middle/final/ok
           mkdir -p output/middle/final/not
-          python scripts/4.3final_scan.py \
+          python scripts/5.3final_scan.py \
             --input output/middle/deep/ok/deep_{n}.csv \
             --output output/middle/final/ok/final_{n}.csv \
             --invalid output/middle/final/not/final_{n}-invalid.csv \
