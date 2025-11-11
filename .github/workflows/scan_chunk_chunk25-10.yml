@@ -1,15 +1,15 @@
-name: Scan Chunk chunk25-13
+name: Scan Chunk chunk25-10
 
 on:
   schedule:
-    - cron: '30 20 * * *'  # 每天 UTC 20:30 触发
+    - cron: '35 19 * * *'  # 每天 UTC 19:35 触发
   workflow_dispatch:
 
 permissions:
   contents: write
 
 jobs:
-  scan_chunk_25_13:
+  scan_chunk_chunk25-10:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout repository
@@ -26,37 +26,32 @@ jobs:
       - name: Install dependencies
         run: pip install -r requirements.txt
 
-      - name: Run fast scan
+      - name: Run fast scan for chunk chunk25-10
         run: |
-          set -e
           mkdir -p output/middle/fast
-          python scripts/4.1fast_scan.py --input output/middle/chunk/chunk25-13.csv --output output/middle/fast/fast_chunk25-13.csv
+          python scripts/4.1fast_scan.py --input output/middle/chunk/chunk_chunk25-10.csv --output output/middle/fast/fast_chunk_chunk25-10.csv
 
-      - name: Run deep scan
+      - name: Run deep scan for chunk chunk25-10
         run: |
-          set -e
           mkdir -p output/middle/deep
-          python scripts/4.2deep_scan.py --input output/middle/fast/fast_chunk25-13.csv --output output/middle/deep/deep_chunk25-13.csv
+          python scripts/4.2deep_scan.py --input output/middle/fast/fast_chunk_chunk25-10.csv --output output/middle/deep/deep_chunk_chunk25-10.csv
 
-      - name: Run final scan
+      - name: Run final scan for chunk chunk25-10
         run: |
-          set -e
           mkdir -p output/middle/final
-          python scripts/4.3final_scan.py --input output/middle/deep/deep_chunk25-13.csv --output output/middle/final/final_chunk25-13.csv --cache_dir output/cache
+          python scripts/4.3final_scan.py --input output/middle/deep/deep_chunk_chunk25-10.csv --output output/middle/final/final_chunk_chunk25-10 --chunk_id chunk_chunk25-10 --cache_dir output/cache
 
       - name: Commit and push changes
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
-          set -e || true
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
 
-          # 只添加相关输出文件和缓存（如果存在）
-          git add output/middle/final/final_chunk25-13.csv output/cache || true
-          git commit -m "ci: add scan results for chunk25-13" || echo "No changes to commit"
+          git add output/middle/final/final_chunk_chunk25-10_working.csv output/middle/final/final_chunk_chunk25-10_final.csv output/middle/final/final_chunk_chunk25-10_final_invalid.csv output/cache/chunk/cache_hashes_chunk_chunk_chunk25-10.json || echo "No files to add"
+          git commit -m "ci: add scan results and cache for chunk chunk25-10" || echo "No changes to commit"
 
-          # 设置远程并带安全推送重试机制
+          # 🔹 设置远程并带安全推送重试机制
           git remote set-url origin https://x-access-token:${GITHUB_TOKEN}@github.com/niuinyang/niuin_iptv.git
 
           for i in 1 2 3; do
@@ -66,10 +61,10 @@ jobs:
               break
             else
               echo "推送失败，尝试拉取远程合并 🔄"
-              git stash push -m "ci: stash before pull" || echo "stash 失败或无变更"
+              git stash push -m "ci: stash before pull"
               if git pull --rebase origin main; then
                 echo "拉取成功，准备重试推送"
-                git stash pop || echo "无 stash 可弹出或 pop 失败"
+                git stash pop || echo "无 stash 可弹出"
               else
                 echo "拉取失败，等待 30 秒后重试"
                 git rebase --abort || true
