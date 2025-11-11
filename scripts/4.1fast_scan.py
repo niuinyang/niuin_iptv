@@ -45,7 +45,6 @@ async def check_source(semaphore, session, row, timeout):
                     "图标": icon,
                     "检测时间": rtt,
                     "分组": "未分组",
-                    "视频信息": "",
                     "状态码": status
                 }
             await asyncio.sleep(0.2 * (attempt + 1))
@@ -56,7 +55,6 @@ async def check_source(semaphore, session, row, timeout):
             "图标": icon,
             "检测时间": "",
             "分组": "未分组",
-            "视频信息": "",
             "状态": f"失败({status})",
             "状态码": status
         }
@@ -89,8 +87,8 @@ async def run_all(rows, output_valid, output_invalid, concurrency, timeout):
     os.makedirs(os.path.dirname(output_valid), exist_ok=True)
     with open(output_valid, "w", newline='', encoding="utf-8") as f_ok, \
          open(output_invalid, "w", newline='', encoding="utf-8") as f_fail:
-        fieldnames_valid = ["频道名", "地址", "来源", "图标", "检测时间", "分组", "视频信息", "状态码"]
-        fieldnames_invalid = ["频道名", "地址", "来源", "图标", "检测时间", "分组", "视频信息", "状态", "状态码"]
+        fieldnames_valid = ["频道名", "地址", "来源", "图标", "检测时间", "分组", "状态码"]
+        fieldnames_invalid = ["频道名", "地址", "来源", "图标", "检测时间", "分组", "状态", "状态码"]
 
         writer_ok = csv.DictWriter(f_ok, fieldnames=fieldnames_valid)
         writer_fail = csv.DictWriter(f_fail, fieldnames=fieldnames_invalid)
@@ -115,8 +113,8 @@ def read_csv(input_file):
 def main():
     parser = argparse.ArgumentParser()
     parser.add_argument("--input", required=True)
-    parser.add_argument("--output", required=True)
-    parser.add_argument("--invalid", default="output/middle/fast_scan_invalid.csv")
+    parser.add_argument("--output", required=True, help="成功文件路径")
+    parser.add_argument("--invalid", required=True, help="失败文件路径")
     parser.add_argument("--concurrency", type=int, default=DEFAULT_CONCURRENCY)
     parser.add_argument("--timeout", type=int, default=DEFAULT_TIMEOUT)
     args = parser.parse_args()
