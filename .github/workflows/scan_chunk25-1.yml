@@ -45,7 +45,7 @@ jobs:
           mkdir -p output/middle/final
           mkdir -p output/middle/final/ok
           mkdir -p output/middle/final/not
-          python scripts/4.3final_scan.py             --input output/middle/deep/ok/deep_chunk25-1.csv             --output output/middle/final/ok/final_chunk25-1.csv             --invalid output/middle/final/not/final_chunk25-1-invalid.csv             --chunk_id chunk25-1             --cache_dir output/cache
+        #  python scripts/4.3final_scan.py             --input output/middle/deep/ok/deep_chunk25-1.csv             --output output/middle/final/ok/final_chunk25-1.csv             --invalid output/middle/final/not/final_chunk25-1-invalid.csv             --chunk_id chunk25-1             --cache_dir output/cache
 
       - name: Commit and push changes
         env:
