@@ -48,27 +48,30 @@ async def grab_frame(url, at_time=1, timeout=15):
     except FileNotFoundError:
         return None, "ffmpeg_not_installed"
 
+# ✅ 修改：所有分块扫描都读取主缓存，只写入自己的 chunk 缓存
 def load_cache(chunk_id=None):
+    """
+    始终从主缓存 output/cache/cache_hashes.json 加载。
+    不再尝试加载 chunk 缓存。
+    """
     os.makedirs(CHUNK_CACHE_DIR, exist_ok=True)
-    if chunk_id:
-        chunk_cache_file = os.path.join(CHUNK_CACHE_DIR, f"cache_hashes_chunk_{chunk_id}.json")
-        if os.path.exists(chunk_cache_file):
-            with open(chunk_cache_file, "r", encoding="utf-8") as f:
-                return json.load(f)
     if os.path.exists(CACHE_FILE):
         with open(CACHE_FILE, "r", encoding="utf-8") as f:
             return json.load(f)
     return {}
 
 def save_cache(data, chunk_id=None):
+    """
+    如果有 chunk_id，只保存 chunk 缓存；
+    不再覆盖主缓存。
+    """
     os.makedirs(CHUNK_CACHE_DIR, exist_ok=True)
     if chunk_id:
         chunk_cache_file = os.path.join(CHUNK_CACHE_DIR, f"cache_hashes_chunk_{chunk_id}.json")
         with open(chunk_cache_file, "w", encoding="utf-8") as f:
             json.dump(data, f, ensure_ascii=False, indent=2)
     else:
-        with open(CACHE_FILE, "w", encoding="utf-8") as f:
-            json.dump(data, f, ensure_ascii=False, indent=2)
+        pass  # 不再保存主缓存
 
 async def process_one(url, sem, cache, timeout=20):
     async with sem:
