@@ -195,11 +195,10 @@ def main():
     p = argparse.ArgumentParser()
     p.add_argument("--input", required=True, help="输入文件路径（deep_scan 输出）"))
     p.add_argument("--output", required=True, help="最终输出文件路径前缀（不带扩展名）")
-    p.add_argument("--chunk_id", type=str, default=None, help="Chunk ID，用于分块缓存")
-    p.add_argument("--cache_dir", type=str, default="output/cache", help="缓存目录")
+    p.add_argument("--chunk_id", required=True, help="Chunk ID，用于分块缓存")
+    p.add_argument("--cache_dir", required=True, help="缓存目录")
     p.add_argument("--timeout", type=int, default=20)
     p.add_argument("--concurrency", type=int, default=6)
-    p.add_argument("--working_gbk", action="store_true", help="是否生成 GBK 编码的 working.csv")
     args = p.parse_args()
 
     global CACHE_DIR, CHUNK_CACHE_DIR, CACHE_FILE
@@ -232,7 +231,6 @@ def main():
         working_out=working_out,
         final_out=final_out,
         final_invalid_out=final_invalid_out,
-        generate_working_gbk=args.working_gbk,
     )
 
     fake_count = sum(1 for r in results if r.get("is_fake"))
