@@ -15,7 +15,7 @@ os.makedirs(WORKFLOW_DIR, exist_ok=True)
 os.makedirs("output/cache", exist_ok=True)
 
 # 🧩 模板（修正版，满足需求）
-TEMPLATE = """name: Scan {n}
+TEMPLATE = """name: Scan_{n}
 
 on:
   schedule:
@@ -56,7 +56,7 @@ jobs:
       - name: Run final scan for {n}
         run: |
           mkdir -p output/middle/final
-          python scripts/4.3final_scan.py --input output/middle/deep/deep_{n}.csv --output output/middle/final/final_{n} --chunk_id {n} --cache_dir output/cache
+          python scripts/4.3final_scan.py --input output/middle/deep/deep_{n}.csv --output output/middle/final/final_{n}.csv --chunk_id {n} --cache_dir output/cache
 
       - name: Commit and push changes
         env:
@@ -119,7 +119,7 @@ for i, chunk_file in enumerate(chunks, start=1):
     # 从文件名中提取 chunk id（去掉 .csv）
     chunk_id = os.path.splitext(chunk_file)[0]
 
-    workflow_filename = f"scan_chunk_{chunk_id}.yml"
+    workflow_filename = f"scan_{chunk_id}.yml"
     workflow_path = os.path.join(WORKFLOW_DIR, workflow_filename)
 
     with open(workflow_path, "w", encoding="utf-8") as f:
