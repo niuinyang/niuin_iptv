@@ -177,7 +177,7 @@ def main():
     p.add_argument("--input", required=True, help="输入文件路径（deep_scan 输出）")
     p.add_argument("--output", required=True, help="最终输出文件路径前缀（不带扩展名）")
     p.add_argument("--chunk_id", required=True, help="Chunk ID，用于分块缓存")
-    p.add_argument("--cache_dir", required=True, help="缓存目录")
+    p.add_argument("--cache_dir", default="output/cache", help="缓存目录（默认 output/cache）")
     p.add_argument("--timeout", type=int, default=20)
     p.add_argument("--concurrency", type=int, default=6)
     args = p.parse_args()
