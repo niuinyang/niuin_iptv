@@ -116,7 +116,7 @@ def read_deep_input(path):
                 urls.append(url)
     return urls
 
-def write_final(results, input_path, final_out=None, final_invalid_out=None):
+def write_final(results, input_path, working_out=None, final_out=None, final_invalid_out=None, generate_working_gbk=False):
     final_map = {r["url"]: r for r in results}
 
     with open(input_path, "rb") as fb:
@@ -124,19 +124,32 @@ def write_final(results, input_path, final_out=None, final_invalid_out=None):
         detected_enc = chardet.detect(raw)["encoding"] or "utf-8"
 
     with open(input_path, newline='', encoding=detected_enc, errors='ignore') as fin, \
+         open(working_out, "w", newline='', encoding='utf-8') as fworking, \
          open(final_out, "w", newline='', encoding='utf-8') as fvalid, \
          open(final_invalid_out, "w", newline='', encoding='utf-8') as finvalid:
 
         reader = csv.DictReader(fin)
 
-        # 设定输出字段
-        fields = ["频道名", "地址", "来源", "图标", "检测时间", "分组", "视频编码", "分辨率", "帧率", "音频", "哈希相似度"]
+        working_fields = ["频道名","地址","来源","图标","检测时间","分组","视频信息"]
+        valid_fields = working_fields + ["相似度"]
+        invalid_fields = working_fields + ["未通过信息", "相似度"]
 
-        w_valid = csv.DictWriter(fvalid, fieldnames=fields)
-        w_invalid = csv.DictWriter(finvalid, fieldnames=fields + ["未通过信息"])
+        w_working = csv.DictWriter(fworking, fieldnames=working_fields)
+        w_valid = csv.DictWriter(fvalid, fieldnames=valid_fields)
+        w_invalid = csv.DictWriter(finvalid, fieldnames=invalid_fields)
 
+        w_working.writeheader()
         w_valid.writeheader()
         w_invalid.writeheader()
+
+        if generate_working_gbk:
+            working_gbk_path = working_out.rsplit(".",1)[0] + "_gbk.csv"
+            fworking_gbk = open(working_gbk_path, "w", newline='', encoding='gbk', errors='ignore')
+            w_working_gbk = csv.DictWriter(fworking_gbk, fieldnames=working_fields)
+            w_working_gbk.writeheader()
+        else:
+            fworking_gbk = None
+            w_working_gbk = None
 
         for row in reader:
             url = (row.get("地址") or row.get("url") or "").strip()
@@ -157,29 +170,33 @@ def write_final(results, input_path, final_out=None, final_invalid_out=None):
                         fail_reason += "; 伪源相似度: {:.4f}".format(r.get("similarity", 0))
                     similarity = round(r.get("similarity", 0), 4)
 
-            out_row = {
-                "频道名": row.get("频道名", ""),
-                "地址": url,
-                "来源": row.get("来源", ""),
-                "图标": row.get("图标", ""),
-                "检测时间": row.get("检测时间", ""),
-                "分组": row.get("分组", ""),
-                "视频编码": row.get("视频编码", ""),
-                "分辨率": row.get("分辨率", ""),
-                "帧率": row.get("帧率", ""),
-                "音频": row.get("音频", ""),
-                "哈希相似度": similarity
-            }
-
             if passed:
-                w_valid.writerow(out_row)
+                working_row = {k: row.get(k, "") for k in working_fields}
+                w_working.writerow(working_row)
+                if w_working_gbk:
+                    try:
+                        w_working_gbk.writerow(working_row)
+                    except UnicodeEncodeError:
+                        fixed_row = {k: (v.encode('gbk', errors='ignore').decode('gbk') if isinstance(v, str) else v) for k,v in working_row.items()}
+                        w_working_gbk.writerow(fixed_row)
+
+                valid_row = {k: row.get(k, "") for k in working_fields}
+                valid_row["相似度"] = similarity
+                w_valid.writerow(valid_row)
             else:
-                out_row["未通过信息"] = fail_reason or "未知错误"
-                w_invalid.writerow(out_row)
+                invalid_row = {k: row.get(k, "") for k in working_fields}
+                invalid_row["未通过信息"] = fail_reason or "未知错误"
+                invalid_row["相似度"] = similarity
+                w_invalid.writerow(invalid_row)
+
+        if fworking_gbk:
+            fworking_gbk.close()
+            print(f"✔️ 生成 GBK 编码的 working 文件: {working_gbk_path}")
 
 def main():
     p = argparse.ArgumentParser()
     p.add_argument("--input", "-i", default=DEEP_INPUT)
+    p.add_argument("--output", "-o", required=True, help="最终输出文件路径前缀（不带扩展名）")
     p.add_argument("--chunk_id", type=str, default=None, help="Chunk ID，用于分块缓存")
     p.add_argument("--cache_dir", type=str, default="output/cache", help="缓存目录")
     p.add_argument("--timeout", type=int, default=20)
@@ -203,21 +220,25 @@ def main():
     results = asyncio.run(run_all(urls, concurrency=args.concurrency, cache=cache, timeout=args.timeout))
     save_cache(cache, args.chunk_id)
 
-    os.makedirs("output/chunk_final_scan", exist_ok=True)
-    input_name = os.path.splitext(os.path.basename(args.input))[0]
+    output_dir = os.path.dirname(args.output)
+    if output_dir:
+        os.makedirs(output_dir, exist_ok=True)
 
-    final_out = os.path.join("output/chunk_final_scan", f"final_{input_name}.csv")
-    final_invalid_out = os.path.join("output/chunk_final_scan", f"final_invalid_{input_name}.csv")
+    working_out = f"{args.output}_working.csv"
+    final_out = f"{args.output}_final.csv"
+    final_invalid_out = f"{args.output}_final_invalid.csv"
 
     write_final(
         results,
         input_path=args.input,
+        working_out=working_out,
         final_out=final_out,
         final_invalid_out=final_invalid_out,
+        generate_working_gbk=args.working_gbk,
     )
 
     fake_count = sum(1 for r in results if r.get("is_fake"))
-    print(f"Final scan finished. Fake found: {fake_count}/{len(results)}. Wrote outputs to output/chunk_final_scan")
+    print(f"Final scan finished. Fake found: {fake_count}/{len(results)}. Wrote outputs to {args.output}*")
 
 if __name__ == "__main__":
     main()
