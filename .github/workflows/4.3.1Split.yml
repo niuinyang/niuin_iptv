@@ -27,7 +27,7 @@ jobs:
         run: pip install chardet
 
       - name: Run split_deep_scan.py
-        run: python scripts/split_deep_scan.py
+        run: python scripts/4.3.1split_deep_scan.py
 
       - name: Debug — list output files
         run: |
