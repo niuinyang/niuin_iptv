@@ -125,7 +125,7 @@ def read_txt_multi_section_csv(file_path: str):
             if len(parts) != 2:
                 continue
             display_name, url = parts[0].strip(), parts[1].strip()
-            if not url.startswith("http"):
+            if not (url.startswith("http://") or url.startswith("https://") or url.startswith("rtsp://")):
                 continue
             channels.append({
                 "display_name": display_name,
@@ -146,11 +146,12 @@ def write_output_files(channels):
 
     for ch in channels:
         url = ch["url"]
-        if not url.startswith("http"):
+        # ✅ 支持 http / https / rtsp 三种协议
+        if not (url.startswith("http://") or url.startswith("https://") or url.startswith("rtsp://")):
             skipped_channels.append({
                 "display_name": ch["display_name"],
                 "url": url,
-                "reason": "无效URL（非 http 开头）"
+                "reason": "无效URL（非 http/https/rtsp 开头）"
             })
             continue
         if url in seen_urls:
