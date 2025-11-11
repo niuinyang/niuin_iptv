@@ -53,7 +53,7 @@ jobs:
           mkdir -p output/middle/deep
           python scripts/4.2deep_scan.py --input output/middle/fast/fast_{n}.csv --output output/middle/deep/deep_{n}.csv
 
-      - name: Run final scan for chunk {n}
+      - name: Run final scan for {n}
         run: |
           mkdir -p output/middle/final
           python scripts/4.3final_scan.py --input output/middle/deep/deep_{n}.csv --output output/middle/final/final_{n} --chunk_id {n} --cache_dir output/cache
