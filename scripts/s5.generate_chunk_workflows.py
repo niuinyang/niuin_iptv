@@ -26,7 +26,7 @@ permissions:
   contents: write
 
 jobs:
-  scan_chunk_{n}:
+  scan_{n}:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout repository
@@ -43,20 +43,20 @@ jobs:
       - name: Install dependencies
         run: pip install -r requirements.txt
 
-      - name: Run fast scan for chunk {n}
+      - name: Run fast scan for {n}
         run: |
           mkdir -p output/middle/fast
-          python scripts/4.1fast_scan.py --input output/middle/chunk/chunk_{n}.csv --output output/middle/fast/fast_chunk_{n}.csv
+          python scripts/4.1fast_scan.py --input output/middle/chunk/{n}.csv --output output/middle/fast/fast_{n}.csv
 
-      - name: Run deep scan for chunk {n}
+      - name: Run deep scan for {n}
         run: |
           mkdir -p output/middle/deep
-          python scripts/4.2deep_scan.py --input output/middle/fast/fast_chunk_{n}.csv --output output/middle/deep/deep_chunk_{n}.csv
+          python scripts/4.2deep_scan.py --input output/middle/fast/fast_{n}.csv --output output/middle/deep/deep_{n}.csv
 
       - name: Run final scan for chunk {n}
         run: |
           mkdir -p output/middle/final
-          python scripts/4.3final_scan.py --input output/middle/deep/deep_chunk_{n}.csv --output output/middle/final/final_chunk_{n} --chunk_id chunk_{n} --cache_dir output/cache
+          python scripts/4.3final_scan.py --input output/middle/deep/deep_{n}.csv --output output/middle/final/final_{n} --chunk_id {n} --cache_dir output/cache
 
       - name: Commit and push changes
         env:
