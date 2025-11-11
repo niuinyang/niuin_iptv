@@ -162,12 +162,6 @@ def write_final(results, input_path, working_out=None, final_out=None, final_inv
             if passed:
                 working_row = {k: row.get(k, "") for k in working_fields}
                 w_working.writerow(working_row)
-                if w_working_gbk:
-                    try:
-                        w_working_gbk.writerow(working_row)
-                    except UnicodeEncodeError:
-                        fixed_row = {k: (v.encode('gbk', errors='ignore').decode('gbk') if isinstance(v, str) else v) for k,v in working_row.items()}
-                        w_working_gbk.writerow(fixed_row)
 
                 valid_row = {k: row.get(k, "") for k in working_fields}
                 valid_row["相似度"] = similarity
@@ -177,10 +171,6 @@ def write_final(results, input_path, working_out=None, final_out=None, final_inv
                 invalid_row["未通过信息"] = fail_reason or "未知错误"
                 invalid_row["相似度"] = similarity
                 w_invalid.writerow(invalid_row)
-
-        if fworking_gbk:
-            fworking_gbk.close()
-            print(f"✔️ 生成 GBK 编码的 working 文件: {working_gbk_path}")
 
 def main():
     p = argparse.ArgumentParser()
