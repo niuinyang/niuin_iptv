@@ -63,10 +63,10 @@ jobs:
         run: |
           mkdir -p output/middle/final
           python scripts/4.3final_scan.py \
-            --input output/middle/deep/deep_n}.csv \
-            --output output/middle/final/final_n}.csv \
-            --invalid output/middle/final/final_n}-invalid.csv \
-            --chunk_id n} \
+            --input output/middle/deep/deep_{n}.csv \
+            --output output/middle/final/final_{n}.csv \
+            --invalid output/middle/final/final_{n}-invalid.csv \
+            --chunk_id {n} \
             --cache_dir output/cache
 
       - name: Commit and push changes
