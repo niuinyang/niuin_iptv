@@ -5,6 +5,8 @@ from rapidfuzz import process
 import re
 import chardet
 
+from pypinyin import lazy_pinyin  # 新增导入，用于拼音排序
+
 IPTV_DB_PATH = "./iptv-database"
 
 INPUT_MY = "input/mysource/my_sum.csv"
@@ -178,20 +180,17 @@ def export_unmatched_for_manual(working_df, manual_map_path=MANUAL_MAP_PATH):
     def extract_candidate(info):
         if not isinstance(info, str):
             return ""
-        # 尝试用正则提取“拟匹配频道:”后面的内容，直到逗号或结尾
         m = re.search(r"拟匹配频道:([^\s,，]+)", info)
         if m:
             return m.group(1).strip()
         return ""
 
-    # 构造导出 DataFrame
     export_df = pd.DataFrame({
         "原始名称": unmatched_df['original_channel_name'].astype(str).str.strip(),
         "标准名称": "",  # 统一空
         "拟匹配频道": unmatched_df['match_info'].apply(extract_candidate).astype(str).str.strip()
     }).drop_duplicates(subset=["原始名称"], keep="first")
 
-    # 如果没有未匹配，确保文件存在表头
     if export_df.empty:
         if not os.path.exists(manual_map_path):
             os.makedirs(os.path.dirname(manual_map_path), exist_ok=True)
@@ -199,20 +198,17 @@ def export_unmatched_for_manual(working_df, manual_map_path=MANUAL_MAP_PATH):
         print(f"🔔 无新增未匹配或低匹配频道，已确保 {manual_map_path} 存在。")
         return
 
-    # 读取已有文件，合并，去重
     if os.path.exists(manual_map_path):
         existing = pd.read_csv(manual_map_path, encoding="utf-8-sig", dtype=str)
     else:
         existing = pd.DataFrame(columns=["原始名称", "标准名称", "拟匹配频道"])
 
-    # 确保列存在
     for col in ["原始名称", "标准名称", "拟匹配频道"]:
         if col not in existing.columns:
             existing[col] = ""
 
     existing = existing[["原始名称", "标准名称", "拟匹配频道"]].astype(str)
 
-    # 合并，优先保留已有标准名称
     combined = pd.concat([existing, export_df], ignore_index=True)
     combined.drop_duplicates(subset=["原始名称"], keep="first", inplace=True)
 
@@ -220,6 +216,76 @@ def export_unmatched_for_manual(working_df, manual_map_path=MANUAL_MAP_PATH):
     combined.to_csv(manual_map_path, index=False, encoding="utf-8-sig")
 
     print(f"🔔 已更新 {manual_map_path}，共 {len(combined)} 条记录。")
+
+# 新增 - 拼音排序辅助函数
+def sort_by_name_pinyin(df, col_name):
+    df['_sort_key'] = df[col_name].apply(lambda x: ''.join(lazy_pinyin(str(x).lower())))
+    df = df.sort_values(by='_sort_key').drop(columns=['_sort_key'])
+    return df.reset_index(drop=True)
+
+# 新增 - 对 channel.csv 排序函数
+def sort_channel_file(path=OUTPUT_CHANNEL):
+    if not os.path.exists(path):
+        print(f"⚠️ 文件 {path} 不存在，无法排序")
+        return
+
+    df = pd.read_csv(path, encoding="utf-8-sig")
+    df['分组'] = df['分组'].fillna("").replace("", "未分类")
+
+    group_order = [
+        "央视频道",
+        "4K频道",
+        "卫视频道",
+        "山东频道",
+        "他省频道",
+        "数字频道",
+        "电台广播",
+        "国际频道"
+    ]
+
+    def group_rank(g):
+        if g == "未分类":
+            return 9999
+        try:
+            return group_order.index(g)
+        except ValueError:
+            return 9998
+
+    df['分组排序权重'] = df['分组'].apply(group_rank)
+    df = df.sort_values(by=['分组排序权重']).reset_index(drop=True)
+
+    result_frames = []
+    for g, group_df in df.groupby('分组', sort=False):
+        sorted_group = sort_by_name_pinyin(group_df, '频道名')
+        result_frames.append(sorted_group)
+
+    df_sorted = pd.concat(result_frames, ignore_index=True)
+    df_sorted = df_sorted.drop(columns=['分组排序权重'])
+
+    df_sorted.to_csv(path, index=False, encoding="utf-8-sig")
+    print(f"✅ 已对 {path} 进行分组及频道名拼音排序")
+
+# 新增 - 对 manual_map.csv 排序函数
+def sort_manual_map_file(path=MANUAL_MAP_PATH):
+    if not os.path.exists(path):
+        print(f"⚠️ 文件 {path} 不存在，无法排序")
+        return
+
+    df = pd.read_csv(path, encoding="utf-8-sig")
+    df['标准名称是否空'] = df['标准名称'].fillna("").apply(lambda x: 1 if x.strip() == "" else 0)
+    df = df.sort_values(by=['标准名称是否空']).reset_index(drop=True)
+
+    df_has_std = df[df['标准名称是否空'] == 0].copy()
+    df_no_std = df[df['标准名称是否空'] == 1].copy()
+
+    df_has_std = sort_by_name_pinyin(df_has_std, '原始名称')
+    df_no_std = sort_by_name_pinyin(df_no_std, '原始名称')
+
+    df_sorted = pd.concat([df_has_std, df_no_std], ignore_index=True)
+    df_sorted = df_sorted.drop(columns=['标准名称是否空'])
+
+    df_sorted.to_csv(path, index=False, encoding="utf-8-sig")
+    print(f"✅ 已对 {path} 进行标准名称优先及原始名称拼音排序")
 
 def build_total_df(df):
     def safe_col(name_list):
@@ -262,7 +328,6 @@ def save_standardized_my_sum(df):
 def main():
     print("🚀 开始执行标准化匹配流程...")
 
-    # 先检测并统一编码，避免 utf-8 解码错误
     csv_files = [
         INPUT_MY,
         INPUT_WORKING,
@@ -321,6 +386,10 @@ def main():
 
     combined_channel_df.to_csv(OUTPUT_CHANNEL, index=False, encoding="utf-8-sig")
     print(f"✅ 已保存文件：{OUTPUT_CHANNEL}")
+
+    # 新增排序调用
+    sort_channel_file(OUTPUT_CHANNEL)
+    sort_manual_map_file(MANUAL_MAP_PATH)
 
 if __name__ == "__main__":
     main()
