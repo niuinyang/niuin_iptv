@@ -2,7 +2,7 @@ name: Scan_chunk25-11
 
 on:
   schedule:
-    - cron: '10 23 * * *'  # 每天 UTC 23:10 触发（北京时间 07:10）
+    - cron: '20 0 * * *'  # 每天 UTC 0:20 触发（北京时间 07:10）
   workflow_dispatch:
 
 permissions:
