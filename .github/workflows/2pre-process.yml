@@ -46,8 +46,13 @@ jobs:
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
           git add input/network/network_sources
-          git diff --cached --quiet || git commit -m "Update network M3U sources [ci skip]"
-          git push origin main
+          if ! git diff --cached --quiet; then
+            git commit -m "Update network M3U sources [ci skip]"
+            git pull --rebase origin main
+            git push origin main
+          else
+            echo "✅ No changes to commit."
+          fi
 
   # ---------------------------
   # 3️⃣ 合并网络源
@@ -82,7 +87,8 @@ jobs:
           git add output/*.m3u output/*.csv output/log/*.log png/* 2>/dev/null || true
           if ! git diff --cached --quiet; then
             git commit -m "🤖 Auto merge local sources $(date '+%Y-%m-%d %H:%M:%S')"
-            git push origin HEAD:main
+            git pull --rebase origin main
+            git push origin main
           else
             echo "✅ No changes to commit."
           fi
@@ -120,6 +126,7 @@ jobs:
           git add output/middle/chunk/
           if ! git diff --cached --quiet; then
             git commit -m "Auto split merge_total.csv into chunks [ci skip]"
+            git pull --rebase origin main
             git push https://${PAT_TOKEN}@github.com/${{ github.repository }}.git HEAD:refs/heads/main
           else
             echo "✅ No changes to commit."
@@ -156,15 +163,14 @@ jobs:
       - name: Install dependencies
         run: pip install chardet pillow tqdm requests
 
-      - name: Generate chunk workflows
-        run: python scripts/5.0generate_chunk_workflows.py
-
-      - name: Commit & Push generated workflows
+      - name: Generate and Push workflows
         run: |
+          python scripts/5.0generate_chunk_workflows.py
           git add .github/workflows output/cache
           if ! git diff --cached --quiet; then
             git commit -m "ci: auto-generate deep validation workflows"
-            git push origin HEAD:main
+            git pull --rebase origin main
+            git push origin main
           else
-            echo "✅ No changes to commit."
+            echo "无更改，跳过提交和推送"
           fi
