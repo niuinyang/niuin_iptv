@@ -1,7 +1,9 @@
 name: 3合并检测结果
 
 on:
-  workflow_dispatch:
+  schedule:
+    - cron: '0 18 * * *'  # 每天 UTC 18:00（北京时间 02:00）
+  workflow_dispatch:      # 支持手动触发
 
 jobs:
   merge_and_push:
@@ -24,12 +26,12 @@ jobs:
           pip install pandas
 
       - name: Pull latest changes
-        run: git pull origin main
+        run: git pull origin main --quiet
 
       - name: Run merge script
         run: python scripts/6merge_scan_result.py
 
-      - name: Commit and push changes if any with retry
+      - name: Commit and push changes with stash and retry
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
@@ -42,17 +44,19 @@ jobs:
             MAX_RETRIES=3
             for i in $(seq 1 $MAX_RETRIES); do
               echo "Attempt $i to push..."
-              if git push origin main; then
+
+              if git push origin main --quiet; then
                 echo "Push succeeded"
                 break
               else
-                echo "Push failed, trying to pull and rebase remote changes..."
-                if git pull --rebase origin main; then
-                  echo "Rebase succeeded, retrying push..."
+                echo "Push failed, handling local uncommitted changes..."
+
+                if [ -n "$(git status --porcelain)" ]; then
+                  git stash push -m "ci stash before pull"
+                  git pull --rebase origin main --quiet
+                  git stash pop || echo "No stash to pop"
                 else
-                  echo "Rebase failed, aborting"
-                  git rebase --abort
-                  exit 1
+                  git pull --rebase origin main --quiet
                 fi
               fi
 
@@ -62,5 +66,5 @@ jobs:
               fi
             done
           else
-            echo "No changes to commit"
+            echo "✅ No changes to commit."
           fi
