@@ -149,23 +149,33 @@ with open(CACHE_FILE, "w", encoding="utf-8") as f:
 
 print("\n🌀 提交生成的 workflow 和缓存文件到 GitHub...\n")
 
-# 🧠 自动提交并推送
+# 自动提交更改（有改动才提交）
 subprocess.run(["git", "add", "-A"], check=False)
-subprocess.run(["git", "status"], check=False)
-commit_msg = "ci: auto-generate scan chunk workflows"
-result = subprocess.run(["git", "commit", "-m", commit_msg], text=True)
-if result.returncode == 0:
-    print("✅ 已提交更改，准备推送...")
+status_result = subprocess.run(["git", "status", "--porcelain"], capture_output=True, text=True)
+if status_result.stdout.strip() == "":
+    print("ℹ️ 无更改，跳过提交和推送")
 else:
-    print("ℹ️ 无更改，跳过提交")
-
-# 多次推送重试（防止偶发冲突）
-for attempt in range(1, 4):
-    print(f"尝试推送，第 {attempt} 次...")
-    code = subprocess.run(["git", "push"], text=True).returncode
-    if code == 0:
-        print("🚀 推送成功")
-        break
+    commit_msg = "ci: auto-generate scan chunk workflows"
+    commit_result = subprocess.run(["git", "commit", "-m", commit_msg], text=True)
+    if commit_result.returncode != 0:
+        print("⚠️ 提交失败，跳过推送")
     else:
-        print("⚠️ 推送失败，等待 30 秒后重试...")
-        time.sleep(30)
+        # 多次推送重试（每次失败先拉取远程合并）
+        for attempt in range(1, 4):
+            print(f"尝试推送，第 {attempt} 次...")
+            push_result = subprocess.run(["git", "push"], text=True)
+            if push_result.returncode == 0:
+                print("🚀 推送成功")
+                break
+            else:
+                print("⚠️ 推送失败，尝试拉取远程并重试...")
+                # 拉取远程最新，尝试rebase
+                pull_result = subprocess.run(["git", "pull", "--rebase"], text=True)
+                if pull_result.returncode != 0:
+                    print("❌ 拉取失败，终止重试")
+                    break
+                print("⏳ 等待30秒后重试推送")
+                time.sleep(30)
+        else:
+            print("❌ 达到最大重试次数，推送失败，请手动处理冲突")
+            exit(1)
