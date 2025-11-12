@@ -48,7 +48,14 @@ jobs:
           git add input/network/network_sources
           if ! git diff --cached --quiet; then
             git commit -m "Update network M3U sources [ci skip]"
-            git pull --rebase origin main
+            # 处理未暂存更改
+            if [ -n "$(git status --porcelain)" ]; then
+              git stash push -m "ci stash before pull"
+              git pull --rebase origin main
+              git stash pop || echo "No stash to pop"
+            else
+              git pull --rebase origin main
+            fi
             git push origin main
           else
             echo "✅ No changes to commit."
@@ -87,7 +94,14 @@ jobs:
           git add output/*.m3u output/*.csv output/log/*.log png/* 2>/dev/null || true
           if ! git diff --cached --quiet; then
             git commit -m "🤖 Auto merge local sources $(date '+%Y-%m-%d %H:%M:%S')"
-            git pull --rebase origin main
+            # 处理未暂存更改
+            if [ -n "$(git status --porcelain)" ]; then
+              git stash push -m "ci stash before pull"
+              git pull --rebase origin main
+              git stash pop || echo "No stash to pop"
+            else
+              git pull --rebase origin main
+            fi
             git push origin main
           else
             echo "✅ No changes to commit."
@@ -126,7 +140,14 @@ jobs:
           git add output/middle/chunk/
           if ! git diff --cached --quiet; then
             git commit -m "Auto split merge_total.csv into chunks [ci skip]"
-            git pull --rebase origin main
+            # 处理未暂存更改
+            if [ -n "$(git status --porcelain)" ]; then
+              git stash push -m "ci stash before pull"
+              git pull --rebase origin main
+              git stash pop || echo "No stash to pop"
+            else
+              git pull --rebase origin main
+            fi
             git push https://${PAT_TOKEN}@github.com/${{ github.repository }}.git HEAD:refs/heads/main
           else
             echo "✅ No changes to commit."
@@ -169,7 +190,14 @@ jobs:
           git add .github/workflows output/cache
           if ! git diff --cached --quiet; then
             git commit -m "ci: auto-generate deep validation workflows"
-            git pull --rebase origin main
+            # 处理未暂存更改
+            if [ -n "$(git status --porcelain)" ]; then
+              git stash push -m "ci stash before pull"
+              git pull --rebase origin main
+              git stash pop || echo "No stash to pop"
+            else
+              git pull --rebase origin main
+            fi
             git push origin main
           else
             echo "无更改，跳过提交和推送"
