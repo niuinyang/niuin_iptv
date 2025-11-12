@@ -1,32 +1,89 @@
-﻿原始名称,标准名称,拟匹配频道
-[BD]???? bbc earth,BBC Earth,ART
-[BD]bbc *s[geo-blocked],BBC News,BBC Scotland
-[BD]bbc 2 *wj,BBC Two,W
-[BD]bbc 4 cbeebies *m[geo-blocked],BBC CBeebies,CBeebies
-[BD]bbc earth,BBC Earth,BBC Earth
-[BD]bbc earth *wj,BBC Earth,ART
-[BD]bbc earth us,BBC Earth,ART
-[BD]bbc news,BBC News,BBC News
-[BD]bbc news[geo-blocked],BBC News,BBC News
-[BD]bbc world news *m[geo-blocked],BBC News,CW
-[BD]bbc world news[geo-blocked],BBC News,CW
-[BD]cctv-01,CCTV1,CTV
-[BD]cctv-03[geo-blocked],CCTV3,CTV
-[BD]cctv-08[geo-blocked],CCTV8,CTV
-[BD]cctv-4 america[geo-blocked],CCTV4美洲,CCTV-4 America
-[BD]cctv11-????2,CCTV11,CTV
-[BD]cctv12 *wj,CCTV12,CTV
-[BD]cctv14 *wj,CCTV14,CTV
-[BD]cctv5 plus,CCTV5+,5Plus
-[BD]cctv5 plus *wj,CCTV5+,5Plus
-[BD]cctv8 *wj,CCTV8,CTV
-[BD]cnn *m[geo-blocked],CNN,CNN
-[BD]cnn brasil,CNN 巴西,CNN Brasil
-[BD]cnn en espa?±ol,CNN 葡萄牙,CNN
-[BD]cnn fast,CNN,CNN
-[BD]cnn fast[geo-blocked],CNN,CNN
-[BD]cnn indonesia *id,CNN 印度尼西亚,CNN
-[BD]cnn int[geo-blocked],CNN,CNN
+﻿Column1,Column2,Column3
+原始名称,标准名称,拟匹配频道
+[BD]中视新闻 *wj,中视新闻,W
+[BD]中视菁采,中视菁采,
+[BD]中视经典 *wj,中视经典,W
+[BD]中视,中视,
+[BD]中视 *wj,中视,W
+[BD]小公视,小公视,
+[BD]台视新,台视新闻,
+[BD]台视新闻,台视新闻,
+[BD]台视新闻hd *wj,台视新闻,3HD
+[BD]台新,台视新闻,
+[BD]台视,台视,
+[BD]台视 *wj,台视,W
+[BD]民视新闻,民视新闻,
+[BD]民视台湾,民视台湾,
+[BD]民视第一,民视第一,
+[BD]民视,民视,
+[BD]华视新闻,华视新闻,
+[BD]华视教育体育文化,华视教育体育文化,
+[BD]华视,华视,
+[BD]华视 *wj,华视,W
+[BD]公视台语,公视台语,
+[BD]东森幼幼 *wj,东森幼幼,W
+[BD]东森新闻 *wj,东森新闻,W
+[BD]东森戏剧 *wj,东森戏剧,W
+[BD]东森美洲2,东森美洲,20
+[BD]东森美洲新闻台,东森美洲,
+[BD]东森电影 *wj,东森电影,W
+[BD]东森超视,东森超视,
+[BD]东森财经 *wj,东森财经,W
+[BD]东森财经新闻 *wj,东森财经,J2
+[BD]东森C合 *wj,东森综合,W
+[HD]à??à1?à?-à?? fox sports 2,Fox Sports 2,Fox
+[VGA]fox sports 2,Fox Sports 2,Fox Sports 2
+Fox Sports 2 (360p) [Not 24/7],Fox Sports 2,Fox Sports 2
+Fox Sports 2 (720p) [Not 24/7],Fox Sports 2,Fox Sports 2
+[BD]fox sports,Fox Sports,Fox Sports
+[HD]fox sports,Fox Sports,Fox Sports
+[HD]fox sports 1,Fox Sports,Fox Sports 1
+[HD]fox sports =,Fox Sports,Fox
+[HD]fox sports[geo-blocked],Fox Sports,Fox Sports
+[HD]à??à1?à?-à?? fox sports 1,Fox Sports,Fox
+[HD]à??à1?à?-à?? fox sports racing,Fox Sports,Sport
+[HD]à??à1?à?-à?? fox sports southwest plus,Fox Sports,Sport
+[SD]fox sports ==,Fox Sports,Fox
+[SD]fox sports ===,Fox Sports,Fox
+Fox Sports,Fox Sports,Fox Sports
+Fox Sports (720p),Fox Sports,Fox Sports
+Fox Sports 1,Fox Sports,Fox Sports 1
+FOX Sports [Geo-blocked],Fox Sports,Fox Sports
+Fox Sports en Espanol (720p),Fox Sports,Fox
+Fox Soul,Fox Soul,Fox Soul
+[BD]fox now[geo-blocked],Fox Now,Fox
+LiveNOW from FOX (720p),Fox Now,LiveNOW from FOX
+Fox News Radio (720p),Fox News Radio,Fox News Radio
+[HD]fox news channel,Fox News,Fox News Channel
+[HD]us fox news,Fox News,Fox
+[HD]à??à1?à?-à?? fox news channel,Fox News,HA HA
+[VGA]fox news,Fox News,Fox
+[VGA]fox news channel,Fox News,Fox News Channel
+FOX 9 ST Paul Minneapolis MN (KMSP) (720p),Fox 9 ST Paul Minneapoli,Fox
+FOX 7 Austin TX (KTBC) (720p),Fox 7 Austin,Fox
+FOX 6 Milwaukee WI (WITI) (720p),Fox 6 Milwaukee,Fox
+[HD]fox 5 new york ny,Fox 5 Washington DC,Fox
+FOX 5 Washington DC (WTTG) (720p),Fox 5 Washington DC,Fox
+FOX 5 New York NY (WNYW) (720p),Fox 5 New York,Fox
+FOX 47 Lansing MI (WSYM) (720p),Fox 47 Lansing,Fox
+FOX 4 Dallas / Fort Worth TX (KDFW) (720p),Fox 4 Dallas,Fox
+FOX 32 Chicago IL (WFLD) (720p),Fox 32 Chicago,Fox
+FOX 29 Philadelphia PA (WTXF-TV) (720p),Fox 29 Philadelphia,Fox
+FOX 26 Houston TX (KRIV) (720p),Fox 26 Houston,Fox
+Fox 25 Boston (WFXT-TV) [Geo-blocked],Fox 25 Boston,Fox
+FOX 23 Cape Girardeau MO (KBSI-DT1) (720p) [Not 24/7],Fox 23 Cape Girardeau,Fox
+FOX 2 San Francisco CA (KTVU) (720p),Fox 2 San Francisco,ANC
+FOX 2 Detroit MI (WJBK) (720p),Fox 2 Detroit,Fox
+FOX 17 Grand Rapids MI (WXMI) (720p),Fox 17 Grand Rapids,API
+[HD]fox 13 seattle wa,Fox 13 Tampa Bay,Fox
+FOX 13 Tampa Bay FL (WTVT) (720p),Fox 13 Tampa Bay,13T
+FOX 13 Seattle WA (KCPQ) (720p),Fox 13 Seattle,Fox
+FOX 13 Salt Lake City UT (KSTU) (720p),Fox 13 Salt Lake City,Fox
+[HD]fox 11 los angeles ca,Fox 11 Los Angeles,Fox
+FOX 11 Los Angeles CA (KTTV) (720p),Fox 11 Los Angeles,Fox
+FOX 10 Phoenix AZ (KSAZ) (720p),Fox 10 Phoenix,10
+[BD]disney ==,Disney,ISN
+[BD]disney=,Disney,ISN
 [BD]discovery *m[geo-blocked],Discovery,Discovery
 [BD]discovery channel *m[geo-blocked],Discovery,Discovery Channel
 [BD]discovery h h,Discovery,Discovery
@@ -34,129 +91,73 @@
 [BD]discovery shed *m[geo-blocked],Discovery,Discovery
 [BD]discovery uhd *m[geo-blocked],Discovery,Discovery
 [BD]discovery(tw) *s[geo-blocked],Discovery,Discovery
-[BD]disney ==,Disney,ISN
-[BD]disney=,Disney,ISN
-[BD]东森财经 *wj,东森财经,W
-[BD]东森财经新闻 *wj,东森财经,J2
-[BD]东森超视,东森超视,
-[BD]东森C合 *wj,东森C合,W
-[BD]东森电影 *wj,东森电影,W
-[BD]东森美洲2,东森美洲,20
-[BD]东森美洲新闻台,东森美洲,
-[BD]东森戏剧 *wj,东森戏剧,W
-[BD]东森新闻 *wj,东森新闻,W
-[BD]东森幼幼 *wj,东森幼幼,W
-[BD]fox now[geo-blocked],Fox Now,Fox
-[BD]fox sports,Fox Sports,Fox Sports
-[BD]公视台语,公视台语,
-[BD]华视,华视,
-[BD]华视 *wj,华视,W
-[BD]华视教育体育文化,华视教育体育文化,
-[BD]华视新闻,华视新闻,
-[BD]民视,民视,
-[BD]民视第一,民视第一,
-[BD]民视台湾,民视台湾,
-[BD]民视新闻,民视新闻,
-[BD]台视,台视,
-[BD]台视 *wj,台视,W
-[BD]台视新,台视新闻,
-[BD]台视新闻,台视新闻,
-[BD]台视新闻hd *wj,台视新闻,3HD
-[BD]台新,台视新闻,
-[BD]小公视,小公视,
-[BD]中视,中视,
-[BD]中视 *wj,中视,W
-[BD]中视菁采,中视菁采,
-[BD]中视经典 *wj,中视经典,W
-[BD]中视新闻 *wj,中视新闻,W
-[BD]à??à1?à?-à?? bbc earth,BBC Earth,ART
-[HD]bbc,BBC News,BBC Alba
-[HD]bbc *wj,BBC News,W
-[HD]bbc 1 *wj,BBC One,C1
-[HD]bbc cbeebies *s[geo-blocked],BBC CBeebies,CBeebies
-[HD]bbc news *m[geo-blocked],BBC News,CNews
-[HD]bbc news =,BBC News,CNews
-[HD]bbc news arabia,BBC News 阿拉伯,CNews
-[HD]bbc three,BBC Three,BBC Three
-[HD]bbc world news *wj,BBC News,CW
+[BD]cnn indonesia *id,CNN 印度尼西亚,CNN
+[HD]à??à1?à?-à?? cnn indonesia,CNN 印度尼西亚,CNN
+[BD]cnn en espa?±ol,CNN 葡萄牙,CNN
+[BD]cnn brasil,CNN 巴西,CNN Brasil
+[HD]cnn brasil,CNN 巴西,CNN Brasil
+[BD]cnn *m[geo-blocked],CNN,CNN
+[BD]cnn fast,CNN,CNN
+[BD]cnn fast[geo-blocked],CNN,CNN
+[BD]cnn int[geo-blocked],CNN,CNN
 [HD]cnn =,CNN,CNN
 [HD]cnn ===,CNN,CNN
-[HD]cnn brasil,CNN 巴西,CNN Brasil
-[HD]fox 11 los angeles ca,FOX 11 Los Angeles,Fox
-[HD]fox 13 seattle wa,FOX 13 Tampa Bay,Fox
-[HD]fox 5 new york ny,FOX 5 Washington DC,Fox
-[HD]fox news channel,Fox News,Fox News Channel
-[HD]fox sports,Fox Sports,Fox Sports
-[HD]fox sports 1,Fox Sports,Fox Sports 1
-[HD]fox sports =,Fox Sports,Fox
-[HD]fox sports[geo-blocked],Fox Sports,Fox Sports
-[HD]us fox news,Fox News,Fox
-[HD]à??à1?à?-à?? cnn indonesia,CNN 印度尼西亚,CNN
-[HD]à??à1?à?-à?? fox news channel,Fox News,HA HA
-[HD]à??à1?à?-à?? fox sports 1,Fox Sports,Fox
-[HD]à??à1?à?-à?? fox sports 2,Fox Sports 2,Fox
-[HD]à??à1?à?-à?? fox sports racing,Fox Sports,Sport
-[HD]à??à1?à?-à?? fox sports southwest plus,Fox Sports,Sport
-[SD]bbc america =,BBC News 北美,BBC America
-[SD]bbc america ==[geo-blocked],BBC News 北美,Me
-[SD]bbc news (north america) (1080p),BBC News 北美,BBC News
-[SD]cbbc bbc 4 uhd *m[geo-blocked],BBC Four,CBBC
-[SD]fox sports ==,Fox Sports,Fox
-[SD]fox sports ===,Fox Sports,Fox
-[VGA]bbc news,BBC News,BBC News
-[VGA]fox news,Fox News,Fox
-[VGA]fox news channel,Fox News,Fox News Channel
-[VGA]fox sports 2,Fox Sports 2,Fox Sports 2
-BBC,BBC News,BBC Alba
-BBC Arabic (720p),BBC News 阿拉伯,BBC Arabic
-BBC Drama,BBC Drama,BBC Drama
-BBC Drama (720p),BBC Drama,BBC Drama
-BBC Drama Italy (1080p),BBC Drama,CDR
-BBC Earth (1080p) [Geo-blocked],BBC Earth,BBC Earth
-BBC Four UK HD,BBC Four,CBBC
-BBC Impossible,BBC Impossible,Impossible Quiz Show
-BBC News (North America) (1080p),BBC News 北美,BBC News
-BBC News Asia Pacific (1080p),BBC News 亚太,CNews
-BBC News Europe,BBC News 欧洲,CNews
-BBC One London HD (1080p),BBC One,NH
-BBC Three HD (720p),BBC Three,Three
-BBC Top Gear (1080p) [Geo-blocked],BBC Top Gear,Top Gear
-BBC Top Gear (720p),BBC Top Gear,Top Gear
+[BD]cctv-08[geo-blocked],CCTV8,CTV
+[BD]cctv8 *wj,CCTV8,CTV
+[BD]cctv5 plus,CCTV5+,5Plus
+[BD]cctv5 plus *wj,CCTV5+,5Plus
+[BD]cctv-4 america[geo-blocked],CCTV4美洲,CCTV-4 America
+[BD]cctv-03[geo-blocked],CCTV3,CTV
+[BD]cctv14 *wj,CCTV14,CTV
+[BD]cctv12 *wj,CCTV12,CTV
+[BD]cctv11-????2,CCTV11,CTV
+[BD]cctv-01,CCTV1,CTV
+[BD]bbc 2 *wj,BBC Two,W
+BBC Two HD (1080p),BBC Two,T
+BBC Top Gear Italy (1080p),BBC Top Gear 意大利,Top Gear
 BBC Top Gear Finland (1080p),BBC Top Gear 芬兰,Top Gear
 BBC Top Gear France (1080p),BBC Top Gear 法国,ANC
 BBC Top Gear Germany (1080p),BBC Top Gear 德国,Top Gear
-BBC Top Gear Italy (1080p),BBC Top Gear 意大利,Top Gear
-BBC Two HD (1080p),BBC Two,T
-FOX 10 Phoenix AZ (KSAZ) (720p),FOX 10 Phoenix,10
-FOX 11 Los Angeles CA (KTTV) (720p),FOX 11 Los Angeles,Fox
-FOX 13 Salt Lake City UT (KSTU) (720p),FOX 13 Salt Lake City,Fox
-FOX 13 Seattle WA (KCPQ) (720p),FOX 13 Seattle,Fox
-FOX 13 Tampa Bay FL (WTVT) (720p),FOX 13 Tampa Bay,13T
-FOX 17 Grand Rapids MI (WXMI) (720p),FOX 17 Grand Rapids,API
-FOX 2 Detroit MI (WJBK) (720p),FOX 2 Detroit,Fox
-FOX 2 San Francisco CA (KTVU) (720p),FOX 2 San Francisco,ANC
-FOX 23 Cape Girardeau MO (KBSI-DT1) (720p) [Not 24/7],FOX 23 Cape Girardeau,Fox
-Fox 25 Boston (WFXT-TV) [Geo-blocked],Fox 25 Boston,Fox
-FOX 26 Houston TX (KRIV) (720p),FOX 26 Houston,Fox
-FOX 29 Philadelphia PA (WTXF-TV) (720p),FOX 29 Philadelphia,Fox
-FOX 32 Chicago IL (WFLD) (720p),FOX 32 Chicago,Fox
-FOX 4 Dallas / Fort Worth TX (KDFW) (720p),FOX 4 Dallas,Fox
-FOX 47 Lansing MI (WSYM) (720p),FOX 47 Lansing,Fox
-FOX 5 New York NY (WNYW) (720p),FOX 5 New York,Fox
-FOX 5 Washington DC (WTTG) (720p),FOX 5 Washington DC,Fox
-FOX 6 Milwaukee WI (WITI) (720p),FOX 6 Milwaukee,Fox
-FOX 7 Austin TX (KTBC) (720p),FOX 7 Austin,Fox
-FOX 9 ST Paul Minneapolis MN (KMSP) (720p),FOX 9 ST Paul Minneapoli,Fox
-Fox News Radio (720p),Fox News Radio,Fox News Radio
-Fox Soul,Fox Soul,Fox Soul
-Fox Sports,Fox Sports,Fox Sports
-Fox Sports (720p),Fox Sports,Fox Sports
-Fox Sports 1,Fox Sports,Fox Sports 1
-Fox Sports 2 (360p) [Not 24/7],Fox Sports 2,Fox Sports 2
-Fox Sports 2 (720p) [Not 24/7],Fox Sports 2,Fox Sports 2
-FOX Sports [Geo-blocked],Fox Sports,Fox Sports
-Fox Sports en Espanol (720p),Fox Sports,Fox
-LiveNOW from FOX (720p),Fox Now,LiveNOW from FOX
+BBC Top Gear (1080p) [Geo-blocked],BBC Top Gear,Top Gear
+BBC Top Gear (720p),BBC Top Gear,Top Gear
+[HD]bbc three,BBC Three,BBC Three
+BBC Three HD (720p),BBC Three,Three
+[HD]bbc 1 *wj,BBC One,C1
+BBC One London HD (1080p),BBC One,NH
+BBC News Asia Pacific (1080p),BBC News 亚太,CNews
+BBC News Europe,BBC News 欧洲,CNews
+[SD]bbc america =,BBC News 北美,BBC America
+[SD]bbc america ==[geo-blocked],BBC News 北美,Me
+[SD]bbc news (north america) (1080p),BBC News 北美,BBC News
+BBC News (North America) (1080p),BBC News 北美,BBC News
+[HD]bbc news arabia,BBC News 阿拉伯,CNews
+BBC Arabic (720p),BBC News 阿拉伯,BBC Arabic
+[BD]bbc *s[geo-blocked],BBC News,BBC Scotland
+[BD]bbc news,BBC News,BBC News
+[BD]bbc news[geo-blocked],BBC News,BBC News
+[BD]bbc world news *m[geo-blocked],BBC News,CW
+[BD]bbc world news[geo-blocked],BBC News,CW
+[HD]bbc,BBC News,BBC Alba
+[HD]bbc *wj,BBC News,W
+[HD]bbc news *m[geo-blocked],BBC News,CNews
+[HD]bbc news =,BBC News,CNews
+[HD]bbc world news *wj,BBC News,CW
+[VGA]bbc news,BBC News,BBC News
+BBC,BBC News,BBC Alba
+BBC Impossible,BBC Impossible,Impossible Quiz Show
+[SD]cbbc bbc 4 uhd *m[geo-blocked],BBC Four,CBBC
+BBC Four UK HD,BBC Four,CBBC
+[BD]???? bbc earth,BBC Earth,ART
+[BD]bbc earth,BBC Earth,BBC Earth
+[BD]bbc earth *wj,BBC Earth,ART
+[BD]bbc earth us,BBC Earth,ART
+[BD]à??à1?à?-à?? bbc earth,BBC Earth,ART
+BBC Earth (1080p) [Geo-blocked],BBC Earth,BBC Earth
+BBC Drama,BBC Drama,BBC Drama
+BBC Drama (720p),BBC Drama,BBC Drama
+BBC Drama Italy (1080p),BBC Drama,CDR
+[BD]bbc 4 cbeebies *m[geo-blocked],BBC CBeebies,CBeebies
+[HD]bbc cbeebies *s[geo-blocked],BBC CBeebies,CBeebies
 00s Replay,,Play4
 10 Bold Adelaide (1080p),,10
 10 TV (720p),,10
