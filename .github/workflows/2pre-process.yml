@@ -156,9 +156,15 @@ jobs:
       - name: Install dependencies
         run: pip install chardet pillow tqdm requests
 
-      - name: Generate and Push workflows
+      - name: Generate chunk workflows
+        run: python scripts/5.0generate_chunk_workflows.py
+
+      - name: Commit & Push generated workflows
         run: |
-          python scripts/5.0generate_chunk_workflows.py
           git add .github/workflows output/cache
-          git commit -m "ci: auto-generate deep validation workflows" || echo "无更改，跳过提交"
-          git push || echo "⚠️ Push failed"
+          if ! git diff --cached --quiet; then
+            git commit -m "ci: auto-generate deep validation workflows"
+            git push origin HEAD:main
+          else
+            echo "✅ No changes to commit."
+          fi
