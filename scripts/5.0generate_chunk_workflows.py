@@ -14,7 +14,7 @@ CACHE_FILE = "output/cache_workflow.json"
 os.makedirs(WORKFLOW_DIR, exist_ok=True)
 os.makedirs("output/cache", exist_ok=True)
 
-# 🧩 模板（已修正版，统一北京时间 07:10 执行）
+# 🧩 模板（已修正版，统一北京时间 08:15 执行）
 TEMPLATE = """name: Scan_{n}
 
 on:
@@ -118,8 +118,8 @@ if os.path.exists(CACHE_FILE):
     os.remove(CACHE_FILE)
 
 # 🕒 固定每天北京时间 07:10 执行（UTC 23:10）
-start_hour = 23  # UTC 时区小时
-start_minute = 10  # UTC 分钟
+start_hour = 00  # UTC 时区小时
+start_minute = 20  # UTC 分钟
 interval = 0  # 不再分时执行
 
 chunks = sorted([f for f in os.listdir(CHUNK_DIR) if re.match(r"chunk\d+-\d+\.csv", f)])
