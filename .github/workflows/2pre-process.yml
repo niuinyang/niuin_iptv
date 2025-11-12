@@ -1,0 +1,164 @@
+name: 🚀 IPTV全流程（下载→合并→分割→生成）
+
+on:
+  workflow_dispatch:  # 仅手动触发
+  # 如果仍想自动执行（北京时间 00:05），取消注释以下行
+  # schedule:
+  #   - cron: '05 16 * * *'  # UTC 16:05 = 北京时间 00:05
+
+permissions:
+  contents: write
+
+jobs:
+  # ---------------------------
+  # 2️⃣ 下载网络源
+  # ---------------------------
+  download_network_sources:
+    name: 2️⃣ 下载网络源
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repo
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+          persist-credentials: true
+
+      - name: Setup Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.10'
+
+      - name: Install dependencies
+        run: |
+          python -m pip install --upgrade pip
+          pip install requests
+
+      - name: Ensure output directory exists
+        run: |
+          mkdir -p input/network/network_sources
+          mkdir -p scripts
+
+      - name: Run download script
+        run: python scripts/2download_network_m3u.py
+
+      - name: Commit & Push results
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add input/network/network_sources
+          git diff --cached --quiet || git commit -m "Update network M3U sources [ci skip]"
+          git push origin main
+
+  # ---------------------------
+  # 3️⃣ 合并网络源
+  # ---------------------------
+  merge_local_sources:
+    name: 3️⃣ 合并网络源
+    runs-on: ubuntu-latest
+    needs: download_network_sources
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Setup Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      - name: Install dependencies
+        run: |
+          pip install --upgrade pip
+          pip install requests chardet
+
+      - name: Run merge script
+        run: python scripts/3merge_local_sources.py
+
+      - name: Commit & Push results
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add output/*.m3u output/*.csv output/log/*.log png/* 2>/dev/null || true
+          if ! git diff --cached --quiet; then
+            git commit -m "🤖 Auto merge local sources $(date '+%Y-%m-%d %H:%M:%S')"
+            git push origin HEAD:main
+          else
+            echo "✅ No changes to commit."
+          fi
+
+  # ---------------------------
+  # 4️⃣ 分割 merge_total.csv
+  # ---------------------------
+  split_merge_total:
+    name: 4️⃣ 分割 merge_total.csv
+    runs-on: ubuntu-latest
+    needs: merge_local_sources
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Setup Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      - name: Install dependencies
+        run: pip install chardet
+
+      - name: Run split script
+        run: python scripts/4split_merge.py
+
+      - name: Commit & Push chunks
+        env:
+          PAT_TOKEN: ${{ secrets.PAT_TOKEN }}
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add output/middle/chunk/
+          if ! git diff --cached --quiet; then
+            git commit -m "Auto split merge_total.csv into chunks [ci skip]"
+            git push https://${PAT_TOKEN}@github.com/${{ github.repository }}.git HEAD:refs/heads/main
+          else
+            echo "✅ No changes to commit."
+          fi
+
+  # ---------------------------
+  # 5️⃣ 生成 chunk workflows
+  # ---------------------------
+  generate_chunk_workflow:
+    name: 5️⃣ 生成 chunk workflows
+    runs-on: ubuntu-latest
+    needs: split_merge_total
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+          persist-credentials: false
+
+      - name: Set up Git user and PAT
+        env:
+          PUSH_TOKEN1: ${{ secrets.PUSH_TOKEN1 }}
+          REPO: ${{ github.repository }}
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git remote set-url origin https://x-access-token:${PUSH_TOKEN1}@github.com/${REPO}.git
+
+      - name: Setup Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      - name: Install dependencies
+        run: pip install chardet pillow tqdm requests
+
+      - name: Generate and Push workflows
+        run: |
+          python scripts/5.0generate_chunk_workflows.py
+          git add .github/workflows output/cache
+          git commit -m "ci: auto-generate deep validation workflows" || echo "无更改，跳过提交"
+          git push || echo "⚠️ Push failed"
