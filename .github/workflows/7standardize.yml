@@ -21,7 +21,7 @@ jobs:
           python-version: "3.11"
 
       - name: Install dependencies
-        run: pip install pandas rapidfuzz requests chardet
+        run: pip install pandas rapidfuzz requests chardet pypinyin
 
       - name: Run standardization script
         run: python scripts/7standardize_names.py
@@ -33,15 +33,16 @@ jobs:
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
 
-          # 先拉取远程最新代码，避免冲突
           git fetch origin main
           git rebase origin/main || git merge origin/main
 
-          # 添加修改文件
-          git add output/total.csv output/ input/channel.csv input/mysource/my_sum_standardized.csv output/working.csv input/manual_map.csv
+          # 添加明确的文件路径，避免误提交
+          git add output/total.csv input/channel.csv input/mysource/my_sum_standardized.csv output/working.csv input/manual_map.csv
 
-          # 仅当有变更时提交
-          git diff --cached --quiet || git commit -m "Auto standardized channel names and update total.csv & channel.csv & manual_map.csv [ci skip]"
-
-          # 推送到远程
-          git push https://${PAT_TOKEN}@github.com/niuinyang/niuin_iptv.git HEAD:refs/heads/main
+          # 检查是否有变更再提交
+          if ! git diff --cached --quiet; then
+            git commit -m "Auto standardized channel names and update total.csv, channel.csv & manual_map.csv [ci skip]"
+            git push https://${PAT_TOKEN}@github.com/niuinyang/niuin_iptv.git HEAD:refs/heads/main
+          else
+            echo "No changes to commit"
+          fi
