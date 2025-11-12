@@ -13,7 +13,7 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v3
         with:
-          fetch-depth: 0  # 保留完整历史，方便拉取和推送
+          fetch-depth: 0  # 保留完整历史，方便推送时拉取合并
 
       - name: Set up Python
         uses: actions/setup-python@v4
@@ -25,9 +25,6 @@ jobs:
           python -m pip install --upgrade pip
           pip install pandas
 
-      - name: Pull latest changes
-        run: git pull origin main --quiet
-
       - name: Run merge script
         run: python scripts/6merge_scan_result.py
 
@@ -38,6 +35,7 @@ jobs:
 
           git add output/working.csv output/cache/cache_hashes.json
 
+          # 判断是否有变更需要提交
           if ! git diff --cached --quiet; then
             git commit -m "Auto merge CSV and JSON files [skip ci]"
 
@@ -45,12 +43,14 @@ jobs:
             for i in $(seq 1 $MAX_RETRIES); do
               echo "Attempt $i to push..."
 
+              # 尝试推送
               if git push origin main --quiet; then
                 echo "Push succeeded"
                 break
               else
-                echo "Push failed, handling local uncommitted changes..."
+                echo "Push failed, handling local uncommitted changes and pulling remote..."
 
+                # 处理本地未暂存改动
                 if [ -n "$(git status --porcelain)" ]; then
                   git stash push -m "ci stash before pull"
                   git pull --rebase origin main --quiet
@@ -60,6 +60,7 @@ jobs:
                 fi
               fi
 
+              # 重试次数用尽仍失败，退出错误
               if [ "$i" -eq "$MAX_RETRIES" ]; then
                 echo "Max retries reached, push failed"
                 exit 1
