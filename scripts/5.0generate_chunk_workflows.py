@@ -4,6 +4,7 @@ import os
 import re
 import json
 import time
+import subprocess  # 新增
 
 WORKFLOW_DIR = ".github/workflows"
 CHUNK_DIR = "output/middle/chunk"
@@ -96,5 +97,41 @@ for chunk_file in chunks:
 
 with open(CACHE_FILE, "w", encoding="utf-8") as f:
     json.dump(cache_data, f, indent=2, ensure_ascii=False)
+
+print("\n🌀 提交生成的 workflow 和缓存文件到 GitHub...\n")
+
+# === 新增：自动提交和推送代码，带自动stash避免冲突 ===
+
+subprocess.run(["git", "add", "-A"], check=False)
+status_result = subprocess.run(["git", "status", "--porcelain"], capture_output=True, text=True)
+if status_result.stdout.strip() == "":
+    print("ℹ️ 无更改，跳过提交和推送")
+else:
+    commit_msg = "ci: auto-generate scan chunk workflows"
+    commit_result = subprocess.run(["git", "commit", "-m", commit_msg], text=True)
+    if commit_result.returncode != 0:
+        print("⚠️ 提交失败，跳过推送")
+    else:
+        for attempt in range(1, 4):
+            print(f"尝试推送，第 {attempt} 次...")
+            push_result = subprocess.run(["git", "push"], text=True)
+            if push_result.returncode == 0:
+                print("🚀 推送成功")
+                break
+            else:
+                print("⚠️ 推送失败，尝试自动stash并拉取远程合并重试...")
+                subprocess.run(["git", "stash", "push", "-m", "ci: stash before pull"], text=True)
+                pull_result = subprocess.run(["git", "pull", "--rebase"], text=True)
+                if pull_result.returncode != 0:
+                    print("❌ 拉取失败，终止重试")
+                    subprocess.run(["git", "rebase", "--abort"], text=True)
+                    subprocess.run(["git", "stash", "pop"], text=True)
+                    break
+                subprocess.run(["git", "stash", "pop"], text=True)
+                print("⏳ 等待30秒后重试推送")
+                time.sleep(30)
+        else:
+            print("❌ 达到最大重试次数，推送失败，请手动处理冲突")
+            exit(1)
 
 print("✅ 生成完毕，脚本结束。")
