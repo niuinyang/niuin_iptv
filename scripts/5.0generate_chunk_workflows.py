@@ -12,12 +12,14 @@ CACHE_FILE = "output/cache_workflow.json"
 os.makedirs(WORKFLOW_DIR, exist_ok=True)
 os.makedirs("output/cache", exist_ok=True)
 
-# 🧩 模板（已修正版，统一北京时间 08:15 执行）
+# 🧩 模板（改为监听 2pre-process.yml 完成，取消 schedule）
 TEMPLATE = """name: Scan_{n}
 
 on:
-  schedule:
-    - cron: '{cron}'  # 每天 UTC {utc_hour}:{utc_min:02d} 触发（北京时间 07:10）
+  workflow_run:
+    workflows: ["2预处理🚀 IPTV全流程（下载→合并→分割→生成）"]
+    types:
+      - completed
   workflow_dispatch:
 
 permissions:
@@ -76,30 +78,22 @@ for f in os.listdir(WORKFLOW_DIR):
 if os.path.exists(CACHE_FILE):
     os.remove(CACHE_FILE)
 
-# 固定每天北京时间 07:10 执行（UTC 23:10）
-start_hour = 0  # UTC 时区小时
-start_minute = 20  # UTC 分钟
-
 chunks = sorted([f for f in os.listdir(CHUNK_DIR) if re.match(r"chunk\d+-\d+\.csv", f)])
 cache_data = {}
 
 for chunk_file in chunks:
-    utc_hour = start_hour
-    utc_min = start_minute
-    cron = f"{utc_min} {utc_hour} * * *"
-
     chunk_id = os.path.splitext(chunk_file)[0]
 
     workflow_filename = f"scan_{chunk_id}.yml"
     workflow_path = os.path.join(WORKFLOW_DIR, workflow_filename)
 
     with open(workflow_path, "w", encoding="utf-8") as f:
-        f.write(TEMPLATE.format(n=chunk_id, cron=cron, utc_hour=utc_hour, utc_min=utc_min))
+        f.write(TEMPLATE.format(n=chunk_id))
 
-    print(f"✅ 已生成 workflow: {workflow_filename} 触发时间: {cron}")
-    cache_data[chunk_id] = {"cron": cron, "file": workflow_filename}
+    print(f"✅ 已生成 workflow: {workflow_filename}")
 
-# 写入缓存文件
+    cache_data[chunk_id] = {"file": workflow_filename}
+
 with open(CACHE_FILE, "w", encoding="utf-8") as f:
     json.dump(cache_data, f, indent=2, ensure_ascii=False)
 
