@@ -4,18 +4,16 @@ import pandas as pd
 from rapidfuzz import process
 import re
 import chardet
-
-from pypinyin import lazy_pinyin  # 新增导入，用于拼音排序
+from pypinyin import lazy_pinyin
 
 IPTV_DB_PATH = "./iptv-database"
 
 INPUT_MY = "input/mysource/my_sum.csv"
 INPUT_WORKING = "output/working.csv"
 OUTPUT_TOTAL = "output/total.csv"
-INPUT_CHANNEL = "input/channel.csv"   # 作为输入的channel.csv
-OUTPUT_CHANNEL = "input/channel.csv"  # 覆盖写回channel.csv
-MANUAL_MAP_PATH = "input/manual_map.csv"    # 人工映射文件路径
-UNMATCHED_PATH = "unmatched_channels.csv"  # 导出未匹配频道列表（备用）
+INPUT_CHANNEL = "input/channel.csv"    # 输入的 channel.csv
+OUTPUT_CHANNEL = "input/channel.csv"   # 覆盖写回 channel.csv
+MANUAL_MAP_PATH = "input/manual_map.csv"
 
 def convert_file_to_utf8(path):
     if not os.path.exists(path):
@@ -39,8 +37,10 @@ def convert_file_to_utf8(path):
         print(f"✅ 文件 {path} 已经是 UTF-8，无需转换")
 
 def convert_all_csv_to_utf8(paths):
+    print("🚀 开始转码所有 CSV 文件为 UTF-8...")
     for p in paths:
         convert_file_to_utf8(p)
+    print("✅ 转码完成。")
 
 def safe_read_csv(path):
     return pd.read_csv(path, encoding="utf-8")
@@ -48,35 +48,39 @@ def safe_read_csv(path):
 def load_name_map():
     name_map = {}
     path = os.path.join(IPTV_DB_PATH, "data", "channels.csv")
+    print(f"📥 加载数据库标准频道映射：{path}")
     with open(path, encoding="utf-8") as f:
         reader = csv.DictReader(f)
         for row in reader:
-            std_name = row["name"].strip()
+            std_name = row["name"].strip().title()
             name_map[std_name.lower()] = std_name
             others = row.get("other_names", "")
             for alias in others.split(","):
                 alias = alias.strip()
                 if alias:
                     name_map[alias.lower()] = std_name
+    print(f"✅ 数据库加载完成，映射总数：{len(name_map)}")
     return name_map
 
 def load_manual_map(path=MANUAL_MAP_PATH):
     manual_map = {}
     if not os.path.exists(path):
-        # 文件不存在时，创建带表头的空文件
+        print(f"⚠️ 人工映射文件 {path} 不存在，创建空文件")
         os.makedirs(os.path.dirname(path), exist_ok=True)
         with open(path, "w", encoding="utf-8-sig", newline='') as f:
             writer = csv.writer(f)
             writer.writerow(["原始名称", "标准名称", "拟匹配频道"])
         return manual_map
 
+    print(f"📥 加载人工映射文件：{path}")
     with open(path, encoding="utf-8") as f:
         reader = csv.DictReader(f)
         for row in reader:
             raw_name = row.get("原始名称", "").strip()
-            std_name = row.get("标准名称", "").strip()
+            std_name = row.get("标准名称", "").strip().title()
             if raw_name and std_name:
                 manual_map[raw_name.lower()] = std_name
+    print(f"✅ 人工映射加载完成，条数：{len(manual_map)}")
     return manual_map
 
 def clean_channel_name(name):
@@ -97,21 +101,11 @@ def normalize_name_for_match(name):
     name = re.sub(r"[-\s]", "", name)
     return name.lower()
 
-def get_std_name(name, name_map, threshold=95):
-    name_lower = name.lower()
-    if name_lower in name_map:
-        return name_map[name_lower], 100.0, "精确匹配"
-    choices = list(name_map.keys())
-    match, score, _ = process.extractOne(name_lower, choices)
-    if score >= threshold:
-        return name_map[match], score, "模糊匹配"
-    else:
-        return name, score, "未匹配"
-
 def standardize_my_sum(my_sum_df):
-    my_sum_df['final_name'] = my_sum_df.iloc[:,0].astype(str)
+    my_sum_df['final_name'] = my_sum_df.iloc[:,0].astype(str).apply(lambda x: x.title())
     my_sum_df['match_info'] = "自有源"
     my_sum_df['original_channel_name'] = my_sum_df.iloc[:,0].astype(str)
+    print(f"✅ 标准化处理 my_sum，共 {len(my_sum_df)} 条记录")
     return my_sum_df
 
 def standardize_working(working_df, my_sum_df, name_map, manual_map):
@@ -164,14 +158,10 @@ def standardize_working(working_df, my_sum_df, name_map, manual_map):
 
     working_df['final_name'] = final_names
     working_df['match_info'] = match_infos
+    print(f"✅ working.csv 标准化匹配完成，总匹配数：{matched_count}，未匹配数：{unmatched_count}")
     return working_df
 
 def export_unmatched_for_manual(working_df, manual_map_path=MANUAL_MAP_PATH):
-    """
-    导出未匹配或低匹配频道，用于人工补全标准名称
-    输出列：原始名称, 标准名称(空), 拟匹配频道
-    """
-
     import re
 
     unmatched_mask = working_df['match_info'].fillna("").str.contains("未匹配|低匹配", na=False)
@@ -217,13 +207,11 @@ def export_unmatched_for_manual(working_df, manual_map_path=MANUAL_MAP_PATH):
 
     print(f"🔔 已更新 {manual_map_path}，共 {len(combined)} 条记录。")
 
-# 新增 - 拼音排序辅助函数
 def sort_by_name_pinyin(df, col_name):
     df['_sort_key'] = df[col_name].apply(lambda x: ''.join(lazy_pinyin(str(x).lower())))
     df = df.sort_values(by='_sort_key').drop(columns=['_sort_key'])
     return df.reset_index(drop=True)
 
-# 新增 - 对 channel.csv 排序函数
 def sort_channel_file(path=OUTPUT_CHANNEL):
     if not os.path.exists(path):
         print(f"⚠️ 文件 {path} 不存在，无法排序")
@@ -265,7 +253,6 @@ def sort_channel_file(path=OUTPUT_CHANNEL):
     df_sorted.to_csv(path, index=False, encoding="utf-8-sig")
     print(f"✅ 已对 {path} 进行分组及频道名拼音排序")
 
-# 新增 - 对 manual_map.csv 排序函数
 def sort_manual_map_file(path=MANUAL_MAP_PATH):
     if not os.path.exists(path):
         print(f"⚠️ 文件 {path} 不存在，无法排序")
@@ -288,39 +275,43 @@ def sort_manual_map_file(path=MANUAL_MAP_PATH):
     print(f"✅ 已对 {path} 进行标准名称优先及原始名称拼音排序")
 
 def build_total_df(df):
-    def safe_col(name_list):
-        for name in name_list:
-            if name in df.columns:
-                return df[name]
+    def safe_col(name):
+        if name in df.columns:
+            return df[name].fillna("").astype(str)
         return pd.Series([""] * len(df))
 
     return pd.DataFrame({
-        "频道名": df.get("final_name", df.iloc[:, 0]),
-        "地址": safe_col(["地址"]),
-        "来源": safe_col(["来源"]),
-        "检测时间": safe_col(["检测时间", "检测时间(延迟)"]),
-        "图标": safe_col(["图标"]),
-        "分组": safe_col(["分组"]),
-        "匹配信息": safe_col(["match_info"]),
-        "原始频道名": safe_col(["original_channel_name"])
+        "频道名": df.get("final_name", df.iloc[:, 0]).apply(lambda x: str(x).title()),
+        "地址": safe_col("地址"),
+        "来源": safe_col("来源"),
+        "检测时间": safe_col("检测时间"),
+        "图标": safe_col("图标"),
+        "分组": safe_col("分组"),
+        "匹配信息": safe_col("match_info"),
+        "原始频道名": safe_col("original_channel_name"),
+        "视频编码": safe_col("视频编码"),
+        "分辨率": safe_col("分辨率"),
+        "帧率": safe_col("帧率"),
+        "音频": safe_col("音频"),
+        "相似度": safe_col("相似度"),
     })
 
 def save_standardized_my_sum(df):
     def safe_col(name_list):
         for name in name_list:
             if name in df.columns:
-                return df[name]
+                return df[name].fillna("").astype(str)
         return pd.Series([""] * len(df))
 
     out_df = pd.DataFrame({
-        "频道名": df.get("final_name", df.iloc[:, 0]),
-        "地址": safe_col(["地址"]),
-        "来源": safe_col(["来源"]),
-        "检测时间": safe_col(["检测时间", "检测时间(延迟)"]),
-        "图标": safe_col(["图标"]),
-        "分组": safe_col(["分组"]),
-        "匹配信息": safe_col(["match_info"]),
-        "原始频道名": safe_col(["original_channel_name"])
+        "频道名": df.get("final_name", df.iloc[:, 0]).apply(lambda x: str(x).title()),
+        "地址": safe_col("地址"),
+        "来源": safe_col("来源"),
+        "检测时间": safe_col("检测时间"),
+        "图标": safe_col("图标"),
+        "分组": safe_col("分组"),
+        "匹配信息": safe_col("match_info"),
+        "原始频道名": safe_col("original_channel_name")
     })
     out_df.to_csv("input/mysource/my_sum_standardized.csv", index=False, encoding="utf-8-sig")
     print("✅ 已保存文件：input/mysource/my_sum_standardized.csv")
@@ -339,11 +330,10 @@ def main():
     my_sum_df = safe_read_csv(INPUT_MY)
     working_df = safe_read_csv(INPUT_WORKING)
 
-    print(f"读取源文件：\n  📁 {INPUT_MY}\n  📁 {INPUT_WORKING}")
+    print(f"📥 读取源文件：\n  📁 {INPUT_MY}\n  📁 {INPUT_WORKING}")
 
     name_map = load_name_map()
     manual_map = load_manual_map()
-    print(f"✅ 数据库加载完成，映射总数：{len(name_map)}，人工映射条数：{len(manual_map)}")
 
     my_sum_df = standardize_my_sum(my_sum_df)
     save_standardized_my_sum(my_sum_df)
@@ -387,9 +377,10 @@ def main():
     combined_channel_df.to_csv(OUTPUT_CHANNEL, index=False, encoding="utf-8-sig")
     print(f"✅ 已保存文件：{OUTPUT_CHANNEL}")
 
-    # 新增排序调用
     sort_channel_file(OUTPUT_CHANNEL)
     sort_manual_map_file(MANUAL_MAP_PATH)
+
+    print("🚀 全部流程执行完毕！")
 
 if __name__ == "__main__":
     main()
