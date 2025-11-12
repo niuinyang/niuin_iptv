@@ -1,11 +1,9 @@
 #!/usr/bin/env python3
-# scripts/generate_chunk_workflows.py
+# scripts/5.0generate_chunk_workflows.py
 import os
 import re
 import json
 import time
-from datetime import datetime
-import subprocess
 
 WORKFLOW_DIR = ".github/workflows"
 CHUNK_DIR = "output/middle/chunk"
@@ -45,9 +43,7 @@ jobs:
 
       - name: Run fast scan for {n}
         run: |
-          mkdir -p output/middle/fast
-          mkdir -p output/middle/fast/ok
-          mkdir -p output/middle/fast/not
+          mkdir -p output/middle/fast/ok output/middle/fast/not
           python scripts/5.1fast_scan.py \
             --input output/middle/chunk/{n}.csv \
             --output output/middle/fast/ok/fast_{n}.csv \
@@ -55,9 +51,7 @@ jobs:
             
       - name: Run deep scan for {n}
         run: |
-          mkdir -p output/middle/deep
-          mkdir -p output/middle/deep/ok
-          mkdir -p output/middle/deep/not
+          mkdir -p output/middle/deep/ok output/middle/deep/not
           python scripts/5.2deep_scan.py \
             --input output/middle/fast/ok/fast_{n}.csv \
             --output output/middle/deep/ok/deep_{n}.csv \
@@ -65,50 +59,15 @@ jobs:
 
       - name: Run final scan for {n}
         run: |
-          mkdir -p output/middle/final
-          mkdir -p output/middle/final/ok
-          mkdir -p output/middle/final/not
+          mkdir -p output/middle/final/ok output/middle/final/not
           python scripts/5.3final_scan.py \
             --input output/middle/deep/ok/deep_{n}.csv \
             --output output/middle/final/ok/final_{n}.csv \
             --invalid output/middle/final/not/final_{n}-invalid.csv \
             --chunk_id {n} \
             --cache_dir output/cache
-
-      - name: Commit and push changes
-        env:
-          GITHUB_TOKEN: ${{{{ secrets.GITHUB_TOKEN }}}}
-        run: |
-          git config user.name "github-actions[bot]"
-          git config user.email "github-actions[bot]@users.noreply.github.com"
-          git add output/middle/fast/ output/middle/deep/ output/middle/final/ output/cache/chunk/ || echo "No files to add"
-          git commit -m "ci: add scan results and cache for {n}" || echo "No changes to commit"
-
-          # 🔹 设置远程并带安全推送重试机制
-          git remote set-url origin https://x-access-token:${{GITHUB_TOKEN}}@github.com/niuinyang/niuin_iptv.git
-
-          for i in 1 2 3; do
-            echo "推送尝试第 $i 次"
-            if git push origin HEAD:main; then
-              echo "推送成功 ✅"
-              break
-            else
-              echo "推送失败，尝试拉取远程合并 🔄"
-              git stash push -m "ci: stash before pull"
-              if git pull --rebase origin main; then
-                echo "拉取成功，准备重试推送"
-                git stash pop || echo "无 stash 可弹出"
-              else
-                echo "拉取失败，等待 30 秒后重试"
-                git rebase --abort || true
-                git stash pop || echo "无 stash 可弹出"
-                sleep 30
-              fi
-            fi
-          done
 """
 
-# 🧹 清理旧 workflow 文件
 print("🧹 清理旧的 workflow 文件...")
 for f in os.listdir(WORKFLOW_DIR):
     if re.match(r"scan_chunk_.+\.yml", f):
@@ -117,21 +76,18 @@ for f in os.listdir(WORKFLOW_DIR):
 if os.path.exists(CACHE_FILE):
     os.remove(CACHE_FILE)
 
-# 🕒 固定每天北京时间 07:10 执行（UTC 23:10）
-start_hour = 00  # UTC 时区小时
+# 固定每天北京时间 07:10 执行（UTC 23:10）
+start_hour = 0  # UTC 时区小时
 start_minute = 20  # UTC 分钟
-interval = 0  # 不再分时执行
 
 chunks = sorted([f for f in os.listdir(CHUNK_DIR) if re.match(r"chunk\d+-\d+\.csv", f)])
-total_chunks = len(chunks)
 cache_data = {}
 
-for i, chunk_file in enumerate(chunks, start=1):
+for chunk_file in chunks:
     utc_hour = start_hour
     utc_min = start_minute
     cron = f"{utc_min} {utc_hour} * * *"
 
-    # 从文件名中提取 chunk id
     chunk_id = os.path.splitext(chunk_file)[0]
 
     workflow_filename = f"scan_{chunk_id}.yml"
@@ -147,35 +103,4 @@ for i, chunk_file in enumerate(chunks, start=1):
 with open(CACHE_FILE, "w", encoding="utf-8") as f:
     json.dump(cache_data, f, indent=2, ensure_ascii=False)
 
-print("\n🌀 提交生成的 workflow 和缓存文件到 GitHub...\n")
-
-# 自动提交更改（有改动才提交）
-subprocess.run(["git", "add", "-A"], check=False)
-status_result = subprocess.run(["git", "status", "--porcelain"], capture_output=True, text=True)
-if status_result.stdout.strip() == "":
-    print("ℹ️ 无更改，跳过提交和推送")
-else:
-    commit_msg = "ci: auto-generate scan chunk workflows"
-    commit_result = subprocess.run(["git", "commit", "-m", commit_msg], text=True)
-    if commit_result.returncode != 0:
-        print("⚠️ 提交失败，跳过推送")
-    else:
-        # 多次推送重试（每次失败先拉取远程合并）
-        for attempt in range(1, 4):
-            print(f"尝试推送，第 {attempt} 次...")
-            push_result = subprocess.run(["git", "push"], text=True)
-            if push_result.returncode == 0:
-                print("🚀 推送成功")
-                break
-            else:
-                print("⚠️ 推送失败，尝试拉取远程并重试...")
-                # 拉取远程最新，尝试rebase
-                pull_result = subprocess.run(["git", "pull", "--rebase"], text=True)
-                if pull_result.returncode != 0:
-                    print("❌ 拉取失败，终止重试")
-                    break
-                print("⏳ 等待30秒后重试推送")
-                time.sleep(30)
-        else:
-            print("❌ 达到最大重试次数，推送失败，请手动处理冲突")
-            exit(1)
+print("✅ 生成完毕，脚本结束。")
