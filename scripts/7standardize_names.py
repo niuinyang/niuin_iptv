@@ -219,7 +219,10 @@ def main():
     total_before.to_csv(OUTPUT_TOTAL_FINAL, index=False, encoding="utf-8-sig", columns=[
         "频道名","地址","来源","图标","检测时间","分组","视频编码","分辨率","帧率","音频","相似度","匹配信息","匹配值"
     ])
-    channel_data.to_csv(OUTPUT_CHANNEL_DATA, index=False, encoding="utf-8-sig")
+
+    # 只保存原始的四列，防止写出多余的_std_key辅助列
+    channel_data.to_csv(OUTPUT_CHANNEL_DATA, index=False, encoding="utf-8-sig",
+                        columns=["原始名", "标准名", "拟匹配频道名", "分组"])
 
     print("处理完成！")
 
