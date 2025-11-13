@@ -8,7 +8,6 @@ import chardet
 from pypinyin import lazy_pinyin
 from tqdm import tqdm
 import time
-import io
 
 IPTV_DB_PATH = "./iptv-database"
 
@@ -19,29 +18,20 @@ INPUT_CHANNEL = "input/channel.csv"
 OUTPUT_CHANNEL = "input/channel.csv"
 MANUAL_MAP_PATH = "input/manual_map.csv"
 
-def read_csv_auto_encoding(path, **kwargs):
-    if not os.path.exists(path):
-        raise FileNotFoundError(f"文件不存在: {path}")
-    with open(path, "rb") as f:
-        raw = f.read()
-    result = chardet.detect(raw)
-    encoding = result['encoding'] or 'utf-8'
-    text = raw.decode(encoding, errors='ignore')
-    return pd.read_csv(io.StringIO(text), **kwargs)
-
-def convert_file_to_utf8_sig(path):
-    """强制将文件转为 utf-8-sig 编码"""
+def convert_file_to_utf8(path):
     if not os.path.exists(path):
         print(f"⚠️ 文件 {path} 不存在，跳过转换")
         return
-    with open(path, "rb") as f:
+    with open(path, 'rb') as f:
         raw = f.read()
     result = chardet.detect(raw)
-    enc = result['encoding'] or 'utf-8'
-    if enc.lower() != "utf-8-sig":
+    enc = result['encoding']
+    if enc is None:
+        enc = 'utf-8'
+    if enc.lower() != 'utf-8-sig':
         try:
             text = raw.decode(enc, errors='ignore')
-            with open(path, "w", encoding="utf-8-sig", newline='') as f:
+            with open(path, 'w', encoding='utf-8-sig') as f:
                 f.write(text)
             print(f"✅ 文件 {path} 从 {enc} 转码为 UTF-8-SIG")
         except Exception as e:
@@ -49,9 +39,20 @@ def convert_file_to_utf8_sig(path):
     else:
         print(f"✅ 文件 {path} 已经是 UTF-8-SIG，无需转换")
 
-def convert_all_csv_to_utf8_sig(paths):
+def convert_all_csv_to_utf8(paths):
     for p in paths:
-        convert_file_to_utf8_sig(p)
+        convert_file_to_utf8(p)
+
+def read_csv_auto_encoding(path, dtype=None):
+    """
+    先转为 utf-8-sig 编码文件，再用 utf-8-sig 读取。
+    dtype 可选传入。
+    """
+    convert_file_to_utf8(path)
+    return pd.read_csv(path, encoding='utf-8-sig', dtype=dtype)
+
+def safe_read_csv(path):
+    return read_csv_auto_encoding(path)
 
 def load_name_map():
     name_map = {}
@@ -79,12 +80,18 @@ def load_manual_map(path=MANUAL_MAP_PATH):
         return manual_map
 
     df = read_csv_auto_encoding(path, dtype=str)
-    # 清理并构造字典
     for _, row in df.iterrows():
-        raw_name = (row.get("原始名称") or "").strip()
-        std_name = (row.get("标准名称") or "").strip().title()
-        if raw_name and std_name:
-            manual_map[raw_name.lower()] = std_name
+        raw_name = row.get("原始名称")
+        std_name = row.get("标准名称")
+
+        if pd.isna(raw_name) or pd.isna(std_name):
+            continue
+
+        raw_name_str = str(raw_name).strip()
+        std_name_str = str(std_name).strip().title()
+
+        if raw_name_str and std_name_str:
+            manual_map[raw_name_str.lower()] = std_name_str
     return manual_map
 
 def clean_channel_name(name):
@@ -328,10 +335,10 @@ def main():
     print("🚀 开始执行标准化匹配流程...")
 
     csv_files = [INPUT_MY, INPUT_WORKING, INPUT_CHANNEL, MANUAL_MAP_PATH]
-    convert_all_csv_to_utf8_sig(csv_files)
+    convert_all_csv_to_utf8(csv_files)
 
-    my_sum_df = read_csv_auto_encoding(INPUT_MY, dtype=str)
-    working_df = read_csv_auto_encoding(INPUT_WORKING, dtype=str)
+    my_sum_df = safe_read_csv(INPUT_MY)
+    working_df = safe_read_csv(INPUT_WORKING)
 
     print(f"读取源文件：\n  📁 {INPUT_MY}\n  📁 {INPUT_WORKING}")
 
@@ -354,7 +361,7 @@ def main():
     print(f"✅ 已保存文件：{OUTPUT_TOTAL}，共计 {len(total_df)} 条记录")
 
     if os.path.exists(INPUT_CHANNEL):
-        existing_channel_df = pd.read_csv(INPUT_CHANNEL, encoding="utf-8-sig", dtype=str)
+        existing_channel_df = pd.read_csv(INPUT_CHANNEL, encoding="utf-8-sig")
     else:
         existing_channel_df = pd.DataFrame(columns=["频道名", "分组"])
 
