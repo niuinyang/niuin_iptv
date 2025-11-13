@@ -116,35 +116,17 @@ def main():
             match_info = "未匹配"
             match_score = 0.0
 
-            # 精确匹配第一轮
+            # ======= 修改1：精准匹配第一轮和第二轮，不写入channel_data =======
             if key in std_name_dict and std_name_dict[key]:
                 matched_name = std_name_dict[key]
                 match_info = "精准匹配"
                 match_score = 100.0
                 precise_match_count += 1
-                if original_name not in existing_orig_names:
-                    new_row = {
-                        "原始名": original_name,
-                        "标准名": matched_name,
-                        "拟匹配频道名": matched_name,
-                        "分组": "未分组"
-                    }
-                    channel_data = pd.concat([channel_data, pd.DataFrame([new_row])], ignore_index=True)
-                    existing_orig_names.add(original_name)
             elif key in orig_name_dict and orig_name_dict[key]:
                 matched_name = orig_name_dict[key]
                 match_info = "精准匹配"
                 match_score = 100.0
                 precise_match_count += 1
-                if original_name not in existing_orig_names:
-                    new_row = {
-                        "原始名": original_name,
-                        "标准名": matched_name,
-                        "拟匹配频道名": matched_name,
-                        "分组": "未分组"
-                    }
-                    channel_data = pd.concat([channel_data, pd.DataFrame([new_row])], ignore_index=True)
-                    existing_orig_names.add(original_name)
             else:
                 # 第二轮模糊匹配网络库
                 choices = list(network_channels.keys())
@@ -167,27 +149,29 @@ def main():
                             channel_data = pd.concat([channel_data, pd.DataFrame([new_row])], ignore_index=True)
                             existing_orig_names.add(original_name)
                     else:
+                        # ======= 修改2：匹配度 <=90，标准名赋原名，写入channel_data（去重） =======
                         matched_name = original_name
                         match_info = "未匹配"
                         match_score = float(score)
                         if original_name not in existing_orig_names:
                             new_row = {
                                 "原始名": original_name,
-                                "标准名": "",
-                                "拟匹配频道名": matched_name,
+                                "标准名": original_name,   # 标准名赋原名
+                                "拟匹配频道名": original_name,
                                 "分组": "待标准化"
                             }
                             channel_data = pd.concat([channel_data, pd.DataFrame([new_row])], ignore_index=True)
                             existing_orig_names.add(original_name)
                 else:
+                    # 匹配不到，标准名赋原名，写入channel_data（去重）
                     matched_name = original_name
                     match_info = "未匹配"
                     match_score = 0.0
                     if original_name not in existing_orig_names:
                         new_row = {
                             "原始名": original_name,
-                            "标准名": "",
-                            "拟匹配频道名": matched_name,
+                            "标准名": original_name,  # 标准名赋原名
+                            "拟匹配频道名": original_name,
                             "分组": "待标准化"
                         }
                         channel_data = pd.concat([channel_data, pd.DataFrame([new_row])], ignore_index=True)
@@ -206,12 +190,19 @@ def main():
     total_before["匹配信息"] = matched_match_info
     total_before["匹配值"] = matched_match_score
 
+    # 根据修改后的频道名，用标准名去channel_data["标准名"]找对应分组
     std_name_to_group = dict(zip(channel_data["标准名"], channel_data["分组"]))
 
-    def get_group(name):
+    def get_group(name, match_info, match_score):
+        if match_info == "未匹配" or match_score <= 90:
+            return "待标准化"
         return std_name_to_group.get(name, "未分类")
 
-    total_before["分组"] = total_before["频道名"].apply(get_group)
+    total_before["分组"] = [
+        get_group(name, info, score) for name, info, score in zip(
+            total_before["频道名"], total_before["匹配信息"], total_before["匹配值"]
+        )
+    ]
 
     print(f"匹配完成，总精准匹配数：{precise_match_count}，总模糊匹配数：{fuzzy_match_count}")
 
