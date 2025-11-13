@@ -4,17 +4,15 @@ import os
 import re
 import sys
 import aiohttp
-import aiofiles
 import asyncio
 import math
 from collections import defaultdict
-from urllib.parse import urlparse
+from urllib.parse import urlparse, urlunparse
 from pathlib import Path
 
 # --- 配置 ---
 CSV_INPUT = "output/total_final.csv"
 UNISTREAM_URL = "https://raw.githubusercontent.com/plsy1/iptv/refs/heads/main/unicast.m3u"
-LOCAL_UNICAST_PATH = "input/network/unicast.m3u"
 LOCAL_PNG_DIR = "png"
 OUTPUT_DXL = "output/dxl.m3u"
 OUTPUT_SJMZ = "output/sjmz.m3u"
@@ -82,35 +80,14 @@ def parse_resolution(res: str):
 
 
 async def fetch_unicast():
-    """尝试访问远程unicast.m3u，成功则保存到本地，并解析返回映射，失败则使用本地缓存解析"""
+    """异步下载远程unicast.m3u并解析为映射 address -> extinf_line"""
     async with aiohttp.ClientSession() as session:
-        try:
-            async with session.get(UNISTREAM_URL, timeout=10) as resp:
-                if resp.status == 200:
-                    text = await resp.text(encoding='utf-8')
-                    # 保存到本地缓存文件夹
-                    os.makedirs(os.path.dirname(LOCAL_UNICAST_PATH), exist_ok=True)
-                    async with aiofiles.open(LOCAL_UNICAST_PATH, 'w', encoding='utf-8') as f:
-                        await f.write(text)
-                    print(f"远程unicast.m3u下载成功，已缓存至 {LOCAL_UNICAST_PATH}")
-                else:
-                    print(f"远程unicast.m3u访问失败，状态码: {resp.status}，使用本地缓存文件")
-                    text = None
-        except Exception as e:
-            print(f"远程unicast.m3u访问异常: {e}，使用本地缓存文件")
-            text = None
+        async with session.get(UNISTREAM_URL) as resp:
+            if resp.status != 200:
+                print(f"无法下载unicast.m3u，HTTP状态码: {resp.status}")
+                return {}
+            text = await resp.text(encoding='utf-8')
 
-    if not text:
-        # 读取本地缓存
-        if os.path.exists(LOCAL_UNICAST_PATH):
-            async with aiofiles.open(LOCAL_UNICAST_PATH, 'r', encoding='utf-8') as f:
-                text = await f.read()
-            print(f"已加载本地缓存unicast.m3u：{LOCAL_UNICAST_PATH}")
-        else:
-            print("本地缓存unicast.m3u不存在，无法匹配济南联通频道的特殊extinf")
-            return {}
-
-    # 解析m3u文本为映射 address -> extinf_line
     lines = text.splitlines()
     mapping = {}
     prev_line = ""
@@ -118,6 +95,7 @@ async def fetch_unicast():
         if line.startswith("#EXTINF"):
             prev_line = line
         elif line.strip() and not line.startswith("#"):
+            # 播放地址
             mapping[line.strip()] = prev_line
     return mapping
 
@@ -151,7 +129,12 @@ def find_local_logo(channel_name, local_png_set):
 
 def make_tvg_logo(channel_name, local_png_set):
     """生成tvg-logo字段，先尝试远程模板URL，若远程文件不存在，则用本地图标"""
+    # 注意：此处不实时检测远程文件是否存在（耗时严重），实际生成m3u时先用远程模板链接
+    # 可以后续加缓存或其他判断逻辑。此处为简化，只做本地文件检测替代
+
+    # 优先远程模板链接
     url = TVG_LOGO_TEMPLATE.format(channel=channel_name)
+    # 判断本地是否有图标，优先用本地文件路径（相对路径）
     local_logo = find_local_logo(channel_name, local_png_set)
     if local_logo:
         return local_logo.replace("\\", "/")  # 保证路径格式
@@ -159,23 +142,32 @@ def make_tvg_logo(channel_name, local_png_set):
 
 
 def construct_catchup(url):
-    """针对济南联通构造catchup-source，示例：替换IP段最后一节为39"""
+    """构造带时间参数的catchup-source URL，基于传入地址"""
     try:
         parsed = urlparse(url)
         ip = parsed.hostname
         if not ip:
             return None
-        if ':' in ip:
-            # IPv6不处理替换
+        if ':' in ip:  # IPv6不处理
             return None
         ip_parts = ip.split('.')
         if len(ip_parts) == 4:
-            ip_parts[-1] = '39'
+            ip_parts[-1] = '39'  # 替换最后一节为39
             new_ip = '.'.join(ip_parts)
-            new_netloc = new_ip
+            netloc = new_ip
             if parsed.port:
-                new_netloc += f":{parsed.port}"
-            new_url = parsed._replace(netloc=new_netloc).geturl()
+                netloc += f":{parsed.port}"
+            path = parsed.path
+            # 构造时间参数模板
+            time_params = "?tvdr={utc:YmdHMS}GMT-{utcend:YmdHMS}GMT"
+            new_url = urlunparse((
+                parsed.scheme,
+                netloc,
+                path,
+                '',  # params
+                time_params[1:],  # query不含问号
+                ''  # fragment
+            ))
             return new_url
     except Exception:
         return None
@@ -188,16 +180,17 @@ def build_extinf_line(csv_row, local_png_set, unicast_map=None):
     group = csv_row.get("分组", "").strip()
     source = csv_row.get("来源", "").strip()
 
-    # 济南联通远程匹配替换逻辑
+    # 远程匹配优先
     if source == "济南联通" and unicast_map:
         matched_extinf = unicast_map.get(url)
         if matched_extinf:
+            # 替换分组和频道名，保持远程行完整格式（包括catchup-source）
             replaced_extinf = re.sub(r'group-title="[^"]*"', f'group-title="{group}"', matched_extinf)
             replaced_extinf = re.sub(r',\s*[^,]*$', f', {channel}', replaced_extinf)
             return replaced_extinf
 
+    # 自定义构造
     tvg_logo = make_tvg_logo(channel, local_png_set)
-
     extinf = f'#EXTINF:-1 tvg-name="{channel}" group-title="{group}" tvg-logo="{tvg_logo}"'
 
     catchup_str = ""
@@ -211,10 +204,12 @@ def build_extinf_line(csv_row, local_png_set, unicast_map=None):
 
 
 def parse_csv():
+    """读取CSV，返回列表(dict)"""
     rows = []
     with open(CSV_INPUT, newline='', encoding='utf-8-sig') as f:
         reader = csv.DictReader(f)
         for row in reader:
+            # 过滤上海移动
             if row.get("来源", "") in FILTER_SOURCE:
                 continue
             rows.append(row)
@@ -222,12 +217,14 @@ def parse_csv():
 
 
 def channel_sort_key(channel_name):
+    """频道名排序键：英文字母顺序，中文拼音首字母顺序，数字按数值大小"""
     pinyin_key = get_pinyin_key(channel_name)
     alpha_num = split_alpha_num(pinyin_key)
     return alpha_num
 
 
 def group_sort_key(group_name):
+    """分组排序键，优先级列表顺序，未匹配放最后"""
     try:
         return GROUP_PRIORITY.index(group_name)
     except ValueError:
@@ -235,6 +232,7 @@ def group_sort_key(group_name):
 
 
 def source_sort_key(source_name, dxl=True):
+    """来源排序键，dxl/sjmz两种不同优先级"""
     if dxl:
         try:
             return SOURCE_PRIORITY_DXL.index(source_name)
@@ -247,13 +245,15 @@ def source_sort_key(source_name, dxl=True):
             return len(SOURCE_PRIORITY_SJMZ)
 
 
-def parse_resolution_area(row):
+def resolution_area(row):
+    """计算分辨率面积"""
     _, _, area = parse_resolution(row.get("分辨率", ""))
     return area
 
 
 def resolution_area_detecttime_key(row):
-    area = parse_resolution_area(row)
+    """网络源排序键：分辨率面积降序，检测时间升序"""
+    area = resolution_area(row)
     try:
         detect = float(row.get("检测时间", 0))
     except Exception:
@@ -262,6 +262,15 @@ def resolution_area_detecttime_key(row):
 
 
 def sort_rows(rows, dxl=True):
+    """
+    综合排序：
+    1. 分组优先
+    2. 频道名排序
+    3. 多来源排序（优先级）
+    4. 同一来源内部网络源排序（分辨率面积+检测时间）
+    5. 网络源放最后
+    """
+    # 先分组、频道名聚合
     group_dict = defaultdict(list)
     for r in rows:
         group_dict[r.get("分组", "待标准化")].append(r)
@@ -270,29 +279,39 @@ def sort_rows(rows, dxl=True):
 
     final_sorted = []
     for group, group_rows in sorted_groups:
+        # 按频道名排序
+        # 先归类相同频道
         channel_dict = defaultdict(list)
         for r in group_rows:
             channel_dict[r.get("频道名", "")].append(r)
 
+        # 频道名排序键
         sorted_channels = sorted(channel_dict.items(), key=lambda x: channel_sort_key(x[0]))
 
         for channel, ch_rows in sorted_channels:
+            # 按来源优先级排序
+            # 多来源先按来源优先级排，网络源放最后
+            # 按来源拆分
             source_dict = defaultdict(list)
             for rr in ch_rows:
                 source_dict[rr.get("来源", "网络源")].append(rr)
 
+            # 网络源单独处理
             network_source_rows = source_dict.get("网络源", [])
             others_sources = [(s, lst) for s, lst in source_dict.items() if s != "网络源"]
 
+            # 按来源优先级排序others
             others_sources_sorted = sorted(
                 others_sources, 
                 key=lambda x: source_sort_key(x[0], dxl=dxl)
             )
 
+            # 同一来源内，其他来源保持原顺序，网络源内部排序
             sorted_rows = []
             for s, lst in others_sources_sorted:
                 sorted_rows.extend(lst)
             if network_source_rows:
+                # 网络源排序
                 network_source_rows_sorted = sorted(network_source_rows, key=resolution_area_detecttime_key)
                 sorted_rows.extend(network_source_rows_sorted)
 
@@ -302,7 +321,6 @@ def sort_rows(rows, dxl=True):
 
 
 def generate_m3u(rows, output_file, dxl=True, unicast_map=None, local_png_set=None):
-    os.makedirs(os.path.dirname(output_file), exist_ok=True)
     with open(output_file, "w", encoding="utf-8") as f:
         f.write("#EXTM3U\n")
         for row in rows:
@@ -312,9 +330,9 @@ def generate_m3u(rows, output_file, dxl=True, unicast_map=None, local_png_set=No
 
 
 async def main():
-    print("开始下载并解析远程unicast.m3u，若失败则使用本地缓存...")
+    print("开始下载并解析远程unicast.m3u...")
     unicast_map = await fetch_unicast()
-    print(f"unicast.m3u条目数：{len(unicast_map)}")
+    print(f"远程unicast.m3u解析完成，条目数：{len(unicast_map)}")
 
     print("读取CSV文件...")
     rows = parse_csv()
