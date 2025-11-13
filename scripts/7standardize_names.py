@@ -1,385 +1,227 @@
 #!/usr/bin/env python3
-import csv
+# standardize_iptv.py
+
 import os
-import pandas as pd
-from rapidfuzz import process
 import re
-import chardet
-from pypinyin import lazy_pinyin
-from tqdm import tqdm
+import csv
+import sys
 import time
+import chardet
+import pandas as pd
+from opencc import OpenCC
+from rapidfuzz import fuzz, process
+from tqdm import tqdm
 
-IPTV_DB_PATH = "./iptv-database"
+# 配置路径，按需调整
+MY_SUM_PATH = "input/mysource/my_sum.csv"
+WORKING_PATH = "output/working.csv"
+CHANNEL_DATA_PATH = "input/channel_data.csv"
+NETWORK_CHANNELS_PATH = "iptv-org/database/data/channels.csv"
 
-INPUT_MY = "input/mysource/my_sum.csv"
-INPUT_WORKING = "output/working.csv"
-OUTPUT_TOTAL = "output/total.csv"
-INPUT_CHANNEL = "input/channel.csv"
-OUTPUT_CHANNEL = "input/channel.csv"
-MANUAL_MAP_PATH = "input/manual_map.csv"
+OUTPUT_TOTAL_FINAL = "output/total_final.csv"
+OUTPUT_CHANNEL_DATA = CHANNEL_DATA_PATH  # 直接覆盖更新
 
-def convert_file_to_utf8(path):
-    if not os.path.exists(path):
-        print(f"⚠️ 文件 {path} 不存在，跳过转换")
-        return
-    with open(path, 'rb') as f:
-        raw = f.read()
-    result = chardet.detect(raw)
-    enc = result['encoding']
-    if enc is None:
-        enc = 'utf-8'
-    if enc.lower() != 'utf-8':
-        try:
-            text = raw.decode(enc, errors='ignore')
-            with open(path, 'w', encoding='utf-8') as f:
-                f.write(text)
-            print(f"✅ 文件 {path} 从 {enc} 转码为 UTF-8")
-        except Exception as e:
-            print(f"❌ 转码文件 {path} 出错: {e}")
-    else:
-        print(f"✅ 文件 {path} 已经是 UTF-8，无需转换")
+cc = OpenCC('t2s')
 
-def convert_all_csv_to_utf8(paths):
-    for p in paths:
-        convert_file_to_utf8(p)
+def read_csv_auto_encoding(filepath):
+    with open(filepath, 'rb') as f:
+        raw = f.read(10000)
+        result = chardet.detect(raw)
+        encoding = result['encoding'] or 'utf-8'
+    return pd.read_csv(filepath, encoding=encoding)
 
-def safe_read_csv(path):
-    return pd.read_csv(path, encoding="utf-8")
-
-def load_name_map():
-    name_map = {}
-    path = os.path.join(IPTV_DB_PATH, "data", "channels.csv")
-    with open(path, encoding="utf-8") as f:
-        reader = csv.DictReader(f)
-        for row in reader:
-            std_name = row["name"].strip().title()
-            name_map[std_name.lower()] = std_name
-            others = row.get("other_names", "")
-            for alias in others.split(","):
-                alias = alias.strip()
-                if alias:
-                    name_map[alias.lower()] = std_name
-    return name_map
-
-def load_manual_map(path=MANUAL_MAP_PATH):
-    manual_map = {}
-    if not os.path.exists(path):
-        os.makedirs(os.path.dirname(path), exist_ok=True)
-        with open(path, "w", encoding="utf-8-sig", newline='') as f:
-            writer = csv.writer(f)
-            writer.writerow(["原始名称", "标准名称", "拟匹配频道"])
-        print(f"⚠️ 未找到人工映射文件，已新建空文件：{path}")
-        return manual_map
-
-    with open(path, encoding="utf-8") as f:
-        reader = csv.DictReader(f)
-        for row in reader:
-            raw_name = row.get("原始名称", "").strip()
-            std_name = row.get("标准名称", "").strip().title()
-            if raw_name and std_name:
-                manual_map[raw_name.lower()] = std_name
-    return manual_map
-
-def clean_channel_name(name):
+def mechanical_standardize(name: str) -> str:
     if not isinstance(name, str):
         return ""
-    name = re.sub(r"[\(\（][^\)\）]*[\)\）]", "", name)
-    name = re.sub(r"[\[\【][^\]\】]*[\]\】]", "", name)
-    name = re.sub(r"\b(not\s*)?(24/7|7\*24|7x24)\b", "", name, flags=re.I)
-    return name.strip()
+    s = name.strip()
+    s = cc.convert(s)
+    s = s.lower()
+    s = re.sub(r"\（.*?\）", "", s)
+    s = re.sub(r"\(.*?\)", "", s)
+    s = re.sub(r"\[.*?\]", "", s)
+    s = re.sub(r"\【.*?\】", "", s)
+    s = re.sub(r"\s+", "", s)
+    s = re.sub(r"[^a-z0-9\u4e00-\u9fa5\+\！]", "", s)
+    return s
 
-def normalize_name_for_match(name):
+def clean_network_std_name(name: str) -> str:
     if not isinstance(name, str):
         return ""
-    name = clean_channel_name(name)
-    name = re.sub(r"[-\s]", "", name)
-    return name.lower()
-
-def standardize_my_sum(my_sum_df):
-    my_sum_df['final_name'] = my_sum_df.iloc[:,0].astype(str).str.title()
-    my_sum_df['match_info'] = "自有源"
-    my_sum_df['original_channel_name'] = my_sum_df.iloc[:,0].astype(str)
-    return my_sum_df
-
-def standardize_working(working_df, my_sum_df, name_map, manual_map):
-    working_df['original_channel_name'] = working_df.iloc[:, 0].astype(str)
-    working_df['clean_name'] = working_df['original_channel_name'].apply(clean_channel_name)
-    my_name_dict = dict(zip(my_sum_df.iloc[:,0].apply(normalize_name_for_match), my_sum_df['final_name']))
-
-    total = len(working_df)
-    final_names = []
-    match_infos = []
-    matched_count = 0
-    unmatched_count = 0
-
-    print(f"🔄 开始对 working.csv 共 {total} 条记录进行标准化匹配...")
-
-    start_time = time.time()
-    last_print_time = start_time
-
-    for idx, (orig_name, clean_name) in enumerate(tqdm(zip(working_df['original_channel_name'], working_df['clean_name']), total=total), 1):
-        orig_name_lower = orig_name.lower()
-        clean_name_lower = normalize_name_for_match(clean_name)
-
-        if orig_name_lower in manual_map:
-            std_name = manual_map[orig_name_lower]
-            match_info = "人工匹配"
-            matched_count += 1
-        elif clean_name_lower in my_name_dict:
-            std_name = my_name_dict[clean_name_lower]
-            match_info = "自有源匹配"
-            matched_count += 1
-        else:
-            choices = list(name_map.keys())
-            match, score, _ = process.extractOne(clean_name_lower, choices)
-            if score >= 95:
-                std_name = name_map[match]
-                match_info = "模糊匹配"
-                matched_count += 1
-            elif score > 0:
-                std_name = clean_name.title()
-                match_info = f"低匹配;拟匹配频道:{name_map[match]}"
-                unmatched_count += 1
-            else:
-                std_name = clean_name.title()
-                match_info = "未匹配"
-                unmatched_count += 1
-
-        final_names.append(std_name)
-        match_infos.append(match_info)
-
-        current_time = time.time()
-        if current_time - last_print_time >= 5 or idx == total:
-            print(f"已处理 {idx}/{total} 条，匹配 {matched_count} 条，未匹配 {unmatched_count} 条")
-            last_print_time = current_time
-
-    working_df['final_name'] = final_names
-    working_df['match_info'] = match_infos
-    print("✅ working.csv 标准化匹配完成")
-    return working_df
-
-def export_unmatched_for_manual(working_df, manual_map_path=MANUAL_MAP_PATH):
-    unmatched_mask = working_df['match_info'].fillna("").str.contains("未匹配|低匹配", na=False)
-    unmatched_df = working_df[unmatched_mask].copy()
-
-    def extract_candidate(info):
-        if not isinstance(info, str):
-            return ""
-        m = re.search(r"拟匹配频道:([^\s,，]+)", info)
-        if m:
-            return m.group(1).strip()
-        return ""
-
-    export_df = pd.DataFrame({
-        "原始名称": unmatched_df['original_channel_name'].astype(str).str.strip(),
-        "标准名称": "",
-        "拟匹配频道": unmatched_df['match_info'].apply(extract_candidate).astype(str).str.strip()
-    }).drop_duplicates(subset=["原始名称"], keep="first")
-
-    if export_df.empty:
-        if not os.path.exists(manual_map_path):
-            os.makedirs(os.path.dirname(manual_map_path), exist_ok=True)
-            pd.DataFrame(columns=["原始名称", "标准名称", "拟匹配频道"]).to_csv(manual_map_path, index=False, encoding="utf-8-sig")
-        print(f"🔔 无新增未匹配或低匹配频道，已确保 {manual_map_path} 存在。")
-        return
-
-    if os.path.exists(manual_map_path):
-        existing = pd.read_csv(manual_map_path, encoding="utf-8-sig", dtype=str)
-    else:
-        existing = pd.DataFrame(columns=["原始名称", "标准名称", "拟匹配频道"])
-
-    for col in ["原始名称", "标准名称", "拟匹配频道"]:
-        if col not in existing.columns:
-            existing[col] = ""
-
-    existing = existing[["原始名称", "标准名称", "拟匹配频道"]].astype(str)
-
-    combined = pd.concat([existing, export_df], ignore_index=True)
-    combined.drop_duplicates(subset=["原始名称"], keep="first", inplace=True)
-
-    os.makedirs(os.path.dirname(manual_map_path), exist_ok=True)
-    combined.to_csv(manual_map_path, index=False, encoding="utf-8-sig")
-    print(f"🔔 已更新 {manual_map_path}，共 {len(combined)} 条记录。")
-
-def sort_by_name_pinyin(df, col_name):
-    df['_sort_key'] = df[col_name].apply(lambda x: ''.join(lazy_pinyin(str(x).lower())))
-    df = df.sort_values(by='_sort_key').drop(columns=['_sort_key'])
-    return df.reset_index(drop=True)
-
-def sort_channel_file(path=OUTPUT_CHANNEL):
-    if not os.path.exists(path):
-        print(f"⚠️ 文件 {path} 不存在，无法排序")
-        return
-
-    df = pd.read_csv(path, encoding="utf-8-sig")
-    df['分组'] = df['分组'].fillna("").replace("", "未分类")
-
-    group_order = [
-        "央视频道",
-        "4K频道",
-        "卫视频道",
-        "山东频道",
-        "他省频道",
-        "数字频道",
-        "电台广播",
-        "国际频道"
-    ]
-
-    def group_rank(g):
-        if g == "未分类":
-            return 9999
-        try:
-            return group_order.index(g)
-        except ValueError:
-            return 9998
-
-    df['分组排序权重'] = df['分组'].apply(group_rank)
-    df = df.sort_values(by=['分组排序权重']).reset_index(drop=True)
-
-    result_frames = []
-    for g, group_df in df.groupby('分组', sort=False):
-        sorted_group = sort_by_name_pinyin(group_df, '频道名')
-        result_frames.append(sorted_group)
-
-    df_sorted = pd.concat(result_frames, ignore_index=True)
-    df_sorted = df_sorted.drop(columns=['分组排序权重'])
-
-    df_sorted.to_csv(path, index=False, encoding="utf-8-sig")
-    print(f"✅ 已对 {path} 进行分组及频道名拼音排序")
-
-def sort_manual_map_file(path=MANUAL_MAP_PATH):
-    if not os.path.exists(path):
-        print(f"⚠️ 文件 {path} 不存在，无法排序")
-        return
-
-    df = pd.read_csv(path, encoding="utf-8-sig")
-    df['标准名称是否空'] = df['标准名称'].fillna("").apply(lambda x: 1 if x.strip() == "" else 0)
-    df = df.sort_values(by=['标准名称是否空']).reset_index(drop=True)
-
-    df_has_std = df[df['标准名称是否空'] == 0].copy()
-    df_no_std = df[df['标准名称是否空'] == 1].copy()
-
-    df_has_std = sort_by_name_pinyin(df_has_std, '原始名称')
-    df_no_std = sort_by_name_pinyin(df_no_std, '原始名称')
-
-    df_sorted = pd.concat([df_has_std, df_no_std], ignore_index=True)
-    df_sorted = df_sorted.drop(columns=['标准名称是否空'])
-
-    df_sorted.to_csv(path, index=False, encoding="utf-8-sig")
-    print(f"✅ 已对 {path} 进行标准名称优先及原始名称拼音排序")
-
-def build_total_df(df):
-    def safe_col(name_list):
-        for name in name_list:
-            if name in df.columns:
-                return df[name]
-        return pd.Series([""] * len(df))
-
-    # 这里新增视频编码、分辨率、帧率、音频、相似度列
-    return pd.DataFrame({
-        "频道名": df.get("final_name", df.iloc[:, 0]),
-        "地址": safe_col(["地址"]),
-        "来源": safe_col(["来源"]),
-        "检测时间": safe_col(["检测时间", "检测时间(延迟)"]),
-        "图标": safe_col(["图标"]),
-        "分组": safe_col(["分组"]),
-        "匹配信息": safe_col(["match_info"]),
-        "原始频道名": safe_col(["original_channel_name"]),
-        "视频编码": safe_col(["视频编码"]),
-        "分辨率": safe_col(["分辨率"]),
-        "帧率": safe_col(["帧率"]),
-        "音频": safe_col(["音频"]),
-        "相似度": safe_col(["相似度"]),
-    })
-
-def save_standardized_my_sum(df):
-    def safe_col(name_list):
-        for name in name_list:
-            if name in df.columns:
-                return df[name]
-        return pd.Series([""] * len(df))
-
-    out_df = pd.DataFrame({
-        "频道名": df.get("final_name", df.iloc[:, 0]),
-        "地址": safe_col(["地址"]),
-        "来源": safe_col(["来源"]),
-        "检测时间": safe_col(["检测时间", "检测时间(延迟)"]),
-        "图标": safe_col(["图标"]),
-        "分组": safe_col(["分组"]),
-        "匹配信息": safe_col(["match_info"]),
-        "原始频道名": safe_col(["original_channel_name"]),
-        "视频编码": safe_col(["视频编码"]),
-        "分辨率": safe_col(["分辨率"]),
-        "帧率": safe_col(["帧率"]),
-        "音频": safe_col(["音频"]),
-        "相似度": safe_col(["相似度"]),
-    })
-    out_df.to_csv("input/mysource/my_sum_standardized.csv", index=False, encoding="utf-8-sig")
-    print("✅ 已保存文件：input/mysource/my_sum_standardized.csv")
+    name = name.strip()
+    name = re.sub(r"\s+", " ", name)
+    name = ' '.join([w.capitalize() if re.match(r'[a-zA-Z]+$', w) else w for w in name.split(" ")])
+    return name
 
 def main():
-    print("🚀 开始执行标准化匹配流程...")
-
-    csv_files = [INPUT_MY, INPUT_WORKING, INPUT_CHANNEL, MANUAL_MAP_PATH]
-    convert_all_csv_to_utf8(csv_files)
-
-    my_sum_df = safe_read_csv(INPUT_MY)
-    working_df = safe_read_csv(INPUT_WORKING)
-
-    print(f"读取源文件：\n  📁 {INPUT_MY}\n  📁 {INPUT_WORKING}")
-
-    name_map = load_name_map()
-    manual_map = load_manual_map()
-    print(f"✅ 数据库加载完成，映射总数：{len(name_map)}，人工映射条数：{len(manual_map)}")
-
-    my_sum_df = standardize_my_sum(my_sum_df)
-    save_standardized_my_sum(my_sum_df)
-
-    working_df = standardize_working(working_df, my_sum_df, name_map, manual_map)
-
-    export_unmatched_for_manual(working_df)
-
-    my_sum_out = build_total_df(my_sum_df)
-    working_out = build_total_df(working_df)
-
-    total_df = pd.concat([my_sum_out, working_out], ignore_index=True)
-    total_df.to_csv(OUTPUT_TOTAL, index=False, encoding="utf-8-sig")
-    print(f"✅ 已保存文件：{OUTPUT_TOTAL}，共计 {len(total_df)} 条记录")
-
-    if os.path.exists(INPUT_CHANNEL):
-        existing_channel_df = pd.read_csv(INPUT_CHANNEL, encoding="utf-8-sig")
+    print("开始读取文件...")
+    my_sum = read_csv_auto_encoding(MY_SUM_PATH)
+    working = read_csv_auto_encoding(WORKING_PATH)
+    if not os.path.exists(CHANNEL_DATA_PATH):
+        pd.DataFrame(columns=["原始名", "标准名", "拟匹配频道名", "分组"]).to_csv(CHANNEL_DATA_PATH, index=False)
+    channel_data = read_csv_auto_encoding(CHANNEL_DATA_PATH)
+    network_channels_df = read_csv_auto_encoding(NETWORK_CHANNELS_PATH)
+    if "channel" in network_channels_df.columns:
+        network_col = "channel"
+    elif "name" in network_channels_df.columns:
+        network_col = "name"
     else:
-        existing_channel_df = pd.DataFrame(columns=["频道名", "分组"])
+        print("网络数据库无频道名列，检查文件！")
+        sys.exit(1)
+    network_channels_df = network_channels_df.dropna(subset=[network_col])
+    network_channels_df["std_key"] = network_channels_df[network_col].apply(mechanical_standardize)
+    network_channels = dict(zip(network_channels_df["std_key"], network_channels_df[network_col]))
 
-    manual_map_lower = {k.lower(): v for k, v in manual_map.items()}
+    for col in ["视频编码", "分辨率", "帧率", "音频", "相似度"]:
+        if col not in my_sum.columns:
+            my_sum[col] = ""
+        if col not in working.columns:
+            working[col] = ""
 
-    def replace_name(row):
-        old_name_lower = row["频道名"].lower()
-        if old_name_lower in manual_map_lower:
-            return manual_map_lower[old_name_lower]
-        return row["频道名"]
+    total_before = pd.concat([my_sum, working], ignore_index=True, sort=False)
+    for col in ["频道名","地址","来源","图标","检测时间","分组","视频编码","分辨率","帧率","音频","相似度"]:
+        if col not in total_before.columns:
+            total_before[col] = ""
 
-    existing_channel_df["频道名"] = existing_channel_df.apply(replace_name, axis=1)
-    existing_channel_df.drop_duplicates(subset=["频道名"], keep="first", inplace=True)
+    total_before["std_key"] = total_before["频道名"].apply(mechanical_standardize)
 
-    total_channels = total_df[["频道名", "分组"]]
-    existing_names = set(existing_channel_df["频道名"])
+    channel_data["标准名_std_key"] = channel_data["标准名"].apply(mechanical_standardize)
+    channel_data["原始名_std_key"] = channel_data["原始名"].apply(mechanical_standardize)
 
-    new_channels_df = total_channels[~total_channels["频道名"].isin(existing_names)].copy()
-    new_channels_df["分组"] = "未分类"
+    std_name_dict = dict(zip(channel_data["标准名_std_key"], channel_data["标准名"]))
+    orig_name_dict = dict(zip(channel_data["原始名_std_key"], channel_data["标准名"]))
 
-    combined_channel_df = pd.concat([existing_channel_df, new_channels_df], ignore_index=True)
-    combined_channel_df.drop_duplicates(subset=["频道名"], keep="first", inplace=True)
+    existing_orig_names = set(channel_data["原始名"].fillna("").unique())
 
-    combined_channel_df.to_csv(OUTPUT_CHANNEL, index=False, encoding="utf-8-sig")
+    matched_standard_names = []
+    matched_match_info = []
+    matched_match_score = []
 
-    added = len(new_channels_df)
-    modified = len(existing_channel_df)
-    print(f"✅ 更新 channel.csv 完成，新增频道数：{added}，现有频道数（去重后）：{modified}")
+    precise_match_count = 0
+    fuzzy_match_count = 0
 
-    sort_channel_file(OUTPUT_CHANNEL)
-    sort_manual_map_file(MANUAL_MAP_PATH)
-    print("✅ manual_map.csv 排序完成")
+    print("开始匹配标准化频道名，进度实时显示...")
+
+    total_len = len(total_before)
+    batch_size = 50  # 每批处理数量
+    last_print_time = time.time()
+
+    for start_idx in tqdm(range(0, total_len, batch_size), desc="匹配进度"):
+        end_idx = min(start_idx + batch_size, total_len)
+        batch = total_before.iloc[start_idx:end_idx]
+
+        for idx, row in batch.iterrows():
+            original_name = row["频道名"]
+            key = row["std_key"]
+            matched_name = None
+            match_info = "未匹配"
+            match_score = 0.0
+
+            # 精确匹配第一轮
+            if key in std_name_dict and std_name_dict[key]:
+                matched_name = std_name_dict[key]
+                match_info = "精准匹配"
+                match_score = 100.0
+                precise_match_count += 1
+                if original_name not in existing_orig_names:
+                    new_row = {
+                        "原始名": original_name,
+                        "标准名": matched_name,
+                        "拟匹配频道名": matched_name,
+                        "分组": "未分组"
+                    }
+                    channel_data = pd.concat([channel_data, pd.DataFrame([new_row])], ignore_index=True)
+                    existing_orig_names.add(original_name)
+            elif key in orig_name_dict and orig_name_dict[key]:
+                matched_name = orig_name_dict[key]
+                match_info = "精准匹配"
+                match_score = 100.0
+                precise_match_count += 1
+                if original_name not in existing_orig_names:
+                    new_row = {
+                        "原始名": original_name,
+                        "标准名": matched_name,
+                        "拟匹配频道名": matched_name,
+                        "分组": "未分组"
+                    }
+                    channel_data = pd.concat([channel_data, pd.DataFrame([new_row])], ignore_index=True)
+                    existing_orig_names.add(original_name)
+            else:
+                # 第二轮模糊匹配网络库
+                choices = list(network_channels.keys())
+                matches = process.extract(key, choices, scorer=fuzz.ratio, limit=1)
+                if matches:
+                    best_match_key, score, _ = matches[0]
+                    if score > 90:
+                        matched_name = network_channels[best_match_key]
+                        match_info = f"模糊匹配（>90%）"
+                        match_score = float(score)
+                        fuzzy_match_count += 1
+                        matched_name = clean_network_std_name(matched_name)
+                        if original_name not in existing_orig_names:
+                            new_row = {
+                                "原始名": original_name,
+                                "标准名": matched_name,
+                                "拟匹配频道名": matched_name,
+                                "分组": "待确认分组"
+                            }
+                            channel_data = pd.concat([channel_data, pd.DataFrame([new_row])], ignore_index=True)
+                            existing_orig_names.add(original_name)
+                    else:
+                        matched_name = original_name
+                        match_info = "未匹配"
+                        match_score = float(score)
+                        if original_name not in existing_orig_names:
+                            new_row = {
+                                "原始名": original_name,
+                                "标准名": "",
+                                "拟匹配频道名": matched_name,
+                                "分组": "待标准化"
+                            }
+                            channel_data = pd.concat([channel_data, pd.DataFrame([new_row])], ignore_index=True)
+                            existing_orig_names.add(original_name)
+                else:
+                    matched_name = original_name
+                    match_info = "未匹配"
+                    match_score = 0.0
+                    if original_name not in existing_orig_names:
+                        new_row = {
+                            "原始名": original_name,
+                            "标准名": "",
+                            "拟匹配频道名": matched_name,
+                            "分组": "待标准化"
+                        }
+                        channel_data = pd.concat([channel_data, pd.DataFrame([new_row])], ignore_index=True)
+                        existing_orig_names.add(original_name)
+
+            matched_standard_names.append(matched_name)
+            matched_match_info.append(match_info)
+            matched_match_score.append(match_score)
+
+        now = time.time()
+        if now - last_print_time >= 5:
+            print(f"已处理 {end_idx} / {total_len} 条，精准匹配数：{precise_match_count}，模糊匹配数：{fuzzy_match_count}")
+            last_print_time = now
+
+    total_before["频道名"] = matched_standard_names
+    total_before["匹配信息"] = matched_match_info
+    total_before["匹配值"] = matched_match_score
+
+    std_name_to_group = dict(zip(channel_data["标准名"], channel_data["分组"]))
+
+    def get_group(name):
+        return std_name_to_group.get(name, "未分类")
+
+    total_before["分组"] = total_before["频道名"].apply(get_group)
+
+    print(f"匹配完成，总精准匹配数：{precise_match_count}，总模糊匹配数：{fuzzy_match_count}")
+
+    print("保存文件...")
+    total_before.to_csv(OUTPUT_TOTAL_FINAL, index=False, encoding="utf-8-sig", columns=[
+        "频道名","地址","来源","图标","检测时间","分组","视频编码","分辨率","帧率","音频","相似度","匹配信息","匹配值"
+    ])
+    channel_data.to_csv(OUTPUT_CHANNEL_DATA, index=False, encoding="utf-8-sig")
+
+    print("处理完成！")
 
 if __name__ == "__main__":
-    main()分析这段代码
+    main()
