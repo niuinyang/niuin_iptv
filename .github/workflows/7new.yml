@@ -36,7 +36,7 @@ jobs:
           python standardize_iptv.py
 
       - name: Upload Results
-        uses: actions/upload-artifact@v3
+        uses: actions/upload-artifact@v4
         with:
           name: standardized-results
           path: |
