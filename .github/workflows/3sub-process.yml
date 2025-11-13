@@ -5,6 +5,9 @@ on:
   schedule:
     - cron: '0 18 * * *'  # 每天 UTC 18:00（北京时间 02:00）
 
+permissions:
+  contents: write
+  
 jobs:
   merge_and_push:
     runs-on: ubuntu-latest
