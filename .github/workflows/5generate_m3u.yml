@@ -27,20 +27,6 @@ jobs:
         run: |
           python scripts/8cvs_to_m3u.py
 
-      - name: Upload cached unicast.m3u
-        uses: actions/upload-artifact@v3
-        with:
-          name: unicast-cache
-          path: input/network/unicast.m3u
-
-      - name: Upload generated m3u files
-        uses: actions/upload-artifact@v3
-        with:
-          name: m3u-files
-          path: |
-            output/dxl.m3u
-            output/sjmz.m3u
-
       - name: Commit and push changes with stash and retry
         run: |
           git config user.name "github-actions[bot]"
