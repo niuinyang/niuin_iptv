@@ -24,7 +24,7 @@ jobs:
         run: pip install pandas rapidfuzz requests chardet pypinyin tqdm   # MODIFIED，新增 tqdm
 
       - name: Run standardization script
-        run: python scripts/7standardize_names.py  # MODIFIED，脚本已包含tqdm和5秒输出进度
+        run: python scripts/7test.py  # MODIFIED，脚本已包含tqdm和5秒输出进度
 
       - name: Commit and push results
         env:
