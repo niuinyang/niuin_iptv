@@ -15,11 +15,11 @@ from tqdm import tqdm
 # 配置路径，按需调整
 MY_SUM_PATH = "input/mysource/my_sum.csv"
 WORKING_PATH = "output/working.csv"
-CHANNEL_DATA_PATH = "input/channel_data.csv"
+CHANNEL_DATA_PATH = "input/channel_data.xlsx"  # 改为Excel文件
 NETWORK_CHANNELS_PATH = "input/iptv-org/database/data/channels.csv"
 
 OUTPUT_TOTAL_FINAL = "output/total_final.csv"
-OUTPUT_CHANNEL_DATA = CHANNEL_DATA_PATH  # 直接覆盖更新
+OUTPUT_CHANNEL_DATA = CHANNEL_DATA_PATH  # 输出Excel文件路径
 
 cc = OpenCC('t2s')
 
@@ -29,6 +29,9 @@ def read_csv_auto_encoding(filepath):
         result = chardet.detect(raw)
         encoding = result['encoding'] or 'utf-8'
     return pd.read_csv(filepath, encoding=encoding)
+
+def read_channel_data_excel(filepath):
+    return pd.read_excel(filepath)
 
 def mechanical_standardize(name: str) -> str:
     if not isinstance(name, str):
@@ -57,8 +60,9 @@ def main():
     my_sum = read_csv_auto_encoding(MY_SUM_PATH)
     working = read_csv_auto_encoding(WORKING_PATH)
     if not os.path.exists(CHANNEL_DATA_PATH):
-        pd.DataFrame(columns=["原始名", "标准名", "拟匹配频道名", "分组"]).to_csv(CHANNEL_DATA_PATH, index=False)
-    channel_data = read_csv_auto_encoding(CHANNEL_DATA_PATH)
+        # Excel空表创建
+        pd.DataFrame(columns=["原始名", "标准名", "拟匹配频道名", "分组"]).to_excel(CHANNEL_DATA_PATH, index=False)
+    channel_data = read_channel_data_excel(CHANNEL_DATA_PATH)
     network_channels_df = read_csv_auto_encoding(NETWORK_CHANNELS_PATH)
     if "channel" in network_channels_df.columns:
         network_col = "channel"
@@ -89,8 +93,13 @@ def main():
 
     std_name_dict = dict(zip(channel_data["标准名_std_key"], channel_data["标准名"]))
 
-    # 新增：拟匹配频道名字典，用于判断精准匹配条件
+    # 新增：拟匹配频道名字典，用于判断精准匹配条件（按标准名_std_key）
     std_key_to_pending = dict(zip(channel_data["标准名_std_key"], channel_data["拟匹配频道名"]))
+
+    # 新增：原始名对应标准名字典（按原始名_std_key）
+    orig_name_dict = dict(zip(channel_data["原始名_std_key"], channel_data["标准名"]))
+    # 原始名对应拟匹配频道名字典
+    orig_key_to_pending = dict(zip(channel_data["原始名_std_key"], channel_data["拟匹配频道名"]))
 
     existing_orig_names = set(channel_data["原始名"].fillna("").unique())
 
@@ -131,17 +140,30 @@ def main():
             match_score = 0.0
 
             # ==== 修改的精准匹配逻辑开始 ====
+            # 1. 先用 std_key 去匹配标准名字典，且拟匹配频道名为空
             if key in std_name_dict:
                 pending_val = std_key_to_pending.get(key, "")
                 if pd.isna(pending_val) or pending_val == "":
                     matched_name = std_name_dict[key]
-                    match_info = "精准匹配"
+                    match_info = "精准匹配-标准名"
                     match_score = 100.0
                     precise_match_count += 1
                 else:
-                    matched_name = None  # 拟匹配频道名不为空，进入模糊匹配
+                    matched_name = None  # 拟匹配频道名非空，进入下一步
             else:
-                matched_name = None  # 不存在，进入模糊匹配
+                matched_name = None
+
+            # 2. 如果标准名匹配失败，再用 std_key 去匹配原始名字典，且拟匹配频道名为空
+            if matched_name is None:
+                if key in orig_name_dict:
+                    pending_val = orig_key_to_pending.get(key, "")
+                    if pd.isna(pending_val) or pending_val == "":
+                        matched_name = orig_name_dict[key]
+                        match_info = "精准匹配-原始名"
+                        match_score = 100.0
+                        precise_match_count += 1
+                    else:
+                        matched_name = None  # 拟匹配频道名非空，进入模糊匹配
             # ==== 修改的精准匹配逻辑结束 ====
 
             if matched_name is None:
@@ -198,8 +220,13 @@ def main():
         "频道名","地址","来源","图标","检测时间","分组","视频编码","分辨率","帧率","音频","相似度","匹配信息","匹配值"
     ])
 
-    # 只保存原始的四列，防止写出多余的_std_key辅助列
-    channel_data.to_csv(OUTPUT_CHANNEL_DATA, index=False, encoding="utf-8-sig",
+    # 保存 Excel 文件
+    channel_data.to_excel(OUTPUT_CHANNEL_DATA, index=False,
+                          columns=["原始名", "标准名", "拟匹配频道名", "分组"])
+
+    # 额外保存一份同名 CSV，utf-8-sig 编码
+    csv_path = OUTPUT_CHANNEL_DATA.rsplit('.', 1)[0] + ".csv"
+    channel_data.to_csv(csv_path, index=False, encoding="utf-8-sig",
                         columns=["原始名", "标准名", "拟匹配频道名", "分组"])
 
     print("处理完成！")
