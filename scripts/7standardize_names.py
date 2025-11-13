@@ -183,6 +183,9 @@ def main():
 
     total_before["分组"] = total_before["频道名"].apply(get_group)
 
+    # ====== 新增：对 channel_data 按 “原始名” 去重，保留首次出现，防止覆盖 ======
+    channel_data = channel_data.drop_duplicates(subset=["原始名"], keep='first')
+
     print(f"匹配完成，总精准匹配数：{precise_match_count}，总模糊匹配数：{fuzzy_match_count}")
 
     print("保存文件...")
