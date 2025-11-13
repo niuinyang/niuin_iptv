@@ -16,7 +16,7 @@ from tqdm import tqdm
 MY_SUM_PATH = "input/mysource/my_sum.csv"
 WORKING_PATH = "output/working.csv"
 CHANNEL_DATA_PATH = "input/channel_data.csv"
-NETWORK_CHANNELS_PATH = "input/channels.csv"
+NETWORK_CHANNELS_PATH = "input/iptv-org/database/data/channels.csv"
 
 OUTPUT_TOTAL_FINAL = "output/total_final.csv"
 OUTPUT_CHANNEL_DATA = CHANNEL_DATA_PATH  # 直接覆盖更新
