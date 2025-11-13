@@ -1,0 +1,44 @@
+name: IPTV 标准化匹配流程
+
+on:
+  workflow_dispatch:
+  schedule:
+    - cron: '0 12 * * *'  # 每天 UTC 12:00 触发
+
+jobs:
+  standardize:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Cache pip
+        uses: actions/cache@v3
+        with:
+          path: ~/.cache/pip
+          key: ${{ runner.os }}-pip-${{ hashFiles('requirements.txt') }}
+          restore-keys: |
+            ${{ runner.os }}-pip-
+
+      - name: Set up Python 3.11
+        uses: actions/setup-python@v4
+        with:
+          python-version: '3.11'
+
+      - name: Install dependencies
+        run: |
+          python -m pip install --upgrade pip
+          pip install -r requirements.txt
+
+      - name: Run IPTV Standardization Script
+        run: |
+          python standardize_iptv.py
+
+      - name: Upload Results
+        uses: actions/upload-artifact@v3
+        with:
+          name: standardized-results
+          path: |
+            output/total_final.csv
+            input/channel_data.csv
