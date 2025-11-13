@@ -1,0 +1,36 @@
+name: 5生成m3u文件
+
+on:
+  workflow_dispatch:
+  schedule:
+    - cron: "0 12 * * *"  # UTC时间每天12点运行（北京时间20点）
+
+jobs:
+  generate:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Set up Python 3.10
+        uses: actions/setup-python@v4
+        with:
+          python-version: '3.10'
+
+      - name: Install dependencies
+        run: |
+          python -m pip install --upgrade pip
+          pip install aiohttp pypinyin
+
+      - name: Run 8cvs_to_m3u.py script
+        run: |
+          python scripts/8cvs_to_m3u.py
+
+      - name: Upload generated M3U files
+        uses: actions/upload-artifact@v3
+        with:
+          name: m3u-files
+          path: |
+            output/dxl.m3u
+            output/sjmz.m3u
