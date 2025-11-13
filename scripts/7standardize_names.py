@@ -88,7 +88,9 @@ def main():
     channel_data["原始名_std_key"] = channel_data["原始名"].apply(mechanical_standardize)
 
     std_name_dict = dict(zip(channel_data["标准名_std_key"], channel_data["标准名"]))
-    orig_name_dict = dict(zip(channel_data["原始名_std_key"], channel_data["标准名"]))
+
+    # 新增：拟匹配频道名字典，用于判断精准匹配条件
+    std_key_to_pending = dict(zip(channel_data["标准名_std_key"], channel_data["拟匹配频道名"]))
 
     existing_orig_names = set(channel_data["原始名"].fillna("").unique())
 
@@ -128,18 +130,21 @@ def main():
             match_info = "未匹配"
             match_score = 0.0
 
-            # 修改：精准匹配时不写入channel_data
-            if key in std_name_dict and std_name_dict[key]:
-                matched_name = std_name_dict[key]
-                match_info = "精准匹配"
-                match_score = 100.0
-                precise_match_count += 1
-            elif key in orig_name_dict and orig_name_dict[key]:
-                matched_name = orig_name_dict[key]
-                match_info = "精准匹配"
-                match_score = 100.0
-                precise_match_count += 1
+            # ==== 修改的精准匹配逻辑开始 ====
+            if key in std_name_dict:
+                pending_val = std_key_to_pending.get(key, "")
+                if pd.isna(pending_val) or pending_val == "":
+                    matched_name = std_name_dict[key]
+                    match_info = "精准匹配"
+                    match_score = 100.0
+                    precise_match_count += 1
+                else:
+                    matched_name = None  # 拟匹配频道名不为空，进入模糊匹配
             else:
+                matched_name = None  # 不存在，进入模糊匹配
+            # ==== 修改的精准匹配逻辑结束 ====
+
+            if matched_name is None:
                 choices = list(network_channels.keys())
                 matches = process.extract(key, choices, scorer=fuzz.ratio, limit=1)
                 if matches:
@@ -200,6 +205,4 @@ def main():
     print("处理完成！")
 
 if __name__ == "__main__":
-    main()在这个代码的基础上，修改如下
-第一轮精确匹配时，原来是匹配原始名，且标准名不为空的是为精确匹配，标准名为空的视为未匹配，进入下一轮匹配
-修改逻辑为匹配原始名，且拟匹配名为空的是为精确匹配，如果拟匹配名不为空，则视为未匹配，进入下一轮匹配
+    main()
