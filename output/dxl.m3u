@@ -1,6 +1,4 @@
 #EXTM3U
-#EXTINF:-1 tvg-name="CCTV1" group-title="央视频道" tvg-logo="png/CCTV1.png", CCTV1
-http://[2409:8087:3c02:0021:0000:0001:0000:100a]:6410/shandong_cabletv.live.zte.com////CHANNEL00000311/index.m3u8?IASHttpSessionId=
 #EXTINF:-1 tvg-name="CCTV1" group-title="央视频道" tvg-logo="https://raw.githubusercontent.com/plsy1/iptv/main/logo/CCTV1.png" catchup="default" catchup-source="rtsp://112.245.125.39:1554/iptv/Tvod/iptv/001/001/ch12122514263996485740.rsc?tvdr={utc:YmdHMS}GMT-{utcend:YmdHMS}GMT", CCTV1
 rtsp://112.245.125.39:1554/iptv/import/Tvod/iptv/001/001/ch12122514263996485740.rsc/69958_Uni.sdp
 #EXTINF:-1 tvg-name="CCTV1" group-title="央视频道" tvg-logo="png/CCTV1.png", CCTV1
@@ -15,6 +13,8 @@ http://150.138.8.143/00/SNM/CHANNEL00004003/index.m3u8
 http://150.138.8.143/00/SNM/CHANNEL00000001/index.m3u8
 #EXTINF:-1 tvg-name="CCTV1" group-title="央视频道" tvg-logo="png/CCTV1.png", CCTV1
 http://123.235.73.237:9901/tsfile/live/0002_2.m3u8?key=txiptv
+#EXTINF:-1 tvg-name="CCTV1" group-title="央视频道" tvg-logo="png/CCTV1.png", CCTV1
+http://[2409:8087:3c02:0021:0000:0001:0000:100a]:6410/shandong_cabletv.live.zte.com////CHANNEL00000311/index.m3u8?IASHttpSessionId=
 #EXTINF:-1 tvg-name="CCTV1" group-title="央视频道" tvg-logo="png/CCTV1.png", CCTV1
 https://www.freetv.top/migu/608807420.m3u8?migutoken=b0831136e327a93587e1920b5595d227c66a7f1a6aabb8e7532bc0682db88a37af6a27b88fde476a02c5f83db38f3b3e864bcf981c57f7fed9877095a1e2fac1a149f0f8869c5c1dc147bee7be
 #EXTINF:-1 tvg-name="CCTV1" group-title="央视频道" tvg-logo="png/CCTV1.png", CCTV1
@@ -75,8 +75,6 @@ https://www.freetv.top/migu/608807420.m3u8?migutoken=ba552a2083efcc0e9cac8e15f58
 https://www.freetv.top/migu/608807420.m3u8?migutoken=b6a50213ea411edfdeda0e4c7abb5985d6a4f4c3d2f34274d4906fe15400b56f0a5a4ae5fb1d8e0ba25591ea3977d8cc6e1a4faa5a316308a146dfe83d122086fb13709fb6495fea020b068333
 #EXTINF:-1 tvg-name="CCTV1" group-title="央视频道" tvg-logo="png/CCTV1.png", CCTV1
 http://61.156.228.12:8154/tsfile/live/0001_1.m3u8
-#EXTINF:-1 tvg-name="CCTV2" group-title="央视频道" tvg-logo="png/CCTV2.png", CCTV2
-http://[2409:8087:3c02:0021:0000:0001:0000:100a]:6410/shandong_cabletv.live.zte.com////CHANNEL00000317/index.m3u8?IASHttpSessionId=
 #EXTINF:-1 tvg-name="CCTV2" group-title="央视频道" tvg-logo="https://raw.githubusercontent.com/plsy1/iptv/main/logo/CCTV2.png" catchup="default" catchup-source="rtsp://112.245.125.42:1554/iptv/Tvod/iptv/001/001/ch15111015505054435886.rsc?tvdr={utc:YmdHMS}GMT-{utcend:YmdHMS}GMT", CCTV2
 rtsp://112.245.125.42:1554/iptv/import/Tvod/iptv/001/001/ch15111015505054435886.rsc/70018_Uni.sdp
 #EXTINF:-1 tvg-name="CCTV2" group-title="央视频道" tvg-logo="png/CCTV2.png", CCTV2
@@ -85,6 +83,8 @@ http://192.168.31.2:4022/rtp/239.21.1.151:5002
 http://150.138.8.143/00/SNM/CHANNEL00000317/index.m3u8
 #EXTINF:-1 tvg-name="CCTV2" group-title="央视频道" tvg-logo="png/CCTV2.png", CCTV2
 http://123.235.73.237:9901/tsfile/live/0002_3.m3u8?key=txiptv
+#EXTINF:-1 tvg-name="CCTV2" group-title="央视频道" tvg-logo="png/CCTV2.png", CCTV2
+http://[2409:8087:3c02:0021:0000:0001:0000:100a]:6410/shandong_cabletv.live.zte.com////CHANNEL00000317/index.m3u8?IASHttpSessionId=
 #EXTINF:-1 tvg-name="CCTV2" group-title="央视频道" tvg-logo="png/CCTV2.png", CCTV2
 https://migu.188766.xyz/?migutoken=774f82fbaa4fae150ae614c08ed44159&id=CCTV2&type=yy
 #EXTINF:-1 tvg-name="CCTV2" group-title="央视频道" tvg-logo="png/CCTV2.png", CCTV2
@@ -157,8 +157,6 @@ http://123.130.84.106:8154/tsfile/live/0002_1.m3u8
 http://111.221.137.155:44330/tsfile/live/0002_1.m3u8?key=txiptv
 #EXTINF:-1 tvg-name="CCTV2" group-title="央视频道" tvg-logo="png/CCTV2.png", CCTV2
 http://153.0.171.163:9901/tsfile/live/0002_1.m3u8?key=txiptv&playlive=1&authid=0
-#EXTINF:-1 tvg-name="CCTV3" group-title="央视频道" tvg-logo="png/CCTV3.png", CCTV3
-http://[2409:8087:3c02:0021:0000:0001:0000:100a]:6410/shandong_cabletv.live.zte.com////CHANNEL00000359/index.m3u8?IASHttpSessionId=
 #EXTINF:-1 tvg-name="CCTV3" group-title="央视频道" tvg-logo="png/CCTV3.png" catchup="default" catchup-source="rtsp://112.245.125.39:1554/iptv/import/Tvod/iptv/001/001/ch21072816504132734115.rsc/91877_Uni.sdp?tvdr={utc:YmdHMS}GMT-{utcend:YmdHMS}GMT", CCTV3
 rtsp://112.245.125.48:1554/iptv/import/Tvod/iptv/001/001/ch21072816504132734115.rsc/91877_Uni.sdp
 #EXTINF:-1 tvg-name="CCTV3" group-title="央视频道" tvg-logo="png/CCTV3.png" catchup="default" catchup-source="rtsp://112.245.125.39:1554/iptv/import/Tvod/iptv/001/001/ch12101814165876183439.rsc/70035_Uni.sdp?tvdr={utc:YmdHMS}GMT-{utcend:YmdHMS}GMT", CCTV3
@@ -171,6 +169,8 @@ http://150.138.8.143/00/SNM/CHANNEL00000359/index.m3u8
 http://150.138.8.143/00/SNM/CHANNEL00000003/index.m3u8
 #EXTINF:-1 tvg-name="CCTV3" group-title="央视频道" tvg-logo="png/CCTV3.png", CCTV3
 http://123.235.73.237:9901/tsfile/live/0002_4.m3u8?key=txiptv
+#EXTINF:-1 tvg-name="CCTV3" group-title="央视频道" tvg-logo="png/CCTV3.png", CCTV3
+http://[2409:8087:3c02:0021:0000:0001:0000:100a]:6410/shandong_cabletv.live.zte.com////CHANNEL00000359/index.m3u8?IASHttpSessionId=
 #EXTINF:-1 tvg-name="CCTV3" group-title="央视频道" tvg-logo="png/CCTV3.png", CCTV3
 https://migu.188766.xyz/?migutoken=da083286299f5dbb4245ac3fc367d368&id=CCTV3&type=yy
 #EXTINF:-1 tvg-name="CCTV3" group-title="央视频道" tvg-logo="png/CCTV3.png", CCTV3
@@ -227,10 +227,6 @@ http://112.132.10.54:9901/tsfile/live/0003_1.m3u8?key=txiptv&playlive=1&authid=0
 http://123.129.70.178:9901/tsfile/live/0003_1.m3u8
 #EXTINF:-1 tvg-name="CCTV3" group-title="央视频道" tvg-logo="png/CCTV3.png", CCTV3
 http://123.129.70.178:9901/tsfile/live/0003_1.m3u8?key=txiptv&playlive=1&authid=0
-#EXTINF:-1 tvg-name="CCTV4" group-title="央视频道" tvg-logo="png/CCTV4.png", CCTV4
-http://[2409:8087:3c02:0021:0000:0001:0000:100a]:6410/shandong_cabletv.live.zte.com////CHANNEL00000320/index.m3u8?IASHttpSessionId=
-#EXTINF:-1 tvg-name="CCTV4" group-title="央视频道" tvg-logo="png/CCTV4.png", CCTV4
-http://[2409:8087:3c02:0021:0000:0001:0000:100a]:6410/shandong_cabletv.live.zte.com////CHANNEL00000382/index.m3u8?IASHttpSessionId=
 #EXTINF:-1 tvg-name="CCTV4" group-title="央视频道" tvg-logo="https://raw.githubusercontent.com/plsy1/iptv/main/logo/CCTV4.png" catchup="default" catchup-source="rtsp://112.245.125.38:1554/iptv/Tvod/iptv/001/001/ch17121814361050007455.rsc?tvdr={utc:YmdHMS}GMT-{utcend:YmdHMS}GMT", CCTV4
 rtsp://112.245.125.38:1554/iptv/import/Tvod/iptv/001/001/ch17121814361050007455.rsc/75843_Uni.sdp
 #EXTINF:-1 tvg-name="CCTV4" group-title="央视频道" tvg-logo="png/CCTV4.png" catchup="default" catchup-source="rtsp://112.245.125.39:1554/iptv/import/Tvod/iptv/001/001/ch23122814382128126762.rsc/99912_Uni.sdp?tvdr={utc:YmdHMS}GMT-{utcend:YmdHMS}GMT", CCTV4
@@ -241,6 +237,10 @@ http://192.168.31.2:4022/rtp/239.21.1.154:5002
 http://150.138.8.143/00/SNM/CHANNEL00000320/index.m3u8
 #EXTINF:-1 tvg-name="CCTV4" group-title="央视频道" tvg-logo="png/CCTV4.png", CCTV4
 http://123.235.73.237:9901/tsfile/live/0002_5.m3u8?key=txiptv
+#EXTINF:-1 tvg-name="CCTV4" group-title="央视频道" tvg-logo="png/CCTV4.png", CCTV4
+http://[2409:8087:3c02:0021:0000:0001:0000:100a]:6410/shandong_cabletv.live.zte.com////CHANNEL00000320/index.m3u8?IASHttpSessionId=
+#EXTINF:-1 tvg-name="CCTV4" group-title="央视频道" tvg-logo="png/CCTV4.png", CCTV4
+http://[2409:8087:3c02:0021:0000:0001:0000:100a]:6410/shandong_cabletv.live.zte.com////CHANNEL00000382/index.m3u8?IASHttpSessionId=
 #EXTINF:-1 tvg-name="CCTV4" group-title="央视频道" tvg-logo="png/CCTV4.png", CCTV4
 https://migu.188766.xyz/?migutoken=1faf3cb03c99a071b8a3b49d219626a9&id=CCTV4%E6%AC%A7%E6%B4%B2&type=yy
 #EXTINF:-1 tvg-name="CCTV4" group-title="央视频道" tvg-logo="png/CCTV4.png", CCTV4
@@ -289,24 +289,22 @@ http://153.0.171.163:9901/tsfile/live/0004_1.m3u8?key=txiptv&playlive=1&authid=0
 http://124.116.183.146:9901/tsfile/live/0004_1.m3u8
 #EXTINF:-1 tvg-name="CCTV4" group-title="央视频道" tvg-logo="png/CCTV4.png", CCTV4
 http://123.130.84.106:8154/tsfile/live/0004_1.m3u8?key=txiptv&playlive=1&authid=0
-#EXTINF:-1 tvg-name="CCTV4美洲" group-title="央视频道" tvg-logo="png/CCTV4美洲.png", CCTV4美洲
-http://[2409:8087:3c02:0021:0000:0001:0000:100a]:6410/shandong_cabletv.live.zte.com////CHANNEL00000351/index.m3u8?IASHttpSessionId=
 #EXTINF:-1 tvg-name="CCTV4美洲" group-title="央视频道" tvg-logo="png/CCTV4美洲.png" catchup="default" catchup-source="rtsp://112.245.125.39:1554/iptv/import/Tvod/iptv/001/001/ch21062215392161397058.rsc/91682_Uni.sdp?tvdr={utc:YmdHMS}GMT-{utcend:YmdHMS}GMT", CCTV4美洲
 rtsp://112.245.125.47:1554/iptv/import/Tvod/iptv/001/001/ch21062215392161397058.rsc/91682_Uni.sdp
 #EXTINF:-1 tvg-name="CCTV4美洲" group-title="央视频道" tvg-logo="png/CCTV4美洲.png", CCTV4美洲
 http://192.168.31.2:4022/rtp/239.21.2.29:5002
 #EXTINF:-1 tvg-name="CCTV4美洲" group-title="央视频道" tvg-logo="png/CCTV4美洲.png", CCTV4美洲
 http://150.138.8.143/00/SNM/CHANNEL00000351/index.m3u8
-#EXTINF:-1 tvg-name="CCTV4欧洲" group-title="央视频道" tvg-logo="png/CCTV4欧洲.png", CCTV4欧洲
-http://[2409:8087:3c02:0021:0000:0001:0000:100a]:6410/shandong_cabletv.live.zte.com////CHANNEL00000350/index.m3u8?IASHttpSessionId=
+#EXTINF:-1 tvg-name="CCTV4美洲" group-title="央视频道" tvg-logo="png/CCTV4美洲.png", CCTV4美洲
+http://[2409:8087:3c02:0021:0000:0001:0000:100a]:6410/shandong_cabletv.live.zte.com////CHANNEL00000351/index.m3u8?IASHttpSessionId=
 #EXTINF:-1 tvg-name="CCTV4欧洲" group-title="央视频道" tvg-logo="png/CCTV4欧洲.png" catchup="default" catchup-source="rtsp://112.245.125.39:1554/iptv/import/Tvod/iptv/001/001/ch21062215382556856499.rsc/91655_Uni.sdp?tvdr={utc:YmdHMS}GMT-{utcend:YmdHMS}GMT", CCTV4欧洲
 rtsp://112.245.125.47:1554/iptv/import/Tvod/iptv/001/001/ch21062215382556856499.rsc/91655_Uni.sdp
 #EXTINF:-1 tvg-name="CCTV4欧洲" group-title="央视频道" tvg-logo="png/CCTV4欧洲.png", CCTV4欧洲
 http://192.168.31.2:4022/rtp/239.21.2.28:5002
 #EXTINF:-1 tvg-name="CCTV4欧洲" group-title="央视频道" tvg-logo="png/CCTV4欧洲.png", CCTV4欧洲
 http://150.138.8.143/00/SNM/CHANNEL00000350/index.m3u8
-#EXTINF:-1 tvg-name="CCTV5" group-title="央视频道" tvg-logo="png/CCTV5.png", CCTV5
-http://[2409:8087:3c02:0021:0000:0001:0000:100a]:6410/shandong_cabletv.live.zte.com////CHANNEL00000360/index.m3u8?IASHttpSessionId=
+#EXTINF:-1 tvg-name="CCTV4欧洲" group-title="央视频道" tvg-logo="png/CCTV4欧洲.png", CCTV4欧洲
+http://[2409:8087:3c02:0021:0000:0001:0000:100a]:6410/shandong_cabletv.live.zte.com////CHANNEL00000350/index.m3u8?IASHttpSessionId=
 #EXTINF:-1 tvg-name="CCTV5" group-title="央视频道" tvg-logo="https://raw.githubusercontent.com/plsy1/iptv/main/logo/CCTV5.png" catchup="default" catchup-source="rtsp://112.245.125.42:1554/iptv/Tvod/iptv/001/001/ch21072816512692879794.rsc?tvdr={utc:YmdHMS}GMT-{utcend:YmdHMS}GMT", CCTV5
 rtsp://112.245.125.42:1554/iptv/import/Tvod/iptv/001/001/ch21072816512692879794.rsc/91882_Uni.sdp
 #EXTINF:-1 tvg-name="CCTV5" group-title="央视频道" tvg-logo="png/CCTV5.png" catchup="default" catchup-source="rtsp://112.245.125.39:1554/iptv/import/Tvod/iptv/001/001/ch12101814173650174727.rsc/69979_Uni.sdp?tvdr={utc:YmdHMS}GMT-{utcend:YmdHMS}GMT", CCTV5
@@ -317,6 +315,8 @@ http://192.168.31.2:4022/rtp/239.21.2.46:5002
 http://150.138.8.143/00/SNM/CHANNEL00000360/index.m3u8
 #EXTINF:-1 tvg-name="CCTV5" group-title="央视频道" tvg-logo="png/CCTV5.png", CCTV5
 http://123.235.73.237:9901/tsfile/live/0002_6.m3u8?key=txiptv
+#EXTINF:-1 tvg-name="CCTV5" group-title="央视频道" tvg-logo="png/CCTV5.png", CCTV5
+http://[2409:8087:3c02:0021:0000:0001:0000:100a]:6410/shandong_cabletv.live.zte.com////CHANNEL00000360/index.m3u8?IASHttpSessionId=
 #EXTINF:-1 tvg-name="CCTV5" group-title="央视频道" tvg-logo="png/CCTV5.png", CCTV5
 https://migu.188766.xyz/?migutoken=58cb375aab34c77d3161b869c3943c66&id=CCTV5&type=yy
 #EXTINF:-1 tvg-name="CCTV5" group-title="央视频道" tvg-logo="png/CCTV5.png", CCTV5
@@ -369,8 +369,6 @@ http://123.129.70.178:9901/tsfile/live/0005_1.m3u8?key=txiptv&playlive=1&authid=
 http://112.132.10.54:9901/tsfile/live/0005_1.m3u8?key=txiptv&playlive=1&authid=0
 #EXTINF:-1 tvg-name="CCTV5" group-title="央视频道" tvg-logo="png/CCTV5.png", CCTV5
 https://stream1.freetv.fun/1d543a9b3d1f95681056c79434afa52f300eeb7e90d80779c6de9d945a80172e.m3u8
-#EXTINF:-1 tvg-name="CCTV5+" group-title="央视频道" tvg-logo="png/CCTV5+.png", CCTV5+
-http://[2409:8087:3c02:0021:0000:0001:0000:100a]:6410/shandong_cabletv.live.zte.com////CHANNEL00000316/index.m3u8?IASHttpSessionId=
 #EXTINF:-1 tvg-name="CCTV5+" group-title="央视频道" tvg-logo="png/CCTV5+.png" catchup="default" catchup-source="rtsp://112.245.125.39:1554/iptv/import/Tvod/iptv/001/001/ch11061217321508656858.rsc/70007_Uni.sdp?tvdr={utc:YmdHMS}GMT-{utcend:YmdHMS}GMT", CCTV5+
 rtsp://112.245.125.42:1554/iptv/import/Tvod/iptv/001/001/ch11061217321508656858.rsc/70007_Uni.sdp
 #EXTINF:-1 tvg-name="CCTV5+" group-title="央视频道" tvg-logo="png/CCTV5+.png", CCTV5+
@@ -379,6 +377,8 @@ http://192.168.31.2:4022/rtp/239.21.1.142:5002
 http://150.138.8.143/00/SNM/CHANNEL00000316/index.m3u8
 #EXTINF:-1 tvg-name="CCTV5+" group-title="央视频道" tvg-logo="png/CCTV5+.png", CCTV5+
 http://123.235.73.237:9901/tsfile/live/0005_1.m3u8?key=txiptv
+#EXTINF:-1 tvg-name="CCTV5+" group-title="央视频道" tvg-logo="png/CCTV5+.png", CCTV5+
+http://[2409:8087:3c02:0021:0000:0001:0000:100a]:6410/shandong_cabletv.live.zte.com////CHANNEL00000316/index.m3u8?IASHttpSessionId=
 #EXTINF:-1 tvg-name="CCTV5+" group-title="央视频道" tvg-logo="png/CCTV5+.png", CCTV5+
 https://migu.188766.xyz/?migutoken=84d35db7b79206c61f6e0f17c60ab18d&id=CCTV5p&type=yy
 #EXTINF:-1 tvg-name="CCTV5+" group-title="央视频道" tvg-logo="png/CCTV5+.png", CCTV5+
@@ -417,8 +417,6 @@ http://220.170.241.204:9901/tsfile/live/0016_1.m3u8
 http://220.170.241.204:9901/tsfile/live/0016_1.m3u8?key=txiptv&playlive=1&authid=0
 #EXTINF:-1 tvg-name="CCTV5+" group-title="央视频道" tvg-logo="png/CCTV5+.png", CCTV5+
 http://61.156.228.12:8154/tsfile/live/0016_1.m3u8
-#EXTINF:-1 tvg-name="CCTV6" group-title="央视频道" tvg-logo="png/CCTV6.png", CCTV6
-http://[2409:8087:3c02:0021:0000:0001:0000:100a]:6410/shandong_cabletv.live.zte.com////CHANNEL00000361/index.m3u8?IASHttpSessionId=
 #EXTINF:-1 tvg-name="CCTV6" group-title="央视频道" tvg-logo="png/CCTV6.png" catchup="default" catchup-source="rtsp://112.245.125.39:1554/iptv/import/Tvod/iptv/001/001/ch21072816530254611367.rsc/91842_Uni.sdp?tvdr={utc:YmdHMS}GMT-{utcend:YmdHMS}GMT", CCTV6
 rtsp://112.245.125.38:1554/iptv/import/Tvod/iptv/001/001/ch21072816530254611367.rsc/91842_Uni.sdp
 #EXTINF:-1 tvg-name="CCTV6" group-title="央视频道" tvg-logo="png/CCTV6.png" catchup="default" catchup-source="rtsp://112.245.125.39:1554/iptv/import/Tvod/iptv/001/001/ch12101814181257469325.rsc/70059_Uni.sdp?tvdr={utc:YmdHMS}GMT-{utcend:YmdHMS}GMT", CCTV6
@@ -431,6 +429,8 @@ http://150.138.8.143/00/SNM/CHANNEL00000361/index.m3u8
 http://150.138.8.143/00/SNM/CHANNEL00000006/index.m3u8
 #EXTINF:-1 tvg-name="CCTV6" group-title="央视频道" tvg-logo="png/CCTV6.png", CCTV6
 http://123.235.73.237:9901/tsfile/live/0002_7.m3u8?key=txiptv
+#EXTINF:-1 tvg-name="CCTV6" group-title="央视频道" tvg-logo="png/CCTV6.png", CCTV6
+http://[2409:8087:3c02:0021:0000:0001:0000:100a]:6410/shandong_cabletv.live.zte.com////CHANNEL00000361/index.m3u8?IASHttpSessionId=
 #EXTINF:-1 tvg-name="CCTV6" group-title="央视频道" tvg-logo="png/CCTV6.png", CCTV6
 https://migu.188766.xyz/?migutoken=8d5592cd678c96a3cb447e539615b4b7&id=CCTV6&type=yy
 #EXTINF:-1 tvg-name="CCTV6" group-title="央视频道" tvg-logo="png/CCTV6.png", CCTV6
@@ -487,8 +487,6 @@ http://124.128.73.58:9901/tsfile/live/0006_1.m3u8
 http://123.129.70.178:9901/tsfile/live/0006_1.m3u8
 #EXTINF:-1 tvg-name="CCTV6" group-title="央视频道" tvg-logo="png/CCTV6.png", CCTV6
 http://123.129.70.178:9901/tsfile/live/0006_1.m3u8?key=txiptv&playlive=1&authid=0
-#EXTINF:-1 tvg-name="CCTV7" group-title="央视频道" tvg-logo="png/CCTV7.png", CCTV7
-http://[2409:8087:3c02:0021:0000:0001:0000:100a]:6410/shandong_cabletv.live.zte.com////CHANNEL00000318/index.m3u8?IASHttpSessionId=
 #EXTINF:-1 tvg-name="CCTV7" group-title="央视频道" tvg-logo="https://raw.githubusercontent.com/plsy1/iptv/main/logo/CCTV7.png" catchup="default" catchup-source="rtsp://112.245.125.38:1554/iptv/Tvod/iptv/001/001/ch15111015535263088598.rsc?tvdr={utc:YmdHMS}GMT-{utcend:YmdHMS}GMT", CCTV7
 rtsp://112.245.125.38:1554/iptv/import/Tvod/iptv/001/001/ch15111015535263088598.rsc/69960_Uni.sdp
 #EXTINF:-1 tvg-name="CCTV7" group-title="央视频道" tvg-logo="png/CCTV7.png", CCTV7
@@ -497,6 +495,8 @@ http://192.168.31.2:4022/rtp/239.21.1.152:5002
 http://150.138.8.143/00/SNM/CHANNEL00000318/index.m3u8
 #EXTINF:-1 tvg-name="CCTV7" group-title="央视频道" tvg-logo="png/CCTV7.png", CCTV7
 http://123.235.73.237:9901/tsfile/live/0002_8.m3u8?key=txiptv
+#EXTINF:-1 tvg-name="CCTV7" group-title="央视频道" tvg-logo="png/CCTV7.png", CCTV7
+http://[2409:8087:3c02:0021:0000:0001:0000:100a]:6410/shandong_cabletv.live.zte.com////CHANNEL00000318/index.m3u8?IASHttpSessionId=
 #EXTINF:-1 tvg-name="CCTV7" group-title="央视频道" tvg-logo="png/CCTV7.png", CCTV7
 https://migu.188766.xyz/?migutoken=e2f1ac42e0c6604b7328f0ab71789d59&id=CCTV7&type=yy
 #EXTINF:-1 tvg-name="CCTV7" group-title="央视频道" tvg-logo="png/CCTV7.png", CCTV7
@@ -547,8 +547,6 @@ http://153.0.171.163:9901/tsfile/live/0007_1.m3u8?key=txiptv&playlive=1&authid=0
 http://113.15.109.216:59901/tsfile/live/1002_1.m3u8?key=txiptv&playlive=1&authid=0
 #EXTINF:-1 tvg-name="CCTV7" group-title="央视频道" tvg-logo="png/CCTV7.png", CCTV7
 http://183.11.239.36:808/hls/25/index.m3u8
-#EXTINF:-1 tvg-name="CCTV8" group-title="央视频道" tvg-logo="png/CCTV8.png", CCTV8
-http://[2409:8087:3c02:0021:0000:0001:0000:100a]:6410/shandong_cabletv.live.zte.com////CHANNEL00000362/index.m3u8?IASHttpSessionId=
 #EXTINF:-1 tvg-name="CCTV8" group-title="央视频道" tvg-logo="https://raw.githubusercontent.com/plsy1/iptv/main/logo/CCTV8.png" catchup="default" catchup-source="rtsp://112.245.125.38:1554/iptv/Tvod/iptv/001/001/ch21072816531463294165.rsc?tvdr={utc:YmdHMS}GMT-{utcend:YmdHMS}GMT", CCTV8
 rtsp://112.245.125.38:1554/iptv/import/Tvod/iptv/001/001/ch21072816531463294165.rsc/91850_Uni.sdp
 #EXTINF:-1 tvg-name="CCTV8" group-title="央视频道" tvg-logo="png/CCTV8.png" catchup="default" catchup-source="rtsp://112.245.125.39:1554/iptv/import/Tvod/iptv/001/001/ch12101814184171314624.rsc/70064_Uni.sdp?tvdr={utc:YmdHMS}GMT-{utcend:YmdHMS}GMT", CCTV8
@@ -561,6 +559,8 @@ http://150.138.8.143/00/SNM/CHANNEL00000362/index.m3u8
 http://150.138.8.143/00/SNM/CHANNEL00000008/index.m3u8
 #EXTINF:-1 tvg-name="CCTV8" group-title="央视频道" tvg-logo="png/CCTV8.png", CCTV8
 http://123.235.73.237:9901/tsfile/live/0002_9.m3u8?key=txiptv
+#EXTINF:-1 tvg-name="CCTV8" group-title="央视频道" tvg-logo="png/CCTV8.png", CCTV8
+http://[2409:8087:3c02:0021:0000:0001:0000:100a]:6410/shandong_cabletv.live.zte.com////CHANNEL00000362/index.m3u8?IASHttpSessionId=
 #EXTINF:-1 tvg-name="CCTV8" group-title="央视频道" tvg-logo="png/CCTV8.png", CCTV8
 https://migu.188766.xyz/?migutoken=739ed6e939bd78e678829228497f93aa&id=CCTV8&type=yy
 #EXTINF:-1 tvg-name="CCTV8" group-title="央视频道" tvg-logo="png/CCTV8.png", CCTV8
@@ -617,8 +617,6 @@ http://123.129.70.178:9901/tsfile/live/0008_1.m3u8?key=txiptv&playlive=1&authid=
 http://123.129.70.178:9901/tsfile/live/0008_1.m3u8
 #EXTINF:-1 tvg-name="CCTV8" group-title="央视频道" tvg-logo="png/CCTV8.png", CCTV8
 https://www.freetv.top/migu/624878356.m3u8?migutoken=45e1223de8d63b87eeb20d81c0f3b54f9ae9d05c04c31dd7cd16e34dfb7e87e89af131f9f770926ca52aa06ab7e7813505da9344e1536c4e9b912e68832036d923942711ce5a54ba8d39e2db5f
-#EXTINF:-1 tvg-name="CCTV9" group-title="央视频道" tvg-logo="png/CCTV9.png", CCTV9
-http://[2409:8087:3c02:0021:0000:0001:0000:100a]:6410/shandong_cabletv.live.zte.com////CHANNEL00000319/index.m3u8?IASHttpSessionId=
 #EXTINF:-1 tvg-name="CCTV9" group-title="央视频道" tvg-logo="png/CCTV9.png" catchup="default" catchup-source="rtsp://112.245.125.39:1554/iptv/import/Tvod/iptv/001/001/ch15050917541424212319.rsc/70042_Uni.sdp?tvdr={utc:YmdHMS}GMT-{utcend:YmdHMS}GMT", CCTV9
 rtsp://112.245.125.48:1554/iptv/import/Tvod/iptv/001/001/ch15050917541424212319.rsc/70042_Uni.sdp
 #EXTINF:-1 tvg-name="CCTV9" group-title="央视频道" tvg-logo="png/CCTV9.png", CCTV9
@@ -627,6 +625,8 @@ http://192.168.31.2:4022/rtp/239.21.1.153:5002
 http://150.138.8.143/00/SNM/CHANNEL00000319/index.m3u8
 #EXTINF:-1 tvg-name="CCTV9" group-title="央视频道" tvg-logo="png/CCTV9.png", CCTV9
 http://123.235.73.237:9901/tsfile/live/0002_10.m3u8?key=txiptv
+#EXTINF:-1 tvg-name="CCTV9" group-title="央视频道" tvg-logo="png/CCTV9.png", CCTV9
+http://[2409:8087:3c02:0021:0000:0001:0000:100a]:6410/shandong_cabletv.live.zte.com////CHANNEL00000319/index.m3u8?IASHttpSessionId=
 #EXTINF:-1 tvg-name="CCTV9" group-title="央视频道" tvg-logo="png/CCTV9.png", CCTV9
 https://migu.188766.xyz/?migutoken=c972b313255dde49563f5c6270cba06b&id=CCTV9&type=yy
 #EXTINF:-1 tvg-name="CCTV9" group-title="央视频道" tvg-logo="png/CCTV9.png", CCTV9
@@ -685,8 +685,6 @@ http://153.0.171.163:9901/tsfile/live/1008_1.m3u8?key=txiptv&playlive=1&authid=0
 http://220.170.241.204:9901/tsfile/live/0009_1.m3u8?key=txiptv&playlive=1&authid=0
 #EXTINF:-1 tvg-name="CCTV9" group-title="央视频道" tvg-logo="png/CCTV9.png", CCTV9
 http://113.25.252.226:9901/tsfile/live/1013_1.m3u8?key=txiptv&playlive=1&authid=0
-#EXTINF:-1 tvg-name="CCTV10" group-title="央视频道" tvg-logo="png/CCTV10.png", CCTV10
-http://[2409:8087:3c02:0021:0000:0001:0000:100a]:6410/shandong_cabletv.live.zte.com////CHANNEL00000321/index.m3u8?IASHttpSessionId=
 #EXTINF:-1 tvg-name="CCTV10" group-title="央视频道" tvg-logo="png/CCTV10.png" catchup="default" catchup-source="rtsp://112.245.125.39:1554/iptv/import/Tvod/iptv/001/001/ch15111015554384702984.rsc/69941_Uni.sdp?tvdr={utc:YmdHMS}GMT-{utcend:YmdHMS}GMT", CCTV10
 rtsp://112.245.125.48:1554/iptv/import/Tvod/iptv/001/001/ch15111015554384702984.rsc/69941_Uni.sdp
 #EXTINF:-1 tvg-name="CCTV10" group-title="央视频道" tvg-logo="png/CCTV10.png", CCTV10
@@ -695,6 +693,8 @@ http://192.168.31.2:4022/rtp/239.21.1.155:5002
 http://150.138.8.143/00/SNM/CHANNEL00000321/index.m3u8
 #EXTINF:-1 tvg-name="CCTV10" group-title="央视频道" tvg-logo="png/CCTV10.png", CCTV10
 http://123.235.73.237:9901/tsfile/live/0002_11.m3u8?key=txiptv
+#EXTINF:-1 tvg-name="CCTV10" group-title="央视频道" tvg-logo="png/CCTV10.png", CCTV10
+http://[2409:8087:3c02:0021:0000:0001:0000:100a]:6410/shandong_cabletv.live.zte.com////CHANNEL00000321/index.m3u8?IASHttpSessionId=
 #EXTINF:-1 tvg-name="CCTV10" group-title="央视频道" tvg-logo="png/CCTV10.png", CCTV10
 https://migu.188766.xyz/?migutoken=9085301a8f9b256e29b55c7a7779571c&id=CCTV10&type=yy
 #EXTINF:-1 tvg-name="CCTV10" group-title="央视频道" tvg-logo="png/CCTV10.png", CCTV10
@@ -761,8 +761,6 @@ http://220.170.241.204:9901/tsfile/live/0010_1.m3u8?key=txiptv&playlive=1&authid
 http://113.15.109.216:59901/tsfile/live/0010_1.m3u8?key=txiptv&playlive=1&authid=0
 #EXTINF:-1 tvg-name="CCTV10" group-title="央视频道" tvg-logo="png/CCTV10.png", CCTV10
 http://113.25.252.226:9901/tsfile/live/1014_1.m3u8?key=txiptv&playlive=1&authid=0
-#EXTINF:-1 tvg-name="CCTV11" group-title="央视频道" tvg-logo="png/CCTV11.png", CCTV11
-http://[2409:8087:3c02:0021:0000:0001:0000:100a]:6410/shandong_cabletv.live.zte.com////CHANNEL00000344/index.m3u8?IASHttpSessionId=
 #EXTINF:-1 tvg-name="CCTV11" group-title="央视频道" tvg-logo="png/CCTV11.png" catchup="default" catchup-source="rtsp://112.245.125.39:1554/iptv/import/Tvod/iptv/001/001/ch11122400354496191158.rsc/70045_Uni.sdp?tvdr={utc:YmdHMS}GMT-{utcend:YmdHMS}GMT", CCTV11
 rtsp://112.245.125.48:1554/iptv/import/Tvod/iptv/001/001/ch11122400354496191158.rsc/70045_Uni.sdp
 #EXTINF:-1 tvg-name="CCTV11" group-title="央视频道" tvg-logo="png/CCTV11.png", CCTV11
@@ -771,6 +769,8 @@ http://192.168.31.2:4022/rtp/239.21.2.2:5002
 http://150.138.8.143/00/SNM/CHANNEL00000344/index.m3u8
 #EXTINF:-1 tvg-name="CCTV11" group-title="央视频道" tvg-logo="png/CCTV11.png", CCTV11
 http://123.235.73.237:9901/tsfile/live/0002_12.m3u8?key=txiptv
+#EXTINF:-1 tvg-name="CCTV11" group-title="央视频道" tvg-logo="png/CCTV11.png", CCTV11
+http://[2409:8087:3c02:0021:0000:0001:0000:100a]:6410/shandong_cabletv.live.zte.com////CHANNEL00000344/index.m3u8?IASHttpSessionId=
 #EXTINF:-1 tvg-name="CCTV11" group-title="央视频道" tvg-logo="png/CCTV11.png", CCTV11
 https://migu.188766.xyz/?migutoken=f52899b7cadfe65daf2117cb2cc63432&id=CCTV11&type=yy
 #EXTINF:-1 tvg-name="CCTV11" group-title="央视频道" tvg-logo="png/CCTV11.png", CCTV11
@@ -825,8 +825,6 @@ http://223.241.247.214:9901/tsfile/live/0011_1.m3u8?key=txiptv&playlive=1&authid
 http://153.0.171.163:9901/tsfile/live/1010_1.m3u8?key=txiptv&playlive=1&authid=0
 #EXTINF:-1 tvg-name="CCTV11" group-title="央视频道" tvg-logo="png/CCTV11.png", CCTV11
 https://shyd.695847.xyz/cms001/ch00000090990000001309/index.m3u8?IASHttpSessionId=RR4967720251014100028031761&ispcode=12
-#EXTINF:-1 tvg-name="CCTV12" group-title="央视频道" tvg-logo="png/CCTV12.png", CCTV12
-http://[2409:8087:3c02:0021:0000:0001:0000:100a]:6410/shandong_cabletv.live.zte.com////CHANNEL00000322/index.m3u8?IASHttpSessionId=
 #EXTINF:-1 tvg-name="CCTV12" group-title="央视频道" tvg-logo="png/CCTV12.png" catchup="default" catchup-source="rtsp://112.245.125.39:1554/iptv/import/Tvod/iptv/001/001/ch15111015571407754299.rsc/70056_Uni.sdp?tvdr={utc:YmdHMS}GMT-{utcend:YmdHMS}GMT", CCTV12
 rtsp://112.245.125.41:1554/iptv/import/Tvod/iptv/001/001/ch15111015571407754299.rsc/70056_Uni.sdp
 #EXTINF:-1 tvg-name="CCTV12" group-title="央视频道" tvg-logo="png/CCTV12.png", CCTV12
@@ -835,6 +833,8 @@ http://192.168.31.2:4022/rtp/239.21.1.156:5002
 http://150.138.8.143/00/SNM/CHANNEL00000322/index.m3u8
 #EXTINF:-1 tvg-name="CCTV12" group-title="央视频道" tvg-logo="png/CCTV12.png", CCTV12
 http://123.235.73.237:9901/tsfile/live/0002_13.m3u8?key=txiptv
+#EXTINF:-1 tvg-name="CCTV12" group-title="央视频道" tvg-logo="png/CCTV12.png", CCTV12
+http://[2409:8087:3c02:0021:0000:0001:0000:100a]:6410/shandong_cabletv.live.zte.com////CHANNEL00000322/index.m3u8?IASHttpSessionId=
 #EXTINF:-1 tvg-name="CCTV12" group-title="央视频道" tvg-logo="png/CCTV12.png", CCTV12
 https://www.freetv.top/migu/673168185.m3u8?migutoken=ca060ebeb7798a2bd7e8b8cb4143386b12a2629519220accd5fd0a77a147ab06630fd8cf65f82517ba9db18cc4b5c5edf350c0734fdddbc216781b9944d8e7eaf326bac636110e27fcd980f4e2
 #EXTINF:-1 tvg-name="CCTV12" group-title="央视频道" tvg-logo="png/CCTV12.png", CCTV12
@@ -915,8 +915,6 @@ http://153.0.171.163:9901/tsfile/live/1011_1.m3u8?key=txiptv&playlive=1&authid=0
 http://113.25.252.226:9901/tsfile/live/1016_1.m3u8?key=txiptv&playlive=1&authid=0
 #EXTINF:-1 tvg-name="CCTV12" group-title="央视频道" tvg-logo="png/CCTV12.png", CCTV12
 http://61.156.228.12:8154/tsfile/live/0012_1.m3u8
-#EXTINF:-1 tvg-name="CCTV13" group-title="央视频道" tvg-logo="png/CCTV13.png", CCTV13
-http://[2409:8087:3c02:0021:0000:0001:0000:100a]:6410/shandong_cabletv.live.zte.com////CHANNEL00000345/index.m3u8?IASHttpSessionId=
 #EXTINF:-1 tvg-name="CCTV13" group-title="央视频道" tvg-logo="png/CCTV13.png" catchup="default" catchup-source="rtsp://112.245.125.39:1554/iptv/import/Tvod/iptv/001/001/ch15050914361303395989.rsc/69923_Uni.sdp?tvdr={utc:YmdHMS}GMT-{utcend:YmdHMS}GMT", CCTV13
 rtsp://112.245.125.41:1554/iptv/import/Tvod/iptv/001/001/ch15050914361303395989.rsc/69923_Uni.sdp
 #EXTINF:-1 tvg-name="CCTV13" group-title="央视频道" tvg-logo="png/CCTV13.png", CCTV13
@@ -927,6 +925,8 @@ http://150.138.8.143/00/SNM/CHANNEL00000345/index.m3u8
 http://123.235.73.237:9901/tsfile/live/0002_14.m3u8?key=txiptv
 #EXTINF:-1 tvg-name="CCTV13" group-title="央视频道" tvg-logo="png/CCTV13.png", CCTV13
 http://123.235.73.237:9901/tsfile/live/0002_48.m3u8?key=txiptv
+#EXTINF:-1 tvg-name="CCTV13" group-title="央视频道" tvg-logo="png/CCTV13.png", CCTV13
+http://[2409:8087:3c02:0021:0000:0001:0000:100a]:6410/shandong_cabletv.live.zte.com////CHANNEL00000345/index.m3u8?IASHttpSessionId=
 #EXTINF:-1 tvg-name="CCTV13" group-title="央视频道" tvg-logo="png/CCTV13.png", CCTV13
 https://migu.188766.xyz/?migutoken=79a58a571c7c6d9d94987c7d63db8f58&id=CCTV13&type=yy
 #EXTINF:-1 tvg-name="CCTV13" group-title="央视频道" tvg-logo="png/CCTV13.png", CCTV13
@@ -985,8 +985,6 @@ https://shyd.695847.xyz/cms001/ch00000090990000001328/index.m3u8?IASHttpSessionI
 https://www.freetv.top/migu/608807423.m3u8?migutoken=b0ebf450385413f8d70e72a92ceba03e41170d59df1374472666311b9a1b26c2665ac29d287ef869f8998593325508eed5b09a4020d14bc557a3fe580eea0c0f4c2c13a4581ddb400575b8d3e9
 #EXTINF:-1 tvg-name="CCTV13" group-title="央视频道" tvg-logo="png/CCTV13.png", CCTV13
 https://stream1.freetv.fun/8322a5f8f9ef01ab3c6b242a7007dbfea4003032f7ddd7e74060d3c9e742c531.m3u8
-#EXTINF:-1 tvg-name="CCTV14" group-title="央视频道" tvg-logo="png/CCTV14.png", CCTV14
-http://[2409:8087:3c02:0021:0000:0001:0000:100a]:6410/shandong_cabletv.live.zte.com////CHANNEL00000323/index.m3u8?IASHttpSessionId=
 #EXTINF:-1 tvg-name="CCTV14" group-title="央视频道" tvg-logo="png/CCTV14.png" catchup="default" catchup-source="rtsp://112.245.125.39:1554/iptv/import/Tvod/iptv/001/001/ch15111016003483433803.rsc/69975_Uni.sdp?tvdr={utc:YmdHMS}GMT-{utcend:YmdHMS}GMT", CCTV14
 rtsp://112.245.125.48:1554/iptv/import/Tvod/iptv/001/001/ch15111016003483433803.rsc/69975_Uni.sdp
 #EXTINF:-1 tvg-name="CCTV14" group-title="央视频道" tvg-logo="png/CCTV14.png", CCTV14
@@ -995,6 +993,8 @@ http://192.168.31.2:4022/rtp/239.21.1.157:5002
 http://150.138.8.143/00/SNM/CHANNEL00000323/index.m3u8
 #EXTINF:-1 tvg-name="CCTV14" group-title="央视频道" tvg-logo="png/CCTV14.png", CCTV14
 http://123.235.73.237:9901/tsfile/live/0002_15.m3u8?key=txiptv
+#EXTINF:-1 tvg-name="CCTV14" group-title="央视频道" tvg-logo="png/CCTV14.png", CCTV14
+http://[2409:8087:3c02:0021:0000:0001:0000:100a]:6410/shandong_cabletv.live.zte.com////CHANNEL00000323/index.m3u8?IASHttpSessionId=
 #EXTINF:-1 tvg-name="CCTV14" group-title="央视频道" tvg-logo="png/CCTV14.png", CCTV14
 https://migu.188766.xyz/?migutoken=667af5a05e239b339233f3e2eebb021a&id=CCTV14&type=yy
 #EXTINF:-1 tvg-name="CCTV14" group-title="央视频道" tvg-logo="png/CCTV14.png", CCTV14
@@ -1063,8 +1063,6 @@ http://124.116.183.146:9901/tsfile/live/0014_1.m3u8
 http://153.0.171.163:9901/tsfile/live/1013_1.m3u8?key=txiptv&playlive=1&authid=0
 #EXTINF:-1 tvg-name="CCTV14" group-title="央视频道" tvg-logo="png/CCTV14.png", CCTV14
 https://www.freetv.top/migu/624878440.m3u8?migutoken=56c7feb8cb5f347901196e85642fd684252562a371f8eff91130c55f05b146a75525b0ded5bbd67d992fd86e47f3af37a5b87c9830db36e765e2b022af03ae4f28d4016c2f1bc9a60bc14d57b3
-#EXTINF:-1 tvg-name="CCTV15" group-title="央视频道" tvg-logo="png/CCTV15.png", CCTV15
-http://[2409:8087:3c02:0021:0000:0001:0000:100a]:6410/shandong_cabletv.live.zte.com////CHANNEL00000346/index.m3u8?IASHttpSessionId=
 #EXTINF:-1 tvg-name="CCTV15" group-title="央视频道" tvg-logo="https://raw.githubusercontent.com/plsy1/iptv/main/logo/CCTV15.png" catchup="default" catchup-source="rtsp://112.245.125.38:1554/iptv/Tvod/iptv/001/001/ch11122400365842237336.rsc?tvdr={utc:YmdHMS}GMT-{utcend:YmdHMS}GMT", CCTV15
 rtsp://112.245.125.38:1554/iptv/import/Tvod/iptv/001/001/ch11122400365842237336.rsc/70037_Uni.sdp
 #EXTINF:-1 tvg-name="CCTV15" group-title="央视频道" tvg-logo="png/CCTV15.png", CCTV15
@@ -1073,6 +1071,8 @@ http://192.168.31.2:4022/rtp/239.21.2.4:5002
 http://150.138.8.143/00/SNM/CHANNEL00000346/index.m3u8
 #EXTINF:-1 tvg-name="CCTV15" group-title="央视频道" tvg-logo="png/CCTV15.png", CCTV15
 http://123.235.73.237:9901/tsfile/live/0002_16.m3u8?key=txiptv
+#EXTINF:-1 tvg-name="CCTV15" group-title="央视频道" tvg-logo="png/CCTV15.png", CCTV15
+http://[2409:8087:3c02:0021:0000:0001:0000:100a]:6410/shandong_cabletv.live.zte.com////CHANNEL00000346/index.m3u8?IASHttpSessionId=
 #EXTINF:-1 tvg-name="CCTV15" group-title="央视频道" tvg-logo="png/CCTV15.png", CCTV15
 https://migu.188766.xyz/?migutoken=92285932c4bb56a455755903a57bc385&id=CCTV15&type=yy
 #EXTINF:-1 tvg-name="CCTV15" group-title="央视频道" tvg-logo="png/CCTV15.png", CCTV15
@@ -1129,14 +1129,14 @@ https://shyd.695847.xyz/cms001/ch00000090990000001338/index.m3u8?IASHttpSessionI
 http://home.yulei.online:9999/rtp/226.0.2.169:9264
 #EXTINF:-1 tvg-name="CCTV16" group-title="央视频道" tvg-logo="png/CCTV16.png", CCTV16
 https://epg.pw/stream/c1beb2abcba5aef09c2f58efc3ca84b76de2c7b9cf60762b0d79772d9e70d454.m3u8
-#EXTINF:-1 tvg-name="CCTV17" group-title="央视频道" tvg-logo="png/CCTV17.png", CCTV17
-http://[2409:8087:3c02:0021:0000:0001:0000:100a]:6410/shandong_cabletv.live.zte.com////CHANNEL00000303/index.m3u8?IASHttpSessionId=
 #EXTINF:-1 tvg-name="CCTV17" group-title="央视频道" tvg-logo="png/CCTV17.png" catchup="default" catchup-source="rtsp://112.245.125.39:1554/iptv/import/Tvod/iptv/001/001/ch19073116233495000222.rsc/85717_Uni.sdp?tvdr={utc:YmdHMS}GMT-{utcend:YmdHMS}GMT", CCTV17
 rtsp://112.245.125.41:1554/iptv/import/Tvod/iptv/001/001/ch19073116233495000222.rsc/85717_Uni.sdp
 #EXTINF:-1 tvg-name="CCTV17" group-title="央视频道" tvg-logo="png/CCTV17.png", CCTV17
 http://192.168.31.2:4022/rtp/239.21.1.186:5002
 #EXTINF:-1 tvg-name="CCTV17" group-title="央视频道" tvg-logo="png/CCTV17.png", CCTV17
 http://150.138.8.143/00/SNM/CHANNEL00000303/index.m3u8
+#EXTINF:-1 tvg-name="CCTV17" group-title="央视频道" tvg-logo="png/CCTV17.png", CCTV17
+http://[2409:8087:3c02:0021:0000:0001:0000:100a]:6410/shandong_cabletv.live.zte.com////CHANNEL00000303/index.m3u8?IASHttpSessionId=
 #EXTINF:-1 tvg-name="CCTV17" group-title="央视频道" tvg-logo="png/CCTV17.png", CCTV17
 https://migu.188766.xyz/?migutoken=b46fc3f9f6250375423a255e0f9dfa20&id=CCTV17&type=yy
 #EXTINF:-1 tvg-name="CCTV17" group-title="央视频道" tvg-logo="png/CCTV17.png", CCTV17
@@ -1225,8 +1225,6 @@ http://192.168.31.2:4022/rtp/239.21.2.185:5002
 rtsp://112.245.125.45:1554/iptv/import/Tvod/iptv/001/001/ch25092214075944736959.rsc/103230_Uni.sdp
 #EXTINF:-1 tvg-name="浙江卫视4K" group-title="4K频道" tvg-logo="png/纯享4k.png", 浙江卫视4K
 http://192.168.31.2:4022/rtp/239.21.2.182:5002
-#EXTINF:-1 tvg-name="安徽卫视" group-title="卫视频道" tvg-logo="png/安徽卫视.png", 安徽卫视
-http://[2409:8087:3c02:0021:0000:0001:0000:100a]:6410/shandong_cabletv.live.zte.com////CHANNEL00000328/index.m3u8?IASHttpSessionId=
 #EXTINF:-1 tvg-name="安徽卫视" group-title="卫视频道" tvg-logo="png/安徽卫视.png" catchup="default" catchup-source="rtsp://112.245.125.39:1554/iptv/import/Tvod/iptv/001/001/ch15050917541532308683.rsc/70014_Uni.sdp?tvdr={utc:YmdHMS}GMT-{utcend:YmdHMS}GMT", 安徽卫视
 rtsp://112.245.125.42:1554/iptv/import/Tvod/iptv/001/001/ch15050917541532308683.rsc/70014_Uni.sdp
 #EXTINF:-1 tvg-name="安徽卫视" group-title="卫视频道" tvg-logo="png/安徽卫视.png", 安徽卫视
@@ -1235,12 +1233,12 @@ http://192.168.31.2:4022/rtp/239.21.1.159:5002
 http://150.138.8.143/00/SNM/CHANNEL00000328/index.m3u8
 #EXTINF:-1 tvg-name="安徽卫视" group-title="卫视频道" tvg-logo="png/安徽卫视.png", 安徽卫视
 http://123.235.73.237:9901/tsfile/live/0002_23.m3u8?key=txiptv
+#EXTINF:-1 tvg-name="安徽卫视" group-title="卫视频道" tvg-logo="png/安徽卫视.png", 安徽卫视
+http://[2409:8087:3c02:0021:0000:0001:0000:100a]:6410/shandong_cabletv.live.zte.com////CHANNEL00000328/index.m3u8?IASHttpSessionId=
 #EXTINF:-1 tvg-name="澳视卫星" group-title="卫视频道" tvg-logo="png/山东文旅.png", 澳视卫星
 http://192.168.31.2:4022/rtp/239.21.2.167:5002
 #EXTINF:-1 tvg-name="澳视卫星" group-title="卫视频道" tvg-logo="png/山东文旅.png", 澳视卫星
 http://150.138.9.170:80/PLTV/88888888/224/3221227295/517077830.smil/index.m3u8?fmt=ts2hls
-#EXTINF:-1 tvg-name="北京卫视" group-title="卫视频道" tvg-logo="png/北京卫视.png", 北京卫视
-http://[2409:8087:3c02:0021:0000:0001:0000:100a]:6410/shandong_cabletv.live.zte.com////CHANNEL00000302/index.m3u8?IASHttpSessionId=
 #EXTINF:-1 tvg-name="北京卫视" group-title="卫视频道" tvg-logo="png/北京卫视.png" catchup="default" catchup-source="rtsp://112.245.125.39:1554/iptv/import/Tvod/iptv/001/001/ch12051116365437815794.rsc/69968_Uni.sdp?tvdr={utc:YmdHMS}GMT-{utcend:YmdHMS}GMT", 北京卫视
 rtsp://112.245.125.45:1554/iptv/import/Tvod/iptv/001/001/ch12051116365437815794.rsc/69968_Uni.sdp
 #EXTINF:-1 tvg-name="北京卫视" group-title="卫视频道" tvg-logo="png/北京卫视.png", 北京卫视
@@ -1251,8 +1249,8 @@ http://150.138.8.143/00/SNM/CHANNEL00000302/index.m3u8
 http://123.235.73.237:9901/tsfile/live/0002_22.m3u8?key=txiptv
 #EXTINF:-1 tvg-name="北京卫视" group-title="卫视频道" tvg-logo="png/北京卫视.png", 北京卫视
 http://123.235.73.237:9901/tsfile/live/0002_61.m3u8?key=txiptv
-#EXTINF:-1 tvg-name="兵团卫视" group-title="卫视频道" tvg-logo="png/兵团卫视.png", 兵团卫视
-http://[2409:8087:3c02:0021:0000:0001:0000:100a]:6410/shandong_cabletv.live.zte.com////CHANNEL00000394/index.m3u8?IASHttpSessionId=
+#EXTINF:-1 tvg-name="北京卫视" group-title="卫视频道" tvg-logo="png/北京卫视.png", 北京卫视
+http://[2409:8087:3c02:0021:0000:0001:0000:100a]:6410/shandong_cabletv.live.zte.com////CHANNEL00000302/index.m3u8?IASHttpSessionId=
 #EXTINF:-1 tvg-name="兵团卫视" group-title="卫视频道" tvg-logo="png/兵团卫视.png" catchup="default" catchup-source="rtsp://112.245.125.39:1554/iptv/import/Tvod/iptv/001/001/ch10120116250568011708.rsc/69935_Uni.sdp?tvdr={utc:YmdHMS}GMT-{utcend:YmdHMS}GMT", 兵团卫视
 rtsp://112.245.125.39:1554/iptv/import/Tvod/iptv/001/001/ch10120116250568011708.rsc/69935_Uni.sdp
 #EXTINF:-1 tvg-name="兵团卫视" group-title="卫视频道" tvg-logo="png/兵团卫视.png", 兵团卫视
@@ -1263,6 +1261,8 @@ http://192.168.31.2:4022/rtp/239.21.1.234:5002
 http://150.138.8.143/00/SNM/CHANNEL00000071/index.m3u8
 #EXTINF:-1 tvg-name="兵团卫视" group-title="卫视频道" tvg-logo="png/兵团卫视.png", 兵团卫视
 http://123.235.73.237:9901/tsfile/live/0002_44.m3u8?key=txiptv
+#EXTINF:-1 tvg-name="兵团卫视" group-title="卫视频道" tvg-logo="png/兵团卫视.png", 兵团卫视
+http://[2409:8087:3c02:0021:0000:0001:0000:100a]:6410/shandong_cabletv.live.zte.com////CHANNEL00000394/index.m3u8?IASHttpSessionId=
 #EXTINF:-1 tvg-name="兵团卫视" group-title="卫视频道" tvg-logo="png/兵团卫视.png", 兵团卫视
 http://124.128.73.58:9901/tsfile/live/0115_1.m3u8?key=txiptv&playlive=1&authid=0
 #EXTINF:-1 tvg-name="兵团卫视" group-title="卫视频道" tvg-logo="png/兵团卫视.png", 兵团卫视
@@ -1315,8 +1315,6 @@ http://192.168.31.2:4022/rtp/239.21.2.160:5002
 http://150.138.8.143/00/SNM/CHANNEL00000671/index.m3u8
 #EXTINF:-1 tvg-name="CETV生态环境" group-title="卫视频道" tvg-logo="https://raw.githubusercontent.com/plsy1/iptv/main/logo/CETV生态环境.png", CETV生态环境
 http://150.138.8.143/00/SNM/CHANNEL00000644/index.m3u8
-#EXTINF:-1 tvg-name="CGTN" group-title="卫视频道" tvg-logo="png/CGTN.png", CGTN
-http://[2409:8087:3c02:0021:0000:0001:0000:100a]:6410/shandong_cabletv.live.zte.com////CHANNEL00000352/index.m3u8?IASHttpSessionId=
 #EXTINF:-1 tvg-name="CGTN" group-title="卫视频道" tvg-logo="https://raw.githubusercontent.com/plsy1/iptv/main/logo/CGTN.png" catchup="default" catchup-source="rtsp://112.245.125.47:1554/iptv/Tvod/iptv/001/001/ch15050914501799552135.rsc?tvdr={utc:YmdHMS}GMT-{utcend:YmdHMS}GMT", CGTN
 rtsp://112.245.125.47:1554/iptv/import/Tvod/iptv/001/001/ch15050914501799552135.rsc/70003_Uni.sdp
 #EXTINF:-1 tvg-name="CGTN" group-title="卫视频道" tvg-logo="png/CGTN.png", CGTN
@@ -1328,11 +1326,11 @@ http://150.138.8.143/00/SNM/CHANNEL00000352/index.m3u8
 #EXTINF:-1 tvg-name="CGTN" group-title="卫视频道" tvg-logo="png/CGTN.png", CGTN
 http://150.138.8.143/00/SNM/CHANNEL00000009/index.m3u8
 #EXTINF:-1 tvg-name="CGTN" group-title="卫视频道" tvg-logo="png/CGTN.png", CGTN
+http://[2409:8087:3c02:0021:0000:0001:0000:100a]:6410/shandong_cabletv.live.zte.com////CHANNEL00000352/index.m3u8?IASHttpSessionId=
+#EXTINF:-1 tvg-name="CGTN" group-title="卫视频道" tvg-logo="png/CGTN.png", CGTN
 https://0472.org/hls/cgtn.m3u8
 #EXTINF:-1 tvg-name="CGTN" group-title="卫视频道" tvg-logo="png/CGTN.png", CGTN
 http://english-livetx.cgtn.com/hls/yypdyyctzb_hd.m3u8
-#EXTINF:-1 tvg-name="CGTN阿语" group-title="卫视频道" tvg-logo="png/CGTN阿语.png", CGTN阿语
-http://[2409:8087:3c02:0021:0000:0001:0000:100a]:6410/shandong_cabletv.live.zte.com////CHANNEL00000356/index.m3u8?IASHttpSessionId=
 #EXTINF:-1 tvg-name="CGTN阿语" group-title="卫视频道" tvg-logo="png/CGTN阿语.png" catchup="default" catchup-source="rtsp://112.245.125.39:1554/iptv/import/Tvod/iptv/001/001/ch21062215414116185265.rsc/91594_Uni.sdp?tvdr={utc:YmdHMS}GMT-{utcend:YmdHMS}GMT", CGTN阿语
 rtsp://112.245.125.41:1554/iptv/import/Tvod/iptv/001/001/ch21062215414116185265.rsc/91594_Uni.sdp
 #EXTINF:-1 tvg-name="CGTN阿语" group-title="卫视频道" tvg-logo="png/CGTN阿语.png", CGTN阿语
@@ -1340,9 +1338,9 @@ http://192.168.31.2:4022/rtp/239.21.2.34:5002
 #EXTINF:-1 tvg-name="CGTN阿语" group-title="卫视频道" tvg-logo="png/CGTN阿语.png", CGTN阿语
 http://150.138.8.143/00/SNM/CHANNEL00000356/index.m3u8
 #EXTINF:-1 tvg-name="CGTN阿语" group-title="卫视频道" tvg-logo="png/CGTN阿语.png", CGTN阿语
+http://[2409:8087:3c02:0021:0000:0001:0000:100a]:6410/shandong_cabletv.live.zte.com////CHANNEL00000356/index.m3u8?IASHttpSessionId=
+#EXTINF:-1 tvg-name="CGTN阿语" group-title="卫视频道" tvg-logo="png/CGTN阿语.png", CGTN阿语
 https://0472.org/hls/cgtna.m3u8
-#EXTINF:-1 tvg-name="CGTN俄语" group-title="卫视频道" tvg-logo="png/CGTN俄语.png", CGTN俄语
-http://[2409:8087:3c02:0021:0000:0001:0000:100a]:6410/shandong_cabletv.live.zte.com////CHANNEL00000357/index.m3u8?IASHttpSessionId=
 #EXTINF:-1 tvg-name="CGTN俄语" group-title="卫视频道" tvg-logo="https://raw.githubusercontent.com/plsy1/iptv/main/logo/CGTN俄语.png" catchup="default" catchup-source="rtsp://112.245.125.41:1554/iptv/Tvod/iptv/001/001/ch21062215415309865050.rsc?tvdr={utc:YmdHMS}GMT-{utcend:YmdHMS}GMT", CGTN俄语
 rtsp://112.245.125.41:1554/iptv/import/Tvod/iptv/001/001/ch21062215415309865050.rsc/91606_Uni.sdp
 #EXTINF:-1 tvg-name="CGTN俄语" group-title="卫视频道" tvg-logo="png/CGTN俄语.png", CGTN俄语
@@ -1350,11 +1348,11 @@ http://192.168.31.2:4022/rtp/239.21.2.35:5002
 #EXTINF:-1 tvg-name="CGTN俄语" group-title="卫视频道" tvg-logo="png/CGTN俄语.png", CGTN俄语
 http://150.138.8.143/00/SNM/CHANNEL00000357/index.m3u8
 #EXTINF:-1 tvg-name="CGTN俄语" group-title="卫视频道" tvg-logo="png/CGTN俄语.png", CGTN俄语
+http://[2409:8087:3c02:0021:0000:0001:0000:100a]:6410/shandong_cabletv.live.zte.com////CHANNEL00000357/index.m3u8?IASHttpSessionId=
+#EXTINF:-1 tvg-name="CGTN俄语" group-title="卫视频道" tvg-logo="png/CGTN俄语.png", CGTN俄语
 http://russian-livews.cgtn.com/hls/LSvexABhNipibK5KRuUkvHZ7220802LSTeze9o8tdFXMHsb1VosgoT220802cd.m3u8
 #EXTINF:-1 tvg-name="CGTN俄语" group-title="卫视频道" tvg-logo="png/CGTN俄语.png", CGTN俄语
 https://0472.org/hls/cgtne.m3u8
-#EXTINF:-1 tvg-name="CGTN法语" group-title="卫视频道" tvg-logo="png/CGTN法语.png", CGTN法语
-http://[2409:8087:3c02:0021:0000:0001:0000:100a]:6410/shandong_cabletv.live.zte.com////CHANNEL00000355/index.m3u8?IASHttpSessionId=
 #EXTINF:-1 tvg-name="CGTN法语" group-title="卫视频道" tvg-logo="png/CGTN法语.png" catchup="default" catchup-source="rtsp://112.245.125.39:1554/iptv/import/Tvod/iptv/001/001/ch21062215412921826390.rsc/91584_Uni.sdp?tvdr={utc:YmdHMS}GMT-{utcend:YmdHMS}GMT", CGTN法语
 rtsp://112.245.125.38:1554/iptv/import/Tvod/iptv/001/001/ch21062215412921826390.rsc/91584_Uni.sdp
 #EXTINF:-1 tvg-name="CGTN法语" group-title="卫视频道" tvg-logo="png/CGTN法语.png", CGTN法语
@@ -1362,17 +1360,19 @@ http://192.168.31.2:4022/rtp/239.21.2.33:5002
 #EXTINF:-1 tvg-name="CGTN法语" group-title="卫视频道" tvg-logo="png/CGTN法语.png", CGTN法语
 http://150.138.8.143/00/SNM/CHANNEL00000355/index.m3u8
 #EXTINF:-1 tvg-name="CGTN法语" group-title="卫视频道" tvg-logo="png/CGTN法语.png", CGTN法语
+http://[2409:8087:3c02:0021:0000:0001:0000:100a]:6410/shandong_cabletv.live.zte.com////CHANNEL00000355/index.m3u8?IASHttpSessionId=
+#EXTINF:-1 tvg-name="CGTN法语" group-title="卫视频道" tvg-logo="png/CGTN法语.png", CGTN法语
 http://espanol-liveali.cgtn.com/hls/LSveOGBaBw41Ea7ukkVAUdKQ220802LSTexu6xAuFH8VZNBLE1ZNEa220802cd.m3u8
 #EXTINF:-1 tvg-name="CGTN法语" group-title="卫视频道" tvg-logo="png/CGTN法语.png", CGTN法语
 https://0472.org/hls/cgtnf.m3u8
-#EXTINF:-1 tvg-name="CGTN纪录" group-title="卫视频道" tvg-logo="png/CGTN纪录.png", CGTN纪录
-http://[2409:8087:3c02:0021:0000:0001:0000:100a]:6410/shandong_cabletv.live.zte.com////CHANNEL00000353/index.m3u8?IASHttpSessionId=
 #EXTINF:-1 tvg-name="CGTN纪录" group-title="卫视频道" tvg-logo="png/CGTN纪录.png" catchup="default" catchup-source="rtsp://112.245.125.39:1554/iptv/import/Tvod/iptv/001/001/ch21062215405197977873.rsc/91702_Uni.sdp?tvdr={utc:YmdHMS}GMT-{utcend:YmdHMS}GMT", CGTN纪录
 rtsp://112.245.125.47:1554/iptv/import/Tvod/iptv/001/001/ch21062215405197977873.rsc/91702_Uni.sdp
 #EXTINF:-1 tvg-name="CGTN纪录" group-title="卫视频道" tvg-logo="png/CGTN纪录.png", CGTN纪录
 http://192.168.31.2:4022/rtp/239.21.2.31:5002
 #EXTINF:-1 tvg-name="CGTN纪录" group-title="卫视频道" tvg-logo="png/CGTN纪录.png", CGTN纪录
 http://150.138.8.143/00/SNM/CHANNEL00000353/index.m3u8
+#EXTINF:-1 tvg-name="CGTN纪录" group-title="卫视频道" tvg-logo="png/CGTN纪录.png", CGTN纪录
+http://[2409:8087:3c02:0021:0000:0001:0000:100a]:6410/shandong_cabletv.live.zte.com////CHANNEL00000353/index.m3u8?IASHttpSessionId=
 #EXTINF:-1 tvg-name="CGTN纪录" group-title="卫视频道" tvg-logo="png/CGTN纪录.png", CGTN纪录
 https://english-livetx.cgtn.com/hls/yypdjlctzb_hd.m3u8
 #EXTINF:-1 tvg-name="CGTN纪录" group-title="卫视频道" tvg-logo="png/CGTN纪录.png", CGTN纪录
@@ -1387,8 +1387,6 @@ http://150.138.8.143/00/SNM/CHANNEL00000354/index.m3u8
 https://0472.org/hls/cgtnx.m3u8
 #EXTINF:-1 tvg-name="cgtn西语" group-title="卫视频道" tvg-logo="png/cgtn西语.png", cgtn西语
 http://[2409:8087:3c02:0021:0000:0001:0000:100a]:6410/shandong_cabletv.live.zte.com////CHANNEL00000354/index.m3u8?IASHttpSessionId=
-#EXTINF:-1 tvg-name="重庆卫视" group-title="卫视频道" tvg-logo="png/重庆卫视.png", 重庆卫视
-http://[2409:8087:3c02:0021:0000:0001:0000:100a]:6410/shandong_cabletv.live.zte.com////CHANNEL00000341/index.m3u8?IASHttpSessionId=
 #EXTINF:-1 tvg-name="重庆卫视" group-title="卫视频道" tvg-logo="https://raw.githubusercontent.com/plsy1/iptv/main/logo/重庆卫视.png" catchup="default" catchup-source="rtsp://112.245.125.39:1554/iptv/Tvod/iptv/001/001/ch10120118293449046768.rsc?tvdr={utc:YmdHMS}GMT-{utcend:YmdHMS}GMT", 重庆卫视
 rtsp://112.245.125.39:1554/iptv/import/Tvod/iptv/001/001/ch10120118293449046768.rsc/70020_Uni.sdp
 #EXTINF:-1 tvg-name="重庆卫视" group-title="卫视频道" tvg-logo="png/重庆卫视.png", 重庆卫视
@@ -1398,9 +1396,9 @@ http://150.138.8.143/00/SNM/CHANNEL00000341/index.m3u8
 #EXTINF:-1 tvg-name="重庆卫视" group-title="卫视频道" tvg-logo="png/重庆卫视.png", 重庆卫视
 http://123.235.73.237:9901/tsfile/live/0002_30.m3u8?key=txiptv
 #EXTINF:-1 tvg-name="重庆卫视" group-title="卫视频道" tvg-logo="png/重庆卫视.png", 重庆卫视
+http://[2409:8087:3c02:0021:0000:0001:0000:100a]:6410/shandong_cabletv.live.zte.com////CHANNEL00000341/index.m3u8?IASHttpSessionId=
+#EXTINF:-1 tvg-name="重庆卫视" group-title="卫视频道" tvg-logo="png/重庆卫视.png", 重庆卫视
 http://124.128.73.58:9901/tsfile/live/0142_1.m3u8
-#EXTINF:-1 tvg-name="东方卫视" group-title="卫视频道" tvg-logo="png/东方卫视.png", 东方卫视
-http://[2409:8087:3c02:0021:0000:0001:0000:100a]:6410/shandong_cabletv.live.zte.com////CHANNEL00000309/index.m3u8?IASHttpSessionId=
 #EXTINF:-1 tvg-name="东方卫视" group-title="卫视频道" tvg-logo="png/东方卫视.png" catchup="default" catchup-source="rtsp://112.245.125.39:1554/iptv/import/Tvod/iptv/001/001/ch15050917541568689826.rsc/69963_Uni.sdp?tvdr={utc:YmdHMS}GMT-{utcend:YmdHMS}GMT", 东方卫视
 rtsp://112.245.125.45:1554/iptv/import/Tvod/iptv/001/001/ch15050917541568689826.rsc/69963_Uni.sdp
 #EXTINF:-1 tvg-name="东方卫视" group-title="卫视频道" tvg-logo="png/东方卫视.png", 东方卫视
@@ -1411,8 +1409,8 @@ http://150.138.8.143/00/SNM/CHANNEL00000309/index.m3u8
 http://123.235.73.237:9901/tsfile/live/0002_20.m3u8?key=txiptv
 #EXTINF:-1 tvg-name="东方卫视" group-title="卫视频道" tvg-logo="png/东方卫视.png", 东方卫视
 http://123.235.73.237:9901/tsfile/live/0002_59.m3u8?key=txiptv
-#EXTINF:-1 tvg-name="东南卫视" group-title="卫视频道" tvg-logo="png/东南卫视.png", 东南卫视
-http://[2409:8087:3c02:0021:0000:0001:0000:100a]:6410/shandong_cabletv.live.zte.com////CHANNEL00000310/index.m3u8?IASHttpSessionId=
+#EXTINF:-1 tvg-name="东方卫视" group-title="卫视频道" tvg-logo="png/东方卫视.png", 东方卫视
+http://[2409:8087:3c02:0021:0000:0001:0000:100a]:6410/shandong_cabletv.live.zte.com////CHANNEL00000309/index.m3u8?IASHttpSessionId=
 #EXTINF:-1 tvg-name="东南卫视" group-title="卫视频道" tvg-logo="png/东南卫视.png" catchup="default" catchup-source="rtsp://112.245.125.39:1554/iptv/import/Tvod/iptv/001/001/ch17082318094203998689.rsc/71682_Uni.sdp?tvdr={utc:YmdHMS}GMT-{utcend:YmdHMS}GMT", 东南卫视
 rtsp://112.245.125.47:1554/iptv/import/Tvod/iptv/001/001/ch17082318094203998689.rsc/71682_Uni.sdp
 #EXTINF:-1 tvg-name="东南卫视" group-title="卫视频道" tvg-logo="png/东南卫视.png", 东南卫视
@@ -1423,6 +1421,8 @@ http://150.138.8.143/00/SNM/CHANNEL00000310/index.m3u8
 http://123.235.73.237:9901/tsfile/live/0002_31.m3u8?key=txiptv
 #EXTINF:-1 tvg-name="东南卫视" group-title="卫视频道" tvg-logo="png/东南卫视.png", 东南卫视
 http://123.235.73.237:9901/tsfile/live/0002_57.m3u8?key=txiptv
+#EXTINF:-1 tvg-name="东南卫视" group-title="卫视频道" tvg-logo="png/东南卫视.png", 东南卫视
+http://[2409:8087:3c02:0021:0000:0001:0000:100a]:6410/shandong_cabletv.live.zte.com////CHANNEL00000310/index.m3u8?IASHttpSessionId=
 #EXTINF:-1 tvg-name="凤凰卫视" group-title="卫视频道" tvg-logo="png/山东文旅.png", 凤凰卫视
 http://192.168.31.2:4022/rtp/239.21.2.153:5002
 #EXTINF:-1 tvg-name="凤凰卫视" group-title="卫视频道" tvg-logo="png/山东文旅.png", 凤凰卫视
@@ -1437,8 +1437,6 @@ http://150.138.9.170:80/PLTV/88888888/224/3221227291/516918680.smil/index.m3u8?f
 http://192.168.31.2:4022/rtp/239.21.2.163:5002
 #EXTINF:-1 tvg-name="凤凰资讯" group-title="卫视频道" tvg-logo="png/凤凰资讯.png", 凤凰资讯
 http://150.138.9.170:80/PLTV/88888888/224/3221227280/516918666.smil/index.m3u8?fmt=ts2hls
-#EXTINF:-1 tvg-name="甘肃卫视" group-title="卫视频道" tvg-logo="png/甘肃卫视.png", 甘肃卫视
-http://[2409:8087:3c02:0021:0000:0001:0000:100a]:6410/shandong_cabletv.live.zte.com////CHANNEL00000349/index.m3u8?IASHttpSessionId=
 #EXTINF:-1 tvg-name="甘肃卫视" group-title="卫视频道" tvg-logo="png/甘肃卫视.png" catchup="default" catchup-source="rtsp://112.245.125.39:1554/iptv/import/Tvod/iptv/001/001/ch21092610332476918454.rsc/92476_Uni.sdp?tvdr={utc:YmdHMS}GMT-{utcend:YmdHMS}GMT", 甘肃卫视
 rtsp://112.245.125.41:1554/iptv/import/Tvod/iptv/001/001/ch21092610332476918454.rsc/92476_Uni.sdp
 #EXTINF:-1 tvg-name="甘肃卫视" group-title="卫视频道" tvg-logo="png/甘肃卫视.png", 甘肃卫视
@@ -1447,8 +1445,8 @@ http://192.168.31.2:4022/rtp/239.21.2.22:5002
 http://150.138.8.143/00/SNM/CHANNEL00000349/index.m3u8
 #EXTINF:-1 tvg-name="甘肃卫视" group-title="卫视频道" tvg-logo="png/甘肃卫视.png", 甘肃卫视
 http://123.235.73.237:9901/tsfile/live/0002_38.m3u8?key=txiptv
-#EXTINF:-1 tvg-name="广东卫视" group-title="卫视频道" tvg-logo="png/广东卫视.png", 广东卫视
-http://[2409:8087:3c02:0021:0000:0001:0000:100a]:6410/shandong_cabletv.live.zte.com////CHANNEL00000307/index.m3u8?IASHttpSessionId=
+#EXTINF:-1 tvg-name="甘肃卫视" group-title="卫视频道" tvg-logo="png/甘肃卫视.png", 甘肃卫视
+http://[2409:8087:3c02:0021:0000:0001:0000:100a]:6410/shandong_cabletv.live.zte.com////CHANNEL00000349/index.m3u8?IASHttpSessionId=
 #EXTINF:-1 tvg-name="广东卫视" group-title="卫视频道" tvg-logo="png/广东卫视.png" catchup="default" catchup-source="rtsp://112.245.125.39:1554/iptv/import/Tvod/iptv/001/001/ch15050917541650823873.rsc/69978_Uni.sdp?tvdr={utc:YmdHMS}GMT-{utcend:YmdHMS}GMT", 广东卫视
 rtsp://112.245.125.42:1554/iptv/import/Tvod/iptv/001/001/ch15050917541650823873.rsc/69978_Uni.sdp
 #EXTINF:-1 tvg-name="广东卫视" group-title="卫视频道" tvg-logo="png/广东卫视.png", 广东卫视
@@ -1459,8 +1457,8 @@ http://192.168.31.2:4022/rtp/239.21.2.157:5002
 http://150.138.8.143/00/SNM/CHANNEL00000307/index.m3u8
 #EXTINF:-1 tvg-name="广东卫视" group-title="卫视频道" tvg-logo="png/广东卫视.png", 广东卫视
 http://123.235.73.237:9901/tsfile/live/0002_26.m3u8?key=txiptv
-#EXTINF:-1 tvg-name="广西卫视" group-title="卫视频道" tvg-logo="png/广西卫视.png", 广西卫视
-http://[2409:8087:3c02:0021:0000:0001:0000:100a]:6410/shandong_cabletv.live.zte.com////CHANNEL00000368/index.m3u8?IASHttpSessionId=
+#EXTINF:-1 tvg-name="广东卫视" group-title="卫视频道" tvg-logo="png/广东卫视.png", 广东卫视
+http://[2409:8087:3c02:0021:0000:0001:0000:100a]:6410/shandong_cabletv.live.zte.com////CHANNEL00000307/index.m3u8?IASHttpSessionId=
 #EXTINF:-1 tvg-name="广西卫视" group-title="卫视频道" tvg-logo="png/广西卫视.png" catchup="default" catchup-source="rtsp://112.245.125.39:1554/iptv/import/Tvod/iptv/001/001/ch10120114524702485505.rsc/69956_Uni.sdp?tvdr={utc:YmdHMS}GMT-{utcend:YmdHMS}GMT", 广西卫视
 rtsp://112.245.125.38:1554/iptv/import/Tvod/iptv/001/001/ch10120114524702485505.rsc/69956_Uni.sdp
 #EXTINF:-1 tvg-name="广西卫视" group-title="卫视频道" tvg-logo="png/广西卫视.png", 广西卫视
@@ -1469,8 +1467,8 @@ http://192.168.31.2:4022/rtp/239.21.2.87:5002
 http://150.138.8.143/00/SNM/CHANNEL00000368/index.m3u8
 #EXTINF:-1 tvg-name="广西卫视" group-title="卫视频道" tvg-logo="png/广西卫视.png", 广西卫视
 http://150.138.8.143/00/SNM/CHANNEL00000038/index.m3u8
-#EXTINF:-1 tvg-name="贵州卫视" group-title="卫视频道" tvg-logo="png/贵州卫视.png", 贵州卫视
-http://[2409:8087:3c02:0021:0000:0001:0000:100a]:6410/shandong_cabletv.live.zte.com////CHANNEL00000329/index.m3u8?IASHttpSessionId=
+#EXTINF:-1 tvg-name="广西卫视" group-title="卫视频道" tvg-logo="png/广西卫视.png", 广西卫视
+http://[2409:8087:3c02:0021:0000:0001:0000:100a]:6410/shandong_cabletv.live.zte.com////CHANNEL00000368/index.m3u8?IASHttpSessionId=
 #EXTINF:-1 tvg-name="贵州卫视" group-title="卫视频道" tvg-logo="https://raw.githubusercontent.com/plsy1/iptv/main/logo/贵州卫视.png" catchup="default" catchup-source="rtsp://112.245.125.48:1554/iptv/Tvod/iptv/001/001/ch17121814402415050847.rsc?tvdr={utc:YmdHMS}GMT-{utcend:YmdHMS}GMT", 贵州卫视
 rtsp://112.245.125.48:1554/iptv/import/Tvod/iptv/001/001/ch17121814402415050847.rsc/75837_Uni.sdp
 #EXTINF:-1 tvg-name="贵州卫视" group-title="卫视频道" tvg-logo="png/贵州卫视.png", 贵州卫视
@@ -1479,14 +1477,16 @@ http://192.168.31.2:4022/rtp/239.21.1.166:5002
 http://150.138.8.143/00/SNM/CHANNEL00000329/index.m3u8
 #EXTINF:-1 tvg-name="贵州卫视" group-title="卫视频道" tvg-logo="png/贵州卫视.png", 贵州卫视
 http://123.235.73.237:9901/tsfile/live/0002_33.m3u8?key=txiptv
-#EXTINF:-1 tvg-name="海南卫视" group-title="卫视频道" tvg-logo="png/海南卫视.png", 海南卫视
-http://[2409:8087:3c02:0021:0000:0001:0000:100a]:6410/shandong_cabletv.live.zte.com////CHANNEL00000347/index.m3u8?IASHttpSessionId=
+#EXTINF:-1 tvg-name="贵州卫视" group-title="卫视频道" tvg-logo="png/贵州卫视.png", 贵州卫视
+http://[2409:8087:3c02:0021:0000:0001:0000:100a]:6410/shandong_cabletv.live.zte.com////CHANNEL00000329/index.m3u8?IASHttpSessionId=
 #EXTINF:-1 tvg-name="海南卫视" group-title="卫视频道" tvg-logo="png/海南卫视.png" catchup="default" catchup-source="rtsp://112.245.125.39:1554/iptv/import/Tvod/iptv/001/001/ch10120116181598810422.rsc/70001_Uni.sdp?tvdr={utc:YmdHMS}GMT-{utcend:YmdHMS}GMT", 海南卫视
 rtsp://112.245.125.38:1554/iptv/import/Tvod/iptv/001/001/ch10120116181598810422.rsc/70001_Uni.sdp
 #EXTINF:-1 tvg-name="海南卫视" group-title="卫视频道" tvg-logo="png/海南卫视.png", 海南卫视
 http://192.168.31.2:4022/rtp/239.21.2.14:5002
 #EXTINF:-1 tvg-name="海南卫视" group-title="卫视频道" tvg-logo="png/海南卫视.png", 海南卫视
 http://150.138.8.143/00/SNM/CHANNEL00000347/index.m3u8
+#EXTINF:-1 tvg-name="海南卫视" group-title="卫视频道" tvg-logo="png/海南卫视.png", 海南卫视
+http://[2409:8087:3c02:0021:0000:0001:0000:100a]:6410/shandong_cabletv.live.zte.com////CHANNEL00000347/index.m3u8?IASHttpSessionId=
 #EXTINF:-1 tvg-name="海峡卫视" group-title="卫视频道" tvg-logo="png/海峡卫视.png", 海峡卫视
 http://t.061899.xyz/tl/dq.php?id=hxws
 #EXTINF:-1 tvg-name="海峡卫视" group-title="卫视频道" tvg-logo="png/海峡卫视.png", 海峡卫视
@@ -1497,16 +1497,14 @@ http://r.jdshipin.com/WtYt3
 http://8.138.7.223/tv/hxws.m3u8
 #EXTINF:-1 tvg-name="海峡卫视" group-title="卫视频道" tvg-logo="png/海峡卫视.png", 海峡卫视
 http://38.64.72.148:80/hls/modn/list/4009/playlist.m3u8
-#EXTINF:-1 tvg-name="河北卫视" group-title="卫视频道" tvg-logo="png/河北卫视.png", 河北卫视
-http://[2409:8087:3c02:0021:0000:0001:0000:100a]:6410/shandong_cabletv.live.zte.com////CHANNEL00000330/index.m3u8?IASHttpSessionId=
 #EXTINF:-1 tvg-name="河北卫视" group-title="卫视频道" tvg-logo="https://raw.githubusercontent.com/plsy1/iptv/main/logo/河北卫视.png" catchup="default" catchup-source="rtsp://112.245.125.41:1554/iptv/Tvod/iptv/001/001/ch17121814385494126166.rsc?tvdr={utc:YmdHMS}GMT-{utcend:YmdHMS}GMT", 河北卫视
 rtsp://112.245.125.41:1554/iptv/import/Tvod/iptv/001/001/ch17121814385494126166.rsc/75853_Uni.sdp
 #EXTINF:-1 tvg-name="河北卫视" group-title="卫视频道" tvg-logo="png/河北卫视.png", 河北卫视
 http://192.168.31.2:4022/rtp/239.21.1.168:5002
 #EXTINF:-1 tvg-name="河北卫视" group-title="卫视频道" tvg-logo="png/河北卫视.png", 河北卫视
 http://150.138.8.143/00/SNM/CHANNEL00000330/index.m3u8
-#EXTINF:-1 tvg-name="黑龙江卫视" group-title="卫视频道" tvg-logo="png/黑龙江卫视.png", 黑龙江卫视
-http://[2409:8087:3c02:0021:0000:0001:0000:100a]:6410/shandong_cabletv.live.zte.com////CHANNEL00000306/index.m3u8?IASHttpSessionId=
+#EXTINF:-1 tvg-name="河北卫视" group-title="卫视频道" tvg-logo="png/河北卫视.png", 河北卫视
+http://[2409:8087:3c02:0021:0000:0001:0000:100a]:6410/shandong_cabletv.live.zte.com////CHANNEL00000330/index.m3u8?IASHttpSessionId=
 #EXTINF:-1 tvg-name="黑龙江卫视" group-title="卫视频道" tvg-logo="https://raw.githubusercontent.com/plsy1/iptv/main/logo/黑龙江卫视.png" catchup="default" catchup-source="rtsp://112.245.125.41:1554/iptv/Tvod/iptv/001/001/ch12051116400952898093.rsc?tvdr={utc:YmdHMS}GMT-{utcend:YmdHMS}GMT", 黑龙江卫视
 rtsp://112.245.125.41:1554/iptv/import/Tvod/iptv/001/001/ch12051116400952898093.rsc/70052_Uni.sdp
 #EXTINF:-1 tvg-name="黑龙江卫视" group-title="卫视频道" tvg-logo="png/黑龙江卫视.png", 黑龙江卫视
@@ -1515,10 +1513,8 @@ http://192.168.31.2:4022/rtp/239.21.1.91:5002
 http://150.138.8.143/00/SNM/CHANNEL00000306/index.m3u8
 #EXTINF:-1 tvg-name="黑龙江卫视" group-title="卫视频道" tvg-logo="png/黑龙江卫视.png", 黑龙江卫视
 http://123.235.73.237:9901/tsfile/live/0002_28.m3u8?key=txiptv
-#EXTINF:-1 tvg-name="河南卫视" group-title="卫视频道" tvg-logo="png/河南卫视.png", 河南卫视
-http://[2409:8087:3c02:0021:0000:0001:0000:100a]:6410/shandong_cabletv.live.zte.com////CHANNEL00000358/index.m3u8?IASHttpSessionId=
-#EXTINF:-1 tvg-name="河南卫视" group-title="卫视频道" tvg-logo="png/河南卫视.png", 河南卫视
-http://[2409:8087:3c02:0021:0000:0001:0000:100a]:6410/shandong_cabletv.live.zte.com////CHANNEL00000369/index.m3u8?IASHttpSessionId=
+#EXTINF:-1 tvg-name="黑龙江卫视" group-title="卫视频道" tvg-logo="png/黑龙江卫视.png", 黑龙江卫视
+http://[2409:8087:3c02:0021:0000:0001:0000:100a]:6410/shandong_cabletv.live.zte.com////CHANNEL00000306/index.m3u8?IASHttpSessionId=
 #EXTINF:-1 tvg-name="河南卫视" group-title="卫视频道" tvg-logo="png/河南卫视.png" catchup="default" catchup-source="rtsp://112.245.125.39:1554/iptv/import/Tvod/iptv/001/001/ch10120118312827983078.rsc/69930_Uni.sdp?tvdr={utc:YmdHMS}GMT-{utcend:YmdHMS}GMT", 河南卫视
 rtsp://112.245.125.48:1554/iptv/import/Tvod/iptv/001/001/ch10120118312827983078.rsc/69930_Uni.sdp
 #EXTINF:-1 tvg-name="河南卫视" group-title="卫视频道" tvg-logo="png/河南卫视.png", 河南卫视
@@ -1529,8 +1525,10 @@ http://150.138.8.143/00/SNM/CHANNEL00000358/index.m3u8
 http://150.138.8.143/00/SNM/CHANNEL00000037/index.m3u8
 #EXTINF:-1 tvg-name="河南卫视" group-title="卫视频道" tvg-logo="png/河南卫视.png", 河南卫视
 http://123.235.73.237:9901/tsfile/live/0139_1.m3u8?key=txiptv
-#EXTINF:-1 tvg-name="湖北卫视" group-title="卫视频道" tvg-logo="png/湖北卫视.png", 湖北卫视
-http://[2409:8087:3c02:0021:0000:0001:0000:100a]:6410/shandong_cabletv.live.zte.com////CHANNEL00000325/index.m3u8?IASHttpSessionId=
+#EXTINF:-1 tvg-name="河南卫视" group-title="卫视频道" tvg-logo="png/河南卫视.png", 河南卫视
+http://[2409:8087:3c02:0021:0000:0001:0000:100a]:6410/shandong_cabletv.live.zte.com////CHANNEL00000358/index.m3u8?IASHttpSessionId=
+#EXTINF:-1 tvg-name="河南卫视" group-title="卫视频道" tvg-logo="png/河南卫视.png", 河南卫视
+http://[2409:8087:3c02:0021:0000:0001:0000:100a]:6410/shandong_cabletv.live.zte.com////CHANNEL00000369/index.m3u8?IASHttpSessionId=
 #EXTINF:-1 tvg-name="湖北卫视" group-title="卫视频道" tvg-logo="png/湖北卫视.png" catchup="default" catchup-source="rtsp://112.245.125.39:1554/iptv/import/Tvod/iptv/001/001/ch15050917541519800547.rsc/69933_Uni.sdp?tvdr={utc:YmdHMS}GMT-{utcend:YmdHMS}GMT", 湖北卫视
 rtsp://112.245.125.47:1554/iptv/import/Tvod/iptv/001/001/ch15050917541519800547.rsc/69933_Uni.sdp
 #EXTINF:-1 tvg-name="湖北卫视" group-title="卫视频道" tvg-logo="png/湖北卫视.png", 湖北卫视
@@ -1541,8 +1539,8 @@ http://150.138.8.143/00/SNM/CHANNEL00000325/index.m3u8
 http://123.235.73.237:9901/tsfile/live/0002_25.m3u8?key=txiptv
 #EXTINF:-1 tvg-name="湖北卫视" group-title="卫视频道" tvg-logo="png/湖北卫视.png", 湖北卫视
 http://123.235.73.237:9901/tsfile/live/0002_65.m3u8?key=txiptv
-#EXTINF:-1 tvg-name="湖南卫视" group-title="卫视频道" tvg-logo="png/湖南卫视.png", 湖南卫视
-http://[2409:8087:3c02:0021:0000:0001:0000:100a]:6410/shandong_cabletv.live.zte.com////CHANNEL00000324/index.m3u8?IASHttpSessionId=
+#EXTINF:-1 tvg-name="湖北卫视" group-title="卫视频道" tvg-logo="png/湖北卫视.png", 湖北卫视
+http://[2409:8087:3c02:0021:0000:0001:0000:100a]:6410/shandong_cabletv.live.zte.com////CHANNEL00000325/index.m3u8?IASHttpSessionId=
 #EXTINF:-1 tvg-name="湖南卫视" group-title="卫视频道" tvg-logo="png/湖南卫视.png" catchup="default" catchup-source="rtsp://112.245.125.39:1554/iptv/import/Tvod/iptv/001/001/ch12051116352384581471.rsc/70069_Uni.sdp?tvdr={utc:YmdHMS}GMT-{utcend:YmdHMS}GMT", 湖南卫视
 rtsp://112.245.125.45:1554/iptv/import/Tvod/iptv/001/001/ch12051116352384581471.rsc/70069_Uni.sdp
 #EXTINF:-1 tvg-name="湖南卫视" group-title="卫视频道" tvg-logo="png/湖南卫视.png", 湖南卫视
@@ -1551,8 +1549,8 @@ http://192.168.31.2:4022/rtp/239.21.1.158:5002
 http://150.138.8.143/00/SNM/CHANNEL00000324/index.m3u8
 #EXTINF:-1 tvg-name="湖南卫视" group-title="卫视频道" tvg-logo="png/湖南卫视.png", 湖南卫视
 http://123.235.73.237:9901/tsfile/live/0002_18.m3u8?key=txiptv
-#EXTINF:-1 tvg-name="江苏卫视" group-title="卫视频道" tvg-logo="png/江苏卫视.png", 江苏卫视
-http://[2409:8087:3c02:0021:0000:0001:0000:100a]:6410/shandong_cabletv.live.zte.com////CHANNEL00000304/index.m3u8?IASHttpSessionId=
+#EXTINF:-1 tvg-name="湖南卫视" group-title="卫视频道" tvg-logo="png/湖南卫视.png", 湖南卫视
+http://[2409:8087:3c02:0021:0000:0001:0000:100a]:6410/shandong_cabletv.live.zte.com////CHANNEL00000324/index.m3u8?IASHttpSessionId=
 #EXTINF:-1 tvg-name="江苏卫视" group-title="卫视频道" tvg-logo="png/江苏卫视.png" catchup="default" catchup-source="rtsp://112.245.125.39:1554/iptv/import/Tvod/iptv/001/001/ch12051116384379542816.rsc/69997_Uni.sdp?tvdr={utc:YmdHMS}GMT-{utcend:YmdHMS}GMT", 江苏卫视
 rtsp://112.245.125.45:1554/iptv/import/Tvod/iptv/001/001/ch12051116384379542816.rsc/69997_Uni.sdp
 #EXTINF:-1 tvg-name="江苏卫视" group-title="卫视频道" tvg-logo="png/江苏卫视.png", 江苏卫视
@@ -1561,8 +1559,8 @@ http://192.168.31.2:4022/rtp/239.21.1.89:5002
 http://150.138.8.143/00/SNM/CHANNEL00000304/index.m3u8
 #EXTINF:-1 tvg-name="江苏卫视" group-title="卫视频道" tvg-logo="png/江苏卫视.png", 江苏卫视
 http://123.235.73.237:9901/tsfile/live/0002_21.m3u8?key=txiptv
-#EXTINF:-1 tvg-name="江西卫视" group-title="卫视频道" tvg-logo="png/江西卫视.png", 江西卫视
-http://[2409:8087:3c02:0021:0000:0001:0000:100a]:6410/shandong_cabletv.live.zte.com////CHANNEL00000335/index.m3u8?IASHttpSessionId=
+#EXTINF:-1 tvg-name="江苏卫视" group-title="卫视频道" tvg-logo="png/江苏卫视.png", 江苏卫视
+http://[2409:8087:3c02:0021:0000:0001:0000:100a]:6410/shandong_cabletv.live.zte.com////CHANNEL00000304/index.m3u8?IASHttpSessionId=
 #EXTINF:-1 tvg-name="江西卫视" group-title="卫视频道" tvg-logo="png/江西卫视.png" catchup="default" catchup-source="rtsp://112.245.125.39:1554/iptv/import/Tvod/iptv/001/001/ch10120118345500084693.rsc/69999_Uni.sdp?tvdr={utc:YmdHMS}GMT-{utcend:YmdHMS}GMT", 江西卫视
 rtsp://112.245.125.38:1554/iptv/import/Tvod/iptv/001/001/ch10120118345500084693.rsc/69999_Uni.sdp
 #EXTINF:-1 tvg-name="江西卫视" group-title="卫视频道" tvg-logo="png/江西卫视.png", 江西卫视
@@ -1571,8 +1569,8 @@ http://192.168.31.2:4022/rtp/239.21.1.167:5002
 http://150.138.8.143/00/SNM/CHANNEL00000335/index.m3u8
 #EXTINF:-1 tvg-name="江西卫视" group-title="卫视频道" tvg-logo="png/江西卫视.png", 江西卫视
 http://123.235.73.237:9901/tsfile/live/0002_29.m3u8?key=txiptv
-#EXTINF:-1 tvg-name="吉林卫视" group-title="卫视频道" tvg-logo="png/吉林卫视.png", 吉林卫视
-http://[2409:8087:3c02:0021:0000:0001:0000:100a]:6410/shandong_cabletv.live.zte.com////CHANNEL00000363/index.m3u8?IASHttpSessionId=
+#EXTINF:-1 tvg-name="江西卫视" group-title="卫视频道" tvg-logo="png/江西卫视.png", 江西卫视
+http://[2409:8087:3c02:0021:0000:0001:0000:100a]:6410/shandong_cabletv.live.zte.com////CHANNEL00000335/index.m3u8?IASHttpSessionId=
 #EXTINF:-1 tvg-name="吉林卫视" group-title="卫视频道" tvg-logo="png/吉林卫视.png" catchup="default" catchup-source="rtsp://112.245.125.39:1554/iptv/import/Tvod/iptv/001/001/ch10120116035123677506.rsc/69989_Uni.sdp?tvdr={utc:YmdHMS}GMT-{utcend:YmdHMS}GMT", 吉林卫视
 rtsp://112.245.125.48:1554/iptv/import/Tvod/iptv/001/001/ch10120116035123677506.rsc/69989_Uni.sdp
 #EXTINF:-1 tvg-name="吉林卫视" group-title="卫视频道" tvg-logo="png/吉林卫视.png", 吉林卫视
@@ -1583,8 +1581,8 @@ http://150.138.8.143/00/SNM/CHANNEL00000363/index.m3u8
 http://150.138.8.143/00/SNM/CHANNEL00000036/index.m3u8
 #EXTINF:-1 tvg-name="吉林卫视" group-title="卫视频道" tvg-logo="png/吉林卫视.png", 吉林卫视
 http://123.235.73.237:9901/tsfile/live/0002_37.m3u8?key=txiptv
-#EXTINF:-1 tvg-name="辽宁卫视" group-title="卫视频道" tvg-logo="png/辽宁卫视.png", 辽宁卫视
-http://[2409:8087:3c02:0021:0000:0001:0000:100a]:6410/shandong_cabletv.live.zte.com////CHANNEL00000326/index.m3u8?IASHttpSessionId=
+#EXTINF:-1 tvg-name="吉林卫视" group-title="卫视频道" tvg-logo="png/吉林卫视.png", 吉林卫视
+http://[2409:8087:3c02:0021:0000:0001:0000:100a]:6410/shandong_cabletv.live.zte.com////CHANNEL00000363/index.m3u8?IASHttpSessionId=
 #EXTINF:-1 tvg-name="辽宁卫视" group-title="卫视频道" tvg-logo="png/辽宁卫视.png" catchup="default" catchup-source="rtsp://112.245.125.39:1554/iptv/import/Tvod/iptv/001/001/ch15050917541756096231.rsc/69996_Uni.sdp?tvdr={utc:YmdHMS}GMT-{utcend:YmdHMS}GMT", 辽宁卫视
 rtsp://112.245.125.39:1554/iptv/import/Tvod/iptv/001/001/ch15050917541756096231.rsc/69996_Uni.sdp
 #EXTINF:-1 tvg-name="辽宁卫视" group-title="卫视频道" tvg-logo="png/辽宁卫视.png", 辽宁卫视
@@ -1595,6 +1593,8 @@ http://150.138.8.143/00/SNM/CHANNEL00000326/index.m3u8
 http://123.235.73.237:9901/tsfile/live/0002_27.m3u8?key=txiptv
 #EXTINF:-1 tvg-name="辽宁卫视" group-title="卫视频道" tvg-logo="png/辽宁卫视.png", 辽宁卫视
 http://123.235.73.237:9901/tsfile/live/0002_67.m3u8?key=txiptv
+#EXTINF:-1 tvg-name="辽宁卫视" group-title="卫视频道" tvg-logo="png/辽宁卫视.png", 辽宁卫视
+http://[2409:8087:3c02:0021:0000:0001:0000:100a]:6410/shandong_cabletv.live.zte.com////CHANNEL00000326/index.m3u8?IASHttpSessionId=
 #EXTINF:-1 tvg-name="内蒙古卫视" group-title="卫视频道" tvg-logo="https://raw.githubusercontent.com/plsy1/iptv/main/logo/内蒙古卫视.png" catchup="default" catchup-source="rtsp://112.245.125.47:1554/iptv/Tvod/iptv/001/001/ch10120118290217488762.rsc?tvdr={utc:YmdHMS}GMT-{utcend:YmdHMS}GMT", 内蒙古卫视
 rtsp://112.245.125.47:1554/iptv/import/Tvod/iptv/001/001/ch10120118290217488762.rsc/70041_Uni.sdp
 #EXTINF:-1 tvg-name="内蒙古卫视" group-title="卫视频道" tvg-logo="png/内蒙古卫视.png", 内蒙古卫视
@@ -1603,8 +1603,6 @@ http://192.168.31.2:4022/rtp/239.21.1.41:5002
 http://150.138.8.143/00/SNM/CHANNEL00000040/index.m3u8
 #EXTINF:-1 tvg-name="内蒙古卫视" group-title="卫视频道" tvg-logo="png/内蒙古卫视.png", 内蒙古卫视
 http://123.235.73.237:9901/tsfile/live/0002_43.m3u8?key=txiptv
-#EXTINF:-1 tvg-name="宁夏卫视" group-title="卫视频道" tvg-logo="png/宁夏卫视.png", 宁夏卫视
-http://[2409:8087:3c02:0021:0000:0001:0000:100a]:6410/shandong_cabletv.live.zte.com////CHANNEL00000395/index.m3u8?IASHttpSessionId=
 #EXTINF:-1 tvg-name="宁夏卫视" group-title="卫视频道" tvg-logo="png/宁夏卫视.png" catchup="default" catchup-source="rtsp://112.245.125.39:1554/iptv/import/Tvod/iptv/001/001/ch25072809435815201156.rsc/103092_Uni.sdp?tvdr={utc:YmdHMS}GMT-{utcend:YmdHMS}GMT", 宁夏卫视
 rtsp://112.245.125.41:1554/iptv/import/Tvod/iptv/001/001/ch25072809435815201156.rsc/103092_Uni.sdp
 #EXTINF:-1 tvg-name="宁夏卫视" group-title="卫视频道" tvg-logo="png/宁夏卫视.png" catchup="default" catchup-source="rtsp://112.245.125.39:1554/iptv/import/Tvod/iptv/001/001/ch10120118321878054010.rsc/69948_Uni.sdp?tvdr={utc:YmdHMS}GMT-{utcend:YmdHMS}GMT", 宁夏卫视
@@ -1617,6 +1615,8 @@ http://192.168.31.2:4022/rtp/239.21.1.44:5002
 http://150.138.8.143/00/SNM/CHANNEL00000043/index.m3u8
 #EXTINF:-1 tvg-name="宁夏卫视" group-title="卫视频道" tvg-logo="png/宁夏卫视.png", 宁夏卫视
 http://123.235.73.237:9901/tsfile/live/0002_39.m3u8?key=txiptv
+#EXTINF:-1 tvg-name="宁夏卫视" group-title="卫视频道" tvg-logo="png/宁夏卫视.png", 宁夏卫视
+http://[2409:8087:3c02:0021:0000:0001:0000:100a]:6410/shandong_cabletv.live.zte.com////CHANNEL00000395/index.m3u8?IASHttpSessionId=
 #EXTINF:-1 tvg-name="农林卫视" group-title="卫视频道" tvg-logo="https://raw.githubusercontent.com/plsy1/iptv/main/logo/农林卫视.png" catchup="default" catchup-source="rtsp://112.245.125.41:1554/iptv/Tvod/iptv/001/001/ch10120118335748437793.rsc?tvdr={utc:YmdHMS}GMT-{utcend:YmdHMS}GMT", 农林卫视
 rtsp://112.245.125.41:1554/iptv/import/Tvod/iptv/001/001/ch10120118335748437793.rsc/69961_Uni.sdp
 #EXTINF:-1 tvg-name="农林卫视" group-title="卫视频道" tvg-logo="png/农林卫视.png", 农林卫视
@@ -1625,8 +1625,6 @@ http://192.168.31.2:4022/rtp/239.21.1.235:5002
 http://150.138.8.143/00/SNM/CHANNEL00000072/index.m3u8
 #EXTINF:-1 tvg-name="农林卫视" group-title="卫视频道" tvg-logo="png/农林卫视.png", 农林卫视
 http://123.235.73.237:9901/tsfile/live/0002_45.m3u8?key=txiptv
-#EXTINF:-1 tvg-name="青海卫视" group-title="卫视频道" tvg-logo="png/青海卫视.png", 青海卫视
-http://[2409:8087:3c02:0021:0000:0001:0000:100a]:6410/shandong_cabletv.live.zte.com////CHANNEL00000366/index.m3u8?IASHttpSessionId=
 #EXTINF:-1 tvg-name="青海卫视" group-title="卫视频道" tvg-logo="png/青海卫视.png" catchup="default" catchup-source="rtsp://112.245.125.39:1554/iptv/import/Tvod/iptv/001/001/ch10120118273518671654.rsc/69945_Uni.sdp?tvdr={utc:YmdHMS}GMT-{utcend:YmdHMS}GMT", 青海卫视
 rtsp://112.245.125.39:1554/iptv/import/Tvod/iptv/001/001/ch10120118273518671654.rsc/69945_Uni.sdp
 #EXTINF:-1 tvg-name="青海卫视" group-title="卫视频道" tvg-logo="png/青海卫视.png", 青海卫视
@@ -1639,6 +1637,8 @@ http://150.138.8.143/00/SNM/CHANNEL00000366/index.m3u8
 http://150.138.8.143/00/SNM/CHANNEL00000042/index.m3u8
 #EXTINF:-1 tvg-name="青海卫视" group-title="卫视频道" tvg-logo="png/青海卫视.png", 青海卫视
 http://123.235.73.237:9901/tsfile/live/0002_40.m3u8?key=txiptv
+#EXTINF:-1 tvg-name="青海卫视" group-title="卫视频道" tvg-logo="png/青海卫视.png", 青海卫视
+http://[2409:8087:3c02:0021:0000:0001:0000:100a]:6410/shandong_cabletv.live.zte.com////CHANNEL00000366/index.m3u8?IASHttpSessionId=
 #EXTINF:-1 tvg-name="三沙卫视" group-title="卫视频道" tvg-logo="https://raw.githubusercontent.com/plsy1/iptv/main/logo/三沙卫视.png" catchup="default" catchup-source="rtsp://112.245.125.38:1554/iptv/Tvod/iptv/001/001/ch19120615372589393337.rsc?tvdr={utc:YmdHMS}GMT-{utcend:YmdHMS}GMT", 三沙卫视
 rtsp://112.245.125.38:1554/iptv/import/Tvod/iptv/001/001/ch19120615372589393337.rsc/89705_Uni.sdp
 #EXTINF:-1 tvg-name="三沙卫视" group-title="卫视频道" tvg-logo="png/三沙卫视.png", 三沙卫视
@@ -1647,8 +1647,6 @@ http://192.168.31.2:4022/rtp/239.21.2.9:5002
 http://150.138.8.143/00/SNM/CHANNEL00000078/index.m3u8
 #EXTINF:-1 tvg-name="三沙卫视" group-title="卫视频道" tvg-logo="png/三沙卫视.png", 三沙卫视
 http://123.235.73.237:9901/tsfile/live/0002_60.m3u8?key=txiptv
-#EXTINF:-1 tvg-name="山东卫视" group-title="卫视频道" tvg-logo="png/山东卫视.png", 山东卫视
-http://[2409:8087:3c02:0021:0000:0001:0000:100a]:6410/shandong_cabletv.live.zte.com////CHANNEL00000301/index.m3u8?IASHttpSessionId=
 #EXTINF:-1 tvg-name="山东卫视" group-title="卫视频道" tvg-logo="png/山东卫视.png" catchup="default" catchup-source="rtsp://112.245.125.39:1554/iptv/import/Tvod/iptv/001/001/ch15050916441119736372.rsc/70010_Uni.sdp?tvdr={utc:YmdHMS}GMT-{utcend:YmdHMS}GMT", 山东卫视
 rtsp://112.245.125.38:1554/iptv/import/Tvod/iptv/001/001/ch15050916441119736372.rsc/70010_Uni.sdp
 #EXTINF:-1 tvg-name="山东卫视" group-title="卫视频道" tvg-logo="png/山东卫视.png", 山东卫视
@@ -1657,6 +1655,8 @@ http://192.168.31.2:4022/rtp/239.21.1.87:5002
 http://150.138.8.143/00/SNM/CHANNEL00001068/index.m3u8
 #EXTINF:-1 tvg-name="山东卫视" group-title="卫视频道" tvg-logo="png/山东卫视.png", 山东卫视
 http://123.235.73.237:9901/tsfile/live/0002_17.m3u8?key=txiptv
+#EXTINF:-1 tvg-name="山东卫视" group-title="卫视频道" tvg-logo="png/山东卫视.png", 山东卫视
+http://[2409:8087:3c02:0021:0000:0001:0000:100a]:6410/shandong_cabletv.live.zte.com////CHANNEL00000301/index.m3u8?IASHttpSessionId=
 #EXTINF:-1 tvg-name="山东卫视" group-title="卫视频道" tvg-logo="png/山东卫视.png", 山东卫视
 http://124.128.73.58:9901/tsfile/live/0107_1.m3u8
 #EXTINF:-1 tvg-name="山西卫视" group-title="卫视频道" tvg-logo="png/山西卫视.png" catchup="default" catchup-source="rtsp://112.245.125.39:1554/iptv/import/Tvod/iptv/001/001/ch10120118303484157828.rsc/70039_Uni.sdp?tvdr={utc:YmdHMS}GMT-{utcend:YmdHMS}GMT", 山西卫视
@@ -1675,8 +1675,6 @@ http://192.168.31.2:4022/rtp/239.21.1.30:5002
 http://150.138.8.143/00/SNM/CHANNEL00000029/index.m3u8
 #EXTINF:-1 tvg-name="陕西卫视" group-title="卫视频道" tvg-logo="png/陕西卫视.png", 陕西卫视
 http://123.235.73.237:9901/tsfile/live/0002_35.m3u8?key=txiptv
-#EXTINF:-1 tvg-name="深圳卫视" group-title="卫视频道" tvg-logo="png/深圳卫视.png", 深圳卫视
-http://[2409:8087:3c02:0021:0000:0001:0000:100a]:6410/shandong_cabletv.live.zte.com////CHANNEL00000308/index.m3u8?IASHttpSessionId=
 #EXTINF:-1 tvg-name="深圳卫视" group-title="卫视频道" tvg-logo="png/深圳卫视.png" catchup="default" catchup-source="rtsp://112.245.125.39:1554/iptv/import/Tvod/iptv/001/001/ch12051116392957055081.rsc/70071_Uni.sdp?tvdr={utc:YmdHMS}GMT-{utcend:YmdHMS}GMT", 深圳卫视
 rtsp://112.245.125.47:1554/iptv/import/Tvod/iptv/001/001/ch12051116392957055081.rsc/70071_Uni.sdp
 #EXTINF:-1 tvg-name="深圳卫视" group-title="卫视频道" tvg-logo="png/深圳卫视.png", 深圳卫视
@@ -1685,8 +1683,8 @@ http://192.168.31.2:4022/rtp/239.21.1.93:5002
 http://150.138.8.143/00/SNM/CHANNEL00000308/index.m3u8
 #EXTINF:-1 tvg-name="深圳卫视" group-title="卫视频道" tvg-logo="png/深圳卫视.png", 深圳卫视
 http://123.235.73.237:9901/tsfile/live/0002_24.m3u8?key=txiptv
-#EXTINF:-1 tvg-name="四川卫视" group-title="卫视频道" tvg-logo="png/四川卫视.png", 四川卫视
-http://[2409:8087:3c02:0021:0000:0001:0000:100a]:6410/shandong_cabletv.live.zte.com////CHANNEL00000348/index.m3u8?IASHttpSessionId=
+#EXTINF:-1 tvg-name="深圳卫视" group-title="卫视频道" tvg-logo="png/深圳卫视.png", 深圳卫视
+http://[2409:8087:3c02:0021:0000:0001:0000:100a]:6410/shandong_cabletv.live.zte.com////CHANNEL00000308/index.m3u8?IASHttpSessionId=
 #EXTINF:-1 tvg-name="四川卫视" group-title="卫视频道" tvg-logo="png/四川卫视.png" catchup="default" catchup-source="rtsp://112.245.125.39:1554/iptv/import/Tvod/iptv/001/001/ch11122400393964414144.rsc/69962_Uni.sdp?tvdr={utc:YmdHMS}GMT-{utcend:YmdHMS}GMT", 四川卫视
 rtsp://112.245.125.48:1554/iptv/import/Tvod/iptv/001/001/ch11122400393964414144.rsc/69962_Uni.sdp
 #EXTINF:-1 tvg-name="四川卫视" group-title="卫视频道" tvg-logo="png/四川卫视.png", 四川卫视
@@ -1695,8 +1693,8 @@ http://192.168.31.2:4022/rtp/239.21.2.15:5002
 http://150.138.8.143/00/SNM/CHANNEL00000348/index.m3u8
 #EXTINF:-1 tvg-name="四川卫视" group-title="卫视频道" tvg-logo="png/四川卫视.png", 四川卫视
 http://123.235.73.237:9901/tsfile/live/0002_32.m3u8?key=txiptv
-#EXTINF:-1 tvg-name="天津卫视" group-title="卫视频道" tvg-logo="png/天津卫视.png", 天津卫视
-http://[2409:8087:3c02:0021:0000:0001:0000:100a]:6410/shandong_cabletv.live.zte.com////CHANNEL00000327/index.m3u8?IASHttpSessionId=
+#EXTINF:-1 tvg-name="四川卫视" group-title="卫视频道" tvg-logo="png/四川卫视.png", 四川卫视
+http://[2409:8087:3c02:0021:0000:0001:0000:100a]:6410/shandong_cabletv.live.zte.com////CHANNEL00000348/index.m3u8?IASHttpSessionId=
 #EXTINF:-1 tvg-name="天津卫视" group-title="卫视频道" tvg-logo="png/天津卫视.png" catchup="default" catchup-source="rtsp://112.245.125.39:1554/iptv/import/Tvod/iptv/001/001/ch15050917541659846769.rsc/69974_Uni.sdp?tvdr={utc:YmdHMS}GMT-{utcend:YmdHMS}GMT", 天津卫视
 rtsp://112.245.125.39:1554/iptv/import/Tvod/iptv/001/001/ch15050917541659846769.rsc/69974_Uni.sdp
 #EXTINF:-1 tvg-name="天津卫视" group-title="卫视频道" tvg-logo="png/天津卫视.png", 天津卫视
@@ -1705,6 +1703,8 @@ http://192.168.31.2:4022/rtp/239.21.1.165:5002
 http://150.138.8.143/00/SNM/CHANNEL00000327/index.m3u8
 #EXTINF:-1 tvg-name="天津卫视" group-title="卫视频道" tvg-logo="png/天津卫视.png", 天津卫视
 http://123.235.73.237:9901/tsfile/live/0002_64.m3u8?key=txiptv
+#EXTINF:-1 tvg-name="天津卫视" group-title="卫视频道" tvg-logo="png/天津卫视.png", 天津卫视
+http://[2409:8087:3c02:0021:0000:0001:0000:100a]:6410/shandong_cabletv.live.zte.com////CHANNEL00000327/index.m3u8?IASHttpSessionId=
 #EXTINF:-1 tvg-name="厦门卫视" group-title="卫视频道" tvg-logo="png/厦门卫视.png" catchup="default" catchup-source="rtsp://112.245.125.39:1554/iptv/import/Tvod/iptv/001/001/ch17120418140581348001.rsc/74165_Uni.sdp?tvdr={utc:YmdHMS}GMT-{utcend:YmdHMS}GMT", 厦门卫视
 rtsp://112.245.125.42:1554/iptv/import/Tvod/iptv/001/001/ch17120418140581348001.rsc/74165_Uni.sdp
 #EXTINF:-1 tvg-name="厦门卫视" group-title="卫视频道" tvg-logo="png/厦门卫视.png", 厦门卫视
@@ -1713,8 +1713,6 @@ http://192.168.31.2:4022/rtp/239.21.2.6:5002
 http://150.138.8.143/00/SNM/CHANNEL00000075/index.m3u8
 #EXTINF:-1 tvg-name="厦门卫视" group-title="卫视频道" tvg-logo="png/厦门卫视.png", 厦门卫视
 http://124.128.73.58:9901/tsfile/live/0129_1.m3u8?key=txiptv&playlive=1&authid=0
-#EXTINF:-1 tvg-name="新疆卫视" group-title="卫视频道" tvg-logo="png/新疆卫视.png", 新疆卫视
-http://[2409:8087:3c02:0021:0000:0001:0000:100a]:6410/shandong_cabletv.live.zte.com////CHANNEL00000393/index.m3u8?IASHttpSessionId=
 #EXTINF:-1 tvg-name="新疆卫视" group-title="卫视频道" tvg-logo="https://raw.githubusercontent.com/plsy1/iptv/main/logo/新疆卫视.png" catchup="default" catchup-source="rtsp://112.245.125.47:1554/iptv/Tvod/iptv/001/001/ch10120118204473437661.rsc?tvdr={utc:YmdHMS}GMT-{utcend:YmdHMS}GMT", 新疆卫视
 rtsp://112.245.125.47:1554/iptv/import/Tvod/iptv/001/001/ch10120118204473437661.rsc/69942_Uni.sdp
 #EXTINF:-1 tvg-name="新疆卫视" group-title="卫视频道" tvg-logo="png/新疆卫视.png", 新疆卫视
@@ -1725,8 +1723,8 @@ http://192.168.31.2:4022/rtp/239.21.1.45:5002
 http://150.138.8.143/00/SNM/CHANNEL00000044/index.m3u8
 #EXTINF:-1 tvg-name="新疆卫视" group-title="卫视频道" tvg-logo="png/新疆卫视.png", 新疆卫视
 http://123.235.73.237:9901/tsfile/live/0002_42.m3u8?key=txiptv
-#EXTINF:-1 tvg-name="西藏卫视" group-title="卫视频道" tvg-logo="png/西藏卫视.png", 西藏卫视
-http://[2409:8087:3c02:0021:0000:0001:0000:100a]:6410/shandong_cabletv.live.zte.com////CHANNEL00000392/index.m3u8?IASHttpSessionId=
+#EXTINF:-1 tvg-name="新疆卫视" group-title="卫视频道" tvg-logo="png/新疆卫视.png", 新疆卫视
+http://[2409:8087:3c02:0021:0000:0001:0000:100a]:6410/shandong_cabletv.live.zte.com////CHANNEL00000393/index.m3u8?IASHttpSessionId=
 #EXTINF:-1 tvg-name="西藏卫视" group-title="卫视频道" tvg-logo="png/西藏卫视.png" catchup="default" catchup-source="rtsp://112.245.125.39:1554/iptv/import/Tvod/iptv/001/001/ch10120116213780720306.rsc/69953_Uni.sdp?tvdr={utc:YmdHMS}GMT-{utcend:YmdHMS}GMT", 西藏卫视
 rtsp://112.245.125.47:1554/iptv/import/Tvod/iptv/001/001/ch10120116213780720306.rsc/69953_Uni.sdp
 #EXTINF:-1 tvg-name="西藏卫视" group-title="卫视频道" tvg-logo="png/西藏卫视.png", 西藏卫视
@@ -1737,14 +1735,14 @@ http://192.168.31.2:4022/rtp/239.21.1.46:5002
 http://150.138.8.143/00/SNM/CHANNEL00000045/index.m3u8
 #EXTINF:-1 tvg-name="西藏卫视" group-title="卫视频道" tvg-logo="png/西藏卫视.png", 西藏卫视
 http://123.235.73.237:9901/tsfile/live/0002_41.m3u8?key=txiptv
+#EXTINF:-1 tvg-name="西藏卫视" group-title="卫视频道" tvg-logo="png/西藏卫视.png", 西藏卫视
+http://[2409:8087:3c02:0021:0000:0001:0000:100a]:6410/shandong_cabletv.live.zte.com////CHANNEL00000392/index.m3u8?IASHttpSessionId=
 #EXTINF:-1 tvg-name="延边卫视" group-title="卫视频道" tvg-logo="png/延边卫视.png" catchup="default" catchup-source="rtsp://112.245.125.39:1554/iptv/import/Tvod/iptv/001/001/ch23072116063432685915.rsc/98595_Uni.sdp?tvdr={utc:YmdHMS}GMT-{utcend:YmdHMS}GMT", 延边卫视
 rtsp://112.245.125.48:1554/iptv/import/Tvod/iptv/001/001/ch23072116063432685915.rsc/98595_Uni.sdp
 #EXTINF:-1 tvg-name="延边卫视" group-title="卫视频道" tvg-logo="png/延边卫视.png", 延边卫视
 http://192.168.31.2:4022/rtp/239.21.2.137:5002
 #EXTINF:-1 tvg-name="延边卫视" group-title="卫视频道" tvg-logo="png/延边卫视.png", 延边卫视
 http://150.138.8.143/00/SNM/CHANNEL00000668/index.m3u8
-#EXTINF:-1 tvg-name="云南卫视" group-title="卫视频道" tvg-logo="png/云南卫视.png", 云南卫视
-http://[2409:8087:3c02:0021:0000:0001:0000:100a]:6410/shandong_cabletv.live.zte.com////CHANNEL00000367/index.m3u8?IASHttpSessionId=
 #EXTINF:-1 tvg-name="云南卫视" group-title="卫视频道" tvg-logo="png/云南卫视.png" catchup="default" catchup-source="rtsp://112.245.125.39:1554/iptv/import/Tvod/iptv/001/001/ch10120116144658191615.rsc/69926_Uni.sdp?tvdr={utc:YmdHMS}GMT-{utcend:YmdHMS}GMT", 云南卫视
 rtsp://112.245.125.41:1554/iptv/import/Tvod/iptv/001/001/ch10120116144658191615.rsc/69926_Uni.sdp
 #EXTINF:-1 tvg-name="云南卫视" group-title="卫视频道" tvg-logo="png/云南卫视.png", 云南卫视
@@ -1753,8 +1751,8 @@ http://192.168.31.2:4022/rtp/239.21.2.86:5002
 http://150.138.8.143/00/SNM/CHANNEL00000367/index.m3u8
 #EXTINF:-1 tvg-name="云南卫视" group-title="卫视频道" tvg-logo="png/云南卫视.png", 云南卫视
 http://150.138.8.143/00/SNM/CHANNEL00000039/index.m3u8
-#EXTINF:-1 tvg-name="浙江卫视" group-title="卫视频道" tvg-logo="png/浙江卫视.png", 浙江卫视
-http://[2409:8087:3c02:0021:0000:0001:0000:100a]:6410/shandong_cabletv.live.zte.com////CHANNEL00000305/index.m3u8?IASHttpSessionId=
+#EXTINF:-1 tvg-name="云南卫视" group-title="卫视频道" tvg-logo="png/云南卫视.png", 云南卫视
+http://[2409:8087:3c02:0021:0000:0001:0000:100a]:6410/shandong_cabletv.live.zte.com////CHANNEL00000367/index.m3u8?IASHttpSessionId=
 #EXTINF:-1 tvg-name="浙江卫视" group-title="卫视频道" tvg-logo="png/浙江卫视.png" catchup="default" catchup-source="rtsp://112.245.125.39:1554/iptv/import/Tvod/iptv/001/001/ch15050917541521964962.rsc/69949_Uni.sdp?tvdr={utc:YmdHMS}GMT-{utcend:YmdHMS}GMT", 浙江卫视
 rtsp://112.245.125.45:1554/iptv/import/Tvod/iptv/001/001/ch15050917541521964962.rsc/69949_Uni.sdp
 #EXTINF:-1 tvg-name="浙江卫视" group-title="卫视频道" tvg-logo="png/浙江卫视.png", 浙江卫视
@@ -1765,6 +1763,8 @@ http://150.138.8.143/00/SNM/CHANNEL00000305/index.m3u8
 http://123.235.73.237:9901/tsfile/live/0002_19.m3u8?key=txiptv
 #EXTINF:-1 tvg-name="浙江卫视" group-title="卫视频道" tvg-logo="png/浙江卫视.png", 浙江卫视
 http://123.235.73.237:9901/tsfile/live/0002_58.m3u8?key=txiptv
+#EXTINF:-1 tvg-name="浙江卫视" group-title="卫视频道" tvg-logo="png/浙江卫视.png", 浙江卫视
+http://[2409:8087:3c02:0021:0000:0001:0000:100a]:6410/shandong_cabletv.live.zte.com////CHANNEL00000305/index.m3u8?IASHttpSessionId=
 #EXTINF:-1 tvg-name="中国交通" group-title="卫视频道" tvg-logo="png/中国交通.png" catchup="default" catchup-source="rtsp://112.245.125.39:1554/iptv/import/Tvod/iptv/001/001/ch20110221445820405906.rsc/90479_Uni.sdp?tvdr={utc:YmdHMS}GMT-{utcend:YmdHMS}GMT", 中国交通
 rtsp://112.245.125.41:1554/iptv/import/Tvod/iptv/001/001/ch20110221445820405906.rsc/90479_Uni.sdp
 #EXTINF:-1 tvg-name="中国交通" group-title="卫视频道" tvg-logo="png/中国交通.png", 中国交通
@@ -2280,41 +2280,41 @@ http://192.168.31.2:4022/rtp/239.21.1.230:5002
 #EXTINF:-1 tvg-name="齐河综合" group-title="山东频道" tvg-logo="png/山东文旅.png", 齐河综合
 http://150.138.8.143/00/SNM/CHANNEL00001056/index.m3u8
 #EXTINF:-1 tvg-name="青岛QTV1" group-title="山东频道" tvg-logo="png/qtv1.png", 青岛QTV1
-http://[2409:8087:3c02:0021:0000:0001:0000:100a]:6410/shandong_cabletv.live.zte.com////CHANNEL00000500/index.m3u8?IASHttpSessionId=
-#EXTINF:-1 tvg-name="青岛QTV1" group-title="山东频道" tvg-logo="png/qtv1.png", 青岛QTV1
 http://192.168.31.2:4022/rtp/239.21.1.69:5002
 #EXTINF:-1 tvg-name="青岛QTV1" group-title="山东频道" tvg-logo="png/qtv1.png", 青岛QTV1
 http://150.138.8.143/00/SNM/CHANNEL00000500/index.m3u8
 #EXTINF:-1 tvg-name="青岛QTV1" group-title="山东频道" tvg-logo="png/qtv1.png", 青岛QTV1
 http://123.235.73.237:9901/tsfile/live/1000_1.m3u8?key=txiptv
-#EXTINF:-1 tvg-name="青岛QTV2" group-title="山东频道" tvg-logo="png/qtv2.png", 青岛QTV2
-http://[2409:8087:3c02:0021:0000:0001:0000:100a]:6410/shandong_cabletv.live.zte.com////CHANNEL00000501/index.m3u8?IASHttpSessionId=
+#EXTINF:-1 tvg-name="青岛QTV1" group-title="山东频道" tvg-logo="png/qtv1.png", 青岛QTV1
+http://[2409:8087:3c02:0021:0000:0001:0000:100a]:6410/shandong_cabletv.live.zte.com////CHANNEL00000500/index.m3u8?IASHttpSessionId=
 #EXTINF:-1 tvg-name="青岛QTV2" group-title="山东频道" tvg-logo="png/qtv2.png", 青岛QTV2
 http://192.168.31.2:4022/rtp/239.21.1.70:5002
 #EXTINF:-1 tvg-name="青岛QTV2" group-title="山东频道" tvg-logo="png/qtv2.png", 青岛QTV2
 http://150.138.8.143/00/SNM/CHANNEL00000501/index.m3u8
-#EXTINF:-1 tvg-name="青岛QTV3" group-title="山东频道" tvg-logo="png/qtv3.png", 青岛QTV3
-http://[2409:8087:3c02:0021:0000:0001:0000:100a]:6410/shandong_cabletv.live.zte.com////CHANNEL00000502/index.m3u8?IASHttpSessionId=
+#EXTINF:-1 tvg-name="青岛QTV2" group-title="山东频道" tvg-logo="png/qtv2.png", 青岛QTV2
+http://[2409:8087:3c02:0021:0000:0001:0000:100a]:6410/shandong_cabletv.live.zte.com////CHANNEL00000501/index.m3u8?IASHttpSessionId=
 #EXTINF:-1 tvg-name="青岛QTV3" group-title="山东频道" tvg-logo="png/qtv3.png", 青岛QTV3
 http://192.168.31.2:4022/rtp/239.21.1.71:5002
 #EXTINF:-1 tvg-name="青岛QTV3" group-title="山东频道" tvg-logo="png/qtv3.png", 青岛QTV3
 http://150.138.8.143/00/SNM/CHANNEL00000502/index.m3u8
 #EXTINF:-1 tvg-name="青岛QTV3" group-title="山东频道" tvg-logo="png/qtv3.png", 青岛QTV3
 http://123.235.73.237:9901/tsfile/live/1002_1.m3u8?key=txiptv
-#EXTINF:-1 tvg-name="青岛QTV4" group-title="山东频道" tvg-logo="png/qtv4.png", 青岛QTV4
-http://[2409:8087:3c02:0021:0000:0001:0000:100a]:6410/shandong_cabletv.live.zte.com////CHANNEL00000503/index.m3u8?IASHttpSessionId=
+#EXTINF:-1 tvg-name="青岛QTV3" group-title="山东频道" tvg-logo="png/qtv3.png", 青岛QTV3
+http://[2409:8087:3c02:0021:0000:0001:0000:100a]:6410/shandong_cabletv.live.zte.com////CHANNEL00000502/index.m3u8?IASHttpSessionId=
 #EXTINF:-1 tvg-name="青岛QTV4" group-title="山东频道" tvg-logo="png/qtv4.png", 青岛QTV4
 http://192.168.31.2:4022/rtp/239.21.1.72:5002
 #EXTINF:-1 tvg-name="青岛QTV4" group-title="山东频道" tvg-logo="png/qtv4.png", 青岛QTV4
 http://150.138.8.143/00/SNM/CHANNEL00000503/index.m3u8
 #EXTINF:-1 tvg-name="青岛QTV4" group-title="山东频道" tvg-logo="png/qtv4.png", 青岛QTV4
 http://123.235.73.237:9901/tsfile/live/1004_1.m3u8?key=txiptv
-#EXTINF:-1 tvg-name="青岛QTV5" group-title="山东频道" tvg-logo="png/qtv5.png", 青岛QTV5
-http://[2409:8087:3c02:0021:0000:0001:0000:100a]:6410/shandong_cabletv.live.zte.com////CHANNEL00000505/index.m3u8?IASHttpSessionId=
+#EXTINF:-1 tvg-name="青岛QTV4" group-title="山东频道" tvg-logo="png/qtv4.png", 青岛QTV4
+http://[2409:8087:3c02:0021:0000:0001:0000:100a]:6410/shandong_cabletv.live.zte.com////CHANNEL00000503/index.m3u8?IASHttpSessionId=
 #EXTINF:-1 tvg-name="青岛QTV5" group-title="山东频道" tvg-logo="png/qtv5.png", 青岛QTV5
 http://192.168.31.2:4022/rtp/239.21.1.74:5002
 #EXTINF:-1 tvg-name="青岛QTV5" group-title="山东频道" tvg-logo="png/qtv5.png", 青岛QTV5
 http://150.138.8.143/00/SNM/CHANNEL00000505/index.m3u8
+#EXTINF:-1 tvg-name="青岛QTV5" group-title="山东频道" tvg-logo="png/qtv5.png", 青岛QTV5
+http://[2409:8087:3c02:0021:0000:0001:0000:100a]:6410/shandong_cabletv.live.zte.com////CHANNEL00000505/index.m3u8?IASHttpSessionId=
 #EXTINF:-1 tvg-name="青岛QTV6" group-title="山东频道" tvg-logo="png/qtv6.png", 青岛QTV6
 http://123.235.73.237:9901/tsfile/live/0002_1.m3u8?key=txiptv
 #EXTINF:-1 tvg-name="青州文旅" group-title="山东频道" tvg-logo="png/山东文旅.png", 青州文旅
@@ -2363,8 +2363,6 @@ http://192.168.31.2:4022/rtp/239.21.1.220:5002
 http://150.138.8.143/00/SNM/CHANNEL00001049/index.m3u8
 #EXTINF:-1 tvg-name="山东海洋频道" group-title="山东频道" tvg-logo="https://raw.githubusercontent.com/plsy1/iptv/main/logo/山东海洋频道.png" catchup="default" catchup-source="rtsp://112.245.125.38:1554/iptv/Tvod/iptv/001/001/ch22111116270462496793.rsc?tvdr={utc:YmdHMS}GMT-{utcend:YmdHMS}GMT", 山东海洋
 rtsp://112.245.125.38:1554/iptv/import/Tvod/iptv/001/001/ch22111116270462496793.rsc/96159_Uni.sdp
-#EXTINF:-1 tvg-name="山东教育" group-title="山东频道" tvg-logo="png/山东教育.png", 山东教育
-http://[2409:8087:3c02:0021:0000:0001:0000:100a]:6410/shandong_cabletv.live.zte.com////CHANNEL00000331/index.m3u8?IASHttpSessionId=
 #EXTINF:-1 tvg-name="山东教育" group-title="山东频道" tvg-logo="png/山东教育.png" catchup="default" catchup-source="rtsp://112.245.125.39:1554/iptv/import/Tvod/iptv/001/001/ch10120118342495301658.rsc/69990_Uni.sdp?tvdr={utc:YmdHMS}GMT-{utcend:YmdHMS}GMT", 山东教育
 rtsp://112.245.125.42:1554/iptv/import/Tvod/iptv/001/001/ch10120118342495301658.rsc/69990_Uni.sdp
 #EXTINF:-1 tvg-name="山东教育" group-title="山东频道" tvg-logo="png/山东教育.png", 山东教育
@@ -2373,8 +2371,8 @@ http://192.168.31.2:4022/rtp/239.21.1.169:5002
 http://150.138.8.143/00/SNM/CHANNEL00000331/index.m3u8
 #EXTINF:-1 tvg-name="山东教育" group-title="山东频道" tvg-logo="png/山东教育.png", 山东教育
 http://123.235.73.237:9901/tsfile/live/0002_50.m3u8?key=txiptv
-#EXTINF:-1 tvg-name="山东农科" group-title="山东频道" tvg-logo="png/山东农科.png", 山东农科
-http://[2409:8087:3c02:0021:0000:0001:0000:100a]:6410/shandong_cabletv.live.zte.com////CHANNEL00000339/index.m3u8?IASHttpSessionId=
+#EXTINF:-1 tvg-name="山东教育" group-title="山东频道" tvg-logo="png/山东教育.png", 山东教育
+http://[2409:8087:3c02:0021:0000:0001:0000:100a]:6410/shandong_cabletv.live.zte.com////CHANNEL00000331/index.m3u8?IASHttpSessionId=
 #EXTINF:-1 tvg-name="山东农科" group-title="山东频道" tvg-logo="https://raw.githubusercontent.com/plsy1/iptv/main/logo/山东农科.png" catchup="default" catchup-source="rtsp://112.245.125.38:1554/iptv/Tvod/iptv/001/001/ch11012815072111657053.rsc?tvdr={utc:YmdHMS}GMT-{utcend:YmdHMS}GMT", 山东农科
 rtsp://112.245.125.38:1554/iptv/import/Tvod/iptv/001/001/ch11012815072111657053.rsc/70046_Uni.sdp
 #EXTINF:-1 tvg-name="山东农科" group-title="山东频道" tvg-logo="png/山东农科.png", 山东农科
@@ -2383,16 +2381,16 @@ http://192.168.31.2:4022/rtp/239.21.1.183:5002
 http://150.138.8.143/00/SNM/CHANNEL00000339/index.m3u8
 #EXTINF:-1 tvg-name="山东农科" group-title="山东频道" tvg-logo="png/山东农科.png", 山东农科
 http://123.235.73.237:9901/tsfile/live/0002_55.m3u8?key=txiptv
-#EXTINF:-1 tvg-name="山东齐鲁" group-title="山东频道" tvg-logo="png/山东齐鲁.png", 山东齐鲁
-http://[2409:8087:3c02:0021:0000:0001:0000:100a]:6410/shandong_cabletv.live.zte.com////CHANNEL00000313/index.m3u8?IASHttpSessionId=
+#EXTINF:-1 tvg-name="山东农科" group-title="山东频道" tvg-logo="png/山东农科.png", 山东农科
+http://[2409:8087:3c02:0021:0000:0001:0000:100a]:6410/shandong_cabletv.live.zte.com////CHANNEL00000339/index.m3u8?IASHttpSessionId=
 #EXTINF:-1 tvg-name="山东齐鲁" group-title="山东频道" tvg-logo="https://raw.githubusercontent.com/plsy1/iptv/main/logo/山东齐鲁.png" catchup="default" catchup-source="rtsp://112.245.125.39:1554/iptv/Tvod/iptv/001/001/ch10120117223157422538.rsc?tvdr={utc:YmdHMS}GMT-{utcend:YmdHMS}GMT", 山东齐鲁
 rtsp://112.245.125.39:1554/iptv/import/Tvod/iptv/001/001/ch10120117223157422538.rsc/70061_Uni.sdp
 #EXTINF:-1 tvg-name="山东齐鲁" group-title="山东频道" tvg-logo="png/山东齐鲁.png", 山东齐鲁
 http://192.168.31.2:4022/rtp/239.21.1.134:5002
 #EXTINF:-1 tvg-name="山东齐鲁" group-title="山东频道" tvg-logo="png/山东齐鲁.png", 山东齐鲁
 http://123.235.73.237:9901/tsfile/live/0002_56.m3u8?key=txiptv
-#EXTINF:-1 tvg-name="山东少儿" group-title="山东频道" tvg-logo="png/山东少儿.png", 山东少儿
-http://[2409:8087:3c02:0021:0000:0001:0000:100a]:6410/shandong_cabletv.live.zte.com////CHANNEL00000340/index.m3u8?IASHttpSessionId=
+#EXTINF:-1 tvg-name="山东齐鲁" group-title="山东频道" tvg-logo="png/山东齐鲁.png", 山东齐鲁
+http://[2409:8087:3c02:0021:0000:0001:0000:100a]:6410/shandong_cabletv.live.zte.com////CHANNEL00000313/index.m3u8?IASHttpSessionId=
 #EXTINF:-1 tvg-name="山东少儿" group-title="山东频道" tvg-logo="https://raw.githubusercontent.com/plsy1/iptv/main/logo/山东少儿.png" catchup="default" catchup-source="rtsp://112.245.125.48:1554/iptv/Tvod/iptv/001/001/ch11012815083626567264.rsc?tvdr={utc:YmdHMS}GMT-{utcend:YmdHMS}GMT", 山东少儿
 rtsp://112.245.125.48:1554/iptv/import/Tvod/iptv/001/001/ch11012815083626567264.rsc/69988_Uni.sdp
 #EXTINF:-1 tvg-name="山东少儿" group-title="山东频道" tvg-logo="png/山东少儿.png", 山东少儿
@@ -2401,18 +2399,16 @@ http://192.168.31.2:4022/rtp/239.21.1.208:5002
 http://150.138.8.143/00/SNM/CHANNEL00000340/index.m3u8
 #EXTINF:-1 tvg-name="山东少儿" group-title="山东频道" tvg-logo="png/山东少儿.png", 山东少儿
 http://123.235.73.237:9901/tsfile/live/0002_54.m3u8?key=txiptv
-#EXTINF:-1 tvg-name="山东生活" group-title="山东频道" tvg-logo="png/山东生活.png", 山东生活
-http://[2409:8087:3c02:0021:0000:0001:0000:100a]:6410/shandong_cabletv.live.zte.com////CHANNEL00000336/index.m3u8?IASHttpSessionId=
+#EXTINF:-1 tvg-name="山东少儿" group-title="山东频道" tvg-logo="png/山东少儿.png", 山东少儿
+http://[2409:8087:3c02:0021:0000:0001:0000:100a]:6410/shandong_cabletv.live.zte.com////CHANNEL00000340/index.m3u8?IASHttpSessionId=
 #EXTINF:-1 tvg-name="山东生活" group-title="山东频道" tvg-logo="png/山东生活.png" catchup="default" catchup-source="rtsp://112.245.125.39:1554/iptv/import/Tvod/iptv/001/001/ch10120117100570561699.rsc/70011_Uni.sdp?tvdr={utc:YmdHMS}GMT-{utcend:YmdHMS}GMT", 山东生活
 rtsp://112.245.125.48:1554/iptv/import/Tvod/iptv/001/001/ch10120117100570561699.rsc/70011_Uni.sdp
 #EXTINF:-1 tvg-name="山东生活" group-title="山东频道" tvg-logo="png/山东生活.png", 山东生活
 http://192.168.31.2:4022/rtp/239.21.1.175:5002
 #EXTINF:-1 tvg-name="山东生活" group-title="山东频道" tvg-logo="png/山东生活.png", 山东生活
 http://150.138.8.143/00/SNM/CHANNEL00000336/index.m3u8
-#EXTINF:-1 tvg-name="山东体育" group-title="山东频道" tvg-logo="png/山东体育.png", 山东体育
-http://[2409:8087:3c02:0021:0000:0001:0000:100a]:6410/shandong_cabletv.live.zte.com////CHANNEL00000315/index.m3u8?IASHttpSessionId=
-#EXTINF:-1 tvg-name="山东体育" group-title="山东频道" tvg-logo="png/山东体育.png", 山东体育
-http://[2409:8087:3c02:0021:0000:0001:0000:100a]:6410/shandong_cabletv.live.zte.com////CHANNEL00000400/index.m3u8?IASHttpSessionId=
+#EXTINF:-1 tvg-name="山东生活" group-title="山东频道" tvg-logo="png/山东生活.png", 山东生活
+http://[2409:8087:3c02:0021:0000:0001:0000:100a]:6410/shandong_cabletv.live.zte.com////CHANNEL00000336/index.m3u8?IASHttpSessionId=
 #EXTINF:-1 tvg-name="山东体育" group-title="山东频道" tvg-logo="png/山东体育.png" catchup="default" catchup-source="rtsp://112.245.125.39:1554/iptv/import/Tvod/iptv/001/001/ch10111720502861127519.rsc/70066_Uni.sdp?tvdr={utc:YmdHMS}GMT-{utcend:YmdHMS}GMT", 山东体育
 rtsp://112.245.125.42:1554/iptv/import/Tvod/iptv/001/001/ch10111720502861127519.rsc/70066_Uni.sdp
 #EXTINF:-1 tvg-name="山东体育" group-title="山东频道" tvg-logo="png/山东体育.png" catchup="default" catchup-source="rtsp://112.245.125.39:1554/iptv/import/Tvod/iptv/001/001/ch23112315513709014787.rsc/99848_Uni.sdp?tvdr={utc:YmdHMS}GMT-{utcend:YmdHMS}GMT", 山东体育
@@ -2421,24 +2417,26 @@ rtsp://112.245.125.47:1554/iptv/import/Tvod/iptv/001/001/ch23112315513709014787.
 http://192.168.31.2:4022/rtp/239.21.1.141:5002
 #EXTINF:-1 tvg-name="山东体育" group-title="山东频道" tvg-logo="png/山东体育.png", 山东体育
 http://150.138.8.143/00/SNM/CHANNEL00000315/index.m3u8
-#EXTINF:-1 tvg-name="山东文旅" group-title="山东频道" tvg-logo="png/山东文旅.png", 山东文旅
-http://[2409:8087:3c02:0021:0000:0001:0000:100a]:6410/shandong_cabletv.live.zte.com////CHANNEL00000337/index.m3u8?IASHttpSessionId=
+#EXTINF:-1 tvg-name="山东体育" group-title="山东频道" tvg-logo="png/山东体育.png", 山东体育
+http://[2409:8087:3c02:0021:0000:0001:0000:100a]:6410/shandong_cabletv.live.zte.com////CHANNEL00000315/index.m3u8?IASHttpSessionId=
+#EXTINF:-1 tvg-name="山东体育" group-title="山东频道" tvg-logo="png/山东体育.png", 山东体育
+http://[2409:8087:3c02:0021:0000:0001:0000:100a]:6410/shandong_cabletv.live.zte.com////CHANNEL00000400/index.m3u8?IASHttpSessionId=
 #EXTINF:-1 tvg-name="山东文旅" group-title="山东频道" tvg-logo="https://raw.githubusercontent.com/plsy1/iptv/main/logo/山东文旅.png" catchup="default" catchup-source="rtsp://112.245.125.41:1554/iptv/Tvod/iptv/001/001/ch10120117133527564831.rsc?tvdr={utc:YmdHMS}GMT-{utcend:YmdHMS}GMT", 山东文旅
 rtsp://112.245.125.41:1554/iptv/import/Tvod/iptv/001/001/ch10120117133527564831.rsc/70048_Uni.sdp
 #EXTINF:-1 tvg-name="山东文旅" group-title="山东频道" tvg-logo="png/山东文旅.png", 山东文旅
 http://192.168.31.2:4022/rtp/239.21.1.176:5002
 #EXTINF:-1 tvg-name="山东文旅" group-title="山东频道" tvg-logo="png/山东文旅.png", 山东文旅
 http://150.138.8.143/00/SNM/CHANNEL00000337/index.m3u8
-#EXTINF:-1 tvg-name="山东新闻" group-title="山东频道" tvg-logo="png/山东新闻.png", 山东新闻
-http://[2409:8087:3c02:0021:0000:0001:0000:100a]:6410/shandong_cabletv.live.zte.com////CHANNEL00000314/index.m3u8?IASHttpSessionId=
+#EXTINF:-1 tvg-name="山东文旅" group-title="山东频道" tvg-logo="png/山东文旅.png", 山东文旅
+http://[2409:8087:3c02:0021:0000:0001:0000:100a]:6410/shandong_cabletv.live.zte.com////CHANNEL00000337/index.m3u8?IASHttpSessionId=
 #EXTINF:-1 tvg-name="山东新闻" group-title="山东频道" tvg-logo="png/山东新闻.png" catchup="default" catchup-source="rtsp://112.245.125.39:1554/iptv/import/Tvod/iptv/001/001/ch10120117023986249401.rsc/70005_Uni.sdp?tvdr={utc:YmdHMS}GMT-{utcend:YmdHMS}GMT", 山东新闻
 rtsp://112.245.125.38:1554/iptv/import/Tvod/iptv/001/001/ch10120117023986249401.rsc/70005_Uni.sdp
 #EXTINF:-1 tvg-name="山东新闻" group-title="山东频道" tvg-logo="png/山东新闻.png", 山东新闻
 http://192.168.31.2:4022/rtp/239.21.1.140:5002
 #EXTINF:-1 tvg-name="山东新闻" group-title="山东频道" tvg-logo="png/山东新闻.png", 山东新闻
 http://123.235.73.237:9901/tsfile/live/0002_53.m3u8?key=txiptv
-#EXTINF:-1 tvg-name="山东综艺" group-title="山东频道" tvg-logo="png/山东综艺.png", 山东综艺
-http://[2409:8087:3c02:0021:0000:0001:0000:100a]:6410/shandong_cabletv.live.zte.com////CHANNEL00000338/index.m3u8?IASHttpSessionId=
+#EXTINF:-1 tvg-name="山东新闻" group-title="山东频道" tvg-logo="png/山东新闻.png", 山东新闻
+http://[2409:8087:3c02:0021:0000:0001:0000:100a]:6410/shandong_cabletv.live.zte.com////CHANNEL00000314/index.m3u8?IASHttpSessionId=
 #EXTINF:-1 tvg-name="山东综艺" group-title="山东频道" tvg-logo="png/山东综艺.png" catchup="default" catchup-source="rtsp://112.245.125.39:1554/iptv/import/Tvod/iptv/001/001/ch11012815051671532768.rsc/69938_Uni.sdp?tvdr={utc:YmdHMS}GMT-{utcend:YmdHMS}GMT", 山东综艺
 rtsp://112.245.125.38:1554/iptv/import/Tvod/iptv/001/001/ch11012815051671532768.rsc/69938_Uni.sdp
 #EXTINF:-1 tvg-name="山东综艺" group-title="山东频道" tvg-logo="png/山东综艺.png", 山东综艺
@@ -2447,6 +2445,8 @@ http://192.168.31.2:4022/rtp/239.21.1.177:5002
 http://150.138.8.143/00/SNM/CHANNEL00000338/index.m3u8
 #EXTINF:-1 tvg-name="山东综艺" group-title="山东频道" tvg-logo="png/山东综艺.png", 山东综艺
 http://123.235.73.237:9901/tsfile/live/0002_49.m3u8?key=txiptv
+#EXTINF:-1 tvg-name="山东综艺" group-title="山东频道" tvg-logo="png/山东综艺.png", 山东综艺
+http://[2409:8087:3c02:0021:0000:0001:0000:100a]:6410/shandong_cabletv.live.zte.com////CHANNEL00000338/index.m3u8?IASHttpSessionId=
 #EXTINF:-1 tvg-name="商河综合" group-title="山东频道" tvg-logo="png/山东文旅.png", 商河综合
 http://192.168.31.2:4022/rtp/239.21.2.53:5002
 #EXTINF:-1 tvg-name="商河综合" group-title="山东频道" tvg-logo="png/山东文旅.png", 商河综合
@@ -2655,24 +2655,22 @@ rtsp://112.245.125.39:1554/iptv/import/Tvod/iptv/001/001/ch21092610324607482092.
 http://192.168.31.2:4022/rtp/239.21.2.110:5002
 #EXTINF:-1 tvg-name="茶" group-title="他省频道" tvg-logo="png/茶.png", 茶
 http://150.138.8.143/00/SNM/CHANNEL00000649/index.m3u8
-#EXTINF:-1 tvg-name="东方财经" group-title="他省频道" tvg-logo="png/东方财经.png", 东方财经
-http://[2409:8087:3c02:0021:0000:0001:0000:100a]:6410/shandong_cabletv.live.zte.com////CHANNEL00002025/index.m3u8?IASHttpSessionId=
 #EXTINF:-1 tvg-name="东方财经" group-title="他省频道" tvg-logo="png/东方财经.png" catchup="default" catchup-source="rtsp://112.245.125.39:1554/iptv/import/Tvod/iptv/001/001/ch16051316174673479081.rsc/96398_Uni.sdp?tvdr={utc:YmdHMS}GMT-{utcend:YmdHMS}GMT", 东方财经
 rtsp://112.245.125.38:1554/iptv/import/Tvod/iptv/001/001/ch16051316174673479081.rsc/96398_Uni.sdp
 #EXTINF:-1 tvg-name="东方财经" group-title="他省频道" tvg-logo="png/东方财经.png", 东方财经
 http://192.168.31.2:4022/rtp/239.21.2.108:5002
 #EXTINF:-1 tvg-name="东方财经" group-title="他省频道" tvg-logo="png/东方财经.png", 东方财经
 http://150.138.8.143/00/SNM/CHANNEL00002025/index.m3u8
-#EXTINF:-1 tvg-name="都市剧场" group-title="他省频道" tvg-logo="png/都市剧场.png", 都市剧场
-http://[2409:8087:3c02:0021:0000:0001:0000:100a]:6410/shandong_cabletv.live.zte.com////CHANNEL00002022/index.m3u8?IASHttpSessionId=
+#EXTINF:-1 tvg-name="东方财经" group-title="他省频道" tvg-logo="png/东方财经.png", 东方财经
+http://[2409:8087:3c02:0021:0000:0001:0000:100a]:6410/shandong_cabletv.live.zte.com////CHANNEL00002025/index.m3u8?IASHttpSessionId=
 #EXTINF:-1 tvg-name="都市剧场" group-title="他省频道" tvg-logo="png/都市剧场.png" catchup="default" catchup-source="rtsp://112.245.125.39:1554/iptv/import/Tvod/iptv/001/001/ch16051316281593708406.rsc/69947_Uni.sdp?tvdr={utc:YmdHMS}GMT-{utcend:YmdHMS}GMT", 都市剧场
 rtsp://112.245.125.39:1554/iptv/import/Tvod/iptv/001/001/ch16051316281593708406.rsc/69947_Uni.sdp
 #EXTINF:-1 tvg-name="都市剧场" group-title="他省频道" tvg-logo="png/都市剧场.png", 都市剧场
 http://192.168.31.2:4022/rtp/239.21.2.90:5002
 #EXTINF:-1 tvg-name="都市剧场" group-title="他省频道" tvg-logo="png/都市剧场.png", 都市剧场
 http://150.138.8.143/00/SNM/CHANNEL00002022/index.m3u8
-#EXTINF:-1 tvg-name="金色学堂" group-title="他省频道" tvg-logo="png/金色学堂.png", 金色学堂
-http://[2409:8087:3c02:0021:0000:0001:0000:100a]:6410/shandong_cabletv.live.zte.com////CHANNEL00002018/index.m3u8?IASHttpSessionId=
+#EXTINF:-1 tvg-name="都市剧场" group-title="他省频道" tvg-logo="png/都市剧场.png", 都市剧场
+http://[2409:8087:3c02:0021:0000:0001:0000:100a]:6410/shandong_cabletv.live.zte.com////CHANNEL00002022/index.m3u8?IASHttpSessionId=
 #EXTINF:-1 tvg-name="金色学堂" group-title="他省频道" tvg-logo="https://raw.githubusercontent.com/plsy1/iptv/main/logo/金色学堂.png" catchup="default" catchup-source="rtsp://112.245.125.42:1554/iptv/Tvod/iptv/001/001/ch16051316370413715540.rsc?tvdr={utc:YmdHMS}GMT-{utcend:YmdHMS}GMT", 金色学堂
 rtsp://112.245.125.42:1554/iptv/import/Tvod/iptv/001/001/ch16051316370413715540.rsc/70002_Uni.sdp
 #EXTINF:-1 tvg-name="金色学堂" group-title="他省频道" tvg-logo="png/金色学堂.png", 金色学堂
@@ -2681,16 +2679,16 @@ http://192.168.31.2:4022/rtp/239.21.2.102:5002
 http://150.138.8.143/00/SNM/CHANNEL00002018/index.m3u8
 #EXTINF:-1 tvg-name="金色学堂" group-title="他省频道" tvg-logo="png/金色学堂.png", 金色学堂
 http://123.235.73.237:9901/tsfile/live/0002_70.m3u8?key=txiptv
-#EXTINF:-1 tvg-name="金鹰纪实" group-title="他省频道" tvg-logo="png/金鹰纪实.png", 金鹰纪实
-http://[2409:8087:3c02:0021:0000:0001:0000:100a]:6410/shandong_cabletv.live.zte.com////CHANNEL00000334/index.m3u8?IASHttpSessionId=
+#EXTINF:-1 tvg-name="金色学堂" group-title="他省频道" tvg-logo="png/金色学堂.png", 金色学堂
+http://[2409:8087:3c02:0021:0000:0001:0000:100a]:6410/shandong_cabletv.live.zte.com////CHANNEL00002018/index.m3u8?IASHttpSessionId=
 #EXTINF:-1 tvg-name="金鹰纪实" group-title="他省频道" tvg-logo="png/金鹰纪实.png" catchup="default" catchup-source="rtsp://112.245.125.39:1554/iptv/import/Tvod/iptv/001/001/ch15050917541337365144.rsc/70053_Uni.sdp?tvdr={utc:YmdHMS}GMT-{utcend:YmdHMS}GMT", 金鹰纪实
 rtsp://112.245.125.48:1554/iptv/import/Tvod/iptv/001/001/ch15050917541337365144.rsc/70053_Uni.sdp
 #EXTINF:-1 tvg-name="金鹰纪实" group-title="他省频道" tvg-logo="png/金鹰纪实.png", 金鹰纪实
 http://192.168.31.2:4022/rtp/239.21.1.170:5002
 #EXTINF:-1 tvg-name="金鹰纪实" group-title="他省频道" tvg-logo="png/金鹰纪实.png", 金鹰纪实
 http://150.138.8.143/00/SNM/CHANNEL00000334/index.m3u8
-#EXTINF:-1 tvg-name="金鹰卡通" group-title="他省频道" tvg-logo="png/金鹰卡通.png", 金鹰卡通
-http://[2409:8087:3c02:0021:0000:0001:0000:100a]:6410/shandong_cabletv.live.zte.com////CHANNEL00002027/index.m3u8?IASHttpSessionId=
+#EXTINF:-1 tvg-name="金鹰纪实" group-title="他省频道" tvg-logo="png/金鹰纪实.png", 金鹰纪实
+http://[2409:8087:3c02:0021:0000:0001:0000:100a]:6410/shandong_cabletv.live.zte.com////CHANNEL00000334/index.m3u8?IASHttpSessionId=
 #EXTINF:-1 tvg-name="金鹰卡通" group-title="他省频道" tvg-logo="png/金鹰卡通.png" catchup="default" catchup-source="rtsp://112.245.125.39:1554/iptv/import/Tvod/iptv/001/001/ch11122400412227153064.rsc/70028_Uni.sdp?tvdr={utc:YmdHMS}GMT-{utcend:YmdHMS}GMT", 金鹰卡通
 rtsp://112.245.125.41:1554/iptv/import/Tvod/iptv/001/001/ch11122400412227153064.rsc/70028_Uni.sdp
 #EXTINF:-1 tvg-name="金鹰卡通" group-title="他省频道" tvg-logo="png/金鹰卡通.png" catchup="default" catchup-source="rtsp://112.245.125.39:1554/iptv/import/Tvod/iptv/001/001/ch24111213065813502431.rsc/101580_Uni.sdp?tvdr={utc:YmdHMS}GMT-{utcend:YmdHMS}GMT", 金鹰卡通
@@ -2701,14 +2699,16 @@ http://192.168.31.2:4022/rtp/239.21.2.121:5002
 http://150.138.8.143/00/SNM/CHANNEL00002027/index.m3u8
 #EXTINF:-1 tvg-name="金鹰卡通" group-title="他省频道" tvg-logo="png/金鹰卡通.png", 金鹰卡通
 http://150.138.8.143/00/SNM/CHANNEL00000047/index.m3u8
-#EXTINF:-1 tvg-name="纪实科教" group-title="他省频道" tvg-logo="png/山东文旅.png", 纪实科教
-http://[2409:8087:3c02:0021:0000:0001:0000:100a]:6410/shandong_cabletv.live.zte.com////CHANNEL00000332/index.m3u8?IASHttpSessionId=
+#EXTINF:-1 tvg-name="金鹰卡通" group-title="他省频道" tvg-logo="png/金鹰卡通.png", 金鹰卡通
+http://[2409:8087:3c02:0021:0000:0001:0000:100a]:6410/shandong_cabletv.live.zte.com////CHANNEL00002027/index.m3u8?IASHttpSessionId=
 #EXTINF:-1 tvg-name="北京纪实科教" group-title="他省频道" tvg-logo="https://raw.githubusercontent.com/plsy1/iptv/main/logo/北京纪实科教.png" catchup="default" catchup-source="rtsp://112.245.125.47:1554/iptv/Tvod/iptv/001/001/ch24020510150834566089.rsc?tvdr={utc:YmdHMS}GMT-{utcend:YmdHMS}GMT", 纪实科教
 rtsp://112.245.125.47:1554/iptv/import/Tvod/iptv/001/001/ch24020510150834566089.rsc/99953_Uni.sdp
 #EXTINF:-1 tvg-name="纪实科教" group-title="他省频道" tvg-logo="png/山东文旅.png", 纪实科教
 http://192.168.31.2:4022/rtp/239.21.1.172:5002
 #EXTINF:-1 tvg-name="纪实科教" group-title="他省频道" tvg-logo="png/山东文旅.png", 纪实科教
 http://150.138.8.143/00/SNM/CHANNEL00000332/index.m3u8
+#EXTINF:-1 tvg-name="纪实科教" group-title="他省频道" tvg-logo="png/山东文旅.png", 纪实科教
+http://[2409:8087:3c02:0021:0000:0001:0000:100a]:6410/shandong_cabletv.live.zte.com////CHANNEL00000332/index.m3u8?IASHttpSessionId=
 #EXTINF:-1 tvg-name="卡酷少儿" group-title="他省频道" tvg-logo="png/卡酷少儿.png" catchup="default" catchup-source="rtsp://112.245.125.39:1554/iptv/import/Tvod/iptv/001/001/ch10120118400576795406.rsc/69993_Uni.sdp?tvdr={utc:YmdHMS}GMT-{utcend:YmdHMS}GMT", 卡酷少儿
 rtsp://112.245.125.47:1554/iptv/import/Tvod/iptv/001/001/ch10120118400576795406.rsc/69993_Uni.sdp
 #EXTINF:-1 tvg-name="卡酷少儿" group-title="他省频道" tvg-logo="png/卡酷少儿.png", 卡酷少儿
@@ -2729,14 +2729,14 @@ rtsp://112.245.125.38:1554/iptv/import/Tvod/iptv/001/001/ch21092610314667739520.
 http://192.168.31.2:4022/rtp/239.21.2.101:5002
 #EXTINF:-1 tvg-name="梨园" group-title="他省频道" tvg-logo="png/山东文旅.png", 梨园
 http://150.138.8.143/00/SNM/CHANNEL00000656/index.m3u8
-#EXTINF:-1 tvg-name="生活时尚" group-title="他省频道" tvg-logo="png/生活时尚.png", 生活时尚
-http://[2409:8087:3c02:0021:0000:0001:0000:100a]:6410/shandong_cabletv.live.zte.com////CHANNEL00002019/index.m3u8?IASHttpSessionId=
 #EXTINF:-1 tvg-name="生活时尚" group-title="他省频道" tvg-logo="png/生活时尚.png" catchup="default" catchup-source="rtsp://112.245.125.39:1554/iptv/import/Tvod/iptv/001/001/ch16051316300118213959.rsc/69982_Uni.sdp?tvdr={utc:YmdHMS}GMT-{utcend:YmdHMS}GMT", 生活时尚
 rtsp://112.245.125.41:1554/iptv/import/Tvod/iptv/001/001/ch16051316300118213959.rsc/69982_Uni.sdp
 #EXTINF:-1 tvg-name="生活时尚" group-title="他省频道" tvg-logo="png/生活时尚.png", 生活时尚
 http://192.168.31.2:4022/rtp/239.21.2.103:5002
 #EXTINF:-1 tvg-name="生活时尚" group-title="他省频道" tvg-logo="png/生活时尚.png", 生活时尚
 http://150.138.8.143/00/SNM/CHANNEL00002019/index.m3u8
+#EXTINF:-1 tvg-name="生活时尚" group-title="他省频道" tvg-logo="png/生活时尚.png", 生活时尚
+http://[2409:8087:3c02:0021:0000:0001:0000:100a]:6410/shandong_cabletv.live.zte.com////CHANNEL00002019/index.m3u8?IASHttpSessionId=
 #EXTINF:-1 tvg-name="文物宝库" group-title="他省频道" tvg-logo="https://raw.githubusercontent.com/plsy1/iptv/main/logo/文物宝库.png" catchup="default" catchup-source="rtsp://112.245.125.47:1554/iptv/Tvod/iptv/001/001/ch21092610321303262159.rsc?tvdr={utc:YmdHMS}GMT-{utcend:YmdHMS}GMT", 文物宝库
 rtsp://112.245.125.47:1554/iptv/import/Tvod/iptv/001/001/ch21092610321303262159.rsc/92509_Uni.sdp
 #EXTINF:-1 tvg-name="文物宝库" group-title="他省频道" tvg-logo="png/文物宝库.png", 文物宝库
@@ -2761,8 +2761,6 @@ rtsp://112.245.125.48:1554/iptv/import/Tvod/iptv/001/001/ch17120418224162657206.
 rtsp://112.245.125.39:1554/iptv/import/Tvod/iptv/001/001/ch11060317323358720349.rsc/69939_Uni.sdp
 #EXTINF:-1 tvg-name="爱综艺" group-title="数字频道" tvg-logo="png/山东文旅.png" catchup="default" catchup-source="rtsp://112.245.125.39:1554/iptv/import/Tvod/iptv/001/001/ch11061217211688091136.rsc/69970_Uni.sdp?tvdr={utc:YmdHMS}GMT-{utcend:YmdHMS}GMT", 爱综艺
 rtsp://112.245.125.42:1554/iptv/import/Tvod/iptv/001/001/ch11061217211688091136.rsc/69970_Uni.sdp
-#EXTINF:-1 tvg-name="CHC动作电影" group-title="数字频道" tvg-logo="png/CHC动作电影.png", CHC动作电影
-http://[2409:8087:3c02:0021:0000:0001:0000:100a]:6410/shandong_cabletv.live.zte.com////CHANNEL00002030/index.m3u8?IASHttpSessionId=
 #EXTINF:-1 tvg-name="CHC动作电影" group-title="数字频道" tvg-logo="png/CHC动作电影.png" catchup="default" catchup-source="rtsp://112.245.125.39:1554/iptv/import/Tvod/iptv/001/001/ch18120514100139517699.rsc/81477_Uni.sdp?tvdr={utc:YmdHMS}GMT-{utcend:YmdHMS}GMT", CHC动作电影
 rtsp://112.245.125.39:1554/iptv/import/Tvod/iptv/001/001/ch18120514100139517699.rsc/81477_Uni.sdp
 #EXTINF:-1 tvg-name="CHC动作电影" group-title="数字频道" tvg-logo="png/CHC动作电影.png", CHC动作电影
@@ -2771,22 +2769,24 @@ http://192.168.31.2:4022/rtp/239.21.2.128:5002
 http://150.138.8.143/00/SNM/CHANNEL00002030/index.m3u8
 #EXTINF:-1 tvg-name="CHC动作电影" group-title="数字频道" tvg-logo="png/CHC动作电影.png", CHC动作电影
 http://123.235.73.237:9901/tsfile/live/0002_68.m3u8?key=txiptv
-#EXTINF:-1 tvg-name="CHC家庭影院" group-title="数字频道" tvg-logo="png/CHC家庭影院.png", CHC家庭影院
-http://[2409:8087:3c02:0021:0000:0001:0000:100a]:6410/shandong_cabletv.live.zte.com////CHANNEL00002028/index.m3u8?IASHttpSessionId=
+#EXTINF:-1 tvg-name="CHC动作电影" group-title="数字频道" tvg-logo="png/CHC动作电影.png", CHC动作电影
+http://[2409:8087:3c02:0021:0000:0001:0000:100a]:6410/shandong_cabletv.live.zte.com////CHANNEL00002030/index.m3u8?IASHttpSessionId=
 #EXTINF:-1 tvg-name="CHC家庭影院" group-title="数字频道" tvg-logo="png/CHC家庭影院.png" catchup="default" catchup-source="rtsp://112.245.125.39:1554/iptv/import/Tvod/iptv/001/001/ch18120514091718394256.rsc/81481_Uni.sdp?tvdr={utc:YmdHMS}GMT-{utcend:YmdHMS}GMT", CHC家庭影院
 rtsp://112.245.125.39:1554/iptv/import/Tvod/iptv/001/001/ch18120514091718394256.rsc/81481_Uni.sdp
 #EXTINF:-1 tvg-name="CHC家庭影院" group-title="数字频道" tvg-logo="png/CHC家庭影院.png", CHC家庭影院
 http://192.168.31.2:4022/rtp/239.21.2.126:5002
 #EXTINF:-1 tvg-name="CHC家庭影院" group-title="数字频道" tvg-logo="png/CHC家庭影院.png", CHC家庭影院
 http://150.138.8.143/00/SNM/CHANNEL00002028/index.m3u8
-#EXTINF:-1 tvg-name="CHC影迷电影" group-title="数字频道" tvg-logo="png/CHC影迷电影.png", CHC影迷电影
-http://[2409:8087:3c02:0021:0000:0001:0000:100a]:6410/shandong_cabletv.live.zte.com////CHANNEL00002029/index.m3u8?IASHttpSessionId=
+#EXTINF:-1 tvg-name="CHC家庭影院" group-title="数字频道" tvg-logo="png/CHC家庭影院.png", CHC家庭影院
+http://[2409:8087:3c02:0021:0000:0001:0000:100a]:6410/shandong_cabletv.live.zte.com////CHANNEL00002028/index.m3u8?IASHttpSessionId=
 #EXTINF:-1 tvg-name="CHC影迷电影" group-title="数字频道" tvg-logo="https://raw.githubusercontent.com/plsy1/iptv/main/logo/CHC影迷电影.png" catchup="default" catchup-source="rtsp://112.245.125.48:1554/iptv/Tvod/iptv/001/001/ch18120514102191199606.rsc?tvdr={utc:YmdHMS}GMT-{utcend:YmdHMS}GMT", CHC影迷电影
 rtsp://112.245.125.48:1554/iptv/import/Tvod/iptv/001/001/ch18120514102191199606.rsc/81478_Uni.sdp
 #EXTINF:-1 tvg-name="CHC影迷电影" group-title="数字频道" tvg-logo="png/CHC影迷电影.png", CHC影迷电影
 http://192.168.31.2:4022/rtp/239.21.2.127:5002
 #EXTINF:-1 tvg-name="CHC影迷电影" group-title="数字频道" tvg-logo="png/CHC影迷电影.png", CHC影迷电影
 http://150.138.8.143/00/SNM/CHANNEL00002029/index.m3u8
+#EXTINF:-1 tvg-name="CHC影迷电影" group-title="数字频道" tvg-logo="png/CHC影迷电影.png", CHC影迷电影
+http://[2409:8087:3c02:0021:0000:0001:0000:100a]:6410/shandong_cabletv.live.zte.com////CHANNEL00002029/index.m3u8?IASHttpSessionId=
 #EXTINF:-1 tvg-name="车迷" group-title="数字频道" tvg-logo="png/车迷.png", 车迷
 http://150.138.8.143/00/SNM/CHANNEL00000645/index.m3u8
 #EXTINF:-1 tvg-name="城市剧场" group-title="数字频道" tvg-logo="https://raw.githubusercontent.com/plsy1/iptv/main/logo/城市剧场.png" catchup="default" catchup-source="rtsp://112.245.125.41:1554/iptv/Tvod/iptv/001/001/ch15090914573308932938.rsc?tvdr={utc:YmdHMS}GMT-{utcend:YmdHMS}GMT", 城市剧场
@@ -2803,24 +2803,24 @@ rtsp://112.245.125.41:1554/iptv/import/Tvod/iptv/001/001/ch13031310523562855603.
 rtsp://112.245.125.42:1554/iptv/import/Tvod/iptv/001/001/ch15090915235866760733.rsc/70036_Uni.sdp
 #EXTINF:-1 tvg-name="动画" group-title="数字频道" tvg-logo="png/山东文旅.png" catchup="default" catchup-source="rtsp://112.245.125.39:1554/iptv/import/Tvod/iptv/001/001/ch15090915451711071162.rsc/70065_Uni.sdp?tvdr={utc:YmdHMS}GMT-{utcend:YmdHMS}GMT", 动画
 rtsp://112.245.125.39:1554/iptv/import/Tvod/iptv/001/001/ch15090915451711071162.rsc/70065_Uni.sdp
-#EXTINF:-1 tvg-name="动漫秀场" group-title="数字频道" tvg-logo="png/动漫秀场.png", 动漫秀场
-http://[2409:8087:3c02:0021:0000:0001:0000:100a]:6410/shandong_cabletv.live.zte.com////CHANNEL00002000/index.m3u8?IASHttpSessionId=
 #EXTINF:-1 tvg-name="动漫秀场" group-title="数字频道" tvg-logo="png/动漫秀场.png" catchup="default" catchup-source="rtsp://112.245.125.39:1554/iptv/import/Tvod/iptv/001/001/ch17121814421621825244.rsc/96206_Uni.sdp?tvdr={utc:YmdHMS}GMT-{utcend:YmdHMS}GMT", 动漫秀场
 rtsp://112.245.125.42:1554/iptv/import/Tvod/iptv/001/001/ch17121814421621825244.rsc/96206_Uni.sdp
 #EXTINF:-1 tvg-name="动漫秀场" group-title="数字频道" tvg-logo="png/动漫秀场.png", 动漫秀场
 http://192.168.31.2:4022/rtp/239.21.2.92:5002
 #EXTINF:-1 tvg-name="动漫秀场" group-title="数字频道" tvg-logo="png/动漫秀场.png", 动漫秀场
 http://150.138.8.143/00/SNM/CHANNEL00002000/index.m3u8
+#EXTINF:-1 tvg-name="动漫秀场" group-title="数字频道" tvg-logo="png/动漫秀场.png", 动漫秀场
+http://[2409:8087:3c02:0021:0000:0001:0000:100a]:6410/shandong_cabletv.live.zte.com////CHANNEL00002000/index.m3u8?IASHttpSessionId=
 #EXTINF:-1 tvg-name="动作影院" group-title="数字频道" tvg-logo="png/山东文旅.png" catchup="default" catchup-source="rtsp://112.245.125.39:1554/iptv/import/Tvod/iptv/001/001/ch15090916164124642866.rsc/70004_Uni.sdp?tvdr={utc:YmdHMS}GMT-{utcend:YmdHMS}GMT", 动作影院
 rtsp://112.245.125.39:1554/iptv/import/Tvod/iptv/001/001/ch15090916164124642866.rsc/70004_Uni.sdp
-#EXTINF:-1 tvg-name="法治天地" group-title="数字频道" tvg-logo="png/法治天地.png", 法治天地
-http://[2409:8087:3c02:0021:0000:0001:0000:100a]:6410/shandong_cabletv.live.zte.com////CHANNEL00002010/index.m3u8?IASHttpSessionId=
 #EXTINF:-1 tvg-name="法治天地" group-title="数字频道" tvg-logo="png/法治天地.png" catchup="default" catchup-source="rtsp://112.245.125.39:1554/iptv/import/Tvod/iptv/001/001/ch16051316234089749497.rsc/96400_Uni.sdp?tvdr={utc:YmdHMS}GMT-{utcend:YmdHMS}GMT", 法治天地
 rtsp://112.245.125.48:1554/iptv/import/Tvod/iptv/001/001/ch16051316234089749497.rsc/96400_Uni.sdp
 #EXTINF:-1 tvg-name="法治天地" group-title="数字频道" tvg-logo="png/法治天地.png", 法治天地
 http://192.168.31.2:4022/rtp/239.21.2.105:5002
 #EXTINF:-1 tvg-name="法治天地" group-title="数字频道" tvg-logo="png/法治天地.png", 法治天地
 http://150.138.8.143/00/SNM/CHANNEL00002010/index.m3u8
+#EXTINF:-1 tvg-name="法治天地" group-title="数字频道" tvg-logo="png/法治天地.png", 法治天地
+http://[2409:8087:3c02:0021:0000:0001:0000:100a]:6410/shandong_cabletv.live.zte.com////CHANNEL00002010/index.m3u8?IASHttpSessionId=
 #EXTINF:-1 tvg-name="光影" group-title="数字频道" tvg-logo="png/山东文旅.png" catchup="default" catchup-source="rtsp://112.245.125.39:1554/iptv/import/Tvod/iptv/001/001/ch15090916254772284807.rsc/69940_Uni.sdp?tvdr={utc:YmdHMS}GMT-{utcend:YmdHMS}GMT", 光影
 rtsp://112.245.125.47:1554/iptv/import/Tvod/iptv/001/001/ch15090916254772284807.rsc/69940_Uni.sdp
 #EXTINF:-1 tvg-name="国学" group-title="数字频道" tvg-logo="https://raw.githubusercontent.com/plsy1/iptv/main/logo/国学.png" catchup="default" catchup-source="rtsp://112.245.125.38:1554/iptv/Tvod/iptv/001/001/ch15090916181970967371.rsc?tvdr={utc:YmdHMS}GMT-{utcend:YmdHMS}GMT", 国学
@@ -2861,14 +2861,14 @@ rtsp://112.245.125.47:1554/iptv/import/Tvod/iptv/001/001/ch15090916215642164569.
 rtsp://112.245.125.42:1554/iptv/import/Tvod/iptv/001/001/ch15090915530786226072.rsc/70033_Uni.sdp
 #EXTINF:-1 tvg-name="劲爆体育" group-title="数字频道" tvg-logo="png/劲爆体育.png", 劲爆体育
 http://[2409:8087:3c02:0021:0000:0001:0000:100a]:6410/shandong_cabletv.live.zte.com////CHANNEL00002026/index.m3u8?IASHttpSessionId=
-#EXTINF:-1 tvg-name="精彩影视" group-title="数字频道" tvg-logo="png/山东文旅.png", 精彩影视
-http://[2409:8087:3c02:0021:0000:0001:0000:100a]:6410/shandong_cabletv.live.zte.com////CHANNEL00002012/index.m3u8?IASHttpSessionId=
 #EXTINF:-1 tvg-name="精彩影视" group-title="数字频道" tvg-logo="https://raw.githubusercontent.com/plsy1/iptv/main/logo/精彩影视.png" catchup="default" catchup-source="rtsp://112.245.125.39:1554/iptv/Tvod/iptv/001/001/ch21092610322847858391.rsc?tvdr={utc:YmdHMS}GMT-{utcend:YmdHMS}GMT", 精彩影视
 rtsp://112.245.125.39:1554/iptv/import/Tvod/iptv/001/001/ch21092610322847858391.rsc/92512_Uni.sdp
 #EXTINF:-1 tvg-name="精彩影视" group-title="数字频道" tvg-logo="png/山东文旅.png", 精彩影视
 http://192.168.31.2:4022/rtp/239.21.2.91:5002
 #EXTINF:-1 tvg-name="精彩影视" group-title="数字频道" tvg-logo="png/山东文旅.png", 精彩影视
 http://150.138.8.143/00/SNM/CHANNEL00002012/index.m3u8
+#EXTINF:-1 tvg-name="精彩影视" group-title="数字频道" tvg-logo="png/山东文旅.png", 精彩影视
+http://[2409:8087:3c02:0021:0000:0001:0000:100a]:6410/shandong_cabletv.live.zte.com////CHANNEL00002012/index.m3u8?IASHttpSessionId=
 #EXTINF:-1 tvg-name="经典电影" group-title="数字频道" tvg-logo="png/山东文旅.png" catchup="default" catchup-source="rtsp://112.245.125.39:1554/iptv/import/Tvod/iptv/001/001/ch11060317313622161494.rsc/69976_Uni.sdp?tvdr={utc:YmdHMS}GMT-{utcend:YmdHMS}GMT", 经典电影
 rtsp://112.245.125.39:1554/iptv/import/Tvod/iptv/001/001/ch11060317313622161494.rsc/69976_Uni.sdp
 #EXTINF:-1 tvg-name="经典剧场" group-title="数字频道" tvg-logo="https://raw.githubusercontent.com/plsy1/iptv/main/logo/经典剧场.png" catchup="default" catchup-source="rtsp://112.245.125.38:1554/iptv/Tvod/iptv/001/001/ch15090915512437000823.rsc?tvdr={utc:YmdHMS}GMT-{utcend:YmdHMS}GMT", 经典剧场
@@ -2879,14 +2879,14 @@ rtsp://112.245.125.47:1554/iptv/import/Tvod/iptv/001/001/ch15090915484219614929.
 rtsp://112.245.125.41:1554/iptv/import/Tvod/iptv/001/001/ch15090915023023311866.rsc/69969_Uni.sdp
 #EXTINF:-1 tvg-name="聚鲨环球" group-title="数字频道" tvg-logo="https://raw.githubusercontent.com/plsy1/iptv/main/logo/聚鲨环球.png" catchup="default" catchup-source="rtsp://112.245.125.48:1554/iptv/Tvod/iptv/001/001/ch24111213071421948951.rsc?tvdr={utc:YmdHMS}GMT-{utcend:YmdHMS}GMT", 聚鲨环球
 rtsp://112.245.125.48:1554/iptv/import/Tvod/iptv/001/001/ch24111213071421948951.rsc/101556_Uni.sdp
-#EXTINF:-1 tvg-name="乐游" group-title="数字频道" tvg-logo="png/乐游.png", 乐游
-http://[2409:8087:3c02:0021:0000:0001:0000:100a]:6410/shandong_cabletv.live.zte.com////CHANNEL00002016/index.m3u8?IASHttpSessionId=
 #EXTINF:-1 tvg-name="乐游" group-title="数字频道" tvg-logo="png/乐游.png" catchup="default" catchup-source="rtsp://112.245.125.39:1554/iptv/import/Tvod/iptv/001/001/ch16051316264757381898.rsc/69991_Uni.sdp?tvdr={utc:YmdHMS}GMT-{utcend:YmdHMS}GMT", 乐游
 rtsp://112.245.125.39:1554/iptv/import/Tvod/iptv/001/001/ch16051316264757381898.rsc/69991_Uni.sdp
 #EXTINF:-1 tvg-name="乐游" group-title="数字频道" tvg-logo="png/乐游.png", 乐游
 http://192.168.31.2:4022/rtp/239.21.2.104:5002
 #EXTINF:-1 tvg-name="乐游" group-title="数字频道" tvg-logo="png/乐游.png", 乐游
 http://150.138.8.143/00/SNM/CHANNEL00002016/index.m3u8
+#EXTINF:-1 tvg-name="乐游" group-title="数字频道" tvg-logo="png/乐游.png", 乐游
+http://[2409:8087:3c02:0021:0000:0001:0000:100a]:6410/shandong_cabletv.live.zte.com////CHANNEL00002016/index.m3u8?IASHttpSessionId=
 #EXTINF:-1 tvg-name="旅游卫视" group-title="数字频道" tvg-logo="png/山东文旅.png", 旅游卫视
 http://123.235.73.237:9901/tsfile/live/0002_36.m3u8?key=txiptv
 #EXTINF:-1 tvg-name="魅力时尚" group-title="数字频道" tvg-logo="png/山东文旅.png" catchup="default" catchup-source="rtsp://112.245.125.39:1554/iptv/import/Tvod/iptv/001/001/ch11061217095691862636.rsc/70009_Uni.sdp?tvdr={utc:YmdHMS}GMT-{utcend:YmdHMS}GMT", 魅力时尚
@@ -2967,8 +2967,6 @@ rtsp://112.245.125.48:1554/iptv/import/Tvod/iptv/001/001/ch11042914374730524823.
 http://192.168.31.2:4022/rtp/239.21.1.50:5002
 #EXTINF:-1 tvg-name="优漫卡通" group-title="数字频道" tvg-logo="png/优漫卡通.png", 优漫卡通
 http://150.138.8.143/00/SNM/CHANNEL00000049/index.m3u8
-#EXTINF:-1 tvg-name="游戏风云" group-title="数字频道" tvg-logo="png/游戏风云.png", 游戏风云
-http://[2409:8087:3c02:0021:0000:0001:0000:100a]:6410/shandong_cabletv.live.zte.com////CHANNEL00002024/index.m3u8?IASHttpSessionId=
 #EXTINF:-1 tvg-name="游戏风云" group-title="数字频道" tvg-logo="png/游戏风云.png" catchup="default" catchup-source="rtsp://112.245.125.39:1554/iptv/import/Tvod/iptv/001/001/ch16051316213602697345.rsc/70026_Uni.sdp?tvdr={utc:YmdHMS}GMT-{utcend:YmdHMS}GMT", 游戏风云
 rtsp://112.245.125.48:1554/iptv/import/Tvod/iptv/001/001/ch16051316213602697345.rsc/70026_Uni.sdp
 #EXTINF:-1 tvg-name="游戏风云" group-title="数字频道" tvg-logo="png/游戏风云.png", 游戏风云
@@ -2977,6 +2975,8 @@ http://192.168.31.2:4022/rtp/239.21.2.107:5002
 http://150.138.8.143/00/SNM/CHANNEL00002024/index.m3u8
 #EXTINF:-1 tvg-name="游戏风云" group-title="数字频道" tvg-logo="png/游戏风云.png", 游戏风云
 http://123.235.73.237:9901/tsfile/live/0002_69.m3u8?key=txiptv
+#EXTINF:-1 tvg-name="游戏风云" group-title="数字频道" tvg-logo="png/游戏风云.png", 游戏风云
+http://[2409:8087:3c02:0021:0000:0001:0000:100a]:6410/shandong_cabletv.live.zte.com////CHANNEL00002024/index.m3u8?IASHttpSessionId=
 #EXTINF:-1 tvg-name="优优宝贝" group-title="数字频道" tvg-logo="png/优优宝贝.png" catchup="default" catchup-source="rtsp://112.245.125.39:1554/iptv/import/Tvod/iptv/001/001/ch22122209132553924896.rsc/98132_Uni.sdp?tvdr={utc:YmdHMS}GMT-{utcend:YmdHMS}GMT", 优优宝贝
 rtsp://112.245.125.41:1554/iptv/import/Tvod/iptv/001/001/ch22122209132553924896.rsc/98132_Uni.sdp
 #EXTINF:-1 tvg-name="优优宝贝" group-title="数字频道" tvg-logo="png/优优宝贝.png", 优优宝贝
