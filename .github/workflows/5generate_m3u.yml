@@ -3,34 +3,72 @@ name: 5生成m3u文件
 on:
   workflow_dispatch:
   schedule:
-    - cron: "0 12 * * *"  # UTC时间每天12点运行（北京时间20点）
+    - cron: "0 12 * * *"  # 每天 UTC 12:00 触发
 
 jobs:
-  generate:
+  generate_m3u:
     runs-on: ubuntu-latest
 
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4
 
-      - name: Set up Python 3.10
+      - name: Setup Python
         uses: actions/setup-python@v4
         with:
-          python-version: '3.10'
+          python-version: "3.11"
 
       - name: Install dependencies
         run: |
           python -m pip install --upgrade pip
-          pip install aiohttp pypinyin
+          pip install aiohttp pypinyin aiofiles
 
-      - name: Run 8cvs_to_m3u.py script
+      - name: Run m3u generation script
         run: |
           python scripts/8cvs_to_m3u.py
 
-      - name: Upload generated M3U files
+      - name: Upload cached unicast.m3u
+        uses: actions/upload-artifact@v3
+        with:
+          name: unicast-cache
+          path: input/network/unicast.m3u
+
+      - name: Upload generated m3u files
         uses: actions/upload-artifact@v3
         with:
           name: m3u-files
           path: |
             output/dxl.m3u
             output/sjmz.m3u
+
+      - name: Commit and push changes with stash and retry
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add output/dxl.m3u output/sjmz.m3u input/network/unicast.m3u
+          if ! git diff --cached --quiet; then
+            git commit -m "Auto update m3u and unicast cache [skip ci]"
+            MAX_RETRIES=3
+            for i in $(seq 1 $MAX_RETRIES); do
+              echo "Attempt $i to push..."
+              if git push origin main --quiet; then
+                echo "Push succeeded"
+                break
+              else
+                echo "Push failed, handling local uncommitted changes and pulling remote..."
+                if [ -n "$(git status --porcelain)" ]; then
+                  git stash push -m "ci stash before pull"
+                  git pull --rebase origin main --quiet
+                  git stash pop || echo "No stash to pop"
+                else
+                  git pull --rebase origin main --quiet
+                fi
+              fi
+              if [ "$i" -eq "$MAX_RETRIES" ]; then
+                echo "Max retries reached, push failed"
+                exit 1
+              fi
+            done
+          else
+            echo "✅ No changes to commit."
+          fi
