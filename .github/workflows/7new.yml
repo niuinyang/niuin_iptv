@@ -13,7 +13,16 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v4
         with:
-          fetch-depth: 0  # 保留完整历史方便推送
+          fetch-depth: 0  # 完整历史方便推送
+
+      - name: Clone iptv-org database
+        run: |
+          git clone --depth=1 https://github.com/iptv-org/iptv.git iptv-org
+
+      - name: Save iptv-org database to /input
+        run: |
+          mkdir -p input
+          cp -r iptv-org/* input/
 
       - name: Cache pip
         uses: actions/cache@v3
