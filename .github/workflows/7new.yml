@@ -35,7 +35,7 @@ jobs:
 
       - name: Run IPTV Standardization Script
         run: |
-          python 7standardize_names.py
+          python scripts/7standardize_names.py
 
       - name: Commit and Push changes
         run: |
