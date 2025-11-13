@@ -89,7 +89,6 @@ def main():
 
     std_name_dict = dict(zip(channel_data["标准名_std_key"], channel_data["标准名"]))
     orig_name_dict = dict(zip(channel_data["原始名_std_key"], channel_data["标准名"]))
-    orig_to_pending = dict(zip(channel_data["原始名_std_key"], channel_data["拟匹配频道名"]))
 
     existing_orig_names = set(channel_data["原始名"].fillna("").unique())
 
@@ -129,45 +128,39 @@ def main():
             match_info = "未匹配"
             match_score = 0.0
 
-            # ✅ 修改：精准匹配逻辑——匹配原始名且拟匹配频道名为空
-            if key in orig_to_pending and not pd.notna(orig_to_pending[key]) or orig_to_pending[key] == "":
-                matched_name = orig_name_dict.get(key, "")
-                if matched_name:
-                    match_info = "精准匹配"
-                    match_score = 100.0
-                    precise_match_count += 1
-                else:
-                    match_info = "未匹配"
+            # 修改：精准匹配时不写入channel_data
+            if key in std_name_dict and std_name_dict[key]:
+                matched_name = std_name_dict[key]
+                match_info = "精准匹配"
+                match_score = 100.0
+                precise_match_count += 1
+            elif key in orig_name_dict and orig_name_dict[key]:
+                matched_name = orig_name_dict[key]
+                match_info = "精准匹配"
+                match_score = 100.0
+                precise_match_count += 1
             else:
-                # 第二优先级：按标准名 key 匹配
-                if key in std_name_dict and std_name_dict[key]:
-                    matched_name = std_name_dict[key]
-                    match_info = "精准匹配"
-                    match_score = 100.0
-                    precise_match_count += 1
-                else:
-                    # 启用模糊匹配
-                    choices = list(network_channels.keys())
-                    matches = process.extract(key, choices, scorer=fuzz.ratio, limit=1)
-                    if matches:
-                        best_match_key, score, _ = matches[0]
-                        if score > 90:
-                            matched_name = network_channels[best_match_key]
-                            match_info = f"模糊匹配（>90%）"
-                            match_score = float(score)
-                            fuzzy_match_count += 1
-                            matched_name = clean_network_std_name(matched_name)
-                            add_channel_data_if_not_exists(original_name, matched_name, "待确认分组")
-                        else:
-                            matched_name = original_name
-                            match_info = "未匹配"
-                            match_score = float(score)
-                            add_channel_data_if_not_exists(original_name, matched_name, "待标准化")
+                choices = list(network_channels.keys())
+                matches = process.extract(key, choices, scorer=fuzz.ratio, limit=1)
+                if matches:
+                    best_match_key, score, _ = matches[0]
+                    if score > 90:
+                        matched_name = network_channels[best_match_key]
+                        match_info = f"模糊匹配（>90%）"
+                        match_score = float(score)
+                        fuzzy_match_count += 1
+                        matched_name = clean_network_std_name(matched_name)
+                        add_channel_data_if_not_exists(original_name, matched_name, "待确认分组")
                     else:
                         matched_name = original_name
                         match_info = "未匹配"
-                        match_score = 0.0
+                        match_score = float(score)
                         add_channel_data_if_not_exists(original_name, matched_name, "待标准化")
+                else:
+                    matched_name = original_name
+                    match_info = "未匹配"
+                    match_score = 0.0
+                    add_channel_data_if_not_exists(original_name, matched_name, "待标准化")
 
             matched_standard_names.append(matched_name)
             matched_match_info.append(match_info)
@@ -190,7 +183,7 @@ def main():
 
     total_before["分组"] = total_before["频道名"].apply(get_group)
 
-    # 保留首次出现的原始名，防止重复写入
+    # ====== 新增：对 channel_data 按 “原始名” 去重，保留首次出现，防止覆盖 ======
     channel_data = channel_data.drop_duplicates(subset=["原始名"], keep='first')
 
     print(f"匹配完成，总精准匹配数：{precise_match_count}，总模糊匹配数：{fuzzy_match_count}")
@@ -200,10 +193,13 @@ def main():
         "频道名","地址","来源","图标","检测时间","分组","视频编码","分辨率","帧率","音频","相似度","匹配信息","匹配值"
     ])
 
+    # 只保存原始的四列，防止写出多余的_std_key辅助列
     channel_data.to_csv(OUTPUT_CHANNEL_DATA, index=False, encoding="utf-8-sig",
                         columns=["原始名", "标准名", "拟匹配频道名", "分组"])
 
     print("处理完成！")
 
 if __name__ == "__main__":
-    main()
+    main()在这个代码的基础上，修改如下
+第一轮精确匹配时，原来是匹配原始名，且标准名不为空的是为精确匹配，标准名为空的视为未匹配，进入下一轮匹配
+修改逻辑为匹配原始名，且拟匹配名为空的是为精确匹配，如果拟匹配名不为空，则视为未匹配，进入下一轮匹配
