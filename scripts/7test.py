@@ -357,6 +357,25 @@ def main():
     working_out = build_total_df(working_df)
 
     total_df = pd.concat([my_sum_out, working_out], ignore_index=True)
+
+    # ===== 新增：根据频道名从 channel.csv 更新 total_df 的“分组”列 =====
+    if os.path.exists(INPUT_CHANNEL):
+        channel_df = pd.read_csv(INPUT_CHANNEL, encoding="utf-8-sig")
+        channel_group_map = dict(zip(channel_df["频道名"].str.lower(), channel_df["分组"].fillna("").astype(str)))
+
+        def update_group(row):
+            name = row["频道名"]
+            if not isinstance(name, str):
+                return row["分组"]
+            lower_name = name.lower()
+            if lower_name in channel_group_map and channel_group_map[lower_name].strip() != "":
+                return channel_group_map[lower_name]
+            else:
+                return row["分组"]
+
+        total_df["分组"] = total_df.apply(update_group, axis=1)
+    # ===============================================================
+
     total_df.to_csv(OUTPUT_TOTAL, index=False, encoding="utf-8-sig")
     print(f"✅ 已保存文件：{OUTPUT_TOTAL}，共计 {len(total_df)} 条记录")
 
