@@ -15,14 +15,14 @@ jobs:
         with:
           fetch-depth: 0  # 完整历史方便推送
 
-      - name: Clone iptv-org database
+      - name: Clone iptv-org repository
         run: |
           git clone --depth=1 https://github.com/iptv-org/iptv.git iptv-org
 
-      - name: Save iptv-org database to /input
+      - name: Copy iptv-org/database to input/iptv-org/database
         run: |
-          mkdir -p input
-          cp -r iptv-org/* input/
+          mkdir -p input/iptv-org
+          cp -r iptv-org/database input/iptv-org/
 
       - name: Cache pip
         uses: actions/cache@v3
