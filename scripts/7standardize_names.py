@@ -92,10 +92,9 @@ def main():
     channel_data["原始名_std_key"] = channel_data["原始名"].apply(mechanical_standardize)
 
     std_name_dict = dict(zip(channel_data["标准名_std_key"], channel_data["标准名"]))
-    std_key_to_pending = dict(zip(channel_data["标准名_std_key"], channel_data["拟匹配频道名"]))
 
-    orig_name_dict = dict(zip(channel_data["原始名_std_key"], channel_data["标准名"]))
-    orig_key_to_pending = dict(zip(channel_data["原始名_std_key"], channel_data["拟匹配频道名"]))
+    # 新增：拟匹配频道名字典，用于判断精准匹配条件
+    std_key_to_pending = dict(zip(channel_data["标准名_std_key"], channel_data["拟匹配频道名"]))
 
     existing_orig_names = set(channel_data["原始名"].fillna("").unique())
 
@@ -135,48 +134,35 @@ def main():
             match_info = "未匹配"
             match_score = 0.0
 
-            # ======= 调试输出，针对特定频道名 =======
-            if original_name == "[BD]france 24 english":
-                print("\n调试>>> 原始名:", original_name)
-                print("调试>>> std_key:", key)
-                print("调试>>> channel_data 中拟匹配频道名相关信息：")
-                cd_rows = channel_data[channel_data["原始名_std_key"] == key]
-                if not cd_rows.empty:
-                    for _, cd_row in cd_rows.iterrows():
-                        print("  标准名:", cd_row["标准名"])
-                        print("  拟匹配频道名:", repr(cd_row["拟匹配频道名"]))
-                else:
-                    print("  未找到对应的channel_data条目")
-            # ======= 调试输出结束 =======
-
-            # ==== 精准匹配标准名
-            if key in std_name_dict:
-                pending_val = std_key_to_pending.get(key, "")
-                if pd.isna(pending_val) or str(pending_val).strip() == "":
-                    matched_name = std_name_dict[key]
-                    match_info = "精准匹配-标准名"
-                    match_score = 100.0
-                    precise_match_count += 1
+            # ==== 修改的精准匹配逻辑开始 ====
+            # 精准匹配改为用原始名匹配channel_data["原始名"]
+            if original_name in existing_orig_names:
+                # 找出对应的标准名
+                matched_std_name = channel_data.loc[channel_data["原始名"] == original_name, "标准名"].values
+                # 拟匹配频道名字段判空
+                pending_val = channel_data.loc[channel_data["原始名"] == original_name, "拟匹配频道名"].values
+                if len(matched_std_name) > 0:
+                    if len(pending_val) > 0:
+                        val = pending_val[0]
+                        if pd.isna(val) or val == "":
+                            matched_name = matched_std_name[0]
+                            match_info = "精准匹配"
+                            match_score = 100.0
+                            precise_match_count += 1
+                        else:
+                            # 拟匹配频道名不为空，进入模糊匹配
+                            matched_name = None
+                    else:
+                        matched_name = matched_std_name[0]
+                        match_info = "精准匹配"
+                        match_score = 100.0
+                        precise_match_count += 1
                 else:
                     matched_name = None
             else:
                 matched_name = None
+            # ==== 修改的精准匹配逻辑结束 ====
 
-            # ==== 精准匹配原始名（第二层匹配）
-            if matched_name is None:
-                if key in orig_name_dict:
-                    pending_val = orig_key_to_pending.get(key, "")
-                    if pd.isna(pending_val) or str(pending_val).strip() == "":
-                        matched_name = orig_name_dict[key]
-                        match_info = "精准匹配-原始名"
-                        match_score = 100.0
-                        precise_match_count += 1
-                    else:
-                        if original_name == "[BD]france 24 english":
-                            print(f"调试>>> 拟匹配频道名不为空，跳过原始名精准匹配: '{pending_val}'")
-                        matched_name = None
-
-            # ==== 模糊匹配
             if matched_name is None:
                 choices = list(network_channels.keys())
                 matches = process.extract(key, choices, scorer=fuzz.ratio, limit=1)
@@ -213,6 +199,7 @@ def main():
     total_before["匹配信息"] = matched_match_info
     total_before["匹配值"] = matched_match_score
 
+    # 关键修改：用 total_before["频道名"] 去匹配 channel_data["标准名"] 赋分组
     std_name_to_group = dict(zip(channel_data["标准名"], channel_data["分组"]))
 
     def get_group(name):
@@ -220,6 +207,7 @@ def main():
 
     total_before["分组"] = total_before["频道名"].apply(get_group)
 
+    # ====== 新增：对 channel_data 按 “原始名” 去重，保留首次出现，防止覆盖 ======
     channel_data = channel_data.drop_duplicates(subset=["原始名"], keep='first')
 
     print(f"匹配完成，总精准匹配数：{precise_match_count}，总模糊匹配数：{fuzzy_match_count}")
@@ -229,9 +217,11 @@ def main():
         "频道名","地址","来源","图标","检测时间","分组","视频编码","分辨率","帧率","音频","相似度","匹配信息","匹配值"
     ])
 
+    # 保存 Excel 文件
     channel_data.to_excel(OUTPUT_CHANNEL_DATA, index=False,
                           columns=["原始名", "标准名", "拟匹配频道名", "分组"])
 
+    # 额外保存一份同名 CSV，utf-8-sig 编码
     csv_path = OUTPUT_CHANNEL_DATA.rsplit('.', 1)[0] + ".csv"
     channel_data.to_csv(csv_path, index=False, encoding="utf-8-sig",
                         columns=["原始名", "标准名", "拟匹配频道名", "分组"])
