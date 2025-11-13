@@ -43,29 +43,8 @@ def convert_all_csv_to_utf8(paths):
     for p in paths:
         convert_file_to_utf8(p)
 
-def convert_to_utf8_sig_if_needed(path):
-    """检测文件编码，如果不是utf-8-sig，则转换成utf-8-sig编码覆盖写入"""
-    if not os.path.exists(path):
-        print(f"⚠️ 文件 {path} 不存在，跳过编码转换")
-        return
-    with open(path, "rb") as f:
-        raw = f.read()
-    result = chardet.detect(raw)
-    enc = result.get("encoding", "").lower()
-    if enc != "utf-8-sig":
-        try:
-            text = raw.decode(enc, errors="ignore")
-            with open(path, "w", encoding="utf-8-sig") as f:
-                f.write(text)
-            print(f"✅ 文件 {path} 从 {enc} 转码为 UTF-8-SIG")
-        except Exception as e:
-            print(f"❌ 转码文件 {path} 出错: {e}")
-    else:
-        print(f"✅ 文件 {path} 已经是 UTF-8-SIG，无需转换")
-
 def safe_read_csv(path):
-    convert_to_utf8_sig_if_needed(path)
-    return pd.read_csv(path, encoding="utf-8-sig")
+    return pd.read_csv(path, encoding="utf-8")
 
 def load_name_map():
     name_map = {}
@@ -403,4 +382,4 @@ def main():
     print("✅ manual_map.csv 排序完成")
 
 if __name__ == "__main__":
-    main()
+    main()分析这段代码
