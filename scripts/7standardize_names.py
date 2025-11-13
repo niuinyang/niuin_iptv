@@ -93,8 +93,13 @@ def main():
 
     std_name_dict = dict(zip(channel_data["标准名_std_key"], channel_data["标准名"]))
 
-    # 新增：拟匹配频道名字典，用于判断精准匹配条件
+    # 新增：拟匹配频道名字典，用于判断精准匹配条件（按标准名_std_key）
     std_key_to_pending = dict(zip(channel_data["标准名_std_key"], channel_data["拟匹配频道名"]))
+
+    # 新增：原始名对应标准名字典（按原始名_std_key）
+    orig_name_dict = dict(zip(channel_data["原始名_std_key"], channel_data["标准名"]))
+    # 原始名对应拟匹配频道名字典
+    orig_key_to_pending = dict(zip(channel_data["原始名_std_key"], channel_data["拟匹配频道名"]))
 
     existing_orig_names = set(channel_data["原始名"].fillna("").unique())
 
@@ -135,17 +140,30 @@ def main():
             match_score = 0.0
 
             # ==== 修改的精准匹配逻辑开始 ====
+            # 1. 先用 std_key 去匹配标准名字典，且拟匹配频道名为空
             if key in std_name_dict:
                 pending_val = std_key_to_pending.get(key, "")
                 if pd.isna(pending_val) or pending_val == "":
                     matched_name = std_name_dict[key]
-                    match_info = "精准匹配"
+                    match_info = "精准匹配-标准名"
                     match_score = 100.0
                     precise_match_count += 1
                 else:
-                    matched_name = None  # 拟匹配频道名不为空，进入模糊匹配
+                    matched_name = None  # 拟匹配频道名非空，进入下一步
             else:
-                matched_name = None  # 不存在，进入模糊匹配
+                matched_name = None
+
+            # 2. 如果标准名匹配失败，再用 std_key 去匹配原始名字典，且拟匹配频道名为空
+            if matched_name is None:
+                if key in orig_name_dict:
+                    pending_val = orig_key_to_pending.get(key, "")
+                    if pd.isna(pending_val) or pending_val == "":
+                        matched_name = orig_name_dict[key]
+                        match_info = "精准匹配-原始名"
+                        match_score = 100.0
+                        precise_match_count += 1
+                    else:
+                        matched_name = None  # 拟匹配频道名非空，进入模糊匹配
             # ==== 修改的精准匹配逻辑结束 ====
 
             if matched_name is None:
