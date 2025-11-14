@@ -21541,7 +21541,15 @@ http://223.110.245.161/ott.js.chinamobile.com/PLTV/3/224/3221227492/index.m3u8
 http://183.207.248.71/cntv/live1/HD-2500k-1080P-heilongjiangstv/HD-2500k-1080P-heilongjiangstv
 #EXTINF:-1,Taiwan Plus TV (1080p)
 https://raw.githubusercontent.com/ChiSheng9/iptv/master/TV78.m3u8
-#EXTINF:-1,2025-11-14 06:24:52
+#EXTINF:-1,2025-11-14 18:35:44
+http://106.53.99.30/php/cctv/cctvnews.php?id=cctv1&q=gq
+#EXTINF:-1,CCTV-1
+http://106.53.99.30/php/cctv/cctvnews.php?id=cctv1&q=cq
+#EXTINF:-1,CCTV-1
+http://106.53.99.30/php/cctv/cctvnews.php?id=cctv1&q=lg
+#EXTINF:-1,CCTV-1
+http://120.46.223.160/PHP/MG.php?id=608807420
+#EXTINF:-1,CCTV-1
 http://171.116.216.113:10010/rtp/226.0.1.157:3086
 #EXTINF:-1,CCTV-1
 http://php.jdshipin.com/TVOD/iptv.php?id=rthk33
@@ -21553,14 +21561,14 @@ https://www.freetv.top/migu/608807420.m3u8?migutoken=5b04cf0d91179ab2d3d71703f0a
 https://smart.pendy.dpdns.org/Smart.php?id=cctv1
 #EXTINF:-1,CCTV-1
 http://[2409:8087:1:20:20::29]/otttv.bj.chinamobile.com/PLTV/88888888/224/3221226895/1.m3u8?servicetype=1&accountinfo=%7E%7EV2.0%7EI0Rkc6neBYgfpoJ1yud8Fw%7EPepnxHHB2d6Hk2dZWM77MyFlBN5q1KnYLvimM9pqT7Epd7QgO4HFWH0z34SUb2Vs%7EExtInfo9bj61dxzlMXrsixrqcFYPg%3A20240420192714%2C%2C%2C20240420192714%2C%2C10001000275495%2C-1%2C0%2C1%2C-1%2C%2C2%2C2201300%2C%2C%2C2%2C%2C%2CEND&GuardEncType=2
-#EXTINF:-1,CCTV-1
-http://[2409:8087:1a01:df::4077]/ottrrs.hl.chinamobile.com/PLTV/88888888/8/3221226016/index.m3u8
-#EXTINF:-1,CCTV-1
-http://[2409:8087:8:21::18]:6610/otttv.bj.chinamobile.com/PLTV/88888888/224/3221226338/1.m3u8
-#EXTINF:-1,CCTV-1
-http://[2409:8087:1a0a:df::404b]/ottrrs.hl.chinamobile.com/TVOD/88888888/224/3221226559/index.m3u8
-#EXTINF:-1,CCTV-1
-http://[2409:8087:1a01:df::4077]/ottrrs.hl.chinamobile.com/PLTV/88888888/224/3221226016/index.m3u8
+#EXTINF:-1,CCTV-2
+http://106.53.99.30/php/cctv/cctvnews.php?id=cctv2&q=lg
+#EXTINF:-1,CCTV-2
+http://106.53.99.30/php/cctv/cctvnews.php?id=cctv2&q=cq
+#EXTINF:-1,CCTV-2
+http://106.53.99.30/php/cctv/cctvnews.php?id=cctv2&q=gq
+#EXTINF:-1,CCTV-2
+http://120.46.223.160/PHP/MG.php?id=631780532
 #EXTINF:-1,CCTV-2
 http://php.jdshipin.com/TVOD/hljyd.php?id=3221225588
 #EXTINF:-1,CCTV-2
@@ -21573,14 +21581,8 @@ https://smart.pendy.dpdns.org/Smart.php?id=cctv2
 http://[2409:8087:1a01:df::4077]/ottrrs.hl.chinamobile.com/PLTV/88888888/8/3221225588/index.m3u8
 #EXTINF:-1,CCTV-2
 http://[2409:8087:1a01:df::406f]:80/wh7f454c46tw1241164675_1575082505/ottrrs.hl.chinamobile.com/PLTV/88888888/224/3221226540/index.m3u8?icpid=88888888&RTS=1713968070&from=4&hms_devid=692&prioritypopid=4&online=1713968070&vqe=3
-#EXTINF:-1,CCTV-2
-http://[2409:8087:8:21::18]:6610/otttv.bj.chinamobile.com/PLTV/88888888/224/3221226230/1.m3u8
-#EXTINF:-1,CCTV-2
-http://[2409:8087:8:21::18]:6610/otttv.bj.chinamobile.com/PLTV/88888888/224/3221226371/1.m3u8
-#EXTINF:-1,CCTV-2
-http://[2409:8087:8:21::18]:6610/otttv.bj.chinamobile.com/PLTV/88888888/224/3221226457/1.m3u8
-#EXTINF:-1,CCTV-2
-http://[2409:8087:8:21::18]:6610/otttv.bj.chinamobile.com/PLTV/88888888/224/3221226472/1.m3u8
+#EXTINF:-1,CCTV-3
+http://120.46.223.160/PHP/MG.php?id=624878271
 #EXTINF:-1,CCTV-3
 http://php.jdshipin.com/TVOD/hljyd.php?id=3221226021
 #EXTINF:-1,CCTV-3
@@ -21599,28 +21601,28 @@ http://[2409:8087:8:21::18]:6610/otttv.bj.chinamobile.com/PLTV/88888888/224/3221
 http://[2409:8087:8:21::18]:6610/otttv.bj.chinamobile.com/PLTV/88888888/224/3221226471/1.m3u8
 #EXTINF:-1,CCTV-3
 http://[2409:8087:4c0a:22:1::11]:6410/170000001115/UmaiCHAN638727c125355/index.m3u8?AuthInfo=9kOOdBn7MFF%2F2bWjKgahUSPTZ4CK5oLfjaEYe9dogNMUNNEYLCPUtKY62j1Wp5u04wipypKUQ1TTuR2lXvBl5YpHqBJmlA19x22TD9bUOjk
-#EXTINF:-1,CCTV-3
-http://[2409:8087:1a0a:df::404b]/ottrrs.hl.chinamobile.com/TVOD/88888888/224/3221226021/index.m3u8
+#EXTINF:-1,CCTV-4
+http://106.53.99.30/php/cctv/cctvnews.php?id=cctv4&q=lg
+#EXTINF:-1,CCTV-4
+http://106.53.99.30/php/cctv/cctvnews.php?id=cctv4&q=cq
+#EXTINF:-1,CCTV-4
+http://106.53.99.30/php/cctv/cctvnews.php?id=cctv4k&q=cq
+#EXTINF:-1,CCTV-4
+http://106.53.99.30/php/cctv/cctvnews.php?id=cctv4k&q=gq
+#EXTINF:-1,CCTV-4
+http://106.53.99.30/php/cctv/cctvnews.php?id=cctv4&q=gq
+#EXTINF:-1,CCTV-4
+http://106.53.99.30/php/cctv/cctvnews.php?id=cctv4k&q=lg
+#EXTINF:-1,CCTV-4
+http://120.46.223.160/PHP/MG.php?id=631780421
 #EXTINF:-1,CCTV-4
 http://php.jdshipin.com/TVOD/hljyd.php?id=3221226428
 #EXTINF:-1,CCTV-4
 http://z.b.bkpcp.top/m.php?id=CCTV-4å›½é™…
 #EXTINF:-1,CCTV-4
 http://iptv.huuc.edu.cn/hls/cctv4hd.m3u8
-#EXTINF:-1,CCTV-4
-https://www.freetv.top/migu/631780421.m3u8?migutoken=fefc6a44400a0dd448699ae0ce3d6e2c5a0f49b8d48adb36e747c4fbab039337eb3244f9951acbddaf26b7bf51597a7d1b43c8845e67fd5914ece875dcad325bb388200bc0f12fdff727d03e2d
-#EXTINF:-1,CCTV-4
-https://smart.pendy.dpdns.org/Smart.php?id=cctv4
-#EXTINF:-1,CCTV-4
-http://goo.bkpcp.top/mg/cctv4o
-#EXTINF:-1,CCTV-4
-http://goo.bkpcp.top/mg/cctv4m
-#EXTINF:-1,CCTV-4
-http://[2409:8087:1a01:df::4077]/ottrrs.hl.chinamobile.com/PLTV/88888888/8/3221226007/index.m3u8
-#EXTINF:-1,CCTV-4
-http://[2409:8087:1:20:20::29]/otttv.bj.chinamobile.com/PLTV/88888888/224/3221226335/1.m3u8?servicetype=1&accountinfo=%7E%7EV2.0%7EBFJ5gRpm8ntK8JEFPZOhLQ%7EPepnxHHB2d6Hk2dZWM77MyFlBN5q1KnYLvimM9pqT7EfCf-e5nKehMQzrOBwWduf%7EExtInfo9bj61dxzlMXrsixrqcFYPg%3A20240420192542%2C%2C%2C20240420192542%2C%2C10001000275495%2C-1%2C0%2C1%2C-1%2C%2C2%2C2201300%2C%2C%2C2%2C%2C%2CEND&GuardEncType=2
-#EXTINF:-1,CCTV-4
-http://[2409:8087:8:21::18]:6610/otttv.bj.chinamobile.com/PLTV/88888888/224/3221226335/1.m3u8
+#EXTINF:-1,CCTV-5
+http://120.46.223.160/PHP/MG.php?id=641886683
 #EXTINF:-1,CCTV-5
 http://php.jdshipin.com/TVOD/hljyd.php?id=3221226019
 #EXTINF:-1,CCTV-5
@@ -21639,8 +21641,8 @@ https://ldcctvwbcdks.v.kcdnvip.com/ldcctvwbcd/cdrmldcctv5plus_1/index.m3u8?b=200
 http://[2409:8087:1a01:df::4077]:80/ottrrs.hl.chinamobile.com/yinhe/88888888/224/3221226019/index.m3u8
 #EXTINF:-1,CCTV-5
 http://[2409:8087:1a01:df::4077]:80/ottrrs.hl.chinamobile.com/PLTV/88888888/224/3221226019/index.m3u8
-#EXTINF:-1,CCTV-5
-http://[2409:8087:1a01:df::4077]/ottrrs.hl.chinamobile.com/PLTV/88888888/8/3221226019/index.m3u8
+#EXTINF:-1,CCTV-5+
+http://120.46.223.160/PHP/MG.php?id=641886773
 #EXTINF:-1,CCTV-5+
 http://php.jdshipin.com/TVOD/hljyd.php?id=3221225603
 #EXTINF:-1,CCTV-5+
@@ -21659,8 +21661,8 @@ http://[2409:8087:8:21::18]:6610/otttv.bj.chinamobile.com/PLTV/88888888/224/3221
 http://iptv.cdn.ha.chinamobile.com/PLTV/88888888/224/3221227348/index.m3u8
 #EXTINF:-1,CCTV-5+
 https://www.freetv.top/migu/641886773.m3u8?migutoken=d7396c05a877872a7519b5df4582a7a4bdf13c82d09889e561f50d0035f006d199741b00d465e4e41b0f706bccfe3420f5d427961e7698ad2a8b8d82d9d320a827310f6c8a7d1c8f203c91b392
-#EXTINF:-1,CCTV-5+
-https://www.freetv.top/migu/641886773.m3u8?migutoken=408252ae4ee84d4533a52e87dc35e108f3557992d0837a3c98af9093fccdb78373328e743136467868d2125b1fa35c3f4d576327db5e3ec96ec3108e28e950fb462f2dc81da44be8ae43ebe0ce
+#EXTINF:-1,CCTV-6
+http://120.46.223.160/PHP/MG.php?id=624878396
 #EXTINF:-1,CCTV-6
 http://php.jdshipin.com/TVOD/hljyd.php?id=3221226010
 #EXTINF:-1,CCTV-6
@@ -21679,8 +21681,12 @@ http://[2409:8087:1a01:df::4077]/ottrrs.hl.chinamobile.com/PLTV/88888888/8/32212
 http://[2409:8087:1a01:df::4077]/ottrrs.hl.chinamobile.com/yinhe/88888888/224/3221226010/index.m3u8
 #EXTINF:-1,CCTV-6
 http://[2409:8087:1a01:df::4077]:80/ottrrs.hl.chinamobile.com/PLTV/88888888/8/3221226010/index.m3u8
-#EXTINF:-1,CCTV-6
-http://[2409:8087:1a01:df::4077]:80/ottrrs.hl.chinamobile.com/yinhe/88888888/224/3221226010/index.m3u8
+#EXTINF:-1,CCTV-7
+http://106.53.99.30/php/cctv/cctvnews.php?id=cctv7&q=cq
+#EXTINF:-1,CCTV-7
+http://106.53.99.30/php/cctv/cctvnews.php?id=cctv7&q=lg
+#EXTINF:-1,CCTV-7
+http://106.53.99.30/php/cctv/cctvnews.php?id=cctv7&q=gq
 #EXTINF:-1,CCTV-7
 http://php.jdshipin.com/TVOD/hljyd.php?id=3221225733
 #EXTINF:-1,CCTV-7
@@ -21695,12 +21701,8 @@ http://[2409:8087:1a0a:df::404b]/ottrrs.hl.chinamobile.com/TVOD/88888888/224/322
 http://[2409:8087:1a01:df::4077]/ottrrs.hl.chinamobile.com/PLTV/88888888/8/3221225733/index.m3u8
 #EXTINF:-1,CCTV-7
 http://[2409:8087:8:21::18]:6610/otttv.bj.chinamobile.com/PLTV/88888888/224/3221226234/1.m3u8
-#EXTINF:-1,CCTV-7
-http://iptv.cdn.ha.chinamobile.com/PLTV/88888888/224/3221227180/index.m3u8
-#EXTINF:-1,CCTV-7
-http://[2409:8087:1a01:df::4077]/ottrrs.hl.chinamobile.com/PLTV/88888888/224/3221225733/index.m3u8
-#EXTINF:-1,CCTV-7
-https://www.freetv.top/migu/673168121.m3u8?migutoken=44446ab398991313e6a822efdaec82f3b845a2e8f141c172aa857c477255724bbb28fc01d33f764c51106c446af1c57e8815b58822075b194f4cf55cde28fe55f54330d4586c92e75e8aa50a48
+#EXTINF:-1,CCTV-8
+http://120.46.223.160/PHP/MG.php?id=624878356
 #EXTINF:-1,CCTV-8
 http://php.jdshipin.com/TVOD/hljyd.php?id=3221226008
 #EXTINF:-1,CCTV-8
@@ -21719,8 +21721,14 @@ http://[2409:8087:1a01:df::4051]:80/TVOD/88888888/224/3221225795/main.m3u8
 https://smart.pendy.dpdns.org/Smart.php?id=cctv8hd
 #EXTINF:-1,CCTV-8
 http://[2409:8087:1a01:df::4077]:80/ottrrs.hl.chinamobile.com/PLTV/88888888/224/3221226008/index.m3u8
-#EXTINF:-1,CCTV-8
-http://[2409:8087:1a01:df::4077]/ottrrs.hl.chinamobile.com/PLTV/88888888/8/3221226008/index.m3u8
+#EXTINF:-1,CCTV-9
+http://106.53.99.30/php/cctv/cctvnews.php?id=cctv9&q=cq
+#EXTINF:-1,CCTV-9
+http://106.53.99.30/php/cctv/cctvnews.php?id=cctv9&q=lg
+#EXTINF:-1,CCTV-9
+http://120.46.223.160/PHP/MG.php?id=673168140
+#EXTINF:-1,CCTV-9
+http://106.53.99.30/php/cctv/cctvnews.php?id=cctv9&q=gq
 #EXTINF:-1,CCTV-9
 http://php.jdshipin.com/TVOD/hljyd.php?id=3221225734
 #EXTINF:-1,CCTV-9
@@ -21733,14 +21741,14 @@ http://[2409:8087:1a01:df::4077]/ottrrs.hl.chinamobile.com/PLTV/88888888/224/322
 http://[2409:8087:1a01:df::4077]:80/ottrrs.hl.chinamobile.com/PLTV/88888888/224/3221225734/index.m3u8
 #EXTINF:-1,CCTV-9
 https://smart.pendy.dpdns.org/Smart.php?id=cctv9hd
-#EXTINF:-1,CCTV-9
-http://[2409:8087:1a01:df::4077]:80/ottrrs.hl.chinamobile.com/TVOD/88888888/224/3221225734/index.m3u8
-#EXTINF:-1,CCTV-9
-http://[2409:8087:1a01:df::4077]/ottrrs.hl.chinamobile.com/PLTV/88888888/8/3221225734/index.m3u8
-#EXTINF:-1,CCTV-9
-http://[2409:8087:1a01:df::4077]/ottrrs.hl.chinamobile.com/yinhe/88888888/224/3221225734/index.m3u8
-#EXTINF:-1,CCTV-9
-http://[2409:8087:1a01:df::4077]:80/ottrrs.hl.chinamobile.com/PLTV/88888888/8/3221225734/index.m3u8
+#EXTINF:-1,CCTV-10
+http://106.53.99.30/php/cctv/cctvnews.php?id=cctv10&q=lg
+#EXTINF:-1,CCTV-10
+http://120.46.223.160/PHP/MG.php?id=624878405
+#EXTINF:-1,CCTV-10
+http://106.53.99.30/php/cctv/cctvnews.php?id=cctv10&q=gq
+#EXTINF:-1,CCTV-10
+http://106.53.99.30/php/cctv/cctvnews.php?id=cctv10&q=cq
 #EXTINF:-1,CCTV-10
 http://z.b.bkpcp.top/m.php?id=CCTV-10ç§‘æ•™ç§‘æ•™
 #EXTINF:-1,CCTV-10
@@ -21753,14 +21761,8 @@ https://smart.pendy.dpdns.org/Smart.php?id=cctv10hd
 http://[2409:8087:1a01:df::4077]/ottrrs.hl.chinamobile.com/PLTV/88888888/8/3221225730/index.m3u8
 #EXTINF:-1,CCTV-10
 http://[2409:8087:8:21::18]:6610/otttv.bj.chinamobile.com/PLTV/88888888/224/3221226449/1.m3u8
-#EXTINF:-1,CCTV-10
-http://[2409:8087:8:21::18]:6610/otttv.bj.chinamobile.com/PLTV/88888888/224/3221226464/1.m3u8
-#EXTINF:-1,CCTV-10
-http://[2409:8087:1a0a:df::404b]/ottrrs.hl.chinamobile.com/TVOD/88888888/224/3221225730/index.m3u8
-#EXTINF:-1,CCTV-10
-http://[2409:8087:1a01:df::4077]/ottrrs.hl.chinamobile.com/PLTV/88888888/224/3221225730/index.m3u8
-#EXTINF:-1,CCTV-10
-https://www.freetv.top/migu/624878405.m3u8?migutoken=e7e8abe9ae322869a93e8450014e08c5949217331c53007abb9f6eee64b06cc42f81828befee8b129005bcdebf805a1bbd19f0949e8329cf7ff4ab9379e930cfb8185ddf66c83b972ea6481e86
+#EXTINF:-1,CCTV-11
+http://120.46.223.160/PHP/MG.php?id=667987558
 #EXTINF:-1,CCTV-11
 http://php.jdshipin.com/TVOD/hljyd.php?id=3221226565
 #EXTINF:-1,CCTV-11
@@ -21779,8 +21781,14 @@ http://[2409:8087:1a01:df::4077]/ottrrs.hl.chinamobile.com/PLTV/88888888/8/32212
 http://[2409:8087:1a01:df::4077]/ottrrs.hl.chinamobile.com/yinhe/88888888/224/3221225597/index.m3u8
 #EXTINF:-1,CCTV-11
 http://[2409:8087:1a01:df::4077]:80/ottrrs.hl.chinamobile.com/PLTV/88888888/8/3221225597/index.m3u8
-#EXTINF:-1,CCTV-11
-http://[2409:8087:1a01:df::4077]:80/ottrrs.hl.chinamobile.com/PLTV/88888888/224/3221225597/index.m3u8
+#EXTINF:-1,CCTV-12
+http://120.46.223.160/PHP/MG.php?id=673168185
+#EXTINF:-1,CCTV-12
+http://106.53.99.30/php/cctv/cctvnews.php?id=cctv12&q=lg
+#EXTINF:-1,CCTV-12
+http://106.53.99.30/php/cctv/cctvnews.php?id=cctv12&q=cq
+#EXTINF:-1,CCTV-12
+http://106.53.99.30/php/cctv/cctvnews.php?id=cctv12&q=gq
 #EXTINF:-1,CCTV-12
 http://php.jdshipin.com/TVOD/hljyd.php?id=3221225731
 #EXTINF:-1,CCTV-12
@@ -21793,14 +21801,14 @@ https://www.freetv.top/migu/673168185.m3u8?migutoken=37acadb43b1d7932b0a1e8a4f2d
 http://[2409:8087:1a01:df::4077]/ottrrs.hl.chinamobile.com/PLTV/88888888/224/3221225731/index.m3u8
 #EXTINF:-1,CCTV-12
 https://smart.pendy.dpdns.org/Smart.php?id=cctv12
-#EXTINF:-1,CCTV-12
-http://[2409:8087:1:20:20::29]/otttv.bj.chinamobile.com/PLTV/88888888/224/3221226228/1.m3u8?GuardEncType=2&accountinfo=%7E%7EV2.0%7E2knJCFLHz_HqfBZXNGeA1A%7E_eNUb
-#EXTINF:-1,CCTV-12
-http://[2409:8087:1a01:df::4077]:80/ottrrs.hl.chinamobile.com/TVOD/88888888/224/3221225731/index.m3u8
-#EXTINF:-1,CCTV-12
-http://[2409:8087:1a01:df::4077]:80/ottrrs.hl.chinamobile.com/PLTV/88888888/224/3221225731/index.m3u8
-#EXTINF:-1,CCTV-12
-http://[2409:8087:1a01:df::4077]/ottrrs.hl.chinamobile.com/PLTV/88888888/8/3221225731/index.m3u8
+#EXTINF:-1,CCTV-13
+http://106.53.99.30/php/cctv/cctvnews.php?id=cctv13&q=cq
+#EXTINF:-1,CCTV-13
+http://106.53.99.30/php/cctv/cctvnews.php?id=cctv13&q=lg
+#EXTINF:-1,CCTV-13
+http://106.53.99.30/php/cctv/cctvnews.php?id=cctv13&q=gq
+#EXTINF:-1,CCTV-13
+http://120.46.223.160/PHP/MG.php?id=608807423
 #EXTINF:-1,CCTV-13
 https://event.pull.hebtv.com/jishi/cp1.m3u8
 #EXTINF:-1,CCTV-13
@@ -21813,14 +21821,8 @@ http://ali-m-l.cztv.com/channels/lantian/channel21/1080p.m3u8
 http://jwplay.hebyun.com.cn/live/cctv13/1500k/tzwj_video.m3u8
 #EXTINF:-1,CCTV-13
 https://ldncctvwbcdcnc.v.wscdns.com/ldncctvwbcd/cdrmldcctv13_1/index.m3u8
-#EXTINF:-1,CCTV-13
-http://iptv.huuc.edu.cn/hls/cctv13hd.m3u8
-#EXTINF:-1,CCTV-13
-https://www.freetv.top/migu/608807423.m3u8?migutoken=ac19a58805588401a8e818b6dd00df9b327912af3611ba95f89235e7020821668a2b6dc65ccc3904967da59d0a9742565c56ea582baf8915d068035054818ef0f369dab64705a6a7f7120529ec
-#EXTINF:-1,CCTV-13
-https://smart.pendy.dpdns.org/Smart.php?id=cctv13
-#EXTINF:-1,CCTV-13
-http://[2409:8087:1a01:df::4077]/ottrrs.hl.chinamobile.com/PLTV/88888888/224/3221226011/index.m3u8
+#EXTINF:-1,CCTV-14
+http://120.46.223.160/PHP/MG.php?id=624878440
 #EXTINF:-1,CCTV-14
 https://event.pull.hebtv.com/jishi/cp2.m3u8#rtsp://103.251.96.71/PLTV/88888888/224/3221225783/10000100000000060000000000726027_0.smil?icpid=SSPID&amp;accounttype=1&amp;limitflux=-1&amp;limitdur=-1&amp;accountinfo=:20240213104135
 #EXTINF:-1,CCTV-14
@@ -21839,8 +21841,8 @@ https://smart.pendy.dpdns.org/Smart.php?id=cctv14
 http://[2409:8087:1a01:df::4077]:80/ottrrs.hl.chinamobile.com/TVOD/88888888/224/3221225732/index.m3u8
 #EXTINF:-1,CCTV-14
 http://[2409:8087:1a01:df::4077]/ottrrs.hl.chinamobile.com/PLTV/88888888/8/3221225732/index.m3u8
-#EXTINF:-1,CCTV-14
-http://[2409:8087:1a01:df::4077]:80/ottrrs.hl.chinamobile.com/PLTV/88888888/8/3221225732/index.m3u8
+#EXTINF:-1,CCTV-15
+http://120.46.223.160/PHP/MG.php?id=673168223
 #EXTINF:-1,CCTV-15
 http://hwrr.jx.chinamobile.com:8080/PLTV/88888888/224/3221225641/index.m3u8
 #EXTINF:-1,CCTV-15
@@ -21859,8 +21861,6 @@ http://[2409:8087:8:21::18]:6610/otttv.bj.chinamobile.com/PLTV/88888888/224/3221
 http://[2409:8087:8:21::18]:6610/otttv.bj.chinamobile.com/PLTV/88888888/224/3221226444/1.m3u8
 #EXTINF:-1,CCTV-15
 http://iptv.cdn.ha.chinamobile.com/PLTV/88888888/224/3221227175/index.m3u8
-#EXTINF:-1,CCTV-15
-http://[2409:8087:1a01:df::4077]/ottrrs.hl.chinamobile.com/PLTV/88888888/224/3221225601/index.m3u8
 #EXTINF:-1,CCTV-16
 http://zqh2333.top:2222/rtp/239.93.55.54:5140
 #EXTINF:-1,CCTV-16
@@ -21882,6 +21882,14 @@ http://[2409:8087:1a01:df::4077]:80/ottrrs.hl.chinamobile.com/PLTV/88888888/8/32
 #EXTINF:-1,CCTV-16
 http://[2409:8087:8:21::18]:6610/otttv.bj.chinamobile.com/PLTV/88888888/224/3221226887/1.m3u8
 #EXTINF:-1,CCTV-17
+http://106.53.99.30/php/cctv/cctvnews.php?id=cctv17&q=lg
+#EXTINF:-1,CCTV-17
+http://106.53.99.30/php/cctv/cctvnews.php?id=cctv17&q=cq
+#EXTINF:-1,CCTV-17
+http://106.53.99.30/php/cctv/cctvnews.php?id=cctv17&q=gq
+#EXTINF:-1,CCTV-17
+http://120.46.223.160/PHP/MG.php?id=673168256
+#EXTINF:-1,CCTV-17
 http://zqh2333.top:2222/rtp/239.93.24.92:5140
 #EXTINF:-1,CCTV-17
 http://php.jdshipin.com/TVOD/hljyd.php?id=3221225765
@@ -21893,14 +21901,8 @@ http://[2409:8087:1a01:df::4077]/ottrrs.hl.chinamobile.com/PLTV/88888888/224/322
 http://[2409:8087:1a01:df::4077]/ottrrs.hl.chinamobile.com/PLTV/88888888/224/3221225765/1.m3u8?icpid=88888888&from=1&hms_devid=1012&vqe=3
 #EXTINF:-1,CCTV-17
 http://[2409:8087:1a01:df::4077]/ottrrs.hl.chinamobile.com/PLTV/88888888/8/3221225765/index.m3u8CCTV1
-#EXTINF:-1,CCTV-17
-http://[2409:8087:1a01:df::4077]/ottrrs.hl.chinamobile.com/PLTV/88888888/8/3221225765/index.m3u8
-#EXTINF:-1,CCTV-17
-http://[2409:8087:1a01:df::4077]:80/ottrrs.hl.chinamobile.com/PLTV/88888888/8/3221225765/index.m3u8
-#EXTINF:-1,CCTV-17
-http://[2409:8087:1a01:df::4077]:80/ottrrs.hl.chinamobile.com/PLTV/88888888/224/3221225765/1.m3u8
-#EXTINF:-1,CCTV-17
-http://[2409:8087:8:21::18]:6610/otttv.bj.chinamobile.com/PLTV/88888888/224/3221226318/1.m3u8
+#EXTINF:-1,CETV-1
+http://120.46.223.160/PHP/MG.php?id=923287154
 #EXTINF:-1,CETV-1
 http://183.184.47.145:8001/rtp/226.0.2.181:9360
 #EXTINF:-1,CETV-1
@@ -21919,8 +21921,8 @@ http://iptv.cdn.ha.chinamobile.com/PLTV/88888888/224/3221227190/index.m3u8
 https://cc06.tv12.xyz/23.m3u8
 #EXTINF:-1,CETV-1
 http://[2409:8087:1a0a:df::4031]:80/ottrrs.hl.chinamobile.com/PLTV/88888888/224/3221225652/index.m3u8
-#EXTINF:-1,CETV-1
-http://[2409:8087:1a15:10d1::34]/ottrrs.hl.chinamobile.com/PLTV/88888888/224/3221225652/index.m3u8
+#EXTINF:-1,CETV-2
+http://120.46.223.160/PHP/MG.php?id=923287211
 #EXTINF:-1,CETV-2
 http://[2409:8087:1a0b:df::4013]:80/ottrrs.hl.chinamobile.com/PLTV/88888888/224/3221226425/index.m3u8
 #EXTINF:-1,CETV-2
@@ -21939,8 +21941,6 @@ https://cc06.tv12.xyz/24.m3u8
 http://ottrrs.hl.chinamobile.com/PLTV/88888888/224/3221226425/index.m3u8
 #EXTINF:-1,CETV-2
 http://[2409:8087:1a0a:df::4031]:80/ottrrs.hl.chinamobile.com/PLTV/88888888/224/3221226425/index.m3u8
-#EXTINF:-1,CETV-2
-http://gslbmgsplive.miguvideo.com/migu/kailu/cetv2/50/20240709/index.m3u8?msisdn=20250903090033bf55eab2bb984fe0b4ac863e60d28ac6&mdspid=&spid=699004&netType=0&sid=5910022152&pid=2028597139&timestamp=20250903090033&Channel_ID=0116_2600037000-99000-200300220100002&ProgramID=923287211&ParentNodeID=-99&assertID=5910022152&client_ip=106.13.250.83&SecurityKey=20250903090033&promotionId=&mvid=5900006638&mcid=500020&playurlVersion=WX-A1-8.8.1-RELEASE&userid=&jmhm=&videocodec=h264&bean=mgspad&tid=android&conFee=0&puData=ebfbdc6c83654112720d2b5599373223&ddCalcu=3e2bv2fa3ba7da3c969c5853b625d4012172&sv=10004&ct=android
 #EXTINF:-1,CETV-3
 http://[2409:8087:7004:20:1000::22]:6610/yinhe/2/ch00000090990000001309/index.m3u8
 #EXTINF:-1,CETV-3
@@ -21951,6 +21951,8 @@ http://rrs01.hw.gmcc.net:8088/PLTV/81/224/3221226722/1.m3u8
 http://iptv.cdn.ha.chinamobile.com/PLTV/88888888/224/3221227352/index.m3u8
 #EXTINF:-1,CETV-3
 http://ott.mobaibox.com/PLTV/3/224/3221227018/index.m3u8
+#EXTINF:-1,CETV-4
+http://120.46.223.160/PHP/MG.php?id=923287339
 #EXTINF:-1,CETV-4
 http://[2409:8087:1a0b:df::4020]:80/ottrrs.hl.chinamobile.com/PLTV/88888888/224/3221225783/index.m3u8
 #EXTINF:-1,CETV-4
@@ -21969,8 +21971,6 @@ http://ottrrs.hl.chinamobile.com/PLTV/88888888/224/3221225783/index.m3u8
 http://[2409:8087:1a0a:df::4031]:80/ottrrs.hl.chinamobile.com/PLTV/88888888/224/3221225783/index.m3u8
 #EXTINF:-1,CETV-4
 http://sxydajtvlive.sx.chinamobile.com/PLTV/-/224/3221225748/1.m3u8
-#EXTINF:-1,CETV-4
-http://gslbmgsplive.miguvideo.com/migu/kailu/cetv4/50/20240709/index.m3u8?msisdn=2025090309003329cd481a5313461999ea66e0b5c14a1b&mdspid=&spid=699004&netType=0&sid=5910022154&pid=2028597139&timestamp=20250903090033&Channel_ID=0116_2600037000-99000-200300220100002&ProgramID=923287339&ParentNodeID=-99&assertID=5910022154&client_ip=106.13.250.83&SecurityKey=20250903090033&promotionId=&mvid=5900006640&mcid=500020&playurlVersion=WX-A1-8.8.1-RELEASE&userid=&jmhm=&videocodec=h264&bean=mgspad&tid=android&conFee=0&puData=a0dd23e241f091b5c99903fbe22f27e3&ddCalcu=3ae0v7da2dbf2a232ee2b4f13f0099919bc5&sv=10004&ct=android
 #EXTINF:-1,æ–‡åŒ–ç²¾å“
 https://hls-gateway.vpstv.net/streams/708832.m3u8
 #EXTINF:-1,å¤®è§†å°çƒ
@@ -22024,6 +22024,8 @@ https://cc06.tv12.xyz/104.m3u8
 #EXTINF:-1,å…µå™¨ç§‘æŠ€
 https://hls-gateway.vpstv.net/streams/708856.m3u8
 #EXTINF:-1,å¹¿ä¸œå«è§†
+http://120.46.223.160/PHP/MG.php?id=608831231
+#EXTINF:-1,å¹¿ä¸œå«è§†
 http://php.jdshipin.com:8880/TVOD/gsyd.php?id=9900000520
 #EXTINF:-1,å¹¿ä¸œå«è§†
 http://z.b.bkpcp.top/m.php?id=gdws
@@ -22041,8 +22043,6 @@ http://[2409:8087:1a0a:df::404b]/ottrrs.hl.chinamobile.com/TVOD/88888888/224/322
 http://[2409:8087:1a01:df::4077]/ottrrs.hl.chinamobile.com/PLTV/88888888/8/3221226248/index.m3u8
 #EXTINF:-1,å¹¿ä¸œå«è§†
 http://[2409:8087:8:21::18]:6610/otttv.bj.chinamobile.com/PLTV/88888888/224/3221226238/1.m3u8
-#EXTINF:-1,å¹¿ä¸œå«è§†
-http://iptv.cdn.ha.chinamobile.com/PLTV/88888888/224/3221227201/index.m3u8
 #EXTINF:-1,é¦™æ¸¯å«è§†
 http://cctvtxyh5c.liveplay.myqcloud.com/cstv/xianggangweishi_2/index.m3u8
 #EXTINF:-1,é¦™æ¸¯å«è§†
@@ -22088,9 +22088,9 @@ http://satellitepull.cnr.cn/live/wx32hunws/playlist.m3u8
 #EXTINF:-1,æ¹–å—å«è§†
 http://183.184.47.145:8001/rtp/226.0.1.246:2125
 #EXTINF:-1,æ¹–å—å«è§†
-http://171.116.216.113:10010/rtp/226.0.1.246:2125
-#EXTINF:-1,æ¹–å—å«è§†
 http://106.53.99.30/tv/api.php?id=hnws4k
+#EXTINF:-1,æ¹–å—å«è§†
+http://171.116.216.113:10010/rtp/226.0.1.246:2125
 #EXTINF:-1,æ¹–å—å«è§†
 http://php.jdshipin.com/TVOD/hnyd.php?id=200000001898/460000089800010058
 #EXTINF:-1,æ¹–å—å«è§†
@@ -22105,6 +22105,8 @@ http://dsj.motem.top:8880/bptv/10000100000000050000000003873458.m3u8
 http://[2409:8087:1a0a:df::404b]/ottrrs.hl.chinamobile.com/TVOD/88888888/224/3221225610/index.m3u8
 #EXTINF:-1,åŒ—äº¬å«è§†
 http://satellitepull.cnr.cn/live/wxbtv/playlist.m3u8
+#EXTINF:-1,åŒ—äº¬å«è§†
+http://106.53.99.30/tv/bj.php?id=bjws4k
 #EXTINF:-1,åŒ—äº¬å«è§†
 http://php.jdshipin.com/TVOD/hnyd.php?id=200000001898/460000089800010143
 #EXTINF:-1,åŒ—äº¬å«è§†
@@ -22121,8 +22123,8 @@ https://smart.pendy.dpdns.org/Smart.php?id=beijing
 http://dsj.motem.top:8880/bptv/10000100000000050000000003870776.m3u8
 #EXTINF:-1,åŒ—äº¬å«è§†
 http://[2409:8087:1a0a:df::404b]/ottrrs.hl.chinamobile.com/TVOD/88888888/224/3221226450/index.m3u8
-#EXTINF:-1,åŒ—äº¬å«è§†
-http://[2409:8087:1a01:df::4077]/ottrrs.hl.chinamobile.com/PLTV/88888888/8/3221226450/index.m3u8
+#EXTINF:-1,æ¹–åŒ—å«è§†
+http://120.46.223.160/PHP/MG.php?id=947472496
 #EXTINF:-1,æ¹–åŒ—å«è§†
 http://php.jdshipin.com/TVOD/hnyd.php?id=200000001898/460000089800010057
 #EXTINF:-1,æ¹–åŒ—å«è§†
@@ -22141,8 +22143,6 @@ https://smart.pendy.dpdns.org/Smart.php?id=hubei
 http://dsj.motem.top:8880/bptv/10000100000000050000000003873465.m3u8
 #EXTINF:-1,æ¹–åŒ—å«è§†
 http://[2409:8087:1a01:df::4077]/ottrrs.hl.chinamobile.com/PLTV/88888888/8/3221226501/index.m3u8
-#EXTINF:-1,æ¹–åŒ—å«è§†
-http://[2409:8087:1a01:df::4077]/ottrrs.hl.chinamobile.com/PLTV/88888888/8/3221226477/index.m3u8
 #EXTINF:-1,é»‘é¾™æ±Ÿå«è§†
 http://php.jdshipin.com/TVOD/hnyd.php?id=200000001898/460000089800010056
 #EXTINF:-1,é»‘é¾™æ±Ÿå«è§†
@@ -22204,6 +22204,8 @@ http://[2409:8087:8:21::18]:6610/otttv.bj.chinamobile.com/PLTV/88888888/224/3221
 #EXTINF:-1,é‡åº†å«è§†
 http://[2409:8087:8:21::18]:6610/otttv.bj.chinamobile.com/PLTV/88888888/224/3221226569/1.m3u8
 #EXTINF:-1,ä¸œæ–¹å«è§†
+http://120.46.223.160/PHP/MG.php?id=651632648
+#EXTINF:-1,ä¸œæ–¹å«è§†
 http://php.jdshipin.com/TVOD/hnyd.php?id=200000001898/460000089800010054
 #EXTINF:-1,ä¸œæ–¹å«è§†
 http://z.b.bkpcp.top/m.php?id=dfws#rtsp://115.85.232.19/PLTV/88888910/224/3221225531/10000100000000060000000000107311_0.smil
@@ -22221,8 +22223,6 @@ https://bp-cdn-ali.bestv.cn/enhance/bestvdfws_enhance.m3u8?auth_key=1746334807-d
 https://live.lalifeier.eu.org/kankanews/dfws.m3u8?t=1746372302&key=04c79ed1fd72dbd3188040c54dc3858b
 #EXTINF:-1,ä¸œæ–¹å«è§†
 https://live.lalifeier.eu.org/kankanews/dfws.m3u8?t=1746379256&key=19bcfc963d4ae84eb8beb4f01087a8ab
-#EXTINF:-1,ä¸œæ–¹å«è§†
-https://live.lalifeier.eu.org/kankanews/dfws.m3u8?t=1746393735&key=ebd80a46e19064eb1a305a39fe3d15d2
 #EXTINF:-1,ä¸œå—å«è§†
 http://php.jdshipin.com/TVOD/hnyd.php?id=200000001898/460000089800010096
 #EXTINF:-1,ä¸œå—å«è§†
@@ -22755,6 +22755,8 @@ https://stream1.freetv.fun/yan-dong-xin-wen-24.ctv
 https://stream1.freetv.fun/yan-dong-xin-wen-21.ctv
 #EXTINF:-1,å¹¿ä¸œæ–°é—»
 https://stream1.freetv.fun/yan-dong-xin-wen-15.ctv
+#EXTINF:-1,å¹¿ä¸œå«è§†
+http://iptv.cdn.ha.chinamobile.com/PLTV/88888888/224/3221227201/index.m3u8
 #EXTINF:-1,å¹¿ä¸œæ°‘ç”Ÿ
 https://stream1.freetv.fun/yan-dong-min-sheng-9.ctv
 #EXTINF:-1,å¹¿ä¸œæ°‘ç”Ÿ
@@ -22976,8 +22978,6 @@ https://stream1.freetv.fun/zhe-jiang-min-sheng-5.m3u8
 #EXTINF:-1,æµ™æ±Ÿæ–°é—»
 https://ali-m-l.cztv.com/channels/lantian/channel007/1080p.m3u8?
 #EXTINF:-1,æµ™æ±Ÿæ–°é—»
-http://101.66.194.223:9901/tsfile/live/1005_1.m3u8?key=txiptv&playlive=0&authid=0
-#EXTINF:-1,æµ™æ±Ÿæ–°é—»
 http://zwebl02.cztv.com/live/channel071080P.m3u8?auth_key=2524708799-0-0-e3b50ca59d2c0883d5386d8bc4cdefbc
 #EXTINF:-1,æµ™æ±Ÿæ–°é—»
 http://zhfivel02.cztv.com/channel07/1080p.m3u8?auth_key=2524708799-0-0-4af48ba83e791a300595dd0b2bb30e6e
@@ -22993,6 +22993,8 @@ https://stream1.freetv.fun/zhe-jiang-xin-wen-2.ctv
 https://stream1.freetv.fun/zhe-jiang-xin-wen-1.m3u8
 #EXTINF:-1,æµ™æ±Ÿæ–°é—»
 https://stream1.freetv.fun/zhe-jiang-xin-wen-5.m3u8
+#EXTINF:-1,æµ™æ±Ÿæ–°é—»
+https://stream1.freetv.fun/zhe-jiang-xin-wen-7.m3u8
 #EXTINF:-1,æµ™æ±Ÿå°‘å„¿
 https://ali-m-l.cztv.com/channels/lantian/channel008/1080p.m3u8
 #EXTINF:-1,æµ™æ±Ÿå°‘å„¿
@@ -23078,15 +23080,15 @@ https://stream1.freetv.fun/hu-zhou-gong-gong-9.m3u8
 #EXTINF:-1,æ¹–å·æ–°é—»ç»¼åˆ
 http://hzcm-live.media.hugd.com/3f5fa7d64c7c46a38c6bd8ad35e836cc/65128273761b4731ae53729ea6dcf932.m3u8?auth_key=2277598215-9d21c15111244bea8d298c361d31a72e-0-d031198f58d44b0e91ba2e3f3b188865&amp;fbl=
 #EXTINF:-1,æ¹–å·æ–°é—»ç»¼åˆ
-http://hzcm-live.media.hugd.com/3f5fa7d64c7c46a38c6bd8ad35e836cc/65128273761b4731ae53729ea6dcf932.m3u8?auth_key=2277598215-9d21c15111244bea8d298c361d31a72e-0-d031198f58d44b0e91ba2e3f3b188865&fbl=
-#EXTINF:-1,æ¹–å·æ–°é—»ç»¼åˆ
 http://hzcm-live.media.hugd.com/3f5fa7d64c7c46a38c6bd8ad35e836cc/65128273761b4731ae53729ea6dcf932.m3u8?auth_key=2277598215-9d21c15111244bea8d298c361d31a72e-0-d031198f58d44b0e91ba2e3f3b188865
+#EXTINF:-1,æ¹–å·æ–°é—»ç»¼åˆ
+http://hzcm-live.media.hugd.com/3f5fa7d64c7c46a38c6bd8ad35e836cc/65128273761b4731ae53729ea6dcf932.m3u8?auth_key=2277598215-9d21c15111244bea8d298c361d31a72e-0-d031198f58d44b0e91ba2e3f3b188865&fbl=
 #EXTINF:-1,æ¹–å·æ–°é—»ç»¼åˆ
 https://hzcm-live.media.hugd.com/3f5fa7d64c7c46a38c6bd8ad35e836cc/65128273761b4731ae53729ea6dcf932.m3u8?auth_key=2277598215-9d21c15111244bea8d298c361d31a72e-0-d031198f58d44b0e91ba2e3f3b188865
 #EXTINF:-1,æ¹–å·æ–‡åŒ–å¨±ä¹
-http://hzcm-live.media.hugd.com/613c47f0ab0d4eaa98b21378d0db6ded/0051d31c9dd543a7825eea4e49675b2a.m3u8?auth_key=2277598059-0a5ebfa1c0dc4671b42a60810fc37039-0-fa625b7d1feab612062453c12e3c8887
-#EXTINF:-1,æ¹–å·æ–‡åŒ–å¨±ä¹
 http://hzcm-live.media.hugd.com/613c47f0ab0d4eaa98b21378d0db6ded/0051d31c9dd543a7825eea4e49675b2a.m3u8?auth_key=2277598059-0a5ebfa1c0dc4671b42a60810fc37039-0-fa625b7d1feab612062453c12e3c8887&fbl=
+#EXTINF:-1,æ¹–å·æ–‡åŒ–å¨±ä¹
+http://hzcm-live.media.hugd.com/613c47f0ab0d4eaa98b21378d0db6ded/0051d31c9dd543a7825eea4e49675b2a.m3u8?auth_key=2277598059-0a5ebfa1c0dc4671b42a60810fc37039-0-fa625b7d1feab612062453c12e3c8887
 #EXTINF:-1,æ¹–å·æ–‡åŒ–å¨±ä¹
 https://hzcm-live.media.hugd.com/613c47f0ab0d4eaa98b21378d0db6ded/0051d31c9dd543a7825eea4e49675b2a.m3u8?auth_key=2277598059-0a5ebfa1c0dc4671b42a60810fc37039-0-fa625b7d1feab612062453c12e3c8887
 #EXTINF:-1,æµ™æ±Ÿç•™å­¦
@@ -23701,12 +23703,10 @@ http://[2409:8087:1e01:20::3]:80/PLTV/11/224/3221225762/index.m3u8
 https://shyd.695847.xyz/cms001/ch00000090990000001203/index.m3u8?IASHttpSessionId=RR4967720251014100028031761&ispcode=12
 #EXTINF:-1,éƒ½å¸‚å‰§åœº
 http://[2409:8087:1e01:20::3]/PLTV/11/224/3221226155/index.m3u8
-#EXTINF:-1,ç’§å±±ç»¼åˆ
-http://222.179.42.129:8181/hls1.m3u8?zzhongqd
-#EXTINF:-1,é“œæ¢ç»¼åˆ
-http://183.64.174.171:40123/ch1.m3u8
 #EXTINF:-1,é“œæ¢ç»¼åˆ
 http://183.64.174.171:40123/ch1.m3u8?zzhongqd
+#EXTINF:-1,é“œæ¢ç»¼åˆ
+http://183.64.174.171:40123/ch1.m3u8
 #EXTINF:-1,é‡åº†æ±½æ‘©
 http://120.76.248.139/live/bfgd/4200000168.m3u8
 #EXTINF:-1,é‡åº†æ±½æ‘©
@@ -23714,9 +23714,9 @@ http://183.230.184.51:65500/tntv1.m3u8
 #EXTINF:-1,é‡åº†æ±½æ‘©
 http://183.64.181.25:40023/rongchang01.m3u8?%E5%85%B3%E6%B3%A8%E5%BE%AE%E4%BF%A1%E5%85%AC%E4%BC%97%E5%8F%B7[%E6%99%B4%E5%9B%AD]
 #EXTINF:-1,é‡åº†æ±½æ‘©
-http://222.179.155.21:1935/ch1.m3u8?zzhongqd
-#EXTINF:-1,é‡åº†æ±½æ‘©
 http://183.230.184.51:65500/tntv1.m3u8?zzhongqd
+#EXTINF:-1,é‡åº†æ±½æ‘©
+http://222.179.155.21:1935/ch1.m3u8?zzhongqd
 #EXTINF:-1,é‡åº†æ±½æ‘©
 http://222.179.155.21:1935/ch1.m3u8?%E5%85%B3%E6%B3%A8%E5%BE%AE%E4%BF%A1%E5%85%AC%E4%BC%97%E5%8F%B7[%E6%99%B4%E5%9B%AD]
 #EXTINF:-1,é‡åº†æ±½æ‘©
@@ -24353,6 +24353,8 @@ https://stream1.freetv.fun/jing-men-xin-wen-zong-he-5.m3u8
 https://stream1.freetv.fun/jing-men-xin-wen-zong-he-4.m3u8
 #EXTINF:-1,è†é—¨æ–°é—»ç»¼åˆ
 http://stream.jmtv.com.cn/xwzh/sd/live.m3u8
+#EXTINF:-1,åŒ—æµ·æ–°é—»ç»¼åˆ
+https://live.gxrb.com.cn/gx/beihai/index.m3u8
 #EXTINF:-1,åŒ—æµ·ç»æµç§‘æ•™
 https://play-a2.quklive.com:443/live/1727311690820146.m3u8
 #EXTINF:-1,å—å®å…¬å…±
@@ -24455,10 +24457,6 @@ https://m3u8.channel.dzsm.com/nmip-media/channellive/channel101257/playlist.m3u8
 https://stream1.freetv.fun/yan-yuan-zong-he-1.m3u8
 #EXTINF:-1,å¹¿å…ƒç»¼åˆ
 https://stream1.freetv.fun/yan-yuan-zong-he-2.ctv
-#EXTINF:-1,å¹¿å®‰å…¬å…±
-http://live1.gatv.com.cn:85/live/GGPD_ggpdzm.m3u8
-#EXTINF:-1,å¹¿å®‰å…¬å…±
-http://live1.gatv.com.cn:85/live/GGPD_ggpdzm.m3u8?zsicd
 #EXTINF:-1,å¹¿å®‰å…¬å…±
 http://live1.gatv.com.cn:85/live/GGPD.m3u8
 #EXTINF:-1,åº·å®šç»¼åˆ
@@ -25266,13 +25264,13 @@ http://play.kankanlive.com/live/1720408280309109.m3u8
 #EXTINF:-1,ç”˜è‚ƒå°‘å„¿
 https://hls.gstv.com.cn/49048r/922k96.m3u8
 #EXTINF:-1,ç™½é“¶ç»¼åˆ
-http://play.kankanlive.com/live/1720408089419110.m3u8
-#EXTINF:-1,ç™½é“¶ç»¼åˆ
 https://play.kankanlive.com/live/1720408089419110.m3u8
-#EXTINF:-1,ç§¦å®‰ç»¼åˆ
-http://play.kankanlive.com/live/1683944827526991.m3u8
+#EXTINF:-1,ç™½é“¶ç»¼åˆ
+http://play.kankanlive.com/live/1720408089419110.m3u8
 #EXTINF:-1,ç§¦å®‰ç»¼åˆ
 https://play.kankanlive.com/live/1659926941626981.m3u8
+#EXTINF:-1,ç§¦å®‰ç»¼åˆ
+http://play.kankanlive.com/live/1683944827526991.m3u8
 #EXTINF:-1,è¥¿å³°ç»¼åˆ
 https://play.kankanlive.com/live/1683944827526991.m3u8
 #EXTINF:-1,é…’æ³‰ç»¼åˆ
@@ -25284,11 +25282,15 @@ https://tvpull.hmgbtv.com/hmtv/channel108259412c6a6711/playlist.m3u8
 #EXTINF:-1,å“ˆå¯†ä¸‰å¥—
 https://tvpull.hmgbtv.com/hmtv/channelfb0e5c505477aa44/playlist.m3u8
 #EXTINF:-1,ä¼ŠçŠæ±‰è¯­ç»¼åˆ
-http://110.153.180.106:55555/out_1/index.m3u8
-#EXTINF:-1,ä¼ŠçŠæ±‰è¯­ç»¼åˆ
 http://110.153.180.106:55555/out_1/index.m3u8?zxinjd
+#EXTINF:-1,ä¼ŠçŠæ±‰è¯­ç»¼åˆ
+http://110.153.180.106:55555/out_1/index.m3u8
 #EXTINF:-1,ä¼ŠçŠç»´å¾å°”
 http://110.153.180.106:55555/out_2/index.m3u8
+#EXTINF:-1,ä¼ŠçŠç»´å¾å°”
+http://110.153.180.106:55555/out_2/index.m3u8?zxinjd
+#EXTINF:-1,ä¼ŠçŠå“ˆè¨å…‹
+http://110.153.180.106:55555/out_3/index.m3u8?zxinjd
 #EXTINF:-1,ä¼ŠçŠå“ˆè¨å…‹
 http://110.153.180.106:55555/out_3/index.m3u8
 #EXTINF:-1,ä¼ŠçŠç»æµæ³•åˆ¶
@@ -25300,13 +25302,13 @@ http://liveout.btzx.com.cn/62ds9e/4nxdih.m3u8?fbl=
 #EXTINF:-1,å…µå›¢äº”å¸ˆåŒæ²³æ–°é—»ç»¼åˆ
 https://liveout.btzx.com.cn/62ds9e/4nxdih.m3u8?zxinjd
 #EXTINF:-1,å¥å±¯å“ˆè¨å…‹è¯­
-http://218.84.12.186:8002/hls/main/playlist.m3u8
-#EXTINF:-1,å¥å±¯å“ˆè¨å…‹è¯­
 http://218.84.12.186:8002/hls/main/playlist.m3u8?zxinjd
-#EXTINF:-1,ç›çº³æ–¯ç»¼åˆ
-http://218.84.127.245:1026/hls/main1/playlist.m3u8?zxinjd,
+#EXTINF:-1,å¥å±¯å“ˆè¨å…‹è¯­
+http://218.84.12.186:8002/hls/main/playlist.m3u8
 #EXTINF:-1,ç›çº³æ–¯ç»¼åˆ
 http://218.84.127.245:1026/hls/main1/playlist.m3u8?zxinjd
+#EXTINF:-1,ç›çº³æ–¯ç»¼åˆ
+http://218.84.127.245:1026/hls/main1/playlist.m3u8?zxinjd,
 #EXTINF:-1,æ–°ç–†å«è§†
 http://[2409:8087:8:21::18]:6610/otttv.bj.chinamobile.com/PLTV/88888888/224/3221226923/1.m3u8
 #EXTINF:-1,å¯å…‹è¾¾æ‹‰ç»¼åˆ
@@ -25383,10 +25385,6 @@ https://stream1.freetv.fun/shan-dong-ti-yu-9.m3u8
 https://stream1.freetv.fun/shan-dong-ti-yu-5.m3u8
 #EXTINF:-1,å±±ä¸œä½“è‚²
 https://stream1.freetv.fun/shan-dong-ti-yu-2.m3u8
-#EXTINF:-1,å±±ä¸œæ–‡æ—…
-http://221.2.148.205:8154/tsfile/live/1004_1.m3u8?key=txiptv&playlive=1&authid=0
-#EXTINF:-1,å±±ä¸œæ–‡æ—…
-http://58.57.40.22:9901/tsfile/live/1023_1.m3u8
 #EXTINF:-1,æµå—ç»¼åˆ
 https://stream1.freetv.fun/ji-nan-zong-he-2.m3u8
 #EXTINF:-1,æµå—ç»¼åˆ
@@ -25407,6 +25405,18 @@ http://live.rzw.com.cn/ggpd/sd/live.m3u8?shandd
 https://stream1.freetv.fun/ipv6-wei-fang-xin-wen-zong-he-2.m3u8
 #EXTINF:-1,æ½åŠæ–°é—»ç»¼åˆ
 https://stream1.freetv.fun/ipv6-wei-fang-xin-wen-zong-he-1.m3u8
+#EXTINF:-1,èæ³½ä¸€å¥—æ–°é—»ç»¼åˆ
+http://live.hznet.tv:1935/live/live1/500K/tzwj_video.m3u8
+#EXTINF:-1,èæ³½æ–°é—»ç»¼åˆ
+http://live.hznet.tv:1935/live/live1/500k/tzwj_video.m3u8
+#EXTINF:-1,èæ³½æ–°é—»ç»¼åˆ
+http://live.hznet.tv:1935/live/live1/500K/tzwj_video.m3u8?shandd
+#EXTINF:-1,èæ³½ç»æµç”Ÿæ´»
+http://live.hznet.tv:1935/live/live2/500k/tzwj_video.m3u8
+#EXTINF:-1,èæ³½ç»æµç”Ÿæ´»
+http://live.hznet.tv:1935/live/live2/500K/tzwj_video.m3u8?shandd
+#EXTINF:-1,ä¸‡è£ç»¼åˆ
+http://60.222.246.220:19433/hls1.m3u8
 #EXTINF:-1,äº”å°ç»¼åˆ
 https://568slnjf.live.sxmty.com/live/hls/90c8b2efeb164cc0a6c2409eed668d6b/f77cbb89ec57435b9ba4c47589c16e4f-1.m3u8
 #EXTINF:-1,å¤å¿ç»¼åˆ
@@ -25440,9 +25450,9 @@ https://live.lalifeier.eu.org/sxrtv/sxjj.m3u8?t=1745796321&key=f20ee9d210e6bb63a
 #EXTINF:-1,å±±è¥¿ç»æµ
 https://live.lalifeier.eu.org/sxrtv/sxjj.m3u8?t=1746307365&key=9efd994033ee8bd840c01f930811f94a
 #EXTINF:-1,å±±è¥¿ç»æµä¸ç§‘æŠ€
-http://171.116.216.113:10010/rtp/226.0.2.236:9800
-#EXTINF:-1,å±±è¥¿ç»æµä¸ç§‘æŠ€
 http://171.116.216.113:10010/rtp/226.0.1.81:2003
+#EXTINF:-1,å±±è¥¿ç»æµä¸ç§‘æŠ€
+http://171.116.216.113:10010/rtp/226.0.2.236:9800
 #EXTINF:-1,å¹³é¥æ–°é—»ç»¼åˆ
 https://tntgjhjb.live.sxmty.com/live/hls/3a4585ac11ec4e1bb07b419101b370c3/baf63e2b313440c2a25d7859f9b73b05-1.m3u8?zshanxd
 #EXTINF:-1,æ€€ä»ç»¼åˆ
@@ -25474,9 +25484,9 @@ https://83awgyp5.live.sxmty.com/live/hls/6f6f4b36f9bd42628b718b595ba507ed/724b7e
 #EXTINF:-1,é•¿æ²»å…¬å…±
 http://live.njgdmm.com/changzhi/cztv2.m3u8
 #EXTINF:-1,é»åŸç»¼åˆ
-http://111.53.96.67:8081/live/1/index.m3u8?%E5%85%B3%E6%B3%A8%E5%BE%AE%E4%BF%A1%E5%85%AC%E4%BC%97%E5%8F%B7[%E6%99%B4%E5%9B%AD]
-#EXTINF:-1,é»åŸç»¼åˆ
 http://111.53.96.67:8081/live/1/index.m3u8
+#EXTINF:-1,é»åŸç»¼åˆ
+http://111.53.96.67:8081/live/1/index.m3u8?%E5%85%B3%E6%B3%A8%E5%BE%AE%E4%BF%A1%E5%85%AC%E4%BC%97%E5%8F%B7[%E6%99%B4%E5%9B%AD]
 #EXTINF:-1,å®‰å¾½å›½é™…
 https://stream1.freetv.fun/an-hui-guo-ji-16.m3u8
 #EXTINF:-1,å®‰å¾½å½±è§†
@@ -25507,8 +25517,6 @@ https://livehls1.appcoo.com/liveshopping/949E0A98C9D0C311/6D925141BC1F8C28/index
 http://112.27.235.94:8000/hls/18/index.m3u8
 #EXTINF:-1,å›ºé•‡æ–°é—»
 http://www.guzhenm.com:7001/hls/hd-live.m3u8?%E5%85%B3%E6%B3%A8%E5%BE%AE%E4%BF%A1%E5%85%AC%E4%BC%97%E5%8F%B7[%E6%99%B4%E5%9B%AD]
-#EXTINF:-1,å›ºé•‡æ–°é—»
-http://www.guzhenm.com:7001/hls/hd-live.m3u8
 #EXTINF:-1,é»„å±±æ–°é—»ç»¼åˆ
 http://hslive.hsnewsnet.com/lsdream/hve9Wjs/1000/live.m3u8?zanhd
 #EXTINF:-1,é»„å±±æ–°é—»ç»¼åˆ
@@ -25554,9 +25562,9 @@ http://play-a2.quklive.com/live/1667883943560053.m3u8
 #EXTINF:-1,é“¶å·æ–‡ä½“
 http://play-a2.quklive.com/live/1667884025738071.m3u8
 #EXTINF:-1,å´å¿ ç»¼åˆ
-http://live.kanwz.net/zhpd/sd/live.m3u8
-#EXTINF:-1,å´å¿ ç»¼åˆ
 http://live.kanwz.net/zhpd/sd/live.m3u8?zningxd
+#EXTINF:-1,å´å¿ ç»¼åˆ
+http://live.kanwz.net/zhpd/sd/live.m3u8
 #EXTINF:-1,å´å¿ å…¬å…±
 http://live.kanwz.net/ggpd/sd/live.m3u8?zningxd
 #EXTINF:-1,å´å¿ å…¬å…±
@@ -25590,15 +25598,15 @@ https://live.lalifeier.eu.org/jlntv/jlxc.m3u8?t=1746307365&key=c561c31cdce71c6e8
 #EXTINF:-1,å‰æ—ä¹¡æ‘
 https://live.lalifeier.eu.org/jlntv/jlxc.m3u8?t=1746393735&key=9d6ca0a9c59b1876be2ef4320b7283d8
 #EXTINF:-1,å»¶è¾¹-2
-http://stream8.jlntv.cn/ljtv/playlist.m3u8
-#EXTINF:-1,å»¶è¾¹-2
 http://stream5.jlntv.cn/wq/playlist.m3u8
+#EXTINF:-1,å»¶è¾¹-2
+http://stream8.jlntv.cn/ljtv/playlist.m3u8
 #EXTINF:-1,é•¿ç™½å±±ç”µè§†å°
 http://stream8.jlntv.cn/cbstv/sd/live.m3u8?zjild
 #EXTINF:-1,å¾·æƒ ç»¼åˆ
-http://stream11.jlntv.cn/dehuitv/sd/live.m3u8
-#EXTINF:-1,å¾·æƒ ç»¼åˆ
 http://stream11.jlntv.cn/dehuitv/sd/live.m3u8?%E5%85%B3%E6%B3%A8%E5%BE%AE%E4%BF%A1%E5%85%AC%E4%BC%97%E5%8F%B7[%E6%99%B4%E5%9B%AD]
+#EXTINF:-1,å¾·æƒ ç»¼åˆ
+http://stream11.jlntv.cn/dehuitv/sd/live.m3u8
 #EXTINF:-1,ä¹å°ç»¼åˆ
 http://stream10.jlntv.cn/jiutaitv/sd/live.m3u8
 #EXTINF:-1,ä¹å°ç»¼åˆ
@@ -25632,11 +25640,11 @@ http://stream3.jlntv.cn:80/aac_dfgb/playlist.m3u8
 #EXTINF:-1,åŒè¾½ç»¼åˆ
 http://stream3.jlntv.cn:80/aac_slgb/playlist.m3u8
 #EXTINF:-1,è¾‰å—æ–°é—»ç»¼åˆ
+http://stream5.jlntv.cn/hn/sd/live.m3u8?zjild
+#EXTINF:-1,è¾‰å—æ–°é—»ç»¼åˆ
 http://stream5.jlntv.cn/hn/sd/live.m3u8?%E5%85%B3%E6%B3%A8%E5%BE%AE%E4%BF%A1%E5%85%AC%E4%BC%97%E5%8F%B7[%E6%99%B4%E5%9B%AD]
 #EXTINF:-1,è¾‰å—æ–°é—»ç»¼åˆ
 http://stream5.jlntv.cn/hn/sd/live.m3u8
-#EXTINF:-1,è¾‰å—æ–°é—»ç»¼åˆ
-http://stream5.jlntv.cn/hn/sd/live.m3u8?zjild
 #EXTINF:-1,æŸ³æ²³ç»¼åˆ
 http://stream3.jlntv.cn:80/aac_lhgb/sd/live.m3u8
 #EXTINF:-1,é€šåŒ–å¿ç»¼åˆ
@@ -25701,18 +25709,12 @@ http://live.ynurl.com/video/s10019-mzdst/index.m3u8
 http://live.ynurl.com/video/s10019-mzdst/index.m3u8?zyund
 #EXTINF:-1,é€šæµ·ç”µè§†å°
 https://zb-live.ynurl.com/tonghai/3bfe3a9e-48e6-4c1e-8770-1df66447cc6c.m3u8
-#EXTINF:-1,é€šæµ·ç”µè§†å°
-http://live.ynurl.com/video/s10038-thtv/index.m3u8?zyund
 #EXTINF:-1,é‡‘å¹³ç»¼åˆ
 http://live.ynurl.com/video/s10041-JPTV/index.m3u8
 #EXTINF:-1,é‡‘å¹³ç»¼åˆ
 http://live.ynurl.com/video/s10041-JPTV/index.m3u8?zyund
 #EXTINF:-1,é™‡å·ç»¼åˆ
 https://zb-live.ynurl.com/longchuan/58f88df3-605e-4c57-865c-8e8f85241ca1.m3u8
-#EXTINF:-1,é™‡å·ç»¼åˆ
-http://live.ynurl.com/video/s10027-LCDST/index.m3u8
-#EXTINF:-1,é™‡å·ç»¼åˆ
-http://live.ynurl.com/video/s10027-LCDST/index.m3u8?zyund
 #EXTINF:-1,éº»æ —å¡ç”µè§†å°
 http://tvdrs.wsrtv.com.cn:8100/channellive/mlptv.flv?zyund
 #EXTINF:-1,å®‰å¤šå«è§†
@@ -25858,11 +25860,11 @@ https://stream1.freetv.fun/ha-er-bin-xin-wen-zong-he-4.m3u8
 #EXTINF:-1,å“ˆå°”æ»¨å½±è§†
 https://stream.hrbtv.net/yspd/sd/live.m3u8
 #EXTINF:-1,å“ˆå°”æ»¨å½±è§†
-http://stream.hrbtv.net/yspd/sd/live.m3u8?zheild#http://stream.hrbtv.net/yspd/sd/live.m3u8
+http://stream.hrbtv.net/yspd/sd/live.m3u8?zheild
 #EXTINF:-1,å“ˆå°”æ»¨å½±è§†
 http://stream.hrbtv.net/yspd/sd/live.m3u8
 #EXTINF:-1,å“ˆå°”æ»¨å½±è§†
-http://stream.hrbtv.net/yspd/sd/live.m3u8?zheild
+http://stream.hrbtv.net/yspd/sd/live.m3u8?zheild#http://stream.hrbtv.net/yspd/sd/live.m3u8
 #EXTINF:-1,å“ˆå°”æ»¨å½±è§†
 http://111.43.126.240:9003/hls/5/index.m3u8
 #EXTINF:-1,å“ˆå°”æ»¨èµ„è®¯
@@ -25872,19 +25874,15 @@ https://stream.hrbtv.net/shpd/playlist.m3u8
 #EXTINF:-1,å“ˆå°”æ»¨ç”Ÿæ´»
 https://stream.hrbtv.net/shpd/sd/live.m3u8
 #EXTINF:-1,å“ˆå°”æ»¨ç”Ÿæ´»
-http://stream.hrbtv.net/shpd/sd/live.m3u8?zheild
-#EXTINF:-1,å“ˆå°”æ»¨ç”Ÿæ´»
 http://stream.hrbtv.net/shpd/sd/live.m3u8
+#EXTINF:-1,å“ˆå°”æ»¨ç”Ÿæ´»
+http://stream.hrbtv.net/shpd/sd/live.m3u8?zheild
 #EXTINF:-1,å“ˆå°”æ»¨ç”Ÿæ´»
 http://111.43.126.240:9003/hls/3/index.m3u8
 #EXTINF:-1,å“ˆå°”æ»¨å¨±ä¹
-http://stream.hrbtv.net/ylpd/sd/live.m3u8?zheild
-#EXTINF:-1,å“ˆå°”æ»¨å¨±ä¹
 http://stream.hrbtv.net/ylpd/sd/live.m3u8
 #EXTINF:-1,å“ˆå°”æ»¨å¨±ä¹
-https://stream.hrbtv.net/ylpd/sd/live.m3u8
-#EXTINF:-1,å“ˆå°”æ»¨å¨±ä¹
-http://stream.hrbtv.net/ylpd/sd/live.m3u8?zheild#http://stream.hrbtv.net/ylpd/sd/live.m3u8#https://stream.hrbtv.net/ylpd/sd/live.m3u8
+http://stream.hrbtv.net/ylpd/sd/live.m3u8?zheild
 #EXTINF:-1,å¤§åº†æ–°é—»ç»¼åˆ
 https://stream1.freetv.fun/da-qing-xin-wen-zong-he-1.m3u8
 #EXTINF:-1,é¹¤å²—æ–°é—»ç»¼åˆ
@@ -25910,9 +25908,9 @@ https://stream1.freetv.fun/ipv6-qi-qi-ha-er-xin-wen-zong-he-3.m3u8
 #EXTINF:-1,åŒé¸­å±±ç»¼åˆ
 http://live.qthnews.org.cn:1935/live/live2/800k/tzwj_video.m3u8
 #EXTINF:-1,ç¿¡ç¿ å°
-https://cdn.iptv8k.top/dl/jrys.php?id=3&time=20240926215313&ip=111.229.253.40ã€çº¿è·¯08ã€
-#EXTINF:-1,ç¿¡ç¿ å°
 https://cdn.iptv8k.top/dl/jrys.php?id=3&time=20240926215313&ip=111.229.253.40
+#EXTINF:-1,ç¿¡ç¿ å°
+https://cdn.iptv8k.top/dl/jrys.php?id=3&time=20240926215313&ip=111.229.253.40ã€çº¿è·¯08ã€
 #EXTINF:-1,ç¿¡ç¿ å°
 http://php.jdshipin.com:8880/TVOD/iptv.php?id=fct3&token=512df05ba47edb46400575c93e179adb7981226d414516400ed1d382cb126adc517715d4ccd3a2276bf3c7b72d52f58905225cf0b1cc461b7888443f
 #EXTINF:-1,ç¿¡ç¿ å°
@@ -25950,9 +25948,13 @@ https://migu.188766.xyz/?migutoken=f7fca5fceffc820a3465098e3e42fda9&id=pearl_twn
 #EXTINF:-1,æ˜ç å°
 https://stream1.freetv.fun/ming-zhu-1.ctv
 #EXTINF:-1,å‡¤å‡°ä¸­æ–‡
+http://106.53.99.30/tv/hk.php?id=fhzw
+#EXTINF:-1,å‡¤å‡°ä¸­æ–‡
 https://cdn.iptv8k.top/dl/jrys.php?id=19&time=20240926215313&ip=111.229.253.40
 #EXTINF:-1,å‡¤å‡°ä¸­æ–‡
 http://playtv-live.ifeng.com/live/06OLEGEGM4G_audio.m3u8
+#EXTINF:-1,å‡¤å‡°ä¸­æ–‡
+http://106.53.99.30/tv/hk.php?id=fhzw1
 #EXTINF:-1,å‡¤å‡°ä¸­æ–‡
 http://php.jdshipin.com:8880/TVOD/iptv.php?id=fhzw
 #EXTINF:-1,å‡¤å‡°ä¸­æ–‡
@@ -25965,10 +25967,6 @@ https://cdn.163189.xyz/live/fhzw/stream.m3u8
 http://php.jdshipin.com/PLTV/iptv.php?id=fhzw
 #EXTINF:-1,å‡¤å‡°ä¸­æ–‡
 http://cdn.163.dedyn.io/live/fhzw/stream.m3u8
-#EXTINF:-1,å‡¤å‡°ä¸­æ–‡
-http://php.jdshipin.com/TVOD/iptv.php?id=fhzw2
-#EXTINF:-1,å‡¤å‡°ä¸­æ–‡
-http://php.jdshipin.com/TVOD/iptv.php
 #EXTINF:-1,å‡¤å‡°èµ„è®¯
 http://playtv-live.ifeng.com/live/06OLEEWQKN4_audio.m3u8
 #EXTINF:-1,å‡¤å‡°èµ„è®¯
@@ -25990,7 +25988,11 @@ https://smart.pendy.dpdns.org/Smart.php?id=phoenixinfo_hd
 #EXTINF:-1,å‡¤å‡°èµ„è®¯
 http://cdn3.163189.xyz/live/fhzx/stream.m3u8
 #EXTINF:-1,å‡¤å‡°é¦™æ¸¯
+http://106.53.99.30/tv/hk.php?id=fhxg
+#EXTINF:-1,å‡¤å‡°é¦™æ¸¯
 https://cdn.iptv8k.top/dl/jrys.php?id=18&time=20240926215313&ip=111.229.253.40
+#EXTINF:-1,å‡¤å‡°é¦™æ¸¯
+http://106.53.99.30/tv/hk.php?id=fhxg1
 #EXTINF:-1,å‡¤å‡°é¦™æ¸¯
 http://php.jdshipin.com/TVOD/iptv.php?id=fhhk
 #EXTINF:-1,å‡¤å‡°é¦™æ¸¯
@@ -26005,10 +26007,6 @@ http://php.jdshipin.com:8880/smt.php?id=hkphoenix_twn
 https://smart.pendy.dpdns.org/Smart.php?id=hkphoenix_twn
 #EXTINF:-1,å‡¤å‡°é¦™æ¸¯
 http://php.jdshipin.com/TVOD/iptv.php?id=fhhk2
-#EXTINF:-1,å‡¤å‡°é¦™æ¸¯
-http://php.jdshipin.com:8880/TVOD/iptv.php?id=fhhk
-#EXTINF:-1,å‡¤å‡°é¦™æ¸¯
-http://php.jdshipin.com:8880/TVOD/iptv.php?id=fhhk2
 #EXTINF:-1,å‡¤å‡°å«è§†
 http://cdn.132.us.kg/live/fhzw/stream.m3u8
 #EXTINF:-1,å‡¤å‡°å«è§†
@@ -26028,11 +26026,11 @@ https://live.tvfix.org/live/tvbs/index.m3u8
 #EXTINF:-1,çº¬æ¥ä½“è‚²
 https://cdn.iptv8k.top/dl/jrys.php?id=292&time=20240926215313&ip=111.229.253.40
 #EXTINF:-1,çº¬æ¥ä½“è‚²
-https://cdn.iptv8k.top/dl/jrys.php?id=292&amp;amp;time=20240926215313&amp;amp;ip=111.229.253.40
+https://cdn.iptv8k.top/dl/jrys.php?id=291&time=20240926215313&ip=111.229.253.40
 #EXTINF:-1,çº¬æ¥ä½“è‚²
 https://cdn.iptv8k.top/dl/jrys.php?id=292&amp;time=20240926215313&amp;ip=111.229.253.40
 #EXTINF:-1,çº¬æ¥ä½“è‚²
-https://cdn.iptv8k.top/dl/jrys.php?id=291&time=20240926215313&ip=111.229.253.40
+https://cdn.iptv8k.top/dl/jrys.php?id=292&amp;amp;time=20240926215313&amp;amp;ip=111.229.253.40
 #EXTINF:-1,çº¬æ¥ä½“è‚²
 https://stream1.freetv.fun/wei-lai-ti-yu-9.ctv
 #EXTINF:-1,çº¬æ¥ä½“è‚²
@@ -26106,21 +26104,21 @@ https://hls-gateway.vpstv.net/streams/492922.m3u8
 #EXTINF:-1,ä¸‰ç«‹æ–°é—»
 http://pullpackage.alivecdn.com/live/GDGMQBLKWMPhyKJYSPPR6dnb2lS3FvykpFuj8AZf19Mbfd2yjx.flv
 #EXTINF:-1,ä¸œæ£®ç»¼åˆ
+https://cdn.iptv8k.top/dl/jrys.php?id=221&time=20240926215313&ip=111.229.253.40
+#EXTINF:-1,ä¸œæ£®ç»¼åˆ
 https://cdn.iptv8k.top/dl/jrys.php?id=220&time=20240926215313&ip=111.229.253.40
 #EXTINF:-1,ä¸œæ£®ç»¼åˆ
 https://cdn.iptv8k.top/dl/jrys.php?id=221&amp;time=20240926215313&amp;ip=111.229.253.40
-#EXTINF:-1,ä¸œæ£®ç»¼åˆ
-https://cdn.iptv8k.top/dl/jrys.php?id=221&time=20240926215313&ip=111.229.253.40
 #EXTINF:-1,ä¸œæ£®ç»¼åˆ
 https://smart.pendy.dpdns.org/Smart.php?id=ettvzhonghe
 #EXTINF:-1,ä¸œæ£®ç»¼åˆ
 https://hls-gateway.vpstv.net/streams/476987.m3u8
 #EXTINF:-1,ä¸œæ£®è¶…è§†
-https://cdn.iptv8k.top/dl/jrys.php?id=217&time=20240926215313&ip=111.229.253.40
-#EXTINF:-1,ä¸œæ£®è¶…è§†
 https://cdn.iptv8k.top/dl/jrys.php?id=216&time=20240926215313&ip=111.229.253.40#rtmp://f13h.mine.nu/sat/tv331#rtmp://f13h.mine.nu/sat/tv331
 #EXTINF:-1,ä¸œæ£®è¶…è§†
 https://cdn.iptv8k.top/dl/jrys.php?id=216&time=20240926215313&ip=111.229.253.40
+#EXTINF:-1,ä¸œæ£®è¶…è§†
+https://cdn.iptv8k.top/dl/jrys.php?id=217&time=20240926215313&ip=111.229.253.40
 #EXTINF:-1,ä¸œæ£®è¶…è§†
 http://38.64.72.148:80/hls/modn/list/2013/chunklist1.m3u8
 #EXTINF:-1,ä¸œæ£®è¶…è§†
@@ -26493,6 +26491,10 @@ http://[2409:8087:5e00:24::2d]:6610/000000001000/1/3000000020000011520/index.m3u
 http://[2409:8087:5e00:24::2d]:6610/000000001000/1/3000000020000011521/index.m3u8?channel-id=FifastbLive&Contentid=3000000020000011521&livemode=1&stbId=YanG-1989
 #EXTINF:-1,å’ªå’•ç›´æ’­38
 http://[2409:8087:5e00:24::2d]:6610/000000001000/1/3000000020000011522/index.m3u8?channel-id=FifastbLive&Contentid=3000000020000011522&livemode=1&stbId=YanG-1989
+#EXTINF:-1,CCTV-5
+http://[2409:8087:1a01:df::4077]/ottrrs.hl.chinamobile.com/PLTV/88888888/8/3221226019/index.m3u8
+#EXTINF:-1,CCTV-5+
+https://www.freetv.top/migu/641886773.m3u8?migutoken=408252ae4ee84d4533a52e87dc35e108f3557992d0837a3c98af9093fccdb78373328e743136467868d2125b1fa35c3f4d576327db5e3ec96ec3108e28e950fb462f2dc81da44be8ae43ebe0ce
 #EXTINF:-1,çº¬æ¥ä½“è‚²
 https://hls-gateway.vpstv.net/streams/477026.m3u8
 #EXTINF:-1,çº¬æ¥ä½“è‚²
@@ -26779,6 +26781,8 @@ http://ygbh.site/php/bfgd.php?id=142
 http://[2409:8087:5e00:24::2d]:6610/000000001000/1/5000000011000288003/index.m3u8?channel-id=bestzb&Contentid=5000000011000288003&livemode=1&stbId=YanG-1989
 #EXTINF:-1,çˆ±ç”µç«
 http://php.jdshipin.com:8880/itv6s.php?cid=wasusyt&id=6000000006000230630
+#EXTINF:-1,CCTV-15
+http://[2409:8087:1a01:df::4077]/ottrrs.hl.chinamobile.com/PLTV/88888888/224/3221225601/index.m3u8
 #EXTINF:-1,éŸ³ä¹ç°åœº
 http://satellitepull.cnr.cn/live/wx32nmgyygb/playlist.m3u8
 #EXTINF:-1,éŸ³ä¹ç°åœº
@@ -26855,7 +26859,7 @@ https://stream1.freetv.fun/3shuo-dian-ying-1.ctv
 https://stream1.freetv.fun/77shuo-dian-ying-1.ctv
 #EXTINF:-1,[BD]taiwan plus[geo-blocked]
 https://stream1.freetv.fun/taiwan-plus-2.m3u8
-#EXTINF:-1,[BD]b站王者荣耀
+#EXTINF:-1,[BD]b站王者荣耀[geo-blocked]
 https://stream1.freetv.fun/bzhan-wang-zhe-rong-yao-1.ctv
 #EXTINF:-1,[BD]bbc earth
 https://stream1.freetv.fun/bbc-earth-14.m3u8
@@ -26863,8 +26867,6 @@ https://stream1.freetv.fun/bbc-earth-14.m3u8
 https://stream1.freetv.fun/bbc-earth-us-1.m3u8
 #EXTINF:-1,[BD]ช่อง bbc earth
 https://stream1.freetv.fun/ch-ng-bbc-earth-1.m3u8
-#EXTINF:-1,[BD]bbc lifestyle *wj
-https://stream1.freetv.fun/bbc-lifestyle--wj-1.m3u8
 #EXTINF:-1,[BD]tennis channel
 https://stream1.freetv.fun/tennis-channel-1.m3u8
 #EXTINF:-1,[SD]light channel
@@ -26947,22 +26949,16 @@ https://stream1.freetv.fun/dazn-combat-2.m3u8
 https://stream1.freetv.fun/dazn-ringside-1.m3u8
 #EXTINF:-1,[BD]dazn combat
 https://stream1.freetv.fun/dazn-combat-1.m3u8
-#EXTINF:-1,[HD]discovery h h
+#EXTINF:-1,[BD]discovery h h
 https://stream1.freetv.fun/discovery-h-h-3.ctv
-#EXTINF:-1,[BD]discovery(tw) *s[geo-blocked]
+#EXTINF:-1,[HD]discovery(tw) *s[geo-blocked]
 https://stream1.freetv.fun/discovery--s-1.m3u8
-#EXTINF:-1,[BD]asharq discovery
+#EXTINF:-1,[HD]asharq discovery
 https://stream1.freetv.fun/asharq-discovery-4.m3u8
-#EXTINF:-1,[BD]elta影剧
-https://stream1.freetv.fun/eltaying-ju-1.ctv
-#EXTINF:-1,[BD]elta综合
-https://stream1.freetv.fun/eltazong-he-3.ctv
 #EXTINF:-1,[BD]cctv-4k[geo-blocked]
 https://stream1.freetv.fun/cctv-4k-1.ctv
 #EXTINF:-1,[SD]elta 4 *wj
 https://stream1.freetv.fun/elta-4--wj-4.m3u8
-#EXTINF:-1,[SD]elta体育4
-https://stream1.freetv.fun/eltati-yu-4-2.ctv
 #EXTINF:-1,[SD]elta 4 *wj
 https://stream1.freetv.fun/elta-4--wj-1.m3u8
 #EXTINF:-1,[HD]delta tv
@@ -26975,7 +26971,7 @@ https://stream1.freetv.fun/eye-tvxi-ju---wj-2.m3u8
 https://stream1.freetv.fun/food-network-8.m3u8
 #EXTINF:-1,[BD]food network[geo-blocked]
 https://stream1.freetv.fun/food-network-4.m3u8
-#EXTINF:-1,[SD]food network(tw) *s[geo-blocked]
+#EXTINF:-1,[BD]food network(tw) *s[geo-blocked]
 https://stream1.freetv.fun/food-network--s-1.m3u8
 #EXTINF:-1,[HD]ช่อง food network
 https://stream1.freetv.fun/ch-ng-food-network-3.m3u8
@@ -27019,8 +27015,6 @@ https://stream1.freetv.fun/love-nature-14.m3u8
 https://stream1.freetv.fun/love-nature-uhd--m-1.ctv
 #EXTINF:-1,[SD]love nature (720p) [geo-blocked]
 https://stream1.freetv.fun/love-nature-19.m3u8
-#EXTINF:-1,[HD]love nature *wj
-https://stream1.freetv.fun/love-nature--wj-2.m3u8
 #EXTINF:-1,[BD]love nature
 https://stream1.freetv.fun/love-nature-6.m3u8
 #EXTINF:-1,[BD]unife tv
@@ -27053,14 +27047,10 @@ https://stream1.freetv.fun/star-movies-select-1.ctv
 https://stream1.freetv.fun/tvbs-asia-6.m3u8
 #EXTINF:-1,[BD]tvbs *wj
 https://stream1.freetv.fun/tvbs--wj-2.m3u8
-#EXTINF:-1,[BD]tvbs *wj
-https://stream1.freetv.fun/tvbs--wj-4.m3u8
 #EXTINF:-1,[HD]tvbs news[geo-blocked]
 https://stream1.freetv.fun/tvbs-news-1.m3u8
-#EXTINF:-1,[BD]tvbs新闻 *wj
+#EXTINF:-1,[BD]tvbs新闻 *wj[geo-blocked]
 https://stream1.freetv.fun/tvbsxin-wen---wj-3.m3u8
-#EXTINF:-1,[BD]tvbs新闻
-https://stream1.freetv.fun/tvbsxin-wen-5.ctv
 #EXTINF:-1,[BD]tvbs欢乐 *wj
 https://stream1.freetv.fun/tvbshuan-le---wj-3.m3u8
 #EXTINF:-1,[BD]taiwan plus tv[geo-blocked]
@@ -27075,32 +27065,20 @@ https://stream1.freetv.fun/san-li-xi-ju-2.ctv
 https://stream1.freetv.fun/san-li-xin-wen-4.ctv
 #EXTINF:-1,[BD]三立台湾[geo-blocked]
 https://stream1.freetv.fun/san-li-tai-wan-4.ctv
-#EXTINF:-1,[BD]三立台湾
-https://stream1.freetv.fun/san-li-tai-wan-2.ctv
-#EXTINF:-1,[HD]中天亚洲
-https://stream1.freetv.fun/zhong-tian-ya-zhou-9.ctv
 #EXTINF:-1,[BD]中天新聞
 https://stream1.freetv.fun/zhong-tian-xin-wen-8.m3u8
 #EXTINF:-1,[BD]中天新闻[geo-blocked]
 https://stream1.freetv.fun/zhong-tian-xin-wen-7.m3u8
-#EXTINF:-1,[HD]中天新闻
-https://stream1.freetv.fun/zhong-tian-xin-wen-2.ctv
-#EXTINF:-1,[BD]中视 *wj
-https://stream1.freetv.fun/zhong-shi---wj-1.m3u8
-#EXTINF:-1,[HD]中视新闻 *wj
+#EXTINF:-1,[HD]中视新闻 *wj[geo-blocked]
 https://stream1.freetv.fun/zhong-shi-xin-wen---wj-3.m3u8
-#EXTINF:-1,[HD]中视新闻 *wj
+#EXTINF:-1,[HD]中视新闻 *wj[geo-blocked]
 https://stream1.freetv.fun/zhong-shi-xin-wen---wj-2.m3u8
 #EXTINF:-1,[HD]中视新闻 *wj
 https://stream1.freetv.fun/zhong-shi-xin-wen---wj-5.m3u8
-#EXTINF:-1,[BD]中视经典 *wj
-https://stream1.freetv.fun/zhong-shi-jing-dian---wj-1.m3u8
-#EXTINF:-1,[BD]亚洲旅游 *wj[geo-blocked]
+#EXTINF:-1,[BD]亚洲旅游 *wj
 https://stream1.freetv.fun/ya-zhou-lu-you---wj-5.m3u8
-#EXTINF:-1,[BD]亚洲旅游 *wj
+#EXTINF:-1,[BD]亚洲旅游 *wj[geo-blocked]
 https://stream1.freetv.fun/ya-zhou-lu-you---wj-4.m3u8
-#EXTINF:-1,[BD]亚洲旅游 *wj
-https://stream1.freetv.fun/ya-zhou-lu-you---wj-3.m3u8
 #EXTINF:-1,[HD]人间卫视
 https://stream1.freetv.fun/ren-jian-wei-shi-3.m3u8
 #EXTINF:-1,[HD]人间卫视
@@ -27115,19 +27093,11 @@ https://stream1.freetv.fun/ren-jian-wei-shi-11.m3u8
 https://stream1.freetv.fun/ren-jian-wei-shi-9.m3u8
 #EXTINF:-1,[HD]人间卫视
 https://stream1.freetv.fun/ren-jian-wei-shi-10.ctv
-#EXTINF:-1,[BD]八大戏剧
-https://stream1.freetv.fun/ba-da-xi-ju-2.ctv
-#EXTINF:-1,[BD]八大第1
-https://stream1.freetv.fun/ba-da-di-1-1.ctv
 #EXTINF:-1,[HD]博斯网球 *wj
 https://stream1.freetv.fun/bo-si-wang-qiu---wj-2.m3u8
 #EXTINF:-1,[HD]博斯网球 *wj
 https://stream1.freetv.fun/bo-si-wang-qiu---wj-3.m3u8
-#EXTINF:-1,[HD]博斯高球ii
-https://stream1.freetv.fun/bo-si-gao-qiu-ii-1.ctv
-#EXTINF:-1,[HD]博斯高球i
-https://stream1.freetv.fun/bo-si-gao-qiu-i-1.ctv
-#EXTINF:-1,[HD]博斯高球1 *wj
+#EXTINF:-1,[HD]博斯高球1 *wj[geo-blocked]
 https://stream1.freetv.fun/bo-si-gao-qiu-1--wj-1.m3u8
 #EXTINF:-1,[HD]博斯运动二 *wj
 https://stream1.freetv.fun/bo-si-yun-dong-er---wj-1.m3u8
@@ -27141,14 +27111,10 @@ https://stream1.freetv.fun/bo-si-yun-dong-er---wj-2.m3u8
 https://stream1.freetv.fun/bo-si-gao-qiu-er---wj-1.m3u8
 #EXTINF:-1,[HD]博斯高球二 *wj
 https://stream1.freetv.fun/bo-si-gao-qiu-er---wj-2.m3u8
-#EXTINF:-1,[BD]博斯魅力[geo-blocked]
-https://stream1.freetv.fun/bo-si-mei-li-4.ctv
 #EXTINF:-1,[BD]博斯魅力 *wj
 https://stream1.freetv.fun/bo-si-mei-li---wj-2.m3u8
 #EXTINF:-1,[BD]博斯魅力 *wj
 https://stream1.freetv.fun/bo-si-mei-li---wj-1.m3u8
-#EXTINF:-1,[HD]台视新闻hd *wj
-https://stream1.freetv.fun/tai-shi-xin-wen-hd--wj-1.m3u8
 #EXTINF:-1,[HD]台视新闻 *wj
 https://stream1.freetv.fun/tai-shi-xin-wen---wj-1.m3u8
 #EXTINF:-1,[BD]台视新闻
@@ -27156,11 +27122,7 @@ https://stream1.freetv.fun/tai-shi-xin-wen-17.m3u8
 #EXTINF:-1,[VGA]唯心电视
 https://stream1.freetv.fun/wei-xin-dian-shi-5.m3u8
 #EXTINF:-1,[HD]大愛 *wj
-https://stream1.freetv.fun/da-ai---wj-1.m3u8
-#EXTINF:-1,[HD]大愛 *wj
 https://stream1.freetv.fun/da-ai---wj-3.m3u8
-#EXTINF:-1,[HD]大爱
-https://stream1.freetv.fun/da-ai-2.ctv
 #EXTINF:-1,[HD]大愛電视 *wj
 https://stream1.freetv.fun/da-ai-dian-shi---wj-1.m3u8
 #EXTINF:-1,[BD]好莱坞电影 *wj
@@ -27175,26 +27137,20 @@ https://stream1.freetv.fun/hao-xiao-xi-2-2.m3u8
 https://stream1.freetv.fun/hao-xiao-xi-2--wj-2.m3u8
 #EXTINF:-1,[HD]好消息2 *wj
 https://stream1.freetv.fun/hao-xiao-xi-2--wj-1.m3u8
-#EXTINF:-1,[HD]寰宇新闻
-https://stream1.freetv.fun/huan-yu-xin-wen-2.ctv
 #EXTINF:-1,[BD]much
 https://stream1.freetv.fun/much-3.m3u8
 #EXTINF:-1,[BD]年代新闻 *wj
-https://stream1.freetv.fun/nian-dai-xin-wen---wj-1.m3u8
-#EXTINF:-1,[BD]年代新闻 *wj
 https://stream1.freetv.fun/nian-dai-xin-wen---wj-3.m3u8
-#EXTINF:-1,[SD]成龙
+#EXTINF:-1,[HD]成龙
 https://stream1.freetv.fun/cheng-long-1.m3u8
-#EXTINF:-1,[SD]成龙
+#EXTINF:-1,[HD]成龙
 https://stream1.freetv.fun/cheng-long-2.m3u8
 #EXTINF:-1,[HD]亚洲新闻
 https://stream1.freetv.fun/ya-zhou-xin-wen-1.m3u8
-#EXTINF:-1,[BD]东森幼幼 *wj
+#EXTINF:-1,[BD]东森幼幼 *wj[geo-blocked]
 https://stream1.freetv.fun/dong-sen-you-you---wj-2.m3u8
 #EXTINF:-1,[BD]东森幼幼 *wj
 https://stream1.freetv.fun/dong-sen-you-you---wj-3.m3u8
-#EXTINF:-1,[BD]東森戏剧
-https://stream1.freetv.fun/dong-sen-xi-ju-3.ctv
 #EXTINF:-1,[BD]东森洋片
 https://stream1.freetv.fun/dong-sen-yang-pian-3.ctv
 #EXTINF:-1,[BD]东森综合[geo-blocked]
@@ -27209,8 +27165,6 @@ https://stream1.freetv.fun/dong-sen-mei-zhou-2-1.m3u8
 https://stream1.freetv.fun/dong-sen-mei-zhou-xin-wen-1.m3u8
 #EXTINF:-1,[HD]东森财经 *wj
 https://stream1.freetv.fun/dong-sen-cai-jing---wj-2.m3u8
-#EXTINF:-1,[HD]东森财经新闻
-https://stream1.freetv.fun/dong-sen-cai-jing-xin-wen-3.ctv
 #EXTINF:-1,[BD]东森超视[geo-blocked]
 https://stream1.freetv.fun/dong-sen-chao-shi-11.ctv
 #EXTINF:-1,[BD]东森超视
@@ -27221,20 +27175,12 @@ https://stream1.freetv.fun/dong-sen-chao-shi-1.ctv
 https://stream1.freetv.fun/dong-sen-chao-shi-34-5-1.m3u8
 #EXTINF:-1,[BD]东森电影 *wj
 https://stream1.freetv.fun/dong-sen-dian-ying---wj-3.m3u8
-#EXTINF:-1,[BD]東森电影
-https://stream1.freetv.fun/dong-sen-dian-ying-7.ctv
-#EXTINF:-1,[HD]民视
-https://stream1.freetv.fun/min-shi-10.ctv
-#EXTINF:-1,[HD]民视hd *wj
+#EXTINF:-1,[HD]民视hd *wj[geo-blocked]
 https://stream1.freetv.fun/min-shi-hd--wj-1.m3u8
 #EXTINF:-1,[BD]民視新聞
 https://stream1.freetv.fun/min-shi-xin-wen-17.m3u8
 #EXTINF:-1,[BD]民视新闻
 https://stream1.freetv.fun/min-shi-xin-wen-13.m3u8
-#EXTINF:-1,[HD]民视第一
-https://stream1.freetv.fun/min-shi-di-yi-5.ctv
-#EXTINF:-1,[HD]民视台湾
-https://stream1.freetv.fun/min-shi-tai-wan-5.ctv
 #EXTINF:-1,[BD]纬来日本
 https://stream1.freetv.fun/wei-lai-ri-ben-4.ctv
 #EXTINF:-1,[HD]纬来精彩[geo-blocked]
@@ -27379,22 +27325,16 @@ https://stream1.freetv.fun/6b7822541a82d9dced09589846808eda412714b30c723e6992bf1
 https://stream1.freetv.fun/2c514f0327df08f640ef530faf4644b6c4992534050b7d4e09569c5b8aabf96b.m3u8
 #EXTINF:-1,[BD]dazn combat
 https://stream1.freetv.fun/cea572c8598749b8e5def003418c8548e0f81b2d43661e21072845b5b901d2c9.m3u8
-#EXTINF:-1,[HD]discovery h h
+#EXTINF:-1,[BD]discovery h h
 https://stream1.freetv.fun/8cdbb8386603267a4bd09b57f2184c8cf65517be58ad0a2f38679f74ddb170a2.ctv
-#EXTINF:-1,[BD]discovery(tw) *s[geo-blocked]
+#EXTINF:-1,[HD]discovery(tw) *s[geo-blocked]
 https://stream1.freetv.fun/f8f3291157659f4b82903303107caf2a72c625f9bc33c8c0e144c44470933ab4.m3u8
 #EXTINF:-1,[BD]asharq discovery
 https://stream1.freetv.fun/ae1bcd61012a7cb1b781fb6af83dcacdc03f254790032b4374b976b61dd7ea4a.m3u8
-#EXTINF:-1,[BD]elta影剧
-https://stream1.freetv.fun/f0f6cd93da601180dc093fcf90c4caf4554fc7f4d6a7b0eebab2935a58dca277.ctv
-#EXTINF:-1,[BD]elta综合
-https://stream1.freetv.fun/88d87b2244418c86f42b52aa6324124d6f6aef835cecd9ed3e2753e3c8846b21.ctv
 #EXTINF:-1,[BD]cctv-4k[geo-blocked]
 https://stream1.freetv.fun/b9a2e767d016105572cd8746a02687121eff29c306eeb922ff2feab8b7286e4c.ctv
 #EXTINF:-1,[SD]elta 4 *wj
 https://stream1.freetv.fun/3964b037950f6d2a47811d529531c8e2957522d04c5657f628fc6656a15d9c2c.m3u8
-#EXTINF:-1,[SD]elta体育4
-https://stream1.freetv.fun/94ff44c2287a5d056ff76b96780752c44a5b1ec1ff3337c791bd42d468b749a4.ctv
 #EXTINF:-1,[SD]elta 4 *wj
 https://stream1.freetv.fun/fd622af717a0ce9994b34f2687714a14ea62bf45d1d87f6ef9666ce6f83a7a56.m3u8
 #EXTINF:-1,[HD]delta tv
@@ -27491,8 +27431,6 @@ https://stream1.freetv.fun/be448d8b56150f4bfb172b2fde529056e7f39ba8eebda7afa50f0
 https://stream1.freetv.fun/5325e5d7ff0449ec19c4c62689170c6410bdfb91394e5b684a473f1633d19252.m3u8
 #EXTINF:-1,[BD]tvbs新闻 *wj
 https://stream1.freetv.fun/aaa6d87ca8e55fe098eb28ae87e5d4a0320699d6f4ce528df785a10419e050f8.m3u8
-#EXTINF:-1,[BD]tvbs新闻
-https://stream1.freetv.fun/b9008aeb80dd41cc97f7006561fd5af645903c8fe9f44cb2e1e866c841842054.ctv
 #EXTINF:-1,[BD]tvbs欢乐 *wj
 https://stream1.freetv.fun/522035b1057c0c8b3221c2f87b5d73ec25adf7eca2ab472760297e109c01421e.m3u8
 #EXTINF:-1,[BD]taiwan plus tv[geo-blocked]
@@ -27509,14 +27447,10 @@ https://stream1.freetv.fun/103cd30c02d26d164666911be0e4abda2a1cd5d8ef4c1592d45b2
 https://stream1.freetv.fun/945b62a11c90469ac374aa5fad47364339e509f9d53b0768e2dc5535207edea6.ctv
 #EXTINF:-1,[BD]三立台湾
 https://stream1.freetv.fun/5b8d8dd98a4c4142a48cdc5a97519fcd583cecccb08f384d48682bffa263530d.ctv
-#EXTINF:-1,[HD]中天亚洲
-https://stream1.freetv.fun/7f95b8db949ef8c49c7cc7546fb8b6d2811e0812f36b30da1ee9ab1bf9e6aed9.ctv
 #EXTINF:-1,[BD]中天新聞
 https://stream1.freetv.fun/86c4bbf39b7ba14b8f7929428df4d9a5e150a79aeb6556a6f758524334e04a66.m3u8
 #EXTINF:-1,[BD]中天新闻[geo-blocked]
 https://stream1.freetv.fun/d5a6ec037d2c4635d144520d0ddf989faeb6a5f8d5d85e3c5a5c07d2ca2d79b3.m3u8
-#EXTINF:-1,[HD]中天新闻
-https://stream1.freetv.fun/d0dc419e572496e04901fdd844b4f116a46a43cf2651e93153312310bd703995.ctv
 #EXTINF:-1,[BD]中视 *wj
 https://stream1.freetv.fun/021e932225607aee06517135e9d482cd53ee71c43cc3017d4a15d4bed1ff5dfd.m3u8
 #EXTINF:-1,[HD]中视新闻 *wj
@@ -27547,16 +27481,10 @@ https://stream1.freetv.fun/9ebd1fd7c42e8d45d777d097877e6ad4742d2a8f82cde314ca4de
 https://stream1.freetv.fun/deb275c8240dc42c4dd7fd690936326d3764e97addbcdbda7e8c5148eade104e.m3u8
 #EXTINF:-1,[HD]人间卫视
 https://stream1.freetv.fun/9f76ad62b7ac59970b10e209f250df382971823ed12f12459c11d5ca71e0d7b9.ctv
-#EXTINF:-1,[BD]八大戏剧
-https://stream1.freetv.fun/6bb4f9ea66d81d2c3a6da18b704198f339a13528ef2be5f3dc6f8cd4c7545ce8.ctv
-#EXTINF:-1,[BD]八大第1
-https://stream1.freetv.fun/82f46b9180a235f0daf96447252ba496f4c8d3374f7033fac2081360b1b865e4.ctv
 #EXTINF:-1,[HD]博斯网球 *wj
 https://stream1.freetv.fun/88d51f084527229629d4e70b3a4df0c4eef71e5d223542d4d211e36a347ecff1.m3u8
 #EXTINF:-1,[HD]博斯网球 *wj
 https://stream1.freetv.fun/aa770991dd556fb03a3ca62cfbb3e9d749bc9762989db561c7a4b16fcafb6467.m3u8
-#EXTINF:-1,[HD]博斯高球ii
-https://stream1.freetv.fun/cd70a0ee14d995cb1ad076e00b363ee5e97cfb0f590b924b3727765166557cdb.ctv
 #EXTINF:-1,[HD]博斯高球i
 https://stream1.freetv.fun/f98b3156190cba41b2ee0ac491ce85957ba9aab1ab9a6b6f6744f75b25ddd7d1.ctv
 #EXTINF:-1,[HD]博斯高球1 *wj
@@ -27573,8 +27501,6 @@ https://stream1.freetv.fun/bf841a5cf15ab333eef9fa0ad4dfd58cb4ad77a65e817d39c70e3
 https://stream1.freetv.fun/3e17af8cfb5752056298adc12add7b7f8be7ff8f533e62ea1916761cde35ba73.m3u8
 #EXTINF:-1,[HD]博斯高球二 *wj
 https://stream1.freetv.fun/8c05e737ba36c0c47670d513c872fd029b98be80f85b8bc037da73e2bb98616d.m3u8
-#EXTINF:-1,[BD]博斯魅力[geo-blocked]
-https://stream1.freetv.fun/1168c7cf37528c53f6cc3a113493c0a6adcdfa9b764ccb64ee5f23d09d71fd33.ctv
 #EXTINF:-1,[BD]博斯魅力 *wj
 https://stream1.freetv.fun/3013dc82d4cb43aad196e958335db8e46154f78627fc0f388ad787ac35e19bb0.m3u8
 #EXTINF:-1,[BD]博斯魅力 *wj
@@ -27591,8 +27517,6 @@ https://stream1.freetv.fun/69354b17f120facf9f500285793070d33efe35ae6abece2367865
 https://stream1.freetv.fun/9d18de2c57f1560884a0facbb501e7ffb30845de66d80c925b671c7eff063e8a.m3u8
 #EXTINF:-1,[HD]大愛 *wj
 https://stream1.freetv.fun/29f61b852c92db330d6d7989d4d67e4202a6497c0636ecf97981fec7b3f8d8c6.m3u8
-#EXTINF:-1,[HD]大爱
-https://stream1.freetv.fun/fa2ecc0caf7bf4328bbb4f7c79e3d9df37cd4e3577892eaf8295a3b1b915a604.ctv
 #EXTINF:-1,[HD]大愛電视 *wj
 https://stream1.freetv.fun/e28ca356f4fb097cb0a9a4d66557f67d2e74bf49cef27d8f7c2f7bc6995fc6b3.m3u8
 #EXTINF:-1,[BD]好莱坞电影 *wj
@@ -27607,8 +27531,6 @@ https://stream1.freetv.fun/eccd8f93f7c5e42d4a724bcd052dfcd2ff17dbd543d90f585f8c8
 https://stream1.freetv.fun/e6fa66352c987209459600245d3d5e34c32e24ba96e7a6d284f38fd083b53325.m3u8
 #EXTINF:-1,[HD]好消息2 *wj
 https://stream1.freetv.fun/3e04bb2f8b4d18925549d98ec74aaee0064bff2f5a429359625a03b4b301e547.m3u8
-#EXTINF:-1,[HD]寰宇新闻
-https://stream1.freetv.fun/d9e077d94c5ba3a10f9d1a26d5c1f3aa5d4d3f811e1f85120c5b742aaa506157.ctv
 #EXTINF:-1,[BD]much
 https://stream1.freetv.fun/0c52f62bc57bb75f456200905031ed9dd4e522cc397bd92364b450d58b148608.m3u8
 #EXTINF:-1,[BD]年代新闻 *wj
@@ -27625,8 +27547,6 @@ https://stream1.freetv.fun/769243f668e6ffa1dfcbf56f1dcc086f47c3a2cbc8f83af53fefb
 https://stream1.freetv.fun/e37df07aa0310a34c63b634948948cf73c7d6db0762de7f0f8f365b95e583703.m3u8
 #EXTINF:-1,[BD]东森幼幼 *wj
 https://stream1.freetv.fun/5c58dcdaad119be3fc0d209c049c1277b835ba2be336a79b2dc1f506aa83b0e1.m3u8
-#EXTINF:-1,[BD]東森戏剧
-https://stream1.freetv.fun/9eeff1989f270f4e5f549936f7ef15199afd22a7874e4ebd0d90a5a4afd7f0f6.ctv
 #EXTINF:-1,[BD]东森洋片
 https://stream1.freetv.fun/3a70db5e300010238343b5c177f3de936f8e86a9907984f8874f1f508438d505.ctv
 #EXTINF:-1,[BD]东森综合[geo-blocked]
@@ -27641,8 +27561,6 @@ https://stream1.freetv.fun/eb4ded3c365bf7d42bebf4dbe94e8f4a601ccf18f345bdeb7968b
 https://stream1.freetv.fun/d08ea3c0e788d241119fdfe7dadd2d9505a329c9313957a73adcd13de810c593.m3u8
 #EXTINF:-1,[HD]东森财经 *wj
 https://stream1.freetv.fun/b9ad0119a1e413c7d62cc5b002b8a6800d2628fd6965b17dc5c0b66ffc938645.m3u8
-#EXTINF:-1,[HD]东森财经新闻
-https://stream1.freetv.fun/b2357354d9193bc0d5400c5eafdc71184ecc71a6520fa8a4c1b0e7b255a08044.ctv
 #EXTINF:-1,[BD]东森超视
 https://stream1.freetv.fun/d8756df4416806c5ce981bdef2ac99098b8a3a99e05b32affdd6e324187cf1b4.m3u8
 #EXTINF:-1,[BD]东森超视[geo-blocked]
@@ -27657,28 +27575,18 @@ https://stream1.freetv.fun/1efcf802b922763bf4c9978675845050bb654636837f7b52293d5
 https://stream1.freetv.fun/d21a89a2aeeb375af98b302cf7d0888f1ebc91e88e726fc2a151feaeb70aaf58.m3u8
 #EXTINF:-1,[BD]东森电影[geo-blocked]
 https://stream1.freetv.fun/6b8a5c6e5a8e4e580cdf8d06b234dc16e55d77589ca82e15dfaf2afabaeafbbd.ctv
-#EXTINF:-1,[BD]東森电影
-https://stream1.freetv.fun/2212103ef4678ce9066ca13244ed9e8c082925150ef23389197e812a4b1b1bfe.ctv
-#EXTINF:-1,[HD]民视
-https://stream1.freetv.fun/ed33a7dbe6cc7ae35601519b5f4f9d4e36648444d8d3296d1333b0756fd7b734.ctv
 #EXTINF:-1,[HD]民视hd *wj
 https://stream1.freetv.fun/3afe7c6221cef4c140addeecd0f810de490235103c2664f029705ec625d3b1d7.m3u8
 #EXTINF:-1,[BD]民視新聞
 https://stream1.freetv.fun/33ae9aa2523492a0deb1bebba74b646b746cf674d50b753e7c4c06305d3fe40b.m3u8
 #EXTINF:-1,[BD]民视新闻
 https://stream1.freetv.fun/a6dd48cff68c1da6ae33d7a2d962ab66d11a3791c0f133b0cd3bbbf99ea8b3c8.m3u8
-#EXTINF:-1,[HD]民视第一
-https://stream1.freetv.fun/1d2329b043116875ab5798beaaf7223c925fb292bb9811bc068e89c1fb0d20b2.ctv
-#EXTINF:-1,[HD]民视台湾
-https://stream1.freetv.fun/ad3f189311940e49cfbbf24d5e3a4eb4627ab45b12ee9e2959d8801b92c35098.ctv
 #EXTINF:-1,[BD]纬来日本
 https://stream1.freetv.fun/9da2a954a3cb621db9561441401c4e8bc381f81625aa9a3f7c8bf48e852cdf09.ctv
 #EXTINF:-1,[HD]纬来精彩[geo-blocked]
 https://stream1.freetv.fun/409fbf8e0ec33500b4d76956cca00af9fddacac6dd2f8822f464b089fb583a6b.m3u8
 #EXTINF:-1,[BD]纬来育乐[geo-blocked]
 https://stream1.freetv.fun/3abfaa9bfc01013d7459fb45d6a8d8dbdf1a788ee158c13c66e1d79d7e74fe96.ctv
-#EXTINF:-1,[BD]纬来电影[geo-blocked]
-https://stream1.freetv.fun/6ee5add35f17636335d588a540b414b2fd821cfba301bef804299d9387324ce1.ctv
 #EXTINF:-1,[BD]纬来体育 *wj
 https://stream1.freetv.fun/86b24a5946c20c9ea1edde2d79b1428b4f89c13d9d4c855b121c21d0ebb58a7e.m3u8
 #EXTINF:-1,[BD]纬来体育
@@ -27713,8 +27621,6 @@ https://stream1.freetv.fun/f399d5ca932e97fc64175572c8c5f5c14d36761d3bceda596b034
 https://stream1.freetv.fun/11a3943dbff1e2a6523c63f599089034d67a0465e4b140f40be2e1449b85f304.ctv
 #EXTINF:-1,[BD]靖天资讯[geo-blocked]
 https://stream1.freetv.fun/4b55b732dee5834d18f04bf48b096395288eedad596c18997cdf1cc1296eb21c.ctv
-#EXTINF:-1,[BD]非凡新闻[geo-blocked]
-https://stream1.freetv.fun/a74cfddea020652e0f056eabc4a5848a698277ba87ad5da3079a3f827812ae18.ctv
 #EXTINF:-1,[BD]非凡新闻 *wj
 https://stream1.freetv.fun/70d9835991108f57b64100f5af02829043b0a1a9d8b9090bfb52533af0d69abd.m3u8
 #EXTINF:-1,[BD]非凡新闻 *wj
@@ -28478,6 +28384,8 @@ http://dms.yryyj.site:8188/udp/239.76.245.195:1234
 #EXTINF:-1,CCTV4
 http://120.76.248.139/live/bfgd/4200000063.m3u8
 #EXTINF:-1,CCTV4
+https://www.freetv.top/migu/631780421.m3u8?migutoken=fefc6a44400a0dd448699ae0ce3d6e2c5a0f49b8d48adb36e747c4fbab039337eb3244f9951acbddaf26b7bf51597a7d1b43c8845e67fd5914ece875dcad325bb388200bc0f12fdff727d03e2d
+#EXTINF:-1,CCTV4
 http://sh.lnott.top:880/dx04.m3u8
 #EXTINF:-1,CCTV4
 https://www.freetv.top/migu/608807419.m3u8?migutoken=6a212f7bbb565d15fa1837af03bca5806c8d1522a2c9b34b1ed1c0f3cd23e6d7c4761bb6b35c9de97d923f603f557e6edb2ee11c80decc83bddea897b5c7ac59a7efea8e4796cbbfcf1b3fc93c
@@ -28523,6 +28431,8 @@ https://piccpndali.v.myalicdn.com/audio/cctvamerica_2.m3u8
 http://182.150.23.74:808/hls/4/index.m3u8
 #EXTINF:-1,CCTV4
 http://kkk.jjjj.jiduo.me/api.php?n=tttt&id=2292&tk=f6cc1e0a0e1a
+#EXTINF:-1,CCTV4
+https://smart.pendy.dpdns.org/Smart.php?id=cctv4
 #EXTINF:-1,CCTV4
 http://223.159.9.168:8099/tsfile/live/0004_1.m3u8?key=txiptv&playlive=0&authid=0
 #EXTINF:-1,CCTV4
@@ -29153,6 +29063,8 @@ http://123.130.84.106:8154/tsfile/live/0007_1.m3u8
 http://124.116.183.146:9901/tsfile/live/0007_1.m3u8
 #EXTINF:-1,CCTV7
 http://123.130.84.106:8154/tsfile/live/0007_1.m3u8?key=txiptv&playlive=1&authid=0
+#EXTINF:-1,CCTV7
+https://www.freetv.top/migu/673168121.m3u8?migutoken=44446ab398991313e6a822efdaec82f3b845a2e8f141c172aa857c477255724bbb28fc01d33f764c51106c446af1c57e8815b58822075b194f4cf55cde28fe55f54330d4586c92e75e8aa50a48
 #EXTINF:-1,CCTV7
 http://kkk.888.3116598.xyz/api.php?n=tttt&id=IxfPG7&tk=FgM0vQMejxvG
 #EXTINF:-1,CCTV7
@@ -30164,6 +30076,8 @@ https://epg.pw/stream/5d3d047c64e44d0a24dc33e5700e579457201d2960036b43819bd930a0
 #EXTINF:-1,CCTV13
 https://stream1.freetv.fun/a9631c113e023803a095cdee3ce217ee78fdc91d2374789f5fcbf3181dd265d4.m3u8
 #EXTINF:-1,CCTV13
+https://smart.pendy.dpdns.org/Smart.php?id=cctv13
+#EXTINF:-1,CCTV13
 http://112.27.235.94:8000/hls/14/index.m3u8
 #EXTINF:-1,CCTV13
 http://kkk.888.3116598.xyz/api.php?n=tttt&id=ZiNrmy&tk=FgM0vQMejxvG
@@ -30249,6 +30163,8 @@ http://sh.lnott.top:880/dx13.m3u8
 http://www.cdnstv.com:6398/hls/13/index.m3u8
 #EXTINF:-1,CCTV13
 https://www.freetv.top/migu/608807423.m3u8?migutoken=d04a0fbe708570ac8859ed559ac6241f3a9da203b9f1dcecbbb627c30fca3aac016d99c7e9dc1efa5b5bd973de8170af65d84d3bfdc932709679f2a688284458be83238ceef24aa5196ad54167
+#EXTINF:-1,CCTV13
+https://www.freetv.top/migu/608807423.m3u8?migutoken=ac19a58805588401a8e818b6dd00df9b327912af3611ba95f89235e7020821668a2b6dc65ccc3904967da59d0a9742565c56ea582baf8915d068035054818ef0f369dab64705a6a7f7120529ec
 #EXTINF:-1,CCTV13
 https://www.freetv.top/migu/608807423.m3u8?migutoken=2ea304b199bfe39629418c1d50b3c9f34ba06712c9c7922a614411768b18496280cdfdee913572bdb8d1cdd3d5763460f2f0aea6c7a51095aaf66f1eb8f43ce6edbbeac22c35e78ecc39dbdf27
 #EXTINF:-1,CCTV13
@@ -36565,6 +36481,8 @@ http://js1.amtb.cn/liveedge/_definst_/livetv/chunklist.m3u8
 http://61.221.215.25:8800/hls/39/index.m3u8
 #EXTINF:-1,å…«å¤§æˆå‰§
 https://stream1.freetv.fun/6b1701a07ea621155cdaa9ee604b6c6ebc763093fafaf493ce7a3c2e206be799.m3u8
+#EXTINF:-1,å…«å¤§æˆå‰§
+https://stream1.freetv.fun/ba-da-xi-ju-2.ctv
 #EXTINF:-1,å…«å¤§ç¬¬ä¸€
 http://61.221.215.25:8800/hls/55/index.m3u8
 #EXTINF:-1,å…«å¤§ç»¼åˆ
@@ -36585,6 +36503,8 @@ http://108.181.20.197/livehttpplay?channel_id=10126
 http://live4play.uk/livehttpplay?channel_id=10126
 #EXTINF:-1,ä¸‰ç«‹å°æ¹¾
 https://stream1.freetv.fun/san-li-tai-wan-5.m3u8
+#EXTINF:-1,ä¸‰ç«‹å°æ¹¾
+https://stream1.freetv.fun/san-li-tai-wan-2.ctv
 #EXTINF:-1,ä¸‰ç«‹å°æ¹¾
 https://haoyunlai.serv00.net/Smartv-1.php?id=sanlitaiwan
 #EXTINF:-1,ä¸‰ç«‹ç»¼åˆ
@@ -36632,6 +36552,8 @@ http://222.128.55.152:9080/live/fc.m3u8
 #EXTINF:-1,ä¸­å¤©æ–°é—»
 https://pxuchylhjchl.us-east-1.clawcloudrun.com/index.m3u8?pid=4gtv-4gtv009&sd=1080&proxy=false
 #EXTINF:-1,ä¸­å¤©æ–°é—»
+https://stream1.freetv.fun/zhong-tian-xin-wen-2.ctv
+#EXTINF:-1,ä¸­å¤©æ–°é—»
 http://flv3948069e.live.126.net/live/dabadqdszbtest78612.flv
 #EXTINF:-1,ä¸­å¤©å¨±ä¹
 https://stream1.freetv.fun/zhong-tian-yu-le-5.m3u8
@@ -36645,6 +36567,8 @@ https://stream1.freetv.fun/zhong-tian-zong-he-2.ctv
 http://xtvantsc.xyz/litv_ts.php?id=4gtv-4gtv109
 #EXTINF:-1,ä¸­å¤©äºšæ´²
 http://breezy-audrie-zspace-7524863c.koyeb.app/vipsir?token=leifeng&id=4gtv-4gtv109
+#EXTINF:-1,ä¸­å¤©äºšæ´²
+https://stream1.freetv.fun/zhong-tian-ya-zhou-9.ctv
 #EXTINF:-1,ä¸­è§†æ–°é—»
 https://raw.githubusercontent.com/ChiSheng9/iptv/master/TV09.m3u8
 #EXTINF:-1,ä¸­è§†æ–°é—»
@@ -36671,6 +36595,8 @@ http://xtvantsc.xyz/litv_ts.php?id=4gtv-4gtv002
 http://xtvantsc.xyz/litv_ts.php?id=4gtv-4gtv155
 #EXTINF:-1,æ°‘è§†
 http://breezy-audrie-zspace-7524863c.koyeb.app/vipsir?token=leifeng&id=4gtv-4gtv155
+#EXTINF:-1,æ°‘è§†
+https://stream1.freetv.fun/min-shi-10.ctv
 #EXTINF:-1,æ°‘è§†å½±å‰§
 http://breezy-audrie-zspace-7524863c.koyeb.app/vipsir?token=leifeng&id=litv-ftv09
 #EXTINF:-1,æ°‘è§†å½±å‰§
@@ -36703,12 +36629,16 @@ https://stream1.freetv.fun/min-shi-tai-wan-6.ctv
 http://xtvantsc.xyz/litv_ts.php?id=4gtv-4gtv001
 #EXTINF:-1,æ°‘è§†å°æ¹¾
 http://breezy-audrie-zspace-7524863c.koyeb.app/vipsir?token=leifeng&id=4gtv-4gtv001
+#EXTINF:-1,æ°‘è§†å°æ¹¾
+https://stream1.freetv.fun/min-shi-tai-wan-5.ctv
 #EXTINF:-1,æ°‘è§†ç¬¬ä¸€
 http://xtvantsc.xyz/litv_ts.php?id=4gtv-4gtv003
 #EXTINF:-1,æ°‘è§†ç¬¬ä¸€
 https://stream1.freetv.fun/min-shi-di-yi-2.ctv
 #EXTINF:-1,æ°‘è§†ç¬¬ä¸€
 http://breezy-audrie-zspace-7524863c.koyeb.app/vipsir?token=leifeng&id=4gtv-4gtv003
+#EXTINF:-1,æ°‘è§†ç¬¬ä¸€
+https://stream1.freetv.fun/min-shi-di-yi-5.ctv
 #EXTINF:-1,æ°‘è§†æ—…æ¸¸
 http://xtvantsc.xyz/litv_ts.php?id=litv-ftv07
 #EXTINF:-1,æ°‘è§†æ—…æ¸¸
@@ -36741,6 +36671,8 @@ http://breezy-audrie-zspace-7524863c.koyeb.app/vipsir?token=leifeng&id=litv-long
 https://stream1.freetv.fun/huan-yu-xin-wen-6.m3u8
 #EXTINF:-1,å¯°å®‡æ–°é—»
 https://pxuchylhjchl.us-east-1.clawcloudrun.com/index.m3u8?pid=litv-longturn14&sd=1080&proxy=false
+#EXTINF:-1,å¯°å®‡æ–°é—»
+https://stream1.freetv.fun/huan-yu-xin-wen-2.ctv
 #EXTINF:-1,å¯°å®‡æ–°é—»
 http://222.128.55.152:9080/live/hy.m3u8
 #EXTINF:-1,æ¾³äºšå«è§†
@@ -37007,6 +36939,8 @@ https://stream1.freetv.fun/dong-sen-dian-ying-1.m3u8
 https://stream1.freetv.fun/dong-sen-dian-ying-8.m3u8
 #EXTINF:-1,ä¸œæ£®ç”µå½±
 https://stream1.freetv.fun/dong-sen-dian-ying-5.m3u8
+#EXTINF:-1,ä¸œæ£®ç”µå½±
+https://stream1.freetv.fun/dong-sen-dian-ying-7.ctv
 #EXTINF:-1,é¾™åç”µå½±
 http://breezy-audrie-zspace-7524863c.koyeb.app/vipsir?token=leifeng&id=litv-longturn03
 #EXTINF:-1,é¾™åç”µå½±
@@ -38477,6 +38411,8 @@ http://newcntv.qcloudcdn.com/asp/hls/1200/0303000a/3/default/18a8a559464448dbaf6
 https://dxtx.hntv.tv/live/lypd.m3u8?txSecret=10c771842a0be59e8b575d765173ec96&txTime=7B923E0A&wsSecret=116dd55bf364ce9189811cb6fcefb7ac&wsTime=1763064000
 #EXTINF:-1,æ¢¨å›­
 https://dxtx.hntv.tv/live/lypd.m3u8?txSecret=10c771842a0be59e8b575d765173ec96&txTime=7B923E0A&wsSecret=17b5be3f08e24d0903b0dae9b4b73c23&wsTime=1763078406
+#EXTINF:-1,ä¸œæ£®æˆå‰§
+https://stream1.freetv.fun/dong-sen-xi-ju-3.ctv
 #EXTINF:-1,é¾™åæˆå‰§
 http://xtvantsc.xyz/litv_ts.php?id=litv-longturn18
 #EXTINF:-1,é¾™åæˆå‰§
@@ -39086,13 +39022,13 @@ https://stream1.freetv.fun/zhe-jiang-xin-wen-3.m3u8
 #EXTINF:-1,æµ™æ±Ÿæ–°é—»
 https://stream1.freetv.fun/zhe-jiang-xin-wen-10.m3u8
 #EXTINF:-1,æµ™æ±Ÿæ–°é—»
-https://stream1.freetv.fun/zhe-jiang-xin-wen-7.m3u8
-#EXTINF:-1,æµ™æ±Ÿæ–°é—»
 https://stream1.freetv.fun/zhe-jiang-xin-wen-12.m3u8
 #EXTINF:-1,æµ™æ±Ÿæ–°é—»
 http://ali-m-l.cztv.com/channels/lantian/channel007/720p.m3u8
 #EXTINF:-1,æµ™æ±Ÿæ–°é—»
 http://ali-m-l.cztv.com/channels/lantian/channel007/1080p.m3u8
+#EXTINF:-1,æµ™æ±Ÿæ–°é—»
+http://101.66.194.223:9901/tsfile/live/1005_1.m3u8?key=txiptv&playlive=0&authid=0
 #EXTINF:-1,æµ™æ±Ÿæ–°é—»
 http://hw-m-l.cztv.com/channels/lantian/channel07/360p.m3u8?zzhed
 #EXTINF:-1,æµ™æ±Ÿæ–°é—»
@@ -39441,6 +39377,10 @@ http://61.156.228.12:8154/tsfile/live/1006_1.m3u8
 http://123.130.84.106:8154/tsfile/live/1006_1.m3u8
 #EXTINF:-1,å±±ä¸œä½“è‚²
 http://58.57.40.22:9901/tsfile/live/1020_1.m3u8
+#EXTINF:-1,å±±ä¸œæ–‡æ—…
+http://221.2.148.205:8154/tsfile/live/1004_1.m3u8?key=txiptv&playlive=1&authid=0
+#EXTINF:-1,å±±ä¸œæ–‡æ—…
+http://58.57.40.22:9901/tsfile/live/1023_1.m3u8
 #EXTINF:-1,å±±ä¸œç»¼è‰º
 http://58.57.40.22:9901/tsfile/live/1021_1.m3u8
 #EXTINF:-1,é’å²›åŸé˜³
@@ -39531,6 +39471,8 @@ http://visit.jjbctv.com:1935/live/xwzhpc/playlist.m3u8?zjiangsd
 http://pili-live-rtmp.luan2.hfmt.net/luan2/ggpd.m3u8?zanhd
 #EXTINF:-1,å…­å®‰æ–°é—»ç»¼åˆ
 http://pili-live-rtmp.luan2.hfmt.net/luan2/jjpd.m3u8?zanhd
+#EXTINF:-1,å›ºé•‡æ–°é—»
+http://www.guzhenm.com:7001/hls/hd-live.m3u8
 #EXTINF:-1,å®‰å¾½å½±è§†é¢‘é“
 https://ahlive.ahwanyun.cn/live/8534e69a9af14e41a362bcef71d7896f/hls.m3u8
 #EXTINF:-1,å®‰å¾½ç»æµç”Ÿæ´»
@@ -39687,6 +39629,12 @@ https://stream1.freetv.fun/wu-xiang-xin-wen-zong-he-3.m3u8
 http://tvdrs.wsrtv.com.cn:8100/channellive/ch1.flv?zyund
 #EXTINF:-1,ç šå±±ç”µè§†å°
 http://m3u8.channel.wsrtv.com.cn/cms/videos/nmip-media/channellive/channel16/playlist.m3u8?zyund
+#EXTINF:-1,é€šæµ·ç”µè§†å°
+http://live.ynurl.com/video/s10038-thtv/index.m3u8?zyund
+#EXTINF:-1,é™‡å·ç»¼åˆ
+http://live.ynurl.com/video/s10027-LCDST/index.m3u8
+#EXTINF:-1,é™‡å·ç»¼åˆ
+http://live.ynurl.com/video/s10027-LCDST/index.m3u8?zyund
 #EXTINF:-1,éº»æ —å¡ç”µè§†å°
 http://m3u8.channel.wsrtv.com.cn/cms/videos/nmip-media/channellive/channel18/playlist.m3u8?zyund
 #EXTINF:-1,åŒ—äº¬æ–°é—»
@@ -39725,6 +39673,8 @@ http://222.179.42.129:8181/hls1.m3u8
 http://183.64.181.25:40023/rongchang01.m3u8?zzhongqd
 #EXTINF:-1,é‡åº†æ±½æ‘©
 http://ygbh.site/php/bfgd.php?id=168
+#EXTINF:-1,é‡åº†ï½œç’§å±±ç»¼åˆ
+http://222.179.42.129:8181/hls1.m3u8?zzhongqd
 #EXTINF:-1,é“œæ¢ç»¼åˆ
 https://tlpc01.cqliving.com/ch1.m3u8
 #EXTINF:-1,ä¸‰æ˜æ–°é—»ç»¼åˆ
@@ -39787,8 +39737,6 @@ http://play.kankanlive.com/live/1692005762394912.m3u8
 https://play.kankanlive.com/live/1692005762394912.m3u8
 #EXTINF:-1,é™å®ç»¼åˆ
 https://play.kankanlive.com/live/1722996149311198.m3u8
-#EXTINF:-1,åŒ—æµ·æ–°é—»ç»¼åˆ
-https://live.gxrb.com.cn/gx/beihai/index.m3u8
 #EXTINF:-1,å—å®å…¬å…±
 http://hls.nntv.cn/nnlive/NNTV_PUB_A.m3u8
 #EXTINF:-1,å—å®å…¬å…±
@@ -39893,6 +39841,8 @@ http://pili-live-hls.hebitv.com/hebi/hebi.m3u8?zhend
 http://pili-live-hls.hebitv.com/hebi/hebi.m3u8?zhendæ²é˜³æ–°é—»ç»¼åˆ
 #EXTINF:-1,é¹¤å£ç»¼åˆé¢‘é“
 http://pili-live-hls.hebitv.com/hebi/hebi.m3u8?zhendæ²é˜³æ–°é—»ç»¼åˆ#http://pili-live-hls.hebitv.com/hebi/hebi.m3u8?zhend
+#EXTINF:-1,å“ˆå°”æ»¨å¨±ä¹
+https://stream.hrbtv.net/ylpd/sd/live.m3u8
 #EXTINF:-1,å“ˆå°”æ»¨å¨±ä¹
 https://stream1.freetv.fun/ha-er-bin-yu-le-1.m3u8
 #EXTINF:-1,å“ˆå°”æ»¨å¨±ä¹
@@ -40073,6 +40023,10 @@ http://dxplay.scwy.cn/live/weiyuanzonghepingdao/index.m3u8
 http://dxplay.scwy.cn/live/weiyuanzonghepingdao/index.m3u8?zsicd
 #EXTINF:-1,å¹¿å…ƒç»¼åˆ
 https://m3u8.channel.dzsm.com/nmip-media/channellive/channel100999/playlist.m3u8
+#EXTINF:-1,å¹¿å®‰å…¬å…±
+http://live1.gatv.com.cn:85/live/GGPD_ggpdzm.m3u8
+#EXTINF:-1,å¹¿å®‰å…¬å…±
+http://live1.gatv.com.cn:85/live/GGPD_ggpdzm.m3u8?zsicd
 #EXTINF:-1,æ”€æèŠ±æ–°é—»ç»¼åˆ
 http://zb.pzhgd.com:9095/live/xwzh.m3u8?zsicd
 #EXTINF:-1,æ—ºè‹æ–°é—»ç»¼åˆ
@@ -40113,10 +40067,6 @@ http://live.newslqy.com/live/xwpd.m3u8
 https://live-pull.newslqy.com/live/fmzb1682404988829.m3u8
 #EXTINF:-1,å¤©æ´¥
 https://newcntv.qcloudcdn.com/asp/hls/main/0303000a/3/default/5f03d9f1684241f696b25a19ffc44145/main.m3u8
-#EXTINF:-1,ä¼ŠçŠå“ˆè¨å…‹
-http://110.153.180.106:55555/out_3/index.m3u8?zxinjd
-#EXTINF:-1,ä¼ŠçŠç»´å¾å°”
-http://110.153.180.106:55555/out_2/index.m3u8?zxinjd
 #EXTINF:-1,æ–°ç–†ï½œå¥å±¯æ±‰è¯­ç»¼åˆ
 http://218.84.12.186:8001/hls/main/playlist.m3u8
 #EXTINF:-1,æ–°ç–†ï½œå¥å±¯æ±‰è¯­ç»¼åˆ
@@ -40467,9 +40417,9 @@ https://stream1.freetv.fun/hell-s-kitchen-germany-1.m3u8
 https://stream1.freetv.fun/hell-s-kitchen-italy-1.m3u8
 #EXTINF:-1,[BD]hell's kitchen
 https://stream1.freetv.fun/hell-s-kitchen-4.m3u8
-#EXTINF:-1,[HD]kitchen battles
+#EXTINF:-1,[SD]kitchen battles
 https://stream1.freetv.fun/kitchen-battles-1.m3u8
-#EXTINF:-1,[SD]america's test kitchen
+#EXTINF:-1,[HD]america's test kitchen
 https://stream1.freetv.fun/america-s-test-kitchen-1.m3u8
 #EXTINF:-1,[SD]america's test kitchen
 https://stream1.freetv.fun/america-s-test-kitchen-2.m3u8
@@ -40507,11 +40457,9 @@ https://stream1.freetv.fun/latina-noticias-1.m3u8
 https://stream1.freetv.fun/4more-uk-3.ctv
 #EXTINF:-1,[SD]4more uk ==
 https://stream1.freetv.fun/4more-uk-2.ctv
-#EXTINF:-1,[HD]mediacorp 5 *wj
-https://stream1.freetv.fun/mediacorp-5--wj-1.m3u8
 #EXTINF:-1,[HD]cctv-5 plus
 https://stream1.freetv.fun/cctv-5-plus-10.ctv
-#EXTINF:-1,[BD]5 star max usa *s[geo-blocked]
+#EXTINF:-1,[VGA]5 star max usa *s[geo-blocked]
 https://stream1.freetv.fun/5-star-max-usa--s-1.m3u8
 #EXTINF:-1,[SD]5 star uk *s[geo-blocked]
 https://stream1.freetv.fun/5-star-uk--s-1.m3u8
@@ -40547,7 +40495,7 @@ https://stream1.freetv.fun/5-kanal-1.m3u8
 https://stream1.freetv.fun/9-volna-2.m3u8
 #EXTINF:-1,[SD]99tv
 https://stream1.freetv.fun/99tv-1.m3u8
-#EXTINF:-1,[SD]6 tv telugu
+#EXTINF:-1,[SD]6 tv telugu[geo-blocked]
 https://stream1.freetv.fun/6-tv-telugu-1.m3u8
 #EXTINF:-1,[HD]tv9 telugu
 https://stream1.freetv.fun/tv9-telugu-1.m3u8
@@ -40665,13 +40613,13 @@ https://stream1.freetv.fun/a-e-4.ctv
 https://stream1.freetv.fun/ch-ng-a-e-1.m3u8
 #EXTINF:-1,[VGA]a e east (720p)
 https://stream1.freetv.fun/a-e-east-3.ctv
-#EXTINF:-1,[SD]us a e
+#EXTINF:-1,[HD]us a e
 https://stream1.freetv.fun/us-a-e-1.ctv
-#EXTINF:-1,[SD]a e =
+#EXTINF:-1,[HD]a e =
 https://stream1.freetv.fun/a-e-3.ctv
-#EXTINF:-1,[SD]a e ==
+#EXTINF:-1,[HD]a e ==[geo-blocked]
 https://stream1.freetv.fun/a-e-1.ctv
-#EXTINF:-1,[HD]a e *v[geo-blocked]
+#EXTINF:-1,[BD]a e *v[geo-blocked]
 https://stream1.freetv.fun/a-e--v-1.ctv
 #EXTINF:-1,[BD]mgg e-sport[geo-blocked]
 https://stream1.freetv.fun/mgg-e-sport-1.m3u8
@@ -40785,7 +40733,7 @@ https://stream1.freetv.fun/al-horreya-tv-1.m3u8
 https://stream1.freetv.fun/ace-tv-1.m3u8
 #EXTINF:-1,[HD]alkass four
 https://stream1.freetv.fun/alkass-four-1.m3u8
-#EXTINF:-1,[HD]alkass four
+#EXTINF:-1,[HD]alkass four[geo-blocked]
 https://stream1.freetv.fun/alkass-four-2.m3u8
 #EXTINF:-1,[BD]asharq news
 https://stream1.freetv.fun/asharq-news-4.m3u8
@@ -40809,11 +40757,11 @@ https://stream1.freetv.fun/amc-10.m3u8
 https://stream1.freetv.fun/amc-18.m3u8
 #EXTINF:-1,[BD]amc thrillers
 https://stream1.freetv.fun/amc-thrillers-2.ctv
-#EXTINF:-1,[BD]amc thrillers ==[geo-blocked]
+#EXTINF:-1,[BD]amc thrillers ==
 https://stream1.freetv.fun/amc-thrillers-4.ctv
 #EXTINF:-1,[BD]amc thrillers =
 https://stream1.freetv.fun/amc-thrillers-3.ctv
-#EXTINF:-1,[SD]thrillers 365
+#EXTINF:-1,[HD]thrillers 365
 https://stream1.freetv.fun/thrillers-365-1.m3u8
 #EXTINF:-1,[SD]amedia hit
 https://stream1.freetv.fun/amedia-hit-3.ctv
@@ -40837,9 +40785,7 @@ https://stream1.freetv.fun/aura-1.m3u8
 https://stream1.freetv.fun/at5-1.ctv
 #EXTINF:-1,[BD]atfal
 https://stream1.freetv.fun/atfal-1.m3u8
-#EXTINF:-1,[VGA]atv[geo-blocked]
-https://stream1.freetv.fun/atv-9.m3u8
-#EXTINF:-1,[BD]tvri world[geo-blocked]
+#EXTINF:-1,[BD]tvri world
 https://stream1.freetv.fun/tvri-world-3.m3u8
 #EXTINF:-1,[HD]axn
 https://stream1.freetv.fun/axn-6.ctv
@@ -40847,8 +40793,6 @@ https://stream1.freetv.fun/axn-6.ctv
 https://stream1.freetv.fun/cnn-portugal-3.m3u8
 #EXTINF:-1,[VGA]cnn portugal
 https://stream1.freetv.fun/cnn-portugal-8.ctv
-#EXTINF:-1,[HD]axn *wj
-https://stream1.freetv.fun/axn--wj-3.m3u8
 #EXTINF:-1,[SD]abadan[geo-blocked]
 https://stream1.freetv.fun/abadan-1.m3u8
 #EXTINF:-1,[BD]abu dhabi sports 1
@@ -40861,7 +40805,7 @@ https://stream1.freetv.fun/abu-dhabi-sports-2-1.m3u8
 https://stream1.freetv.fun/accuweather-now-1.m3u8
 #EXTINF:-1,[BD]accuweather now
 https://stream1.freetv.fun/accuweather-now-2.m3u8
-#EXTINF:-1,[HD]action (fr) *s[geo-blocked]
+#EXTINF:-1,[BD]action (fr) *s[geo-blocked]
 https://stream1.freetv.fun/action---s-1.m3u8
 #EXTINF:-1,[SD]action drama
 https://stream1.freetv.fun/action-drama-1.m3u8
@@ -40995,7 +40939,7 @@ https://stream1.freetv.fun/al-nahar-drama-1.ctv
 https://stream1.freetv.fun/al-qamar-tv-2.m3u8
 #EXTINF:-1,[BD]al rayyan old tv
 https://stream1.freetv.fun/al-rayyan-old-tv-1.m3u8
-#EXTINF:-1,[HD]al rayyan
+#EXTINF:-1,[BD]al rayyan
 https://stream1.freetv.fun/al-rayyan-2.m3u8
 #EXTINF:-1,[BD]al shallal
 https://stream1.freetv.fun/al-shallal-1.m3u8
@@ -41009,7 +40953,7 @@ https://stream1.freetv.fun/al-sharqiya-news-1.m3u8
 https://stream1.freetv.fun/al-sharqiya-1.m3u8
 #EXTINF:-1,[BD]al sharqiya tv
 https://stream1.freetv.fun/al-sharqiya-tv-1.m3u8
-#EXTINF:-1,[BD]al sharqiya min kabla
+#EXTINF:-1,[VGA]al sharqiya min kabla
 https://stream1.freetv.fun/al-sharqiya-min-kabla-1.m3u8
 #EXTINF:-1,[BD]altaghier tv
 https://stream1.freetv.fun/altaghier-tv-1.m3u8
@@ -41025,7 +40969,7 @@ https://stream1.freetv.fun/omega-1.m3u8
 https://stream1.freetv.fun/alhayat-tv-1.m3u8
 #EXTINF:-1,[SD]al istiqama
 https://stream1.freetv.fun/al-istiqama-1.m3u8
-#EXTINF:-1,[HD]alkass two
+#EXTINF:-1,[HD]alkass two[geo-blocked]
 https://stream1.freetv.fun/alkass-two-2.m3u8
 #EXTINF:-1,[SD]oman sports tv (1080p) [not 24/7]
 https://stream1.freetv.fun/oman-sports-tv-1.m3u8
@@ -41091,7 +41035,7 @@ https://stream1.freetv.fun/canal-sur-andalucia-1.m3u8
 https://stream1.freetv.fun/animal-planet--m-1.ctv
 #EXTINF:-1,[SD]animal planet uhd *m[geo-blocked]
 https://stream1.freetv.fun/animal-planet-uhd--m-1.ctv
-#EXTINF:-1,[HD]animal planet *m[geo-blocked]
+#EXTINF:-1,[BD]animal planet *m[geo-blocked]
 https://stream1.freetv.fun/animal-planet--m-2.ctv
 #EXTINF:-1,[HD]animal planet =
 https://stream1.freetv.fun/animal-planet-12.ctv
@@ -41175,7 +41119,7 @@ https://stream1.freetv.fun/arirang-4.m3u8
 https://stream1.freetv.fun/arirang-tv-un-3.m3u8
 #EXTINF:-1,[SD]arirang tv (1080p)
 https://stream1.freetv.fun/arirang-tv-2.m3u8
-#EXTINF:-1,[HD]arirang *wj[geo-blocked]
+#EXTINF:-1,[HD]arirang *wj
 https://stream1.freetv.fun/arirang--wj-1.m3u8
 #EXTINF:-1,[HD]arirang k-pop
 https://stream1.freetv.fun/arirang-k-pop-1.m3u8
@@ -41209,9 +41153,9 @@ https://stream1.freetv.fun/astro-awani-13.m3u8
 https://stream1.freetv.fun/astro-awani-11.m3u8
 #EXTINF:-1,[HD]astro awani
 https://stream1.freetv.fun/astro-awani-5.m3u8
-#EXTINF:-1,[HD]Astro Badminton 1 *al
+#EXTINF:-1,[BD]Astro Badminton 1 *al
 https://stream1.freetv.fun/astro-badminton-1--al-1.ctv
-#EXTINF:-1,[HD]astro football *v[geo-blocked]
+#EXTINF:-1,[HD]astro football *v
 https://stream1.freetv.fun/astro-football--v-1.ctv
 #EXTINF:-1,[VGA]astro one *v[geo-blocked]
 https://stream1.freetv.fun/astro-one--v-1.ctv
@@ -41223,7 +41167,7 @@ https://stream1.freetv.fun/astro-premier-league--v-1.ctv
 https://stream1.freetv.fun/astro-qj-6.ctv
 #EXTINF:-1,[HD]showcase movies =
 https://stream1.freetv.fun/showcase-movies-2.ctv
-#EXTINF:-1,[HD]showcase movies ==[geo-blocked]
+#EXTINF:-1,[HD]showcase movies ==
 https://stream1.freetv.fun/showcase-movies-1.ctv
 #EXTINF:-1,[HD]tvs
 https://stream1.freetv.fun/tvs-2.m3u8
@@ -41253,15 +41197,13 @@ https://stream1.freetv.fun/b4u-movies-1.m3u8
 https://stream1.freetv.fun/cbbc-bbc-4-uhd--m-1.ctv
 #EXTINF:-1,[HD]bbc america
 https://stream1.freetv.fun/bbc-america-4.m3u8
-#EXTINF:-1,[SD]bbc america ==
+#EXTINF:-1,[SD]bbc america ==[geo-blocked]
 https://stream1.freetv.fun/bbc-america-3.ctv
 #EXTINF:-1,[SD]bbc america =
 https://stream1.freetv.fun/bbc-america-2.ctv
-#EXTINF:-1,[BD]cbeebies uhd *m[geo-blocked]
-https://stream1.freetv.fun/cbeebies-uhd--m-2.ctv
-#EXTINF:-1,[BD]cbeebies uhd *m[geo-blocked]
+#EXTINF:-1,[HD]cbeebies uhd *m[geo-blocked]
 https://stream1.freetv.fun/cbeebies-uhd--m-1.ctv
-#EXTINF:-1,[HD]bbc cbeebies *s[geo-blocked]
+#EXTINF:-1,[BD]bbc cbeebies *s[geo-blocked]
 https://stream1.freetv.fun/bbc-cbeebies--s-1.m3u8
 #EXTINF:-1,[BD]entertainment hub
 https://stream1.freetv.fun/entertainment-hub-2.m3u8
@@ -41269,7 +41211,7 @@ https://stream1.freetv.fun/entertainment-hub-2.m3u8
 https://stream1.freetv.fun/entertainment-hub-1.m3u8
 #EXTINF:-1,[HD]ช่อง bbc first
 https://stream1.freetv.fun/ch-ng-bbc-first-1.m3u8
-#EXTINF:-1,[BD]bbc *s[geo-blocked]
+#EXTINF:-1,[HD]bbc *s[geo-blocked]
 https://stream1.freetv.fun/bbc--s-1.m3u8
 #EXTINF:-1,[HD]bbc
 https://stream1.freetv.fun/bbc-4.m3u8
@@ -41301,9 +41243,9 @@ https://stream1.freetv.fun/bbc-world-news-4.m3u8
 https://stream1.freetv.fun/bbs-1.ctv
 #EXTINF:-1,[HD]sbb tv
 https://stream1.freetv.fun/sbb-tv-1.m3u8
-#EXTINF:-1,[SD]bernama news *v[geo-blocked]
+#EXTINF:-1,[SD]bernama news *v
 https://stream1.freetv.fun/bernama-news--v-1.ctv
-#EXTINF:-1,[HD]us bet
+#EXTINF:-1,[BD]us bet
 https://stream1.freetv.fun/us-bet-1.ctv
 #EXTINF:-1,[BD]bfm business
 https://stream1.freetv.fun/bfm-business-4.m3u8
@@ -41427,7 +41369,7 @@ https://stream1.freetv.fun/bibel-tv-musik-1.m3u8
 https://stream1.freetv.fun/big-ten-network-2.m3u8
 #EXTINF:-1,[SD]big ten network ==
 https://stream1.freetv.fun/big-ten-network-4.ctv
-#EXTINF:-1,[SD]big ten network=
+#EXTINF:-1,[SD]big ten network=[geo-blocked]
 https://stream1.freetv.fun/big-ten-network-3.ctv
 #EXTINF:-1,[HD]world billiards
 https://stream1.freetv.fun/world-billiards-1.m3u8
@@ -41455,9 +41397,9 @@ https://stream1.freetv.fun/bloomberg-quicktake-1.m3u8
 https://stream1.freetv.fun/bloomberg-tv-plus-6.m3u8
 #EXTINF:-1,[BD]bloomberg originals[geo-blocked]
 https://stream1.freetv.fun/bloomberg-originals-2.m3u8
-#EXTINF:-1,[HD]bloomberg ht
+#EXTINF:-1,[HD]bloomberg ht[geo-blocked]
 https://stream1.freetv.fun/bloomberg-ht-4.m3u8
-#EXTINF:-1,[SD]bloomberg news *m[geo-blocked]
+#EXTINF:-1,[BD]bloomberg news *m[geo-blocked]
 https://stream1.freetv.fun/bloomberg-news--m-1.ctv
 #EXTINF:-1,[HD]ช่อง bloomberg
 https://stream1.freetv.fun/ch-ng-bloomberg-1.m3u8
@@ -41537,7 +41479,7 @@ https://stream1.freetv.fun/bravo-plus-1-1.m3u8
 https://stream1.freetv.fun/bravo-tv-1.m3u8
 #EXTINF:-1,[SD]bravo plus 1
 https://stream1.freetv.fun/bravo-plus-1-2.m3u8
-#EXTINF:-1,[HD]bravo =[geo-blocked]
+#EXTINF:-1,[HD]bravo =
 https://stream1.freetv.fun/bravo-2.ctv
 #EXTINF:-1,[BD]bridge tv deluxe
 https://stream1.freetv.fun/bridge-tv-deluxe-1.m3u8
@@ -41563,13 +41505,13 @@ https://stream1.freetv.fun/bridge-hits-1.m3u8
 https://stream1.freetv.fun/bridge-classic-1.m3u8
 #EXTINF:-1,[SD]bridge tv classic
 https://stream1.freetv.fun/bridge-tv-classic-1.m3u8
-#EXTINF:-1,[HD]classic tv[geo-blocked]
+#EXTINF:-1,[SD]classic tv
 https://stream1.freetv.fun/classic-tv-1.m3u8
 #EXTINF:-1,[SD]bridge
 https://stream1.freetv.fun/bridge-2.m3u8
 #EXTINF:-1,[SD]rightnow tv (720p)
 https://stream1.freetv.fun/rightnow-tv-2.m3u8
-#EXTINF:-1,[SD]big tv[geo-blocked]
+#EXTINF:-1,[SD]big tv
 https://stream1.freetv.fun/big-tv-1.m3u8
 #EXTINF:-1,[HD]rightnow tv
 https://stream1.freetv.fun/rightnow-tv-1.m3u8
@@ -41673,8 +41615,6 @@ https://stream1.freetv.fun/ptl-television-network-3.m3u8
 https://stream1.freetv.fun/radio-roma-television-1.m3u8
 #EXTINF:-1,[VGA]tln media chicago
 https://stream1.freetv.fun/tln-media-chicago-1.m3u8
-#EXTINF:-1,[BD]cbs *wj
-https://stream1.freetv.fun/cbs--wj-1.m3u8
 #EXTINF:-1,[HD]mlb network
 https://stream1.freetv.fun/mlb-network-6.m3u8
 #EXTINF:-1,[HD]yes network
@@ -41777,6 +41717,8 @@ https://stream1.freetv.fun/cctv1-43.m3u8
 https://stream1.freetv.fun/cctv-01-3.ctv
 #EXTINF:-1,[HD]cctv-1
 https://stream1.freetv.fun/cctv-1-25.ctv
+#EXTINF:-1,[BD]cctv1-gq
+https://stream1.freetv.fun/cctv1-gq-1.ctv
 #EXTINF:-1,[BD]cctv1hd
 https://stream1.freetv.fun/cctv1hd-2.m3u8
 #EXTINF:-1,[BD]cctv1
@@ -41791,12 +41733,16 @@ https://stream1.freetv.fun/cctv10-56.ctv
 https://stream1.freetv.fun/cctv10-43.m3u8
 #EXTINF:-1,[BD]cctv-10
 https://stream1.freetv.fun/cctv-10-2.m3u8
-#EXTINF:-1,[BD]cctv10[geo-blocked]
+#EXTINF:-1,[BD]cctv10
 https://stream1.freetv.fun/cctv10-12.m3u8
+#EXTINF:-1,[SD]cctv-10
+https://stream1.freetv.fun/cctv-10-19.ctv
 #EXTINF:-1,[BD]cctv-10[geo-blocked]
 https://stream1.freetv.fun/cctv-10-25.ctv
 #EXTINF:-1,[HD]cctv-10
 https://stream1.freetv.fun/cctv-10-13.ctv
+#EXTINF:-1,[BD]cctv10-gq
+https://stream1.freetv.fun/cctv10-gq-1.ctv
 #EXTINF:-1,[BD]cctv10hd
 https://stream1.freetv.fun/cctv10hd-2.m3u8
 #EXTINF:-1,[HD]cctv10
@@ -41821,6 +41767,8 @@ https://stream1.freetv.fun/cctv11-21.m3u8
 https://stream1.freetv.fun/cctv-11-4.ctv
 #EXTINF:-1,[BD]cctv-11[geo-blocked]
 https://stream1.freetv.fun/cctv-11-21.ctv
+#EXTINF:-1,[SD]cctv11-gq
+https://stream1.freetv.fun/cctv11-gq-1.ctv
 #EXTINF:-1,[BD]cctv11hd
 https://stream1.freetv.fun/cctv11hd-1.m3u8
 #EXTINF:-1,[HD]cctv11
@@ -41845,14 +41793,18 @@ https://stream1.freetv.fun/cctv12-22.ctv
 https://stream1.freetv.fun/cctv12-58.m3u8
 #EXTINF:-1,[BD]cctv12
 https://stream1.freetv.fun/cctv12-79.m3u8
+#EXTINF:-1,[BD]cctv-12
+https://stream1.freetv.fun/cctv-12-2.ctv
 #EXTINF:-1,[BD]cctv12
 https://stream1.freetv.fun/cctv12-46.m3u8
-#EXTINF:-1,[SD]cctv-12[geo-blocked]
+#EXTINF:-1,[SD]cctv-12
 https://stream1.freetv.fun/cctv-12-20.ctv
 #EXTINF:-1,[HD]cctv-12
 https://stream1.freetv.fun/cctv-12-12.ctv
 #EXTINF:-1,[BD]cctv12hd
 https://stream1.freetv.fun/cctv12hd-1.m3u8
+#EXTINF:-1,[BD]cctv12-gq
+https://stream1.freetv.fun/cctv12-gq-1.ctv
 #EXTINF:-1,[BD]cctv12 *wj
 https://stream1.freetv.fun/cctv12--wj-1.m3u8
 #EXTINF:-1,[BD]cctv12[geo-blocked]
@@ -41863,7 +41815,9 @@ https://stream1.freetv.fun/cctv12-9.ctv
 https://stream1.freetv.fun/cctv12-52.m3u8
 #EXTINF:-1,[HD]cctv-13
 https://stream1.freetv.fun/cctv-13-7.ctv
-#EXTINF:-1,[SD]cctv-13
+#EXTINF:-1,[BD]cctv13-gq
+https://stream1.freetv.fun/cctv13-gq-1.ctv
+#EXTINF:-1,[SD]cctv-13[geo-blocked]
 https://stream1.freetv.fun/cctv-13-21.ctv
 #EXTINF:-1,[BD]cctv13hd
 https://stream1.freetv.fun/cctv13hd-1.m3u8
@@ -41897,10 +41851,12 @@ https://stream1.freetv.fun/cctv13-22.m3u8
 https://stream1.freetv.fun/cctv14-47.m3u8
 #EXTINF:-1,[HD]cctv-14
 https://stream1.freetv.fun/cctv-14-2.ctv
-#EXTINF:-1,[SD]cctv-14
+#EXTINF:-1,[SD]cctv-14[geo-blocked]
 https://stream1.freetv.fun/cctv-14-4.ctv
 #EXTINF:-1,[BD]cctv14hd
 https://stream1.freetv.fun/cctv14hd-1.m3u8
+#EXTINF:-1,[BD]cctv14-gq
+https://stream1.freetv.fun/cctv14-gq-1.ctv
 #EXTINF:-1,[BD]cctv14 *wj
 https://stream1.freetv.fun/cctv14--wj-1.m3u8
 #EXTINF:-1,[BD]cctv14
@@ -41919,6 +41875,8 @@ https://stream1.freetv.fun/cctv14-44.ctv
 https://stream1.freetv.fun/cctv15-51.m3u8
 #EXTINF:-1,[HD]cctv-15
 https://stream1.freetv.fun/cctv-15-15.ctv
+#EXTINF:-1,[BD]cctv15-gq
+https://stream1.freetv.fun/cctv15-gq-1.ctv
 #EXTINF:-1,[BD]cctv15hd
 https://stream1.freetv.fun/cctv15hd-1.m3u8
 #EXTINF:-1,[BD]cctv15[geo-blocked]
@@ -41957,12 +41915,16 @@ https://stream1.freetv.fun/cctv17-35.m3u8
 https://stream1.freetv.fun/cctv-17-15.ctv
 #EXTINF:-1,[BD]cctv-17[geo-blocked]
 https://stream1.freetv.fun/cctv-17-20.ctv
+#EXTINF:-1,[BD]cctv17-gq[geo-blocked]
+https://stream1.freetv.fun/cctv17-gq-1.ctv
 #EXTINF:-1,[BD]cctv17hd
 https://stream1.freetv.fun/cctv17hd-1.m3u8
 #EXTINF:-1,[BD]cctv17
 https://stream1.freetv.fun/cctv17-65.ctv
 #EXTINF:-1,[SD]cctv2[geo-blocked]
 https://stream1.freetv.fun/cctv2-64.m3u8
+#EXTINF:-1,[BD]cctv2-gq
+https://stream1.freetv.fun/cctv2-gq-1.ctv
 #EXTINF:-1,[BD]cctv2hd
 https://stream1.freetv.fun/cctv2hd-1.m3u8
 #EXTINF:-1,[BD]cctv2
@@ -41987,10 +41949,14 @@ https://stream1.freetv.fun/cctv2-55.m3u8
 https://stream1.freetv.fun/cctv2-51.m3u8
 #EXTINF:-1,[BD]cctv3[geo-blocked]
 https://stream1.freetv.fun/cctv3-15.m3u8
+#EXTINF:-1,[SD]cctv-3
+https://stream1.freetv.fun/cctv-3-4.ctv
 #EXTINF:-1,[BD]cctv-03[geo-blocked]
 https://stream1.freetv.fun/cctv-03-1.ctv
 #EXTINF:-1,[HD]cctv-3
 https://stream1.freetv.fun/cctv-3-2.ctv
+#EXTINF:-1,[BD]cctv3-gq
+https://stream1.freetv.fun/cctv3-gq-1.ctv
 #EXTINF:-1,[BD]cctv3hd
 https://stream1.freetv.fun/cctv3hd-2.m3u8
 #EXTINF:-1,[BD]cctv3[geo-blocked]
@@ -42033,12 +41999,20 @@ https://stream1.freetv.fun/cctv4-33.m3u8
 https://stream1.freetv.fun/cctv4-23.m3u8
 #EXTINF:-1,[BD]cctv4[geo-blocked]
 https://stream1.freetv.fun/cctv4-12.m3u8
+#EXTINF:-1,[BD]cctv4k
+https://stream1.freetv.fun/cctv4k-1.ctv
+#EXTINF:-1,[SD]cctv-4
+https://stream1.freetv.fun/cctv-4-2.ctv
 #EXTINF:-1,[BD]cctv4
 https://stream1.freetv.fun/cctv4-6.m3u8
 #EXTINF:-1,[HD]cctv-4
 https://stream1.freetv.fun/cctv-4-5.ctv
+#EXTINF:-1,[BD]cctv4-gq
+https://stream1.freetv.fun/cctv4-gq-1.ctv
 #EXTINF:-1,[BD]cctv4hd
 https://stream1.freetv.fun/cctv4hd-2.m3u8
+#EXTINF:-1,[BD]cctv4k
+https://stream1.freetv.fun/cctv4k-7.m3u8
 #EXTINF:-1,[BD]cctv4
 https://stream1.freetv.fun/cctv4-44.ctv
 #EXTINF:-1,[HD]cctv5
@@ -42061,9 +42035,11 @@ https://stream1.freetv.fun/cctv-5-10.ctv
 https://stream1.freetv.fun/cctv5-55.m3u8
 #EXTINF:-1,[BD]cctv5[geo-blocked]
 https://stream1.freetv.fun/cctv5-17.m3u8
+#EXTINF:-1,[BD]cctv5-gq
+https://stream1.freetv.fun/cctv5-gq-1.ctv
 #EXTINF:-1,[BD]cctv5 *wj
 https://stream1.freetv.fun/cctv5--wj-1.m3u8
-#EXTINF:-1,[BD]cctv5hd
+#EXTINF:-1,[BD]cctv5hd[geo-blocked]
 https://stream1.freetv.fun/cctv5hd-2.m3u8
 #EXTINF:-1,[BD]cctv5p
 https://stream1.freetv.fun/cctv5p-1.m3u8
@@ -42079,12 +42055,16 @@ https://stream1.freetv.fun/cctv5-plus-3.ctv
 https://stream1.freetv.fun/cctv-plus-2-1.m3u8
 #EXTINF:-1,[SD]cctv plus 1
 https://stream1.freetv.fun/cctv-plus-1-1.m3u8
+#EXTINF:-1,[BD]cctv5 plus -gq
+https://stream1.freetv.fun/cctv5-plus--gq-1.ctv
 #EXTINF:-1,[BD]cctv5 plus *wj
 https://stream1.freetv.fun/cctv5-plus--wj-1.m3u8
 #EXTINF:-1,[BD]cctv6[geo-blocked]
 https://stream1.freetv.fun/cctv6-74.m3u8
 #EXTINF:-1,[HD]cctv-6
 https://stream1.freetv.fun/cctv-6-19.ctv
+#EXTINF:-1,[BD]cctv6-gq
+https://stream1.freetv.fun/cctv6-gq-1.ctv
 #EXTINF:-1,[BD]cctv6hd
 https://stream1.freetv.fun/cctv6hd-2.m3u8
 #EXTINF:-1,[BD]cctv6
@@ -42117,10 +42097,12 @@ https://stream1.freetv.fun/cctv7-50.m3u8
 https://stream1.freetv.fun/cctv7-41.ctv
 #EXTINF:-1,[HD]cctv7
 https://stream1.freetv.fun/cctv7-40.m3u8
-#EXTINF:-1,[BD]cctv7
+#EXTINF:-1,[BD]cctv7[geo-blocked]
 https://stream1.freetv.fun/cctv7-75.m3u8
 #EXTINF:-1,[HD]cctv-7
 https://stream1.freetv.fun/cctv-7-4.ctv
+#EXTINF:-1,[BD]cctv7-gq
+https://stream1.freetv.fun/cctv7-gq-1.ctv
 #EXTINF:-1,[BD]cctv7hd
 https://stream1.freetv.fun/cctv7hd-1.m3u8
 #EXTINF:-1,[BD]cctv7
@@ -42133,6 +42115,8 @@ https://stream1.freetv.fun/cctv8-41.m3u8
 https://stream1.freetv.fun/cctv8-2.m3u8
 #EXTINF:-1,[BD]cctv8[geo-blocked]
 https://stream1.freetv.fun/cctv8-24.m3u8
+#EXTINF:-1,[BD]cctv8-gq
+https://stream1.freetv.fun/cctv8-gq-1.ctv
 #EXTINF:-1,[BD]cctv8 *wj
 https://stream1.freetv.fun/cctv8--wj-1.m3u8
 #EXTINF:-1,[BD]cctv8hd
@@ -42153,6 +42137,10 @@ https://stream1.freetv.fun/cctv8-21.m3u8
 https://stream1.freetv.fun/cctv8-8.ctv
 #EXTINF:-1,[BD]cctv9
 https://stream1.freetv.fun/cctv9-8.ctv
+#EXTINF:-1,[BD]cctv-9
+https://stream1.freetv.fun/cctv-9-1.ctv
+#EXTINF:-1,[BD]cctv9-gq
+https://stream1.freetv.fun/cctv9-gq-1.ctv
 #EXTINF:-1,[HD]cctv-9
 https://stream1.freetv.fun/cctv-9-2.ctv
 #EXTINF:-1,[BD]cctv9hd
@@ -42191,8 +42179,6 @@ https://stream1.freetv.fun/cctvfeng-yun-zu-qiu-16.m3u8
 https://stream1.freetv.fun/cctvfeng-yun-zu-qiu-25.m3u8
 #EXTINF:-1,[VGA]espn deportes
 https://stream1.freetv.fun/espn-deportes-1.m3u8
-#EXTINF:-1,[SD]celestial classic movies *wj
-https://stream1.freetv.fun/celestial-classic-movies--wj-1.m3u8
 #EXTINF:-1,[BD]cetv4[geo-blocked]
 https://stream1.freetv.fun/cetv4-6.m3u8
 #EXTINF:-1,[SD]cetv4
@@ -42295,7 +42281,7 @@ https://stream1.freetv.fun/citizen-extra-1.m3u8
 https://stream1.freetv.fun/stingray-classica-4.m3u8
 #EXTINF:-1,[SD]stingray classica (1080p)[geo-blocked]
 https://stream1.freetv.fun/stingray-classica-3.m3u8
-#EXTINF:-1,[HD]classica
+#EXTINF:-1,[SD]classica[geo-blocked]
 https://stream1.freetv.fun/classica-2.m3u8
 #EXTINF:-1,[BD]classica
 https://stream1.freetv.fun/classica-8.m3u8
@@ -42337,9 +42323,9 @@ https://stream1.freetv.fun/mnb-world-1.m3u8
 https://stream1.freetv.fun/cnbc-mgl-1.m3u8
 #EXTINF:-1,[HD]cnbc tv18[geo-blocked]
 https://stream1.freetv.fun/cnbc-tv18-1.m3u8
-#EXTINF:-1,[HD]us cnbc
+#EXTINF:-1,[BD]us cnbc
 https://stream1.freetv.fun/us-cnbc-1.ctv
-#EXTINF:-1,[HD]cnbc(usa) ==
+#EXTINF:-1,[BD]cnbc(usa) ==
 https://stream1.freetv.fun/cnbc-5.ctv
 #EXTINF:-1,[HD]cnbc(usa) =
 https://stream1.freetv.fun/cnbc-7.ctv
@@ -42357,7 +42343,7 @@ https://stream1.freetv.fun/cnn-fast-3.ctv
 https://stream1.freetv.fun/cnn-fast-1.m3u8
 #EXTINF:-1,[BD]cnn fast[geo-blocked]
 https://stream1.freetv.fun/cnn-fast-2.m3u8
-#EXTINF:-1,[BD]cnn =[geo-blocked]
+#EXTINF:-1,[BD]cnn =
 https://stream1.freetv.fun/cnn-1.ctv
 #EXTINF:-1,[HD]cnn ==
 https://stream1.freetv.fun/cnn-2.ctv
@@ -42385,9 +42371,9 @@ https://stream1.freetv.fun/cnn-int-2.m3u8
 https://stream1.freetv.fun/cnn-int-4.m3u8
 #EXTINF:-1,[HD]hln
 https://stream1.freetv.fun/hln-3.m3u8
-#EXTINF:-1,[BD]cnn indonesia *id
+#EXTINF:-1,[BD]cnn indonesia *id[geo-blocked]
 https://stream1.freetv.fun/cnn-indonesia--id-1.ctv
-#EXTINF:-1,[BD]cnbc indonesia *id
+#EXTINF:-1,[BD]cnbc indonesia *id[geo-blocked]
 https://stream1.freetv.fun/cnbc-indonesia--id-1.ctv
 #EXTINF:-1,[HD]cnbc indonesia
 https://stream1.freetv.fun/cnbc-indonesia-3.m3u8
@@ -42435,7 +42421,7 @@ https://stream1.freetv.fun/rt-en-espanol-1.m3u8
 https://stream1.freetv.fun/ch-ng-cp-24-2.m3u8
 #EXTINF:-1,[SD]csi
 https://stream1.freetv.fun/csi-1.m3u8
-#EXTINF:-1,[SD]csi
+#EXTINF:-1,[HD]csi
 https://stream1.freetv.fun/csi-2.m3u8
 #EXTINF:-1,[SD]csi
 https://stream1.freetv.fun/csi-3.m3u8
@@ -42455,7 +42441,7 @@ https://stream1.freetv.fun/cablenoticias-1.m3u8
 https://stream1.freetv.fun/california-music-channel-2.m3u8
 #EXTINF:-1,[BD]california music channel usa
 https://stream1.freetv.fun/california-music-channel-usa-1.m3u8
-#EXTINF:-1,[SD]california music channel (720p) [not 24/7]
+#EXTINF:-1,[SD]california music channel (720p) [not 24/7][geo-blocked]
 https://stream1.freetv.fun/california-music-channel-3.m3u8
 #EXTINF:-1,[BD]ช่อง california music channel
 https://stream1.freetv.fun/ch-ng-california-music-channel-1.m3u8
@@ -42467,6 +42453,8 @@ https://stream1.freetv.fun/california-music-channel-1.m3u8
 https://stream1.freetv.fun/music-channel-1.m3u8
 #EXTINF:-1,[HD]canal 10
 https://stream1.freetv.fun/canal-10-1.m3u8
+#EXTINF:-1,[BD]canal 10
+https://stream1.freetv.fun/canal-10-2.m3u8
 #EXTINF:-1,[BD]canale 21
 https://stream1.freetv.fun/canale-21-1.m3u8
 #EXTINF:-1,[BD]moldova 2
@@ -42567,11 +42555,11 @@ https://stream1.freetv.fun/canale-7-6.m3u8
 https://stream1.freetv.fun/caracol-tv-1.m3u8
 #EXTINF:-1,[BD]cartoon netwrk *m[geo-blocked]
 https://stream1.freetv.fun/cartoon-netwrk--m-1.ctv
-#EXTINF:-1,[BD]cartoon network *m[geo-blocked]
+#EXTINF:-1,[HD]cartoon network *m[geo-blocked]
 https://stream1.freetv.fun/cartoon-network--m-2.ctv
 #EXTINF:-1,[BD]cartoon network *m[geo-blocked]
 https://stream1.freetv.fun/cartoon-network--m-1.ctv
-#EXTINF:-1,[BD]cartoon network uhd *m[geo-blocked]
+#EXTINF:-1,[HD]cartoon network uhd *m[geo-blocked]
 https://stream1.freetv.fun/cartoon-network-uhd--m-1.ctv
 #EXTINF:-1,[BD]cartoon network 1 *m[geo-blocked]
 https://stream1.freetv.fun/cartoon-network-1--m-1.ctv
@@ -42621,11 +42609,11 @@ https://stream1.freetv.fun/channel-8-2.m3u8
 https://stream1.freetv.fun/kqsl-channel-8-2.m3u8
 #EXTINF:-1,[BD]chardikla time tv
 https://stream1.freetv.fun/chardikla-time-tv-1.m3u8
-#EXTINF:-1,[HD]chincha tv
+#EXTINF:-1,[HD]chincha tv[geo-blocked]
 https://stream1.freetv.fun/chincha-tv-1.m3u8
 #EXTINF:-1,[HD]koogi tv
 https://stream1.freetv.fun/koogi-tv-2.m3u8
-#EXTINF:-1,[BD]koogi tv
+#EXTINF:-1,[HD]koogi tv
 https://stream1.freetv.fun/koogi-tv-1.m3u8
 #EXTINF:-1,[BD]christian youth channel
 https://stream1.freetv.fun/christian-youth-channel-4.m3u8
@@ -42635,21 +42623,21 @@ https://stream1.freetv.fun/mihan-tv-1.m3u8
 https://stream1.freetv.fun/can-tv-4.m3u8
 #EXTINF:-1,[BD]viju plus premiere
 https://stream1.freetv.fun/viju-plus-premiere-2.m3u8
-#EXTINF:-1,[BD]cinebox[geo-blocked]
+#EXTINF:-1,[BD]cinebox
 https://stream1.freetv.fun/cinebox-6.ctv
-#EXTINF:-1,[BD]cinebox[geo-blocked]
+#EXTINF:-1,[BD]cinebox
 https://stream1.freetv.fun/cinebox-1.ctv
 #EXTINF:-1,[BD]cinebox
 https://stream1.freetv.fun/cinebox-4.ctv
-#EXTINF:-1,[BD]cinebox[geo-blocked]
+#EXTINF:-1,[BD]cinebox
 https://stream1.freetv.fun/cinebox-2.ctv
 #EXTINF:-1,[VGA]classic cinema
 https://stream1.freetv.fun/classic-cinema-1.m3u8
 #EXTINF:-1,[HD]brividy cinema
 https://stream1.freetv.fun/brividy-cinema-1.m3u8
-#EXTINF:-1,[HD]70s cinema
+#EXTINF:-1,[SD]70s cinema
 https://stream1.freetv.fun/70s-cinema-1.m3u8
-#EXTINF:-1,[HD]black cinema
+#EXTINF:-1,[SD]black cinema
 https://stream1.freetv.fun/black-cinema-1.m3u8
 #EXTINF:-1,[SD]70s cinema
 https://stream1.freetv.fun/70s-cinema-2.m3u8
@@ -42673,7 +42661,7 @@ https://stream1.freetv.fun/cinema-6.m3u8
 https://stream1.freetv.fun/cinemax-east--v-1.ctv
 #EXTINF:-1,[BD]cinemax moviemax east *s[geo-blocked]
 https://stream1.freetv.fun/cinemax-moviemax-east--s-1.m3u8
-#EXTINF:-1,[BD]cinemax *v[geo-blocked]
+#EXTINF:-1,[HD]cinemax *v[geo-blocked]
 https://stream1.freetv.fun/cinemax--v-1.ctv
 #EXTINF:-1,[BD]cinemax(usa) ==
 https://stream1.freetv.fun/cinemax-15.ctv
@@ -42681,7 +42669,7 @@ https://stream1.freetv.fun/cinemax-15.ctv
 https://stream1.freetv.fun/cinemax-8.ctv
 #EXTINF:-1,[BD]cinemax(usa) =
 https://stream1.freetv.fun/cinemax-2.ctv
-#EXTINF:-1,[SD]cinemax
+#EXTINF:-1,[BD]cinemax
 https://stream1.freetv.fun/cinemax-13.m3u8
 #EXTINF:-1,[BD]us cinemax
 https://stream1.freetv.fun/us-cinemax-1.ctv
@@ -42703,7 +42691,7 @@ https://stream1.freetv.fun/classic-movies-channel-2.m3u8
 https://stream1.freetv.fun/tvs-classic-movies-2.m3u8
 #EXTINF:-1,[BD]classic movies =[geo-blocked]
 https://stream1.freetv.fun/classic-movies-3.ctv
-#EXTINF:-1,[BD]classic movies ==
+#EXTINF:-1,[BD]classic movies ==[geo-blocked]
 https://stream1.freetv.fun/classic-movies-2.ctv
 #EXTINF:-1,[VGA]tvs classic movies
 https://stream1.freetv.fun/tvs-classic-movies-1.m3u8
@@ -42733,7 +42721,7 @@ https://stream1.freetv.fun/comedy-central-south-park-1.m3u8
 https://stream1.freetv.fun/comedy-central-south-park-2.m3u8
 #EXTINF:-1,[SD]comedy central animation
 https://stream1.freetv.fun/comedy-central-animation-1.m3u8
-#EXTINF:-1,[SD]comedy central
+#EXTINF:-1,[HD]comedy central
 https://stream1.freetv.fun/comedy-central-14.m3u8
 #EXTINF:-1,[SD]comedy central south park
 https://stream1.freetv.fun/comedy-central-south-park-3.m3u8
@@ -42749,7 +42737,7 @@ https://stream1.freetv.fun/comedy-central--m-2.ctv
 https://stream1.freetv.fun/comedy-central-animation-2.m3u8
 #EXTINF:-1,[SD]comedy xtra *m[geo-blocked]
 https://stream1.freetv.fun/comedy-xtra--m-1.ctv
-#EXTINF:-1,[HD]pluto tv comedy movies
+#EXTINF:-1,[SD]pluto tv comedy movies
 https://stream1.freetv.fun/pluto-tv-comedy-movies-1.m3u8
 #EXTINF:-1,[BD]rakuten tv comedy movies[geo-blocked]
 https://stream1.freetv.fun/rakuten-tv-comedy-movies-2.m3u8
@@ -42785,8 +42773,6 @@ https://stream1.freetv.fun/dance-tv-1.m3u8
 https://stream1.freetv.fun/dance-tv-2.m3u8
 #EXTINF:-1,[BD]carib flow sports
 https://stream1.freetv.fun/carib-flow-sports-1.ctv
-#EXTINF:-1,[HD]solh sports
-https://stream1.freetv.fun/solh-sports-1.m3u8
 #EXTINF:-1,[BD]directv sports
 https://stream1.freetv.fun/directv-sports-1.m3u8
 #EXTINF:-1,[BD]dd national
@@ -42811,7 +42797,7 @@ https://stream1.freetv.fun/discovery-science--m-2.ctv
 https://stream1.freetv.fun/discovery-science--m-3.ctv
 #EXTINF:-1,[BD]divinity
 https://stream1.freetv.fun/divinity-1.m3u8
-#EXTINF:-1,[BD]diy network *m[geo-blocked]
+#EXTINF:-1,[HD]diy network *m[geo-blocked]
 https://stream1.freetv.fun/diy-network--m-1.ctv
 #EXTINF:-1,[SD]diy network ==
 https://stream1.freetv.fun/diy-network-1.ctv
@@ -42879,7 +42865,7 @@ https://stream1.freetv.fun/dw-espanol-s-1.m3u8
 https://stream1.freetv.fun/dw-espanol-2.m3u8
 #EXTINF:-1,[BD]deutsche welle español
 https://stream1.freetv.fun/deutsche-welle-espanol-1.m3u8
-#EXTINF:-1,[BD]dw espanol
+#EXTINF:-1,[SD]dw espanol
 https://stream1.freetv.fun/dw-espanol-1.m3u8
 #EXTINF:-1,[BD]dw
 https://stream1.freetv.fun/dw-4.m3u8
@@ -42905,7 +42891,7 @@ https://stream1.freetv.fun/defa-tv-1.m3u8
 https://stream1.freetv.fun/deluxe-music-deutsch-pop-1.m3u8
 #EXTINF:-1,[HD]deluxe music english
 https://stream1.freetv.fun/deluxe-music-english-1.m3u8
-#EXTINF:-1,[HD]desenhos classicos
+#EXTINF:-1,[SD]desenhos classicos
 https://stream1.freetv.fun/desenhos-classicos-1.m3u8
 #EXTINF:-1,[HD]icaro tv
 https://stream1.freetv.fun/icaro-tv-1.m3u8
@@ -42949,7 +42935,7 @@ https://stream1.freetv.fun/discovery-science-4.m3u8
 https://stream1.freetv.fun/discovery-turbo-3.ctv
 #EXTINF:-1,[HD]disney xd(mas) =
 https://stream1.freetv.fun/disney-xd-6.ctv
-#EXTINF:-1,[HD]disney xd(mas) ==
+#EXTINF:-1,[HD]disney xd(mas) ==[geo-blocked]
 https://stream1.freetv.fun/disney-xd-1.ctv
 #EXTINF:-1,[BD]disney=
 https://stream1.freetv.fun/disney-4.ctv
@@ -42957,9 +42943,9 @@ https://stream1.freetv.fun/disney-4.ctv
 https://stream1.freetv.fun/disney-2.ctv
 #EXTINF:-1,[HD]usa-disney jr
 https://stream1.freetv.fun/usa-disney-jr-1.ctv
-#EXTINF:-1,[HD]disney channel ==
+#EXTINF:-1,[VGA]disney channel ==
 https://stream1.freetv.fun/disney-channel-26.ctv
-#EXTINF:-1,[HD]disney channel ===[geo-blocked]
+#EXTINF:-1,[VGA]disney channel ===
 https://stream1.freetv.fun/disney-channel-7.ctv
 #EXTINF:-1,[SD]disney channel
 https://stream1.freetv.fun/disney-channel-3.m3u8
@@ -42973,11 +42959,11 @@ https://stream1.freetv.fun/disney-channel-13.m3u8
 https://stream1.freetv.fun/disney-junior-21.ctv
 #EXTINF:-1,[HD]disney junior(asia) ==
 https://stream1.freetv.fun/disney-junior-24.ctv
-#EXTINF:-1,[HD]disney xd
+#EXTINF:-1,[HD]disney xd[geo-blocked]
 https://stream1.freetv.fun/disney-xd-4.m3u8
 #EXTINF:-1,[HD]ช่อง disney xd
 https://stream1.freetv.fun/ch-ng-disney-xd-1.m3u8
-#EXTINF:-1,[BD]dizimax sci-fi trk ==[geo-blocked]
+#EXTINF:-1,[BD]dizimax sci-fi trk ==
 https://stream1.freetv.fun/dizimax-sci-fi-trk-1.ctv
 #EXTINF:-1,[BD]dizimax sci-fi trk =
 https://stream1.freetv.fun/dizimax-sci-fi-trk-2.ctv
@@ -42987,7 +42973,7 @@ https://stream1.freetv.fun/docubox-1.m3u8
 https://stream1.freetv.fun/dora-tv-1.m3u8
 #EXTINF:-1,[HD]dora tv
 https://stream1.freetv.fun/dora-tv-2.m3u8
-#EXTINF:-1,[SD]dora tv
+#EXTINF:-1,[HD]dora tv
 https://stream1.freetv.fun/dora-tv-5.m3u8
 #EXTINF:-1,[SD]dora tv
 https://stream1.freetv.fun/dora-tv-4.m3u8
@@ -43009,7 +42995,7 @@ https://stream1.freetv.fun/ch-ng-dove-channel-1.m3u8
 https://stream1.freetv.fun/rotana-pnc-drama-1.m3u8
 #EXTINF:-1,[VGA]feel good drama
 https://stream1.freetv.fun/feel-good-drama-1.m3u8
-#EXTINF:-1,[HD]nonstop drama
+#EXTINF:-1,[SD]nonstop drama
 https://stream1.freetv.fun/nonstop-drama-1.m3u8
 #EXTINF:-1,[HD]ช่อง k-drama
 https://stream1.freetv.fun/ch-ng-k-drama-1.m3u8
@@ -43131,7 +43117,7 @@ https://stream1.freetv.fun/espn-brasil-2-2.ctv
 https://stream1.freetv.fun/espn-brasil-3-1.ctv
 #EXTINF:-1,[HD]espn ==
 https://stream1.freetv.fun/espn-6.ctv
-#EXTINF:-1,[HD]espn ---[geo-blocked]
+#EXTINF:-1,[VGA]espn ---[geo-blocked]
 https://stream1.freetv.fun/espn-5.ctv
 #EXTINF:-1,[HD]espn =
 https://stream1.freetv.fun/espn-8.ctv
@@ -43251,13 +43237,13 @@ https://stream1.freetv.fun/euronews-25.m3u8
 https://stream1.freetv.fun/euronews-10.m3u8
 #EXTINF:-1,[HD]euronews it
 https://stream1.freetv.fun/euronews-it-2.m3u8
-#EXTINF:-1,[HD]euronews
+#EXTINF:-1,[HD]euronews[geo-blocked]
 https://stream1.freetv.fun/euronews-12.m3u8
 #EXTINF:-1,[HD]euronews[geo-blocked]
 https://stream1.freetv.fun/euronews-13.m3u8
 #EXTINF:-1,[HD]euronews spanish[geo-blocked]
 https://stream1.freetv.fun/euronews-spanish-1.m3u8
-#EXTINF:-1,[BD]eurosport2
+#EXTINF:-1,[BD]eurosport2[geo-blocked]
 https://stream1.freetv.fun/eurosport2-1.m3u8
 #EXTINF:-1,[HD]euronews français[geo-blocked]
 https://stream1.freetv.fun/euronews-francais-1.m3u8
@@ -43267,7 +43253,7 @@ https://stream1.freetv.fun/euronews-de-2.m3u8
 https://stream1.freetv.fun/euronews-english-2.m3u8
 #EXTINF:-1,[SD]euronews *m[geo-blocked]
 https://stream1.freetv.fun/euronews--m-1.ctv
-#EXTINF:-1,[SD]euronews *v[geo-blocked]
+#EXTINF:-1,[HD]euronews *v[geo-blocked]
 https://stream1.freetv.fun/euronews--v-1.ctv
 #EXTINF:-1,[HD]euronews[geo-blocked]
 https://stream1.freetv.fun/euronews-9.m3u8
@@ -43311,7 +43297,7 @@ https://stream1.freetv.fun/fox-now-1.m3u8
 https://stream1.freetv.fun/fox-sports-7.m3u8
 #EXTINF:-1,[HD]fox sports[geo-blocked]
 https://stream1.freetv.fun/fox-sports-3.m3u8
-#EXTINF:-1,[HD]fox sports =[geo-blocked]
+#EXTINF:-1,[HD]fox sports =
 https://stream1.freetv.fun/fox-sports-4.ctv
 #EXTINF:-1,[SD]fox sports ==
 https://stream1.freetv.fun/fox-sports-6.ctv
@@ -43415,7 +43401,7 @@ https://stream1.freetv.fun/formula-1.m3u8
 https://stream1.freetv.fun/formula-2.m3u8
 #EXTINF:-1,[BD]animation
 https://stream1.freetv.fun/animation-1.ctv
-#EXTINF:-1,[BD]fox animation italia =[geo-blocked]
+#EXTINF:-1,[BD]fox animation italia =
 https://stream1.freetv.fun/fox-animation-italia-1.ctv
 #EXTINF:-1,[BD]fox animation italia ==
 https://stream1.freetv.fun/fox-animation-italia-3.ctv
@@ -43515,7 +43501,7 @@ https://stream1.freetv.fun/global-tv-4.m3u8
 https://stream1.freetv.fun/gmm-25-2.m3u8
 #EXTINF:-1,[VGA]golden tv
 https://stream1.freetv.fun/golden-tv-2.m3u8
-#EXTINF:-1,[SD]golf channel ==
+#EXTINF:-1,[SD]golf channel ==[geo-blocked]
 https://stream1.freetv.fun/golf-channel-1.ctv
 #EXTINF:-1,[BD]lol network
 https://stream1.freetv.fun/lol-network-1.m3u8
@@ -43605,7 +43591,7 @@ https://stream1.freetv.fun/hbo-comedy--v-1.ctv
 https://stream1.freetv.fun/hbo-comedy--m-1.ctv
 #EXTINF:-1,[SD]hbo comedy ==
 https://stream1.freetv.fun/hbo-comedy-10.ctv
-#EXTINF:-1,[SD]hbo comedy ===[geo-blocked]
+#EXTINF:-1,[SD]hbo comedy ===
 https://stream1.freetv.fun/hbo-comedy-9.ctv
 #EXTINF:-1,[BD]hbo east *m[geo-blocked]
 https://stream1.freetv.fun/hbo-east--m-1.ctv
@@ -43615,7 +43601,7 @@ https://stream1.freetv.fun/hbo-east-2.ctv
 https://stream1.freetv.fun/hbo-2-east--m-1.ctv
 #EXTINF:-1,[SD]hbo east *s[geo-blocked]
 https://stream1.freetv.fun/hbo-east--s-1.m3u8
-#EXTINF:-1,[BD]hbo east ==
+#EXTINF:-1,[BD]hbo east ==[geo-blocked]
 https://stream1.freetv.fun/hbo-east-3.ctv
 #EXTINF:-1,[SD]hbo family *m[geo-blocked]
 https://stream1.freetv.fun/hbo-family--m-1.ctv
@@ -43623,8 +43609,6 @@ https://stream1.freetv.fun/hbo-family--m-1.ctv
 https://stream1.freetv.fun/hbo-family--m-2.ctv
 #EXTINF:-1,[HD]hbo family(usa) ==
 https://stream1.freetv.fun/hbo-family-5.ctv
-#EXTINF:-1,[BD]hbo family *wj
-https://stream1.freetv.fun/hbo-family--wj-1.m3u8
 #EXTINF:-1,[BD]hbo famliy[geo-blocked]
 https://stream1.freetv.fun/hbo-famliy-1.m3u8
 #EXTINF:-1,[BD]cbn family
@@ -43635,15 +43619,15 @@ https://stream1.freetv.fun/home-plus-1.m3u8
 https://stream1.freetv.fun/hbo-signature--m-1.ctv
 #EXTINF:-1,[BD]hbo signature(usa) ==
 https://stream1.freetv.fun/hbo-signature-16.ctv
-#EXTINF:-1,[BD]hbo signature(usa) ===
+#EXTINF:-1,[BD]hbo signature(usa) ===[geo-blocked]
 https://stream1.freetv.fun/hbo-signature-19.ctv
-#EXTINF:-1,[SD]hbo ====[geo-blocked]
+#EXTINF:-1,[BD]hbo ====[geo-blocked]
 https://stream1.freetv.fun/hbo-4.ctv
 #EXTINF:-1,[SD]hbo usa *s[geo-blocked]
 https://stream1.freetv.fun/hbo-usa--s-1.m3u8
 #EXTINF:-1,[SD]hbo ===
 https://stream1.freetv.fun/hbo-14.ctv
-#EXTINF:-1,[SD]hbo ===
+#EXTINF:-1,[BD]hbo ===
 https://stream1.freetv.fun/hbo-11.ctv
 #EXTINF:-1,[BD]HBO Xtreme
 https://stream1.freetv.fun/hbo-xtreme-4.m3u8
@@ -43653,15 +43637,15 @@ https://stream1.freetv.fun/hbo-zone--m-1.ctv
 https://stream1.freetv.fun/hbo-zone-1.ctv
 #EXTINF:-1,[SD]hbo zone *v[geo-blocked]
 https://stream1.freetv.fun/hbo-zone--v-1.ctv
-#EXTINF:-1,[SD]hbo zone =
-https://stream1.freetv.fun/hbo-zone-8.ctv
 #EXTINF:-1,[SD]hbo zone *s[geo-blocked]
 https://stream1.freetv.fun/hbo-zone--s-1.m3u8
+#EXTINF:-1,[SD]hbo zone =
+https://stream1.freetv.fun/hbo-zone-8.ctv
 #EXTINF:-1,[SD]hbo zone
 https://stream1.freetv.fun/hbo-zone-7.m3u8
 #EXTINF:-1,[SD]hbo-
 https://stream1.freetv.fun/hbo-8.ctv
-#EXTINF:-1,[VGA]hbo(tw) *s[geo-blocked]
+#EXTINF:-1,[BD]hbo(tw) *s[geo-blocked]
 https://stream1.freetv.fun/hbo--s-1.m3u8
 #EXTINF:-1,[BD]hbo 1
 https://stream1.freetv.fun/hbo-1-5.ctv
@@ -43757,7 +43741,7 @@ https://stream1.freetv.fun/hi-yah-1.m3u8
 https://stream1.freetv.fun/history-2--m-1.ctv
 #EXTINF:-1,[HD]history hit channel
 https://stream1.freetv.fun/history-hit-channel-1.m3u8
-#EXTINF:-1,[VGA]history channel *v[geo-blocked]
+#EXTINF:-1,[HD]history channel *v[geo-blocked]
 https://stream1.freetv.fun/history-channel--v-1.ctv
 #EXTINF:-1,[HD]true history channel
 https://stream1.freetv.fun/true-history-channel-1.m3u8
@@ -43771,9 +43755,9 @@ https://stream1.freetv.fun/history-19.m3u8
 https://stream1.freetv.fun/history-1-3.ctv
 #EXTINF:-1,[HD]pluto tv history
 https://stream1.freetv.fun/pluto-tv-history-1.m3u8
-#EXTINF:-1,[HD]pluto tv history
+#EXTINF:-1,[SD]pluto tv history
 https://stream1.freetv.fun/pluto-tv-history-2.m3u8
-#EXTINF:-1,[HD]pluto tv history
+#EXTINF:-1,[SD]pluto tv history
 https://stream1.freetv.fun/pluto-tv-history-3.m3u8
 #EXTINF:-1,[HD]beyond history
 https://stream1.freetv.fun/beyond-history-1.m3u8
@@ -43861,7 +43845,7 @@ https://stream1.freetv.fun/imam-hussein-tv-3-3.m3u8
 https://stream1.freetv.fun/imam-hussein-tv-2-3.m3u8
 #EXTINF:-1,[VGA]imam hussein tv 3 (1080p) [not 24/7]
 https://stream1.freetv.fun/imam-hussein-tv-3-1.m3u8
-#EXTINF:-1,[HD]imedi tv
+#EXTINF:-1,[BD]imedi tv
 https://stream1.freetv.fun/imedi-tv-1.m3u8
 #EXTINF:-1,[HD]tin tv
 https://stream1.freetv.fun/tin-tv-3.m3u8
@@ -43911,7 +43895,7 @@ https://stream1.freetv.fun/itv-3.m3u8
 https://stream1.freetv.fun/itv-1.m3u8
 #EXTINF:-1,[VGA]itv
 https://stream1.freetv.fun/itv-5.m3u8
-#EXTINF:-1,[HD]itv 3 (uk) =[geo-blocked]
+#EXTINF:-1,[HD]itv 3 (uk) =
 https://stream1.freetv.fun/itv-3-3.ctv
 #EXTINF:-1,[BD]ictv2
 https://stream1.freetv.fun/ictv2-1.ctv
@@ -43935,9 +43919,9 @@ https://stream1.freetv.fun/investigation-discovery--m-3.ctv
 https://stream1.freetv.fun/id--m-1.ctv
 #EXTINF:-1,[SD]id investigation discovery европа
 https://stream1.freetv.fun/id-investigation-discovery-evropa-1.m3u8
-#EXTINF:-1,[HD]investigation discovery *s[geo-blocked]
+#EXTINF:-1,[VGA]investigation discovery *s[geo-blocked]
 https://stream1.freetv.fun/investigation-discovery--s-1.m3u8
-#EXTINF:-1,[BD]investigation discovery *v
+#EXTINF:-1,[VGA]investigation discovery *v[geo-blocked]
 https://stream1.freetv.fun/investigation-discovery--v-1.ctv
 #EXTINF:-1,[BD]investigation
 https://stream1.freetv.fun/investigation-1.m3u8
@@ -44049,7 +44033,7 @@ https://stream1.freetv.fun/kuriakos-tv-1.m3u8
 https://stream1.freetv.fun/kuwait-tv-arab-1.m3u8
 #EXTINF:-1,[VGA]kuwait tv news
 https://stream1.freetv.fun/kuwait-tv-news-1.m3u8
-#EXTINF:-1,[HD]kabel eins[geo-blocked]
+#EXTINF:-1,[SD]kabel eins[geo-blocked]
 https://stream1.freetv.fun/kabel-eins-2.m3u8
 #EXTINF:-1,[HD]kanal 26
 https://stream1.freetv.fun/kanal-26-1.m3u8
@@ -44087,7 +44071,7 @@ https://stream1.freetv.fun/kanal-d-drama-1.m3u8
 https://stream1.freetv.fun/kanal-d-12.m3u8
 #EXTINF:-1,[HD]kanal z
 https://stream1.freetv.fun/kanal-z-1.m3u8
-#EXTINF:-1,[VGA]kanal 0
+#EXTINF:-1,[BD]kanal 0
 https://stream1.freetv.fun/kanal-0-1.m3u8
 #EXTINF:-1,[HD]bi 1! kanal
 https://stream1.freetv.fun/bi-1--kanal-1.m3u8
@@ -44215,9 +44199,9 @@ https://stream1.freetv.fun/bahrain-international-1.m3u8
 https://stream1.freetv.fun/bahrain-international-2.m3u8
 #EXTINF:-1,[BD]lifetime *m[geo-blocked]
 https://stream1.freetv.fun/lifetime--m-1.ctv
-#EXTINF:-1,[BD]lifetime ===
+#EXTINF:-1,[SD]lifetime ===
 https://stream1.freetv.fun/lifetime-13.ctv
-#EXTINF:-1,[BD]lifetime ==
+#EXTINF:-1,[HD]lifetime ==
 https://stream1.freetv.fun/lifetime-3.ctv
 #EXTINF:-1,[HD]lex tv
 https://stream1.freetv.fun/lex-tv-1.m3u8
@@ -44301,7 +44285,7 @@ https://stream1.freetv.fun/mbc-masr-2-2.m3u8
 https://stream1.freetv.fun/mbc-masr-1-2.m3u8
 #EXTINF:-1,[SD]mbc 1
 https://stream1.freetv.fun/mbc-1-2.m3u8
-#EXTINF:-1,[VGA]mbc 1
+#EXTINF:-1,[BD]mbc 1
 https://stream1.freetv.fun/mbc-1-3.m3u8
 #EXTINF:-1,[HD]wdr fernsehen
 https://stream1.freetv.fun/wdr-fernsehen-1.m3u8
@@ -44309,7 +44293,7 @@ https://stream1.freetv.fun/wdr-fernsehen-1.m3u8
 https://stream1.freetv.fun/metro-tv-2.m3u8
 #EXTINF:-1,[HD]metro tv
 https://stream1.freetv.fun/metro-tv-6.m3u8
-#EXTINF:-1,[HD]olam metro tv[geo-blocked]
+#EXTINF:-1,[HD]olam metro tv
 https://stream1.freetv.fun/olam-metro-tv-1.m3u8
 #EXTINF:-1,[VGA]mgm
 https://stream1.freetv.fun/mgm-1.m3u8
@@ -44335,7 +44319,7 @@ https://stream1.freetv.fun/mytime-movie-network-2.m3u8
 https://stream1.freetv.fun/xuan-yi-movie-1.ctv
 #EXTINF:-1,[SD]paramount movie channel
 https://stream1.freetv.fun/paramount-movie-channel-1.m3u8
-#EXTINF:-1,[VGA]paramount movie channel
+#EXTINF:-1,[HD]paramount movie channel
 https://stream1.freetv.fun/paramount-movie-channel-2.m3u8
 #EXTINF:-1,[HD]mytime movie network
 https://stream1.freetv.fun/mytime-movie-network-1.m3u8
@@ -44365,9 +44349,9 @@ https://stream1.freetv.fun/movies-now-3.ctv
 https://stream1.freetv.fun/msj-tv-1.m3u8
 #EXTINF:-1,[SD]msnbc (720p)
 https://stream1.freetv.fun/msnbc-5.m3u8
-#EXTINF:-1,[BD]msnbc ==[geo-blocked]
+#EXTINF:-1,[BD]msnbc ==
 https://stream1.freetv.fun/msnbc-3.ctv
-#EXTINF:-1,[BD]msnbc =
+#EXTINF:-1,[BD]msnbc =[geo-blocked]
 https://stream1.freetv.fun/msnbc-1.ctv
 #EXTINF:-1,[HD]msnbc
 https://stream1.freetv.fun/msnbc-2.m3u8
@@ -44393,7 +44377,7 @@ https://stream1.freetv.fun/qvc-italia-1.m3u8
 https://stream1.freetv.fun/mtv-live-10.ctv
 #EXTINF:-1,[SD]mtv live =
 https://stream1.freetv.fun/mtv-live-12.ctv
-#EXTINF:-1,[BD]mtv live *v[geo-blocked]
+#EXTINF:-1,[HD]mtv live *v[geo-blocked]
 https://stream1.freetv.fun/mtv-live--v-1.ctv
 #EXTINF:-1,[SD]mtv live
 https://stream1.freetv.fun/mtv-live-9.m3u8
@@ -44453,7 +44437,7 @@ https://stream1.freetv.fun/minimax-2.m3u8
 https://stream1.freetv.fun/mir-24-2.m3u8
 #EXTINF:-1,[BD]miracle tv
 https://stream1.freetv.fun/miracle-tv-2.m3u8
-#EXTINF:-1,[HD]le miracle de l'amour
+#EXTINF:-1,[SD]le miracle de l'amour
 https://stream1.freetv.fun/le-miracle-de-l-amour-1.m3u8
 #EXTINF:-1,[VGA]miracle tv
 https://stream1.freetv.fun/miracle-tv-1.m3u8
@@ -44471,7 +44455,7 @@ https://stream1.freetv.fun/mor-tv-1.m3u8
 https://stream1.freetv.fun/motor-trend-3.m3u8
 #EXTINF:-1,[BD]us motortrend
 https://stream1.freetv.fun/us-motortrend-1.ctv
-#EXTINF:-1,[BD]motortrend ==
+#EXTINF:-1,[BD]motortrend ==[geo-blocked]
 https://stream1.freetv.fun/motortrend-2.ctv
 #EXTINF:-1,[BD]motortrend =
 https://stream1.freetv.fun/motortrend-3.ctv
@@ -44587,7 +44571,7 @@ https://stream1.freetv.fun/ndtv-24x7-1.m3u8
 https://stream1.freetv.fun/eko-tv-2.ctv
 #EXTINF:-1,[BD]eko tv
 https://stream1.freetv.fun/eko-tv-3.ctv
-#EXTINF:-1,[BD]nexo tv
+#EXTINF:-1,[HD]nexo tv
 https://stream1.freetv.fun/nexo-tv-1.m3u8
 #EXTINF:-1,[HD]ช่อง nesn
 https://stream1.freetv.fun/ch-ng-nesn-1.m3u8
@@ -44713,7 +44697,7 @@ https://stream1.freetv.fun/new-vision-tv-1.m3u8
 https://stream1.freetv.fun/nuview-tv-2.m3u8
 #EXTINF:-1,[VGA]new vision tv (360p)
 https://stream1.freetv.fun/new-vision-tv-2.m3u8
-#EXTINF:-1,[BD]news12 brooklyn[geo-blocked]
+#EXTINF:-1,[BD]news12 brooklyn
 https://stream1.freetv.fun/news12-brooklyn-1.m3u8
 #EXTINF:-1,[BD]news nation
 https://stream1.freetv.fun/news-nation-1.m3u8
@@ -44761,15 +44745,13 @@ https://stream1.freetv.fun/nickelodeon-8.ctv
 https://stream1.freetv.fun/nickelodeon-15.m3u8
 #EXTINF:-1,[HD]ช่อง nickelodeon
 https://stream1.freetv.fun/ch-ng-nickelodeon-2.m3u8
-#EXTINF:-1,[SD]us nickelodeon east
+#EXTINF:-1,[BD]us nickelodeon east
 https://stream1.freetv.fun/us-nickelodeon-east-1.ctv
-#EXTINF:-1,[BD]nickelodeon baltic
-https://stream1.freetv.fun/nickelodeon-baltic-1.m3u8
 #EXTINF:-1,[SD]nickelodeon (uk) ==
 https://stream1.freetv.fun/nickelodeon-1.ctv
 #EXTINF:-1,[SD]nickelodeon (uk) =
 https://stream1.freetv.fun/nickelodeon-17.ctv
-#EXTINF:-1,[HD]nickelodeon *wj[geo-blocked]
+#EXTINF:-1,[HD]nickelodeon *wj
 https://stream1.freetv.fun/nickelodeon--wj-1.m3u8
 #EXTINF:-1,[HD]nicktoons
 https://stream1.freetv.fun/nicktoons-11.m3u8
@@ -44781,7 +44763,7 @@ https://stream1.freetv.fun/nicktoons--m-1.ctv
 https://stream1.freetv.fun/nicktoons--m-2.ctv
 #EXTINF:-1,[SD]nicktoons
 https://stream1.freetv.fun/nicktoons-6.m3u8
-#EXTINF:-1,[SD]nicktoons cis ==[geo-blocked]
+#EXTINF:-1,[SD]nicktoons cis ==
 https://stream1.freetv.fun/nicktoons-cis-1.ctv
 #EXTINF:-1,[SD]nicktoons cis =
 https://stream1.freetv.fun/nicktoons-cis-3.ctv
@@ -44791,7 +44773,7 @@ https://stream1.freetv.fun/nicktoons-10.m3u8
 https://stream1.freetv.fun/nile-comedy-1.ctv
 #EXTINF:-1,[HD]bx culture
 https://stream1.freetv.fun/bx-culture-1.m3u8
-#EXTINF:-1,[BD]nile family =[geo-blocked]
+#EXTINF:-1,[BD]nile family =
 https://stream1.freetv.fun/nile-family-1.ctv
 #EXTINF:-1,[SD]family ties
 https://stream1.freetv.fun/family-ties-1.m3u8
@@ -44941,7 +44923,7 @@ https://stream1.freetv.fun/outdoor-channel--m-1.ctv
 https://stream1.freetv.fun/ch-ng-outdoor-channel-1.m3u8
 #EXTINF:-1,[SD]outdoor channel
 https://stream1.freetv.fun/outdoor-channel-5.m3u8
-#EXTINF:-1,[SD]outdoor channel ==[geo-blocked]
+#EXTINF:-1,[SD]outdoor channel ==
 https://stream1.freetv.fun/outdoor-channel-2.ctv
 #EXTINF:-1,[SD]outdoor channel =
 https://stream1.freetv.fun/outdoor-channel-8.ctv
@@ -44959,19 +44941,19 @@ https://stream1.freetv.fun/inside-outside-2.m3u8
 https://stream1.freetv.fun/oxygen-east-2.m3u8
 #EXTINF:-1,[HD]us oxygen
 https://stream1.freetv.fun/us-oxygen-1.ctv
-#EXTINF:-1,[BD]us oxygen
+#EXTINF:-1,[SD]us oxygen
 https://stream1.freetv.fun/us-oxygen-2.ctv
 #EXTINF:-1,[BD]q-music
 https://stream1.freetv.fun/q-music-1.m3u8
 #EXTINF:-1,[BD]music top
 https://stream1.freetv.fun/music-top-1.m3u8
-#EXTINF:-1,[HD]paramount plus picks
+#EXTINF:-1,[SD]paramount plus picks
 https://stream1.freetv.fun/paramount-plus-picks-1.m3u8
 #EXTINF:-1,[BD]paramount
 https://stream1.freetv.fun/paramount-4.m3u8
 #EXTINF:-1,[HD]paramount network *m[geo-blocked]
 https://stream1.freetv.fun/paramount-network--m-1.ctv
-#EXTINF:-1,[BD]paramount network *m[geo-blocked]
+#EXTINF:-1,[HD]paramount network *m[geo-blocked]
 https://stream1.freetv.fun/paramount-network--m-2.ctv
 #EXTINF:-1,[SD]paramount plus picks
 https://stream1.freetv.fun/paramount-plus-picks-2.m3u8
@@ -45041,7 +45023,7 @@ https://stream1.freetv.fun/paramount-network-east-2.m3u8
 https://stream1.freetv.fun/us-paramount-network-1.ctv
 #EXTINF:-1,[BD]paramount network spain
 https://stream1.freetv.fun/paramount-network-spain-1.m3u8
-#EXTINF:-1,[BD]paramount network ==[geo-blocked]
+#EXTINF:-1,[BD]paramount network ==
 https://stream1.freetv.fun/paramount-network-6.ctv
 #EXTINF:-1,[BD]paramount network =
 https://stream1.freetv.fun/paramount-network-2.ctv
@@ -45091,13 +45073,13 @@ https://stream1.freetv.fun/premier-sports-5-1.m3u8
 https://stream1.freetv.fun/premier-sports-2-1.m3u8
 #EXTINF:-1,[HD]premier sports 1
 https://stream1.freetv.fun/premier-sports-1-1.m3u8
-#EXTINF:-1,[BD]premiere
+#EXTINF:-1,[BD]premiere[geo-blocked]
 https://stream1.freetv.fun/premiere-2.ctv
 #EXTINF:-1,[HD]ช่อง private
 https://stream1.freetv.fun/ch-ng-private-1.m3u8
 #EXTINF:-1,[HD]ช่อง private tv
 https://stream1.freetv.fun/ch-ng-private-tv-1.m3u8
-#EXTINF:-1,[SD]tna wrestling
+#EXTINF:-1,[HD]tna wrestling
 https://stream1.freetv.fun/tna-wrestling-4.m3u8
 #EXTINF:-1,[HD]qatar tv 2
 https://stream1.freetv.fun/qatar-tv-2-2.m3u8
@@ -45161,7 +45143,7 @@ https://stream1.freetv.fun/rede-tv--es-1.m3u8
 https://stream1.freetv.fun/retv-1.m3u8
 #EXTINF:-1,[HD]reelz
 https://stream1.freetv.fun/reelz-2.m3u8
-#EXTINF:-1,[HD]plus 4[geo-blocked]
+#EXTINF:-1,[HD]plus 4
 https://stream1.freetv.fun/plus-4-1.ctv
 #EXTINF:-1,[SD]pluto tv retro kid
 https://stream1.freetv.fun/pluto-tv-retro-kid-1.m3u8
@@ -45171,7 +45153,7 @@ https://stream1.freetv.fun/rete-oro-tv-1.m3u8
 https://stream1.freetv.fun/rfh-1.m3u8
 #EXTINF:-1,[HD]360 rftv
 https://stream1.freetv.fun/360-rftv-1.m3u8
-#EXTINF:-1,[VGA]rik sat
+#EXTINF:-1,[HD]rik sat
 https://stream1.freetv.fun/rik-sat-1.m3u8
 #EXTINF:-1,[BD]rik sat cyprus
 https://stream1.freetv.fun/rik-sat-cyprus-1.m3u8
@@ -45211,10 +45193,6 @@ https://stream1.freetv.fun/rtg-1.m3u8
 https://stream1.freetv.fun/rtg-tv-1.m3u8
 #EXTINF:-1,[HD]rtg tv
 https://stream1.freetv.fun/rtg-tv-2.m3u8
-#EXTINF:-1,[HD]rthk-32
-https://stream1.freetv.fun/rthk-32-2.ctv
-#EXTINF:-1,[HD]rthk-32
-https://stream1.freetv.fun/rthk-32-1.ctv
 #EXTINF:-1,[HD]rthk32 *wj
 https://stream1.freetv.fun/rthk32--wj-3.m3u8
 #EXTINF:-1,[HD]rthk32 *wj
@@ -45223,8 +45201,6 @@ https://stream1.freetv.fun/rthk32--wj-2.m3u8
 https://stream1.freetv.fun/rthk32--wj-1.m3u8
 #EXTINF:-1,[HD]rthk32[geo-blocked]
 https://stream1.freetv.fun/rthk32-3.ctv
-#EXTINF:-1,[HD]rthk-32
-https://stream1.freetv.fun/rthk-32-3.ctv
 #EXTINF:-1,[SD]rtl[geo-blocked]
 https://stream1.freetv.fun/rtl-1.m3u8
 #EXTINF:-1,[BD]rta sport
@@ -45263,6 +45239,8 @@ https://stream1.freetv.fun/azteca-internacional-3.m3u8
 https://stream1.freetv.fun/madeira-1.m3u8
 #EXTINF:-1,[SD]rtp madeira[geo-blocked]
 https://stream1.freetv.fun/rtp-madeira-1.m3u8
+#EXTINF:-1,[SD]rtp madeira[geo-blocked]
+https://stream1.freetv.fun/rtp-madeira-2.m3u8
 #EXTINF:-1,[HD]rts 2[geo-blocked]
 https://stream1.freetv.fun/rts-2-3.m3u8
 #EXTINF:-1,[SD]rts 2
@@ -45533,16 +45511,12 @@ https://stream1.freetv.fun/sky-news-12.m3u8
 https://stream1.freetv.fun/sky-news-14.m3u8
 #EXTINF:-1,[BD]sky news[geo-blocked]
 https://stream1.freetv.fun/sky-news-1.ctv
-#EXTINF:-1,[BD]sky news now
+#EXTINF:-1,[HD]sky news now
 https://stream1.freetv.fun/sky-news-now-1.m3u8
 #EXTINF:-1,[BD]sky sports news ==
 https://stream1.freetv.fun/sky-sports-news-1.ctv
 #EXTINF:-1,[HD]ช่อง sky sports football
 https://stream1.freetv.fun/ch-ng-sky-sports-football-1.m3u8
-#EXTINF:-1,[BD]sky mix *m[geo-blocked]
-https://stream1.freetv.fun/sky-mix--m-2.ctv
-#EXTINF:-1,[HD]sky mix *m[geo-blocked]
-https://stream1.freetv.fun/sky-mix--m-1.ctv
 #EXTINF:-1,[BD]sky sports mix=
 https://stream1.freetv.fun/sky-sports-mix-2.ctv
 #EXTINF:-1,[HD]ช่อง sky sports mix
@@ -45561,9 +45535,7 @@ https://stream1.freetv.fun/cine-sony-1.m3u8
 https://stream1.freetv.fun/sony-sports-ten-1-3.ctv
 #EXTINF:-1,[HD]tv 4
 https://stream1.freetv.fun/tv-4-3.m3u8
-#EXTINF:-1,[HD]spotv *wj
-https://stream1.freetv.fun/spotv--wj-1.m3u8
-#EXTINF:-1,[HD]spotv 2 *wj
+#EXTINF:-1,[HD]spotv 2 *wj[geo-blocked]
 https://stream1.freetv.fun/spotv-2--wj-1.m3u8
 #EXTINF:-1,[BD]star channel
 https://stream1.freetv.fun/star-channel-5.m3u8
@@ -45591,7 +45563,7 @@ https://stream1.freetv.fun/sgtv-3.m3u8
 https://stream1.freetv.fun/abaza-tv-1.m3u8
 #EXTINF:-1,[VGA]safari tv
 https://stream1.freetv.fun/safari-tv-1.m3u8
-#EXTINF:-1,[HD]sfera tv
+#EXTINF:-1,[VGA]sfera tv
 https://stream1.freetv.fun/sfera-tv-1.m3u8
 #EXTINF:-1,[HD]salto 1
 https://stream1.freetv.fun/salto-1-1.m3u8
@@ -45613,7 +45585,7 @@ https://stream1.freetv.fun/saga-tv-2.ctv
 https://stream1.freetv.fun/sana-tv-1.m3u8
 #EXTINF:-1,[VGA]janam tv[geo-blocked]
 https://stream1.freetv.fun/janam-tv-1.m3u8
-#EXTINF:-1,[VGA]sansad tv (1080p) [not 24/7][geo-blocked]
+#EXTINF:-1,[BD]sansad tv (1080p) [not 24/7][geo-blocked]
 https://stream1.freetv.fun/sansad-tv-1.m3u8
 #EXTINF:-1,[SD]sankhya tv (720p)
 https://stream1.freetv.fun/sankhya-tv-2.m3u8
@@ -45637,7 +45609,7 @@ https://stream1.freetv.fun/shakthi-tv-2.m3u8
 https://stream1.freetv.fun/sharjah-tv-2-1.m3u8
 #EXTINF:-1,[BD]maraya sharjah
 https://stream1.freetv.fun/maraya-sharjah-1.m3u8
-#EXTINF:-1,[BD]sharjah sports
+#EXTINF:-1,[HD]sharjah sports
 https://stream1.freetv.fun/sharjah-sports-1.m3u8
 #EXTINF:-1,[SD]sharjah sports (1080p) [geo-blocked]
 https://stream1.freetv.fun/sharjah-sports-2.m3u8
@@ -45649,7 +45621,7 @@ https://stream1.freetv.fun/classic-arts-showcase-2.m3u8
 https://stream1.freetv.fun/classic-arts-showcase-1.m3u8
 #EXTINF:-1,[HD]ช่อง showcase
 https://stream1.freetv.fun/ch-ng-showcase-1.m3u8
-#EXTINF:-1,[BD]showtime--
+#EXTINF:-1,[BD]showtime--[geo-blocked]
 https://stream1.freetv.fun/showtime-13.ctv
 #EXTINF:-1,[HD]showtime =
 https://stream1.freetv.fun/showtime-15.ctv
@@ -45683,7 +45655,7 @@ https://stream1.freetv.fun/sakshi-tv-1.m3u8
 https://stream1.freetv.fun/sky-atlantic--m-1.ctv
 #EXTINF:-1,[BD]sky cinema--
 https://stream1.freetv.fun/sky-cinema-1.ctv
-#EXTINF:-1,[HD]sky cinema action=
+#EXTINF:-1,[BD]sky cinema action=
 https://stream1.freetv.fun/sky-cinema-action-2.ctv
 #EXTINF:-1,[HD]sky cinema ==
 https://stream1.freetv.fun/sky-cinema-6.ctv
@@ -45691,9 +45663,9 @@ https://stream1.freetv.fun/sky-cinema-6.ctv
 https://stream1.freetv.fun/sky-cinema-4.ctv
 #EXTINF:-1,[BD]sky cinema action *m[geo-blocked]
 https://stream1.freetv.fun/sky-cinema-action--m-4.ctv
-#EXTINF:-1,[HD]sky cinema action ==
+#EXTINF:-1,[BD]sky cinema action ==
 https://stream1.freetv.fun/sky-cinema-action-3.ctv
-#EXTINF:-1,[BD]sky cinema action *m[geo-blocked]
+#EXTINF:-1,[HD]sky cinema action *m[geo-blocked]
 https://stream1.freetv.fun/sky-cinema-action--m-1.ctv
 #EXTINF:-1,[BD]sky cinema action *m[geo-blocked]
 https://stream1.freetv.fun/sky-cinema-action--m-3.ctv
@@ -45719,7 +45691,7 @@ https://stream1.freetv.fun/cinevault-classics-1.m3u8
 https://stream1.freetv.fun/samuel-goldwyn-classics-1.m3u8
 #EXTINF:-1,[SD]top rank classics
 https://stream1.freetv.fun/top-rank-classics-2.m3u8
-#EXTINF:-1,[HD]black classics
+#EXTINF:-1,[SD]black classics
 https://stream1.freetv.fun/black-classics-1.m3u8
 #EXTINF:-1,[VGA]cartoon classics
 https://stream1.freetv.fun/cartoon-classics-2.m3u8
@@ -45741,7 +45713,7 @@ https://stream1.freetv.fun/sky-comedy-3.ctv
 https://stream1.freetv.fun/sky-comedy--s-1.m3u8
 #EXTINF:-1,[BD]sky drama (de)=
 https://stream1.freetv.fun/sky-drama-1.ctv
-#EXTINF:-1,[BD]sky cinema hits *m[geo-blocked]
+#EXTINF:-1,[HD]sky cinema hits *m[geo-blocked]
 https://stream1.freetv.fun/sky-cinema-hits--m-2.ctv
 #EXTINF:-1,[BD]sky cinema hits *m[geo-blocked]
 https://stream1.freetv.fun/sky-cinema-hits--m-1.ctv
@@ -45751,8 +45723,6 @@ https://stream1.freetv.fun/krimi-1.m3u8
 https://stream1.freetv.fun/sky-cinema-drama-romantic--m-1.ctv
 #EXTINF:-1,[BD]sky drama ==
 https://stream1.freetv.fun/sky-drama-2.ctv
-#EXTINF:-1,[BD]sky movies drama romance uk ==[geo-blocked]
-https://stream1.freetv.fun/sky-movies-drama-romance-uk-3.ctv
 #EXTINF:-1,[BD]sky movies drama romance uk =
 https://stream1.freetv.fun/sky-movies-drama-romance-uk-1.ctv
 #EXTINF:-1,[BD]sky movies greats *m[geo-blocked]
@@ -45765,17 +45735,17 @@ https://stream1.freetv.fun/sky-cinema-sci-fi--m-2.ctv
 https://stream1.freetv.fun/sky-cinema-sci-fi--m-1.ctv
 #EXTINF:-1,[BD]sky movies sci-fi horror uk=
 https://stream1.freetv.fun/sky-movies-sci-fi-horror-uk-3.ctv
-#EXTINF:-1,[HD]24/7 horror movies
+#EXTINF:-1,[BD]24/7 horror movies[geo-blocked]
 https://stream1.freetv.fun/24-7-horror-movies-1.ctv
 #EXTINF:-1,[BD]sky cinema greats *m[geo-blocked]
 https://stream1.freetv.fun/sky-cinema-greats--m-1.ctv
-#EXTINF:-1,[BD]sky cinema premier *m[geo-blocked]
+#EXTINF:-1,[HD]sky cinema premier *m[geo-blocked]
 https://stream1.freetv.fun/sky-cinema-premier--m-2.ctv
 #EXTINF:-1,[BD]sky movies premier *m[geo-blocked]
 https://stream1.freetv.fun/sky-movies-premier--m-1.ctv
 #EXTINF:-1,[BD]sky cinema premier *m[geo-blocked]
 https://stream1.freetv.fun/sky-cinema-premier--m-1.ctv
-#EXTINF:-1,[HD]sky movies premiere uk *s[geo-blocked]
+#EXTINF:-1,[BD]sky movies premiere uk *s[geo-blocked]
 https://stream1.freetv.fun/sky-movies-premiere-uk--s-1.m3u8
 #EXTINF:-1,[BD]sky cinema scifi horror *m[geo-blocked]
 https://stream1.freetv.fun/sky-cinema-scifi-horror--m-1.ctv
@@ -45787,7 +45757,7 @@ https://stream1.freetv.fun/sky-movies-thriller--m-1.ctv
 https://stream1.freetv.fun/movies-thriller-1.m3u8
 #EXTINF:-1,[BD]mbc movies thriller
 https://stream1.freetv.fun/mbc-movies-thriller-1.m3u8
-#EXTINF:-1,[BD]thriller
+#EXTINF:-1,[BD]thriller[geo-blocked]
 https://stream1.freetv.fun/thriller-2.ctv
 #EXTINF:-1,[BD]pbs nature
 https://stream1.freetv.fun/pbs-nature-1.m3u8
@@ -45809,7 +45779,7 @@ https://stream1.freetv.fun/sky-sports-laliga-1.m3u8
 https://stream1.freetv.fun/sky-sports-f1-6.ctv
 #EXTINF:-1,[BD]sky sports f1 ==
 https://stream1.freetv.fun/sky-sports-f1-4.ctv
-#EXTINF:-1,[BD]sky sports f1-
+#EXTINF:-1,[BD]sky sports f1-[geo-blocked]
 https://stream1.freetv.fun/sky-sports-f1-9.ctv
 #EXTINF:-1,[BD]sky sports f1 *y
 https://stream1.freetv.fun/sky-sports-f1--y-1.ctv
@@ -45913,7 +45883,7 @@ https://stream1.freetv.fun/us-root-sports-network-1.ctv
 https://stream1.freetv.fun/fanduel-sports-network-1.m3u8
 #EXTINF:-1,[SD]fanduel sports network socal
 https://stream1.freetv.fun/fanduel-sports-network-socal-1.m3u8
-#EXTINF:-1,[SD]fanduel sports network detroit
+#EXTINF:-1,[SD]fanduel sports network detroit[geo-blocked]
 https://stream1.freetv.fun/fanduel-sports-network-detroit-1.m3u8
 #EXTINF:-1,[HD]fanduel sports network florida
 https://stream1.freetv.fun/fanduel-sports-network-florida-1.m3u8
@@ -45935,7 +45905,7 @@ https://stream1.freetv.fun/ch-ng-sportsnet-one-1.m3u8
 https://stream1.freetv.fun/ch-ng-sportsnet-1.m3u8
 #EXTINF:-1,[HD]ช่อง sportsnet 360
 https://stream1.freetv.fun/ch-ng-sportsnet-360-1.m3u8
-#EXTINF:-1,[HD]ca sportsnet one
+#EXTINF:-1,[BD]ca sportsnet one
 https://stream1.freetv.fun/ca-sportsnet-one-1.ctv
 #EXTINF:-1,[SD]sportsnet one--
 https://stream1.freetv.fun/sportsnet-one-5.ctv
@@ -45963,13 +45933,13 @@ https://stream1.freetv.fun/sportsnet-pacific-11.ctv
 https://stream1.freetv.fun/sportsnet-pacific-6.ctv
 #EXTINF:-1,[BD]sportsnet pacific--
 https://stream1.freetv.fun/sportsnet-pacific-7.ctv
-#EXTINF:-1,[HD]sportsnet pacific
+#EXTINF:-1,[HD]sportsnet pacific[geo-blocked]
 https://stream1.freetv.fun/sportsnet-pacific-3.ctv
 #EXTINF:-1,[HD]sportsnet west
 https://stream1.freetv.fun/sportsnet-west-4.m3u8
-#EXTINF:-1,[HD]sportsnet west ==
+#EXTINF:-1,[BD]sportsnet west ==
 https://stream1.freetv.fun/sportsnet-west-3.ctv
-#EXTINF:-1,[HD]sportsnet west =
+#EXTINF:-1,[BD]sportsnet west =
 https://stream1.freetv.fun/sportsnet-west-2.ctv
 #EXTINF:-1,[BD]ca sportsnet world
 https://stream1.freetv.fun/ca-sportsnet-world-1.ctv
@@ -45977,7 +45947,7 @@ https://stream1.freetv.fun/ca-sportsnet-world-1.ctv
 https://stream1.freetv.fun/televizija-m-1.m3u8
 #EXTINF:-1,[VGA]televizija 5[geo-blocked]
 https://stream1.freetv.fun/televizija-5-2.m3u8
-#EXTINF:-1,[BD]sportsnet east ==[geo-blocked]
+#EXTINF:-1,[BD]sportsnet east ==
 https://stream1.freetv.fun/sportsnet-east-5.ctv
 #EXTINF:-1,[BD]sportsnet east =
 https://stream1.freetv.fun/sportsnet-east-4.ctv
@@ -45991,13 +45961,13 @@ https://stream1.freetv.fun/sportsnet-ontario-2.ctv
 https://stream1.freetv.fun/ca-sportsnet-ontario-1.ctv
 #EXTINF:-1,[VGA]sportsnet ontario--
 https://stream1.freetv.fun/sportsnet-ontario-1.ctv
-#EXTINF:-1,[HD]sportsnet ontario ==[geo-blocked]
+#EXTINF:-1,[HD]sportsnet ontario ==
 https://stream1.freetv.fun/sportsnet-ontario-6.ctv
 #EXTINF:-1,[VGA]sportsnet ontario-
 https://stream1.freetv.fun/sportsnet-ontario-3.ctv
 #EXTINF:-1,[HD]sportsnet ontario =
 https://stream1.freetv.fun/sportsnet-ontario-5.ctv
-#EXTINF:-1,[BD]sportsnet ontario
+#EXTINF:-1,[HD]sportsnet ontario
 https://stream1.freetv.fun/sportsnet-ontario-4.m3u8
 #EXTINF:-1,[HD]ช่อง sportsnet ontario
 https://stream1.freetv.fun/ch-ng-sportsnet-ontario-1.m3u8
@@ -46079,7 +46049,7 @@ https://stream1.freetv.fun/starz-cinema--s-1.m3u8
 https://stream1.freetv.fun/starz-cinema-4.ctv
 #EXTINF:-1,[HD]starz encore classic east
 https://stream1.freetv.fun/starz-encore-classic-east-1.m3u8
-#EXTINF:-1,[SD]starz encore *s[geo-blocked]
+#EXTINF:-1,[HD]starz encore *s[geo-blocked]
 https://stream1.freetv.fun/starz-encore--s-1.m3u8
 #EXTINF:-1,[SD]starz encore =
 https://stream1.freetv.fun/starz-encore-12.ctv
@@ -46145,8 +46115,12 @@ https://stream1.freetv.fun/bx-inspire-2.m3u8
 https://stream1.freetv.fun/tbn-inspire-1.m3u8
 #EXTINF:-1,[BD]tbn
 https://stream1.freetv.fun/tbn-3.m3u8
+#EXTINF:-1,[HD]cctv-2
+https://stream1.freetv.fun/cctv-2-17.ctv
 #EXTINF:-1,[SD]cctv-02[geo-blocked]
 https://stream1.freetv.fun/cctv-02-1.ctv
+#EXTINF:-1,[BD]cctv-2[geo-blocked]
+https://stream1.freetv.fun/cctv-2-26.ctv
 #EXTINF:-1,[BD]usa cmt
 https://stream1.freetv.fun/usa-cmt-1.ctv
 #EXTINF:-1,[BD]team usa
@@ -46271,7 +46245,7 @@ https://stream1.freetv.fun/trt-turk-2.m3u8
 https://stream1.freetv.fun/ert-world-2.m3u8
 #EXTINF:-1,[BD]tvri world
 https://stream1.freetv.fun/tvri-world-4.m3u8
-#EXTINF:-1,[SD]tvri world[geo-blocked]
+#EXTINF:-1,[SD]tvri world
 https://stream1.freetv.fun/tvri-world-2.m3u8
 #EXTINF:-1,[BD]trt world
 https://stream1.freetv.fun/trt-world-4.m3u8
@@ -46279,7 +46253,7 @@ https://stream1.freetv.fun/trt-world-4.m3u8
 https://stream1.freetv.fun/trt-world-3.m3u8
 #EXTINF:-1,[HD]ช่อง tsn 1
 https://stream1.freetv.fun/ch-ng-tsn-1-1.m3u8
-#EXTINF:-1,[SD]tsn 1 (usa)--[geo-blocked]
+#EXTINF:-1,[SD]tsn 1 (usa)--
 https://stream1.freetv.fun/tsn-1-4.ctv
 #EXTINF:-1,[SD]tsn 1 (usa) ==[geo-blocked]
 https://stream1.freetv.fun/tsn-1-1.ctv
@@ -46291,9 +46265,9 @@ https://stream1.freetv.fun/tsn-1-3.ctv
 https://stream1.freetv.fun/ch-ng-tsn-2-1.m3u8
 #EXTINF:-1,[BD]ca tsn 2
 https://stream1.freetv.fun/ca-tsn-2-1.ctv
-#EXTINF:-1,[BD]tsn 2 (usa) ==
+#EXTINF:-1,[BD]tsn 2 (usa) ==[geo-blocked]
 https://stream1.freetv.fun/tsn-2-3.ctv
-#EXTINF:-1,[BD]tsn 2 (usa)--[geo-blocked]
+#EXTINF:-1,[BD]tsn 2 (usa)--
 https://stream1.freetv.fun/tsn-2-5.ctv
 #EXTINF:-1,[BD]tsn 2 (usa) =
 https://stream1.freetv.fun/tsn-2-6.ctv
@@ -46507,7 +46481,7 @@ https://stream1.freetv.fun/etv-plus-1.m3u8
 https://stream1.freetv.fun/tvb-plus-4.ctv
 #EXTINF:-1,[BD]tvbplus
 https://stream1.freetv.fun/tvbplus-3.ctv
-#EXTINF:-1,[HD]etv plus
+#EXTINF:-1,[VGA]etv plus
 https://stream1.freetv.fun/etv-plus-2.m3u8
 #EXTINF:-1,[BD]tvbplus
 https://stream1.freetv.fun/tvbplus-6.ctv
@@ -46575,8 +46549,6 @@ https://stream1.freetv.fun/tvn--wj-1.m3u8
 https://stream1.freetv.fun/ewtn-poland-1.m3u8
 #EXTINF:-1,[BD]tvn5
 https://stream1.freetv.fun/tvn5-2.m3u8
-#EXTINF:-1,[HD]tvn
-https://stream1.freetv.fun/tvn-4.ctv
 #EXTINF:-1,[BD]tvn 3
 https://stream1.freetv.fun/tvn-3-1.m3u8
 #EXTINF:-1,[BD]tvn
@@ -46597,7 +46569,7 @@ https://stream1.freetv.fun/tvri-yogyakarta-2.m3u8
 https://stream1.freetv.fun/tvri-dki-jakarta-1.m3u8
 #EXTINF:-1,[BD]tvri yogyakarta
 https://stream1.freetv.fun/tvri-yogyakarta-1.m3u8
-#EXTINF:-1,[BD]tvri jakarta[geo-blocked]
+#EXTINF:-1,[BD]tvri jakarta
 https://stream1.freetv.fun/tvri-jakarta-2.m3u8
 #EXTINF:-1,[BD]tvri nasional
 https://stream1.freetv.fun/tvri-nasional-1.m3u8
@@ -46815,11 +46787,11 @@ https://stream1.freetv.fun/trace-urban--y-1.m3u8
 https://stream1.freetv.fun/trace-urban-4.m3u8
 #EXTINF:-1,[BD]trace urban
 https://stream1.freetv.fun/trace-urban-9.m3u8
-#EXTINF:-1,[BD]trans 7 *id
+#EXTINF:-1,[BD]trans 7 *id[geo-blocked]
 https://stream1.freetv.fun/trans-7--id-1.ctv
 #EXTINF:-1,[HD]ช่อง trans tv
 https://stream1.freetv.fun/ch-ng-trans-tv-1.m3u8
-#EXTINF:-1,[BD]trans tv *id[geo-blocked]
+#EXTINF:-1,[BD]trans tv *id
 https://stream1.freetv.fun/trans-tv--id-1.ctv
 #EXTINF:-1,[HD]trans tv
 https://stream1.freetv.fun/trans-tv-2.m3u8
@@ -46827,7 +46799,7 @@ https://stream1.freetv.fun/trans-tv-2.m3u8
 https://stream1.freetv.fun/trans7-1.m3u8
 #EXTINF:-1,[HD]travel channel *m[geo-blocked]
 https://stream1.freetv.fun/travel-channel--m-1.ctv
-#EXTINF:-1,[BD]travel channel[geo-blocked]
+#EXTINF:-1,[BD]travel channel
 https://stream1.freetv.fun/travel-channel-5.ctv
 #EXTINF:-1,[HD]ช่อง treehouse
 https://stream1.freetv.fun/ch-ng-treehouse-2.m3u8
@@ -46859,7 +46831,7 @@ https://stream1.freetv.fun/universal-monsters-1.m3u8
 https://stream1.freetv.fun/tv-universal-1.m3u8
 #EXTINF:-1,[BD]univer tv[geo-blocked]
 https://stream1.freetv.fun/univer-tv-1.m3u8
-#EXTINF:-1,[BD]univer tv[geo-blocked]
+#EXTINF:-1,[BD]univer tv
 https://stream1.freetv.fun/univer-tv-2.m3u8
 #EXTINF:-1,[BD]univer tv[geo-blocked]
 https://stream1.freetv.fun/univer-tv-3.m3u8
@@ -46875,7 +46847,7 @@ https://stream1.freetv.fun/ch-ng-usa-network-1.m3u8
 https://stream1.freetv.fun/us-usa-network-1.ctv
 #EXTINF:-1,[HD]usa network
 https://stream1.freetv.fun/usa-network-2.m3u8
-#EXTINF:-1,[SD]usa network ==
+#EXTINF:-1,[HD]usa network ==[geo-blocked]
 https://stream1.freetv.fun/usa-network-3.ctv
 #EXTINF:-1,[SD]usa network =
 https://stream1.freetv.fun/usa-network-1.ctv
@@ -46957,7 +46929,7 @@ https://stream1.freetv.fun/vevo-country-2.m3u8
 https://stream1.freetv.fun/vevo-latino-2.m3u8
 #EXTINF:-1,[HD]vevo true school hip-hop
 https://stream1.freetv.fun/vevo-true-school-hip-hop-2.m3u8
-#EXTINF:-1,[SD]vevo '80s
+#EXTINF:-1,[SD]vevo '80s[geo-blocked]
 https://stream1.freetv.fun/vevo--80s-3.m3u8
 #EXTINF:-1,[SD]vevo retro rock
 https://stream1.freetv.fun/vevo-retro-rock-4.m3u8
@@ -46969,9 +46941,9 @@ https://stream1.freetv.fun/vevo-pop-fast-1.m3u8
 https://stream1.freetv.fun/vevo-retro-rock-5.m3u8
 #EXTINF:-1,[BD]vevo 2k
 https://stream1.freetv.fun/vevo-2k-1.m3u8
-#EXTINF:-1,[HD]vevo '90s
+#EXTINF:-1,[SD]vevo '90s
 https://stream1.freetv.fun/vevo--90s-1.ctv
-#EXTINF:-1,[HD]vevo '80s
+#EXTINF:-1,[HD]vevo '80s[geo-blocked]
 https://stream1.freetv.fun/vevo--80s-2.m3u8
 #EXTINF:-1,[HD]vevo retro rock
 https://stream1.freetv.fun/vevo-retro-rock-2.m3u8
@@ -46995,7 +46967,7 @@ https://stream1.freetv.fun/us-vh1-1.ctv
 https://stream1.freetv.fun/mtv-classic-1.m3u8
 #EXTINF:-1,[HD]mtv classic[geo-blocked]
 https://stream1.freetv.fun/mtv-classic-3.m3u8
-#EXTINF:-1,[BD]plus 1[geo-blocked]
+#EXTINF:-1,[BD]plus 1
 https://stream1.freetv.fun/plus-1-1.ctv
 #EXTINF:-1,[HD]tribe tv
 https://stream1.freetv.fun/tribe-tv-1.m3u8
@@ -47045,12 +47017,12 @@ https://stream1.freetv.fun/viutv-9.ctv
 https://stream1.freetv.fun/viutv-7.ctv
 #EXTINF:-1,[HD]viutv
 https://stream1.freetv.fun/viutv-3.ctv
-#EXTINF:-1,[HD]viutv6
-https://stream1.freetv.fun/viutv6-1.ctv
-#EXTINF:-1,[BD]viu6tv
-https://stream1.freetv.fun/viu6tv-1.ctv
-#EXTINF:-1,[HD]viu6tv
-https://stream1.freetv.fun/viu6tv-2.ctv
+#EXTINF:-1,[HD]viutv
+https://stream1.freetv.fun/viutv-2.ctv
+#EXTINF:-1,[BD]viutv
+https://stream1.freetv.fun/viutv-10.m3u8
+#EXTINF:-1,[BD]viutv6
+https://stream1.freetv.fun/viutv6-1.m3u8
 #EXTINF:-1,[HD]viutv
 https://stream1.freetv.fun/viutv-8.ctv
 #EXTINF:-1,[HD]viutv
@@ -47069,8 +47041,6 @@ https://stream1.freetv.fun/viutvsix-2.ctv
 https://stream1.freetv.fun/viutvsix--wj-1.m3u8
 #EXTINF:-1,[HD]viva
 https://stream1.freetv.fun/viva-2.ctv
-#EXTINF:-1,[HD]w-sport *wj
-https://stream1.freetv.fun/w-sport--wj-1.m3u8
 #EXTINF:-1,[HD]w-sports *v[geo-blocked]
 https://stream1.freetv.fun/w-sports--v-1.ctv
 #EXTINF:-1,[HD]wdr
@@ -47085,8 +47055,6 @@ https://stream1.freetv.fun/wnbc-dt1-2.m3u8
 https://stream1.freetv.fun/world-fashion-channel-2.m3u8
 #EXTINF:-1,[BD]global fashion channel (1080p)[geo-blocked]
 https://stream1.freetv.fun/global-fashion-channel-1.m3u8
-#EXTINF:-1,[SD]wwe
-https://stream1.freetv.fun/wwe-7.ctv
 #EXTINF:-1,[BD]wwe
 https://stream1.freetv.fun/wwe-9.m3u8
 #EXTINF:-1,[HD]w network
@@ -47133,7 +47101,7 @@ https://stream1.freetv.fun/wild-earth-2.m3u8
 https://stream1.freetv.fun/wild-earth--y-1.m3u8
 #EXTINF:-1,[SD]wildearth [geo-blocked]
 https://stream1.freetv.fun/wildearth-3.m3u8
-#EXTINF:-1,[SD]wild 'n out
+#EXTINF:-1,[HD]wild 'n out
 https://stream1.freetv.fun/wild--n-out-2.m3u8
 #EXTINF:-1,[SD]wild 'n out
 https://stream1.freetv.fun/wild--n-out-3.m3u8
@@ -47149,7 +47117,7 @@ https://stream1.freetv.fun/workpoint-tv-2.m3u8
 https://stream1.freetv.fun/us-world-fishing-network-1.ctv
 #EXTINF:-1,[BD]world fishing network ==
 https://stream1.freetv.fun/world-fishing-network-5.ctv
-#EXTINF:-1,[BD]world fishing network--[geo-blocked]
+#EXTINF:-1,[BD]world fishing network--
 https://stream1.freetv.fun/world-fishing-network-6.ctv
 #EXTINF:-1,[BD]world fishing network =
 https://stream1.freetv.fun/world-fishing-network-4.ctv
@@ -47165,13 +47133,13 @@ https://stream1.freetv.fun/world-poker-tour-7.m3u8
 https://stream1.freetv.fun/world-poker-tour-1.m3u8
 #EXTINF:-1,[BD]world poker tour[geo-blocked]
 https://stream1.freetv.fun/world-poker-tour-11.m3u8
-#EXTINF:-1,[HD]world poker tour[geo-blocked]
+#EXTINF:-1,[SD]world poker tour
 https://stream1.freetv.fun/world-poker-tour-9.m3u8
 #EXTINF:-1,[SD]world poker tour
 https://stream1.freetv.fun/world-poker-tour-10.m3u8
 #EXTINF:-1,[HD]ช่อง world poker tour
 https://stream1.freetv.fun/ch-ng-world-poker-tour-1.m3u8
-#EXTINF:-1,[SD]world poker tour (1080p)[geo-blocked]
+#EXTINF:-1,[SD]world poker tour (1080p)
 https://stream1.freetv.fun/world-poker-tour-3.m3u8
 #EXTINF:-1,[BD]world poker[geo-blocked]
 https://stream1.freetv.fun/world-poker-1.ctv
@@ -47409,13 +47377,13 @@ https://stream1.freetv.fun/band-news-1.m3u8
 https://stream1.freetv.fun/band-news-2.m3u8
 #EXTINF:-1,[SD]sun news
 https://stream1.freetv.fun/sun-news-2.ctv
-#EXTINF:-1,[BD]rta news
+#EXTINF:-1,[BD]rta news[geo-blocked]
 https://stream1.freetv.fun/rta-news-2.m3u8
 #EXTINF:-1,[BD]tele news
 https://stream1.freetv.fun/tele-news-1.m3u8
-#EXTINF:-1,[SD]4tv news
+#EXTINF:-1,[SD]4tv news[geo-blocked]
 https://stream1.freetv.fun/4tv-news-1.m3u8
-#EXTINF:-1,[BD]raj news
+#EXTINF:-1,[VGA]raj news
 https://stream1.freetv.fun/raj-news-1.m3u8
 #EXTINF:-1,[BD]salem news channel
 https://stream1.freetv.fun/salem-news-channel-2.m3u8
@@ -47475,7 +47443,7 @@ https://stream1.freetv.fun/himlen-tv7-1.m3u8
 https://stream1.freetv.fun/himlen-tv7-8.m3u8
 #EXTINF:-1,[SD]tv land drama
 https://stream1.freetv.fun/tv-land-drama-2.m3u8
-#EXTINF:-1,[HD]tv land drama
+#EXTINF:-1,[SD]tv land drama
 https://stream1.freetv.fun/tv-land-drama-1.m3u8
 #EXTINF:-1,[BD]vsin
 https://stream1.freetv.fun/vsin-1.m3u8
@@ -47673,7 +47641,7 @@ https://stream1.freetv.fun/sibir--24-3.m3u8
 https://stream1.freetv.fun/sibir--24-4.m3u8
 #EXTINF:-1,[SD]сибирь 24
 https://stream1.freetv.fun/sibir--24-5.m3u8
-#EXTINF:-1,[HD]спорт
+#EXTINF:-1,[BD]спорт
 https://stream1.freetv.fun/sport-1.m3u8
 #EXTINF:-1,[VGA]тв центр
 https://stream1.freetv.fun/tv-tsentr-1.m3u8
@@ -47783,13 +47751,11 @@ https://stream1.freetv.fun/si-ping-xin-wen-zong-he-1.m3u8
 https://stream1.freetv.fun/wu-yang-xin-wen-zong-he-1.m3u8
 #EXTINF:-1,[BD]台州新闻综合
 https://stream1.freetv.fun/tai-zhou-xin-wen-zong-he-5.m3u8
-#EXTINF:-1,[SD]合肥新闻
-https://stream1.freetv.fun/he-fei-xin-wen-13.m3u8
 #EXTINF:-1,[BD]吉林卫视
 https://stream1.freetv.fun/ji-lin-wei-shi-32.ctv
 #EXTINF:-1,[SD]周润发
 https://stream1.freetv.fun/zhou-run-fa-2.m3u8
-#EXTINF:-1,[SD]周润发
+#EXTINF:-1,[SD]周润发[geo-blocked]
 https://stream1.freetv.fun/zhou-run-fa-1.m3u8
 #EXTINF:-1,[BD]咪咕体育31[geo-blocked]
 https://stream1.freetv.fun/mi-gu-ti-yu-31-1.m3u8
@@ -47935,8 +47901,6 @@ https://stream1.freetv.fun/yan-xi-wei-shi-83.ctv
 https://stream1.freetv.fun/yan-xi-wei-shi-65.ctv
 #EXTINF:-1,[HD]广西卫视 *wj
 https://stream1.freetv.fun/yan-xi-wei-shi---wj-1.m3u8
-#EXTINF:-1,[BD]爱奇艺
-https://stream1.freetv.fun/ai-qi-yi-4.ctv
 #EXTINF:-1,[HD]爱奇艺
 https://stream1.freetv.fun/ai-qi-yi-6.ctv
 #EXTINF:-1,[HD]成都简阳新闻综合
@@ -48069,6 +48033,8 @@ https://stream1.freetv.fun/zhe-jiang-wei-shi-79.ctv
 https://stream1.freetv.fun/zhe-jiang-wei-shi-63.ctv
 #EXTINF:-1,[BD]浙江卫视[geo-blocked]
 https://stream1.freetv.fun/zhe-jiang-wei-shi-98.m3u8
+#EXTINF:-1,[BD]浙江卫视
+https://stream1.freetv.fun/zhe-jiang-wei-shi-71.ctv
 #EXTINF:-1,[BD]浙江卫视 *wj
 https://stream1.freetv.fun/zhe-jiang-wei-shi---wj-1.m3u8
 #EXTINF:-1,[BD]海南卫视
@@ -48167,6 +48133,10 @@ https://stream1.freetv.fun/ao-men-macau-2.m3u8
 https://stream1.freetv.fun/ao-men-zi-xun-2.m3u8
 #EXTINF:-1,[SD]吉林新闻综合
 https://stream1.freetv.fun/ji-lin-xin-wen-zong-he-1.m3u8
+#EXTINF:-1,[HD]甄子丹电影[geo-blocked]
+https://stream1.freetv.fun/zhen-zi-dan-dian-ying-6.ctv
+#EXTINF:-1,[HD]甄子丹电影[geo-blocked]
+https://stream1.freetv.fun/zhen-zi-dan-dian-ying-3.ctv
 #EXTINF:-1,[SD]甘肃卫视
 https://stream1.freetv.fun/gan-su-wei-shi-23.ctv
 #EXTINF:-1,[BD]生活时尚
@@ -48334,8 +48304,6 @@ https://stream1.freetv.fun/feng-huang-wei-shi-9.ctv
 #EXTINF:-1,[HD]凤凰资讯 *wj
 https://stream1.freetv.fun/feng-huang-zi-xun---wj-1.m3u8
 #EXTINF:-1,[HD]凤凰资讯 *wj
-https://stream1.freetv.fun/feng-huang-zi-xun---wj-2.m3u8
-#EXTINF:-1,[HD]凤凰资讯 *wj
 https://stream1.freetv.fun/feng-huang-zi-xun---wj-4.m3u8
 #EXTINF:-1,[HD]凤凰資訊 *wj
 https://stream1.freetv.fun/feng-huang-zi-xun---wj-3.m3u8
@@ -48403,7 +48371,7 @@ https://alimov2.a.kwimgs.com/upic/2023/01/13/20/BMjAyMzAxMTMyMDA5MjJfNDAzMDAxOTl
 https://alimov2.a.kwimgs.com/upic/2023/01/06/16/BMjAyMzAxMDYxNjMxMTNfNDAzMDAxOTlfOTI4OTY2ODAzNjlfMF8z_b_Bdee65c77f9e7b2120a185c919dad81d2.mp4
 #EXTINF:-1,2018年春晚
 https://alimov2.a.kwimgs.com/upic/2023/01/06/16/BMjAyMzAxMDYxNjMxMTRfNDAzMDAxOTlfOTI4OTY2ODE2MTBfMF8z_b_B11a778e34390a21de42d407e94f45b91.mp4
-#EXTINF:-1,2025-11-14 12:26:32
+#EXTINF:-1,2025-11-14 18:28:25
 https://vd3.bdstatic.com/mda-rja3mfxaxgr3uugw/1080p/cae_h264/1760187146239916730/mda-rja3mfxaxgr3uugw.mp4
 #EXTINF:-1,2025年春晚
 https://svip.high24-playback.com/20250129/17159_7bca93c4/2000k/hls/mixed.m3u8
@@ -48417,6 +48385,10 @@ http://8.138.7.223/【公众号：榴芒电视】/cctv1.m3u8
 http://lu.wqwqwq.sbs/itv/1000000006000233002.m3u8?cdn=ystenlive
 #EXTINF:-1,CCTV7
 http://8.138.7.223/【公众号：榴芒电视】/cctv7.m3u8
+#EXTINF:-1,CETV2
+http://gslbmgsplive.miguvideo.com/migu/kailu/cetv2/50/20240709/index.m3u8?msisdn=20250903090033bf55eab2bb984fe0b4ac863e60d28ac6&mdspid=&spid=699004&netType=0&sid=5910022152&pid=2028597139&timestamp=20250903090033&Channel_ID=0116_2600037000-99000-200300220100002&ProgramID=923287211&ParentNodeID=-99&assertID=5910022152&client_ip=106.13.250.83&SecurityKey=20250903090033&promotionId=&mvid=5900006638&mcid=500020&playurlVersion=WX-A1-8.8.1-RELEASE&userid=&jmhm=&videocodec=h264&bean=mgspad&tid=android&conFee=0&puData=ebfbdc6c83654112720d2b5599373223&ddCalcu=3e2bv2fa3ba7da3c969c5853b625d4012172&sv=10004&ct=android
+#EXTINF:-1,CETV4
+http://gslbmgsplive.miguvideo.com/migu/kailu/cetv4/50/20240709/index.m3u8?msisdn=2025090309003329cd481a5313461999ea66e0b5c14a1b&mdspid=&spid=699004&netType=0&sid=5910022154&pid=2028597139&timestamp=20250903090033&Channel_ID=0116_2600037000-99000-200300220100002&ProgramID=923287339&ParentNodeID=-99&assertID=5910022154&client_ip=106.13.250.83&SecurityKey=20250903090033&promotionId=&mvid=5900006640&mcid=500020&playurlVersion=WX-A1-8.8.1-RELEASE&userid=&jmhm=&videocodec=h264&bean=mgspad&tid=android&conFee=0&puData=a0dd23e241f091b5c99903fbe22f27e3&ddCalcu=3ae0v7da2dbf2a232ee2b4f13f0099919bc5&sv=10004&ct=android
 #EXTINF:-1,CGTN
 https://0472.org/hls/cgtn.m3u8
 #EXTINF:-1,CGTN
@@ -48437,10 +48409,12 @@ https://english-livetx.cgtn.com/hls/yypdjlctzb_hd.m3u8
 https://0472.org/hls/cgtnx.m3u8
 #EXTINF:-1,CGTN阿语
 https://0472.org/hls/cgtna.m3u8
-#EXTINF:-1,万荣综合
-http://60.222.246.220:19433/hls1.m3u8
+#EXTINF:-1,CHC动作电影
+https://live.chinacert.cftest5.cn/mg/?id=644368714
 #EXTINF:-1,上海卫视
 http://genglei.8866.org:9901/tsfile/live/1011_1.m3u8?key=txiptv&playlive=1&authid=0
+#EXTINF:-1,上视东方影视
+https://live.chinacert.cftest5.cn/mg/?id=617290047
 #EXTINF:-1,东莞新闻综合
 https://stream.sun0769.com/dgrtv1/mp4tv1_800/index.m3u8
 #EXTINF:-1,东莞生活资讯
@@ -48479,8 +48453,6 @@ http://live.dxhmt.cn:9081/tv/10225-1.m3u8
 https://liveout.btzx.com.cn/62ds9e/6o77s4.m3u8?zxinjd
 #EXTINF:-1,兵团八师石河子新闻综合
 http://124.88.144.73:1935/live/xwzh/playlist.m3u8?zxinjd
-#EXTINF:-1,内蒙古卫视
-http://182.150.23.74:808/hls/37/index.m3u8
 #EXTINF:-1,农林卫视
 http://8.138.7.223/【公众号：榴芒电视】/农林卫视.m3u8
 #EXTINF:-1,冰冰影剧
@@ -48493,10 +48465,12 @@ http://iot-mqqt.111yao.cn:8080/live/diyp_fhdy.m3u8
 http://play-flive.ifeng.com/live/06OLEEWQKN4.m3u8
 #EXTINF:-1,刀刀影院
 http://www.douzhicloud.site:35455/douyu/747764
+#EXTINF:-1,刑事侦缉档案
+http://www.douzhicloud.site:35455/huya/29465856
 #EXTINF:-1,刘德华电影
 https://live.ottiptv.cc/huya/11342424
-#EXTINF:-1,创世纪
-http://www.douzhicloud.site:35455/huya/29465852
+#EXTINF:-1,功夫电影
+https://live.ottiptv.cc/huya/11352941
 #EXTINF:-1,北京纪实科教8K
 https://gdcucc.v1.mk/gdcucc/brtv8k.m3u8
 #EXTINF:-1,华语影视
@@ -48508,23 +48482,25 @@ https://live.ottiptv.cc/huya/29982675
 #EXTINF:-1,古装武侠
 http://www.douzhicloud.site:35455/douyu/2793084
 #EXTINF:-1,周星驰电影
-http://www.douzhicloud.site:35455/huya/11342412
-#EXTINF:-1,哆啦A梦
-https://live.ottiptv.cc/huya/11601963
+http://live.ottiptv.cc/huya/11342412
+#EXTINF:-1,哈尔滨娱乐
+http://stream.hrbtv.net/ylpd/sd/live.m3u8?zheild#http://stream.hrbtv.net/ylpd/sd/live.m3u8#https://stream.hrbtv.net/ylpd/sd/live.m3u8
 #EXTINF:-1,哈尔滨都市咨询
 http://stream.hrbtv.net/zxpd/sd/live.m3u8?zheild
+#EXTINF:-1,喜羊羊与灰太狼
+https://live.ottiptv.cc/huya/23865080
 #EXTINF:-1,四海钓鱼
 http://120.76.248.139/live/bfgd/4200000229.m3u8
 #EXTINF:-1,固始综合
 http://live.dxhmt.cn:9081/tv/11525-1.m3u8
 #EXTINF:-1,地理中国
 http://newcntv.qcloudcdn.com/asp/hls/1200/0303000a/3/default/c6baf6f74bb944aeacee1065ea72c798/1200.m3u8
-#EXTINF:-1,天津卫视
-http://182.150.23.74:808/hls/27/index.m3u8
 #EXTINF:-1,夹江新闻综合
 http://tvfile.jjrm.org.cn/nmip-media/channellive/channel106282/playlist.m3u8?zsicd
 #EXTINF:-1,妙手仁心
 http://www.douzhicloud.site:35455/huya/29465853
+#EXTINF:-1,宇宙科幻合集
+https://live.ottiptv.cc/huya/11342428
 #EXTINF:-1,宜兴新闻
 http://yixing-tv-ori-hls.jstv.com/yixing-tv-ori/yixing_xw.m3u8
 #EXTINF:-1,宜兴紫砂
@@ -48547,10 +48523,14 @@ http://120.238.94.10:9901/tsfile/live/1009_1.m3u8
 http://tencentplay.gztv.com/live/fazhi.m3u8?txSecret=3e84cd8eba844b5dc2150612295c7a52&txTime=18d578f4493
 #EXTINF:-1,强森电影
 https://live.ottiptv.cc/huya/21059581
+#EXTINF:-1,怪兽电影
+https://live.ottiptv.cc/huya/21059577
 #EXTINF:-1,成龙电影
 https://live.ottiptv.cc/huya/11342386
 #EXTINF:-1,我不是药神
 https://vip.ffzy-play1.com/20221018/478_c3afed66/index.m3u8
+#EXTINF:-1,战争电影
+https://live.ottiptv.cc/huya/21059574
 #EXTINF:-1,扫黄先锋
 http://www.douzhicloud.site:35455/huya/29465855
 #EXTINF:-1,拆弹专家1
@@ -48569,18 +48549,20 @@ http://live.dxhmt.cn:9081/tv/11523-1.m3u8
 http://live.dxhmt.cn:9081/tv/11729-1.m3u8
 #EXTINF:-1,新视觉
 http://120.76.248.139/live/bfgd/4200000249.m3u8
-#EXTINF:-1,无心法师
-http://www.douzhicloud.site:35455/huya/30080233
 #EXTINF:-1,末日电影合集
 http://www.douzhicloud.site:35455/yy/1354889019
-#EXTINF:-1,李连杰电影
-https://live.ottiptv.cc/huya/11342390
 #EXTINF:-1,林正英电影
-http://www.douzhicloud.site:35455/huya/11342421
+http://live.ottiptv.cc/huya/11342421
 #EXTINF:-1,枪战电影
 https://live.ottiptv.cc/huya/21059579
+#EXTINF:-1,楚汉骄雄
+http://www.douzhicloud.site:35455/huya/29465854
 #EXTINF:-1,橙记港剧
 http://www.douzhicloud.site:35455/douyu/4549169
+#EXTINF:-1,武侠电影
+https://live.ottiptv.cc/huya/11342427
+#EXTINF:-1,沈腾电影
+https://live.ottiptv.cc/huya/11601968
 #EXTINF:-1,河北4K
 https://event.pull.hebtv.com:443/live/live101.m3u8
 #EXTINF:-1,河南乡村
@@ -48601,8 +48583,6 @@ http://tmpstream.hyrtv.cn/xwzh/sd/live.m3u8
 http://live.dxhmt.cn:9081/tv/11726-1.m3u8
 #EXTINF:-1,法政先锋
 http://www.douzhicloud.site:35455/huya/23863804
-#EXTINF:-1,洗冤录
-http://www.douzhicloud.site:35455/huya/29465851
 #EXTINF:-1,活佛济公3
 http://www.douzhicloud.site:35455/huya/23903123
 #EXTINF:-1,海峡卫视
@@ -48633,12 +48613,8 @@ https://gcwbndali.v.myalicdn.com/gcwbnd/ipanda1000_2/index.m3u8
 https://live.ottiptv.cc/huya/30080229
 #EXTINF:-1,玄幻电影
 https://live.ottiptv.cc/huya/11342414
-#EXTINF:-1,王晶电影
-https://live.ottiptv.cc/huya/11602058
 #EXTINF:-1,环球旅游
 http://120.76.248.139/live/bfgd/4200000147.m3u8
-#EXTINF:-1,甄子丹电影
-https://live.ottiptv.cc/huya/11352935
 #EXTINF:-1,甘孜综合
 http://tv.drs.ganzitv.com:8100/channellive/gztv.flv
 #EXTINF:-1,生态环境
@@ -48649,22 +48625,16 @@ http://live.metshop.top/huya/880261?cdn=alicdn
 http://live.metshop.top/huya/11342424?cdn=alicdn
 #EXTINF:-1,电影功夫片
 http://live.metshop.top/huya/11352941?cdn=alicdn
-#EXTINF:-1,电影周星星
-http://live.metshop.top/huya/11336587?cdn=alicdn
+#EXTINF:-1,电影动作电影
+http://live.metshop.top/huya/11602077?cdn=alicdn
 #EXTINF:-1,电影嫣然影厅
 http://live.metshop.top/huya/11601977?cdn=alicdn
-#EXTINF:-1,电影战争片
-http://live.metshop.top/huya/21059574?cdn=alicdn
 #EXTINF:-1,电影搞笑喜剧
 http://live.metshop.top/huya/11342423?cdn=alicdn
-#EXTINF:-1,电影梁家辉
-http://live.metshop.top/huya/11342429?cdn=alicdn
 #EXTINF:-1,电影犯罪片
 http://live.metshop.top/huya/11352974?cdn=alicdn
-#EXTINF:-1,电影谍战
-http://live.metshop.top/huya/21059585?cdn=alicdn
-#EXTINF:-1,电影高分动作
-http://live.metshop.top/huya/11352884?cdn=alicdn
+#EXTINF:-1,电影蜘蛛侠
+http://live.metshop.top/huya/21059599?cdn=alicdn
 #EXTINF:-1,番禺综合
 http://video.epaper.pybtv.cn:8080/live/rtmp_live_demo.flv
 #EXTINF:-1,登封综合
@@ -48675,12 +48645,8 @@ http://stream8.jlntv.cn/baishan2/playlist.m3u8?zjild
 http://www.douzhicloud.site:35455/huya/29465858
 #EXTINF:-1,第一财经
 http://satellitepull.cnr.cn/live/wx32dycjgb/playlist.m3u8
-#EXTINF:-1,精灵宝可梦
-https://live.ottiptv.cc/huya/23749096
 #EXTINF:-1,纪实科教8K
 http://111.31.106.140/downflv.brtvcloud.com/8klive/8kliveok.m3u8
-#EXTINF:-1,纬来电影台
-http://live4play.uk/livehttpplay?channel_id=20199
 #EXTINF:-1,经典剧集
 http://www.douzhicloud.site:35455/douyu/6863367
 #EXTINF:-1,罪犯电影
@@ -48705,12 +48671,12 @@ http://www.douzhicloud.site:35455/yy/1382735560
 https://live.ottiptv.cc/huya/21059585
 #EXTINF:-1,贝爷求生
 http://www.douzhicloud.site:35455/douyu/4332
+#EXTINF:-1,贺岁电影
+https://live.ottiptv.cc/huya/11601986
 #EXTINF:-1,车迷频道
 http://120.76.248.139/live/bfgd/4200000146.m3u8
 #EXTINF:-1,邢台生活
 https://jwcdnqx.hebyun.com.cn/live/xtcsshpd/1500k/tzwj_video.m3u8
-#EXTINF:-1,邵氏影院
-http://www.douzhicloud.site:35455/douyu/4246519
 #EXTINF:-1,郏县综合
 http://live.dxhmt.cn:9081/tv/10425-1.m3u8
 #EXTINF:-1,鄂托克旗电视台
@@ -48721,8 +48687,6 @@ http://live.dxhmt.cn:9081/tv/11024-1.m3u8
 http://www.douzhicloud.site:35455/huya/23863796
 #EXTINF:-1,金枝欲孽
 http://www.douzhicloud.site:35455/huya/29465847
-#EXTINF:-1,鉴证实录
-http://www.douzhicloud.site:35455/huya/23903183
 #EXTINF:-1,镇江新闻综合
 http://cm-wshls.homecdn.com/live/2aa50.m3u8
 #EXTINF:-1,长影频道
@@ -48733,8 +48697,6 @@ http://112.46.105.20:8009/hls/18/index.m3u8
 http://112.46.105.20:8009/hls/22/index.m3u8
 #EXTINF:-1,陕西银龄
 http://112.46.105.20:8009/hls/20/index.m3u8
-#EXTINF:-1,青海卫视
-http://lu.wqwqwq.sbs/itv/1000000002000013359.m3u8?cdn=ystenlive
 #EXTINF:-1,靖洋卡通
 http://104.244.79.187:4994/proxy?url=http%3A//104.244.79.187%3A5050/litv/4gtv-4gtv057
 #EXTINF:-1,韩国EBS少儿
