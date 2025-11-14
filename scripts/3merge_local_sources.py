@@ -29,6 +29,16 @@ OUTPUT_M3U = os.path.join(OUTPUT_DIR, "merge_total.m3u")
 OUTPUT_CSV = os.path.join(OUTPUT_DIR, "merge_total.csv")
 SKIPPED_LOG = os.path.join(LOG_DIR, "skipped.log")
 
+# 新增：mysource 来源映射
+SOURCE_MAPPING = {
+    "1sddxzb.m3u": "济南电信组播",
+    "2sddxdb.m3u": "济南电信单播",
+    "3jnltzb.m3u": "济南联通组播",
+    "4sdqdlt.m3u": "青岛联通单播",
+    "5sdyd_ipv6.m3u": "山东移动单播",
+    "16shyd_ipv6.m3u": "上海移动单播",
+}
+
 # ==============================
 # 工具函数
 # ==============================
@@ -154,6 +164,9 @@ def merge_all_sources(source_dir):
             chs = read_txt_multi_section_csv(file_path)
         else:
             continue
+        # 给每条数据增加来源字段，方便后续区分
+        for ch in chs:
+            ch["source_file"] = file
         all_channels.extend(chs)
 
     print(f"\n📊 合并所有频道，共 {len(all_channels)} 条")
@@ -183,7 +196,17 @@ def write_output_files(channels, output_m3u, output_csv, skipped_log):
             })
             continue
         seen_urls.add(url)
-        valid_channels.append(ch)
+
+        # 根据文件名映射中文来源
+        source_file = ch.get("source_file", "")
+        source_desc = SOURCE_MAPPING.get(source_file, "网络源")
+
+        valid_channels.append({
+            "display_name": ch["display_name"],
+            "url": url,
+            "logo": ch.get("logo", ""),
+            "source": source_desc,
+        })
 
     print(f"\n✅ 有效频道: {len(valid_channels)} 条（去重后）")
     print(f"🚫 跳过无效或重复: {len(skipped_channels)} 条")
@@ -201,7 +224,7 @@ def write_output_files(channels, output_m3u, output_csv, skipped_log):
         writer = csv.writer(f)
         writer.writerow(["频道名", "地址", "来源", "图标"])
         for ch in valid_channels:
-            writer.writerow([ch["display_name"], ch["url"], "网络源", ch.get("logo", "")])
+            writer.writerow([ch["display_name"], ch["url"], ch["source"], ch.get("logo", "")])
 
     # 写跳过日志（UTF-8 无 BOM）
     with open(skipped_log, "w", encoding="utf-8") as f:
