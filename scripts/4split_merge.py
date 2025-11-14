@@ -8,7 +8,7 @@ def split_deep_scan(input_path="output/merge_total.csv",
                     output_dir="output/middle/chunk"):
     """
     将 merge_total.csv 按 chunk_size 行分割到 output/middle/chunk 目录。
-    输出文件命名格式：chunk(总文件数)-1.csv, chunk(总文件数)-2.csv ...
+    输出文件命名格式：chunk-1.csv, chunk-2.csv ...
     """
     print("🔍 当前工作目录:", os.getcwd())
     print(f"📄 输入文件: {input_path}")
@@ -59,7 +59,7 @@ def split_deep_scan(input_path="output/merge_total.csv",
     for i in range(0, total, chunk_size):
         chunk_rows = rows[i:i + chunk_size]
         chunk_num = i // chunk_size + 1
-        chunk_filename = f"chunk{total_chunks}-{chunk_num}.csv"
+        chunk_filename = f"chunk-{chunk_num}.csv"
         chunk_path = os.path.join(output_dir, chunk_filename)
 
         with open(chunk_path, "w", newline='', encoding='utf-8') as cf:
