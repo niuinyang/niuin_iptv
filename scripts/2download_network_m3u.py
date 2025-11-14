@@ -1,8 +1,7 @@
 #!/usr/bin/env python3
 # download_m3u.py
-# 用法: python download_m3u.py
-# 读取 input/network/networksource.txt，下载 M3U 文件到 input/network/network_sources/
-# 覆盖旧文件，清理未在列表中的旧文件
+# 双源下载：network + mysource
+# 不写任何错误日志文件
 
 import os
 import sys
@@ -16,10 +15,13 @@ import requests
 # ==============================
 # 配置
 # ==============================
-SOURCE_LIST = "input/network/networksource.txt"
-OUTPUT_DIR = "input/network/network_sources"
+NETWORK_SOURCE_LIST = "input/network/networksource.txt"
+NETWORK_OUTPUT_DIR = "input/network/network_sources"
+
+MYSOURCE_LIST = "input/mysource/mysource.txt"
+MYSOURCE_OUTPUT_DIR = "input/mysource/m3u"
+
 LOG_FILE = "download_m3u.log"
-ERROR_LOG = "download_errors.log"
 
 RETRIES = 3
 BACKOFF_BASE = 2
@@ -64,7 +66,7 @@ def guess_filename_from_url(url: str) -> str:
         name = parsed.netloc
     name = sanitize_filename(name)
     if not os.path.splitext(name)[1]:
-        name = name + ".m3u"
+        name += ".m3u"
     return name
 
 def looks_like_m3u(content_bytes: bytes) -> bool:
@@ -72,10 +74,7 @@ def looks_like_m3u(content_bytes: bytes) -> bool:
         txt = content_bytes[:1024].decode("utf-8", errors="ignore").lower()
     except Exception:
         return False
-    for kw in M3U_KEYWORDS:
-        if kw.lower() in txt:
-            return True
-    return False
+    return any(kw.lower() in txt for kw in M3U_KEYWORDS)
 
 def download_url(url: str, out_path: str) -> (bool, str):
     headers = {
@@ -87,94 +86,102 @@ def download_url(url: str, out_path: str) -> (bool, str):
     }
 
     temp_path = out_path + ".tmp"
-    for attempt in range(1, RETRIES+1):
+
+    for attempt in range(1, RETRIES + 1):
         try:
             logging.info(f"Downloading ({attempt}/{RETRIES}): {url}")
+
             with requests.get(url, headers=headers, stream=True,
                               timeout=(CONNECT_TIMEOUT, READ_TIMEOUT), allow_redirects=True) as r:
                 if r.status_code != 200:
                     raise Exception(f"HTTP {r.status_code}")
+
                 with open(temp_path, "wb") as f:
                     for chunk in r.iter_content(chunk_size=8192):
                         if chunk:
                             f.write(chunk)
+
                 size = os.path.getsize(temp_path)
                 if size < MIN_SIZE_BYTES:
                     raise Exception(f"File too small ({size} bytes)")
+
                 with open(temp_path, "rb") as f:
                     head = f.read(2048)
+
                 if not looks_like_m3u(head):
                     logging.warning("Content does not look like M3U")
+
                 os.replace(temp_path, out_path)
                 return True, "OK"
+
         except Exception as e:
             wait = BACKOFF_BASE ** (attempt - 1)
             logging.warning(f"Attempt {attempt} failed for {url}: {e}. Backoff {wait}s")
             time.sleep(wait + random.random())
+
     if os.path.exists(temp_path):
         os.remove(temp_path)
+
     return False, f"Failed after {RETRIES} attempts"
 
-def ensure_dirs():
-    os.makedirs(OUTPUT_DIR, exist_ok=True)
-    os.makedirs(os.path.dirname(LOG_FILE) or ".", exist_ok=True)
+def ensure_dir(path: str):
+    os.makedirs(path, exist_ok=True)
 
-# ==============================
-# 主程序
-# ==============================
-def main():
-    ensure_dirs()
-    if not os.path.exists(SOURCE_LIST):
-        logging.error(f"Source list not found: {SOURCE_LIST}")
-        sys.exit(2)
-
-    # 读取所有 URL
+def read_url_list(path: str):
     urls = []
-    with open(SOURCE_LIST, "r", encoding="utf-8") as f:
+    with open(path, "r", encoding="utf-8") as f:
         for line in f:
             line = line.strip()
             if line and not line.startswith("#"):
                 urls.append(line.split()[0])
+    return urls
+
+# ==============================
+# 下载流程（复用）
+# ==============================
+def process_source(source_list, output_dir):
+    ensure_dir(output_dir)
+
+    if not os.path.exists(source_list):
+        logging.error(f"Source list not found: {source_list}")
+        return
+
+    urls = read_url_list(source_list)
     total = len(urls)
-    logging.info(f"Total URLs to process: {total}")
+    logging.info(f"Processing {source_list}, total URLs: {total}")
 
-    # 下载每个 URL
     downloaded_files = []
-    failed = []
-    for url in urls:
-        try:
-            fname = guess_filename_from_url(url)
-            out_path = os.path.join(OUTPUT_DIR, fname)
-            success, msg = download_url(url, out_path)
-            if success:
-                logging.info(f"Saved: {out_path} ({msg})")
-                downloaded_files.append(fname)
-            else:
-                logging.error(f"Failed: {url} -> {msg}")
-                failed.append((url, msg))
-        except Exception as e:
-            logging.exception(f"Unhandled error for {url}: {e}")
-            failed.append((url, str(e)))
 
-    # 清理未在源列表里的旧文件
-    for f in os.listdir(OUTPUT_DIR):
+    for url in urls:
+        fname = guess_filename_from_url(url)
+        out_path = os.path.join(output_dir, fname)
+        success, msg = download_url(url, out_path)
+
+        if success:
+            logging.info(f"Saved: {out_path}")
+            downloaded_files.append(fname)
+        else:
+            logging.error(f"Failed: {url} -> {msg}")
+
+    # 清理旧文件
+    for f in os.listdir(output_dir):
         if f not in downloaded_files:
-            path = os.path.join(OUTPUT_DIR, f)
+            path = os.path.join(output_dir, f)
             try:
                 os.remove(path)
                 logging.info(f"Removed old file: {path}")
             except Exception as e:
                 logging.warning(f"Failed to remove {path}: {e}")
 
-    # 写失败日志
-    if failed:
-        with open(ERROR_LOG, "a", encoding="utf-8") as ef:
-            ts = time.strftime("%Y-%m-%d %H:%M:%S", time.localtime())
-            ef.write(f"\n# {ts} - failed {len(failed)}/{total}\n")
-            for u, m in failed:
-                ef.write(f"{u}    # {m}\n")
+    logging.info(f"Completed {source_list}: {total} URLs")
 
-    logging.info(f"Done. Total URLs: {total}. Failed: {len(failed)}.")
+# ==============================
+# 主程序
+# ==============================
+def main():
+    process_source(NETWORK_SOURCE_LIST, NETWORK_OUTPUT_DIR)
+    process_source(MYSOURCE_LIST, MYSOURCE_OUTPUT_DIR)
+    logging.info("All tasks done.")
 
 if __name__ == "__main__":
     main()
