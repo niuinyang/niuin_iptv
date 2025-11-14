@@ -79,11 +79,11 @@ for f in os.listdir(WORKFLOW_DIR):
 if os.path.exists(CACHE_FILE):
     os.remove(CACHE_FILE)
 
-chunks = sorted([f for f in os.listdir(CHUNK_DIR) if re.match(r"chunk\d+-\d+\.csv", f)])
+chunks = sorted([f for f in os.listdir(CHUNK_DIR) if re.match(r"chunk-?\d+\.csv", f)])
 cache_data = {}
 
 for chunk_file in chunks:
-    chunk_id = os.path.splitext(chunk_file)[0]
+    chunk_id = os.path.splitext(chunk_file)[0]  # 去掉扩展名
 
     workflow_filename = f"scan_{chunk_id}.yml"
     workflow_path = os.path.join(WORKFLOW_DIR, workflow_filename)
