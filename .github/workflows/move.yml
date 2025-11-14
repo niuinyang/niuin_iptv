@@ -23,7 +23,7 @@ jobs:
 
     - name: Move folders
       run: |
-        python3 move_folders.py
+        python3 scripts/move_folders.py
 
     - name: Commit and push changes
       run: |
