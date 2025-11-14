@@ -193,7 +193,7 @@ jobs:
       - name: Generate chunk workflows and push
         run: |
           python scripts/4.3.2generate_chunk_workflows.py
-          git add .github/workflows output/cache
+          git add .github/workflows
           git commit -m "ci: auto-generate deep validation workflows" || echo "无更改，跳过提交"
 
           max_retries=3
