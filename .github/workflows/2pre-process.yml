@@ -10,12 +10,10 @@ permissions:
   contents: write
 
 jobs:
-  # ---------------------------
-  # 2️⃣ 下载网络源
-  # ---------------------------
-  download_network_sources:
-    name: 2️⃣ 下载网络源
+  download_all_m3u:
+    name: 2️⃣ 下载全部 M3U（network + mysource）
     runs-on: ubuntu-latest
+
     steps:
       - name: Checkout repo
         uses: actions/checkout@v4
@@ -33,33 +31,41 @@ jobs:
           python -m pip install --upgrade pip
           pip install requests
 
-      - name: Ensure output directory exists
+      - name: Ensure output directories exist
         run: |
           mkdir -p input/network/network_sources
+          mkdir -p input/mysource/m3u
           mkdir -p scripts
 
-      - name: Run download script
-        run: python scripts/2download_network_m3u.py
+      - name: Run M3U download script
+        run: python scripts/download_m3u.py
 
       - name: Commit & Push results
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
+
+          # 两个输出目录都加入
           git add input/network/network_sources
-          if ! git diff --cached --quiet; then
-            git commit -m "Update network M3U sources [ci skip]"
-            # 处理未暂存更改
-            if [ -n "$(git status --porcelain)" ]; then
-              git stash push -m "ci stash before pull"
-              git pull --rebase origin main
-              git stash pop || echo "No stash to pop"
-            else
-              git pull --rebase origin main
-            fi
-            git push origin main
-          else
+          git add input/mysource/m3u
+
+          # 如果无变化，直接退出
+          if git diff --cached --quiet; then
             echo "✅ No changes to commit."
+            exit 0
           fi
+
+          git commit -m "Update M3U sources [ci skip]"
+
+          # 防止 push 时冲突：拉取远程更新
+          if [ -n "$(git status --porcelain)" ]; then
+            git stash push -m "ci-sstash-before-pull"
+            git pull --rebase origin main
+            git stash pop || echo "No stash to pop"
+          else
+            git pull --rebase origin main
+          fi
+          git push origin main
 
   # ---------------------------
   # 3️⃣ 合并网络源
@@ -67,7 +73,7 @@ jobs:
   merge_local_sources:
     name: 3️⃣ 合并网络源
     runs-on: ubuntu-latest
-    needs: download_network_sources
+    needs: download_all_m3u
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4
