@@ -138,8 +138,29 @@ def read_txt_multi_section_csv(file_path: str):
         print(f"⚠️ 读取 {file_path} 失败: {e}")
         return []
 
-def write_output_files(channels):
-    """统一输出 UTF-8 无 BOM"""
+def merge_all_sources(source_dir):
+    """合并目录内所有 M3U / TXT 源，传入目录路径"""
+    all_channels = []
+    if not os.path.exists(source_dir):
+        print(f"⚠️ 源目录不存在: {source_dir}")
+        return []
+
+    print(f"📂 扫描目录: {source_dir}")
+    for file in os.listdir(source_dir):
+        file_path = os.path.join(source_dir, file)
+        if file.endswith(".m3u"):
+            chs = read_m3u_file(file_path)
+        elif file.endswith(".txt"):
+            chs = read_txt_multi_section_csv(file_path)
+        else:
+            continue
+        all_channels.extend(chs)
+
+    print(f"\n📊 合并所有频道，共 {len(all_channels)} 条")
+    return all_channels
+
+def write_output_files(channels, output_m3u, output_csv, skipped_log):
+    """统一输出 UTF-8 无 BOM，支持自定义输出路径"""
     seen_urls = set()
     valid_channels = []
     skipped_channels = []
@@ -168,7 +189,7 @@ def write_output_files(channels):
     print(f"🚫 跳过无效或重复: {len(skipped_channels)} 条")
 
     # 写 M3U（UTF-8 无 BOM）
-    with open(OUTPUT_M3U, "w", encoding="utf-8", newline="\n") as f:
+    with open(output_m3u, "w", encoding="utf-8", newline="\n") as f:
         f.write("#EXTM3U\n")
         for ch in valid_channels:
             display_name = ch["display_name"]
@@ -176,46 +197,49 @@ def write_output_files(channels):
             f.write(f'#EXTINF:-1,{display_name}\n{url}\n')
 
     # 写 CSV（UTF-8 无 BOM）
-    with open(OUTPUT_CSV, "w", newline="", encoding="utf-8") as f:
+    with open(output_csv, "w", newline="", encoding="utf-8") as f:
         writer = csv.writer(f)
         writer.writerow(["频道名", "地址", "来源", "图标"])
         for ch in valid_channels:
             writer.writerow([ch["display_name"], ch["url"], "网络源", ch.get("logo", "")])
 
-    # 写跳过日志（UTF-8 无 BOM），新增写入原因列
-    with open(SKIPPED_LOG, "w", encoding="utf-8") as f:
+    # 写跳过日志（UTF-8 无 BOM）
+    with open(skipped_log, "w", encoding="utf-8") as f:
         f.write("频道名,地址,跳过原因\n")
         for ch in skipped_channels:
             f.write(f"{ch['display_name']},{ch['url']},{ch['reason']}\n")
 
-    print(f"📁 输出文件：{OUTPUT_M3U} 和 {OUTPUT_CSV}")
-    print(f"📁 跳过日志：{SKIPPED_LOG}")
-
-def merge_all_sources():
-    """合并目录内所有 M3U / TXT 源"""
-    all_channels = []
-    if not os.path.exists(SOURCE_DIR):
-        print(f"⚠️ 源目录不存在: {SOURCE_DIR}")
-        return []
-
-    print(f"📂 扫描目录: {SOURCE_DIR}")
-    for file in os.listdir(SOURCE_DIR):
-        file_path = os.path.join(SOURCE_DIR, file)
-        if file.endswith(".m3u"):
-            chs = read_m3u_file(file_path)
-        elif file.endswith(".txt"):
-            chs = read_txt_multi_section_csv(file_path)
-        else:
-            continue
-        all_channels.extend(chs)
-
-    print(f"\n📊 合并所有频道，共 {len(all_channels)} 条")
-    return all_channels
+    print(f"📁 输出文件：{output_m3u} 和 {output_csv}")
+    print(f"📁 跳过日志：{skipped_log}")
 
 if __name__ == "__main__":
     print(f"🔧 当前系统: {platform.system()}，输出统一为 UTF-8 无 BOM")
-    channels = merge_all_sources()
+
+    # 原有目录合并
+    channels = merge_all_sources(SOURCE_DIR)
     if channels:
-        write_output_files(channels)
+        write_output_files(
+            channels,
+            output_m3u=OUTPUT_M3U,
+            output_csv=OUTPUT_CSV,
+            skipped_log=SKIPPED_LOG
+        )
     else:
         print("⚠️ 没有读取到任何频道")
+
+    # 新增：合并 input/mysource/m3u，输出指定文件名
+    mysource_dir = "input/mysource/m3u"
+    my_m3u = os.path.join(OUTPUT_DIR, "merge_my_sum.m3u")
+    my_csv = os.path.join(OUTPUT_DIR, "merge_my_sum.csv")
+    my_log = os.path.join(LOG_DIR, "merge_my_sum_skipped.log")
+
+    channels_my = merge_all_sources(mysource_dir)
+    if channels_my:
+        write_output_files(
+            channels_my,
+            output_m3u=my_m3u,
+            output_csv=my_csv,
+            skipped_log=my_log
+        )
+    else:
+        print(f"⚠️ 没有读取到任何频道：{mysource_dir}")
