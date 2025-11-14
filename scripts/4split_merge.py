@@ -22,6 +22,14 @@ def split_deep_scan(input_path="output/merge_total.csv",
     # 自动创建输出目录
     os.makedirs(output_dir, exist_ok=True)
 
+    # 清理旧的 chunk 文件
+    print("🧹 清理旧的 chunk 文件...")
+    for f in os.listdir(output_dir):
+        if f.endswith(".csv") and f.startswith("chunk"):
+            path = os.path.join(output_dir, f)
+            os.remove(path)
+            print(f"删除旧文件: {f}")
+
     # 读取 CSV 内容
     try:
         with open(input_path, newline='', encoding='utf-8') as f:
