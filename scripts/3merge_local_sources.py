@@ -160,6 +160,10 @@ def merge_all_sources(source_dir):
         file_path = os.path.join(source_dir, file)
         if file.endswith(".m3u"):
             chs = read_m3u_file(file_path)
+            # 这里是新增替换逻辑
+            if file == "1sddxzb.m3u":
+                for ch in chs:
+                    ch["url"] = ch["url"].replace("192.168.50.1:20231", "192.168.31.2:4022")
         elif file.endswith(".txt"):
             chs = read_txt_multi_section_csv(file_path)
         else:
