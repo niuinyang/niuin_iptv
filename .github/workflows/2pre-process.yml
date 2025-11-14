@@ -38,7 +38,7 @@ jobs:
           mkdir -p scripts
 
       - name: Run M3U download script
-        run: python scripts/download_m3u.py
+        run: python scripts/2download_network_m3u.py
 
       - name: Commit & Push results
         run: |
