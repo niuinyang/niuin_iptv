@@ -139,7 +139,7 @@ def read_url_list(path: str):
 # ==============================
 # 下载流程（复用）
 # ==============================
-def process_source(source_list, output_dir):
+def process_source(source_list, output_dir, clean_old_files=True):
     ensure_dir(output_dir)
 
     if not os.path.exists(source_list):
@@ -163,15 +163,16 @@ def process_source(source_list, output_dir):
         else:
             logging.error(f"Failed: {url} -> {msg}")
 
-    # 清理旧文件
-    for f in os.listdir(output_dir):
-        if f not in downloaded_files:
-            path = os.path.join(output_dir, f)
-            try:
-                os.remove(path)
-                logging.info(f"Removed old file: {path}")
-            except Exception as e:
-                logging.warning(f"Failed to remove {path}: {e}")
+    if clean_old_files:
+        # 清理旧文件
+        for f in os.listdir(output_dir):
+            if f not in downloaded_files:
+                path = os.path.join(output_dir, f)
+                try:
+                    os.remove(path)
+                    logging.info(f"Removed old file: {path}")
+                except Exception as e:
+                    logging.warning(f"Failed to remove {path}: {e}")
 
     logging.info(f"Completed {source_list}: {total} URLs")
 
@@ -179,8 +180,10 @@ def process_source(source_list, output_dir):
 # 主程序
 # ==============================
 def main():
-    process_source(NETWORK_SOURCE_LIST, NETWORK_OUTPUT_DIR)
-    process_source(MYSOURCE_LIST, MYSOURCE_OUTPUT_DIR)
+    # network 目录，保留清理旧文件行为
+    process_source(NETWORK_SOURCE_LIST, NETWORK_OUTPUT_DIR, clean_old_files=True)
+    # mysource 目录，不删除旧文件，只下载覆盖
+    process_source(MYSOURCE_LIST, MYSOURCE_OUTPUT_DIR, clean_old_files=False)
     logging.info("All tasks done.")
 
 if __name__ == "__main__":
