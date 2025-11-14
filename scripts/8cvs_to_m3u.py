@@ -13,7 +13,7 @@ from pathlib import Path
 # --- 配置 ---
 CSV_INPUT = "output/total_final.csv"
 UNISTREAM_URL = "https://raw.githubusercontent.com/plsy1/iptv/refs/heads/main/unicast.m3u"
-LOCAL_PNG_DIR = "png"
+LOCAL_PNG_DIR = "depend/png"
 OUTPUT_DXL = "output/dxl.m3u"
 OUTPUT_SJMZ = "output/sjmz.m3u"
 
