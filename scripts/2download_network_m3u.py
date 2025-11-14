@@ -139,9 +139,9 @@ def read_url_list(path: str):
 # 重命名mysource目录下载的前三个文件
 def rename_mysource_files(output_dir, downloaded_files):
     rename_map = {
-        0: "sddxzb.m3u",
-        1: "sddxdb.m3u",
-        2: "jnltzb.m3u",
+        0: "1sddxzb.m3u",
+        1: "2sddxdb.m3u",
+        2: "3jnltzb.m3u",
     }
 
     for idx, orig_name in enumerate(downloaded_files):
