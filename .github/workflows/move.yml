@@ -1,0 +1,37 @@
+name: Move Folders to depend/
+
+on:
+  workflow_dispatch:  # 手动触发
+  push:
+    branches:
+      - main  # 你也可以改成你的默认分支
+
+jobs:
+  move_folders_job:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout repository
+      uses: actions/checkout@v3
+      with:
+        fetch-depth: 0
+
+    - name: Set up Python
+      uses: actions/setup-python@v4
+      with:
+        python-version: "3.x"
+
+    - name: Move folders
+      run: |
+        python3 move_folders.py
+
+    - name: Commit and push changes
+      run: |
+        git config user.name "github-actions[bot]"
+        git config user.email "github-actions[bot]@users.noreply.github.com"
+        git add depend/png depend/iptv-database
+        git rm -r png iptv-database
+        git commit -m "Move /png and /iptv-database folders into /depend directory"
+        git push
+      # 如果没有改动，会导致 git commit 报错，可以用 || echo "No changes to commit" 忽略
+      continue-on-error: true
