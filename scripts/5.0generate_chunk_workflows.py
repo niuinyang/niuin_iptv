@@ -69,7 +69,50 @@ jobs:
             --invalid output/middle/final/not/final_{n}-invalid.csv \
             --chunk_id {n} \
             --cache_dir output/cache
+            # >>>>>>>>>>>>>>>>>>>>>>>>>>  🚀 新增推送模块 START  <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
+      - name: Commit and Push Outputs
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+
+          # 添加所有扫描阶段生成的文件与缓存
+          git add output/cache \\
+                  output/middle/fast \\
+                  output/middle/deep \\
+                  output/middle/final
+
+          # 没有文件变化则结束
+          if git diff --cached --quiet; then
+            echo "No output updates."
+            exit 0
+          fi
+
+          git commit -m "Update scan outputs for {n} [skip ci]"
+
+          # 安全推送：失败自动 stash → pull --rebase → pop → retry
+          MAX_RETRIES=5
+          COUNT=1
+
+          until git push --quiet; do
+            echo "Push failed (attempt $COUNT/$MAX_RETRIES), retrying..."
+
+            git stash push -m "auto-stash" || true
+            git pull --rebase --quiet || true
+            git stash pop || true
+
+            COUNT=$((COUNT+1))
+            if [ $COUNT -gt $MAX_RETRIES ]; then
+              echo "🔥 Push failed after $MAX_RETRIES attempts."
+              exit 1
+            fi
+
+            sleep 2
+          done
+
+          echo "Push outputs succeeded."
+      # >>>>>>>>>>>>>>>>>>>>>>>>>>  🚀 新增推送模块 END  <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
 """
+# =====================  ✨ 修改结束 ✨  =====================
 
 print("🧹 清理旧的 workflow 文件...")
 for f in os.listdir(WORKFLOW_DIR):
