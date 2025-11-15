@@ -1,0 +1,24 @@
+name: Generate Hash Workflows
+
+on:
+  workflow_dispatch:
+  schedule:
+    - cron: '11 0 * * *'  # 每天00:11 UTC，生成当天的 chunk workflows（北京时间08:11）
+
+permissions:
+  contents: write
+
+jobs:
+  generate:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+
+      - name: Setup Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: "3.x"
+
+      - name: Run generate_hash_workflows.py
+        run: |
+          python scripts/5.30generate_hash_workflows.py
