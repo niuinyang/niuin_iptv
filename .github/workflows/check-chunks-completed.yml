@@ -29,7 +29,6 @@ jobs:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           REPO_OWNER: your-github-user-or-org
           REPO_NAME: your-repo-name
-          WORKFLOWS: "hash-chunk-1.yml,hash-chunk-2.yml,hash-chunk-3.yml" # 请替换成你实际的chunk workflow文件名列表
         run: |
           python scripts/check_chunk_workflows.py
 
