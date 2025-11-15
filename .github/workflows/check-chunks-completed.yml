@@ -1,0 +1,57 @@
+name: Check Chunk Workflows Completed and Merge Cache
+
+on:
+  workflow_run:
+    workflows:
+      - Generate Hash Workflows
+    types:
+      - completed
+
+permissions:
+  contents: write
+
+jobs:
+  wait-for-chunks:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+
+      - name: Setup Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: "3.x"
+
+      - name: Install dependencies
+        run: pip install requests
+
+      - name: Check chunk workflows status
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          REPO_OWNER: your-github-user-or-org
+          REPO_NAME: your-repo-name
+          WORKFLOWS: "hash-chunk-1.yml,hash-chunk-2.yml,hash-chunk-3.yml" # 请替换成你实际的chunk workflow文件名列表
+        run: |
+          python scripts/check_chunk_workflows.py
+
+      - name: Merge cache if all chunk workflows completed
+        if: ${{ success() }}
+        run: |
+          python scripts/5.32merge_cache.py
+
+      - name: Commit and Push merged cache
+        if: ${{ success() }}
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add output/cache/total_cache.json
+          git commit -m "Update total_cache.json after all chunks complete" || echo "No changes to commit"
+          n=0
+          until [ $n -ge 3 ]
+          do
+            git push origin HEAD:main && break
+            n=$((n+1))
+            echo "Push failed, retry $n..."
+            sleep 5
+          done
+        env:
+          GITHUB_TOKEN: ${{ secrets.PUSH_TOKEN1 }}
