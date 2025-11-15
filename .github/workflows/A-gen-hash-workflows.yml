@@ -39,7 +39,7 @@ jobs:
           git diff --cached --quiet || git commit -m "Add/update generated chunk workflows"
 
           # 设置远程地址，带 token 认证
-          git remote set-url origin https://x-access-token:${PUSH_TOKEN}@github.com/plsy1/niuin_iptv.git
+          git remote set-url origin https://x-access-token:${PUSH_TOKEN}@github.com/niuinyang/niuin_iptv.git
 
           n=0
           until [ $n -ge 3 ]
