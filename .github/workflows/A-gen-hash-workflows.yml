@@ -1,9 +1,9 @@
 name: A生成并运行缓存cache_workflow
 
 on:
-  workflow_dispatch:
+  workflow_dispatch:  # 手动触发
   schedule:
-    - cron: '11 0 * * *'  # 每天00:11 UTC，生成当天的 chunk workflows（北京时间08:11）
+    - cron: '11 0 * * *'  # 每天 UTC 00:11（可按需调整）
 
 permissions:
   contents: write
@@ -12,13 +12,35 @@ jobs:
   generate:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v3
+      - name: Checkout repository
+        uses: actions/checkout@v3
+        with:
+          persist-credentials: false  # 使用自定义 token
 
       - name: Setup Python
         uses: actions/setup-python@v4
         with:
           python-version: "3.x"
 
+      - name: Install dependencies
+        run: pip install -r requirements.txt || echo "No requirements.txt found"
+
       - name: Run generate_hash_workflows.py
+        run: python scripts/5.30generate_hash_workflows.py
+
+      - name: Commit generated chunk workflows
         run: |
-          python scripts/A-generate_hash_workflows.py
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add .github/workflows/hash-chunk-*.yml
+          git diff --cached --quiet || git commit -m "Add/update generated chunk workflows"
+          n=0
+          until [ $n -ge 3 ]
+          do
+            git push origin HEAD:main && break
+            n=$((n+1))
+            echo "Push failed, retry $n..."
+            sleep 5
+          done
+        env:
+          GITHUB_TOKEN: ${{ secrets.PUSH_TOKEN1 }}
