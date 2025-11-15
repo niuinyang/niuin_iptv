@@ -30,12 +30,12 @@ jobs:
           REPO_OWNER: your-github-user-or-org
           REPO_NAME: your-repo-name
         run: |
-          python scripts/check_chunk_workflows.py
+          python scripts/B-check_chunk_workflows.py
 
       - name: Merge cache if all chunk workflows completed
         if: ${{ success() }}
         run: |
-          python scripts/5.32merge_cache.py
+          python scripts/C-merge_cache.py
 
       - name: Commit and Push merged cache
         if: ${{ success() }}
