@@ -21,4 +21,4 @@ jobs:
 
       - name: Run generate_hash_workflows.py
         run: |
-          python scripts/5.30generate_hash_workflows.py
+          python scripts/A-generate_hash_workflows.py
