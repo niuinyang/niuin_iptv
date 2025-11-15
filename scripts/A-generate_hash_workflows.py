@@ -81,7 +81,7 @@ jobs:
 
       - name: Run cache script
         run: |
-          python scripts/5.31cache.py --input {CHUNK_DIR}/{chunk_name} --timepoint {time_key} --chunk_id {chunk_id}
+          python scripts/A-1cache.py --input {CHUNK_DIR}/{chunk_name} --timepoint {time_key} --chunk_id {chunk_id}
 
       - name: Push cache changes
         run: |
