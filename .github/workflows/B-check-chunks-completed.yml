@@ -1,4 +1,4 @@
-name: Check Chunk Workflows Completed and Merge Cache
+name: B检查缓存workflow执行完毕合并
 
 on:
   workflow_run:
@@ -26,9 +26,9 @@ jobs:
 
       - name: Check chunk workflows status
         env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-          REPO_OWNER: your-github-user-or-org
-          REPO_NAME: your-repo-name
+          GITHUB_TOKEN: ${{ secrets.PUSH_TOKEN1 }}
+          REPO_OWNER: niuinyang
+          REPO_NAME: niuin_iptv
         run: |
           python scripts/check_chunk_workflows.py
 
