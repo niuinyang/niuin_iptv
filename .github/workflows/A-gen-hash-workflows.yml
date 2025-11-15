@@ -26,7 +26,7 @@ jobs:
         run: pip install -r requirements.txt || echo "No requirements.txt found"
 
       - name: Run generate_hash_workflows.py
-        run: python scripts/5.30generate_hash_workflows.py
+        run: python scripts/A-generate_hash_workflows.py
 
       - name: Commit generated chunk workflows and push
         env:
