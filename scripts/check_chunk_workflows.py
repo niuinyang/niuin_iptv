@@ -1,58 +1,56 @@
-#!/usr/bin/env python3
-import os
-import time
-import requests
-import sys
+name: Check Chunk Workflows Completed and Merge Cache
 
-GITHUB_API = "https://api.github.com"
-TOKEN = os.environ.get("GITHUB_TOKEN")
-OWNER = os.environ.get("REPO_OWNER")
-REPO = os.environ.get("REPO_NAME")
-WORKFLOWS = os.environ.get("WORKFLOWS", "").split(',')
+on:
+  workflow_run:
+    workflows:
+      - Generate Hash Workflows
+    types:
+      - completed
 
-HEADERS = {
-    "Authorization": f"Bearer {TOKEN}",
-    "Accept": "application/vnd.github+json"
-}
+permissions:
+  contents: write
 
-def check_workflow_completed(workflow_file):
-    url = f"{GITHUB_API}/repos/{OWNER}/{REPO}/actions/workflows/{workflow_file}/runs"
-    try:
-        resp = requests.get(url, headers=HEADERS)
-        resp.raise_for_status()
-    except Exception as e:
-        print(f"Error fetching runs for {workflow_file}: {e}")
-        return False
+jobs:
+  wait-for-chunks:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
 
-    runs = resp.json().get("workflow_runs", [])
-    if not runs:
-        print(f"No runs found for workflow {workflow_file}")
-        return False
-    latest = runs[0]
-    status = latest.get("status")
-    conclusion = latest.get("conclusion")
-    print(f"Workflow {workflow_file} latest run: status={status}, conclusion={conclusion}")
-    return status == "completed" and conclusion == "success"
+      - name: Setup Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: "3.x"
 
-def all_completed():
-    for wf in WORKFLOWS:
-        wf = wf.strip()
-        if not check_workflow_completed(wf):
-            return False
-    return True
+      - name: Install dependencies
+        run: pip install requests
 
-def main():
-    max_retries = 30
-    interval = 10  # seconds
-    print(f"Checking workflows: {WORKFLOWS}")
-    for i in range(max_retries):
-        if all_completed():
-            print("All chunk workflows completed successfully.")
-            sys.exit(0)
-        print(f"Waiting for chunk workflows to complete... attempt {i+1}/{max_retries}")
-        time.sleep(interval)
-    print("Timeout waiting for chunk workflows to complete.")
-    sys.exit(1)
+      - name: Check chunk workflows status
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          REPO_OWNER: your-github-user-or-org
+          REPO_NAME: your-repo-name
+        run: |
+          python scripts/check_chunk_workflows.py
 
-if __name__ == "__main__":
-    main()
+      - name: Merge cache if all chunk workflows completed
+        if: ${{ success() }}
+        run: |
+          python scripts/5.32merge_cache.py
+
+      - name: Commit and Push merged cache
+        if: ${{ success() }}
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add output/cache/total_cache.json
+          git commit -m "Update total_cache.json after all chunks complete" || echo "No changes to commit"
+          n=0
+          until [ $n -ge 3 ]
+          do
+            git push origin HEAD:main && break
+            n=$((n+1))
+            echo "Push failed, retry $n..."
+            sleep 5
+          done
+        env:
+          GITHUB_TOKEN: ${{ secrets.PUSH_TOKEN1 }}
