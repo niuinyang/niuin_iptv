@@ -1,56 +1,70 @@
-name: Check Chunk Workflows Completed and Merge Cache
+#!/usr/bin/env python3
+import os
+import sys
+import requests
 
-on:
-  workflow_run:
-    workflows:
-      - Generate Hash Workflows
-    types:
-      - completed
+# 配置区，和 workflow 环境变量对应
+GITHUB_TOKEN = os.getenv("GITHUB_TOKEN")
+REPO_OWNER = os.getenv("REPO_OWNER") or "niuinyang"    # 请替换为你的用户名或组织名
+REPO_NAME = os.getenv("REPO_NAME") or "niuin_iptv"      # 请替换为你的仓库名
+WORKFLOW_NAME_PREFIX = "scan_chunk-"  # 你生成的 chunk workflow 名字前缀，比如 scan_chunk-1.yml 对应的 workflow 名
 
-permissions:
-  contents: write
+API_BASE = f"https://api.github.com/repos/{REPO_OWNER}/{REPO_NAME}"
 
-jobs:
-  wait-for-chunks:
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v3
+HEADERS = {
+    "Accept": "application/vnd.github+json",
+    "Authorization": f"token {GITHUB_TOKEN}",
+}
 
-      - name: Setup Python
-        uses: actions/setup-python@v4
-        with:
-          python-version: "3.x"
+def get_workflows():
+    url = f"{API_BASE}/actions/workflows"
+    r = requests.get(url, headers=HEADERS)
+    r.raise_for_status()
+    return r.json()
 
-      - name: Install dependencies
-        run: pip install requests
+def get_workflow_runs(workflow_id):
+    url = f"{API_BASE}/actions/workflows/{workflow_id}/runs?status=completed&per_page=10"
+    r = requests.get(url, headers=HEADERS)
+    r.raise_for_status()
+    return r.json()
 
-      - name: Check chunk workflows status
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-          REPO_OWNER: your-github-user-or-org
-          REPO_NAME: your-repo-name
-        run: |
-          python scripts/B-check_chunk_workflows.py
+def main():
+    workflows = get_workflows()
+    workflows_list = workflows.get("workflows", [])
+    
+    # 找出所有 chunk workflow（名字以 scan_chunk- 开头）
+    chunk_workflows = [w for w in workflows_list if w["name"].startswith(WORKFLOW_NAME_PREFIX)]
+    if not chunk_workflows:
+        print(f"❌ 没有找到名字以'{WORKFLOW_NAME_PREFIX}'开头的 workflow")
+        sys.exit(1)
+    
+    print(f"找到 {len(chunk_workflows)} 个 chunk workflows，开始检查状态...")
+    
+    all_passed = True
+    for wf in chunk_workflows:
+        wf_id = wf["id"]
+        wf_name = wf["name"]
+        
+        runs = get_workflow_runs(wf_id).get("workflow_runs", [])
+        if not runs:
+            print(f"⚠️ Workflow {wf_name} 没有任何运行记录")
+            all_passed = False
+            continue
+        
+        latest_run = runs[0]
+        conclusion = latest_run.get("conclusion")
+        print(f"Workflow {wf_name} 最近一次运行状态：{conclusion}")
+        
+        if conclusion != "success":
+            print(f"⚠️ Workflow {wf_name} 最近运行没有成功！")
+            all_passed = False
+    
+    if all_passed:
+        print("✅ 所有 chunk workflows 都成功完成")
+        sys.exit(0)
+    else:
+        print("❌ 存在未成功完成的 chunk workflows")
+        sys.exit(2)
 
-      - name: Merge cache if all chunk workflows completed
-        if: ${{ success() }}
-        run: |
-          python scripts/C-merge_cache.py
-
-      - name: Commit and Push merged cache
-        if: ${{ success() }}
-        run: |
-          git config user.name "github-actions[bot]"
-          git config user.email "github-actions[bot]@users.noreply.github.com"
-          git add output/cache/total_cache.json
-          git commit -m "Update total_cache.json after all chunks complete" || echo "No changes to commit"
-          n=0
-          until [ $n -ge 3 ]
-          do
-            git push origin HEAD:main && break
-            n=$((n+1))
-            echo "Push failed, retry $n..."
-            sleep 5
-          done
-        env:
-          GITHUB_TOKEN: ${{ secrets.PUSH_TOKEN1 }}
+if __name__ == "__main__":
+    main()
