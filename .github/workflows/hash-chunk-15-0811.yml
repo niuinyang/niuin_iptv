@@ -35,7 +35,7 @@ jobs:
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
-          git add output/cache/chunk/20251115/
+          git add output/cache/chunk/20251116/
           git commit -m "Update cache for chunk-15.csv at 0811" || echo "No changes to commit"
           n=0
           until [ $n -ge 3 ]
