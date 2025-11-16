@@ -3,7 +3,7 @@ name: B检查缓存workflow执行完毕合并
 on:
   workflow_run:
     workflows:
-      - A生成并执行缓存workflow
+      - A生成并执行缓存workflow    # 这里填写触发的 workflow 名称，和你仓库一致
     types:
       - completed
 
@@ -27,18 +27,18 @@ jobs:
       - name: Check chunk workflows status
         env:
           GITHUB_TOKEN: ${{ secrets.PUSH_TOKEN1 }}
-          REPO_OWNER: niuinyang
-          REPO_NAME: niuin_iptv
-        run: |
-          python scripts/B-check_chunk_workflows.py
+          REPO_OWNER: niuinyang            # 你的 GitHub 用户或组织名
+          REPO_NAME_FULL: niuinyang/niuin_iptv   # 仓库完整路径 owner/repo
+        run: python scripts/B-check_chunk_workflows.py
 
       - name: Merge cache if all chunk workflows completed
         if: ${{ success() }}
-        run: |
-          python scripts/C-merge_cache.py
+        run: python scripts/C-merge_cache.py
 
       - name: Commit and Push merged cache
         if: ${{ success() }}
+        env:
+          GITHUB_TOKEN: ${{ secrets.PUSH_TOKEN1 }}
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
@@ -53,5 +53,3 @@ jobs:
             echo "Push failed, retry $n..."
             sleep 5
           done
-        env:
-          GITHUB_TOKEN: ${{ secrets.PUSH_TOKEN1 }}
