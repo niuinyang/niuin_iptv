@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 import os
 import json
-from datetime import datetime
+from datetime import datetime, timedelta
 
 WORKFLOW_DIR = ".github/workflows"
 CHUNK_DIR = "output/middle/chunk"
@@ -36,10 +36,25 @@ def load_manual_record():
         return {}
 
 
-def save_manual_record(data):
+def save_manual_record(data, days_keep=7):
+    """
+    保存 manual_record，只保留最近 days_keep 天的数据
+    """
     os.makedirs(os.path.dirname(MANUAL_TRIGGER_RECORD), exist_ok=True)
+
+    today = datetime.now()
+    filtered = {}
+    for day_str, count in data.items():
+        try:
+            day_date = datetime.strptime(day_str, "%Y%m%d")
+            if (today - day_date).days < days_keep:
+                filtered[day_str] = count
+        except Exception:
+            # 如果日期格式不对，直接保留，避免数据丢失
+            filtered[day_str] = count
+
     with open(MANUAL_TRIGGER_RECORD, "w", encoding="utf-8") as f:
-        json.dump(data, f, indent=2, ensure_ascii=False)
+        json.dump(filtered, f, indent=2, ensure_ascii=False)
 
 
 def generate_workflow(chunk_name, time_key, time_str, manual_count):
@@ -118,7 +133,7 @@ def main():
     chunks = get_chunks()
     today = datetime.now().strftime("%Y%m%d")
     manual_record = load_manual_record()
-    manual_count = manual_record.get(today, 1)
+    manual_count = manual_record.get(today, 2)
 
     keys = list(TIME_POINTS.keys())
     time_key = keys[manual_count % len(keys)]
@@ -131,7 +146,7 @@ def main():
 
     manual_record[today] = manual_count + 1
 
-    save_manual_record(manual_record)
+    save_manual_record(manual_record)  # 使用改进后的保存函数
 
 
 if __name__ == "__main__":
