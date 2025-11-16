@@ -6,6 +6,8 @@ on:
       - A生成并执行缓存workflow    # 这里填写触发的 workflow 名称，和你仓库一致
     types:
       - completed
+  workflow_dispatch:   # 新增支持手动触发
+
 
 permissions:
   contents: write
