@@ -3,8 +3,6 @@
 import os
 import re
 import json
-import time
-import subprocess  # 新增
 
 WORKFLOW_DIR = ".github/workflows"
 CHUNK_DIR = "output/middle/chunk"
@@ -13,8 +11,20 @@ CACHE_FILE = "output/cache_workflow.json"
 os.makedirs(WORKFLOW_DIR, exist_ok=True)
 os.makedirs("output/cache", exist_ok=True)
 
+# 收集所有 chunk 文件的时间点 ID，比如 chunk-0811.csv 提取 0811
+chunk_files = sorted([f for f in os.listdir(CHUNK_DIR) if re.match(r"chunk-?\d+\.csv", f)])
+chunk_ids = []
+for f in chunk_files:
+    # 去掉 chunk- 和 .csv，保留纯数字/字符部分作为时间点ID
+    m = re.match(r"chunk-?(\d+)\.csv", f)
+    if m:
+        chunk_ids.append(m.group(1))
+
+# 用逗号连接所有 chunk id 字符串，传给 final_scan
+chunk_ids_str = ",".join(chunk_ids)
+
 # 🧩 模板（改为监听 2pre-process.yml 完成，取消 schedule）
-TEMPLATE = """name: Scan_{n}
+TEMPLATE = f"""name: Scan_all_chunks
 
 on:
   workflow_run:
@@ -27,7 +37,7 @@ permissions:
   contents: write
 
 jobs:
-  scan_{n}:
+  scan_all:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout repository
@@ -44,99 +54,91 @@ jobs:
       - name: Install dependencies
         run: pip install -r requirements.txt
 
-      - name: Run fast scan for {n}
+      # 依旧针对单个 chunk 文件执行 fast_scan 和 deep_scan，单独处理每个 chunk 文件
+"""
+
+# 追加每个 chunk 的 fast_scan 和 deep_scan 步骤，同时最后统一做一次 final_scan 多 chunk_ids 扫描
+for chunk_id in chunk_ids:
+    TEMPLATE += f"""
+      - name: Run fast scan for {chunk_id}
         run: |
           mkdir -p output/middle/fast/ok output/middle/fast/not
-          python scripts/5.1fast_scan.py \
-            --input output/middle/chunk/{n}.csv \
-            --output output/middle/fast/ok/fast_{n}.csv \
-            --invalid output/middle/fast/not/fast_{n}-invalid.csv
+          python scripts/5.1fast_scan.py \\
+            --input output/middle/chunk/chunk-{chunk_id}.csv \\
+            --output output/middle/fast/ok/fast_{chunk_id}.csv \\
+            --invalid output/middle/fast/not/fast_{chunk_id}-invalid.csv
             
-      - name: Run deep scan for {n}
+      - name: Run deep scan for {chunk_id}
         run: |
           mkdir -p output/middle/deep/ok output/middle/deep/not
-          python scripts/5.2deep_scan.py \
-            --input output/middle/fast/ok/fast_{n}.csv \
-            --output output/middle/deep/ok/deep_{n}.csv \
-            --invalid output/middle/deep/not/deep_{n}-invalid.csv
+          python scripts/5.2deep_scan.py \\
+            --input output/middle/fast/ok/fast_{chunk_id}.csv \\
+            --output output/middle/deep/ok/deep_{chunk_id}.csv \\
+            --invalid output/middle/deep/not/deep_{chunk_id}-invalid.csv
+"""
 
-      - name: Run final scan for {n}
+# 最后一次性运行 final_scan，传入所有 chunk_ids
+TEMPLATE += f"""
+      - name: Run final scan for all chunks
         run: |
           mkdir -p output/middle/final/ok output/middle/final/not
-          python scripts/5.3final_scan.py \
-            --input output/middle/deep/ok/deep_{n}.csv \
-            --output output/middle/final/ok/final_{n}.csv \
-            --invalid output/middle/final/not/final_{n}-invalid.csv \
-            --chunk_id {n} \
-            --cache_dir output/cache
-            # >>>>>>>>>>>>>>>>>>>>>>>>>>  🚀 新增推送模块 START  <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
+          python scripts/5.3final_scan.py \\
+            --input output/middle/deep/ok/deep_{{chunk_id}}.csv \\
+            --output output/middle/final/ok/final_all.csv \\
+            --invalid output/middle/final/not/final_all-invalid.csv \\
+            --chunk_ids {chunk_ids_str} \\
+            --cache_dir output/cache \\
+            --threshold 0.95 \\
+            --concurrency 6 \\
+            --timeout 20
+
       - name: Commit and Push Outputs
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
 
-          # 添加所有扫描阶段生成的文件与缓存
-          git add output/cache \\
-                  output/middle/fast \\
+          # 添加所有扫描阶段生成的文件，排除缓存文件夹
+          git add output/middle/fast \\
                   output/middle/deep \\
                   output/middle/final
 
-          # 没有文件变化则结束
           if git diff --cached --quiet; then
             echo "No output updates."
             exit 0
           fi
 
-          git commit -m "Update scan outputs for {n} [skip ci]"
+          git commit -m "Update scan outputs for all chunks [skip ci]"
 
-          # 安全推送：失败自动 stash → pull --rebase → pop → retry
           MAX_RETRIES=5
           COUNT=1
 
           until git push --quiet; do
             echo "Push failed (attempt $COUNT/$MAX_RETRIES), retrying..."
-
             git stash push -m "auto-stash" || true
             git pull --rebase --quiet || true
             git stash pop || true
-
             COUNT=$((COUNT+1))
             if [ $COUNT -gt $MAX_RETRIES ]; then
               echo "🔥 Push failed after $MAX_RETRIES attempts."
               exit 1
             fi
-
             sleep 2
           done
 
           echo "Push outputs succeeded."
-      # >>>>>>>>>>>>>>>>>>>>>>>>>>  🚀 新增推送模块 END  <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
 """
-# =====================  ✨ 修改结束 ✨  =====================
 
-print("🧹 清理旧的 workflow 文件...")
-for f in os.listdir(WORKFLOW_DIR):
-    if re.match(r"scan_.+\.yml", f):
-        os.remove(os.path.join(WORKFLOW_DIR, f))
+# 写入 workflow 文件
+workflow_filename = "scan_all_chunks.yml"
+workflow_path = os.path.join(WORKFLOW_DIR, workflow_filename)
 
-if os.path.exists(CACHE_FILE):
-    os.remove(CACHE_FILE)
+with open(workflow_path, "w", encoding="utf-8") as f:
+    f.write(TEMPLATE)
 
-chunks = sorted([f for f in os.listdir(CHUNK_DIR) if re.match(r"chunk-?\d+\.csv", f)])
-cache_data = {}
+print(f"✅ 已生成 workflow: {workflow_filename}")
 
-for chunk_file in chunks:
-    chunk_id = os.path.splitext(chunk_file)[0]  # 去掉扩展名
-
-    workflow_filename = f"scan_{chunk_id}.yml"
-    workflow_path = os.path.join(WORKFLOW_DIR, workflow_filename)
-
-    with open(workflow_path, "w", encoding="utf-8") as f:
-        f.write(TEMPLATE.format(n=chunk_id))
-
-    print(f"✅ 已生成 workflow: {workflow_filename}")
-
-    cache_data[chunk_id] = {"file": workflow_filename}
+# 写入缓存文件（chunk id 映射）
+cache_data = {chunk_id: {"file": workflow_filename} for chunk_id in chunk_ids}
 
 with open(CACHE_FILE, "w", encoding="utf-8") as f:
     json.dump(cache_data, f, indent=2, ensure_ascii=False)
