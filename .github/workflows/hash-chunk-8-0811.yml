@@ -1,8 +1,10 @@
 name: hash-chunk-8-0811
 
 on:
-  schedule:
-    - cron: '11 8 * * *'  # UTC时间，需换算为UTC时间（假设北京时间+8小时）
+  workflow_run:
+    workflows: ["A-gen-hash-workflows"]   # 主workflow名称，需替换成你的实际名称
+    types:
+      - completed
   workflow_dispatch:
     inputs:
       manual_count:
