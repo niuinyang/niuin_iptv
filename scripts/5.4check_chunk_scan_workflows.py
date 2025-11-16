@@ -4,16 +4,30 @@ import sys
 import requests
 
 GITHUB_TOKEN = os.getenv("GITHUB_TOKEN")
-REPO_OWNER = os.getenv("REPO_OWNER") or "niuinyang"    # 请根据实际改
-REPO_NAME = os.getenv("REPO_NAME") or "niuin_iptv"      # 请根据实际改
+REPO_OWNER = os.getenv("REPO_OWNER")
+REPO_NAME_FULL = os.getenv("REPO_NAME_FULL")
 
-WORKFLOW_NAME_PREFIX = "scan_chunk-"  # 你生成的 chunk workflow 名称前缀
+if not REPO_OWNER or not REPO_NAME_FULL:
+    print("❌ 缺少环境变量 REPO_OWNER 或 REPO_NAME_FULL")
+    sys.exit(10)
 
-API_BASE = f"https://api.github.com/repos/{REPO_OWNER}/{REPO_NAME}"
+# 从 REPO_NAME_FULL 里拆分 owner 和 repo
+try:
+    repo_owner_from_full, repo_name = REPO_NAME_FULL.split("/")
+except ValueError:
+    print(f"❌ 环境变量 REPO_NAME_FULL 格式错误: {REPO_NAME_FULL}")
+    sys.exit(11)
+
+if repo_owner_from_full != REPO_OWNER:
+    print(f"⚠️ 环境变量 REPO_OWNER 与 REPO_NAME_FULL 中的 owner 不一致: {REPO_OWNER} vs {repo_owner_from_full}")
+
+API_BASE = f"https://api.github.com/repos/{REPO_OWNER}/{repo_name}"
 HEADERS = {
     "Accept": "application/vnd.github+json",
     "Authorization": f"token {GITHUB_TOKEN}",
 }
+
+WORKFLOW_NAME_PREFIX = "scan_chunk-"  # 根据你生成的 workflow 前缀调整
 
 def get_workflows():
     url = f"{API_BASE}/actions/workflows"
@@ -31,6 +45,10 @@ def get_latest_workflow_run_status(workflow_id):
     return runs[0].get("conclusion")
 
 def main():
+    if not GITHUB_TOKEN:
+        print("❌ 请设置环境变量 GITHUB_TOKEN")
+        sys.exit(10)
+
     workflows = get_workflows().get("workflows", [])
     chunk_workflows = [wf for wf in workflows if wf["name"].startswith(WORKFLOW_NAME_PREFIX)]
 
@@ -60,7 +78,4 @@ def main():
         sys.exit(2)
 
 if __name__ == "__main__":
-    if not GITHUB_TOKEN:
-        print("❌ 请设置环境变量 GITHUB_TOKEN")
-        sys.exit(10)
     main()
