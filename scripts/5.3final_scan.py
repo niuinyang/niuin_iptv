@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-# scripts/4.3final_scan.py
+# scripts/5.3final_scan.py
 import argparse
 import csv
 import asyncio
@@ -13,22 +13,56 @@ import os
 import chardet
 
 CACHE_DIR = "output/cache"
-CHUNK_CACHE_DIR = os.path.join(CACHE_DIR, "chunk")
-CACHE_FILE = os.path.join(CACHE_DIR, "cache_hashes.json")
+TOTAL_CACHE_FILE = os.path.join(CACHE_DIR, "total_cache.json")
 
-# ----- aHash implementation (64-bit) -----
-def image_to_ahash_bytes(img_bytes, hash_size=8):
+# 哈希尺寸（64位）
+HASH_SIZE = 8
+HASH_BITS = HASH_SIZE * HASH_SIZE  # 64
+
+# --- 计算ahash ---
+def image_to_ahash_bytes(img_bytes, hash_size=HASH_SIZE):
     im = Image.open(io.BytesIO(img_bytes)).convert('L').resize((hash_size, hash_size), Image.Resampling.LANCZOS)
     pixels = list(im.getdata())
     avg = sum(pixels) / len(pixels)
     bits = 0
     for p in pixels:
         bits = (bits << 1) | (1 if p > avg else 0)
-    return bits  # integer representing hash
+    return bits  # int
+
+# --- 计算phash ---
+def image_to_phash_bytes(img_bytes, hash_size=HASH_SIZE):
+    # pHash 经典算法：先缩放到 32*32，再做 DCT，取左上8*8
+    from PIL import ImageFilter
+    import numpy as np
+
+    im = Image.open(io.BytesIO(img_bytes)).convert('L').resize((32, 32), Image.Resampling.LANCZOS)
+    pixels = np.array(im, dtype=np.float32)
+    dct = dct2(pixels)
+    dct_low_freq = dct[:hash_size, :hash_size]
+    avg = dct_low_freq[1:,1:].mean()
+    bits = 0
+    for v in dct_low_freq.flatten():
+        bits = (bits << 1) | (1 if v > avg else 0)
+    return bits
+
+def dct2(a):
+    import numpy as np
+    return np.round(np.real(np.fft.fft2(a)))
+
+# --- 计算dhash ---
+def image_to_dhash_bytes(img_bytes, hash_size=HASH_SIZE):
+    im = Image.open(io.BytesIO(img_bytes)).convert('L').resize((hash_size + 1, hash_size), Image.Resampling.LANCZOS)
+    pixels = list(im.getdata())
+    bits = 0
+    for row in range(hash_size):
+        for col in range(hash_size):
+            left_pixel = pixels[row * (hash_size + 1) + col]
+            right_pixel = pixels[row * (hash_size + 1) + col + 1]
+            bits = (bits << 1) | (1 if left_pixel > right_pixel else 0)
+    return bits
 
 def hamming(a, b):
-    x = a ^ b
-    return x.bit_count()
+    return (a ^ b).bit_count()
 
 async def grab_frame(url, at_time=1, timeout=15):
     cmd = ["ffmpeg", "-ss", str(at_time), "-i", url, "-frames:v", "1", "-f", "image2", "-vcodec", "mjpeg", "pipe:1", "-hide_banner", "-loglevel", "error"]
@@ -46,58 +80,92 @@ async def grab_frame(url, at_time=1, timeout=15):
     except FileNotFoundError:
         return None, "ffmpeg_not_installed"
 
-# ✅ 修改：所有分块扫描都读取主缓存，只写入自己的 chunk 缓存
-def load_cache(chunk_id=None):
+def load_cache(chunk_ids):
     """
-    始终从主缓存 output/cache/cache_hashes.json 加载。
-    不再尝试加载 chunk 缓存。
+    读取 total_cache.json，返回结构：
+    {
+      url1: {
+        chunk_id1: {"phash": int, "ahash": int, "dhash": int},
+        chunk_id2: {...},
+        ...
+      },
+      ...
+    }
     """
-    os.makedirs(CHUNK_CACHE_DIR, exist_ok=True)
-    if os.path.exists(CACHE_FILE):
-        with open(CACHE_FILE, "r", encoding="utf-8") as f:
-            return json.load(f)
-    return {}
+    if not os.path.exists(TOTAL_CACHE_FILE):
+        print(f"缓存文件不存在: {TOTAL_CACHE_FILE}")
+        return {}
+
+    with open(TOTAL_CACHE_FILE, "r", encoding="utf-8") as f:
+        raw_cache = json.load(f)
+
+    result = {}
+    for url, times in raw_cache.items():
+        result[url] = {}
+        for cid in chunk_ids:
+            if cid in times:
+                entry = times[cid]
+                try:
+                    phash_int = int(entry["phash"], 16)
+                    ahash_int = int(entry["ahash"], 16)
+                    dhash_int = int(entry["dhash"], 16)
+                    result[url][cid] = {
+                        "phash": phash_int,
+                        "ahash": ahash_int,
+                        "dhash": dhash_int
+                    }
+                except Exception as e:
+                    print(f"转换哈希失败: url={url}, chunk_id={cid}, error={e}")
+    return result
 
 def save_cache(data, chunk_id=None):
-    """
-    如果有 chunk_id，只保存 chunk 缓存；
-    不再覆盖主缓存。
-    """
-    os.makedirs(CHUNK_CACHE_DIR, exist_ok=True)
-    if chunk_id:
-        chunk_cache_file = os.path.join(CHUNK_CACHE_DIR, f"cache_hashes_chunk_{chunk_id}.json")
-        with open(chunk_cache_file, "w", encoding="utf-8") as f:
-            json.dump(data, f, ensure_ascii=False, indent=2)
-    else:
-        pass  # 不再保存主缓存
+    # 不写缓存
+    pass
 
-async def process_one(url, sem, cache, timeout=20):
+async def process_one(url, sem, cache, chunk_ids, threshold=0.95, timeout=20):
     async with sem:
-        old_hash = cache.get(url)
-        img_bytes, err = await grab_frame(url, at_time=1, timeout=timeout)
+        img_bytes, err = await grab_frame(url, timeout=timeout)
         if not img_bytes:
             return {"url": url, "status": "error", "errors": [err], "is_fake": False, "similarity": 0.0, "hashes": []}
+
         try:
-            new_hash = image_to_ahash_bytes(img_bytes)
+            phash_new = image_to_phash_bytes(img_bytes)
+            ahash_new = image_to_ahash_bytes(img_bytes)
+            dhash_new = image_to_dhash_bytes(img_bytes)
         except Exception as e:
             return {"url": url, "status": f"hash_error:{e}", "errors": [], "is_fake": False, "similarity": 0.0, "hashes": []}
 
-        if old_hash is not None:
-            bits = 64
-            d = hamming(new_hash, old_hash)
-            sim = 1.0 - (d / bits)
-            is_fake = sim >= 0.95
-        else:
-            sim = 0.0
-            is_fake = False
+        max_similarity = 0.0
+        is_fake = False
 
-        cache[url] = new_hash
+        if url in cache:
+            for cid in chunk_ids:
+                if cid not in cache[url]:
+                    continue
+                c = cache[url][cid]
+                sim_phash = 1.0 - hamming(phash_new, c["phash"]) / HASH_BITS
+                sim_ahash = 1.0 - hamming(ahash_new, c["ahash"]) / HASH_BITS
+                sim_dhash = 1.0 - hamming(dhash_new, c["dhash"]) / HASH_BITS
+                avg_sim = (sim_phash + sim_ahash + sim_dhash) / 3
 
-        return {"url": url, "status": "ok", "errors": [], "is_fake": is_fake, "similarity": sim, "hashes": [new_hash]}
+                if avg_sim > max_similarity:
+                    max_similarity = avg_sim
+                if avg_sim >= threshold:
+                    is_fake = True
+                    break
 
-async def run_all(urls, concurrency=6, cache=None, timeout=20):
+        return {
+            "url": url,
+            "status": "ok",
+            "errors": [],
+            "is_fake": is_fake,
+            "similarity": max_similarity,
+            "hashes": [phash_new, ahash_new, dhash_new]
+        }
+
+async def run_all(urls, concurrency, cache, chunk_ids, threshold=0.95, timeout=20):
     sem = Semaphore(concurrency)
-    tasks = [process_one(u, sem, cache, timeout=timeout) for u in urls]
+    tasks = [process_one(u, sem, cache, chunk_ids, threshold, timeout) for u in urls]
     results = []
     for fut in tqdm_asyncio.as_completed(tasks, desc="final-scan", total=len(tasks)):
         r = await fut
@@ -174,27 +242,31 @@ def main():
     p.add_argument("--input", required=True, help="输入文件路径（deep_scan 输出）")
     p.add_argument("--output", required=True, help="最终有效输出文件完整路径（带后缀）")
     p.add_argument("--invalid", required=True, help="最终无效输出文件完整路径（带后缀）")
-    p.add_argument("--chunk_id", required=True, help="Chunk ID，用于分块缓存")
-    p.add_argument("--cache_dir", default="output/cache", help="缓存目录（默认 output/cache）")
+    p.add_argument("--chunk_ids", required=True, help="Chunk ID 列表，逗号分隔，例如 0811,1612,2113")
+    p.add_argument("--cache_dir", default=CACHE_DIR, help="缓存目录（默认 output/cache）")
     p.add_argument("--timeout", type=int, default=20)
     p.add_argument("--concurrency", type=int, default=6)
+    p.add_argument("--threshold", type=float, default=0.95, help="判定假源的相似度阈值，默认0.95")
     args = p.parse_args()
 
-    global CACHE_DIR, CHUNK_CACHE_DIR, CACHE_FILE
+    global CACHE_DIR, TOTAL_CACHE_FILE
     CACHE_DIR = args.cache_dir
-    CHUNK_CACHE_DIR = os.path.join(CACHE_DIR, "chunk")
-    CACHE_FILE = os.path.join(CACHE_DIR, "cache_hashes.json")
+    TOTAL_CACHE_FILE = os.path.join(CACHE_DIR, "total_cache.json")
+
+    chunk_ids = [cid.strip() for cid in args.chunk_ids.split(",") if cid.strip()]
+    if not chunk_ids:
+        print("请提供至少一个有效的chunk_id")
+        return
 
     input_dir = os.path.dirname(args.input)
     if input_dir:
         os.makedirs(input_dir, exist_ok=True)
 
     urls = read_deep_input(args.input)
-    print(f"Final-stage checking {len(urls)} urls (chunk_id={args.chunk_id})")
+    print(f"Final-stage checking {len(urls)} urls (chunk_ids={chunk_ids})")
 
-    cache = load_cache(args.chunk_id)
-    results = asyncio.run(run_all(urls, concurrency=args.concurrency, cache=cache, timeout=args.timeout))
-    save_cache(cache, args.chunk_id)
+    cache = load_cache(chunk_ids)
+    results = asyncio.run(run_all(urls, concurrency=args.concurrency, cache=cache, chunk_ids=chunk_ids, threshold=args.threshold, timeout=args.timeout))
 
     output_dir = os.path.dirname(args.output)
     if output_dir:
@@ -203,18 +275,15 @@ def main():
     if invalid_dir:
         os.makedirs(invalid_dir, exist_ok=True)
 
-    final_out = args.output
-    final_invalid_out = args.invalid
-
     write_final(
         results,
         input_path=args.input,
-        final_out=final_out,
-        final_invalid_out=final_invalid_out,
+        final_out=args.output,
+        final_invalid_out=args.invalid,
     )
 
     fake_count = sum(1 for r in results if r.get("is_fake"))
-    print(f"Final scan finished. Fake found: {fake_count}/{len(results)}. Wrote outputs to {final_out} and {final_invalid_out}")
+    print(f"Final scan finished. Fake found: {fake_count}/{len(results)}. Wrote outputs to {args.output} and {args.invalid}")
 
 if __name__ == "__main__":
     main()
