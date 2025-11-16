@@ -2,7 +2,7 @@ name: 6清除日前执行信息
 
 on:
   schedule:
-    - cron: '0 12 * * *'  # 每天 UTC 12:00（北京时间 20:00）
+    - cron: '0 15 * * *'  # 每天 UTC 15:00（北京时间 23:00）
   workflow_dispatch:      # 支持手动触发
 
 permissions:
