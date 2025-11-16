@@ -6,6 +6,8 @@ on:
       - 2预处理🚀 IPTV全流程（下载→合并→分割→生成）
     types:
       - completed
+  workflow_dispatch:   # 新增支持手动触发
+
 
 permissions:
   contents: write
