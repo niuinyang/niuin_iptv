@@ -16,13 +16,17 @@ TIME_POINTS = {
     "2113": "21:13"
 }
 
-# 用于记录当天手动触发次数文件
-MANUAL_TRIGGER_RECORD = "output/manual_trigger_record.json"
+# ============================================================
+# 记录文件改到 output/cache 下，但必须被 git 管理
+# ============================================================
+MANUAL_TRIGGER_RECORD = "output/cache/manual_trigger_record.json"
+
 
 def get_chunks():
     files = os.listdir(CHUNK_DIR)
     chunks = [f for f in files if f.startswith("chunk-") and f.endswith(".csv")]
     return sorted(chunks)
+
 
 def load_manual_record():
     if os.path.exists(MANUAL_TRIGGER_RECORD):
@@ -31,13 +35,14 @@ def load_manual_record():
     else:
         return {}
 
+
 def save_manual_record(data):
     os.makedirs(os.path.dirname(MANUAL_TRIGGER_RECORD), exist_ok=True)
     with open(MANUAL_TRIGGER_RECORD, "w", encoding="utf-8") as f:
         json.dump(data, f, indent=2, ensure_ascii=False)
 
+
 def generate_workflow(chunk_name, time_key, time_str, manual_count):
-    # workflow 文件名，例如 hash-chunk-1-0811.yml
     base = os.path.splitext(chunk_name)[0]  # chunk-1
     workflow_name = f"hash-{base}-{time_key}"
     filename = f"{workflow_name}.yml"
@@ -45,14 +50,11 @@ def generate_workflow(chunk_name, time_key, time_str, manual_count):
 
     chunk_id = base.split("-")[1]  # 1
 
-    # === 修改点 ===
-    # 不再使用 schedule 触发，改为 workflow_run 触发主workflow完成时
-    # 取消对 cron 调度的依赖，保持 workflow_dispatch 以便手动触发
     content = f"""name: {workflow_name}
 
 on:
   workflow_run:
-    workflows: ["A生成并执行缓存workflow"]   # 主workflow名称，需替换成你的实际名称
+    workflows: ["A生成并执行缓存workflow"]
     types:
       - completed
   workflow_dispatch:
@@ -90,33 +92,19 @@ jobs:
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
-          git add output/cache/chunk/{datetime.now().strftime('%Y%m%d')}/
-          git commit -m "Update cache for {chunk_name} at {time_key}" || echo "No changes to commit"
-          n=0
-          until [ $n -ge 3 ]
-          do
-            git pull --rebase origin main
-            git push origin HEAD:main && break
-            n=$((n+1))
-            echo "Push failed, retry $n..."
-            sleep 5
-          done
+          git add output/cache/
+          git commit -m "Update cache (manual record + chunk output)" || echo "No changes to commit"
+          git pull --rebase origin main || true
+          git push origin HEAD:main || true
         env:
           GITHUB_TOKEN: ${{{{ secrets.PUSH_TOKEN1 }}}}
 
       - name: Self-delete workflow file
         run: |
           git rm .github/workflows/{filename}
-          git commit -m "Self delete {filename}"
-          n=0
-          until [ $n -ge 3 ]
-          do
-            git pull --rebase origin main
-            git push origin HEAD:main && break
-            n=$((n+1))
-            echo "Push failed, retry $n..."
-            sleep 5
-          done
+          git commit -m "Self delete {filename}" || echo "No changes"
+          git pull --rebase origin main || true
+          git push origin HEAD:main || true
         env:
           GITHUB_TOKEN: ${{{{ secrets.PUSH_TOKEN1 }}}}
 """
@@ -125,14 +113,13 @@ jobs:
         f.write(content)
     print(f"Generated workflow: {filename}")
 
+
 def main():
     chunks = get_chunks()
     today = datetime.now().strftime("%Y%m%d")
     manual_record = load_manual_record()
-    manual_count = manual_record.get(today, 0)  # 今天已触发次数
+    manual_count = manual_record.get(today, 1)
 
-    # 根据触发次数决定当前时间点
-    # 0->0811, 1->1612, 2->2113, 3->0811循环
     keys = list(TIME_POINTS.keys())
     time_key = keys[manual_count % len(keys)]
     time_str = TIME_POINTS[time_key]
@@ -142,9 +129,10 @@ def main():
     for chunk in chunks:
         generate_workflow(chunk, time_key, time_str, manual_count)
 
-    # 更新记录
     manual_record[today] = manual_count + 1
+
     save_manual_record(manual_record)
+
 
 if __name__ == "__main__":
     main()
