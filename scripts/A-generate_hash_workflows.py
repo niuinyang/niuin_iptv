@@ -95,6 +95,7 @@ jobs:
           n=0
           until [ $n -ge 3 ]
           do
+            git pull --rebase origin main
             git push origin HEAD:main && break
             n=$((n+1))
             echo "Push failed, retry $n..."
@@ -110,6 +111,7 @@ jobs:
           n=0
           until [ $n -ge 3 ]
           do
+            git pull --rebase origin main
             git push origin HEAD:main && break
             n=$((n+1))
             echo "Push failed, retry $n..."
