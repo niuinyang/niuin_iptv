@@ -77,9 +77,10 @@ jobs:
           python-version: '3.x'
 
       - name: Install dependencies
-        sudo apt-get update
-        sudo apt-get install -y ffmpeg
-        run: pip install --quiet pillow tqdm imagehash
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y ffmpeg
+          pip install pillow tqdm imagehash
 
       - name: Run cache script
         run: |
