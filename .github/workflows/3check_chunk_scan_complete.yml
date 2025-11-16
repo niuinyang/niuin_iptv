@@ -1,66 +1,25 @@
-name: 3检测所有chunk扫描工作流完成并触发后处理
+name: 4检测chunk扫描工作流完成并触发后处理
 
 on:
   workflow_run:
     workflows:
-      - 5生成chunk的workflow    # 你的 3generate_chunk_workflow.yml 名称，改成实际名称
+      - 2预处理🚀 IPTV全流程（下载→合并→分割→生成）  # 监听你的 2pre-process.yml 的名称
     types:
       - completed
 
 permissions:
   contents: write
-  actions: write  # 触发其他 workflow 需要
+  actions: write  # 允许触发其他 workflow
 
 jobs:
   check_chunks:
     runs-on: ubuntu-latest
+
     steps:
-      - name: Checkout repo
+      - name: Checkout repository
         uses: actions/checkout@v3
 
-      - name: Setup Python
-        uses: actions/setup-python@v4
-        with:
-          python-version: "3.11"
-
-      - name: Install dependencies
-        run: pip install requests
-
-      - name: Check all chunk scan workflows status
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-          REPO_OWNER: ${{ github.repository_owner }}
-          REPO_NAME: ${{ github.repository }}
-        run: python scripts/5.4-check_chunk_scan_workflows.py
-
-      - name: Trigger 3sub-process.yml workflow
-        if: success()
-        uses: benc-uk/workflow-dispatch@v1
-        with:
-          workflow: "3sub-process.yml"
-          repo: ${{ github.repository }}
-          ref: main
-          token: ${{ secrets.GITHUB_TOKEN }}name: 4检测所有chunk扫描工作流完成并触发后处理
-
-on:
-  workflow_run:
-    workflows:
-      - 5生成chunk的workflow    # 你的 3generate_chunk_workflow.yml 名称，改成实际名称
-    types:
-      - completed
-
-permissions:
-  contents: write
-  actions: write  # 触发其他 workflow 需要
-
-jobs:
-  check_chunks:
-    runs-on: ubuntu-latest
-    steps:
-      - name: Checkout repo
-        uses: actions/checkout@v3
-
-      - name: Setup Python
+      - name: Setup Python 3.11
         uses: actions/setup-python@v4
         with:
           python-version: "3.11"
@@ -75,11 +34,11 @@ jobs:
           REPO_NAME: ${{ github.repository }}
         run: python scripts/5.4check_chunk_scan_workflows.py
 
-      - name: Trigger 5sub-process.yml workflow
+      - name: Trigger 3sub-process.yml workflow
         if: success()
         uses: benc-uk/workflow-dispatch@v1
         with:
-          workflow: "5sub-process.yml"
+          workflow: "3sub-process.yml"
           repo: ${{ github.repository }}
           ref: main
           token: ${{ secrets.GITHUB_TOKEN }}
