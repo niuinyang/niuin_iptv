@@ -7,7 +7,7 @@ import requests
 GITHUB_TOKEN = os.getenv("GITHUB_TOKEN")
 REPO_OWNER = os.getenv("REPO_OWNER") or "niuinyang"    # 请替换为你的用户名或组织名
 REPO_NAME = os.getenv("REPO_NAME") or "niuin_iptv"      # 请替换为你的仓库名
-WORKFLOW_NAME_PREFIX = "scan_chunk-"  # 你生成的 chunk workflow 名字前缀，比如 scan_chunk-1.yml 对应的 workflow 名
+WORKFLOW_NAME_PREFIX = "hash-chunk"  # 改成你要检查的 workflow 名字前缀
 
 API_BASE = f"https://api.github.com/repos/{REPO_OWNER}/{REPO_NAME}"
 
@@ -32,7 +32,7 @@ def main():
     workflows = get_workflows()
     workflows_list = workflows.get("workflows", [])
     
-    # 找出所有 chunk workflow（名字以 scan_chunk- 开头）
+    # 找出所有 chunk workflow（名字以 hash-chunk 开头）
     chunk_workflows = [w for w in workflows_list if w["name"].startswith(WORKFLOW_NAME_PREFIX)]
     if not chunk_workflows:
         print(f"❌ 没有找到名字以'{WORKFLOW_NAME_PREFIX}'开头的 workflow")
