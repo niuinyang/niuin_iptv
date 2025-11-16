@@ -9,6 +9,7 @@ import io
 from tqdm.asyncio import tqdm_asyncio
 from asyncio import Semaphore
 import json
+from datetime import datetime
 
 CACHE_DIR = "output/cache/chunk"
 
