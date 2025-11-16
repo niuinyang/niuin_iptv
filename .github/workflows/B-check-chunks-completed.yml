@@ -3,7 +3,7 @@ name: B检查缓存workflow执行完毕合并
 on:
   workflow_run:
     workflows:
-      - Generate Hash Workflows
+      - A生成并执行缓存workflow
     types:
       - completed
 
