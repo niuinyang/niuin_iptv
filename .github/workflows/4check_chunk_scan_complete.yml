@@ -73,13 +73,13 @@ jobs:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           REPO_OWNER: ${{ github.repository_owner }}
           REPO_NAME: ${{ github.repository }}
-        run: python scripts/5.4-check_chunk_scan_workflows.py
+        run: python scripts/5.4check_chunk_scan_workflows.py
 
-      - name: Trigger 3sub-process.yml workflow
+      - name: Trigger 5sub-process.yml workflow
         if: success()
         uses: benc-uk/workflow-dispatch@v1
         with:
-          workflow: "3sub-process.yml"
+          workflow: "5sub-process.yml"
           repo: ${{ github.repository }}
           ref: main
           token: ${{ secrets.GITHUB_TOKEN }}
