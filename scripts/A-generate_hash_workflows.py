@@ -133,7 +133,7 @@ def main():
     chunks = get_chunks()
     today = datetime.now().strftime("%Y%m%d")
     manual_record = load_manual_record()
-    manual_count = manual_record.get(today, 2)
+    manual_count = manual_record.get(today, 0)
 
     keys = list(TIME_POINTS.keys())
     time_key = keys[manual_count % len(keys)]
