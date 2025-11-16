@@ -52,7 +52,7 @@ def generate_workflow(chunk_name, time_key, time_str, manual_count):
 
 on:
   workflow_run:
-    workflows: ["A-gen-hash-workflows"]   # 主workflow名称，需替换成你的实际名称
+    workflows: ["A生成并执行缓存workflow"]   # 主workflow名称，需替换成你的实际名称
     types:
       - completed
   workflow_dispatch:
