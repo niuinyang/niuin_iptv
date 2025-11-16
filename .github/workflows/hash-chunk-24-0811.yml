@@ -27,7 +27,7 @@ jobs:
           python-version: '3.x'
 
       - name: Install dependencies
-        run: pip install --quiet pillow tqdm
+        run: pip install --quiet pillow tqdm imagehash
 
       - name: Run cache script
         run: |
