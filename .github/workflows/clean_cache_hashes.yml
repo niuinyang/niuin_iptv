@@ -1,16 +1,19 @@
-name: Clean Cache Hashes Chunk Files
+name: Clean Cache Hashes Chunk Files and Push
 
 on:
-  workflow_dispatch:  # 手动触发
+  workflow_dispatch:
   schedule:
-    - cron: '0 3 * * *'  # 每天 UTC 03:00 运行（可根据需求调整）
+    - cron: '0 3 * * *'  # 每天 UTC 03:00 运行（可调整）
 
 jobs:
-  clean_cache:
+  clean_cache_and_push:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout repository
         uses: actions/checkout@v3
+        with:
+          persist-credentials: true  # 保持 Git 凭据方便推送
+          fetch-depth: 0  # 拉取完整历史，方便提交
 
       - name: Set up Python
         uses: actions/setup-python@v4
@@ -19,3 +22,18 @@ jobs:
 
       - name: Run clean_cache_hashes.py
         run: python3 scripts/clean_cache_hashes.py
+
+      - name: Show deleted files (dry run)
+        run: git status
+
+      - name: Stage deleted files
+        run: git add -u output/cache/chunk/
+
+      - name: Commit changes
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git commit -m "chore: remove cache_hashes_chunk json files from output/cache/chunk" || echo "No changes to commit"
+
+      - name: Push changes
+        run: git push
