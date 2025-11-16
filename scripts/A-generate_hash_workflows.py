@@ -45,16 +45,16 @@ def generate_workflow(chunk_name, time_key, time_str, manual_count):
 
     chunk_id = base.split("-")[1]  # 1
 
-    cron_time = time_str.split(":")
-    hour = int(cron_time[0])
-    minute = int(cron_time[1])
-
-    # workflow内容
+    # === 修改点 ===
+    # 不再使用 schedule 触发，改为 workflow_run 触发主workflow完成时
+    # 取消对 cron 调度的依赖，保持 workflow_dispatch 以便手动触发
     content = f"""name: {workflow_name}
 
 on:
-  schedule:
-    - cron: '{minute} {hour} * * *'  # UTC时间，需换算为UTC时间（假设北京时间+8小时）
+  workflow_run:
+    workflows: ["A-gen-hash-workflows"]   # 主workflow名称，需替换成你的实际名称
+    types:
+      - completed
   workflow_dispatch:
     inputs:
       manual_count:
