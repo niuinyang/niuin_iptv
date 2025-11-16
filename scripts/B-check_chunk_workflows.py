@@ -30,7 +30,7 @@ HEADERS = {
     "Authorization": f"token {GITHUB_TOKEN}",
 }
 
-WORKFLOW_NAME_PREFIX = "scan_chunk-"  # 按实际前缀修改
+WORKFLOW_NAME_PREFIX = "hash-chunk"  # 按实际前缀修改
 
 def get_workflows():
     url = f"{API_BASE}/actions/workflows"
