@@ -3,13 +3,13 @@ name: 3检测chunk扫描工作流完成并触发后处理
 on:
   workflow_run:
     workflows:
-      - 2预处理🚀 IPTV全流程（下载→合并→分割→生成）  # 监听你的 2pre-process.yml 的名称
+      - 2预处理🚀 IPTV全流程（下载→合并→分割→生成）
     types:
       - completed
 
 permissions:
   contents: write
-  actions: write  # 允许触发其他 workflow
+  actions: write
 
 jobs:
   check_chunks:
@@ -31,7 +31,7 @@ jobs:
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           REPO_OWNER: ${{ github.repository_owner }}
-          REPO_NAME: ${{ github.repository.split('/')[1] }}
+          REPO_NAME_FULL: ${{ github.repository }}
         run: python scripts/5.4check_chunk_scan_workflows.py
 
       - name: Trigger 3sub-process.yml workflow
