@@ -1,0 +1,21 @@
+name: Clean Cache Hashes Chunk Files
+
+on:
+  workflow_dispatch:  # 手动触发
+  schedule:
+    - cron: '0 3 * * *'  # 每天 UTC 03:00 运行（可根据需求调整）
+
+jobs:
+  clean_cache:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v3
+
+      - name: Set up Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: '3.x'
+
+      - name: Run clean_cache_hashes.py
+        run: python3 scripts/clean_cache_hashes.py
