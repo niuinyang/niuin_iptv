@@ -7,7 +7,7 @@ import json
 # ==============================
 REPO = "fanmingming/live"        # GitHub 仓库
 FOLDER_IN_REPO = "tv"            # 仓库内要下载的文件夹
-OUTPUT_DIR = "png"                # 本地保存目录
+OUTPUT_DIR = "depend/png"        # 本地保存目录
 BRANCH = "main"                   # 分支
 HEADERS = {"User-Agent": "Python"}
 HASH_FILE = os.path.join(OUTPUT_DIR, ".hashes.json")
