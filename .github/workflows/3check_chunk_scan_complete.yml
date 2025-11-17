@@ -6,8 +6,7 @@ on:
       - 2预处理🚀 IPTV全流程（下载→合并→分割→生成）
     types:
       - completed
-  workflow_dispatch:   # 新增支持手动触发
-
+  workflow_dispatch:
 
 permissions:
   contents: write
@@ -34,6 +33,7 @@ jobs:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           REPO_OWNER: ${{ github.repository_owner }}
           REPO_NAME_FULL: ${{ github.repository }}
+          COMMIT_SHA: ${{ github.sha }}
         run: python scripts/5.4check_chunk_scan_workflows.py
 
       - name: Trigger 3sub-process.yml workflow
