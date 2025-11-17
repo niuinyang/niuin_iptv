@@ -11,7 +11,7 @@ CACHE_DIR = "output/cache/chunk"
 os.makedirs(WORKFLOW_DIR, exist_ok=True)
 os.makedirs(CACHE_DIR, exist_ok=True)
 
-# 修改：用列表保证时间点顺序
+# 时间点顺序，保证每次生成的时间点轮转
 TIME_KEYS = ["0811", "1612", "2113"]
 TIME_POINTS = {
     "0811": "08:11",
@@ -19,9 +19,6 @@ TIME_POINTS = {
     "2113": "21:13"
 }
 
-# ============================================================
-# 记录文件改到 output/cache 下，但必须被 git 管理
-# ============================================================
 MANUAL_TRIGGER_RECORD = "output/cache/manual_trigger_record.json"
 
 
@@ -52,7 +49,6 @@ def save_manual_record(data, days_keep=7):
     for day_str, count in data.items():
         try:
             day_date = datetime.strptime(day_str, "%Y%m%d")
-            # 这里day_date是无时区的，改成有时区再比较
             day_date = day_date.replace(tzinfo=beijing_tz)
             if (today_dt - day_date).days < days_keep:
                 filtered[day_str] = count
@@ -71,7 +67,6 @@ def generate_workflow(chunk_name, time_key, time_str, manual_count):
 
     chunk_id = base.split("-")[1]  # 1
 
-    # 删除 Self-delete 部分，保留文件
     content = f"""name: {workflow_name}
 
 on:
@@ -124,7 +119,7 @@ jobs:
 
     with open(filepath, "w", encoding="utf-8") as f:
         f.write(content)
-    print(f"Generated workflow: {filename}")
+    print(f"✅ Generated workflow: {filename}")
 
 
 def main():
@@ -135,7 +130,7 @@ def main():
     manual_record = load_manual_record()
     manual_count = manual_record.get(today, 0)
 
-    keys = TIME_KEYS  # 修改，保证顺序
+    keys = TIME_KEYS
     time_key = keys[manual_count % len(keys)]
     time_str = TIME_POINTS[time_key]
 
