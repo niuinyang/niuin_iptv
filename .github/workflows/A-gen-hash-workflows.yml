@@ -70,5 +70,5 @@ jobs:
     needs: generate
     uses: ./.github/workflows/B-check-chunks-completed.yml
     with:
-      timepoint: ${{ needs.generate.outputs.timepoint }}
+      commit_sha: ${{ github.sha }}
     secrets: inherit
