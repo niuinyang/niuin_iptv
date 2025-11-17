@@ -3,7 +3,7 @@ import os
 import sys
 import requests
 import argparse
-from datetime import datetime, timedelta
+from datetime import datetime
 from zoneinfo import ZoneInfo  # Python 3.9+
 
 GITHUB_TOKEN = os.getenv("GITHUB_TOKEN")
@@ -35,7 +35,6 @@ HEADERS = {
 
 WORKFLOW_NAME_PREFIX = "hash-chunk"  # 按实际前缀修改
 
-# 东八区时区对象
 BJ_TZ = ZoneInfo("Asia/Shanghai")
 
 def get_workflows():
@@ -45,9 +44,6 @@ def get_workflows():
     return resp.json()
 
 def get_latest_valid_workflow_run_status(workflow_id, timepoint):
-    """
-    查询某 workflow 最近几条完成运行记录，筛选当天(北京时间)且名字包含时间点的记录，返回结论。
-    """
     url = f"{API_BASE}/actions/workflows/{workflow_id}/runs?status=completed&per_page=5"
     resp = requests.get(url, headers=HEADERS)
     resp.raise_for_status()
@@ -56,16 +52,12 @@ def get_latest_valid_workflow_run_status(workflow_id, timepoint):
 
     for run in runs:
         run_name = run['name']
-        # 只看名字包含时间点的 workflow run
         if f"-{timepoint}" not in run_name:
             continue
-        # 解析运行结束时间，GitHub 返回时间是 UTC 格式：2025-11-17T01:00:00Z
         run_completed_utc = datetime.strptime(run['updated_at'], "%Y-%m-%dT%H:%M:%SZ")
         run_completed_bj = run_completed_utc.astimezone(BJ_TZ).date()
-        # 只接受当天完成的运行
         if run_completed_bj == today_bj:
             return run.get("conclusion")
-    # 没有当天的符合条件运行记录
     return None
 
 def main():
@@ -84,11 +76,8 @@ def main():
 
     all_success = True
     for wf in chunk_workflows:
-        # 只检查名字包含当前时间点的 workflow
         if f"-{args.timepoint}" not in wf["name"]:
-            # 跳过非当前时间点的 workflow
             continue
-
         status = get_latest_valid_workflow_run_status(wf["id"], args.timepoint)
         if status is None:
             print(f"⚠️ Workflow '{wf['name']}' 没有当天运行记录或未完成")
