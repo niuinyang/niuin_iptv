@@ -6,6 +6,8 @@ from datetime import datetime, timedelta
 CACHE_DIR = "output/cache/chunk"
 TOTAL_CACHE_FILE = "output/cache/total_cache.json"
 
+TIME_KEYS = ["0811", "1612", "2113"]  # 固定时间点顺序
+
 def merge_caches():
     # 只合并最近一天缓存目录（或者你想合并所有当天缓存文件）
     today = datetime.now().strftime("%Y%m%d")
@@ -27,9 +29,19 @@ def merge_caches():
                 for timepoint, hashes in v.items():
                     merged[url][timepoint] = hashes
 
+    # 这里做排序，保证顶层 URL 字典按字母序，且时间点顺序固定
+    sorted_merged = {}
+    for url in sorted(merged.keys()):
+        timepoint_dict = merged[url]
+        ordered_timepoint = {}
+        for tk in TIME_KEYS:
+            if tk in timepoint_dict:
+                ordered_timepoint[tk] = timepoint_dict[tk]
+        sorted_merged[url] = ordered_timepoint
+
     os.makedirs(os.path.dirname(TOTAL_CACHE_FILE), exist_ok=True)
     with open(TOTAL_CACHE_FILE, "w", encoding="utf-8") as f:
-        json.dump(merged, f, ensure_ascii=False, indent=2)
+        json.dump(sorted_merged, f, ensure_ascii=False, indent=2)
     print(f"Merged cache saved to {TOTAL_CACHE_FILE}")
 
 def main():
