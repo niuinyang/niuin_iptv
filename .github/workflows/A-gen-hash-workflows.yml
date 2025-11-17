@@ -13,6 +13,9 @@ permissions:
 jobs:
   generate:
     runs-on: ubuntu-latest
+    outputs:
+      timepoint: ${{ steps.set_tp.outputs.timepoint }}
+
     steps:
       - name: Checkout repository
         uses: actions/checkout@v3
@@ -28,28 +31,21 @@ jobs:
         run: pip install -r requirements.txt || echo "No requirements.txt found"
 
       - name: Run generate_hash_workflows.py
-        id: gen_workflows
+        run: python scripts/A-generate_hash_workflows.py
+
+      - name: Detect timepoint (Beijing Time)
+        id: set_tp
         run: |
-          python scripts/A-generate_hash_workflows.py
-
-          # 生成脚本中用到的当天时间和 manual_count 逻辑，这里直接用简化方式算 timepoint
-
-          # 获取北京时间小时分钟对应 timepoint
-          # 因为本 workflow 是 schedule 触发的，使用 github.event.schedule 取 cron 不方便，直接用当前北京时间算
           TIME_HM=$(date -u -d "+8 hour" +"%H%M")
 
-          if [ "$TIME_HM" = "0811" ]; then
-            TIMEPOINT="0811"
-          elif [ "$TIME_HM" = "1612" ]; then
-            TIMEPOINT="1612"
-          elif [ "$TIME_HM" = "2113" ]; then
-            TIMEPOINT="2113"
-          else
-            echo "⚠️ 当前时间点不匹配，默认0811"
-            TIMEPOINT="0811"
+          if [ "$TIME_HM" = "0811" ]; then TP="0811"
+          elif [ "$TIME_HM" = "1612" ]; then TP="1612"
+          elif [ "$TIME_HM" = "2113" ]; then TP="2113"
+          else TP="0811"
           fi
 
-          echo "timepoint=$TIMEPOINT" >> $GITHUB_OUTPUT
+          echo "timepoint=$TP" >> $GITHUB_OUTPUT
+          echo "Detected timepoint: $TP"
 
       - name: Commit generated chunk workflows and push
         env:
@@ -60,6 +56,7 @@ jobs:
           git add .github/workflows output/cache/manual_trigger_record.json
           git diff --cached --quiet || git commit -m "Add/update generated chunk workflows"
           git remote set-url origin https://x-access-token:${PUSH_TOKEN}@github.com/niuinyang/niuin_iptv.git
+
           n=0
           until [ $n -ge 3 ]
           do
@@ -69,12 +66,9 @@ jobs:
             sleep 5
           done
 
-      - name: Trigger B-check-chunks-completed workflow with timepoint input
-        env:
-          GITHUB_TOKEN: ${{ secrets.PUSH_TOKEN1 }}
-        run: |
-          curl -X POST \
-            -H "Accept: application/vnd.github+json" \
-            -H "Authorization: token $GITHUB_TOKEN" \
-            https://api.github.com/repos/niuinyang/niuin_iptv/actions/workflows/B-check-chunks-completed.yml/dispatches \
-            -d "{\"ref\":\"main\",\"inputs\":{\"timepoint\":\"${{ steps.gen_workflows.outputs.timepoint }}\"}}"
+  trigger-b:
+    needs: generate
+    uses: ./.github/workflows/B-check-chunks-completed.yml
+    with:
+      timepoint: ${{ needs.generate.outputs.timepoint }}
+    secrets: inherit
