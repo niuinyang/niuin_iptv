@@ -34,7 +34,10 @@ jobs:
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
           
+          # 提交删除操作
           git commit -m "Delete scan_chunk and hash-chunk workflow files" || echo "No changes to commit"
+
+          # 设置远程仓库地址（带token认证）
           git remote set-url origin https://x-access-token:${PUSH_TOKEN}@github.com/niuinyang/niuin_iptv.git
 
           n=0
@@ -85,12 +88,15 @@ jobs:
             exit 1
           fi
 
-          if ! echo "$workflows_json" | jq empty; then
-            echo "Invalid JSON for workflows list."
+          clean_workflows_json=$(echo "$workflows_json" | tr -d '\000-\010\013\014\016-\037')
+
+          if ! echo "$clean_workflows_json" | jq empty; then
+            echo "Invalid JSON for workflows list after cleanup:"
+            echo "$clean_workflows_json"
             exit 1
           fi
 
-          chunk_workflow_ids=$(echo "$workflows_json" | jq -r '.workflows[] | select(.name | test("hash-chunk")) | .id')
+          chunk_workflow_ids=$(echo "$clean_workflows_json" | jq -r '.workflows[] | select(.name | test("hash-chunk")) | .id')
 
           echo "Fetching and processing workflow runs..."
 
@@ -98,35 +104,39 @@ jobs:
             echo "Fetching page $page of workflow runs..."
 
             tmp_body_runs=$(mktemp)
-            tmp_code_runs=$(mktemp)
 
-            curl -s -H "Authorization: token $PUSH_TOKEN" \
-              -o "$tmp_body_runs" \
+            http_code_runs=$(curl -s -H "Authorization: token $PUSH_TOKEN" \
               -w "%{http_code}" \
-              "https://api.github.com/repos/$OWNER/$REPO/actions/runs?per_page=$PER_PAGE&page=$page" > "$tmp_code_runs"
-
-            http_code_runs=$(cat "$tmp_code_runs")
-            runs_json=$(cat "$tmp_body_runs")
+              -o "$tmp_body_runs" \
+              "https://api.github.com/repos/$OWNER/$REPO/actions/runs?per_page=$PER_PAGE&page=$page")
 
             echo "HTTP status for workflow runs page $page: $http_code_runs"
-            echo "JSON preview (first 100 chars):"
-            echo "${runs_json:0:100}"
 
-            runs_json_clean=$(echo "$runs_json" | tr -d '\000-\010\013\014\016-\037')
-
-            if ! echo "$runs_json_clean" | jq empty; then
-              echo "Invalid JSON detected after cleanup, dumping full content:"
-              echo "$runs_json_clean"
+            if [ "$http_code_runs" -ne 200 ]; then
+              echo "Error fetching workflow runs page $page, HTTP status $http_code_runs"
+              echo "Response body preview:"
+              head -n 20 "$tmp_body_runs"
               exit 1
             fi
 
-            run_count=$(echo "$runs_json_clean" | jq '.workflow_runs | length')
+            runs_json=$(cat "$tmp_body_runs" | tr -d '\000-\010\013\014\016-\037')
+
+            echo "JSON preview (first 100 chars):"
+            echo "${runs_json:0:100}"
+
+            if ! echo "$runs_json" | jq empty; then
+              echo "Invalid JSON for workflow runs page $page after cleanup, dump content:"
+              echo "$runs_json"
+              exit 1
+            fi
+
+            run_count=$(echo "$runs_json" | jq '.workflow_runs | length')
             if [ "$run_count" -eq 0 ]; then
               echo "No more runs found, finished."
               break
             fi
 
-            for row in $(echo "$runs_json_clean" | jq -c '.workflow_runs[]'); do
+            for row in $(echo "$runs_json" | jq -c '.workflow_runs[]'); do
               run_id=$(echo "$row" | jq -r '.id')
               workflow_id=$(echo "$row" | jq -r '.workflow_id')
               created_at=$(echo "$row" | jq -r '.created_at')
