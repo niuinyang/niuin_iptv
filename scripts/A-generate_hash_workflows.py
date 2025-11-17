@@ -50,7 +50,6 @@ def save_manual_record(data, days_keep=7):
             if (today - day_date).days < days_keep:
                 filtered[day_str] = count
         except Exception:
-            # 如果日期格式不对，直接保留，避免数据丢失
             filtered[day_str] = count
 
     with open(MANUAL_TRIGGER_RECORD, "w", encoding="utf-8") as f:
@@ -65,6 +64,9 @@ def generate_workflow(chunk_name, time_key, time_str, manual_count):
 
     chunk_id = base.split("-")[1]  # 1
 
+    # =============================
+    # ❗ 已删除 Self-delete 部分
+    # =============================
     content = f"""name: {workflow_name}
 
 on:
@@ -113,15 +115,6 @@ jobs:
           git push origin HEAD:main || true
         env:
           GITHUB_TOKEN: ${{{{ secrets.PUSH_TOKEN1 }}}}
-
-      - name: Self-delete workflow file
-        run: |
-          git rm .github/workflows/{filename}
-          git commit -m "Self delete {filename}" || echo "No changes"
-          git pull --rebase origin main || true
-          git push origin HEAD:main || true
-        env:
-          GITHUB_TOKEN: ${{{{ secrets.PUSH_TOKEN1 }}}}
 """
 
     with open(filepath, "w", encoding="utf-8") as f:
@@ -146,7 +139,7 @@ def main():
 
     manual_record[today] = manual_count + 1
 
-    save_manual_record(manual_record)  # 使用改进后的保存函数
+    save_manual_record(manual_record)
 
 
 if __name__ == "__main__":
