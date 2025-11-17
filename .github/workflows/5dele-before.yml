@@ -51,125 +51,37 @@ jobs:
   delete_all_runs:
     needs: delete_workflows
     runs-on: ubuntu-latest
-
+    
     steps:
       - name: Install jq and curl
         run: sudo apt-get update && sudo apt-get install -y jq curl
 
-      - name: Delete workflow runs except keep latest for chunk workflows
+      - name: Delete all workflow runs
         env:
-          PUSH_TOKEN: ${{ secrets.PUSH_TOKEN1 }}
+          GITHUB_TOKEN: ${{ secrets.PUSH_TOKEN1 }}  # 你的 PAT 名
           OWNER: ${{ github.repository_owner }}
           REPO: ${{ github.event.repository.name }}
         run: |
-          #!/bin/bash
-          set -euo pipefail
-
-          echo "OWNER=$OWNER, REPO=$REPO"
-
           PER_PAGE=100
           page=1
-          declare -A latest_chunk_run_ids=()
-
-          echo "Fetching all workflows..."
-          workflows_response=$(curl -s -w "%{http_code}" -H "Authorization: token $PUSH_TOKEN" \
-            "https://api.github.com/repos/$OWNER/$REPO/actions/workflows?per_page=100")
-
-          http_code="${workflows_response: -3}"
-          workflows_json="${workflows_response:0:-3}"
-
-          echo "HTTP status for workflows list: $http_code"
-          if [ "$http_code" -ne 200 ]; then
-            echo "Error fetching workflows list, HTTP status $http_code"
-            echo "Response body:"
-            echo "$workflows_json"
-            exit 1
-          fi
-
-          clean_workflows_json=$(echo "$workflows_json" | tr -d '\000-\010\013\014\016-\037')
-
-          if ! echo "$clean_workflows_json" | jq empty; then
-            echo "Invalid JSON for workflows list after cleanup:"
-            echo "$clean_workflows_json"
-            exit 1
-          fi
-
-          chunk_workflow_ids=$(echo "$clean_workflows_json" | jq -r '.workflows[] | select(.name | test("hash-chunk")) | .id')
-
-          echo "Fetching and processing workflow runs..."
 
           while : ; do
             echo "Fetching page $page of workflow runs..."
-
-            tmp_body_runs=$(mktemp)
-
-            http_code_runs=$(curl -s -H "Authorization: token $PUSH_TOKEN" \
-              -w "%{http_code}" \
-              -o "$tmp_body_runs" \
+            runs_json=$(curl -s -H "Authorization: token $GITHUB_TOKEN" \
               "https://api.github.com/repos/$OWNER/$REPO/actions/runs?per_page=$PER_PAGE&page=$page")
 
-            echo "HTTP status for workflow runs page $page: $http_code_runs"
+            run_ids=$(echo "$runs_json" | jq -r '.workflow_runs[].id')
 
-            if [ "$http_code_runs" -ne 200 ]; then
-              echo "Error fetching workflow runs page $page, HTTP status $http_code_runs"
-              echo "Response body preview:"
-              head -n 20 "$tmp_body_runs"
-              exit 1
-            fi
-
-            runs_json=$(cat "$tmp_body_runs" | tr -d '\000-\010\013\014\016-\037')
-
-            echo "JSON preview (first 100 chars):"
-            echo "${runs_json:0:100}"
-
-            if ! echo "$runs_json" | jq empty; then
-              echo "Invalid JSON for workflow runs page $page after cleanup, dump content:"
-              echo "$runs_json"
-              exit 1
-            fi
-
-            run_count=$(echo "$runs_json" | jq '.workflow_runs | length')
-            if [ "$run_count" -eq 0 ]; then
+            if [ -z "$run_ids" ]; then
               echo "No more runs found, finished."
               break
             fi
 
-            echo "$runs_json" | jq -c '.workflow_runs[]' | while IFS= read -r row; do
-              run_id=$(echo "$row" | jq -r '.id')
-              workflow_id=$(echo "$row" | jq -r '.workflow_id')
-              created_at=$(echo "$row" | jq -r '.created_at')
-
-              if echo "$chunk_workflow_ids" | grep -q "$workflow_id"; then
-                if [[ -z "${latest_chunk_run_ids[$workflow_id]:-}" ]]; then
-                  latest_chunk_run_ids[$workflow_id]="$run_id|$created_at"
-                else
-                  old_time=$(echo "${latest_chunk_run_ids[$workflow_id]}" | cut -d'|' -f2)
-                  if [[ "$created_at" > "$old_time" ]]; then
-                    old_run_id=$(echo "${latest_chunk_run_ids[$workflow_id]}" | cut -d'|' -f1)
-                    echo "Deleting older chunk workflow run id: $old_run_id"
-                    curl -X DELETE -H "Authorization: token $PUSH_TOKEN" \
-                      "https://api.github.com/repos/$OWNER/$REPO/actions/runs/$old_run_id"
-                    latest_chunk_run_ids[$workflow_id]="$run_id|$created_at"
-                  else
-                    echo "Deleting older chunk workflow run id: $run_id"
-                    curl -X DELETE -H "Authorization: token $PUSH_TOKEN" \
-                      "https://api.github.com/repos/$OWNER/$REPO/actions/runs/$run_id"
-                  fi
-                fi
-              else
-                echo "Deleting non-chunk workflow run id: $run_id"
-                curl -X DELETE -H "Authorization: token $PUSH_TOKEN" \
-                  "https://api.github.com/repos/$OWNER/$REPO/actions/runs/$run_id"
-              fi
+            for id in $run_ids; do
+              echo "Deleting run id: $id"
+              curl -X DELETE -H "Authorization: token $GITHUB_TOKEN" \
+                "https://api.github.com/repos/$OWNER/$REPO/actions/runs/$id"
             done
 
             ((page++))
-          done
-
-          echo "Kept latest runs for chunk workflows:"
-          for workflow_id in "${!latest_chunk_run_ids[@]}"; do
-            run_info=${latest_chunk_run_ids[$workflow_id]}
-            run_id=${run_info%%|*}
-            created_at=${run_info#*|}
-            echo "Workflow ID: $workflow_id, kept run id: $run_id, created at: $created_at"
           done
