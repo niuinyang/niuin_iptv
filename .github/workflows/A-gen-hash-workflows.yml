@@ -15,7 +15,7 @@ jobs:
     runs-on: ubuntu-latest
     outputs:
       timepoint: ${{ steps.set_tp.outputs.timepoint }}
-      commit_sha: ${{ steps.get_latest_sha.outputs.sha }}
+      commit_sha: ${{ steps.get_sha.outputs.sha }}
 
     steps:
       - name: Checkout repository
@@ -68,15 +68,15 @@ jobs:
           done
 
       - name: Write latest commit SHA to file and push
-        id: get_latest_sha
         env:
           PUSH_TOKEN: ${{ secrets.PUSH_TOKEN1 }}
         run: |
+          # 获取当前最新 commit SHA（刚刚推送后的）
           latest_sha=$(git rev-parse HEAD)
           echo $latest_sha > output/cache/last_commit_sha.txt
+
           git add output/cache/last_commit_sha.txt
           git commit -m "Update last_commit_sha.txt with latest commit SHA" || echo "No changes to commit"
-          git remote set-url origin https://x-access-token:${PUSH_TOKEN}@github.com/niuinyang/niuin_iptv.git
 
           n=0
           until [ $n -ge 3 ]
@@ -87,4 +87,6 @@ jobs:
             sleep 5
           done
 
-          echo "sha=$latest_sha" >> $GITHUB_OUTPUT
+      - name: Get current commit SHA (after pushing last_commit_sha.txt)
+        id: get_sha
+        run: echo "sha=$(git rev-parse HEAD)" >> $GITHUB_OUTPUT
