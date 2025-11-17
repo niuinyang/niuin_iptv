@@ -16,24 +16,40 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v4
 
-      - name: Delete scan_chunk and hash-chunk workflow files
+      - name: Delete deep_validation and hash-chunk workflow files
         run: |
-          FILES_SCAN=$(find .github/workflows -type f -name "*scan_chunk*.yml")
-          FILES_HASH=$(find .github/workflows -type f -name "*hash-chunk*.yml")
-          FILES="$FILES_SCAN $FILES_HASH"
-
-          if [ -z "$FILES" ]; then
+          FILES_SCAN=$(find .github/workflows -type f -name "*scan_chunk*.yml" -o -name "hash-chunk*.yml")
+          if [ -z "$FILES_SCAN" ]; then
             echo "No matching workflow files found."
             exit 0
           fi
-
           echo "Deleting files:"
-          echo "$FILES"
-          git rm $FILES
+          echo "$FILES_SCAN"
+          git rm $FILES_SCAN
+
+      - name: Commit and push changes
+        env:
+          PUSH_TOKEN: ${{ secrets.PUSH_TOKEN1 }}
+        run: |
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
-          git commit -m "Delete scan_chunk and hash-chunk workflow files"
-          git push
+          
+          # 提交删除操作
+          git commit -m "Delete scan_chunk and hash-chunk workflow files" || echo "No changes to commit"
+
+          # 设置远程仓库地址（带token认证）
+          git remote set-url origin https://x-access-token:${PUSH_TOKEN}@github.com/niuinyang/niuin_iptv.git
+
+          n=0
+          until [ $n -ge 3 ]
+          do
+            git pull --rebase origin main
+            git push origin HEAD:main && break
+            n=$((n+1))
+            echo "Push failed, retry $n..."
+            sleep 5
+          done
+ 
 
   delete_all_runs:
     needs: delete_workflows
