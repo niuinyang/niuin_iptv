@@ -3,7 +3,7 @@ import os
 import json
 from datetime import datetime, timedelta
 
-WORKFLOW_DIR = ".github/workflows/hash_cache"
+WORKFLOW_DIR = ".github/workflows"
 CHUNK_DIR = "output/middle/chunk"
 CACHE_DIR = "output/cache/chunk"
 
@@ -64,10 +64,7 @@ def generate_workflow(chunk_name, time_key, time_str, manual_count):
 
     chunk_id = base.split("-")[1]  # 1
 
-    # =============================
-    # ❗ 已去除 Self-delete
-    # =============================
-
+    # 删除 Self-delete 部分，保留文件
     content = f"""name: {workflow_name}
 
 on:
@@ -107,8 +104,6 @@ jobs:
           python scripts/B-1cache.py --input {CHUNK_DIR}/{chunk_name} --timepoint {time_key} --chunk_id {chunk_id}
 
       - name: Push cache changes
-        env:
-          GITHUB_TOKEN: ${{ secrets.PUSH_TOKEN1 }}
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
@@ -116,6 +111,8 @@ jobs:
           git commit -m "Update cache (manual record + chunk output)" || echo "No changes to commit"
           git pull --rebase origin main || true
           git push origin HEAD:main || true
+        env:
+          GITHUB_TOKEN: ${{{{ secrets.PUSH_TOKEN1 }}}}
 """
 
     with open(filepath, "w", encoding="utf-8") as f:
@@ -139,6 +136,7 @@ def main():
         generate_workflow(chunk, time_key, time_str, manual_count)
 
     manual_record[today] = manual_count + 1
+
     save_manual_record(manual_record)
 
 
