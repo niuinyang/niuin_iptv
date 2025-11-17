@@ -2,17 +2,6 @@ name: B检查缓存workflow执行完毕合并
 
 on:
   workflow_dispatch:
-    inputs:
-      commit_sha:
-        description: "提交的 Commit SHA，默认使用当前 commit"
-        required: true
-        default: ""
-
-  workflow_call:
-    inputs:
-      commit_sha:
-        required: true
-        type: string
 
 permissions:
   contents: write
@@ -36,14 +25,16 @@ jobs:
       - name: Install dependencies
         run: pip install requests
 
-      - name: Set COMMIT_SHA env variable
+      - name: Read commit SHA from file
+        id: read_sha
         run: |
-          if [ -z "${{ inputs.commit_sha }}" ]; then
-            echo "Using github.sha: $GITHUB_SHA"
-            echo "COMMIT_SHA=$GITHUB_SHA" >> $GITHUB_ENV
+          if [ -f output/cache/last_commit_sha.txt ]; then
+            sha=$(cat output/cache/last_commit_sha.txt)
+            echo "COMMIT_SHA=$sha" >> $GITHUB_ENV
+            echo "Read commit SHA: $sha"
           else
-            echo "Using input commit_sha: ${{ inputs.commit_sha }}"
-            echo "COMMIT_SHA=${{ inputs.commit_sha }}" >> $GITHUB_ENV
+            echo "Error: commit SHA file not found"
+            exit 1
           fi
 
       - name: Check chunk workflows status
