@@ -2,7 +2,12 @@ name: B检查缓存workflow执行完毕合并
 
 on:
   workflow_dispatch:
-
+  workflow_run:
+    workflows:
+      - A生成并执行缓存workflow
+    types:
+      - completed
+      
 permissions:
   contents: write
 
