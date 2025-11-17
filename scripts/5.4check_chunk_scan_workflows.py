@@ -27,7 +27,8 @@ HEADERS = {
     "Authorization": f"token {GITHUB_TOKEN}",
 }
 
-WORKFLOW_NAME_PREFIX = "scan_chunk-"  # 根据你生成的 workflow 前缀调整
+# 🔥 你要求的修改：搜索 Scan_chunk（注意大小写）
+WORKFLOW_NAME_PREFIX = "Scan_chunk"
 
 def get_workflows():
     url = f"{API_BASE}/actions/workflows"
@@ -50,7 +51,12 @@ def main():
         sys.exit(10)
 
     workflows = get_workflows().get("workflows", [])
-    chunk_workflows = [wf for wf in workflows if wf["name"].startswith(WORKFLOW_NAME_PREFIX)]
+    
+    # 过滤名称以 Scan_chunk 开头
+    chunk_workflows = [
+        wf for wf in workflows 
+        if wf["name"].startswith(WORKFLOW_NAME_PREFIX)
+    ]
 
     if not chunk_workflows:
         print(f"❌ 未找到任何以 '{WORKFLOW_NAME_PREFIX}' 开头的 workflow")
