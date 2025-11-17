@@ -3,12 +3,28 @@ import os
 import sys
 import time
 import requests
-import argparse
 
 GITHUB_TOKEN = os.getenv("GITHUB_TOKEN")
 REPO_OWNER = os.getenv("REPO_OWNER")
 REPO_NAME_FULL = os.getenv("REPO_NAME_FULL")
-COMMIT_SHA = os.getenv("COMMIT_SHA")
+
+def load_commit_sha_from_file(path="output/cache/last_commit_sha.txt"):
+    try:
+        with open(path, "r") as f:
+            sha = f.read().strip()
+            if len(sha) == 40 and all(c in "0123456789abcdef" for c in sha.lower()):
+                return sha
+            else:
+                print(f"⚠️ 文件 {path} 中的内容不是合法的完整 commit SHA: '{sha}'")
+                return None
+    except FileNotFoundError:
+        print(f"❌ 找不到 commit SHA 文件: {path}")
+        return None
+
+COMMIT_SHA = load_commit_sha_from_file()
+if not COMMIT_SHA:
+    print("❌ 无效或未找到 commit SHA，退出。")
+    sys.exit(10)
 
 if not all([GITHUB_TOKEN, REPO_OWNER, REPO_NAME_FULL, COMMIT_SHA]):
     print("❌ 缺少环境变量 GITHUB_TOKEN / REPO_OWNER / REPO_NAME_FULL / COMMIT_SHA")
