@@ -3,11 +3,10 @@ name: B检查缓存workflow执行完毕合并
 on:
   workflow_run:
     workflows:
-      - A生成并执行缓存workflow    # 这里填写触发的 workflow 名称，和你仓库一致
+      - A生成并执行缓存workflow
     types:
       - completed
-  workflow_dispatch:   # 新增支持手动触发
-
+  workflow_dispatch:   # 支持手动触发
 
 permissions:
   contents: write
@@ -26,12 +25,37 @@ jobs:
       - name: Install dependencies
         run: pip install requests
 
+      - name: Determine timepoint from trigger time
+        id: set_timepoint
+        run: |
+          # 获取 workflow_run 开始时间（UTC），格式：2025-11-17T01:00:00Z
+          RUN_TIME_UTC="${{ github.event.workflow_run.run_started_at }}"
+          echo "Run started at (UTC): $RUN_TIME_UTC"
+
+          # 转换为北京时间小时分钟，使用 date 工具
+          BJ_TIME=$(date -d "$RUN_TIME_UTC 8 hours" +"%H%M")
+          echo "北京时间时分: $BJ_TIME"
+
+          # 根据北京时间时分，映射到 timepoint
+          if [ "$BJ_TIME" = "0811" ]; then
+            TIMEPOINT="0811"
+          elif [ "$BJ_TIME" = "1612" ]; then
+            TIMEPOINT="1612"
+          elif [ "$BJ_TIME" = "2113" ]; then
+            TIMEPOINT="2113"
+          else
+            echo "⚠️ 无法识别北京时间时间点，默认使用0811"
+            TIMEPOINT="0811"
+          fi
+
+          echo "timepoint=$TIMEPOINT" >> $GITHUB_OUTPUT
+
       - name: Check chunk workflows status
         env:
           GITHUB_TOKEN: ${{ secrets.PUSH_TOKEN1 }}
-          REPO_OWNER: niuinyang            # 你的 GitHub 用户或组织名
-          REPO_NAME_FULL: niuinyang/niuin_iptv   # 仓库完整路径 owner/repo
-        run: python scripts/B-check_chunk_workflows.py
+          REPO_OWNER: niuinyang
+          REPO_NAME_FULL: niuinyang/niuin_iptv
+        run: python scripts/B-check_chunk_workflows.py --timepoint ${{ steps.set_timepoint.outputs.timepoint }}
 
       - name: Merge cache if all chunk workflows completed
         if: ${{ success() }}
