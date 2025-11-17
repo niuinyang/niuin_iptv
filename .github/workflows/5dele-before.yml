@@ -18,14 +18,14 @@ jobs:
 
       - name: Delete deep_validation and hash-chunk workflow files
         run: |
-          FILES_SCAN=$(find .github/workflows -type f -name "*scan_chunk*.yml" -o -name "hash-chunk*.yml")
+          FILES_SCAN=$(find .github/workflows -type f \( -name "*scan_chunk*.yml" -o -name "hash-chunk*.yml" \))
           if [ -z "$FILES_SCAN" ]; then
             echo "No matching workflow files found."
             exit 0
           fi
           echo "Deleting files:"
           echo "$FILES_SCAN"
-          git rm $FILES_SCAN || echo "No files removed"
+          git rm $FILES_SCAN
 
       - name: Commit and push changes
         env:
@@ -36,7 +36,7 @@ jobs:
           
           git commit -m "Delete scan_chunk and hash-chunk workflow files" || echo "No changes to commit"
 
-          git remote set-url origin https://x-access-token:${PUSH_TOKEN}@github.com/${{ github.repository }}
+          git remote set-url origin https://x-access-token:${PUSH_TOKEN}@github.com/niuinyang/niuin_iptv.git
 
           n=0
           until [ $n -ge 3 ]
@@ -47,7 +47,6 @@ jobs:
             echo "Push failed, retry $n..."
             sleep 5
           done
-
 
   delete_all_runs:
     needs: delete_workflows
@@ -70,18 +69,24 @@ jobs:
 
           PER_PAGE=100
           page=1
-          declare -A latest_chunk_run_ids
+          declare -A latest_chunk_run_ids=()
 
           echo "Fetching all workflows..."
-          workflows_response=$(curl -s -w "%{http_code}" -H "Authorization: token $PUSH_TOKEN" \
-            "https://api.github.com/repos/$OWNER/$REPO/actions/workflows?per_page=100")
+          tmp_body_wf=$(mktemp)
+          tmp_code_wf=$(mktemp)
+          curl -s -H "Authorization: token $PUSH_TOKEN" \
+            -o "$tmp_body_wf" \
+            -w "%{http_code}" \
+            "https://api.github.com/repos/$OWNER/$REPO/actions/workflows?per_page=100" > "$tmp_code_wf"
 
-          http_code="${workflows_response: -3}"
-          workflows_json="${workflows_response:0:-3}"
+          http_code_wf=$(cat "$tmp_code_wf")
+          workflows_json=$(cat "$tmp_body_wf")
 
-          echo "HTTP status for workflows list: $http_code"
-          if [ "$http_code" -ne 200 ]; then
-            echo "Error fetching workflows list, HTTP status $http_code"
+          rm "$tmp_body_wf" "$tmp_code_wf"
+
+          echo "HTTP status for workflows list: $http_code_wf"
+          if [ "$http_code_wf" -ne 200 ]; then
+            echo "Error fetching workflows list, HTTP status $http_code_wf"
             echo "Response body:"
             echo "$workflows_json"
             exit 1
@@ -98,15 +103,22 @@ jobs:
 
           while : ; do
             echo "Fetching page $page of workflow runs..."
-            runs_response=$(curl -s -w "%{http_code}" -H "Authorization: token $PUSH_TOKEN" \
-              "https://api.github.com/repos/$OWNER/$REPO/actions/runs?per_page=$PER_PAGE&page=$page")
+            tmp_body_runs=$(mktemp)
+            tmp_code_runs=$(mktemp)
 
-            http_code="${runs_response: -3}"
-            runs_json="${runs_response:0:-3}"
+            curl -s -H "Authorization: token $PUSH_TOKEN" \
+              -o "$tmp_body_runs" \
+              -w "%{http_code}" \
+              "https://api.github.com/repos/$OWNER/$REPO/actions/runs?per_page=$PER_PAGE&page=$page" > "$tmp_code_runs"
 
-            echo "HTTP status for workflow runs page $page: $http_code"
-            if [ "$http_code" -ne 200 ]; then
-              echo "Error fetching workflow runs page $page, HTTP status $http_code"
+            http_code_runs=$(cat "$tmp_code_runs")
+            runs_json=$(cat "$tmp_body_runs")
+
+            rm "$tmp_body_runs" "$tmp_code_runs"
+
+            echo "HTTP status for workflow runs page $page: $http_code_runs"
+            if [ "$http_code_runs" -ne 200 ]; then
+              echo "Error fetching workflow runs page $page, HTTP status $http_code_runs"
               echo "Response body:"
               echo "$runs_json"
               exit 1
