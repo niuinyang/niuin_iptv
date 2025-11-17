@@ -3,14 +3,15 @@ name: B检查缓存workflow执行完毕合并
 on:
   workflow_dispatch:
     inputs:
-      timepoint:
-        description: "时间点（0811/1612/2113）"
-        required: true
-        default: "0811"
+      # 如果手动触发，可以指定 commit sha，否则默认使用当前 commit sha
+      commit_sha:
+        description: "提交的 Commit SHA，默认使用当前 commit"
+        required: false
+        default: ""
 
   workflow_call:
     inputs:
-      timepoint:
+      commit_sha:
         required: true
         type: string
 
@@ -20,6 +21,11 @@ permissions:
 jobs:
   wait-for-chunks:
     runs-on: ubuntu-latest
+    env:
+      GITHUB_TOKEN: ${{ secrets.PUSH_TOKEN1 }}
+      REPO_OWNER: niuinyang
+      REPO_NAME_FULL: niuinyang/niuin_iptv
+      # COMMIT_SHA 将在 steps 中设置
 
     steps:
       - uses: actions/checkout@v3
@@ -32,14 +38,21 @@ jobs:
       - name: Install dependencies
         run: pip install requests
 
-      - name: Check chunk workflows status
-        env:
-          GITHUB_TOKEN: ${{ secrets.PUSH_TOKEN1 }}
-          REPO_OWNER: niuinyang
-          REPO_NAME_FULL: niuinyang/niuin_iptv
+      - name: Set COMMIT_SHA env variable
+        id: set_sha
         run: |
-          echo "Use timepoint=${{ inputs.timepoint }}"
-          python scripts/B-check_chunk_workflows.py --timepoint ${{ inputs.timepoint }}
+          # 使用输入的 commit_sha（手动触发时指定）或默认使用当前 commit sha
+          if [ -z "${{ inputs.commit_sha }}" ]; then
+            echo "Using github.sha: $GITHUB_SHA"
+            echo "COMMIT_SHA=$GITHUB_SHA" >> $GITHUB_ENV
+          else
+            echo "Using input commit_sha: ${{ inputs.commit_sha }}"
+            echo "COMMIT_SHA=${{ inputs.commit_sha }}" >> $GITHUB_ENV
+          fi
+
+      - name: Check chunk workflows status
+        run: |
+          python scripts/B-check_chunk_workflows.py
 
       - name: Merge cache if all chunk workflows completed
         if: ${{ success() }}
