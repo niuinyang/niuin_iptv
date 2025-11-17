@@ -2,10 +2,10 @@ name: A生成并执行缓存workflow
 
 on:
   workflow_dispatch:
-  #schedule:
-    #- cron: '11 0 * * *'   # 08:11 北京时间
-    #- cron: '12 8 * * *'   # 16:12 北京时间
-    #- cron: '13 13 * * *'  # 21:13 北京时间
+  # schedule:
+  #   - cron: '11 0 * * *'   # 08:11 北京时间
+  #   - cron: '12 8 * * *'   # 16:12 北京时间
+  #   - cron: '13 13 * * *'  # 21:13 北京时间
 
 permissions:
   contents: write
@@ -15,7 +15,7 @@ jobs:
     runs-on: ubuntu-latest
     outputs:
       timepoint: ${{ steps.set_tp.outputs.timepoint }}
-      commit_sha: ${{ steps.get_sha.outputs.sha }}
+      commit_sha: ${{ steps.write_sha.outputs.sha }}
 
     steps:
       - name: Checkout repository
@@ -68,15 +68,19 @@ jobs:
           done
 
       - name: Write latest commit SHA to file and push
+        id: write_sha
         env:
           PUSH_TOKEN: ${{ secrets.PUSH_TOKEN1 }}
+          GITHUB_SHA: ${{ github.sha }}
         run: |
-          # 获取当前最新 commit SHA（刚刚推送后的）
-          latest_sha=$(git rev-parse HEAD)
-          echo $latest_sha > output/cache/last_commit_sha.txt
+          echo "$GITHUB_SHA" > output/cache/last_commit_sha.txt
 
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
           git add output/cache/last_commit_sha.txt
-          git commit -m "Update last_commit_sha.txt with latest commit SHA" || echo "No changes to commit"
+          git diff --cached --quiet || git commit -m "Update last_commit_sha.txt with latest commit SHA"
+
+          git remote set-url origin https://x-access-token:${PUSH_TOKEN}@github.com/niuinyang/niuin_iptv.git
 
           n=0
           until [ $n -ge 3 ]
@@ -87,6 +91,4 @@ jobs:
             sleep 5
           done
 
-      - name: Get current commit SHA (after pushing last_commit_sha.txt)
-        id: get_sha
-        run: echo "sha=$(git rev-parse HEAD)" >> $GITHUB_OUTPUT
+          echo "sha=$GITHUB_SHA" >> $GITHUB_OUTPUT
