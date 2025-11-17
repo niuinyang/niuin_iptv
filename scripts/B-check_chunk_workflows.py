@@ -1,31 +1,27 @@
 #!/usr/bin/env python3
 import os
 import sys
+import time
 import requests
 import argparse
-from datetime import datetime
-from zoneinfo import ZoneInfo  # Python 3.9+
 
 GITHUB_TOKEN = os.getenv("GITHUB_TOKEN")
 REPO_OWNER = os.getenv("REPO_OWNER")
 REPO_NAME_FULL = os.getenv("REPO_NAME_FULL")
+COMMIT_SHA = os.getenv("COMMIT_SHA")
 
-if not GITHUB_TOKEN:
-    print("❌ 请设置环境变量 GITHUB_TOKEN")
-    sys.exit(10)
-
-if not REPO_OWNER or not REPO_NAME_FULL:
-    print("❌ 缺少环境变量 REPO_OWNER 或 REPO_NAME_FULL")
+if not all([GITHUB_TOKEN, REPO_OWNER, REPO_NAME_FULL, COMMIT_SHA]):
+    print("❌ 缺少环境变量 GITHUB_TOKEN / REPO_OWNER / REPO_NAME_FULL / COMMIT_SHA")
     sys.exit(10)
 
 try:
-    repo_owner_from_full, repo_name = REPO_NAME_FULL.split("/")
+    owner_from_full, repo_name = REPO_NAME_FULL.split("/")
 except ValueError:
-    print(f"❌ 环境变量 REPO_NAME_FULL 格式错误，应为 'owner/repo'，当前为: {REPO_NAME_FULL}")
+    print(f"❌ REPO_NAME_FULL 格式错误: {REPO_NAME_FULL}")
     sys.exit(11)
 
-if repo_owner_from_full != REPO_OWNER:
-    print(f"⚠️ 环境变量 REPO_OWNER 与 REPO_NAME_FULL 中的 owner 不一致: {REPO_OWNER} vs {repo_owner_from_full}")
+if owner_from_full != REPO_OWNER:
+    print(f"⚠️ REPO_OWNER 与 REPO_NAME_FULL 中的 owner 不一致: {REPO_OWNER} vs {owner_from_full}")
 
 API_BASE = f"https://api.github.com/repos/{REPO_OWNER}/{repo_name}"
 HEADERS = {
@@ -33,67 +29,80 @@ HEADERS = {
     "Authorization": f"token {GITHUB_TOKEN}",
 }
 
-WORKFLOW_NAME_PREFIX = "hash-chunk"
+WORKFLOW_NAME_PREFIX = "hash-chunk"  # chunk workflow 前缀
+POLL_INTERVAL = 20    # 轮询间隔秒
+TIMEOUT = 3600        # 超时秒数（1小时）
 
-BJ_TZ = ZoneInfo("Asia/Shanghai")
-
-def get_workflows():
-    url = f"{API_BASE}/actions/workflows"
+def github_get(url):
     resp = requests.get(url, headers=HEADERS)
     resp.raise_for_status()
     return resp.json()
 
-def get_latest_valid_workflow_run_status(workflow_id, timepoint):
-    url = f"{API_BASE}/actions/workflows/{workflow_id}/runs?status=completed&per_page=5"
-    resp = requests.get(url, headers=HEADERS)
-    resp.raise_for_status()
-    runs = resp.json().get("workflow_runs", [])
-    today_bj = datetime.now(BJ_TZ).date()
+def get_chunk_workflows():
+    workflows = github_get(f"{API_BASE}/actions/workflows").get("workflows", [])
+    return [wf for wf in workflows if wf["name"].startswith(WORKFLOW_NAME_PREFIX)]
 
-    for run in runs:
-        run_name = run['name']
-        if f"-{timepoint}" not in run_name:
-            continue
-        run_completed_utc = datetime.strptime(run['updated_at'], "%Y-%m-%dT%H:%M:%SZ")
-        run_completed_bj = run_completed_utc.astimezone(BJ_TZ).date()
-        if run_completed_bj == today_bj:
-            return run.get("conclusion")
-    return None
+def get_workflow_runs_for_sha(workflow_id, sha):
+    url = f"{API_BASE}/actions/workflows/{workflow_id}/runs?per_page=100&head_sha={sha}"
+    data = github_get(url)
+    return data.get("workflow_runs", [])
 
 def main():
-    parser = argparse.ArgumentParser(description="检查 chunk workflows 状态，仅检查当天对应时间点的运行结果")
-    parser.add_argument("--timepoint", required=True, choices=["0811","1612","2113"], help="当前时间点")
-    args = parser.parse_args()
+    print(f"开始轮询检测，等待所有以 '{WORKFLOW_NAME_PREFIX}' 开头的 workflows 对 commit {COMMIT_SHA} 完成，超时：{TIMEOUT}秒")
 
-    workflows = get_workflows().get("workflows", [])
-    chunk_workflows = [wf for wf in workflows if wf["name"].startswith(WORKFLOW_NAME_PREFIX)]
-
-    if not chunk_workflows:
+    workflows = get_chunk_workflows()
+    if not workflows:
         print(f"❌ 未找到任何以 '{WORKFLOW_NAME_PREFIX}' 开头的 workflow")
         sys.exit(1)
 
-    print(f"找到 {len(chunk_workflows)} 个 chunk workflows，开始检查状态 (仅当日时间点 {args.timepoint}) ...")
+    print(f"🔍 找到 {len(workflows)} 个 chunk workflows，开始轮询...")
 
-    all_success = True
-    for wf in chunk_workflows:
-        if f"-{args.timepoint}" not in wf["name"]:
-            continue
-        status = get_latest_valid_workflow_run_status(wf["id"], args.timepoint)
-        if status is None:
-            print(f"⚠️ Workflow '{wf['name']}' 没有当天运行记录或未完成")
-            all_success = False
-        elif status != "success":
-            print(f"⚠️ Workflow '{wf['name']}' 最新当天运行状态为 '{status}'，非成功")
-            all_success = False
-        else:
-            print(f"✅ Workflow '{wf['name']}' 最新当天运行成功")
+    start_time = time.time()
 
-    if all_success:
-        print("🎉 所有当天对应时间点的 chunk workflows 都已成功完成！")
-        sys.exit(0)
-    else:
-        print("❌ 存在未完成或失败的 chunk workflows")
-        sys.exit(2)
+    while True:
+        all_done = True
+        all_success = True
+
+        for wf in workflows:
+            runs = get_workflow_runs_for_sha(wf["id"], COMMIT_SHA)
+            if not runs:
+                print(f"⚠️ {wf['name']}：无匹配本 commit {COMMIT_SHA} 的运行，等待中")
+                all_done = False
+                continue
+
+            latest_run = runs[0]  # 最新的运行
+
+            status = latest_run["status"]  # queued, in_progress, completed
+            conclusion = latest_run.get("conclusion")
+
+            if status != "completed":
+                print(f"⏳ {wf['name']}：状态={status}，仍在运行")
+                all_done = False
+                continue
+
+            if conclusion != "success":
+                print(f"❌ {wf['name']}：运行失败，conclusion={conclusion}")
+                all_success = False
+            else:
+                print(f"✅ {wf['name']}：运行成功")
+
+        print()
+
+        if all_done:
+            if all_success:
+                print("🎉 所有 workflows 均成功完成！")
+                sys.exit(0)
+            else:
+                print("❌ 有 workflows 运行失败")
+                sys.exit(2)
+
+        if time.time() - start_time > TIMEOUT:
+            print(f"⛔ 超时 {TIMEOUT} 秒，部分 workflows 未完成")
+            sys.exit(3)
+
+        print(f"⌛ 等待 {POLL_INTERVAL} 秒后继续轮询...\n")
+        time.sleep(POLL_INTERVAL)
+
 
 if __name__ == "__main__":
     main()
