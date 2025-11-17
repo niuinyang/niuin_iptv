@@ -16,19 +16,23 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v4
 
-      - name: Delete deep_validation workflow files
+      - name: Delete scan_chunk and hash-chunk workflow files
         run: |
-          FILES=$(find .github/workflows -type f -name "*scan_chunk*.yml")
+          FILES_SCAN=$(find .github/workflows -type f -name "*scan_chunk*.yml")
+          FILES_HASH=$(find .github/workflows -type f -name "*hash-chunk*.yml")
+          FILES="$FILES_SCAN $FILES_HASH"
+
           if [ -z "$FILES" ]; then
             echo "No matching workflow files found."
             exit 0
           fi
+
           echo "Deleting files:"
           echo "$FILES"
           git rm $FILES
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
-          git commit -m "Delete deep_validation workflow files"
+          git commit -m "Delete scan_chunk and hash-chunk workflow files"
           git push
 
   delete_all_runs:
