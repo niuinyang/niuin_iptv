@@ -2,10 +2,10 @@ name: A生成并执行缓存workflow
 
 on:
   workflow_dispatch:
-  #schedule:
-    #- cron: '11 0 * * *'   # 08:11 北京时间
-    #- cron: '12 8 * * *'   # 16:12 北京时间
-    #- cron: '13 13 * * *'  # 21:13 北京时间
+  # schedule:
+    # - cron: '11 0 * * *'   # 08:11 北京时间
+    # - cron: '12 8 * * *'   # 16:12 北京时间
+    # - cron: '13 13 * * *'  # 21:13 北京时间
 
 permissions:
   contents: write
@@ -48,21 +48,28 @@ jobs:
           echo "timepoint=$TP" >> $GITHUB_OUTPUT
           echo "Detected timepoint: $TP"
 
-      - name: Get current commit SHA
-        id: get_sha
-        run: echo "sha=$(git rev-parse HEAD)" >> $GITHUB_OUTPUT
-
-      - name: Write commit SHA to file
-        run: echo "${{ steps.get_sha.outputs.sha }}" > output/cache/last_commit_sha.txt
-
-      - name: Commit generated chunk workflows and last_commit_sha.txt and push
+      - name: Commit generated chunk workflows and push
         env:
           PUSH_TOKEN: ${{ secrets.PUSH_TOKEN1 }}
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
-          git add .github/workflows output/cache/manual_trigger_record.json output/cache/last_commit_sha.txt
-          git diff --cached --quiet || git commit -m "Add/update generated chunk workflows and commit SHA file"
+
+          git add .github/workflows output/cache/manual_trigger_record.json
+
+          # 第一次提交生成的 workflow 文件和手动记录文件
+          git commit -m "Add/update generated chunk workflows"
+
+          # 取得这次最新提交的 SHA
+          NEW_SHA=$(git rev-parse HEAD)
+
+          # 写入 last_commit_sha.txt 文件
+          echo "$NEW_SHA" > output/cache/last_commit_sha.txt
+
+          # 添加并修改上次提交，避免多次提交
+          git add output/cache/last_commit_sha.txt
+          git commit --amend --no-edit
+
           git remote set-url origin https://x-access-token:${PUSH_TOKEN}@github.com/niuinyang/niuin_iptv.git
 
           n=0
@@ -73,3 +80,7 @@ jobs:
             echo "Push failed, retry $n..."
             sleep 5
           done
+
+      - name: Get current commit SHA
+        id: get_sha
+        run: echo "sha=$(git rev-parse HEAD)" >> $GITHUB_OUTPUT
