@@ -18,14 +18,14 @@ jobs:
 
       - name: Delete deep_validation and hash-chunk workflow files
         run: |
-          FILES_SCAN=$(find .github/workflows -type f -name "*scan_chunk*.yml" -o -name "hash-chunk*.yml")
+          FILES_SCAN=$(find .github/workflows -type f -name "*scan_chunk*.yml" -o -name "hash-chunk*.yml" || true)
           if [ -z "$FILES_SCAN" ]; then
             echo "No matching workflow files found."
             exit 0
           fi
           echo "Deleting files:"
           echo "$FILES_SCAN"
-          git rm $FILES_SCAN
+          git rm $FILES_SCAN || true
 
       - name: Commit and push changes
         env:
@@ -34,10 +34,8 @@ jobs:
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
           
-          # 提交删除操作
           git commit -m "Delete scan_chunk and hash-chunk workflow files" || echo "No changes to commit"
-
-          # 设置远程仓库地址（带token认证）
+          
           git remote set-url origin https://x-access-token:${PUSH_TOKEN}@github.com/niuinyang/niuin_iptv.git
 
           n=0
@@ -136,7 +134,7 @@ jobs:
               break
             fi
 
-            for row in $(echo "$runs_json" | jq -c '.workflow_runs[]'); do
+            echo "$runs_json" | jq -c '.workflow_runs[]' | while IFS= read -r row; do
               run_id=$(echo "$row" | jq -r '.id')
               workflow_id=$(echo "$row" | jq -r '.workflow_id')
               created_at=$(echo "$row" | jq -r '.created_at')
