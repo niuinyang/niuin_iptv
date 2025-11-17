@@ -80,16 +80,6 @@ async def grab_frame(url, at_time=1, timeout=15):
     except FileNotFoundError:
         return None, "ffmpeg_not_installed"
 
-async def grab_frames_multi(url, times=[1,3,5], timeout=15):
-    # 多帧抓取，返回多个图像bytes列表或错误
-    results = []
-    for t in times:
-        img_bytes, err = await grab_frame(url, at_time=t, timeout=timeout)
-        if not img_bytes:
-            return None, f"grab_multi_failed_at_{t}s:{err}"
-        results.append(img_bytes)
-    return results, ""
-
 def load_cache(chunk_ids):
     """
     读取 total_cache.json，返回两个结果：
@@ -143,23 +133,77 @@ def save_cache(data, chunk_id=None):
 async def process_one(url, sem, cache, chunk_ids, threshold=0.95, timeout=20):
     async with sem:
         has_cache = url in cache and any(cid in cache[url] for cid in chunk_ids)
-        
         if has_cache:
-            # 有缓存，抓单帧
+            # 有缓存，只抓一帧
             img_bytes, err = await grab_frame(url, timeout=timeout)
             if not img_bytes:
                 return {"url": url, "status": "error", "errors": [err], "is_fake": False, "similarity": 0.0, "hashes": []}
+        else:
+            # 无缓存，抓多帧，间隔0.5秒抓3帧（示例），超时改为较长
+            imgs = []
+            errors = []
+            for t in [1, 1.5, 2]:
+                img, err = await grab_frame(url, at_time=t, timeout=timeout+5)
+                if img:
+                    imgs.append(img)
+                else:
+                    errors.append(err)
+            if not imgs:
+                return {"url": url, "status": "error", "errors": errors, "is_fake": False, "similarity": 0.0, "hashes": []}
+            # 多帧平均相似度
+            phash_list = []
+            ahash_list = []
+            dhash_list = []
+            for img_bytes in imgs:
+                try:
+                    phash_list.append(image_to_phash_bytes(img_bytes))
+                    ahash_list.append(image_to_ahash_bytes(img_bytes))
+                    dhash_list.append(image_to_dhash_bytes(img_bytes))
+                except Exception as e:
+                    return {"url": url, "status": f"hash_error:{e}", "errors": [], "is_fake": False, "similarity": 0.0, "hashes": []}
 
-            try:
-                phash_new = image_to_phash_bytes(img_bytes)
-                ahash_new = image_to_ahash_bytes(img_bytes)
-                dhash_new = image_to_dhash_bytes(img_bytes)
-            except Exception as e:
-                return {"url": url, "status": f"hash_error:{e}", "errors": [], "is_fake": False, "similarity": 0.0, "hashes": []}
-
+            # 对每帧与缓存对比，取最大相似度
             max_similarity = 0.0
             is_fake = False
+            for phash_new, ahash_new, dhash_new in zip(phash_list, ahash_list, dhash_list):
+                if url in cache:
+                    for cid in chunk_ids:
+                        if cid not in cache[url]:
+                            continue
+                        c = cache[url][cid]
+                        sim_phash = 1.0 - hamming(phash_new, c["phash"]) / HASH_BITS
+                        sim_ahash = 1.0 - hamming(ahash_new, c["ahash"]) / HASH_BITS
+                        sim_dhash = 1.0 - hamming(dhash_new, c["dhash"]) / HASH_BITS
+                        avg_sim = (sim_phash + sim_ahash + sim_dhash) / 3
 
+                        if avg_sim > max_similarity:
+                            max_similarity = avg_sim
+                        if avg_sim >= threshold:
+                            is_fake = True
+                            break
+                    if is_fake:
+                        break
+            return {
+                "url": url,
+                "status": "ok",
+                "errors": [],
+                "is_fake": is_fake,
+                "similarity": max_similarity,
+                "hashes": []
+            }
+
+        # 有缓存的单帧处理（上面部分），继续判断相似度
+        try:
+            phash_new = image_to_phash_bytes(img_bytes)
+            ahash_new = image_to_ahash_bytes(img_bytes)
+            dhash_new = image_to_dhash_bytes(img_bytes)
+        except Exception as e:
+            return {"url": url, "status": f"hash_error:{e}", "errors": [], "is_fake": False, "similarity": 0.0, "hashes": []}
+
+        max_similarity = 0.0
+        is_fake = False
+
+        if url in cache:
             for cid in chunk_ids:
                 if cid not in cache[url]:
                     continue
@@ -175,55 +219,14 @@ async def process_one(url, sem, cache, chunk_ids, threshold=0.95, timeout=20):
                     is_fake = True
                     break
 
-            return {
-                "url": url,
-                "status": "ok",
-                "errors": [],
-                "is_fake": is_fake,
-                "similarity": max_similarity,
-                "hashes": [phash_new, ahash_new, dhash_new]
-            }
-        
-        else:
-            # 无缓存，抓多帧，平均判断
-            imgs_bytes, err = await grab_frames_multi(url, times=[1,3,5], timeout=timeout)
-            if not imgs_bytes:
-                return {"url": url, "status": "error", "errors": [err], "is_fake": False, "similarity": 0.0, "hashes": []}
-
-            similarities = []
-            is_fake = False
-            for img_bytes in imgs_bytes:
-                try:
-                    phash_new = image_to_phash_bytes(img_bytes)
-                    ahash_new = image_to_ahash_bytes(img_bytes)
-                    dhash_new = image_to_dhash_bytes(img_bytes)
-                except Exception as e:
-                    return {"url": url, "status": f"hash_error:{e}", "errors": [], "is_fake": False, "similarity": 0.0, "hashes": []}
-
-                max_similarity = 0.0
-                for cid in chunk_ids:
-                    if cid not in cache.get(url, {}):
-                        continue
-                    c = cache[url][cid]
-                    sim_phash = 1.0 - hamming(phash_new, c["phash"]) / HASH_BITS
-                    sim_ahash = 1.0 - hamming(ahash_new, c["ahash"]) / HASH_BITS
-                    sim_dhash = 1.0 - hamming(dhash_new, c["dhash"]) / HASH_BITS
-                    avg_sim = (sim_phash + sim_ahash + sim_dhash) / 3
-                    if avg_sim > max_similarity:
-                        max_similarity = avg_sim
-                similarities.append(max_similarity)
-                if max_similarity >= threshold:
-                    is_fake = True
-
-            avg_sim_final = sum(similarities) / len(similarities) if similarities else 0.0
-            return {
-                "url": url,
-                "status": "ok",
-                "errors": [],
-                "is_fake": is_fake,
-                "similarity": avg_sim_final,
-                "hashes": []  # 多帧不缓存
-            }
+        return {
+            "url": url,
+            "status": "ok",
+            "errors": [],
+            "is_fake": is_fake,
+            "similarity": max_similarity,
+            "hashes": [phash_new, ahash_new, dhash_new]
+        }
 
 async def run_all(urls, concurrency, cache, chunk_ids, threshold=0.95, timeout=20):
     sem = Semaphore(concurrency)
@@ -305,6 +308,8 @@ def write_final(results, input_path, final_out=None, final_invalid_out=None, raw
                 w_invalid.writerow(invalid_row)
 
 def main():
+    global CACHE_DIR, TOTAL_CACHE_FILE
+
     p = argparse.ArgumentParser()
     p.add_argument("--input", required=True, help="输入文件路径（deep_scan 输出）")
     p.add_argument("--output", required=True, help="最终有效输出文件完整路径（带后缀）")
@@ -316,7 +321,6 @@ def main():
     p.add_argument("--threshold", type=float, default=0.95, help="判定假源的相似度阈值，默认0.95")
     args = p.parse_args()
 
-    global CACHE_DIR, TOTAL_CACHE_FILE
     CACHE_DIR = args.cache_dir
     TOTAL_CACHE_FILE = os.path.join(CACHE_DIR, "total_cache.json")
 
