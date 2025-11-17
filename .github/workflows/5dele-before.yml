@@ -1,8 +1,8 @@
 name: 5清除日前执行信息
 
 on:
-  schedule:
-    - cron: '0 15 * * *'  # 每天 UTC 15:00（北京时间 23:00）
+  #schedule:
+    #- cron: '0 15 * * *'  # 每天 UTC 15:00（北京时间 23:00）
   workflow_dispatch:      # 支持手动触发
 
 permissions:
