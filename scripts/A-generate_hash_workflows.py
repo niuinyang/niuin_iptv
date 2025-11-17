@@ -11,6 +11,8 @@ CACHE_DIR = "output/cache/chunk"
 os.makedirs(WORKFLOW_DIR, exist_ok=True)
 os.makedirs(CACHE_DIR, exist_ok=True)
 
+# 修改：用列表保证时间点顺序
+TIME_KEYS = ["0811", "1612", "2113"]
 TIME_POINTS = {
     "0811": "08:11",
     "1612": "16:12",
@@ -133,7 +135,7 @@ def main():
     manual_record = load_manual_record()
     manual_count = manual_record.get(today, 0)
 
-    keys = list(TIME_POINTS.keys())
+    keys = TIME_KEYS  # 修改，保证顺序
     time_key = keys[manual_count % len(keys)]
     time_str = TIME_POINTS[time_key]
 
