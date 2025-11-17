@@ -1,7 +1,8 @@
 #!/usr/bin/env python3
 import os
 import json
-from datetime import datetime, timedelta
+from datetime import datetime
+from zoneinfo import ZoneInfo  # Python 3.9+
 
 WORKFLOW_DIR = ".github/workflows"
 CHUNK_DIR = "output/middle/chunk"
@@ -42,12 +43,16 @@ def save_manual_record(data, days_keep=7):
     """
     os.makedirs(os.path.dirname(MANUAL_TRIGGER_RECORD), exist_ok=True)
 
-    today = datetime.now()
+    beijing_tz = ZoneInfo("Asia/Shanghai")
+    today_dt = datetime.now(beijing_tz)
+
     filtered = {}
     for day_str, count in data.items():
         try:
             day_date = datetime.strptime(day_str, "%Y%m%d")
-            if (today - day_date).days < days_keep:
+            # 这里day_date是无时区的，改成有时区再比较
+            day_date = day_date.replace(tzinfo=beijing_tz)
+            if (today_dt - day_date).days < days_keep:
                 filtered[day_str] = count
         except Exception:
             filtered[day_str] = count
@@ -121,8 +126,10 @@ jobs:
 
 
 def main():
+    beijing_tz = ZoneInfo("Asia/Shanghai")
+    today = datetime.now(beijing_tz).strftime("%Y%m%d")
+
     chunks = get_chunks()
-    today = datetime.now().strftime("%Y%m%d")
     manual_record = load_manual_record()
     manual_count = manual_record.get(today, 0)
 
