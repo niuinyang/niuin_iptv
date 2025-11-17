@@ -49,7 +49,6 @@ jobs:
             echo "Push failed, retry $n..."
             sleep 5
           done
- 
 
   delete_all_runs:
     needs: delete_workflows
@@ -66,6 +65,7 @@ jobs:
           REPO: ${{ github.event.repository.name }}
         run: |
           #!/bin/bash
+          set -euo pipefail
           PER_PAGE=100
           page=1
           declare -A latest_chunk_run_ids
@@ -74,7 +74,6 @@ jobs:
           workflows_json=$(curl -s -H "Authorization: token $GITHUB_TOKEN" \
             "https://api.github.com/repos/$OWNER/$REPO/actions/workflows?per_page=100")
 
-          # 获取所有 chunk workflow id，名字中含 "hash-chunk"
           chunk_workflow_ids=$(echo "$workflows_json" | jq -r '.workflows[] | select(.name | test("hash-chunk")) | .id')
 
           echo "Fetching and processing workflow runs..."
@@ -96,8 +95,8 @@ jobs:
               created_at=$(echo "$row" | jq -r '.created_at')
 
               if echo "$chunk_workflow_ids" | grep -q "$workflow_id"; then
-                # chunk workflow
-                if [[ -z "${latest_chunk_run_ids[$workflow_id]}" ]]; then
+                # chunk workflow，保留最新一次，删除旧的
+                if [[ -z "${latest_chunk_run_ids[$workflow_id]:-}" ]]; then
                   latest_chunk_run_ids[$workflow_id]="$run_id|$created_at"
                 else
                   old_time=$(echo "${latest_chunk_run_ids[$workflow_id]}" | cut -d'|' -f2)
@@ -114,7 +113,7 @@ jobs:
                   fi
                 fi
               else
-                # 非 chunk workflow，全部删
+                # 其他 workflow 运行全部删除
                 echo "Deleting non-chunk workflow run id: $run_id"
                 curl -X DELETE -H "Authorization: token $GITHUB_TOKEN" \
                   "https://api.github.com/repos/$OWNER/$REPO/actions/runs/$run_id"
