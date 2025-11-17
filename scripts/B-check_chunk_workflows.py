@@ -33,7 +33,7 @@ HEADERS = {
     "Authorization": f"token {GITHUB_TOKEN}",
 }
 
-WORKFLOW_NAME_PREFIX = "hash-chunk"  # 按实际前缀修改
+WORKFLOW_NAME_PREFIX = "hash-chunk"
 
 BJ_TZ = ZoneInfo("Asia/Shanghai")
 
