@@ -2152,7 +2152,7 @@ CNA,https://stream1.freetv.fun/ya-zhou-xin-wen-1.m3u8,重复URL
 [HD]dazn ringside,https://stream1.freetv.fun/dazn-ringside-2.m3u8,重复URL
 [HD]dazn 2[geo-blocked],rtmp://f13h.mine.nu/sat/tv741,无效URL（非 http/https/rtsp 开头）
 [BD]discovery h h,https://stream1.freetv.fun/discovery-h-h-3.ctv,重复URL
-[HD]discovery(tw) *s[geo-blocked],https://stream1.freetv.fun/discovery--s-1.m3u8,重复URL
+[BD]discovery(tw) *s[geo-blocked],https://stream1.freetv.fun/discovery--s-1.m3u8,重复URL
 [HD]asharq discovery,https://stream1.freetv.fun/asharq-discovery-4.m3u8,重复URL
 [BD]cctv-4k[geo-blocked],https://stream1.freetv.fun/cctv-4k-1.ctv,重复URL
 [SD]elta 4 *wj,https://stream1.freetv.fun/elta-4--wj-1.m3u8,重复URL
@@ -2187,7 +2187,7 @@ CNA,https://stream1.freetv.fun/ya-zhou-xin-wen-1.m3u8,重复URL
 [HD]ca smithsonian channel,https://stream1.freetv.fun/ca-smithsonian-channel-1.ctv,重复URL
 [SD]smithsonian channel ==,https://stream1.freetv.fun/smithsonian-channel-2.ctv,重复URL
 [SD]smithsonian channel =,https://stream1.freetv.fun/smithsonian-channel-3.ctv,重复URL
-[HD]smithsonian channel selects,https://stream1.freetv.fun/smithsonian-channel-selects-1.m3u8,重复URL
+[SD]smithsonian channel selects[geo-blocked],https://stream1.freetv.fun/smithsonian-channel-selects-1.m3u8,重复URL
 [HD]gold star,https://stream1.freetv.fun/gold-star-1.m3u8,重复URL
 [BD]star movies select,https://stream1.freetv.fun/star-movies-select-1.ctv,重复URL
 [BD]tvbs-asia,https://stream1.freetv.fun/tvbs-asia-8.m3u8,重复URL
@@ -2256,7 +2256,6 @@ CNA,https://stream1.freetv.fun/ya-zhou-xin-wen-1.m3u8,重复URL
 [BD]北京卫视[geo-blocked],https://stream1.freetv.fun/bei-jing-wei-shi-81.m3u8,重复URL
 [BD]北京卫视[geo-blocked],https://stream1.freetv.fun/bei-jing-wei-shi-99.m3u8,重复URL
 [BD]北京卫视[geo-blocked],https://stream1.freetv.fun/bei-jing-wei-shi-48.m3u8,重复URL
-[BD]北京卫视,https://stream1.freetv.fun/bei-jing-wei-shi-2.m3u8,重复URL
 [BD]北京卫视[geo-blocked],https://stream1.freetv.fun/bei-jing-wei-shi-21.m3u8,重复URL
 [BD]北京卫视[geo-blocked],https://stream1.freetv.fun/bei-jing-wei-shi-42.ctv,重复URL
 [BD]北京卫视,https://stream1.freetv.fun/bei-jing-wei-shi-68.m3u8,重复URL
@@ -2335,7 +2334,6 @@ CNA,https://stream1.freetv.fun/ya-zhou-xin-wen-1.m3u8,重复URL
 [BD]四川卫视[geo-blocked],https://stream1.freetv.fun/si-chuan-wei-shi-71.ctv,重复URL
 [BD]四川卫视,https://stream1.freetv.fun/si-chuan-wei-shi-27.m3u8,重复URL
 [BD]四川卫视,https://stream1.freetv.fun/si-chuan-wei-shi-65.m3u8,重复URL
-[BD]四川卫视,https://stream1.freetv.fun/si-chuan-wei-shi-86.m3u8,重复URL
 [SD]四川卫视,https://stream1.freetv.fun/si-chuan-wei-shi-35.ctv,重复URL
 [BD]四川卫视,https://stream1.freetv.fun/si-chuan-wei-shi-51.m3u8,重复URL
 [HD]大愛電视 *wj,https://stream1.freetv.fun/da-ai-dian-shi---wj-1.m3u8,重复URL
@@ -2484,7 +2482,7 @@ CNA,https://stream1.freetv.fun/ya-zhou-xin-wen-1.m3u8,重复URL
 [BD]广西卫视[geo-blocked],https://stream1.freetv.fun/yan-xi-wei-shi-5.m3u8,重复URL
 [BD]广西卫视,https://stream1.freetv.fun/yan-xi-wei-shi-74.m3u8,重复URL
 [BD]广西卫视,https://stream1.freetv.fun/yan-xi-wei-shi-83.ctv,重复URL
-[BD]广西卫视[geo-blocked],https://stream1.freetv.fun/yan-xi-wei-shi-15.m3u8,重复URL
+[BD]广西卫视,https://stream1.freetv.fun/yan-xi-wei-shi-15.m3u8,重复URL
 [BD]广西卫视[geo-blocked],https://stream1.freetv.fun/yan-xi-wei-shi-65.ctv,重复URL
 [BD]延边卫视[geo-blocked],https://stream1.freetv.fun/yan-bian-wei-shi-17.m3u8,重复URL
 [SD]延边卫视[geo-blocked],https://stream1.freetv.fun/yan-bian-wei-shi-33.m3u8,重复URL
@@ -2536,12 +2534,11 @@ CNA,https://stream1.freetv.fun/ya-zhou-xin-wen-1.m3u8,重复URL
 [HD]民视[geo-blocked],rtmp://f13h.mine.nu:1935/sat/tv051,无效URL（非 http/https/rtsp 开头）
 [BD]民視新聞,https://stream1.freetv.fun/min-shi-xin-wen-17.m3u8,重复URL
 [BD]新闻综合,https://stream1.freetv.fun/xin-wen-zong-he-3.m3u8,重复URL
-[BD]江苏城市[geo-blocked],https://stream1.freetv.fun/jiang-su-cheng-shi-7.m3u8,重复URL
+[BD]江苏城市,https://stream1.freetv.fun/jiang-su-cheng-shi-7.m3u8,重复URL
 [BD]江苏卫视[geo-blocked],https://stream1.freetv.fun/jiang-su-wei-shi-36.m3u8,重复URL
 [HD]江苏卫视,https://stream1.freetv.fun/jiang-su-wei-shi-90.ctv,重复URL
 [BD]江苏卫视[geo-blocked],https://stream1.freetv.fun/jiang-su-wei-shi-101.ctv,重复URL
 [HD]江苏卫视,https://stream1.freetv.fun/jiang-su-wei-shi-79.m3u8,重复URL
-[BD]江苏卫视,https://stream1.freetv.fun/jiang-su-wei-shi-19.m3u8,重复URL
 [BD]江苏卫视,https://stream1.freetv.fun/jiang-su-wei-shi-114.m3u8,重复URL
 [BD]江苏卫视[geo-blocked],https://stream1.freetv.fun/jiang-su-wei-shi-26.ctv,重复URL
 [BD]江苏卫视,https://stream1.freetv.fun/jiang-su-wei-shi-100.ctv,重复URL
@@ -2627,9 +2624,9 @@ CNA,https://stream1.freetv.fun/ya-zhou-xin-wen-1.m3u8,重复URL
 [HD]浙江卫视,https://stream1.freetv.fun/zhe-jiang-wei-shi-7.m3u8,重复URL
 [BD]浙江卫视[geo-blocked],https://stream1.freetv.fun/zhe-jiang-wei-shi-3.ctv,重复URL
 [BD]浙江卫视[geo-blocked],https://stream1.freetv.fun/zhe-jiang-wei-shi-37.ctv,重复URL
-[BD]浙江卫视,https://stream1.freetv.fun/zhe-jiang-wei-shi-75.ctv,重复URL
+[BD]浙江卫视[geo-blocked],https://stream1.freetv.fun/zhe-jiang-wei-shi-75.ctv,重复URL
 [BD]浙江卫视[geo-blocked],https://stream1.freetv.fun/zhe-jiang-wei-shi-88.m3u8,重复URL
-[BD]浙江卫视,https://stream1.freetv.fun/zhe-jiang-wei-shi-98.m3u8,重复URL
+[BD]浙江卫视[geo-blocked],https://stream1.freetv.fun/zhe-jiang-wei-shi-98.m3u8,重复URL
 [BD]浙江卫视[geo-blocked],https://stream1.freetv.fun/zhe-jiang-wei-shi-102.ctv,重复URL
 [BD]浙江卫视,https://stream1.freetv.fun/zhe-jiang-wei-shi-116.m3u8,重复URL
 [BD]浙江卫视,https://stream1.freetv.fun/zhe-jiang-wei-shi-20.m3u8,重复URL
@@ -2707,10 +2704,9 @@ CNA,https://stream1.freetv.fun/ya-zhou-xin-wen-1.m3u8,重复URL
 [HD]湖州新闻综合,https://stream1.freetv.fun/hu-zhou-xin-wen-zong-he-3.m3u8,重复URL
 [HD]湖州新闻综合,https://stream1.freetv.fun/hu-zhou-xin-wen-zong-he-4.m3u8,重复URL
 [BD]衢江新闻综合,https://stream1.freetv.fun/qu-jiang-xin-wen-zong-he-3.m3u8,重复URL
-[BD]江津新闻综合,https://stream1.freetv.fun/jiang-jin-xin-wen-zong-he-4.m3u8,重复URL
+[BD]江津新闻综合[geo-blocked],https://stream1.freetv.fun/jiang-jin-xin-wen-zong-he-4.m3u8,重复URL
 [BD]澳门莲花,https://stream1.freetv.fun/ao-men-lian-hua-3.m3u8,重复URL
 [SD]澳门莲花,https://stream1.freetv.fun/ao-men-lian-hua-1.m3u8,重复URL
-[BD]无线新闻,https://stream1.freetv.fun/wu-xian-xin-wen-4.ctv,重复URL
 [BD]无线新闻,https://stream1.freetv.fun/wu-xian-xin-wen-7.m3u8,重复URL
 [HD]无线新闻,https://stream1.freetv.fun/wu-xian-xin-wen-2.ctv,重复URL
 [BD]无线新闻[geo-blocked],rtmp://nowast.net/live/yifatv-wxxw01,无效URL（非 http/https/rtsp 开头）
@@ -2818,8 +2814,8 @@ CNA,https://stream1.freetv.fun/ya-zhou-xin-wen-1.m3u8,重复URL
 [BD]重庆卫视[geo-blocked],https://stream1.freetv.fun/zhong-qing-wei-shi-10.m3u8,重复URL
 [BD]重庆卫视[geo-blocked],https://stream1.freetv.fun/zhong-qing-wei-shi-62.m3u8,重复URL
 [HD]重庆卫视,https://stream1.freetv.fun/zhong-qing-wei-shi-93.m3u8,重复URL
-[BD]重庆卫视,https://stream1.freetv.fun/zhong-qing-wei-shi-4.m3u8,重复URL
-[BD]重庆卫视,https://stream1.freetv.fun/zhong-qing-wei-shi-55.m3u8,重复URL
+[BD]重庆卫视[geo-blocked],https://stream1.freetv.fun/zhong-qing-wei-shi-4.m3u8,重复URL
+[BD]重庆卫视[geo-blocked],https://stream1.freetv.fun/zhong-qing-wei-shi-55.m3u8,重复URL
 [BD]重庆卫视,https://stream1.freetv.fun/zhong-qing-wei-shi-95.m3u8,重复URL
 [BD]重庆卫视,https://stream1.freetv.fun/zhong-qing-wei-shi-57.m3u8,重复URL
 [BD]金川新闻综合[geo-blocked],rtmp://139.203.180.9/live/zhxw,无效URL（非 http/https/rtsp 开头）
@@ -2874,7 +2870,6 @@ CNA,https://stream1.freetv.fun/ya-zhou-xin-wen-1.m3u8,重复URL
 [SD]凤凰资讯,https://stream1.freetv.fun/feng-huang-zi-xun-19.m3u8,重复URL
 [SD]凤凰资讯,https://stream1.freetv.fun/feng-huang-zi-xun-6.ctv,重复URL
 [BD]凤凰香港[geo-blocked],https://stream1.freetv.fun/feng-huang-xiang-gang-13.ctv,重复URL
-[HD]凤凰香港,https://stream1.freetv.fun/feng-huang-xiang-gang-5.ctv,重复URL
 [HD]凤凰香港,https://stream1.freetv.fun/feng-huang-xiang-gang-1.ctv,重复URL
 [BD]凤凰香港[geo-blocked],https://stream1.freetv.fun/feng-huang-xiang-gang-3.ctv,重复URL
 [SD]黑龙江影视[geo-blocked],https://stream1.freetv.fun/hei-long-jiang-ying-shi-12.m3u8,重复URL
