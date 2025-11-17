@@ -25,7 +25,7 @@ jobs:
           fi
           echo "Deleting files:"
           echo "$FILES_SCAN"
-          git rm $FILES_SCAN || echo "git rm failed or no files to remove"
+          git rm $FILES_SCAN || echo "No files removed"
 
       - name: Commit and push changes
         env:
@@ -35,18 +35,19 @@ jobs:
           git config user.email "github-actions[bot]@users.noreply.github.com"
           
           git commit -m "Delete scan_chunk and hash-chunk workflow files" || echo "No changes to commit"
-          
-          git remote set-url origin https://x-access-token:${PUSH_TOKEN}@github.com/niuinyang/niuin_iptv.git
-          
+
+          git remote set-url origin https://x-access-token:${PUSH_TOKEN}@github.com/${{ github.repository }}
+
           n=0
           until [ $n -ge 3 ]
           do
-            git pull --rebase origin main || echo "git pull failed"
+            git pull --rebase origin main
             git push origin HEAD:main && break
             n=$((n+1))
             echo "Push failed, retry $n..."
             sleep 5
           done
+
 
   delete_all_runs:
     needs: delete_workflows
@@ -67,33 +68,54 @@ jobs:
 
           echo "OWNER=$OWNER, REPO=$REPO"
 
+          PER_PAGE=100
+          page=1
+          declare -A latest_chunk_run_ids
+
           echo "Fetching all workflows..."
-          workflows_json=$(curl -s -H "Authorization: token $PUSH_TOKEN" \
+          workflows_response=$(curl -s -w "%{http_code}" -H "Authorization: token $PUSH_TOKEN" \
             "https://api.github.com/repos/$OWNER/$REPO/actions/workflows?per_page=100")
 
-          echo "Workflows JSON response preview:"
-          echo "$workflows_json" | head -n 20
+          http_code="${workflows_response: -3}"
+          workflows_json="${workflows_response:0:-3}"
 
-          # 验证返回是否为有效 JSON
-          if ! echo "$workflows_json" | jq empty; then
-            echo "Error: Invalid JSON response for workflows list, aborting."
+          echo "HTTP status for workflows list: $http_code"
+          if [ "$http_code" -ne 200 ]; then
+            echo "Error fetching workflows list, HTTP status $http_code"
+            echo "Response body:"
+            echo "$workflows_json"
             exit 1
           fi
 
-          # 取出名字中包含 hash-chunk 的 workflow ID 列表
+          if ! echo "$workflows_json" | jq empty; then
+            echo "Invalid JSON for workflows list."
+            exit 1
+          fi
+
           chunk_workflow_ids=$(echo "$workflows_json" | jq -r '.workflows[] | select(.name | test("hash-chunk")) | .id')
-
-          declare -A latest_chunk_run_ids
-
-          PER_PAGE=100
-          page=1
 
           echo "Fetching and processing workflow runs..."
 
           while : ; do
             echo "Fetching page $page of workflow runs..."
-            runs_json=$(curl -s -H "Authorization: token $PUSH_TOKEN" \
+            runs_response=$(curl -s -w "%{http_code}" -H "Authorization: token $PUSH_TOKEN" \
               "https://api.github.com/repos/$OWNER/$REPO/actions/runs?per_page=$PER_PAGE&page=$page")
+
+            http_code="${runs_response: -3}"
+            runs_json="${runs_response:0:-3}"
+
+            echo "HTTP status for workflow runs page $page: $http_code"
+            if [ "$http_code" -ne 200 ]; then
+              echo "Error fetching workflow runs page $page, HTTP status $http_code"
+              echo "Response body:"
+              echo "$runs_json"
+              exit 1
+            fi
+
+            if ! echo "$runs_json" | jq empty; then
+              echo "Invalid JSON for workflow runs page $page."
+              exit 1
+            fi
 
             run_count=$(echo "$runs_json" | jq '.workflow_runs | length')
             if [ "$run_count" -eq 0 ]; then
