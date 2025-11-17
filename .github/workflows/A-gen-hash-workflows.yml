@@ -15,6 +15,7 @@ jobs:
     runs-on: ubuntu-latest
     outputs:
       timepoint: ${{ steps.set_tp.outputs.timepoint }}
+      commit_sha: ${{ steps.get_sha.outputs.sha }}
 
     steps:
       - name: Checkout repository
@@ -47,6 +48,10 @@ jobs:
           echo "timepoint=$TP" >> $GITHUB_OUTPUT
           echo "Detected timepoint: $TP"
 
+      - name: Get current commit SHA
+        id: get_sha
+        run: echo "sha=$(git rev-parse HEAD)" >> $GITHUB_OUTPUT
+
       - name: Commit generated chunk workflows and push
         env:
           PUSH_TOKEN: ${{ secrets.PUSH_TOKEN1 }}
@@ -65,10 +70,3 @@ jobs:
             echo "Push failed, retry $n..."
             sleep 5
           done
-
-  trigger-b:
-    needs: generate
-    uses: ./.github/workflows/B-check-chunks-completed.yml
-    with:
-      commit_sha: ${{ github.sha }}
-    secrets: inherit
