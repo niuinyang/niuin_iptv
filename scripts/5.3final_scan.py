@@ -82,19 +82,13 @@ async def grab_frame(url, at_time=1, timeout=15):
 
 def load_cache(chunk_ids):
     """
-    读取 total_cache.json，返回结构：
-    {
-      url1: {
-        chunk_id1: {"phash": int, "ahash": int, "dhash": int},
-        chunk_id2: {...},
-        ...
-      },
-      ...
-    }
+    读取 total_cache.json，返回两个结果：
+    - result: 结构化哈希字典
+    - raw_cache: 原始完整缓存，供失败判断用
     """
     if not os.path.exists(TOTAL_CACHE_FILE):
         print(f"缓存文件不存在: {TOTAL_CACHE_FILE}")
-        return {}
+        return {}, {}
 
     with open(TOTAL_CACHE_FILE, "r", encoding="utf-8") as f:
         raw_cache = json.load(f)
@@ -116,7 +110,21 @@ def load_cache(chunk_ids):
                     }
                 except Exception as e:
                     print(f"转换哈希失败: url={url}, chunk_id={cid}, error={e}")
-    return result
+    return result, raw_cache
+
+def is_all_timepoints_failed(url, chunk_ids, raw_cache):
+    # 判断该 url 的所有时间点缓存是否全部失败（无哈希或全空）
+    if url not in raw_cache:
+        return True
+    data = raw_cache[url]
+    for cid in chunk_ids:
+        if cid in data:
+            entry = data[cid]
+            # 有任意时间点有有效 phash，则不算全部失败
+            if entry.get("phash") not in (None, "", "null") and entry.get("phash") is not None:
+                return False
+    # 全部都无效
+    return True
 
 def save_cache(data, chunk_id=None):
     # 不写缓存
@@ -182,7 +190,7 @@ def read_deep_input(path):
                 urls.append(url)
     return urls
 
-def write_final(results, input_path, final_out=None, final_invalid_out=None):
+def write_final(results, input_path, final_out=None, final_invalid_out=None, raw_cache=None, chunk_ids=None):
     final_map = {r["url"]: r for r in results}
 
     with open(input_path, "rb") as fb:
@@ -217,15 +225,20 @@ def write_final(results, input_path, final_out=None, final_invalid_out=None):
             similarity = ""
             fail_reason = ""
 
-            if r:
-                if r.get("status") == "ok" and not r.get("is_fake", False):
-                    passed = True
-                    similarity = round(r.get("similarity", 0), 4)
-                else:
-                    fail_reason = r.get("status", "")
-                    if r.get("is_fake", False):
-                        fail_reason += "; 伪源相似度: {:.4f}".format(r.get("similarity", 0))
-                    similarity = round(r.get("similarity", 0), 4)
+            # 判断是否所有时间点都失败
+            if raw_cache and chunk_ids and is_all_timepoints_failed(url, chunk_ids, raw_cache):
+                fail_reason = "所有时间点抓帧失败"
+                similarity = 0.0
+            else:
+                if r:
+                    if r.get("status") == "ok" and not r.get("is_fake", False):
+                        passed = True
+                        similarity = round(r.get("similarity", 0), 4)
+                    else:
+                        fail_reason = r.get("status", "")
+                        if r.get("is_fake", False):
+                            fail_reason += "; 伪源相似度: {:.4f}".format(r.get("similarity", 0))
+                        similarity = round(r.get("similarity", 0), 4)
 
             if passed:
                 valid_row = {k: row.get(k, "") for k in working_fields}
@@ -265,7 +278,7 @@ def main():
     urls = read_deep_input(args.input)
     print(f"Final-stage checking {len(urls)} urls (chunk_ids={chunk_ids})")
 
-    cache = load_cache(chunk_ids)
+    cache, raw_cache = load_cache(chunk_ids)
     results = asyncio.run(run_all(urls, concurrency=args.concurrency, cache=cache, chunk_ids=chunk_ids, threshold=args.threshold, timeout=args.timeout))
 
     output_dir = os.path.dirname(args.output)
@@ -280,6 +293,8 @@ def main():
         input_path=args.input,
         final_out=args.output,
         final_invalid_out=args.invalid,
+        raw_cache=raw_cache,
+        chunk_ids=chunk_ids,
     )
 
     fake_count = sum(1 for r in results if r.get("is_fake"))
