@@ -1,13 +1,13 @@
 name: 5清除日前执行信息
 
 on:
-  #schedule:
-    #- cron: '0 15 * * *'  # 每天 UTC 15:00（北京时间 23:00）
+  schedule:
+    - cron: '0 15 * * *'  # 每天 UTC 15:00（北京时间 23:00）
   workflow_dispatch:      # 支持手动触发
 
 permissions:
   contents: write
-  
+
 jobs:
   delete_workflows:
     runs-on: ubuntu-latest
@@ -39,32 +39,75 @@ jobs:
       - name: Install jq and curl
         run: sudo apt-get update && sudo apt-get install -y jq curl
 
-      - name: Delete all workflow runs
+      - name: Delete workflow runs except keep latest for chunk workflows
         env:
           GITHUB_TOKEN: ${{ secrets.PUSH_TOKEN1 }}
           OWNER: ${{ github.repository_owner }}
           REPO: ${{ github.event.repository.name }}
         run: |
+          #!/bin/bash
           PER_PAGE=100
           page=1
+          declare -A latest_chunk_run_ids
+
+          echo "Fetching all workflows..."
+          workflows_json=$(curl -s -H "Authorization: token $GITHUB_TOKEN" \
+            "https://api.github.com/repos/$OWNER/$REPO/actions/workflows?per_page=100")
+
+          # 获取所有 chunk workflow id，名字中含 "hash-chunk"
+          chunk_workflow_ids=$(echo "$workflows_json" | jq -r '.workflows[] | select(.name | test("hash-chunk")) | .id')
+
+          echo "Fetching and processing workflow runs..."
 
           while : ; do
             echo "Fetching page $page of workflow runs..."
             runs_json=$(curl -s -H "Authorization: token $GITHUB_TOKEN" \
               "https://api.github.com/repos/$OWNER/$REPO/actions/runs?per_page=$PER_PAGE&page=$page")
 
-            run_ids=$(echo "$runs_json" | jq -r '.workflow_runs[].id')
-
-            if [ -z "$run_ids" ]; then
+            run_count=$(echo "$runs_json" | jq '.workflow_runs | length')
+            if [ "$run_count" -eq 0 ]; then
               echo "No more runs found, finished."
               break
             fi
 
-            for id in $run_ids; do
-              echo "Deleting run id: $id"
-              curl -X DELETE -H "Authorization: token $GITHUB_TOKEN" \
-                "https://api.github.com/repos/$OWNER/$REPO/actions/runs/$id"
+            for row in $(echo "$runs_json" | jq -c '.workflow_runs[]'); do
+              run_id=$(echo "$row" | jq -r '.id')
+              workflow_id=$(echo "$row" | jq -r '.workflow_id')
+              created_at=$(echo "$row" | jq -r '.created_at')
+
+              if echo "$chunk_workflow_ids" | grep -q "$workflow_id"; then
+                # chunk workflow
+                if [[ -z "${latest_chunk_run_ids[$workflow_id]}" ]]; then
+                  latest_chunk_run_ids[$workflow_id]="$run_id|$created_at"
+                else
+                  old_time=$(echo "${latest_chunk_run_ids[$workflow_id]}" | cut -d'|' -f2)
+                  if [[ "$created_at" > "$old_time" ]]; then
+                    old_run_id=$(echo "${latest_chunk_run_ids[$workflow_id]}" | cut -d'|' -f1)
+                    echo "Deleting older chunk workflow run id: $old_run_id"
+                    curl -X DELETE -H "Authorization: token $GITHUB_TOKEN" \
+                      "https://api.github.com/repos/$OWNER/$REPO/actions/runs/$old_run_id"
+                    latest_chunk_run_ids[$workflow_id]="$run_id|$created_at"
+                  else
+                    echo "Deleting older chunk workflow run id: $run_id"
+                    curl -X DELETE -H "Authorization: token $GITHUB_TOKEN" \
+                      "https://api.github.com/repos/$OWNER/$REPO/actions/runs/$run_id"
+                  fi
+                fi
+              else
+                # 非 chunk workflow，全部删
+                echo "Deleting non-chunk workflow run id: $run_id"
+                curl -X DELETE -H "Authorization: token $GITHUB_TOKEN" \
+                  "https://api.github.com/repos/$OWNER/$REPO/actions/runs/$run_id"
+              fi
             done
 
             ((page++))
+          done
+
+          echo "Kept latest runs for chunk workflows:"
+          for workflow_id in "${!latest_chunk_run_ids[@]}"; do
+            run_info=${latest_chunk_run_ids[$workflow_id]}
+            run_id=${run_info%%|*}
+            created_at=${run_info#*|}
+            echo "Workflow ID: $workflow_id, kept run id: $run_id, created at: $created_at"
           done
