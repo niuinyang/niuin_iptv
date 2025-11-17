@@ -18,7 +18,7 @@ jobs:
 
       - name: Delete deep_validation and hash-chunk workflow files
         run: |
-          FILES_SCAN=$(find .github/workflows -type f \( -name "*scan_chunk*.yml" -o -name "hash-chunk*.yml" \))
+          FILES_SCAN=$(find .github/workflows -type f -name "*scan_chunk*.yml" -o -name "hash-chunk*.yml")
           if [ -z "$FILES_SCAN" ]; then
             echo "No matching workflow files found."
             exit 0
@@ -35,7 +35,6 @@ jobs:
           git config user.email "github-actions[bot]@users.noreply.github.com"
           
           git commit -m "Delete scan_chunk and hash-chunk workflow files" || echo "No changes to commit"
-
           git remote set-url origin https://x-access-token:${PUSH_TOKEN}@github.com/niuinyang/niuin_iptv.git
 
           n=0
@@ -72,21 +71,15 @@ jobs:
           declare -A latest_chunk_run_ids=()
 
           echo "Fetching all workflows..."
-          tmp_body_wf=$(mktemp)
-          tmp_code_wf=$(mktemp)
-          curl -s -H "Authorization: token $PUSH_TOKEN" \
-            -o "$tmp_body_wf" \
-            -w "%{http_code}" \
-            "https://api.github.com/repos/$OWNER/$REPO/actions/workflows?per_page=100" > "$tmp_code_wf"
+          workflows_response=$(curl -s -w "%{http_code}" -H "Authorization: token $PUSH_TOKEN" \
+            "https://api.github.com/repos/$OWNER/$REPO/actions/workflows?per_page=100")
 
-          http_code_wf=$(cat "$tmp_code_wf")
-          workflows_json=$(cat "$tmp_body_wf")
+          http_code="${workflows_response: -3}"
+          workflows_json="${workflows_response:0:-3}"
 
-          rm "$tmp_body_wf" "$tmp_code_wf"
-
-          echo "HTTP status for workflows list: $http_code_wf"
-          if [ "$http_code_wf" -ne 200 ]; then
-            echo "Error fetching workflows list, HTTP status $http_code_wf"
+          echo "HTTP status for workflows list: $http_code"
+          if [ "$http_code" -ne 200 ]; then
+            echo "Error fetching workflows list, HTTP status $http_code"
             echo "Response body:"
             echo "$workflows_json"
             exit 1
@@ -103,6 +96,7 @@ jobs:
 
           while : ; do
             echo "Fetching page $page of workflow runs..."
+
             tmp_body_runs=$(mktemp)
             tmp_code_runs=$(mktemp)
 
@@ -114,34 +108,30 @@ jobs:
             http_code_runs=$(cat "$tmp_code_runs")
             runs_json=$(cat "$tmp_body_runs")
 
-            rm "$tmp_body_runs" "$tmp_code_runs"
-
             echo "HTTP status for workflow runs page $page: $http_code_runs"
-            if [ "$http_code_runs" -ne 200 ]; then
-              echo "Error fetching workflow runs page $page, HTTP status $http_code_runs"
-              echo "Response body:"
-              echo "$runs_json"
+            echo "JSON preview (first 100 chars):"
+            echo "${runs_json:0:100}"
+
+            runs_json_clean=$(echo "$runs_json" | tr -d '\000-\010\013\014\016-\037')
+
+            if ! echo "$runs_json_clean" | jq empty; then
+              echo "Invalid JSON detected after cleanup, dumping full content:"
+              echo "$runs_json_clean"
               exit 1
             fi
 
-            if ! echo "$runs_json" | jq empty; then
-              echo "Invalid JSON for workflow runs page $page."
-              exit 1
-            fi
-
-            run_count=$(echo "$runs_json" | jq '.workflow_runs | length')
+            run_count=$(echo "$runs_json_clean" | jq '.workflow_runs | length')
             if [ "$run_count" -eq 0 ]; then
               echo "No more runs found, finished."
               break
             fi
 
-            for row in $(echo "$runs_json" | jq -c '.workflow_runs[]'); do
+            for row in $(echo "$runs_json_clean" | jq -c '.workflow_runs[]'); do
               run_id=$(echo "$row" | jq -r '.id')
               workflow_id=$(echo "$row" | jq -r '.workflow_id')
               created_at=$(echo "$row" | jq -r '.created_at')
 
               if echo "$chunk_workflow_ids" | grep -q "$workflow_id"; then
-                # chunk workflow，保留最新一条，其余删除
                 if [[ -z "${latest_chunk_run_ids[$workflow_id]:-}" ]]; then
                   latest_chunk_run_ids[$workflow_id]="$run_id|$created_at"
                 else
@@ -159,7 +149,6 @@ jobs:
                   fi
                 fi
               else
-                # 非 chunk workflow，全部删除
                 echo "Deleting non-chunk workflow run id: $run_id"
                 curl -X DELETE -H "Authorization: token $PUSH_TOKEN" \
                   "https://api.github.com/repos/$OWNER/$REPO/actions/runs/$run_id"
