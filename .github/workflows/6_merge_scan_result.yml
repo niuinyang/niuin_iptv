@@ -38,9 +38,9 @@ jobs:
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
-          git add output/working.csv output/cache/cache_hashes.json
+          git add output/middle/working.csv output/middle/working.m3u
           if ! git diff --cached --quiet; then
-            git commit -m "Auto merge CSV and JSON files [skip ci]"
+            git commit -m "Auto merge CSV and M3U files [skip ci]"
             MAX_RETRIES=3
             for i in $(seq 1 $MAX_RETRIES); do
               echo "Attempt $i to push..."
@@ -49,10 +49,10 @@ jobs:
                 break
               else
                 echo "Push failed, trying stash and pull..."
-                if [ -n "$(git.status --porcelain)" ]; then
+                if [ -n "$(git status --porcelain)" ]; then
                   git stash push -m "ci stash before pull"
                   git pull --rebase origin main --quiet
-                  git stash.pop || echo "No stash to pop"
+                  git stash pop || echo "No stash to pop"
                 else
                   git pull --rebase origin main --quiet
                 fi
