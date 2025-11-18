@@ -4,13 +4,14 @@ on:
   workflow_dispatch:
     inputs:
       source:
-        description: 'input/network'  #现有目录
+        description: '源文件夹路径（相对仓库根目录）'
         required: true
-        default: 'png'
+        default: 'input/network'
+
       destination:
-        description: 'else'           #目标目录
+        description: '目标文件夹路径（相对仓库根目录）'
         required: true
-        default: 'depend/png'
+        default: 'else'
 
 jobs:
   move_folder_job:
