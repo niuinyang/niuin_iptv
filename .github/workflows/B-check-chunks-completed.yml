@@ -6,7 +6,7 @@ on:
       - A生成并执行缓存workflow
     types:
       - completed
-  workflow_dispatch: {}
+  workflow_dispatch:
 
 permissions:
   contents: write
@@ -17,47 +17,35 @@ jobs:
     env:
       GITHUB_TOKEN: ${{ secrets.PUSH_TOKEN1 }}
       REPO_OWNER: niuinyang
-      REPO_NAME_FULL: niuinyang/niuin_iptv
       REPO_NAME: niuin_iptv
-      COMMIT_SHA: ${{ github.event.workflow_run.head_sha }}
       PARENT_CREATED_AT: ${{ github.event.workflow_run.created_at }}
 
     steps:
-      - name: Checkout repository (for running scripts)
-        uses: actions/checkout@v3
+      - uses: actions/checkout@v3
 
       - name: Setup Python
         uses: actions/setup-python@v4
         with:
-          python-version: "3.x"
+          python-version: "3.11"
 
-      - name: Install Python deps (aiohttp)
-        run: |
-          python -m pip install --upgrade pip
-          pip install aiohttp
+      - name: Install aiohttp
+        run: pip install aiohttp
 
-      - name: Monitor chunk workflows (async)
+      - name: Run async chunk monitor
         run: python scripts/B-check-chunk-finished-async.py
 
-      - name: Merge cache if all chunk workflows completed
-        if: ${{ success() }}
+      - name: Merge cache
         run: python scripts/C-merge_cache.py
 
-      - name: Commit and Push merged cache
-        if: ${{ success() }}
+      - name: Commit and push merged cache
         env:
           GITHUB_TOKEN: ${{ secrets.PUSH_TOKEN1 }}
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
-          git add output/cache/total_cache.json
-          git commit -m "Update total_cache.json after all chunks complete" || echo "No changes to commit"
 
-          n=0
-          until [ $n -ge 3 ]
-          do
-            git pull --rebase origin main
-            git push origin HEAD:main && break
-            n=$((n+1))
-            echo "Push failed, retry $n..."
-            sleep 5
+          git add output/cache/total_cache.json
+          git commit -m "Update total_cache.json" || echo "No changes"
+
+          git pull --rebase origin main
+          git push origin HEAD:main
