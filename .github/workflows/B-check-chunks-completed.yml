@@ -1,51 +1,32 @@
-name: B检查缓存workflow执行完毕合并
+name: B检查所有chunk workflow执行完毕
 
 on:
-  workflow_run:
-    workflows:
-      - A生成并执行缓存workflow
-    types:
-      - completed
   workflow_dispatch:
 
 permissions:
-  contents: write
+  actions: read
+  contents: read
 
 jobs:
   wait-for-chunks:
     runs-on: ubuntu-latest
-    env:
-      GITHUB_TOKEN: ${{ secrets.PUSH_TOKEN1 }}
-      REPO_OWNER: niuinyang
-      REPO_NAME: niuin_iptv
-      PARENT_CREATED_AT: ${{ github.event.workflow_run.created_at }}
 
     steps:
-      - uses: actions/checkout@v3
+      - name: Checkout repository
+        uses: actions/checkout@v4
 
-      - name: Setup Python
+      - name: Setup python
         uses: actions/setup-python@v4
         with:
-          python-version: "3.11"
+          python-version: '3.x'
 
-      - name: Install aiohttp
+      - name: Install dependencies
         run: pip install aiohttp
 
-      - name: Run async chunk monitor
-        run: python scripts/B-check-chunk-finished-async.py
-
-      - name: Merge cache
-        run: python scripts/C-merge_cache.py
-
-      - name: Commit and push merged cache
+      - name: Run checker
         env:
           GITHUB_TOKEN: ${{ secrets.PUSH_TOKEN1 }}
+          REPO_OWNER: ${{ github.repository_owner }}
+          REPO_NAME: ${{ github.event.repository.name }}
         run: |
-          git config user.name "github-actions[bot]"
-          git config user.email "github-actions[bot]@users.noreply.github.com"
-
-          git add output/cache/total_cache.json
-          git commit -m "Update total_cache.json" || echo "No changes"
-
-          git pull --rebase origin main
-          git push origin HEAD:main
+          python scripts/B-check-chunk-finished-async.py
