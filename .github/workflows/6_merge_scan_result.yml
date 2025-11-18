@@ -4,7 +4,7 @@ on:
   workflow_dispatch:
   workflow_run:
     workflows:
-      - 1下载全部M3U
+      - 5检查scan执行完毕合并
     types:
       - completed
 
@@ -32,7 +32,7 @@ jobs:
           pip install pandas
 
       - name: Run merge script
-        run: python scripts/6merge_scan_result.py
+        run: python scripts/6_merge_scan_result.py
 
       - name: Commit and push changes with stash and retry
         run: |
