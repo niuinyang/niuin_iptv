@@ -17,11 +17,9 @@ def move_folder(src, dst):
 def main():
     # 你想移动的目录列表，改这里即可
     folders_to_move = [
-        "png",
-        "iptv-database",
         "input/network"
     ]
-    target_parent = "depend"
+    target_parent = "else"
     if not os.path.exists(target_parent):
         os.makedirs(target_parent)
 
