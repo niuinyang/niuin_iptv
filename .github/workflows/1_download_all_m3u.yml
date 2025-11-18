@@ -2,8 +2,8 @@ name: 1下载全部M3U
 
 on:
   workflow_dispatch:
-  #schedule:
-  #  - cron: '05 16 * * *'  # UTC 16:05 = 北京时间 00:05
+  schedule:
+    - cron: '05 16 * * *'  # UTC 16:05 = 北京时间 00:05
 
 permissions:
   contents: write
