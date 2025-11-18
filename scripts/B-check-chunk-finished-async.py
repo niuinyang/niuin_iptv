@@ -18,6 +18,7 @@ if not TOKEN or not OWNER or not REPO:
 WORKFLOW_DIR = ".github/workflows"
 PATTERN = re.compile(r"hash-chunk", re.IGNORECASE)
 
+
 async def fetch_latest_run(session, workflow_file):
     url = f"https://api.github.com/repos/{OWNER}/{REPO}/actions/workflows/{workflow_file}/runs?per_page=1"
     headers = {"Authorization": f"token {TOKEN}"}
@@ -25,17 +26,19 @@ async def fetch_latest_run(session, workflow_file):
     async with session.get(url, headers=headers) as resp:
         if resp.status != 200:
             print(f"⚠️ Failed to get runs for {workflow_file}, status={resp.status}")
-            return workflow_file, None
+            return workflow_file, None, None
 
         data = await resp.json()
         runs = data.get("workflow_runs", [])
         if not runs:
-            return workflow_file, None
-        
-        return workflow_file, runs[0]["status"], runs[0]["conclusion"]
+            return workflow_file, None, None
+
+        latest = runs[0]
+        return workflow_file, latest["status"], latest["conclusion"]
+
 
 async def main():
-    # 1. 获取仓库中所有 chunk workflow 文件
+    # 1. 获取所有 chunk workflow 文件
     workflows = [
         f for f in os.listdir(WORKFLOW_DIR)
         if PATTERN.search(f)
@@ -48,20 +51,12 @@ async def main():
     print(f"🔍 Found {len(workflows)} chunk workflows")
 
     async with aiohttp.ClientSession() as session:
-        tasks = [
-            fetch_latest_run(session, wf)
-            for wf in workflows
-        ]
+        tasks = [fetch_latest_run(session, wf) for wf in workflows]
         results = await asyncio.gather(*tasks)
 
     all_done = True
 
-    for item in results:
-        if item is None:
-            continue
-
-        workflow_file, status, conclusion = item
-
+    for workflow_file, status, conclusion in results:
         if status is None:
             print(f"⚠️ {workflow_file}: No runs found")
             all_done = False
@@ -72,9 +67,10 @@ async def main():
 
     if all_done:
         print("🎉 All chunk workflows completed!")
-        # 这里执行你后续的合并脚本或命令
-         os.system("python scripts/C-merge_cache.py")
+        # ↓↓↓ 这里不要缩进错，只需 8 spaces 或一个 indent 块
+        os.system("python scripts/C-merge_cache.py")
     else:
         print("⏳ Some workflows are still running.")
+
 
 asyncio.run(main())
