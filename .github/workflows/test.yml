@@ -29,7 +29,7 @@ jobs:
         run: |
           mkdir -p output/middle/final/ok output/middle/final/not
           python scripts/5.3final_scan.py \
-            --input output/middle/deep/ok/deep_${{ github.event.inputs.chunk_id }}.csv \
+            --input output/middle/deep/ok/deep_chunk-${{ github.event.inputs.chunk_id }}.csv \
             --output output/middle/final/ok/final_${{ github.event.inputs.chunk_id }}.csv \
             --invalid output/middle/final/not/final_${{ github.event.inputs.chunk_id }}-invalid.csv \
             --cache_dir output/cache
