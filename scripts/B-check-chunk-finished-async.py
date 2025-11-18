@@ -73,7 +73,7 @@ async def main():
     if all_done:
         print("🎉 All chunk workflows completed!")
         # 这里执行你后续的合并脚本或命令
-        # os.system("python scripts/merge_xxx.py")
+         os.system("python scripts/C-merge_cache.py")
     else:
         print("⏳ Some workflows are still running.")
 
