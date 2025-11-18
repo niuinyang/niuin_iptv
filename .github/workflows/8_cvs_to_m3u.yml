@@ -1,9 +1,10 @@
-name: 4-C 生成 M3U（Generate M3U）
+name: 8生成M3U
 
 on:
+  workflow_dispatch:
   workflow_run:
     workflows:
-      - "4-B 标准化（Standardize Names）"
+      - "7标准化"
     types:
       - completed
 
@@ -29,7 +30,7 @@ jobs:
           pip install aiohttp pypinyin aiofiles
 
       - name: Run m3u generation script
-        run: python scripts/8cvs_to_m3u.py
+        run: python scripts/8_cvs_to_m3u.py
 
       - name: Commit and push changes with stash and retry
         run: |
