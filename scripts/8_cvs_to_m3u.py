@@ -4,10 +4,8 @@ import os
 import re
 import sys
 import asyncio
-import math
 from collections import defaultdict
 from urllib.parse import urlparse, urlunparse
-from pathlib import Path
 
 # --- 配置 ---
 CSV_INPUT = "output/total_final.csv"
@@ -30,11 +28,11 @@ GROUP_PRIORITY = [
 ]
 
 # 来源优先级
-SOURCE_PRIORITY_DXL = ["济南联通", "电信组播", "电信单播", "青岛联通", "网络源"]
-SOURCE_PRIORITY_SJMZ = ["济南移动", "济南联通", "电信组播", "电信单播", "青岛联通", "网络源"]
+SOURCE_PRIORITY_DXL = ["济南联通", "电信组播", "济南联通组播", "电信单播", "青岛联通", "网络源"]
+SOURCE_PRIORITY_SJMZ = ["济南移动", "济南联通", "电信组播", "济南联通组播", "电信单播", "青岛联通", "网络源"]
 
 # 过滤来源
-FILTER_SOURCE = ["上海移动"]
+FILTER_SOURCE = []  # 取消过滤上海移动，保持全部来源
 
 # 默认tv-logo模板链接
 TVG_LOGO_TEMPLATE = "https://raw.githubusercontent.com/plsy1/iptv/main/logo/{channel}.png"
@@ -65,17 +63,6 @@ def split_alpha_num(text: str):
     return (text.lower(), 0)
 
 
-def parse_resolution(res: str):
-    """解析分辨率字符串，返回宽高及面积，格式如 '1920x1080' """
-    if not res:
-        return 0, 0, 0
-    m = re.match(r'(\d+)[xX](\d+)', res)
-    if m:
-        w, h = int(m.group(1)), int(m.group(2))
-        return w, h, w * h
-    return 0, 0, 0
-
-
 def load_local_png_set():
     """扫描本地png目录，返回所有文件名(无后缀小写)集合"""
     if not os.path.exists(LOCAL_PNG_DIR):
@@ -93,6 +80,7 @@ def find_local_logo(channel_name, local_png_set):
     name_lower = channel_name.lower()
     if name_lower in local_png_set:
         return os.path.join(LOCAL_PNG_DIR, channel_name + ".png")
+    # 模糊匹配：忽略非字母数字的比较
     pattern = re.compile(r'[^a-z0-9]')
     norm_name = pattern.sub('', name_lower)
     for png_name in local_png_set:
@@ -103,7 +91,7 @@ def find_local_logo(channel_name, local_png_set):
 
 
 def make_tvg_logo(channel_name, local_png_set):
-    """生成tvg-logo字段，先尝试远程模板URL，若本地有文件优先用本地文件"""
+    """生成 tvg-logo 字段，先尝试远程模板URL，若本地有则用本地"""
     url = TVG_LOGO_TEMPLATE.format(channel=channel_name)
     local_logo = find_local_logo(channel_name, local_png_set)
     if local_logo:
@@ -112,41 +100,47 @@ def make_tvg_logo(channel_name, local_png_set):
 
 
 def construct_catchup(url):
-    """构造带时间参数的catchup-source URL"""
+    """
+    构造 catchup-source URL，严格按照范例逻辑：
+    - IP 地址保持和播放地址一致
+    - 去掉路径中的 /import 片段
+    - 在URL尾部添加时间参数 ?tvdr={utc:YmdHMS}GMT-{utcend:YmdHMS}GMT
+    """
     try:
         parsed = urlparse(url)
+        # IP保持不变
         ip = parsed.hostname
         if not ip:
             return None
-        if ':' in ip:
+        if ':' in ip:  # IPv6 不处理
             return None
-        ip_parts = ip.split('.')
-        if len(ip_parts) == 4:
-            ip_parts[-1] = '39'
-            new_ip = '.'.join(ip_parts)
-            netloc = new_ip
-            if parsed.port:
-                netloc += f":{parsed.port}"
-            path = parsed.path
-            time_params = "?tvdr={utc:YmdHMS}GMT-{utcend:YmdHMS}GMT"
-            new_url = urlunparse((
-                parsed.scheme,
-                netloc,
-                path,
-                '',
-                time_params[1:],
-                ''
-            ))
-            return new_url
+
+        # 处理路径，去掉 '/import' 部分（如果存在）
+        path = parsed.path
+        if path.startswith("/iptv/import"):
+            # 把 "/iptv/import" 改成 "/iptv"
+            path = path.replace("/iptv/import", "/iptv", 1)
+
+        # 构造新的 URL，添加时间参数
+        time_params = "?tvdr={utc:YmdHMS}GMT-{utcend:YmdHMS}GMT"
+        new_url = urlunparse((
+            parsed.scheme,
+            parsed.netloc,  # 保持原始 host:port 不变
+            path,
+            '',  # params
+            time_params[1:],  # query 不包含 '?'
+            ''  # fragment
+        ))
+        return new_url
     except Exception:
         return None
-    return None
 
 
 def build_extinf_line(csv_row, local_png_set):
     """
-    构造 #EXTINF 行
-    仅对来源为“济南联通组播”添加回看参数
+    构造 #EXTINF 行，严格对应范例：
+    - 仅对来源为“济南联通组播”添加 catchup 参数
+    - tvg-logo 优先使用本地，无则用远程模板
     """
     channel = csv_row.get("频道名", "").strip()
     url = csv_row.get("地址", "").strip()
@@ -157,7 +151,7 @@ def build_extinf_line(csv_row, local_png_set):
     extinf = f'#EXTINF:-1 tvg-name="{channel}" group-title="{group}" tvg-logo="{tvg_logo}"'
 
     catchup_str = ""
-    if source == "济南联通组播":
+    if source == "济南联通组播":  # 仅此来源添加回看参数
         catchup_url = construct_catchup(url)
         if catchup_url:
             catchup_str = f' catchup="default" catchup-source="{catchup_url}"'
@@ -179,12 +173,14 @@ def parse_csv():
 
 
 def channel_sort_key(channel_name):
+    """频道名排序键：英文字母顺序，中文拼音首字母顺序，数字按数值大小"""
     pinyin_key = get_pinyin_key(channel_name)
     alpha_num = split_alpha_num(pinyin_key)
     return alpha_num
 
 
 def group_sort_key(group_name):
+    """分组排序键，优先级列表顺序，未匹配放最后"""
     try:
         return GROUP_PRIORITY.index(group_name)
     except ValueError:
@@ -192,6 +188,7 @@ def group_sort_key(group_name):
 
 
 def source_sort_key(source_name, dxl=True):
+    """来源排序键，dxl/sjmz两种不同优先级"""
     if dxl:
         try:
             return SOURCE_PRIORITY_DXL.index(source_name)
@@ -205,11 +202,15 @@ def source_sort_key(source_name, dxl=True):
 
 
 def resolution_area(row):
-    _, _, area = parse_resolution(row.get("分辨率", ""))
-    return area
+    """计算分辨率面积"""
+    m = re.match(r'(\d+)[xX](\d+)', row.get("分辨率", ""))
+    if m:
+        return int(m.group(1)) * int(m.group(2))
+    return 0
 
 
 def resolution_area_detecttime_key(row):
+    """网络源排序键：分辨率面积降序，检测时间升序"""
     area = resolution_area(row)
     try:
         detect = float(row.get("检测时间", 0))
@@ -219,6 +220,14 @@ def resolution_area_detecttime_key(row):
 
 
 def sort_rows(rows, dxl=True):
+    """
+    综合排序：
+    1. 分组优先
+    2. 频道名排序
+    3. 多来源排序（优先级）
+    4. 同一来源内部网络源排序（分辨率面积+检测时间）
+    5. 网络源放最后
+    """
     group_dict = defaultdict(list)
     for r in rows:
         group_dict[r.get("分组", "待标准化")].append(r)
@@ -259,6 +268,7 @@ def sort_rows(rows, dxl=True):
 
 
 def generate_m3u(rows, output_file, dxl=True, local_png_set=None):
+    """生成m3u文件"""
     with open(output_file, "w", encoding="utf-8") as f:
         f.write("#EXTM3U\n")
         for row in rows:
@@ -270,7 +280,7 @@ def generate_m3u(rows, output_file, dxl=True, local_png_set=None):
 async def main():
     print("读取CSV文件...")
     rows = parse_csv()
-    print(f"CSV条目数(过滤上海移动后)：{len(rows)}")
+    print(f"CSV条目数(过滤来源后)：{len(rows)}")
 
     print("加载本地图标文件...")
     local_png_set = load_local_png_set()
