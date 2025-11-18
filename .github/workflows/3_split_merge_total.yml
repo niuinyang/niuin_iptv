@@ -26,7 +26,7 @@ jobs:
         run: pip install chardet
 
       - name: Run split script
-        run: python scripts/4split_merge.py
+        run: python scripts/3_split_merge.py
 
       - name: Commit & Push chunks
         env:
