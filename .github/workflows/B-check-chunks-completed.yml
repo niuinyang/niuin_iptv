@@ -1,12 +1,12 @@
 name: B检查缓存workflow执行完毕合并
 
 on:
-  workflow_dispatch:  
   workflow_run:
     workflows:
       - A生成并执行缓存workflow
     types:
       - completed
+  workflow_dispatch: {}
 
 permissions:
   contents: write
@@ -18,32 +18,26 @@ jobs:
       GITHUB_TOKEN: ${{ secrets.PUSH_TOKEN1 }}
       REPO_OWNER: niuinyang
       REPO_NAME_FULL: niuinyang/niuin_iptv
+      REPO_NAME: niuin_iptv
+      COMMIT_SHA: ${{ github.event.workflow_run.head_sha }}
+      PARENT_CREATED_AT: ${{ github.event.workflow_run.created_at }}
 
     steps:
-      - uses: actions/checkout@v3
+      - name: Checkout repository (for running scripts)
+        uses: actions/checkout@v3
 
       - name: Setup Python
         uses: actions/setup-python@v4
         with:
           python-version: "3.x"
 
-      - name: Install dependencies
-        run: pip install requests
-
-      - name: Read commit SHA from file
-        id: read_sha
+      - name: Install Python deps (aiohttp)
         run: |
-          if [ -f output/cache/last_commit_sha.txt ]; then
-            sha=$(cat output/cache/last_commit_sha.txt)
-            echo "COMMIT_SHA=$sha" >> $GITHUB_ENV
-            echo "Read commit SHA: $sha"
-          else
-            echo "Error: commit SHA file not found"
-            exit 1
-          fi
+          python -m pip install --upgrade pip
+          pip install aiohttp
 
-      - name: Check chunk workflows status
-        run: python scripts/B-check_chunk_workflows.py
+      - name: Monitor chunk workflows (async)
+        run: python scripts/B-check-chunk-finished-async.py
 
       - name: Merge cache if all chunk workflows completed
         if: ${{ success() }}
@@ -67,4 +61,3 @@ jobs:
             n=$((n+1))
             echo "Push failed, retry $n..."
             sleep 5
-          done
