@@ -30,7 +30,7 @@ jobs:
 
      - name: Move folder
        run: |
-         python3 scripts/move_folder.py "${{ github.event.inputs.source }}" "${{ github.event.inputs.destination }}"
+         python3 scripts/move_folders.py "${{ github.event.inputs.source }}" "${{ github.event.inputs.destination }}"
 
      - name: Commit and push changes
        run: |
