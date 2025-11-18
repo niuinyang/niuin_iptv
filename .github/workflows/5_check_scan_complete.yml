@@ -12,7 +12,7 @@ permissions:
   contents: write                 # 允许写权限，以便提交和推送代码
 
 jobs:
-  wait-for-chunks:
+  wait-for-scan:
     runs-on: ubuntu-latest
     env:
       GITHUB_TOKEN: ${{ secrets.PUSH_TOKEN1 }}
@@ -39,42 +39,20 @@ jobs:
         run: |
           python -u scripts/5.4check-scan-finished-async.py
 
-      - name: Run merge script           # 运行合并结果的脚本
-        run: python scripts/6_merge_scan_result.py
-
-      - name: Commit and Push merged cache             # 提交并推送合并后的缓存文件
-        env:
-          GITHUB_TOKEN: ${{ secrets.PUSH_TOKEN1 }}
-        run: |
-          git config user.name "github-actions[bot]"
-          git config user.email "github-actions[bot]@users.noreply.github.com"
-          git add output/cache/total_cache.json
-          git commit -m "Update total_cache.json after all chunks completed" || echo "No changes"
-
-          n=0
-          until [ $n -ge 3 ]
-          do
-            git pull --rebase origin main
-            git push origin HEAD:main && break
-            n=$((n+1))
-            echo "Push failed, retry $n..."
-            sleep 5
-          done
-
   delete_workflows:
-    needs: wait-for-chunks           # 依赖上一个作业完成后才执行
+    needs: wait-for-scan           # 依赖上一个作业完成后才执行
     runs-on: ubuntu-latest
 
     steps:
       - name: Checkout repository    # 签出代码仓库
         uses: actions/checkout@v4
 
-      - name: Delete hash-chunk workflow files only  # 仅删除以 hash-chunk 开头的 workflow 文件
+      - name: Delete Scan_chunk workflow files only  # 仅删除以 hash-chunk 开头的 workflow 文件
         env:
           PUSH_TOKEN: ${{ secrets.PUSH_TOKEN1 }}
         run: |
-          # 查找所有匹配 hash-chunk*.yml 的 workflow 文件
-          FILES_HASH_CHUNK=$(find .github/workflows -type f -name "hash-chunk*.yml" || true)
+          # 查找所有匹配 Scan_chunk*.yml 的 workflow 文件
+          FILES_HASH_CHUNK=$(find .github/workflows -type f -name "Scan_chunk*.yml" || true)
           if [ -z "$FILES_HASH_CHUNK" ]; then
             echo "No matching hash-chunk workflow files found."
             exit 0
@@ -88,7 +66,7 @@ jobs:
           git config user.email "github-actions[bot]@users.noreply.github.com"
 
           # 提交删除操作，如果无变动则忽略
-          git commit -m "Delete hash-chunk workflow files" || echo "No changes to commit"
+          git commit -m "Delete Scan_chunk workflow files" || echo "No changes to commit"
 
           # 设置远程仓库地址，带token用于推送权限
           git remote set-url origin https://x-access-token:${PUSH_TOKEN}@github.com/niuinyang/niuin_iptv.git
