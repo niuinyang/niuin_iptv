@@ -1,6 +1,7 @@
 name: 7标准化
 
 on:
+  workflow_dispatch:
   workflow_run:
     workflows: 
       - "6合并扫描结果"
