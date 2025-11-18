@@ -27,7 +27,7 @@ jobs:
           pip install requests chardet
 
       - name: Run merge script
-        run: python scripts/2merge_local_sources.py
+        run: python scripts/2_merge_local_sources.py
 
       - name: Commit & Push results
         run: |
