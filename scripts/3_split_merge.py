@@ -4,7 +4,7 @@ import os
 import sys
 
 def split_deep_scan(input_path="output/middle/merge/networksource_total.csv",
-                    chunk_size=2000,
+                    chunk_size=1000,
                     output_dir="output/middle/chunk"):
     """
     读取指定 CSV 文件，将其按指定大小分割成多个小文件，保存到目标目录。
