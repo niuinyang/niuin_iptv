@@ -14,7 +14,7 @@ from tqdm import tqdm
 
 # 配置路径，按需调整
 MY_SUM_PATH = "output/merge_my_sum.csv"
-WORKING_PATH = "output/working.csv"
+WORKING_PATH = "output/middle/working.csv"
 CHANNEL_DATA_PATH = "input/channel_data.xlsx"  # 改为Excel文件
 NETWORK_CHANNELS_PATH = "input/iptv-org/database/data/channels.csv"
 
