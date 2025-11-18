@@ -3,8 +3,8 @@ name: 2预处理🚀 IPTV全流程（下载→合并→分割→生成）
 on:
   workflow_dispatch:  # 仅手动触发
   # 如果仍想自动执行（北京时间 00:05），取消注释以下行
-  schedule:
-    - cron: '05 16 * * *'  # UTC 16:05 = 北京时间 00:05
+  #schedule:
+    #- cron: '05 16 * * *'  # UTC 16:05 = 北京时间 00:05
 
 permissions:
   contents: write
