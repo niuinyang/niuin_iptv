@@ -40,7 +40,7 @@ jobs:
           python -u scripts/B-check-chunk-finished-async.py
 
       - name: Merge cache after all chunks completed  # 所有分片检测完毕后合并缓存
-        run: python scripts/C-merge_cache.py
+        run: python scripts/C_merge_cache.py
 
       - name: Commit and Push merged cache             # 提交并推送合并后的缓存文件
         env:
