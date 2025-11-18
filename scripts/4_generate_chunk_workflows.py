@@ -18,7 +18,7 @@ TEMPLATE = """name: Scan_{n}
 
 on:
   workflow_run:
-    workflows: ["2预处理🚀 IPTV全流程（下载→合并→分割→生成）"]
+    workflows: ["4生成chunk_workflows"]
     types:
       - completed
   workflow_dispatch:
