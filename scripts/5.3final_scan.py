@@ -1,5 +1,3 @@
-明白了！我给你写一个可以直接粘贴运行的完整脚本，包括之前所有功能和一个完整的 main() 函数，支持命令行参数。所有代码带详细注释，方便理解。
-
 #!/usr/bin/env python3
 # scripts/5.3final_scan_advanced.py
 
