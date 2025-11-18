@@ -1,0 +1,49 @@
+name: 2合并网络源
+
+on:
+  workflow_run:
+    workflows:
+      - 1下载全部M3U
+    types:
+      - completed
+
+jobs:
+  merge_local_sources:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Setup Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      - name: Install dependencies
+        run: |
+          pip install --upgrade pip
+          pip install requests chardet
+
+      - name: Run merge script
+        run: python scripts/2merge_local_sources.py
+
+      - name: Commit & Push results
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add output/*.m3u output/*.csv output/log/*.log 2>/dev/null || true
+          if ! git diff --cached --quiet; then
+            git commit -m "🤖 Auto merge local sources $(date '+%Y-%m-%d %H:%M:%S')"
+            if [ -n "$(git status --porcelain)" ]; then
+              git stash push -m "ci-stash-before-pull"
+              git pull --rebase origin main
+              git stash pop || echo "No stash to pop"
+            else
+              git pull --rebase origin main
+            fi
+            git push origin main
+          else
+            echo "✅ No changes to commit."
+          fi
