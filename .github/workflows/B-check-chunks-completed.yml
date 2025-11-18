@@ -59,7 +59,7 @@ jobs:
             n=$((n+1))
             echo "Push failed, retry $n..."
             sleep 5
-
+          done
   delete_workflows:
     needs: wait-for-chunks
     runs-on: ubuntu-latest
