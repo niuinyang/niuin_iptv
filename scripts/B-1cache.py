@@ -10,14 +10,16 @@ from tqdm.asyncio import tqdm_asyncio
 from asyncio import Semaphore
 import json
 from datetime import datetime
+import imagehash
 
 CACHE_DIR = "output/cache/chunk"
 
-import imagehash
-from PIL import Image
-
 # 固定时间点顺序（用于写入时排序）
 TIME_KEYS = ["0811", "1612", "2113"]
+
+# 固定字段顺序
+HASH_KEYS = ["phash", "ahash", "dhash", "error"]
+
 
 async def grab_frame(url, at_time=1, timeout=15):
     cmd = [
@@ -35,42 +37,46 @@ async def grab_frame(url, at_time=1, timeout=15):
     except Exception as e:
         return None, str(e)
 
+
 def phash_bytes(img_bytes):
     im = Image.open(io.BytesIO(img_bytes))
-    phash = imagehash.phash(im)
-    return str(phash)
+    return str(imagehash.phash(im))
+
 
 def ahash_bytes(img_bytes):
     im = Image.open(io.BytesIO(img_bytes))
-    ahash = imagehash.average_hash(im)
-    return str(ahash)
+    return str(imagehash.average_hash(im))
+
 
 def dhash_bytes(img_bytes):
     im = Image.open(io.BytesIO(img_bytes))
-    dhash = imagehash.dhash(im)
-    return str(dhash)
+    return str(imagehash.dhash(im))
+
 
 async def process_one(url, sem, timeout=20):
     async with sem:
-        img_bytes, err = await grab_frame(url, at_time=1, timeout=timeout)
+        img_bytes, err = await grab_frame(url, timeout=timeout)
         if not img_bytes:
             return {
-                "url": url, "error": err,
-                "phash": None, "ahash": None, "dhash": None
+                "url": url,
+                "phash": None, "ahash": None, "dhash": None,
+                "error": err
             }
         try:
-            phash = phash_bytes(img_bytes)
-            ahash = ahash_bytes(img_bytes)
-            dhash = dhash_bytes(img_bytes)
             return {
-                "url": url, "error": None,
-                "phash": phash, "ahash": ahash, "dhash": dhash
+                "url": url,
+                "phash": phash_bytes(img_bytes),
+                "ahash": ahash_bytes(img_bytes),
+                "dhash": dhash_bytes(img_bytes),
+                "error": None
             }
         except Exception as e:
             return {
-                "url": url, "error": str(e),
-                "phash": None, "ahash": None, "dhash": None
+                "url": url,
+                "phash": None, "ahash": None, "dhash": None,
+                "error": str(e)
             }
+
 
 async def main_async(input_file, timepoint, chunk_id, concurrency=6):
     sem = Semaphore(concurrency)
@@ -87,10 +93,9 @@ async def main_async(input_file, timepoint, chunk_id, concurrency=6):
     tasks = [process_one(url, sem) for url in urls]
 
     for fut in tqdm_asyncio.as_completed(tasks, total=len(tasks), desc=f"Cache {timepoint}"):
-        res = await fut
-        results.append(res)
+        results.append(await fut)
 
-    # 缓存路径：output/cache/chunk/20250101/1_cache.json
+    # 缓存文件路径
     date_str = datetime.now().strftime("%Y%m%d")
     chunk_cache_dir = os.path.join(CACHE_DIR, date_str)
     os.makedirs(chunk_cache_dir, exist_ok=True)
@@ -99,11 +104,11 @@ async def main_async(input_file, timepoint, chunk_id, concurrency=6):
     # 读取旧缓存
     old_cache = {}
     if os.path.exists(cache_file):
-        with open(cache_file, "r", encoding="utf-8") as f:
-            try:
+        try:
+            with open(cache_file, "r", encoding="utf-8") as f:
                 old_cache = json.load(f)
-            except Exception:
-                old_cache = {}
+        except:
+            old_cache = {}
 
     # 写入新的哈希数据
     for r in results:
@@ -118,44 +123,40 @@ async def main_async(input_file, timepoint, chunk_id, concurrency=6):
             "error": r["error"]
         }
 
-    # ================================
-    #   写入前统一排序（你最需要的功能）
-    # ================================
+    # ============ 排序输出核心 =============
     final_output = {}
 
-    for url, time_dict in old_cache.items():
-
-        # 按 TIME_KEYS 顺序构建时间点
+    # 1. URL 排序
+    for url in sorted(old_cache.keys()):
+        time_dict = old_cache[url]
         ordered_time_dict = {}
+
+        # 2. 时间点排序 0811 → 1612 → 2113
         for tk in TIME_KEYS:
             if tk in time_dict:
-                # 固定键顺序：phash → ahash → dhash → error
+                old = time_dict[tk]
+
+                # 3. 字段排序 phash → ahash → dhash → error
                 ordered_time_dict[tk] = {
-                    "phash": time_dict[tk].get("phash"),
-                    "ahash": time_dict[tk].get("ahash"),
-                    "dhash": time_dict[tk].get("dhash"),
-                    "error": time_dict[tk].get("error"),
+                    key: old.get(key) for key in HASH_KEYS
                 }
 
         final_output[url] = ordered_time_dict
 
-    # 写入文件（sort_keys=True 保证整体稳定性）
+    # 写入文件
     with open(cache_file, "w", encoding="utf-8") as f:
-        json.dump(
-            final_output,
-            f,
-            ensure_ascii=False,
-            indent=2,
-            sort_keys=True
-        )
+        json.dump(final_output, f, ensure_ascii=False, indent=2)
+
 
 def main():
     parser = argparse.ArgumentParser()
-    parser.add_argument("--input", required=True, help="chunk csv 文件路径")
-    parser.add_argument("--timepoint", required=True, choices=["0811","1612","2113"], help="时间点")
-    parser.add_argument("--chunk_id", required=True, help="chunk id")
+    parser.add_argument("--input", required=True)
+    parser.add_argument("--timepoint", required=True, choices=["0811", "1612", "2113"])
+    parser.add_argument("--chunk_id", required=True)
     args = parser.parse_args()
+
     asyncio.run(main_async(args.input, args.timepoint, args.chunk_id))
+
 
 if __name__ == "__main__":
     main()
