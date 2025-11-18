@@ -65,7 +65,7 @@ jobs:
       - name: Run fast scan for {n}
         run: |
           mkdir -p output/middle/fast/ok output/middle/fast/not
-          python scripts/5.1fast_scan.py \\
+          python scripts/5.1_fast_scan.py \\
             --input output/middle/chunk/{n}.csv \\
             --output output/middle/fast/ok/fast_{n}.csv \\
             --invalid output/middle/fast/not/fast_{n}-invalid.csv
@@ -73,7 +73,7 @@ jobs:
       - name: Run deep scan for {n}
         run: |
           mkdir -p output/middle/deep/ok output/middle/deep/not
-          python scripts/5.2deep_scan.py \\
+          python scripts/5.2_deep_scan.py \\
             --input output/middle/fast/ok/fast_{n}.csv \\
             --output output/middle/deep/ok/deep_{n}.csv \\
             --invalid output/middle/deep/not/deep_{n}-invalid.csv
@@ -81,7 +81,7 @@ jobs:
       - name: Run final scan for {n}
         run: |
           mkdir -p output/middle/final/ok output/middle/final/not
-          python scripts/5.3final_scan.py \\
+          python scripts/5.3_final_scan.py \\
             --input output/middle/deep/ok/deep_{n}.csv \\
             --output output/middle/final/ok/final_{n}.csv \\
             --invalid output/middle/final/not/final_{n}-invalid.csv \\
