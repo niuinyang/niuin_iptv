@@ -7,13 +7,39 @@ WORKFLOW_DIR = ".github/workflows"        # GitHub Actions 工作流文件存放
 CHUNK_DIR = "output/middle/chunk"         # 存放分片 CSV 文件的目录
 CACHE_FILE = "output/cache_workflow.json" # 生成的缓存文件路径，记录所有 workflow 文件信息
 
-# 确保工作流目录和缓存目录存在，避免写文件时出错
+# --------------------------------------------
+# ✅ 新增：清空 fast / deep / final 目录内容
+# --------------------------------------------
+def clean_dir(path):
+    """仅删除目录内所有文件和子目录，但保留主目录本身"""
+    if not os.path.exists(path):
+        return
+    for root, dirs, files in os.walk(path):
+        for f in files:
+            os.remove(os.path.join(root, f))
+        for d in dirs:
+            full = os.path.join(root, d)
+            # 递归删除子目录
+            for r, ds, fs in os.walk(full, topdown=False):
+                for ff in fs:
+                    os.remove(os.path.join(r, ff))
+                for dd in ds:
+                    os.rmdir(os.path.join(r, dd))
+            os.rmdir(full)
+
+print("🧹 清空旧的 fast / deep / final 结果文件...")
+
+clean_dir("output/middle/fast")
+clean_dir("output/middle/deep")
+clean_dir("output/middle/final")
+
+# --------------------------------------------
+# 原有创建目录逻辑
+# --------------------------------------------
 os.makedirs(WORKFLOW_DIR, exist_ok=True)
 os.makedirs("output/cache", exist_ok=True)
 
-# GitHub Actions workflow 模板字符串，使用 {n} 占位符替换分片编号
-# 包含三阶段扫描脚本依次执行的步骤，最后会提交并推送结果文件
-# 其中 env 里设置 COMMIT_SHA 变量，方便追踪代码版本
+# GitHub Actions workflow 模板字符串
 TEMPLATE = """name: Scan_{n}
 
 on:
@@ -114,39 +140,36 @@ jobs:
 # 打印清理提示信息
 print("🧹 清理旧的 workflow 文件...")
 
-# 遍历 workflow 目录下所有文件，删除符合 scan_*.yml 命名规则的旧 workflow 文件
+# 删除旧的 scan_*.yml workflow
 for f in os.listdir(WORKFLOW_DIR):
     if re.match(r"scan_.+\.yml", f):
         os.remove(os.path.join(WORKFLOW_DIR, f))
 
-# 如果存在缓存文件，删除它，准备重新生成
+# 删除旧缓存
 if os.path.exists(CACHE_FILE):
     os.remove(CACHE_FILE)
 
-# 获取 chunk 目录下所有符合 chunk-数字.csv 格式的文件，排序，方便依次生成 workflow
+# 读取 chunk 列表
 chunks = sorted([f for f in os.listdir(CHUNK_DIR) if re.match(r"chunk-?\d+\.csv", f)])
 
-cache_data = {}  # 用于缓存所有生成的 workflow 信息，便于后续使用和管理
+cache_data = {}
 
+# 生成新的 workflow
 for chunk_file in chunks:
-    chunk_id = os.path.splitext(chunk_file)[0]  # 去除扩展名，只保留文件名部分，如 chunk-22
+    chunk_id = os.path.splitext(chunk_file)[0]
 
-    workflow_filename = f"scan_{chunk_id}.yml"  # 生成 workflow 文件名
-    workflow_path = os.path.join(WORKFLOW_DIR, workflow_filename)  # workflow 文件完整路径
+    workflow_filename = f"scan_{chunk_id}.yml"
+    workflow_path = os.path.join(WORKFLOW_DIR, workflow_filename)
 
-    # 将模板中的占位符 {n} 替换成当前 chunk_id，写入对应的 workflow 文件
     with open(workflow_path, "w", encoding="utf-8") as f:
         f.write(TEMPLATE.format(n=chunk_id))
 
-    # 打印提示，告知已生成对应的 workflow 文件
     print(f"✅ 已生成 workflow: {workflow_filename}")
 
-    # 把当前 workflow 文件名存入缓存字典，后续写入缓存文件
     cache_data[chunk_id] = {"file": workflow_filename}
 
-# 将所有生成的 workflow 信息写入缓存 JSON 文件
+# 写入缓存 JSON
 with open(CACHE_FILE, "w", encoding="utf-8") as f:
     json.dump(cache_data, f, indent=2, ensure_ascii=False)
 
-# 打印完成提示，提醒用户提交并推送
 print("\n🌀 生成 workflow 和缓存文件完成。请提交并推送。")
