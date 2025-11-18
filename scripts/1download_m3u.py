@@ -15,11 +15,11 @@ import requests
 # ==============================
 # 配置
 # ==============================
-NETWORK_SOURCE_LIST = "input/network/networksource.txt"
-NETWORK_OUTPUT_DIR = "input/network/network_sources"
+NETWORK_SOURCE_LIST = "input/source/networksource.txt"
+NETWORK_OUTPUT_DIR = "input/download/network"
 
-MYSOURCE_LIST = "input/mysource/mysource.txt"
-MYSOURCE_OUTPUT_DIR = "input/mysource/m3u"
+MYSOURCE_LIST = "input/source/mysource.txt"
+MYSOURCE_OUTPUT_DIR = "input/download/my"
 
 LOG_FILE = "download_m3u.log"
 
