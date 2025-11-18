@@ -18,32 +18,30 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - name: Checkout repo
-        uses: actions/checkout@v3
-        with:
-          fetch-depth: 0
+     - name: Checkout repo
+       uses: actions/checkout@v3
+       with:
+         fetch-depth: 0
 
-      - name: Set up Python
-        uses: actions/setup-python@v4
-        with:
-          python-version: "3.x"
+     - name: Set up Python
+       uses: actions/setup-python@v4
+       with:
+         python-version: "3.x"
 
-      - name: Move folder
-        run: |
-          python3 scripts/move_folder.py "${{ github.event.inputs.source }}" "${{ github.event.inputs.destination }}"
+     - name: Move folder
+       run: |
+         python3 scripts/move_folder.py "${{ github.event.inputs.source }}" "${{ github.event.inputs.destination }}"
 
-      - name: Commit and push changes
-        run: |
-          git config user.name "github-actions[bot]"
-          git config user.email "github-actions[bot]@users.noreply.github.com"
+     - name: Commit and push changes
+       run: |
+         git config user.name "github-actions[bot]"
+         git config user.email "github-actions[bot]@users.noreply.github.com"
+         git add "${{ github.event.inputs.destination }}"
+         # 删除源文件夹（如果还存在）
+         if [ -d "${{ github.event.inputs.source }}" ]; then
+           git rm -r "${{ github.event.inputs.source }}"
+         fi
 
-          git add "${{ github.event.inputs.destination }}"
-
-          # 删除源文件夹（如果还存在）
-          if [ -d "${{ github.event.inputs.source }}" ]; then
-            git rm -r "${{ github.event.inputs.source }}"
-          fi
-
-          git commit -m "Move folder ${{ github.event.inputs.source }} to ${{ github.event.inputs.destination }}" || echo "No changes to commit"
-          git push
-      continue-on-error: true
+         git commit -m "Move folder ${{ github.event.inputs.source }} to ${{ github.event.inputs.destination }}" || echo "No changes to commit"
+         git push
+       continue-on-error: true
