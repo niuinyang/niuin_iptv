@@ -1,143 +1,80 @@
 #!/usr/bin/env python3
 import os
-import sys
+import re
 import asyncio
 import aiohttp
-from datetime import datetime, timezone
 
-# ---- 强制立即输出，不缓冲 ----
-sys.stdout.reconfigure(line_buffering=True)
-print(">>> Script started, stdout is unbuffered.")
-
-# ---- 读取环境变量 ----
 TOKEN = os.getenv("GITHUB_TOKEN")
 OWNER = os.getenv("REPO_OWNER")
 REPO = os.getenv("REPO_NAME")
-PARENT_CREATED_AT = os.getenv("PARENT_CREATED_AT")
 
-if not TOKEN or not OWNER or not REPO or not PARENT_CREATED_AT:
-    print("❌ Missing required environment variables.")
+if not TOKEN or not OWNER or not REPO:
+    print("❌ Missing environment variables.")
     print("TOKEN:", TOKEN)
     print("OWNER:", OWNER)
     print("REPO:", REPO)
-    print("PARENT_CREATED_AT:", PARENT_CREATED_AT)
-    sys.exit(1)
+    exit(1)
 
-print(f">>> Monitoring repo: {OWNER}/{REPO}")
-print(f">>> Parent workflow created_at = {PARENT_CREATED_AT}")
+WORKFLOW_DIR = ".github/workflows"
+PATTERN = re.compile(r"hash-chunk", re.IGNORECASE)
 
-API_BASE = f"https://api.github.com/repos/{OWNER}/{REPO}"
+async def fetch_latest_run(session, workflow_file):
+    url = f"https://api.github.com/repos/{OWNER}/{REPO}/actions/workflows/{workflow_file}/runs?per_page=1"
+    headers = {"Authorization": f"token {TOKEN}"}
 
-HEADERS = {
-    "Authorization": f"Bearer {TOKEN}",
-    "Accept": "application/vnd.github+json"
-}
-
-
-# ----------------------------------------------------------------------
-# 获取仓库中所有 chunk workflow 的 workflow id
-# ----------------------------------------------------------------------
-async def list_chunk_workflows(session):
-    url = f"{API_BASE}/actions/workflows"
-    print(">>> Fetching workflow list:", url)
-
-    async with session.get(url, headers=HEADERS) as resp:
+    async with session.get(url, headers=headers) as resp:
         if resp.status != 200:
-            print(f"❌ Failed to fetch workflows: HTTP {resp.status}")
-            text = await resp.text()
-            print(text)
-            sys.exit(1)
+            print(f"⚠️ Failed to get runs for {workflow_file}, status={resp.status}")
+            return workflow_file, None
+
         data = await resp.json()
+        runs = data.get("workflow_runs", [])
+        if not runs:
+            return workflow_file, None
+        
+        return workflow_file, runs[0]["status"], runs[0]["conclusion"]
 
-    selected = []
-    for wf in data.get("workflows", []):
-        name = wf.get("name", "")
-        if name.startswith("hash-chunk-"):
-            selected.append({"id": wf["id"], "name": name})
+async def main():
+    # 1. 获取仓库中所有 chunk workflow 文件
+    workflows = [
+        f for f in os.listdir(WORKFLOW_DIR)
+        if PATTERN.search(f)
+    ]
 
-    print(f">>> Found {len(selected)} chunk workflows:")
-    for w in selected:
-        print("    -", w["name"])
-    return selected
+    if not workflows:
+        print("❌ No chunk workflow files found.")
+        exit(1)
 
+    print(f"🔍 Found {len(workflows)} chunk workflows")
 
-# ----------------------------------------------------------------------
-# 获取单个 workflow 的最新运行
-# ----------------------------------------------------------------------
-async def fetch_latest_run(session, workflow):
-    wid = workflow["id"]
-    name = workflow["name"]
-    url = f"{API_BASE}/actions/workflows/{wid}/runs?per_page=1"
-    print(f">>> Fetching latest run for {name}")
-
-    async with session.get(url, headers=HEADERS) as resp:
-        if resp.status != 200:
-            print(f"❌ Failed to fetch runs for {name}: HTTP {resp.status}")
-            return None
-        data = await resp.json()
-
-    runs = data.get("workflow_runs", [])
-    if not runs:
-        print(f"⚠️  No runs found for {name}")
-        return None
-
-    run = runs[0]
-    run_created_at = run["created_at"]
-
-    # 过滤：必须是 parent workflow 之后触发的 run
-    if run_created_at < PARENT_CREATED_AT:
-        print(f"⚠️  Ignoring old run for {name}")
-        return None
-
-    return {
-        "name": name,
-        "id": run["id"],
-        "status": run["status"],
-        "conclusion": run["conclusion"]
-    }
-
-
-# ----------------------------------------------------------------------
-# 检查所有 chunk workflows 是否完成
-# ----------------------------------------------------------------------
-async def check_all_chunks():
     async with aiohttp.ClientSession() as session:
-        print(">>> Pulling chunk workflow list...")
-        workflows = await list_chunk_workflows(session)
-        if not workflows:
-            print("❌ No chunk workflows found. Exiting.")
-            sys.exit(1)
+        tasks = [
+            fetch_latest_run(session, wf)
+            for wf in workflows
+        ]
+        results = await asyncio.gather(*tasks)
 
-        while True:
-            print("\n>>> Checking workflow run status...")
-            tasks = [fetch_latest_run(session, wf) for wf in workflows]
-            results = await asyncio.gather(*tasks)
+    all_done = True
 
-            pending = []
-            finished = []
+    for item in results:
+        if item is None:
+            continue
 
-            for r in results:
-                if not r:
-                    pending.append("unknown")
-                    continue
+        workflow_file, status, conclusion = item
 
-                if r["status"] != "completed":
-                    pending.append(r["name"])
-                else:
-                    finished.append(r["name"])
+        if status is None:
+            print(f"⚠️ {workflow_file}: No runs found")
+            all_done = False
+        else:
+            print(f"📌 {workflow_file}: status={status}, conclusion={conclusion}")
+            if status != "completed":
+                all_done = False
 
-            print(">>> Finished:", finished)
-            print(">>> Pending:", pending)
+    if all_done:
+        print("🎉 All chunk workflows completed!")
+        # 这里执行你后续的合并脚本或命令
+        # os.system("python scripts/merge_xxx.py")
+    else:
+        print("⏳ Some workflows are still running.")
 
-            if len(finished) == len(workflows):
-                print("\n🎉 All chunk workflows have completed!")
-                return True
-
-            print(">>> Not all finished, waiting 10 sec...\n")
-            await asyncio.sleep(10)
-
-
-# ----------------------------------------------------------------------
-
-if __name__ == "__main__":
-    asyncio.run(check_all_chunks())
+asyncio.run(main())
