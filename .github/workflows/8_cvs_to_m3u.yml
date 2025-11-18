@@ -36,7 +36,7 @@ jobs:
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
-          git add output/dxl.m3u output/sjmz.m3u input/network/unicast.m3u
+          git add output/dxl.m3u output/sjmz.m3u
           if ! git diff --cached --quiet; then
             git commit -m "Auto update m3u and unicast cache [skip ci]"
             MAX_RETRIES=3
