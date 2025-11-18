@@ -2,10 +2,10 @@ name: A生成并执行缓存workflow
 
 on:
   workflow_dispatch:
-  # schedule:
-  #   - cron: '11 0 * * *'
-  #   - cron: '12 8 * * *'
-  #   - cron: '13 13 * * *'
+   schedule:
+     - cron: '11 0 * * *'
+     - cron: '12 8 * * *'
+     - cron: '13 13 * * *'
 
 permissions:
   contents: write
@@ -32,7 +32,7 @@ jobs:
         run: pip install -r requirements.txt || echo "No requirements.txt found"
 
       - name: Run generate_hash_workflows.py
-        run: python scripts/A-generate_hash_workflows.py
+        run: python scripts/A_generate_hash_workflows.py
 
       - name: Detect timepoint (Beijing Time)
         id: set_tp
