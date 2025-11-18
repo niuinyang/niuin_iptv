@@ -422,6 +422,7 @@ def write_final(results, input_path, final_out, final_invalid_out):
 # ----------- 主函数 -----------
 
 def main():
+    global CACHE_DIR, TOTAL_CACHE_FILE
     parser = argparse.ArgumentParser(description="IPTV 假源和轮回检测脚本")
     parser.add_argument("--input", required=True, help="输入CSV文件路径（带有地址字段）")
     parser.add_argument("--output", required=True, help="输出有效结果CSV路径")
@@ -433,7 +434,6 @@ def main():
 
     args = parser.parse_args()
 
-    global CACHE_DIR, TOTAL_CACHE_FILE
     CACHE_DIR = args.cache_dir
     TOTAL_CACHE_FILE = os.path.join(CACHE_DIR, "total_cache.json")
 
