@@ -1,6 +1,7 @@
 name: 2合并网络源
 
 on:
+  workflow_dispatch:
   workflow_run:
     workflows:
       - 1下载全部M3U
