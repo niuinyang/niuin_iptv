@@ -20,7 +20,7 @@ WORKFLOW_DIR = ".github/workflows"
 PATTERN = re.compile(r"hash-chunk", re.IGNORECASE)
 
 CHECK_INTERVAL = 20        # 每轮检查间隔（秒）
-MAX_ROUNDS = 240            # 最多检查次数（240 次 * 20 秒 = 80 分钟）
+MAX_ROUNDS = 240           # 最多检查次数（240 次 * 20 秒 = 80 分钟）
 
 
 async def fetch_latest_run(session, workflow_file):
@@ -51,7 +51,8 @@ async def check_all_finished():
         if PATTERN.search(f)
     ]
 
-    if not workflows:
+    total = len(workflows)
+    if total == 0:
         print("❌ No chunk workflow files found.")
         return False
 
@@ -61,14 +62,29 @@ async def check_all_finished():
 
     all_done = True
 
+    count_completed = 0
+    count_in_progress = 0
+    count_queued = 0
+    count_no_run = 0
+
     for workflow_file, status, conclusion in results:
         if status is None:
             print(f"⚠️ {workflow_file}: No runs found")
+            count_no_run += 1
             all_done = False
         else:
             print(f"📌 {workflow_file}: status={status}, conclusion={conclusion}")
-            if status != "completed":
+            if status == "completed":
+                count_completed += 1
+            elif status == "queued":
+                count_queued += 1
                 all_done = False
+            else:
+                # 其它状态，基本是 in_progress 或者其他
+                count_in_progress += 1
+                all_done = False
+
+    print(f"ℹ️ Total workflows: {total}, Completed: {count_completed}, In Progress: {count_in_progress}, Queued: {count_queued}, No Runs: {count_no_run}")
 
     return all_done
 
@@ -95,4 +111,5 @@ async def main():
     exit(1)
 
 
-asyncio.run(main())
+if __name__ == "__main__":
+    asyncio.run(main())
