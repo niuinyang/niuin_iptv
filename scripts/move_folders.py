@@ -1,36 +1,49 @@
-#!/usr/bin/env python3
-import os
-import shutil
-import json
+name: Move Folders to depend/
 
-def move_folder(src, dst):
-    if not os.path.exists(src):
-        print(f"源文件夹不存在：{src}")
-        return False
-    dest_folder = os.path.join(dst, os.path.basename(src))
-    if os.path.exists(dest_folder):
-        shutil.rmtree(dest_folder)
-    shutil.move(src, dst)
-    print(f"成功移动：{src} -> {dest_folder}")
-    return True
+on:
+  workflow_dispatch:  # 支持手动触发
+  push:
+    branches:
+      - main  # 默认分支
 
-def main():
-    # 你想移动的目录列表，改这里即可
-    folders_to_move = [
-        "input/network"
-    ]
-    target_parent = "else"
-    if not os.path.exists(target_parent):
-        os.makedirs(target_parent)
+jobs:
+  move_folders_job:
+    runs-on: ubuntu-latest
 
-    moved = []
-    for folder in folders_to_move:
-        if move_folder(folder, target_parent):
-            moved.append(folder)
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v3
+        with:
+          fetch-depth: 0
 
-    # 写移动成功列表，供 workflow 读取
-    with open("moved_folders.json", "w") as f:
-        json.dump(moved, f)
+      - name: Set up Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: "3.x"
 
-if __name__ == "__main__":
-    main()
+      - name: Move folders
+        run: python3 scripts/move_folders.py
+
+      - name: Commit and push changes
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+
+          # 读取移动的文件夹列表
+          folders=$(cat moved_folders.json | jq -r '.[]')
+
+          # 添加 depend/ 下的内容
+          git add else/
+
+          # 删除旧目录
+          for folder in $folders; do
+            if [ -d "$folder" ]; then
+              git rm -r "$folder"
+            fi
+          done
+
+          # 提交，如果没变动不会报错
+          git commit -m "Move folders into depend/" || echo "No changes to commit"
+
+          git push
+      continue-on-error: true
