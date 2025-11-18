@@ -15,7 +15,7 @@ jobs:
     runs-on: ubuntu-latest
     outputs:
       timepoint: ${{ steps.set_tp.outputs.timepoint }}
-      commit_sha: ${{ steps.write_sha.outputs.sha }}
+      commit_sha: ${{ github.sha }}
 
     steps:
       - name: Checkout repository
@@ -67,32 +67,3 @@ jobs:
             echo "Push failed, retry $n..."
             sleep 5
           done
-
-      - name: Write latest commit SHA to file and push
-        id: write_sha
-        env:
-          PUSH_TOKEN: ${{ secrets.PUSH_TOKEN1 }}
-        run: |
-          # ⬅️ 关键：获取刚刚 push 完成后的最新 commit SHA
-          LATEST_SHA=$(git rev-parse HEAD)
-          echo "$LATEST_SHA" > output/cache/last_commit_sha.txt
-
-          git config user.name "github-actions[bot]"
-          git config user.email "github-actions[bot]@users.noreply.github.com"
-
-          git add output/cache/last_commit_sha.txt
-          git diff --cached --quiet || git commit -m "Update last_commit_sha.txt with latest commit SHA"
-
-          git remote set-url origin https://x-access-token:${PUSH_TOKEN}@github.com/niuinyang/niuin_iptv.git
-
-          n=0
-          until [ $n -ge 3 ]
-          do
-            git push origin HEAD:main && break
-            n=$((n+1))
-            echo "Push failed, retry $n..."
-            sleep 5
-          done
-
-          # 输出正确的 commit SHA
-          echo "sha=$LATEST_SHA" >> $GITHUB_OUTPUT
