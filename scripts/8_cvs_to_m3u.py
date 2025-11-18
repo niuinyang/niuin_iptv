@@ -175,26 +175,21 @@ def construct_catchup(url):
 
 
 def build_extinf_line(csv_row, local_png_set, unicast_map=None):
+    """
+    构造 #EXTINF 行
+    # 修改点：去除unicast_map远程匹配，改为仅对来源为“济南联通组播”添加catchup参数
+    """
     channel = csv_row.get("频道名", "").strip()
     url = csv_row.get("地址", "").strip()
     group = csv_row.get("分组", "").strip()
     source = csv_row.get("来源", "").strip()
 
-    # 远程匹配优先
-    if source == "济南联通" and unicast_map:
-        matched_extinf = unicast_map.get(url)
-        if matched_extinf:
-            # 替换分组和频道名，保持远程行完整格式（包括catchup-source）
-            replaced_extinf = re.sub(r'group-title="[^"]*"', f'group-title="{group}"', matched_extinf)
-            replaced_extinf = re.sub(r',\s*[^,]*$', f', {channel}', replaced_extinf)
-            return replaced_extinf
-
-    # 自定义构造
+    # 去除unicast_map匹配逻辑，全部自行构造extinf
     tvg_logo = make_tvg_logo(channel, local_png_set)
     extinf = f'#EXTINF:-1 tvg-name="{channel}" group-title="{group}" tvg-logo="{tvg_logo}"'
 
     catchup_str = ""
-    if source == "济南联通":
+    if source == "济南联通组播":  # 仅此来源添加回看参数
         catchup_url = construct_catchup(url)
         if catchup_url:
             catchup_str = f' catchup="default" catchup-source="{catchup_url}"'
