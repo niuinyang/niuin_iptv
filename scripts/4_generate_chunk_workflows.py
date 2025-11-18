@@ -7,23 +7,15 @@ WORKFLOW_DIR = ".github/workflows"        # GitHub Actions 工作流文件存放
 CHUNK_DIR = "output/middle/chunk"         # 存放分片 CSV 文件的目录
 
 # --------------------------------------------
-# ✅ 清空 fast / deep / final 目录内容
+# ✅ 清空 fast / deep / final 目录内容，保留子目录结构
 # --------------------------------------------
 def clean_dir(path):
-    """仅删除目录内所有文件和子目录，但保留主目录本身"""
+    """删除目录内所有文件，但保留所有子目录结构"""
     if not os.path.exists(path):
         return
     for root, dirs, files in os.walk(path):
         for f in files:
             os.remove(os.path.join(root, f))
-        for d in dirs:
-            full = os.path.join(root, d)
-            for r, ds, fs in os.walk(full, topdown=False):
-                for ff in fs:
-                    os.remove(os.path.join(r, ff))
-                for dd in ds:
-                    os.rmdir(os.path.join(r, dd))
-            os.rmdir(full)
 
 print("🧹 清空旧的 fast / deep / final 结果文件...")
 
@@ -136,15 +128,15 @@ jobs:
 
 print("🧹 清理旧的 workflow 文件...")
 
-# 删除旧的 scan_*.yml workflow
+# 删除旧的 scan_*.yml workflow 文件
 for f in os.listdir(WORKFLOW_DIR):
     if re.match(r"scan_.+\.yml", f):
         os.remove(os.path.join(WORKFLOW_DIR, f))
 
-# 获取 chunk 列表
+# 获取 chunk 文件列表，符合 chunk-数字.csv 格式
 chunks = sorted([f for f in os.listdir(CHUNK_DIR) if re.match(r"chunk-?\d+\.csv", f)])
 
-# 生成新的 workflow
+# 生成新的 workflow 文件
 for chunk_file in chunks:
     chunk_id = os.path.splitext(chunk_file)[0]
 
