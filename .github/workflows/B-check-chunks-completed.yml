@@ -54,4 +54,40 @@ jobs:
             n=$((n+1))
             echo "Push failed, retry $n..."
             sleep 5
-          done
+
+  delete_workflows:
+    needs: wait-for-chunks
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Delete deep_validation and hash-chunk workflow files
+        env:
+          PUSH_TOKEN: ${{ secrets.PUSH_TOKEN1 }}
+        run: |
+          FILES_SCAN=$(find .github/workflows -type f \( -name "*scan_chunk*.yml" -o -name "hash-chunk*.yml" \) || true)
+          if [ -z "$FILES_SCAN" ]; then
+            echo "No matching workflow files found."
+            exit 0
+          fi
+          echo "Deleting files:"
+          echo "$FILES_SCAN"
+          git rm $FILES_SCAN || true
+
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+
+          git commit -m "Delete scan_chunk and hash-chunk workflow files" || echo "No changes to commit"
+
+          git remote set-url origin https://x-access-token:${PUSH_TOKEN}@github.com/niuinyang/niuin_iptv.git
+
+          n=0
+          until [ $n -ge 3 ]
+          do
+            git pull --rebase origin main
+            git push origin HEAD:main && break
+            n=$((n+1))
+            echo "Push failed, retry $n..."
+            sleep 5
