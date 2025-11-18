@@ -1,3 +1,10 @@
+
+    明白，我帮你在保持代码整体结构和功能不变的前提下，只对 average_similarity 和 compute_similarity_matrix 两个函数做最小修改，确保：
+	•	平均相似度计算时忽略缺失哈希
+	•	相似度矩阵构建时只用至少有一个哈希的时间点
+
+下面是修改后的完整代码，仅这两处函数有调整，其他全保持不变：
+
 #!/usr/bin/env python3
 # scripts/5.3final_scan_advanced.py
 
@@ -155,25 +162,29 @@ def similarity_hash(h1, h2):
 
 def average_similarity(hashes1, hashes2):
     """
-    计算三种哈希的平均相似度
+    计算三种哈希的平均相似度，忽略缺失哈希
     """
-    if not hashes1 or not hashes2:
+    sims = []
+    for key in ["phash", "ahash", "dhash"]:
+        if hashes1.get(key) is not None and hashes2.get(key) is not None:
+            sims.append(similarity_hash(hashes1[key], hashes2[key]))
+    if not sims:
         return 0.0
-    sim_phash = similarity_hash(hashes1.get("phash"), hashes2.get("phash"))
-    sim_ahash = similarity_hash(hashes1.get("ahash"), hashes2.get("ahash"))
-    sim_dhash = similarity_hash(hashes1.get("dhash"), hashes2.get("dhash"))
-    return (sim_phash + sim_ahash + sim_dhash) / 3
+    return sum(sims) / len(sims)
 
 
 def compute_similarity_matrix(url, cache_for_url):
     """
     计算url对应所有日期+时间点之间哈希相似度矩阵
+    只包含至少一个哈希非空的时间点
     返回相似度字典和时间点键列表
     """
     keys = []
     for date in sorted(cache_for_url.keys()):
         for tp in sorted(cache_for_url[date].keys()):
-            keys.append((date, tp))
+            h = cache_for_url[date][tp]
+            if any(h.get(k) is not None for k in ["phash", "ahash", "dhash"]):
+                keys.append((date, tp))
 
     sim_matrix = {}
 
