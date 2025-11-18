@@ -1,159 +1,143 @@
 #!/usr/bin/env python3
-# scripts/B-check-chunk-finished-async.py
-# Async concurrent checker for chunk workflows
-# Requires: aiohttp
-
 import os
+import sys
 import asyncio
 import aiohttp
-from datetime import datetime
-from typing import List, Dict
+from datetime import datetime, timezone
 
-GITHUB_TOKEN = os.getenv("GITHUB_TOKEN") or os.getenv("PUSH_TOKEN")
-REPO_OWNER = os.getenv("REPO_OWNER", "niuinyang")
-REPO_NAME = os.getenv("REPO_NAME", "niuin_iptv")
-COMMIT_SHA = os.getenv("COMMIT_SHA")
+# ---- 强制立即输出，不缓冲 ----
+sys.stdout.reconfigure(line_buffering=True)
+print(">>> Script started, stdout is unbuffered.")
+
+# ---- 读取环境变量 ----
+TOKEN = os.getenv("GITHUB_TOKEN")
+OWNER = os.getenv("REPO_OWNER")
+REPO = os.getenv("REPO_NAME")
 PARENT_CREATED_AT = os.getenv("PARENT_CREATED_AT")
-CHECK_INTERVAL = int(os.getenv("CHECK_INTERVAL", "20"))
-CONCURRENCY = int(os.getenv("CONCURRENCY", "12"))
 
+if not TOKEN or not OWNER or not REPO or not PARENT_CREATED_AT:
+    print("❌ Missing required environment variables.")
+    print("TOKEN:", TOKEN)
+    print("OWNER:", OWNER)
+    print("REPO:", REPO)
+    print("PARENT_CREATED_AT:", PARENT_CREATED_AT)
+    sys.exit(1)
+
+print(f">>> Monitoring repo: {OWNER}/{REPO}")
+print(f">>> Parent workflow created_at = {PARENT_CREATED_AT}")
+
+API_BASE = f"https://api.github.com/repos/{OWNER}/{REPO}"
 
 HEADERS = {
-    "Authorization": f"Bearer {GITHUB_TOKEN}",
-    "Accept": "application/vnd.github+json",
-    "User-Agent": "niuin-iptv-checker",
+    "Authorization": f"Bearer {TOKEN}",
+    "Accept": "application/vnd.github+json"
 }
 
 
-def parse_iso(s: str):
-    try:
-        return datetime.fromisoformat(s.replace("Z", "+00:00"))
-    except Exception:
+# ----------------------------------------------------------------------
+# 获取仓库中所有 chunk workflow 的 workflow id
+# ----------------------------------------------------------------------
+async def list_chunk_workflows(session):
+    url = f"{API_BASE}/actions/workflows"
+    print(">>> Fetching workflow list:", url)
+
+    async with session.get(url, headers=HEADERS) as resp:
+        if resp.status != 200:
+            print(f"❌ Failed to fetch workflows: HTTP {resp.status}")
+            text = await resp.text()
+            print(text)
+            sys.exit(1)
+        data = await resp.json()
+
+    selected = []
+    for wf in data.get("workflows", []):
+        name = wf.get("name", "")
+        if name.startswith("hash-chunk-"):
+            selected.append({"id": wf["id"], "name": name})
+
+    print(f">>> Found {len(selected)} chunk workflows:")
+    for w in selected:
+        print("    -", w["name"])
+    return selected
+
+
+# ----------------------------------------------------------------------
+# 获取单个 workflow 的最新运行
+# ----------------------------------------------------------------------
+async def fetch_latest_run(session, workflow):
+    wid = workflow["id"]
+    name = workflow["name"]
+    url = f"{API_BASE}/actions/workflows/{wid}/runs?per_page=1"
+    print(f">>> Fetching latest run for {name}")
+
+    async with session.get(url, headers=HEADERS) as resp:
+        if resp.status != 200:
+            print(f"❌ Failed to fetch runs for {name}: HTTP {resp.status}")
+            return None
+        data = await resp.json()
+
+    runs = data.get("workflow_runs", [])
+    if not runs:
+        print(f"⚠️  No runs found for {name}")
         return None
 
+    run = runs[0]
+    run_created_at = run["created_at"]
 
-async def github_get(session: aiohttp.ClientSession, url: str):
-    async with session.get(url, headers=HEADERS) as resp:
-        text = await resp.text()
-        if resp.status >= 400:
-            raise RuntimeError(f"GitHub API error {resp.status} for {url}: {text}")
-        return await resp.json()
+    # 过滤：必须是 parent workflow 之后触发的 run
+    if run_created_at < PARENT_CREATED_AT:
+        print(f"⚠️  Ignoring old run for {name}")
+        return None
 
-
-async def list_chunk_workflows(session: aiohttp.ClientSession) -> List[Dict]:
-    url = f"https://api.github.com/repos/{REPO_OWNER}/{REPO_NAME}/actions/workflows"
-    data = await github_get(session, url)
-    wfs = [
-        {"name": wf["name"], "id": wf["id"]}
-        for wf in data.get("workflows", [])
-        if wf.get("name", "").startswith("hash-chunk-")
-    ]
-    return wfs
+    return {
+        "name": name,
+        "id": run["id"],
+        "status": run["status"],
+        "conclusion": run["conclusion"]
+    }
 
 
-async def find_run_for_workflow(session: aiohttp.ClientSession, wf: Dict, parent_dt: datetime, commit_sha: str):
-    wf_id = wf["id"]
-    url = f"https://api.github.com/repos/{REPO_OWNER}/{REPO_NAME}/actions/workflows/{wf_id}/runs?per_page=30"
-    data = await github_get(session, url)
-    runs = data.get("workflow_runs", [])
-
-    # 优先匹配 head_sha
-    for r in runs:
-        if commit_sha and r.get("head_sha") == commit_sha:
-            return r
-
-    # 再用时间匹配
-    for r in runs:
-        created = parse_iso(r.get("created_at", ""))
-        if created and parent_dt and created >= parent_dt:
-            return r
-
-    # fallback
-    if runs:
-        return runs[0]
-    return None
-
-
-async def poll_run_until_done(session: aiohttp.ClientSession, run_id: int):
-    url = f"https://api.github.com/repos/{REPO_OWNER}/{REPO_NAME}/actions/runs/{run_id}"
-    while True:
-        data = await github_get(session, url)
-        status = data.get("status")
-        conclusion = data.get("conclusion")
-        if status == "completed":
-            return conclusion
-        await asyncio.sleep(CHECK_INTERVAL)
-
-
-async def main_async():
-    if not GITHUB_TOKEN:
-        raise RuntimeError("GITHUB_TOKEN or PUSH_TOKEN must be set in env")
-
-    parent_dt = parse_iso(PARENT_CREATED_AT) if PARENT_CREATED_AT else None
-
+# ----------------------------------------------------------------------
+# 检查所有 chunk workflows 是否完成
+# ----------------------------------------------------------------------
+async def check_all_chunks():
     async with aiohttp.ClientSession() as session:
-        wfs = await list_chunk_workflows(session)
-        if not wfs:
-            raise RuntimeError("No chunk workflows found (prefix 'hash-chunk-')")
+        print(">>> Pulling chunk workflow list...")
+        workflows = await list_chunk_workflows(session)
+        if not workflows:
+            print("❌ No chunk workflows found. Exiting.")
+            sys.exit(1)
 
-        print(f"Found {len(wfs)} chunk workflows. Resolving their triggered runs...")
+        while True:
+            print("\n>>> Checking workflow run status...")
+            tasks = [fetch_latest_run(session, wf) for wf in workflows]
+            results = await asyncio.gather(*tasks)
 
-        sem = asyncio.Semaphore(CONCURRENCY)
+            pending = []
+            finished = []
 
-        async def worker_find(wf):
-            async with sem:
-                try:
-                    r = await find_run_for_workflow(session, wf, parent_dt, COMMIT_SHA)
-                    if r:
-                        print(f"Workflow {wf['name']} -> run_id {r['id']} created_at {r.get('created_at')}")
-                        return wf['name'], r['id']
-                    else:
-                        print(f"Workflow {wf['name']} -> no run found")
-                        return wf['name'], None
-                except Exception as e:
-                    print(f"Error finding run for {wf['name']}: {e}")
-                    return wf['name'], None
+            for r in results:
+                if not r:
+                    pending.append("unknown")
+                    continue
 
-        results = await asyncio.gather(*[worker_find(wf) for wf in wfs])
-        runs_map = {name: rid for name, rid in results if rid}
+                if r["status"] != "completed":
+                    pending.append(r["name"])
+                else:
+                    finished.append(r["name"])
 
-        if not runs_map:
-            raise RuntimeError("No runs matched for any chunk workflow (check commit/time filters)")
+            print(">>> Finished:", finished)
+            print(">>> Pending:", pending)
 
-        print(f"\nMonitoring {len(runs_map)} runs concurrently...")
+            if len(finished) == len(workflows):
+                print("\n🎉 All chunk workflows have completed!")
+                return True
 
-        async def worker_poll(name, rid):
-            async with sem:
-                print(f"Start polling {name} run {rid}")
-                try:
-                    conclusion = await poll_run_until_done(session, rid)
-                    print(f"{name} run {rid} finished with conclusion: {conclusion}")
-                    return name, rid, conclusion
-                except Exception as e:
-                    print(f"Error polling {name} run {rid}: {e}")
-                    return name, rid, "error"
+            print(">>> Not all finished, waiting 10 sec...\n")
+            await asyncio.sleep(10)
 
-        poll_tasks = [worker_poll(n, rid) for n, rid in runs_map.items()]
-        poll_results = await asyncio.gather(*poll_tasks)
 
-        failed = [r for r in poll_results if r[2] != "success"]
-        if failed:
-            print("Some runs failed or not successful:")
-            for name, rid, concl in failed:
-                print(f" - {name} {rid} -> {concl}")
-            raise RuntimeError("One or more chunk workflows did not succeed")
-        else:
-            print("All chunk workflows succeeded.")
-            return True
-
+# ----------------------------------------------------------------------
 
 if __name__ == "__main__":
-    import sys
-    try:
-        ok = asyncio.run(main_async())
-    except Exception as e:
-        print("Error:", e)
-        sys.exit(1)
-    if ok:
-        print("All done.")
-        sys.exit(0)
+    asyncio.run(check_all_chunks())
