@@ -3,9 +3,9 @@ name: A生成并执行缓存workflow
 on:
   workflow_dispatch:
   # schedule:
-  #   - cron: '11 0 * * *'   # 08:11 北京时间
-  #   - cron: '12 8 * * *'   # 16:12 北京时间
-  #   - cron: '13 13 * * *'  # 21:13 北京时间
+  #   - cron: '11 0 * * *'
+  #   - cron: '12 8 * * *'
+  #   - cron: '13 13 * * *'
 
 permissions:
   contents: write
@@ -38,24 +38,25 @@ jobs:
         id: set_tp
         run: |
           TIME_HM=$(date -u -d "+8 hour" +"%H%M")
-
           if [ "$TIME_HM" = "0811" ]; then TP="0811"
           elif [ "$TIME_HM" = "1612" ]; then TP="1612"
           elif [ "$TIME_HM" = "2113" ]; then TP="2113"
           else TP="0811"
           fi
-
           echo "timepoint=$TP" >> $GITHUB_OUTPUT
           echo "Detected timepoint: $TP"
 
       - name: Commit generated chunk workflows and push
+        id: push_chunk
         env:
           PUSH_TOKEN: ${{ secrets.PUSH_TOKEN1 }}
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
+
           git add .github/workflows output/cache/manual_trigger_record.json
           git diff --cached --quiet || git commit -m "Add/update generated chunk workflows"
+
           git remote set-url origin https://x-access-token:${PUSH_TOKEN}@github.com/niuinyang/niuin_iptv.git
 
           n=0
@@ -71,12 +72,14 @@ jobs:
         id: write_sha
         env:
           PUSH_TOKEN: ${{ secrets.PUSH_TOKEN1 }}
-          GITHUB_SHA: ${{ github.sha }}
         run: |
-          echo "$GITHUB_SHA" > output/cache/last_commit_sha.txt
+          # ⬅️ 关键：获取刚刚 push 完成后的最新 commit SHA
+          LATEST_SHA=$(git rev-parse HEAD)
+          echo "$LATEST_SHA" > output/cache/last_commit_sha.txt
 
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
+
           git add output/cache/last_commit_sha.txt
           git diff --cached --quiet || git commit -m "Update last_commit_sha.txt with latest commit SHA"
 
@@ -91,4 +94,5 @@ jobs:
             sleep 5
           done
 
-          echo "sha=$GITHUB_SHA" >> $GITHUB_OUTPUT
+          # 输出正确的 commit SHA
+          echo "sha=$LATEST_SHA" >> $GITHUB_OUTPUT
