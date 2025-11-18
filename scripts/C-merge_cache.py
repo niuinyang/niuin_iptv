@@ -1,7 +1,8 @@
 #!/usr/bin/env python3
 import os
 import json
-from datetime import datetime
+from datetime import datetime, timedelta
+from zoneinfo import ZoneInfo  # Python 3.9+ 时区支持
 
 CACHE_DIR = "output/cache/chunk"
 TOTAL_CACHE_FILE = "output/cache/total_cache.json"
@@ -20,22 +21,36 @@ def save_merge_record(record):
     with open(MERGE_RECORD_FILE, "w", encoding="utf-8") as f:
         json.dump(record, f, indent=2, ensure_ascii=False)
 
+def get_beijing_today():
+    tz = ZoneInfo("Asia/Shanghai")
+    return datetime.now(tz)
+
 def merge_caches():
-    # 读取上次合并的日期
+    # 获取北京时间“今天”
+    today = get_beijing_today()
+
+    # 获取所有日期目录，筛选纯数字目录
+    all_dates = sorted([d for d in os.listdir(CACHE_DIR) if d.isdigit()])
+
+    # 生成最近3天日期字符串（格式 YYYYMMDD）
+    recent_3days = [(today - timedelta(days=i)).strftime("%Y%m%d") for i in range(3)]
+
+    # 从所有存在的日期目录中，取最近3天中真实存在的目录（可能少于3天）
+    recent_exist_dates = [d for d in recent_3days if d in all_dates]
+
+    if not recent_exist_dates:
+        print("无近三天缓存目录，无需合并。")
+        return
+
+    # 读取合并记录，避免重复合并
     merge_record = load_merge_record()
     last_merged_date = merge_record.get("last_merged_date", "")
 
-    # 获取所有日期目录，按日期排序
-    all_dates = sorted([d for d in os.listdir(CACHE_DIR) if d.isdigit()])
-
-    # 筛选出未合并的日期
-    if last_merged_date:
-        dates_to_merge = [d for d in all_dates if d > last_merged_date]
-    else:
-        dates_to_merge = all_dates
+    # 选出要合并的日期，必须比上次合并的晚，且在最近存在的日期内
+    dates_to_merge = [d for d in recent_exist_dates if (not last_merged_date or d > last_merged_date)]
 
     if not dates_to_merge:
-        print("无新增缓存目录，无需合并。")
+        print("无新增近三天缓存目录，无需合并。")
         return
 
     # 加载已有 total_cache.json
@@ -45,9 +60,7 @@ def merge_caches():
     else:
         merged = {}
 
-    # ================================
-    #   合并所有 *_cache.json
-    # ================================
+    # 合并缓存文件，结构是 url -> date_dir -> timepoint
     for date_dir in dates_to_merge:
         cache_path = os.path.join(CACHE_DIR, date_dir)
         if not os.path.exists(cache_path):
@@ -66,38 +79,41 @@ def merge_caches():
                 if url not in merged:
                     merged[url] = {}
 
+                if date_dir not in merged[url]:
+                    merged[url][date_dir] = {}
+
                 for timepoint, hashes in v.items():
-                    # ⚠ **确保哈希字段顺序也固定**
-                    merged[url][timepoint] = {
+                    merged[url][date_dir][timepoint] = {
                         "phash": hashes.get("phash"),
                         "ahash": hashes.get("ahash"),
                         "dhash": hashes.get("dhash"),
                         "error": hashes.get("error")
                     }
 
-    # ================================
-    #   最终排序（关键修改）
-    # ================================
+    # 最终排序：url -> 日期 -> 时间点
     sorted_merged = {}
-
     for url in sorted(merged.keys()):
-        timepoint_dict = merged[url]
-        ordered_timepoint = {}
+        date_dict = merged[url]
+        ordered_date_dict = {}
 
-        for tk in TIME_KEYS:
-            if tk in timepoint_dict:
-                ordered_timepoint[tk] = {
-                    "phash": timepoint_dict[tk].get("phash"),
-                    "ahash": timepoint_dict[tk].get("ahash"),
-                    "dhash": timepoint_dict[tk].get("dhash"),
-                    "error": timepoint_dict[tk].get("error"),
-                }
+        for date_key in sorted(date_dict.keys()):
+            timepoint_dict = date_dict[date_key]
+            ordered_timepoint = {}
 
-        sorted_merged[url] = ordered_timepoint
+            for tk in TIME_KEYS:
+                if tk in timepoint_dict:
+                    ordered_timepoint[tk] = {
+                        "phash": timepoint_dict[tk].get("phash"),
+                        "ahash": timepoint_dict[tk].get("ahash"),
+                        "dhash": timepoint_dict[tk].get("dhash"),
+                        "error": timepoint_dict[tk].get("error"),
+                    }
 
-    # ================================
-    #   写入 total_cache.json
-    # ================================
+            ordered_date_dict[date_key] = ordered_timepoint
+
+        sorted_merged[url] = ordered_date_dict
+
+    # 写入 total_cache.json
     os.makedirs(os.path.dirname(TOTAL_CACHE_FILE), exist_ok=True)
     with open(TOTAL_CACHE_FILE, "w", encoding="utf-8") as f:
         json.dump(sorted_merged, f, ensure_ascii=False, indent=2)
