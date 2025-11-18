@@ -1,37 +1,48 @@
-name: Move Folders to depend/
+name: 移动文件夹
 
 on:
-  workflow_dispatch:  # 手动触发
-  push:
-    branches:
-      - main  # 你也可以改成你的默认分支
+  workflow_dispatch:
+    inputs:
+      source:
+        description: 'input/network'
+        required: true
+        default: 'png'
+      destination:
+        description: 'else'
+        required: true
+        default: 'depend/png'
 
 jobs:
-  move_folders_job:
+  move_folder_job:
     runs-on: ubuntu-latest
 
     steps:
-    - name: Checkout repository
-      uses: actions/checkout@v3
-      with:
-        fetch-depth: 0
+      - name: Checkout repo
+        uses: actions/checkout@v3
+        with:
+          fetch-depth: 0
 
-    - name: Set up Python
-      uses: actions/setup-python@v4
-      with:
-        python-version: "3.x"
+      - name: Set up Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: "3.x"
 
-    - name: Move folders
-      run: |
-        python3 scripts/move_folders.py
+      - name: Move folder
+        run: |
+          python3 scripts/move_folder.py "${{ github.event.inputs.source }}" "${{ github.event.inputs.destination }}"
 
-    - name: Commit and push changes
-      run: |
-        git config user.name "github-actions[bot]"
-        git config user.email "github-actions[bot]@users.noreply.github.com"
-        git add depend/png depend/iptv-database
-        git rm -r png iptv-database
-        git commit -m "Move /png and /iptv-database folders into /depend directory"
-        git push
-      # 如果没有改动，会导致 git commit 报错，可以用 || echo "No changes to commit" 忽略
+      - name: Commit and push changes
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+
+          git add "${{ github.event.inputs.destination }}"
+
+          # 删除源文件夹（如果还存在）
+          if [ -d "${{ github.event.inputs.source }}" ]; then
+            git rm -r "${{ github.event.inputs.source }}"
+          fi
+
+          git commit -m "Move folder ${{ github.event.inputs.source }} to ${{ github.event.inputs.destination }}" || echo "No changes to commit"
+          git push
       continue-on-error: true
