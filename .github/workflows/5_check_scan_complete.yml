@@ -40,7 +40,7 @@ jobs:
           python -u scripts/5.4check-scan-finished-async.py
 
       - name: Run merge script           # 运行合并结果的脚本
-        run: python scripts/6merge_scan_result.py
+        run: python scripts/6_merge_scan_result.py
 
       - name: Commit and Push merged cache             # 提交并推送合并后的缓存文件
         env:
