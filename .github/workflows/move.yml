@@ -4,11 +4,11 @@ on:
   workflow_dispatch:
     inputs:
       source:
-        description: 'input/network'
+        description: 'input/network'  #现有目录
         required: true
         default: 'png'
       destination:
-        description: 'else'
+        description: 'else'           #目标目录
         required: true
         default: 'depend/png'
 
