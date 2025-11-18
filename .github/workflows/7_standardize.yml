@@ -3,7 +3,7 @@ name: 7标准化
 on:
   workflow_run:
     workflows: 
-      - "4-A 合并（Merge Result）"
+      - "6合并扫描结果"
     types:
       - completed
 
@@ -36,7 +36,7 @@ jobs:
           pip install -r requirements.txt
 
       - name: Run IPTV Standardization Script
-        run: python scripts/7standardize_names.py
+        run: python scripts/7_standardize_names.py
 
       - name: Commit and Push changes
         run: |
