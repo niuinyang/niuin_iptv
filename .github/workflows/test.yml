@@ -1,0 +1,35 @@
+name: Run final scan chunk {n}
+
+on:
+  workflow_dispatch:
+    inputs:
+      chunk_id:
+        description: 'Chunk ID (n)'
+        required: true
+        default: '1'
+
+jobs:
+  final_scan:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repo
+        uses: actions/checkout@v3
+
+      - name: Setup Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: '3.x'
+
+      - name: Install dependencies
+        run: |
+          python -m pip install --upgrade pip
+          pip install pillow numpy chardet tqdm
+
+      - name: Run final scan for chunk ${{ github.event.inputs.chunk_id }}
+        run: |
+          mkdir -p output/middle/final/ok output/middle/final/not
+          python scripts/5.3final_scan_advanced.py \
+            --input output/middle/deep/ok/deep_${{ github.event.inputs.chunk_id }}.csv \
+            --output output/middle/final/ok/final_${{ github.event.inputs.chunk_id }}.csv \
+            --invalid output/middle/final/not/final_${{ github.event.inputs.chunk_id }}-invalid.csv \
+            --cache_dir output/cache
