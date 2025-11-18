@@ -430,4 +430,20 @@ def main():
     args = parser.parse_args()
 
     global CACHE_DIR, TOTAL_CACHE_FILE
-    CACHE_DIR =
+    CACHE_DIR = args.cache_dir
+    TOTAL_CACHE_FILE = os.path.join(CACHE_DIR, "total_cache.json")
+
+    # 下面是示例调用流程（你可以根据实际需要调整）
+    os.makedirs(CACHE_DIR, exist_ok=True)
+
+    cache, raw_cache = load_cache_advanced()
+
+    urls = read_deep_input(args.input)
+
+    results = asyncio.run(run_all(urls, args.concurrency, cache, threshold=args.threshold, timeout=args.timeout))
+
+    write_final(results, args.input, args.output, args.invalid)
+
+
+if __name__ == "__main__":
+    main()
