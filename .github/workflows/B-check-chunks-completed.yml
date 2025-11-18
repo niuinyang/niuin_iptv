@@ -37,7 +37,7 @@ jobs:
           REPO_NAME: niuin_iptv
           PYTHONUNBUFFERED: "1"   # 使Python实时打印日志
         run: |
-          python -u scripts/B-check-chunk-finished-async.py
+          python -u scripts/B_check-chunk-finished-async.py
 
       - name: Merge cache after all chunks completed  # 所有分片检测完毕后合并缓存
         run: python scripts/C_merge_cache.py
