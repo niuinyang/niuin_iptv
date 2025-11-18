@@ -29,7 +29,7 @@ jobs:
         run: |
           set -e
           for i in {1..3}; do
-            python scripts/1download_tv_folder.py && break || echo "⚠️ Retry $i failed" && sleep 10
+            python scripts/E_download_tv_folder.py && break || echo "⚠️ Retry $i failed" && sleep 10
           done
 
       - name: Configure git for push
