@@ -1,15 +1,53 @@
 频道名,地址,来源,图标,检测时间,分组,视频编码,分辨率,帧率,音频,失败原因
-LCI HD,https://viamotionhsi.netplus.ch/live/eds/lci/browser-dash/lci.mpd,网络源,https://i.imgur.com/DED8EXs.png,20.010,未分组,,,,无音频,timeout
-LA7 HD,https://viamotionhsi.netplus.ch/live/eds/la7/browser-dash/la7.mpd,网络源,https://upload.wikimedia.org/wikipedia/commons/thumb/0/02/LA7_-_Logo_2011.svg/512px-LA7_-_Logo_2011.svg.png,20.002,未分组,,,,无音频,timeout
-Kan Kids (720p),https://kan23.media.kan.org.il/hls/live/2024691/2024691/master.m3u8,网络源,https://upload.wikimedia.org/wikipedia/commons/thumb/6/6b/KanHinuchit.svg/512px-KanHinuchit.svg.png,20.002,未分组,,,,无音频,timeout
-Kanal 68 (720p) [Not 24/7],https://live.artidijitalmedya.com/artidijital_kanal68/kanal68/playlist.m3u8,网络源,https://i.imgur.com/5y7K9SS.png,20.002,未分组,,,,无音频,timeout
-Lenz Animation,https://lenz.splus.ir/PLTV/88888888/224/3221227043/index.m3u8,网络源,https://i.postimg.cc/V652Dq1P/lenzanimation.png,20.002,未分组,,,,无音频,timeout
-Kronehit (1080p),https://bitcdn-kronehit.bitmovin.com/v2/hls/playlist.m3u8,网络源,https://i.imgur.com/dQJQv1X.png,20.001,未分组,,,,无音频,timeout
-M-Net HD (720p),http://ares.mnet.mk/hls/mnet.m3u8,网络源,https://i.imgur.com/HDYqWuR.png,20.003,未分组,,,,无音频,timeout
-Logos TV (1080p) [Not 24/7],https://5a8308add0b31.streamlock.net/logoschannel.com/logostv.smil/playlist.m3u8,网络源,https://i.imgur.com/h8DioXU.png,20.002,未分组,,,,无音频,timeout
-KVF (720p) [Not 24/7],https://w-live-edge1.kringvarp.fo/uttanlands/_definst_/smil:uttanlands.smil/playlist.m3u8,网络源,https://upload.wikimedia.org/wikipedia/commons/thumb/a/ab/KVF_logo_2019.svg/512px-KVF_logo_2019.svg.png,20.002,未分组,,,,无音频,timeout
-Metro Globe Network (1080p) [Not 24/7],https://edge.medcom.id/live-edge/smil:mgnch.smil/playlist.m3u8,网络源,https://i.imgur.com/aiiinzg.png,20.001,未分组,,,,无音频,timeout
-Karoon TV,https://ncdn.telewebion.com/karoon/live/playlist.m3u8,网络源,https://static.telewebion.com/channelsLogo/448a8dca-ab58-4533-8d71-ad74b8812c79/default,20.002,未分组,,,,无音频,timeout
-Miracle TV (1080p),https://live.miracleonline.org/hls/miracle1.m3u8,网络源,https://i.imgur.com/rc68GZJ.png,20.001,未分组,,,,无音频,timeout
-Minimax (576p) (576p),http://88.212.15.19/live/test_minimax/playlist.m3u8,网络源,https://i.imgur.com/WWOlm1x.png,20.002,未分组,,,,无音频,timeout
-Makan 33 (1080p),https://makan.media.kan.org.il/hls/live/2024680/2024680/master.m3u8,网络源,https://i.imgur.com/RVtQTed.png,20.002,未分组,,,,无音频,timeout
+TVM (480p) [Not 24/7],http://online.tvm.co.mz:1935/live/smil:Channel1.smil/playlist.m3u8,网络源,https://i.imgur.com/Vqv7R3Y.png,20.018,未分组,,,,无音频,timeout
+TV2,https://viamotionhsi.netplus.ch/live/eds/canalalgerie/browser-dash/canalalgerie.mpd,网络源,https://i.imgur.com/VEb631f.png,20.001,未分组,,,,无音频,timeout
+WFMZ PPL Tower Camera,https://cdn.jaybirdtv.com/wfmz/channel/9/master.m3u8,网络源,,20.002,未分组,,,,无音频,timeout
+ZDF HD (720p),https://viamotionhsi.netplus.ch/live/eds/zdfhd/browser-dash/zdfhd.mpd,网络源,https://i.imgur.com/rtLb6m9.png,20.002,未分组,,,,无音频,timeout
+Univer TV (1080p) [Not 24/7],https://cdn.universmotri.ru/live/smil:mbr.smil/playlist.m3u8,网络源,https://i.imgur.com/r3u0mxr.png,20.003,未分组,,,,无音频,timeout
+TV Zimbo (1080p),https://sgn-cdn-video.vods2africa.com/Tv-Zimbo/index.fmp4.m3u8,网络源,https://i.imgur.com/SFD8CBh.png,20.003,未分组,,,,无音频,timeout
+WDR 1 Live (720p),https://wdrfs247.akamaized.net/hls/live/681509/wdr_msl4_fs247/index.m3u8,网络源,https://i.postimg.cc/5N1k0pVs/wdr1live.png,20.002,未分组,,,,无音频,timeout
+WDR Fernsehen Duisburg (720p) [Geo-blocked],https://wdrlokalzeit.akamaized.net/hls/live/2018024-b/wdrlz_duisburg/master.m3u8,网络源,https://upload.wikimedia.org/wikipedia/commons/thumb/2/22/WDR_Fernsehen_Logo_2018.svg/512px-WDR_Fernsehen_Logo_2018.svg.png,20.002,未分组,,,,无音频,timeout
+WDR Fernsehen Bonn (720p) [Geo-blocked],https://wdrlokalzeit.akamaized.net/hls/live/2018021-b/wdrlz_bonn/master.m3u8,网络源,https://upload.wikimedia.org/wikipedia/commons/thumb/2/22/WDR_Fernsehen_Logo_2018.svg/512px-WDR_Fernsehen_Logo_2018.svg.png,20.001,未分组,,,,无音频,timeout
+WDR Fernsehen Dortmund (720p) [Geo-blocked],https://wdrlokalzeit.akamaized.net/hls/live/2018022-b/wdrlz_dortmund/master.m3u8,网络源,https://upload.wikimedia.org/wikipedia/commons/thumb/2/22/WDR_Fernsehen_Logo_2018.svg/512px-WDR_Fernsehen_Logo_2018.svg.png,20.001,未分组,,,,无音频,timeout
+WDR Fernsehen Wuppertal (720p) [Geo-blocked],https://wdrlokalzeit.akamaized.net/hls/live/2018028-b/wdrlz_wuppertal/master.m3u8,网络源,https://upload.wikimedia.org/wikipedia/commons/thumb/2/22/WDR_Fernsehen_Logo_2018.svg/512px-WDR_Fernsehen_Logo_2018.svg.png,20.002,未分组,,,,无音频,timeout
+WDR Fernsehen Essen (720p) [Geo-blocked],https://wdrlokalzeit.akamaized.net/hls/live/2018027-b/wdrlz_essen/master.m3u8,网络源,https://upload.wikimedia.org/wikipedia/commons/thumb/2/22/WDR_Fernsehen_Logo_2018.svg/512px-WDR_Fernsehen_Logo_2018.svg.png,20.003,未分组,,,,无音频,timeout
+WDR Fernsehen Aachen (720p) [Geo-blocked],https://wdrlokalzeit.akamaized.net/hls/live/2018019-b/wdrlz_aachen/master.m3u8,网络源,https://upload.wikimedia.org/wikipedia/commons/thumb/2/22/WDR_Fernsehen_Logo_2018.svg/512px-WDR_Fernsehen_Logo_2018.svg.png,20.002,未分组,,,,无音频,timeout
+WDR Fernsehen Düsseldorf (720p) [Geo-blocked],https://wdrlokalzeit.akamaized.net/hls/live/2018023-b/wdrlz_duesseldorf/master.m3u8,网络源,https://upload.wikimedia.org/wikipedia/commons/thumb/2/22/WDR_Fernsehen_Logo_2018.svg/512px-WDR_Fernsehen_Logo_2018.svg.png,20.004,未分组,,,,无音频,timeout
+WDR Fernsehen Siegen (720p) [Geo-blocked],https://wdrlokalzeit.akamaized.net/hls/live/2018020-b/wdrlz_siegen/master.m3u8,网络源,https://upload.wikimedia.org/wikipedia/commons/thumb/2/22/WDR_Fernsehen_Logo_2018.svg/512px-WDR_Fernsehen_Logo_2018.svg.png,20.002,未分组,,,,无音频,timeout
+WDR Fernsehen Münster (720p) [Geo-blocked],https://wdrlokalzeit.akamaized.net/hls/live/2018025-b/wdrlz_muensterland/master.m3u8,网络源,https://upload.wikimedia.org/wikipedia/commons/thumb/2/22/WDR_Fernsehen_Logo_2018.svg/512px-WDR_Fernsehen_Logo_2018.svg.png,20.004,未分组,,,,无音频,timeout
+Trakya Türk TV (720p),https://live.artidijitalmedya.com/artidijital_trakyaturk/trakyaturk/playlist.m3u8,网络源,https://i.postimg.cc/PqskSYD9/trakyaturk.png,20.002,未分组,,,,无音频,timeout
+TERRA,https://livetv.mylifeisgood.net.ru/channels/terra.m3u8,网络源,https://i.imgur.com/ZxUjCpF.png,20.001,未分组,,,,无音频,timeout
+TeleRadioNorte (720p),https://angelistic.live:3785/live/tvoficiallive.m3u8,网络源,https://i.imgur.com/s43eFy0.png,20.002,未分组,,,,无音频,timeout
+TV Severka (576p) [Not 24/7],http://88.212.7.11/live/test_severka_web_player/playlist.m3u8,网络源,https://i.imgur.com/oQSee9S.png,20.002,未分组,,,,无音频,timeout
+ZDFneo HD (720p),https://viamotionhsi.netplus.ch/live/eds/zdfneohd/browser-dash/zdfneohd.mpd,网络源,https://i.imgur.com/1JIIGgL.png,20.001,未分组,,,,无音频,timeout
+Vizyon 58 TV (720p) [Geo-blocked],https://live.artidijitalmedya.com/artidijital_vizyon58/vizyon58/playlist.m3u8,网络源,https://i.imgur.com/tITBc59.png,20.001,未分组,,,,无音频,timeout
+TF1 HD (720p),https://viamotionhsi.netplus.ch/live/eds/tf1hd/browser-dash/tf1hd.mpd,网络源,https://i.imgur.com/QxHt9NC.png,20.001,未分组,,,,无音频,timeout
+ZDFinfo HD (720p),https://viamotionhsi.netplus.ch/live/eds/zdfinfohd/browser-dash/zdfinfohd.mpd,网络源,https://i.imgur.com/vtq1IWp.png,20.001,未分组,,,,无音频,timeout
+TV Romana (720p),http://88.212.7.11/live/test_tv_romana_web_player/playlist.m3u8,网络源,https://i.imgur.com/r7avFBX.png,20.002,未分组,,,,无音频,timeout
+TVC (1080p),https://tvce.gridpapaservers.com/TVCSEPT/ngrp:myStream_all/playlist.m3u8,网络源,https://i.imgur.com/ReV8R5S.png,20.003,未分组,,,,无音频,timeout
+TVP Polonia,https://viamotionhsi.netplus.ch/live/eds/tvpolonia/browser-dash/tvpolonia.mpd,网络源,https://upload.wikimedia.org/wikipedia/commons/thumb/1/1a/TVP_Polonia_Logo_2020.svg/512px-TVP_Polonia_Logo_2020.svg.png,20.002,未分组,,,,无音频,timeout
+TRT EBA Ilkokul (720p),https://tv-e-okul00.medya.trt.com.tr/master.m3u8,网络源,https://i.imgur.com/CRBfZi4.png,20.002,未分组,,,,无音频,timeout
+Telenord 10 (720p) [Not 24/7],https://rdn.essastream.com:3676/live/telenord10live.m3u8,网络源,https://i.imgur.com/1Ei0kB8.png,20.001,未分组,,,,无音频,timeout
+TVRI Bangka Belitung (480p),https://ott-balancer.tvri.go.id/live/eds/Babel/hls/Babel.m3u8,网络源,https://upload.wikimedia.org/wikipedia/commons/thumb/e/eb/TVRILogo2019.svg/512px-TVRILogo2019.svg.png,20.002,未分组,,,,无音频,timeout
+Wazobia Max TV Abuja (720p),https://wazobia.live:8333/channel/wmaxabuja.m3u8,网络源,https://i.imgur.com/XYMKPPT.png,20.002,未分组,,,,无音频,timeout
+TVRI Jawa Barat (480p),https://ott-balancer.tvri.go.id/live/eds/Jabar/hls/Jabar.m3u8,网络源,https://upload.wikimedia.org/wikipedia/commons/thumb/e/eb/TVRILogo2019.svg/512px-TVRILogo2019.svg.png,20.002,未分组,,,,无音频,timeout
+Wazobia Max TV Port Harcourt (720p),https://wazobia.live:8333/channel/wmaxph.m3u8,网络源,https://rndcdn.dstv.com/dstvcms/2016/10/20/WazobiaMaz_new4-4logo_001_xlrg.png,20.002,未分组,,,,无音频,timeout
+Wazobia Max TV Nigeria (720p),https://wazobia.live:8333/channel/wmax.m3u8,网络源,https://i.imgur.com/IeioxBp.png,20.002,未分组,,,,无音频,timeout
+TVRI Jawa Tengah (720p),https://ott-balancer.tvri.go.id/live/eds/Jateng/hls/Jateng.m3u8,网络源,https://upload.wikimedia.org/wikipedia/commons/thumb/e/eb/TVRILogo2019.svg/512px-TVRILogo2019.svg.png,20.002,未分组,,,,无音频,timeout
+USA Network Latin America,https://cors-proxy.cooks.fyi/https://streamer1.nexgen.bz/SYFY/index.m3u8,网络源,https://upload.wikimedia.org/wikipedia/commons/thumb/d/d7/USA_Network_logo_%282016%29.svg/512px-USA_Network_logo_%282016%29.svg.png,20.002,未分组,,,,无音频,timeout
+Tweede Kamer: Klompezaal (1080p) [Not 24/7],https://livestreaming.b67buv2.tweedekamer.nl/live/klompezaal/index.m3u8?hd=1&keyframes=1&subtitles=live,网络源,https://i.imgur.com/X9fezZ8.png,20.001,未分组,,,,无音频,timeout
+Tweede Kamer: Max van der Stoelzaal (1080p) [Not 24/7],https://livestreaming.b67buv2.tweedekamer.nl/live/maxvanderstoelzaal/index.m3u8?hd=1&keyframes=1&subtitles=live,网络源,https://i.imgur.com/X9fezZ8.png,20.005,未分组,,,,无音频,timeout
+Tweede Kamer: Groen van Prinstererzaal (1080p) [Not 24/7],https://livestreaming.b67buv2.tweedekamer.nl/live/groenvanprinstererzaal/index.m3u8?hd=1&keyframes=1&subtitles=live,网络源,https://i.imgur.com/X9fezZ8.png,20.002,未分组,,,,无音频,timeout
+TRT Turk,https://viamotionhsi.netplus.ch/live/eds/trtturk/browser-dash/trtturk.mpd,网络源,https://upload.wikimedia.org/wikipedia/commons/thumb/d/d2/TRT_T%C3%BCrk_logo.svg/512px-TRT_T%C3%BCrk_logo.svg.png,20.002,未分组,,,,无音频,timeout
+Tweede Kamer: Suze Groenewegzaal (1080p) [Not 24/7],https://livestreaming.b67buv2.tweedekamer.nl/live/suzegroenewegzaal/index.m3u8?hd=1&keyframes=1&subtitles=live,网络源,https://i.imgur.com/X9fezZ8.png,20.002,未分组,,,,无音频,timeout
+Tweede Kamer: Enquetezaal (1080p) [Not 24/7],https://livestreaming.b67buv2.tweedekamer.nl/live/enquetezaal/index.m3u8?hd=1&keyframes=1&subtitles=live,网络源,https://i.imgur.com/X9fezZ8.png,20.001,未分组,,,,无音频,timeout
+Tweede Kamer: Actualiteitenkanaal (1080p) [Not 24/7],https://livestreaming.b67buv2.tweedekamer.nl/live/evenementenkanaal/index.m3u8?hd=1&keyframes=1&subtitles=live,网络源,https://i.imgur.com/X9fezZ8.png,20.002,未分组,,,,无音频,timeout
+Tweede Kamer: Plenaire zaal (1080p) [Not 24/7],https://livestreaming.b67buv2.tweedekamer.nl/live/plenairezaal/index.m3u8?hd=1&keyframes=1&subtitles=live,网络源,https://i.imgur.com/X9fezZ8.png,20.002,未分组,,,,无音频,timeout
+Tweede Kamer: Aletta Jacobszaal (1080p) [Not 24/7],https://livestreaming.b67buv2.tweedekamer.nl/live/alettajacobszaal/index.m3u8?hd=1&keyframes=1&subtitles=live,网络源,https://i.imgur.com/X9fezZ8.png,20.002,未分组,,,,无音频,timeout
+Thai Parliament TV (1080p) [Not 24/7],https://tv-live.tpchannel.org/live/tv.m3u8,网络源,https://i.imgur.com/Okcnmt6.png,20.003,未分组,,,,无音频,timeout
+TVRI Papua (480p),https://ott-balancer.tvri.go.id/live/eds/Papua/hls/Papua.m3u8,网络源,https://upload.wikimedia.org/wikipedia/commons/thumb/e/eb/TVRILogo2019.svg/512px-TVRILogo2019.svg.png,20.002,未分组,,,,无音频,timeout
+Tweede Kamer: Thorbeckezaal (1080p) [Not 24/7],https://livestreaming.b67buv2.tweedekamer.nl/live/thorbeckezaal/index.m3u8?hd=1&keyframes=1&subtitles=live,网络源,https://i.imgur.com/X9fezZ8.png,20.005,未分组,,,,无音频,timeout
+TVRI Sumatera Barat (720p),https://ott-balancer.tvri.go.id/live/eds/Sumbar/hls/Sumbar.m3u8,网络源,https://upload.wikimedia.org/wikipedia/commons/thumb/e/eb/TVRILogo2019.svg/512px-TVRILogo2019.svg.png,20.002,未分组,,,,无音频,timeout
+TV Vega (576p) [Not 24/7],http://88.212.7.11/live/test_tv_vega_web_player/playlist.m3u8,网络源,https://i.imgur.com/Qw3NeLA.png,20.004,未分组,,,,无音频,timeout
+UBS (1080p),https://cdn4.skygo.mn/live/disk1/UBSHD/DASH-FTA/UBSHD.mpd,网络源,https://i.imgur.com/dIRMYYd.png,20.003,未分组,,,,无音频,timeout
+Times Brasil (1080p),https://cr7v.short.gy/ManoTV/TimesBrasil/Whats75991634025/CNBC/Index.m3u8,网络源,https://i.ibb.co/X726G1j/Times-Brasil-CNBC-logo-svg-1.png,20.003,未分组,,,,无音频,timeout
