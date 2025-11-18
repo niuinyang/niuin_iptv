@@ -1,9 +1,12 @@
-name: 4-A 合并（Merge Result）
+name: 6合并扫描结果
 
 on:
   workflow_dispatch:
-  # schedule:
-  #   - cron: '0 18 * * *'
+  workflow_run:
+    workflows:
+      - 1下载全部M3U
+    types:
+      - completed
 
 permissions:
   contents: write
