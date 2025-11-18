@@ -1,0 +1,50 @@
+name: 3分割merge_total_csv
+
+on:
+  workflow_dispatch:
+  workflow_run:
+    workflows:
+      - 2合并网络源
+    types:
+      - completed
+
+jobs:
+  split_merge_total:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Setup Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      - name: Install dependencies
+        run: pip install chardet
+
+      - name: Run split script
+        run: python scripts/4split_merge.py
+
+      - name: Commit & Push chunks
+        env:
+          PAT_TOKEN: ${{ secrets.PAT_TOKEN }}
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add output/middle/chunk/
+          if ! git diff --cached --quiet; then
+            git commit -m "Auto split merge_total.csv into chunks [ci skip]"
+            if [ -n "$(git status --porcelain)" ]; then
+              git stash push -m "ci-stash-before-pull"
+              git pull --rebase origin main
+              git stash pop || echo "No stash to pop"
+            else
+              git pull --rebase origin main
+            fi
+            git push https://${PAT_TOKEN}@github.com/${{ github.repository }}.git HEAD:refs/heads/main
+          else
+            echo "✅ No changes to commit."
+          fi
