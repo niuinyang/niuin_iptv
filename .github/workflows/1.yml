@@ -1,0 +1,73 @@
+name: Batch Cancel Workflow Runs
+
+on:
+  workflow_dispatch:  # 手动触发
+
+jobs:
+  cancel_runs:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v3
+
+      - name: Set up Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: '3.x'
+
+      - name: Install requests
+        run: pip install requests
+
+      - name: Cancel running workflow runs
+        env:
+          GITHUB_TOKEN: ${{ secrets.PUSH_TOKEN1 }}
+          OWNER: ${{ github.repository_owner }}
+          REPO: ${{ github.event.repository.name }}
+        run: |
+          python3 - <<'EOF'
+          import os
+          import requests
+
+          token = os.environ["GITHUB_TOKEN"]
+          owner = os.environ["OWNER"]
+          repo = os.environ["REPO"]
+
+          headers = {
+              "Authorization": f"token {token}",
+              "Accept": "application/vnd.github+json",
+          }
+
+          def get_runs(page=1):
+              url = f"https://api.github.com/repos/{owner}/{repo}/actions/runs"
+              params = {"per_page": 100, "page": page}
+              resp = requests.get(url, headers=headers, params=params)
+              resp.raise_for_status()
+              return resp.json()
+
+          def cancel_run(run_id):
+              url = f"https://api.github.com/repos/{owner}/{repo}/actions/runs/{run_id}/cancel"
+              resp = requests.post(url, headers=headers)
+              if resp.status_code == 202:
+                  print(f"Cancelled run {run_id}")
+              else:
+                  print(f"Failed to cancel run {run_id}: {resp.status_code} {resp.text}")
+
+          def main():
+              page = 1
+              while True:
+                  data = get_runs(page)
+                  runs = data.get("workflow_runs", [])
+                  if not runs:
+                      break
+                  for run in runs:
+                      status = run["status"]  # queued, in_progress, completed
+                      run_id = run["id"]
+                      if status in ("queued", "in_progress"):
+                          cancel_run(run_id)
+                  if page >= (data.get("total_count", 0) // 100) + 1:
+                      break
+                  page += 1
+
+          if __name__ == "__main__":
+              main()
+          EOF
