@@ -3,9 +3,10 @@ name: A生成并执行缓存workflow
 on:
   workflow_dispatch:
   schedule:
-    - cron: '11 0 * * *'
-    - cron: '12 8 * * *'
-    - cron: '13 13 * * *'
+    - cron: '*/5 * * * *'  # 每5分钟触发一次
+    #- cron: '11 0 * * *'
+    #- cron: '12 8 * * *'
+    #- cron: '13 13 * * *'
 
 permissions:
   contents: write
