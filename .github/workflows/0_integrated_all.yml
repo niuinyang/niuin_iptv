@@ -15,58 +15,58 @@ jobs:
       download_done: ${{ steps.set_done.outputs.done }}  # 输出标记，表示此job完成
     steps:
       - name: Checkout repo
-        uses: actions/checkout@v4  # 签出仓库代码
+        uses: actions/checkout@v4
         with:
           fetch-depth: 0
           persist-credentials: true
 
       - name: Setup Python
-        uses: actions/setup-python@v5  # 配置Python 3.11环境
+        uses: actions/setup-python@v5
         with:
           python-version: '3.11'
 
       - name: Install dependencies for download
         run: |
           python -m pip install --upgrade pip
-          pip install requests  # 安装requests库，供下载脚本使用
+          pip install requests
 
       - name: Ensure output directories exist
         run: |
-          mkdir -p input/source input/download/my input/download/network scripts  # 创建所需目录
+          mkdir -p input/source input/download/my input/download/network scripts
 
       - name: Run M3U download script
-        run: python scripts/1_download_m3u.py  # 执行下载M3U脚本
+        run: python scripts/1_download_m3u.py
 
       - name: Commit & Push results
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
-          git add input/download  # 添加变更文件
+          git add input/download
           if git diff --cached --quiet; then
             echo "✅ No changes to commit."
             exit 0
           fi
-          git commit -m "Update M3U sources [ci skip]"  # 提交变更，跳过CI
+          git commit -m "Update M3U sources [ci skip]"
           if [ -n "$(git status --porcelain)" ]; then
             git stash push -m "ci-stash-before-pull"
-            git pull --rebase origin main  # 先拉取最新代码，防止冲突
+            git pull --rebase origin main
             git stash pop || echo "No stash to pop"
           else
             git pull --rebase origin main
           fi
-          git push origin main  # 推送代码到远程仓库
+          git push origin main
 
       - id: set_done
-        run: echo "::set-output name=done::true"  # 标记此job完成，用于下游依赖
+        run: echo "done=true" >> $GITHUB_OUTPUT  # 新版设置输出写法
 
   merge_local_sources:
-    needs: download_all_m3u  # 依赖前一个job完成后执行
+    needs: download_all_m3u
     runs-on: ubuntu-latest
     outputs:
       merge_done: ${{ steps.set_done.outputs.done }}
     steps:
       - name: Checkout repository
-        uses: actions/checkout@v4  # 签出代码
+        uses: actions/checkout@v4
         with:
           fetch-depth: 0
 
@@ -78,16 +78,16 @@ jobs:
       - name: Install dependencies for merge
         run: |
           pip install --upgrade pip
-          pip install requests chardet  # 安装依赖库
+          pip install requests chardet
 
       - name: Run merge script
-        run: python scripts/2_merge_local_sources.py  # 执行合并网络源脚本
+        run: python scripts/2_merge_local_sources.py
 
       - name: Commit & Push results
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
-          git add output/  # 添加合并后的结果
+          git add output/
           if ! git diff --cached --quiet; then
             git commit -m "🤖 Auto merge local sources $(date '+%Y-%m-%d %H:%M:%S')"
             if [ -n "$(git status --porcelain)" ]; then
@@ -103,10 +103,10 @@ jobs:
           fi
 
       - id: set_done
-        run: echo "::set-output name=done::true"
+        run: echo "done=true" >> $GITHUB_OUTPUT
 
   split_merge_total:
-    needs: merge_local_sources  # 依赖上一个job完成后执行
+    needs: merge_local_sources
     runs-on: ubuntu-latest
     outputs:
       split_done: ${{ steps.set_done.outputs.done }}
@@ -122,10 +122,10 @@ jobs:
           python-version: "3.11"
 
       - name: Install dependencies
-        run: pip install chardet  # 安装chardet库
+        run: pip install chardet
 
       - name: Run split script
-        run: python scripts/3_split_merge.py  # 执行分割merge_total.csv脚本
+        run: python scripts/3_split_merge.py
 
       - name: Commit & Push chunks
         env:
@@ -133,7 +133,7 @@ jobs:
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
-          git add output/middle/chunk/  # 添加分割结果
+          git add output/middle/chunk/
           if ! git diff --cached --quiet; then
             git commit -m "Auto split merge_total.csv into chunks [ci skip]"
             if [ -n "$(git status --porcelain)" ]; then
@@ -149,7 +149,7 @@ jobs:
           fi
 
       - id: set_done
-        run: echo "::set-output name=done::true"
+        run: echo "done=true" >> $GITHUB_OUTPUT
 
   generate_chunk_workflow:
     needs: split_merge_total
@@ -178,11 +178,11 @@ jobs:
           python-version: "3.11"
 
       - name: Install dependencies
-        run: pip install chardet pillow tqdm requests  # 安装所需Python库
+        run: pip install chardet pillow tqdm requests
 
       - name: Generate and Push workflows
         run: |
-          python scripts/4_generate_chunk_workflows.py  # 生成chunk工作流脚本
+          python scripts/4_generate_chunk_workflows.py
           git add .github/workflows output/middle
           if ! git diff --cached --quiet; then
             git commit -m "ci: auto-generate deep validation workflows"
@@ -199,7 +199,7 @@ jobs:
           fi
 
       - id: set_done
-        run: echo "::set-output name=done::true"
+        run: echo "done=true" >> $GITHUB_OUTPUT
 
   wait_for_scan:
     needs: generate_chunk_workflow
@@ -211,7 +211,7 @@ jobs:
     outputs:
       wait_done: ${{ steps.set_done.outputs.done }}
     steps:
-      - uses: actions/checkout@v3  # 签出代码
+      - uses: actions/checkout@v3
 
       - name: Setup Python
         uses: actions/setup-python@v4
@@ -219,19 +219,19 @@ jobs:
           python-version: "3.x"
 
       - name: Install dependencies
-        run: pip install aiohttp requests  # 安装异步http依赖
+        run: pip install aiohttp requests
 
       - name: Run scan watcher (async & realtime output)
         env:
           GITHUB_TOKEN: ${{ secrets.PUSH_TOKEN1 }}
           REPO_OWNER: niuinyang
           REPO_NAME: niuin_iptv
-          PYTHONUNBUFFERED: "1"  # 使Python实时打印日志
+          PYTHONUNBUFFERED: "1"
         run: |
-          python -u scripts/5.4_check-scan-finished-async.py  # 异步扫描完成检测脚本
+          python -u scripts/5.4_check-scan-finished-async.py
 
       - id: set_done
-        run: echo "::set-output name=done::true"
+        run: echo "done=true" >> $GITHUB_OUTPUT
 
   delete_workflows:
     needs: wait_for_scan
@@ -251,7 +251,7 @@ jobs:
           fi
           echo "Deleting files:"
           echo "$FILES_SCAN_CHUNK"
-          git rm $FILES_SCAN_CHUNK || true  # 删除生成的chunk workflow文件
+          git rm $FILES_SCAN_CHUNK || true
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
           git commit -m "Delete scan_chunk workflow files" || echo "No changes to commit"
@@ -283,10 +283,10 @@ jobs:
       - name: Install dependencies
         run: |
           python -m pip install --upgrade pip
-          pip install pandas  # 安装pandas库
+          pip install pandas
 
       - name: Run merge script
-        run: python scripts/6_merge_scan_result.py  # 合并扫描结果脚本
+        run: python scripts/6_merge_scan_result.py
 
       - name: Commit and push changes with stash and retry
         run: |
@@ -332,7 +332,7 @@ jobs:
       - name: Clone iptv-org/database repository
         run: |
           mkdir -p input/iptv-org
-          git clone --depth=1 https://github.com/iptv-org/database.git input/iptv-org/database  # 克隆第三方iptv-org数据库
+          git clone --depth=1 https://github.com/iptv-org/database.git input/iptv-org/database
 
       - name: Set up Python 3.11
         uses: actions/setup-python@v4
@@ -342,10 +342,10 @@ jobs:
       - name: Install dependencies
         run: |
           python -m pip install --upgrade pip
-          pip install -r requirements.txt  # 安装脚本依赖
+          pip install -r requirements.txt
 
       - name: Run IPTV Standardization Script
-        run: python scripts/7_standardize_names.py  # 运行标准化脚本
+        run: python scripts/7_standardize_names.py
 
       - name: Commit and Push changes
         run: |
@@ -384,10 +384,10 @@ jobs:
       - name: Install dependencies
         run: |
           python -m pip install --upgrade pip
-          pip install aiohttp pypinyin aiofiles  # 安装m3u生成脚本依赖
+          pip install aiohttp pypinyin aiofiles
 
       - name: Run m3u generation script
-        run: python scripts/8_cvs_to_m3u.py  # 生成M3U文件
+        run: python scripts/8_cvs_to_m3u.py
 
       - name: Commit and push changes with stash and retry
         run: |
