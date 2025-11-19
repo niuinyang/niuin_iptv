@@ -201,7 +201,7 @@ jobs:
       - id: set_done
         run: echo "done=true" >> $GITHUB_OUTPUT
 
-  trigger_chunk_workflows:
+    trigger_chunk_workflows:
     needs: generate_chunk_workflow
     runs-on: ubuntu-latest
     env:
@@ -215,15 +215,16 @@ jobs:
 
       - name: Trigger chunk workflows via repository_dispatch
         run: |
-          echo "Scanning .github/workflows for scan_*.yml files..."
-          files=$(ls .github/workflows/scan_*.yml || true)
+          echo "Scanning .github/workflows for scan_chunk-*.yml files..."
+          files=$(ls .github/workflows/scan_chunk-*.yml || true)
           if [ -z "$files" ]; then
             echo "No chunk workflows found to trigger."
             exit 0
           fi
 
           for wf_file in $files; do
-            chunk_id=$(basename "$wf_file" .yml | cut -d'_' -f2)
+            # 从 scan_chunk-1.yml 这样的文件名中提取数字1作为chunk_id
+            chunk_id=$(basename "$wf_file" .yml | cut -d'-' -f3)
             echo "Triggering chunk workflow for chunk_id: $chunk_id"
             curl -X POST \
               -H "Accept: application/vnd.github+json" \
