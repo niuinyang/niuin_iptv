@@ -104,32 +104,35 @@ def construct_catchup(url):
     构造 catchup-source URL，严格按照范例逻辑：
     - IP 地址保持和播放地址一致
     - 去掉路径中的 /import 片段
+    - 截断路径，保留到第一个以 .rsc 结尾的位置
     - 在URL尾部添加时间参数 ?tvdr={utc:YmdHMS}GMT-{utcend:YmdHMS}GMT
     """
     try:
         parsed = urlparse(url)
-        # IP保持不变
         ip = parsed.hostname
         if not ip:
             return None
         if ':' in ip:  # IPv6 不处理
             return None
 
-        # 处理路径，去掉 '/import' 部分（如果存在）
         path = parsed.path
+        # 去除 /import 段
         if path.startswith("/iptv/import"):
-            # 把 "/iptv/import" 改成 "/iptv"
             path = path.replace("/iptv/import", "/iptv", 1)
 
-        # 构造新的 URL，添加时间参数
+        # 截断路径到第一个 .rsc 结尾（包含.rsc）
+        rsc_pos = path.find(".rsc")
+        if rsc_pos != -1:
+            path = path[:rsc_pos + 4]  # 保留 .rsc 结尾部分
+
         time_params = "?tvdr={utc:YmdHMS}GMT-{utcend:YmdHMS}GMT"
         new_url = urlunparse((
             parsed.scheme,
-            parsed.netloc,  # 保持原始 host:port 不变
+            parsed.netloc,
             path,
             '',  # params
-            time_params[1:],  # query 不包含 '?'
-            ''  # fragment
+            time_params[1:],  # query 不带 '?'
+            ''   # fragment
         ))
         return new_url
     except Exception:
