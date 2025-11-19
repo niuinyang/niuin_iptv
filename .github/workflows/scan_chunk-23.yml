@@ -1,10 +1,8 @@
 name: Scan_chunk-23
 
 on:
-  workflow_run:
-    workflows: ["4生成chunk_workflows"]
-    types:
-      - completed
+  repository_dispatch:
+    types: [run-scan-chunk]
   workflow_dispatch:
 
 env:
