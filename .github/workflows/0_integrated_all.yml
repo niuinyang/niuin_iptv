@@ -201,7 +201,7 @@ jobs:
       - id: set_done
         run: echo "done=true" >> $GITHUB_OUTPUT
 
-    trigger_chunk_workflows:
+  trigger_chunk_workflows:
     needs: generate_chunk_workflow
     runs-on: ubuntu-latest
     env:
@@ -223,7 +223,6 @@ jobs:
           fi
 
           for wf_file in $files; do
-            # 从 scan_chunk-1.yml 这样的文件名中提取数字1作为chunk_id
             chunk_id=$(basename "$wf_file" .yml | cut -d'-' -f3)
             echo "Triggering chunk workflow for chunk_id: $chunk_id"
             curl -X POST \
@@ -439,7 +438,7 @@ jobs:
                 echo "Push succeeded"
                 break
               else
-                echo "Push failed, pulling remote..."
+                git push failed, pulling remote...
                 if [ -n "$(git status --porcelain)" ]; then
                   git stash push -m "ci stash before pull"
                   git pull --rebase origin main --quiet
