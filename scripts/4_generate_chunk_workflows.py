@@ -32,10 +32,8 @@ os.makedirs(WORKFLOW_DIR, exist_ok=True)
 TEMPLATE = """name: Scan_{n}
 
 on:
-  workflow_run:
-    workflows: ["4生成chunk_workflows"]
-    types:
-      - completed
+  repository_dispatch:
+    types: [run-scan-chunk]
   workflow_dispatch:
 
 env:
