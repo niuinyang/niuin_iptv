@@ -33,7 +33,7 @@ TEMPLATE = """name: Scan_{n}
 
 on:
   workflow_run:
-    workflows: ["4生成chunk_workflows"]
+    workflows: ["1预处理-下载-合并-分割-生成"]
     types:
       - completed
   workflow_dispatch:
