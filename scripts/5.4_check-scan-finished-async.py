@@ -113,8 +113,8 @@ async def main():
 
         if finished:
             print("\n🎉 All chunk workflows completed!")
-            print("🔧 Running merge script C-merge_cache.py ...")
-            os.system("python scripts/C-merge_cache.py")
+            print("🔧 Running merge script 6_merge_scan_result.py ...")
+            os.system("python scripts/6_merge_scan_result.py")
             return
 
         print(f"⏳ Not done yet. Waiting {CHECK_INTERVAL} sec...\n")
