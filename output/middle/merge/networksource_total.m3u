@@ -317,16 +317,16 @@ https://cdn.jmvstream.com/w/LVW-8155/ngrp:LVW8155_41E1ciuCvO_all/playlist.m3u8
 http://cfd-v4-service-channel-stitcher-use1-1.prd.pluto.tv/stitch/hls/channel/65a67dd13af63d0008257f17/master.m3u8?appName=web&appVersion=unknown&clientTime=0&deviceDNT=0&deviceId=bc8293f0-4b91-11ef-8a44-83c5e90e038f&deviceMake=Chrome&deviceModel=web&deviceType=web&deviceVersion=unknown&includeExtendedEvents=false&serverSideAds=false&sid=6b751f03-945e-4e30-a909-d3e4de858fa8
 #EXTINF:-1,90210
 http://cfd-v4-service-channel-stitcher-use1-1.prd.pluto.tv/stitch/hls/channel/65a67dd13af63d0008257f17/master.m3u8?appName=web&appVersion=unknown&clientTime=0&deviceDNT=0&deviceId=1b1c5240-4b81-11ef-a8ac-e146e4e7be02&deviceMake=Chrome&deviceModel=web&deviceType=web&deviceVersion=unknown&includeExtendedEvents=false&serverSideAds=false&sid=6e62cae5-9404-4e52-8b20-c5fc2b453e9d
+#EXTINF:-1,:Šport (1080p)
+http://88.212.15.27/live/test_rtvs_sport_hevc/playlist.m3u8
+#EXTINF:-1,¡OPA! (1080i) [Geo-blocked]
+https://5fc584f3f19c9.streamlock.net/genteopa/videogenteopa/playlist.m3u8
 #EXTINF:-1,&flix (480p)
 https://edge3-moblive.yuppcdn.net/drm/smil:nflixdrm.smil/index.m3u8
 #EXTINF:-1,&TV (1080p)
 https://amg01117-amg01117c1-amgplt0165.playout.now3.amagi.tv/playlist.m3u8
 #EXTINF:-1,:24 (1080p)
 http://88.212.15.27/live/test_trojka_25p/playlist.m3u8
-#EXTINF:-1,:Šport (1080p)
-http://88.212.15.27/live/test_rtvs_sport_hevc/playlist.m3u8
-#EXTINF:-1,¡OPA! (1080i) [Geo-blocked]
-https://5fc584f3f19c9.streamlock.net/genteopa/videogenteopa/playlist.m3u8
 #EXTINF:-1,@TV (720p)
 http://49.0.87.24:1936/HDAttv/Attv/playlist.m3u8
 #EXTINF:-1,A1 TV (1080p) [Not 24/7]
@@ -1491,8 +1491,6 @@ https://artesimulcast.akamaized.net/hls/live/2030993/artelive_de/index.m3u8
 https://artesimulcast.akamaized.net/hls/live/2031003/artelive_fr/index.m3u8
 #EXTINF:-1,arte HD (1080p)
 https://viamotionhsi.netplus.ch/live/eds/artehd/browser-HLS8/artehd.m3u8
-#EXTINF:-1,Arte Investimenti
-https://uvotv-aniview.global.ssl.fastly.net/10010/live/hls/arteinvestimenti/playlist.m3u8
 #EXTINF:-1,Artflix Movie Classics (720p)
 https://amogonetworx-artflix-1-nl.samsung.wurl.tv/playlist.m3u8
 #EXTINF:-1,Arthur
@@ -1833,8 +1831,8 @@ https://fuse-backstage-xumo.amagi.tv/playlist.m3u8
 http://cfd-v4-service-channel-stitcher-use1-1.prd.pluto.tv/stitch/hls/channel/654932fa4d6d8f00084c4723/master.m3u8?appName=web&appVersion=unknown&clientTime=0&deviceDNT=0&deviceId=6c26ce94-30d3-11ef-9cf5-e9ddff8ff496&deviceMake=Chrome&deviceModel=web&deviceType=web&deviceVersion=unknown&includeExtendedEvents=false&serverSideAds=false&sid=b1b96db7-7e31-41b3-b84a-e4af6f3435f5
 #EXTINF:-1,Bad Girls Club
 https://xumo-xumoent-vc-118-jed5p.fast.nbcuni.com/live/master.m3u8
-#EXTINF:-1,Bada Khabar (720p)
-https://badakhabar.livebox.co.in/Badakhabarhls/live.m3u8
+#EXTINF:-1,Bada Khabar (432p)
+https://app.ashokadigital.net/badakhabar/badakhabar/index.m3u8
 #EXTINF:-1,Badakhshon (576p)
 https://live.teleradiocom.tj/11/3m.m3u8
 #EXTINF:-1,Baden TV (1080p) [Not 24/7]
@@ -2721,8 +2719,6 @@ https://reflect-stream-bronxnet.cablecast.tv/live-8/live/stream-4/live.m3u8
 https://reflect-stream-bronxnet.cablecast.tv/live-18/live/stream-7/live.m3u8
 #EXTINF:-1,BX Omni (720p)
 https://reflect-stream-bronxnet.cablecast.tv/live-16/live/stream-1/live.m3u8
-#EXTINF:-1,ByoBlu
-https://uvotv-aniview.global.ssl.fastly.net/10010/live/hls/byoblu/playlist.m3u8
 #EXTINF:-1,BYU TV (1080p) [Geo-blocked]
 https://amg02604-byutv-amg02604c2-firetv-us-4981.playouts.now.amagi.tv/playlist.m3u8
 #EXTINF:-1,C1 (720p)
@@ -3729,8 +3725,6 @@ https://cdn4.skygo.mn/live/disk1/Channel11/HLSv3-FTA/Channel11.m3u8
 https://cdn3.wowza.com/5/RXJNMFI3VlVkOEFP/scottsdale/G0040_007/chunklist.m3u8
 #EXTINF:-1,Channel 13 (720p) [Not 24/7]
 https://stream.theyraonline.com/live/channel13@live/index.m3u8
-#EXTINF:-1,Channel 24
-https://uvotv-aniview.global.ssl.fastly.net/10010/live/hls/channel24/playlist.m3u8
 #EXTINF:-1,Channel 44 (480p)
 https://d1k6kax80wecy5.cloudfront.net/WFqZJc/index.m3u8
 #EXTINF:-1,Channel 44 Uganda
@@ -3881,8 +3875,6 @@ https://streams2.sofast.tv/v1/master/611d79b11b77e2f571934fd80ca1413453772ac7/3b
 http://87.255.35.150:18855
 #EXTINF:-1,Cibaeña TV (720p)
 https://streamunoapp.com:3958/live/cibaenatvlive.m3u8
-#EXTINF:-1,Cielo
-https://uvotv-aniview.global.ssl.fastly.net/10010/live/hls/cielo/playlist.m3u8
 #EXTINF:-1,Cielo TV (1080p)
 https://streaming.servervideo.net:1936/cielotv/cielotv/playlist.m3u8
 #EXTINF:-1,Çiftçi TV (1080p) [Not 24/7]
@@ -4001,8 +3993,8 @@ https://rtvelivestream-rtveplayplus.rtve.es/rtvesec/int/clan_int_main_1080.m3u8
 https://streamunoapp.com:3960/live/claroteledomlive.m3u8
 #EXTINF:-1,Claro Visión TV (720p)
 https://streamunoapp.com:3057/live/clarovisiontvlive.m3u8
-#EXTINF:-1,Class CNBC (576p)
-https://streamcdnb10-859c1818ed614cc5b0047439470927b0.msvdn.net/live/S76890577/tDoFkZD3T1Lw/playlist.m3u8
+#EXTINF:-1,Class CNBC
+https://raw.githubusercontent.com/Sibprod/streams/main/ressources/dm/py/hls/classcnbc.m3u8
 #EXTINF:-1,Class TV Moda
 https://raw.githubusercontent.com/Sibprod/streams/main/ressources/dm/py/hls/classtvmoda.m3u8
 #EXTINF:-1,Classic Arts Showcase
@@ -4747,8 +4739,6 @@ https://s1.dcdn.lt/live/televizija/playlist.m3u8
 http://81.171.10.42:554/liveD/DStream.sdp/playlist.m3u8
 #EXTINF:-1,Delta TV Canal 50
 https://rdn.essastream.com:3949/live/deltatv50live.m3u8
-#EXTINF:-1,Deluxe 139
-https://uvotv-aniview.global.ssl.fastly.net/10010/live/hls/deluxe139/playlist.m3u8
 #EXTINF:-1,Deluxe Dance (1080p)
 https://sdn-global-live-streaming-packager-cache.3qsdn.com/64733/64733_264_live.m3u8
 #EXTINF:-1,Deluxe Lounge (720p)
@@ -4789,6 +4779,8 @@ https://live.wmncdn.net/desichannel/7e2dd0aed46b70a5c77f4affdb702e4b.sdp/playlis
 https://amg00353-amg00353c40-xumo-us-4839.playouts.now.amagi.tv/playlist.m3u8
 #EXTINF:-1,DesiPlay TV (1080p)
 https://amg00857-amg00857c1-rakuten-us-4656.playouts.now.amagi.tv/playlist.m3u8
+#EXTINF:-1,Despertar TV (720p)
+https://cdn.live.br1.jmvstream.com/webtv/pejexypz/playlist/playlist.m3u8
 #EXTINF:-1,Despierta TV (1080p) [Not 24/7]
 https://video2.lhdserver.es/despiertatv/live.m3u8
 #EXTINF:-1,Destiny Voices TV (480p)
@@ -5223,8 +5215,6 @@ http://cfd-v4-service-channel-stitcher-use1-1.prd.pluto.tv/stitch/hls/channel/62
 http://cfd-v4-service-channel-stitcher-use1-1.prd.pluto.tv/stitch/hls/channel/64d1606b4c5ed80008e3b8b9/master.m3u8?appName=web&appVersion=unknown&clientTime=0&deviceDNT=0&deviceId=6c28a350-30d3-11ef-9cf5-e9ddff8ff496&deviceMake=Chrome&deviceModel=web&deviceType=web&deviceVersion=unknown&includeExtendedEvents=false&serverSideAds=false&sid=c4fb05d1-b382-4722-a7d5-66fbce6da394
 #EXTINF:-1,E
 https://cdn-01.bonus-tv.ru/gsl/playlist.m3u8
-#EXTINF:-1,E4
-https://x.canlitvapp.com/u-e4/index.m3u8
 #EXTINF:-1,E 24
 https://live-e24.dailyhunt.in/eternowsa/live/amlst:E24_,b256,b512,b1024,b1824,.smil/playlist.m3u8
 #EXTINF:-1,E! East
@@ -5521,8 +5511,6 @@ https://raw.githubusercontent.com/Paradise-91/ParaTV/main/streams/equidia/live2.
 https://raw.githubusercontent.com/Paradise-91/ParaTV/main/streams/equidia/racingmag.m3u8
 #EXTINF:-1,Equinoxe TV
 http://69.64.57.208/equinoxtv/playlist.m3u8
-#EXTINF:-1,EQUtv
-https://uvotv-aniview.global.ssl.fastly.net/10010/live/hls/equtv/playlist.m3u8
 #EXTINF:-1,Equus TV (1080p)
 https://d2gwqf8gdwq1zs.cloudfront.net/scheduler/scheduleMaster/426.m3u8
 #EXTINF:-1,Er TV (1080p) [Geo-blocked]
@@ -6015,8 +6003,6 @@ https://yayin30.haber100.com/live/finansturk/playlist.m3u8
 https://media.finest.tv/hls/live.m3u8
 #EXTINF:-1,Fire TV
 https://uvotv-aniview.global.ssl.fastly.net/hls/live/2120428/firetv/playlist.m3u8
-#EXTINF:-1,Fire TV
-https://uvotv-aniview.global.ssl.fastly.net/10010/live/hls/firetv/playlist.m3u8
 #EXTINF:-1,First Channel News (1080p)
 https://amtv1-2.livestreamingcdn.com/am3abr/index.m3u8
 #EXTINF:-1,First India News (360p) [Not 24/7]
@@ -6465,8 +6451,6 @@ http://cfd-v4-service-channel-stitcher-use1-1.prd.pluto.tv/stitch/hls/channel/60
 https://event.vedge.infomaniak.com/livecast/ik:generation-tv/manifest.m3u8
 #EXTINF:-1,Génesis TV (768p) [Not 24/7]
 https://cdn.streamhispanatv.net:3126/live/genesistvlive.m3u8
-#EXTINF:-1,Genius 240
-https://uvotv-aniview.global.ssl.fastly.net/10010/live/hls/genius240/playlist.m3u8
 #EXTINF:-1,Geo Kahani (360p)
 https://jk3lz82elw79-hls-live.5centscdn.com/harPalGeo/955ad3298db330b5ee880c2c9e6f23a0.sdp/playlist.m3u8
 #EXTINF:-1,Geo News (576p)
@@ -6613,6 +6597,22 @@ https://6zklxkbbdw9b-hls-live.mariatvcdn.it/msmotor/2f759512164fc6fe4acbed6a5648
 https://ktismaservers.in:3086/live/goa365live.m3u8
 #EXTINF:-1,Goal TV
 https://streams2.sofast.tv/sofastplayout/WiseM3U8_1/master.m3u8
+#EXTINF:-1,God Stands TV
+https://online.godstands.tv:5443/WebRTCApp/streams/mainlive.m3u8
+#EXTINF:-1,God Stands TV Arabic
+https://online.godstands.tv:5443/WebRTCApp/streams/Arabic.m3u8
+#EXTINF:-1,God Stands TV Chinese
+https://online.godstands.tv:5443/WebRTCApp/streams/chineselive.m3u8
+#EXTINF:-1,God Stands TV English
+https://online.godstands.tv:5443/WebRTCApp/streams/EnglishStreaming.m3u8
+#EXTINF:-1,God Stands TV Hindi
+https://online.godstands.tv:5443/WebRTCApp/streams/HindiStreaming.m3u8
+#EXTINF:-1,God Stands TV Punjabi
+https://online.godstands.tv:5443/WebRTCApp/streams/PunjabiStreaming.m3u8
+#EXTINF:-1,God Stands TV Tagalog
+https://online.godstands.tv:5443/WebRTCApp/streams/Tagalog.m3u8
+#EXTINF:-1,God Stands TV Urdu
+https://online.godstands.tv:5443/WebRTCApp/streams/UrduStreaming.m3u8
 #EXTINF:-1,GOD TV Africa (576p)
 https://webstreaming.viewmedia.tv/web_006/Stream/playlist.m3u8
 #EXTINF:-1,God's Learning Channel (480p)
@@ -6777,7 +6777,7 @@ https://stream.medialive.hu/gran/grantvlive/playlist.m3u8
 https://gcinemahls.wns.live/hls/stream.m3u8
 #EXTINF:-1,Grande TV [Not 24/7]
 https://live20.bozztv.com/akamaissh101/ssh101/grandetv2240/playlist.m3u8
-#EXTINF:-1,Great American Country
+#EXTINF:-1,Great American Family (720p)
 https://fl1.moveonjoy.com/Great_American_Country/index.m3u8
 #EXTINF:-1,Great British Menu (720p)
 https://all3media-great-british-menu-1-gb.rakuten.wurl.tv/playlist.m3u8
@@ -6939,7 +6939,7 @@ https://halaramallahtv.com:2053/HRamallah-Tv/HalaRamallah/playlist.m3u8
 https://stream.panet.com/edge/halaTV/playlist.m3u8
 #EXTINF:-1,Halk TV (1080p)
 https://halktv-live.daioncdn.net/halktv/halktv.m3u8
-#EXTINF:-1,Hallmark Channel East
+#EXTINF:-1,Hallmark Channel East (720p)
 https://fl1.moveonjoy.com/HALLMARK_CHANNEL/index.m3u8
 #EXTINF:-1,Hallmark Drama (720p)
 https://fl1.moveonjoy.com/HALLMARK_DRAMA/index.m3u8
@@ -7627,8 +7627,6 @@ https://amg00861-terninternation-lifestyle-samsungau-kdlyy.amagi.tv/playlist/amg
 https://s2.tvdatta.com:3753/hybrid/play.m3u8
 #EXTINF:-1,Infinito TV [Not 24/7]
 https://vdo1.streamgato.us:3057/live/infinitotvlive.m3u8
-#EXTINF:-1,Info Media News
-https://uvotv-aniview.global.ssl.fastly.net/10010/live/hls/infomedianews/playlist.m3u8
 #EXTINF:-1,Info TV 9 (720p)
 https://stream.oursnetworktv.com/latin/encoder25/playlist.m3u8
 #EXTINF:-1,Info TV Romania (1080p)
@@ -8751,14 +8749,10 @@ https://d4g9wh8d4wiaw.cloudfront.net/v1/master/3722c60a815c199d9c0ef36c5b73da68a
 https://ztnr.rtve.es/ztnr/5468585.m3u8
 #EXTINF:-1,La 2 Catalunya (720p)
 https://ztnr.rtve.es/ztnr/3987218.m3u8
-#EXTINF:-1,La4 Italia
-https://uvotv-aniview.global.ssl.fastly.net/10010/live/hls/la4italia/playlist.m3u8
 #EXTINF:-1,La5 [Geo-blocked]
 https://live3-mediaset-it.akamaized.net/Content/hls_h0_clr_vos/live/channel(ka)/index.m3u8
 #EXTINF:-1,LA7d (720p)
 https://d15umi5iaezxgx.cloudfront.net/LA7D/CLN/HLS-B/Live.m3u8
-#EXTINF:-1,LA7d HD
-https://uvotv-aniview.global.ssl.fastly.net/10010/live/hls/la7d/playlist.m3u8
 #EXTINF:-1,LA7 HD
 https://viamotionhsi.netplus.ch/live/eds/la7/browser-dash/la7.mpd
 #EXTINF:-1,LA34 Long An TV [Geo-blocked]
@@ -9119,8 +9113,6 @@ http://k4.usastreams.com/limontv1/limontv1/playlist.m3u8
 https://ad2ef2da.wurl.com/master/f36d25e7e52f1ba8d7e56eb859c636563214f541/UmFrdXRlblRWLWV1X0FSRFBsdXNMaW5kZW5zdHJhZV9ITFM/playlist.m3u8
 #EXTINF:-1,Line TV (720p) [Not 24/7]
 https://edge1.socialsmart.tv/linetv/bant1/playlist.m3u8
-#EXTINF:-1,Linea Gem
-https://uvotv-aniview.global.ssl.fastly.net/10010/live/hls/lineagem/playlist.m3u8
 #EXTINF:-1,Lingkar TV
 https://lingkartv.my.id/hls/lingkartv.m3u8
 #EXTINF:-1,LINQ TV (480p)
@@ -12937,12 +12929,12 @@ https://5ca39be538307.streamlock.net/telemetrika/smil:telemetrika.smil/playlist.
 https://uvotv-aniview.global.ssl.fastly.net/10010/dvr/hls/pryamyitv/playlist.m3u8
 #EXTINF:-1,PRIDEtv LATAM (1080p)
 https://backend.energeek.cl/webtv/pridetvweb/index.m3u8?token=ZZDemoIPTVGH
-#EXTINF:-1,Prima Free
-https://uvotv-aniview.global.ssl.fastly.net/10010/live/hls/primafree/playlist.m3u8
 #EXTINF:-1,Prima TV Napoli (720p)
 https://stream1.aswifi.it/primatvnapoli/live/index.m3u8
 #EXTINF:-1,Prima TV Sicilia (720p)
 https://5db313b643fd8.streamlock.net/PrimaTV/PrimaTV/playlist.m3u8
+#EXTINF:-1,PrimaFree
+https://5f22d76e220e1.streamlock.net/primafree/primafree/playlist.m3u8
 #EXTINF:-1,PrimAntenna TV (720p)
 https://5f22d76e220e1.streamlock.net/primantenna14/primantenna14/playlist.m3u8
 #EXTINF:-1,Primavera 15
@@ -13190,8 +13182,6 @@ https://lenz.splus.ir/PLTV/88888888/224/3221226144/index.m3u8
 #EXTINF:-1,Quran Radio (1080p)
 https://live.kwikmotion.com/sbrksaquranradiolive/srpksaquranradio/playlist.m3u8
 #EXTINF:-1,QVC
-https://uvotv-aniview.global.ssl.fastly.net/10010/live/hls/qvchd/playlist.m3u8
-#EXTINF:-1,QVC
 https://qvc-amd-live.akamaized.net/hls/live/2034113/lsqvc1us/master.m3u8
 #EXTINF:-1,QVC 2
 https://qvc-amd-live.akamaized.net/hls/live/2034113/lsqvc2us/master.m3u8
@@ -13201,6 +13191,8 @@ https://qvcde-live.akamaized.net/hls/live/2097104/qps/master.m3u8
 https://qvc-amd-live.akamaized.net/hls/live/2034113/lsqvc3us/master.m3u8
 #EXTINF:-1,QVC Germany (720p)
 https://qvcde-live.akamaized.net/hls/live/2097104/qvc/master.m3u8
+#EXTINF:-1,QVC Italia (540p)
+https://qrg.akamaized.net/hls/live/2017383/lsqvc1it/master.m3u8
 #EXTINF:-1,QVC Japan (720p)
 https://cdn-live1.qvc.jp/iPhone/1501/1501.m3u8
 #EXTINF:-1,QVC Style Germany (540p)
@@ -13314,7 +13306,7 @@ http://45.63.116.205/hls2/stream1.m3u8
 #EXTINF:-1,Radio Fantástica 98.9 FM (1080p)
 http://190.107.232.9:8082/livestream/stream.m3u8
 #EXTINF:-1,Radio Freccia TV (1080p)
-https://streamcdnb1-dd782ed59e2a4e86aabf6fc508674b59.msvdn.net/live/S3160845/0tuSetc8UFkF/playlist_video.m3u8
+https://dd782ed59e2a4e86aabf6fc508674b59.msvdn.net/live/S3160845/0tuSetc8UFkF/playlist_video.m3u8
 #EXTINF:-1,Radio Frontieres
 https://raw.githubusercontent.com/Sibprod/streams/main/ressources/dm/py/hls/radiofrontieres.m3u8
 #EXTINF:-1,Radio Hit FM TV (720p)
@@ -13337,8 +13329,6 @@ https://59a564764e2b6.streamlock.net/palestra/palestra/playlist.m3u8
 https://tvd-ria60.fluid.stream/Anni60TV/livestream/playlist.m3u8
 #EXTINF:-1,Radio Italia Trend (720p)
 https://amg00745-radioitailaspa-radioitalia-rakuten-sucsc.amagi.tv/hls/amagi_hls_data_rakutenAA-radioitalia-rakuten/CDN/master.m3u8
-#EXTINF:-1,Radio Italia TV
-https://uvotv-aniview.global.ssl.fastly.net/10010/live/hls/radioitalia/playlist.m3u8
 #EXTINF:-1,Radio Javan TV (1080p)
 https://rjtvhls.wns.live/hls/stream.m3u8
 #EXTINF:-1,Radio JND (1080p)
@@ -13463,8 +13453,8 @@ http://45.63.116.205/hls4/stream1.m3u8
 https://stmvideo6.livecastv.com/rytv2015/rytv2015/playlist.m3u8
 #EXTINF:-1,Radio Yguazú TV (480p)
 https://live.enhdtv.com:8081/radioiguazutv/index.m3u8
-#EXTINF:-1,Radio Zeta
-https://uvotv-aniview.global.ssl.fastly.net/10010/live/hls/radiozeta/playlist.m3u8
+#EXTINF:-1,Radio Zeta TV (1080p)
+https://dd782ed59e2a4e86aabf6fc508674b59.msvdn.net/live/S9346184/XEx1LqlYbNic/playlist_video.m3u8
 #EXTINF:-1,Radiocanal San Francisco (1080p)
 http://204.199.3.2/.m3u8
 #EXTINF:-1,RadioMensaje TV (720p)
@@ -13985,8 +13975,6 @@ https://live3-mediaset-it.akamaized.net/Content/hls_h0_clr_vos/live/channel(r4)/
 https://viamotionhsi.netplus.ch/live/eds/rete4/browser-dash/rete4.mpd
 #EXTINF:-1,Rete 8
 https://64b16f23efbee.streamlock.net/rete8/rete8/playlist.m3u8
-#EXTINF:-1,Rete 8 Sport
-https://uvotv-aniview.global.ssl.fastly.net/10010/live/hls/rete8sport/playlist.m3u8
 #EXTINF:-1,Rete 8 VGA (720p)
 https://604e46ac2bdee.streamlock.net:1936/rete8_1/rete8_1/playlist.m3u8
 #EXTINF:-1,Rete 55 (720p) [Not 24/7]
@@ -14303,7 +14291,7 @@ https://dd782ed59e2a4e86aabf6fc508674b59.msvdn.net/live/S75007890/MUGHuxc9dQ3b/p
 https://dd782ed59e2a4e86aabf6fc508674b59.msvdn.net/live/S8448465/zTYa1Z5Op9ue/playlist_video.m3u8
 #EXTINF:-1,RTL 102.5 Disco (1080p)
 https://dd782ed59e2a4e86aabf6fc508674b59.msvdn.net/live/S51100361/0Fb4R3k82b5Z/playlist_video.m3u8
-#EXTINF:-1,RTL 102.5 Napulé (1080p)
+#EXTINF:-1,RTL 102.5 Napulè (1080p)
 https://dd782ed59e2a4e86aabf6fc508674b59.msvdn.net/live/S27134503/0f9AhuwKlhnZ/playlist_video.m3u8
 #EXTINF:-1,RTL 102.5 Traffic (1080p)
 https://dd782ed59e2a4e86aabf6fc508674b59.msvdn.net/live/S38122967/2lyQRIAAGgRR/playlist_video.m3u8
@@ -14408,7 +14396,7 @@ https://dy7fxpkq4ggk8.cloudfront.net/nlpo/clr-nlpo/rtv1/index.m3u8
 #EXTINF:-1,RTV21
 https://gjirafa-video-live.gjirafa.net/gjvideo-live/2cz-npl-jfn-9he/tracks-v2a1/mono.m3u8
 #EXTINF:-1,RTV38 (576p)
-https://streamcdne1-845d8509d2cb4f249dd0b2ae5755b6c2.msvdn.net/rtv38/rtv38_live_main/mainabr/rtv38_live_main/main_576/chunks_dvr.m3u8
+https://845d8509d2cb4f249dd0b2ae5755b6c2.msvdn.net/rtv38/rtv38_live_main/mainabr/rtv38_live_main/main_576/chunks_dvr.m3u8
 #EXTINF:-1,RTV Arnhem (480p) [Not 24/7]
 https://ms2.mx-cd.net/tv/163-669433/RTV_Arnhem.smil/playlist.m3u8
 #EXTINF:-1,RTV AS (576p)
@@ -14717,7 +14705,7 @@ http://tiquiciatv.com:1935/stv/web/playlist.m3u8
 https://ncdn.telewebion.com/sarbedaran/live/playlist.m3u8
 #EXTINF:-1,Sardari TV (1080p) [Not 24/7]
 http://158.69.124.9:1935/sardaritv/sardaritv/playlist.m3u8
-#EXTINF:-1,Sardegna Uno
+#EXTINF:-1,Sardegna 1
 https://raw.githubusercontent.com/azgaresncf/strm2hls/main/streams/Sardegna1.m3u8
 #EXTINF:-1,Sarıyer TV (360p)
 https://s01.vpis.io/sariyer/sariyer.m3u8
@@ -15369,8 +15357,8 @@ https://candlelightmedia-sparklightlove-6-us.roku.wurl.tv/playlist.m3u8
 https://linear-599.frequency.stream/dist/stirr/599/hls/master/playlist.m3u8
 #EXTINF:-1,SpektraTV (720p)
 https://cloudvideo.servers10.com:8081/8026/tracks-v1a1/index.m3u8
-#EXTINF:-1,Speranta TV (1080p)
-https://customer-x8zydurm357k8j9p.cloudflarestream.com/0dd00c080ff4cbe839a12c923610a55c/manifest/video.m3u8
+#EXTINF:-1,SperantaTV (1080p)
+https://jstre.am/live/jsl:2gNjpghXRLE.m3u8
 #EXTINF:-1,SPIEGEL TV
 http://cfd-v4-service-channel-stitcher-use1-1.prd.pluto.tv/stitch/hls/channel/6576c20fb3801200084786c9/master.m3u8?appName=web&appVersion=unknown&clientTime=0&deviceDNT=0&deviceId=1b20e626-4b81-11ef-a8ac-e146e4e7be02&deviceMake=Chrome&deviceModel=web&deviceType=web&deviceVersion=unknown&includeExtendedEvents=false&serverSideAds=false&sid=9955c491-71ec-4d29-aff9-d58fb8587b88
 #EXTINF:-1,SPIEGEL TV
@@ -15849,8 +15837,6 @@ http://cfd-v4-service-channel-stitcher-use1-1.prd.pluto.tv/stitch/hls/channel/5f
 https://video1.getstreamhosting.com:1936/8398/8398/playlist.m3u8
 #EXTINF:-1,SuperSix Lombardia (720p)
 https://5db313b643fd8.streamlock.net/SUPERSIXLombardia/SUPERSIXLombardia/playlist.m3u8
-#EXTINF:-1,SuperTennis
-https://uvotv-aniview.global.ssl.fastly.net/10010/live/hls/supertennis/playlist.m3u8
 #EXTINF:-1,Superyacht TV (1080p)
 https://sy.wns.live/hls/stream.m3u8
 #EXTINF:-1,Supremateve (720p) [Not 24/7]
@@ -16227,8 +16213,6 @@ https://video.telesafor.com/hls/video.m3u8
 https://mediaserver1.castpin.com/hls/telesahel/index.m3u8
 #EXTINF:-1,Tele San Jacinto (720p)
 https://movil.ejeserver.com/live/telesanjacinto.m3u8
-#EXTINF:-1,Tele Shopping
-https://uvotv-aniview.global.ssl.fastly.net/10010/live/hls/teleshopping/playlist.m3u8
 #EXTINF:-1,Tele Sondrio News (480p) [Not 24/7]
 https://59d8c0cee6f3d.streamlock.net/tsn/tsn_mobile/playlist.m3u8
 #EXTINF:-1,Tele Tchad (1080p)
@@ -16493,8 +16477,6 @@ https://envivo.telerama.ec/stream.m3u8
 https://58d921499d3d3.streamlock.net/TeleRama/livestream/playlist.m3u8
 #EXTINF:-1,Telerayo (1080p)
 https://s.emisoras.tv:8081/telerayo/index.m3u8
-#EXTINF:-1,Teleregione
-https://uvotv-aniview.global.ssl.fastly.net/10010/live/hls/teleregione/playlist.m3u8
 #EXTINF:-1,TeleRegione 118 (576p)
 https://streaming.softwarecreation.it/TR118/TR118/playlist.m3u8
 #EXTINF:-1,TeleRibera (720p) [Not 24/7]
@@ -16665,8 +16647,6 @@ http://cfd-v4-service-channel-stitcher-use1-1.prd.pluto.tv/stitch/hls/channel/65
 http://cfd-v4-service-channel-stitcher-use1-1.prd.pluto.tv/stitch/hls/channel/65b923f90cb1a100088a03ab/master.m3u8?appName=web&appVersion=unknown&clientTime=0&deviceDNT=0&deviceId=bc868b91-4b91-11ef-8a44-83c5e90e038f&deviceMake=Chrome&deviceModel=web&deviceType=web&deviceVersion=unknown&includeExtendedEvents=false&serverSideAds=false&sid=d4309013-6043-4ea8-9e7f-68941216eacf
 #EXTINF:-1,Terra Mater WILD
 http://cfd-v4-service-channel-stitcher-use1-1.prd.pluto.tv/stitch/hls/channel/65b923f90cb1a100088a03ab/master.m3u8?appName=web&appVersion=unknown&clientTime=0&deviceDNT=0&deviceId=84af8ae6-4b92-11ef-aece-533610f1ea34&deviceMake=Chrome&deviceModel=web&deviceType=web&deviceVersion=unknown&includeExtendedEvents=false&serverSideAds=false&sid=db5e74b2-3349-4aae-8044-4b85f113beb4
-#EXTINF:-1,Tesory Channel
-https://uvotv-aniview.global.ssl.fastly.net/10010/live/hls/tesorychannel/playlist.m3u8
 #EXTINF:-1,Test My Ride
 https://streams2.sofast.tv/sofastplayout/WiseM3U8_21/master.m3u8
 #EXTINF:-1,Teton Gravity Research (1080p)
@@ -17455,8 +17435,6 @@ https://tv7.live-kd.com/live/tv7/livestream/playlist.m3u8
 https://www.gruppotv7.com:8090/hls/meteo.m3u8
 #EXTINF:-1,TV7 Triveneta (562p)
 https://www.gruppotv7.com:8090/hls/ireporter.m3u8
-#EXTINF:-1,TV8
-https://uvotv-aniview.global.ssl.fastly.net/10010/live/hls/tv8/playlist.m3u8
 #EXTINF:-1,TV8 (720p)
 https://cdn4.skygo.mn/live/disk1/TV8HD/HLSv3-FTA/TV8HD.m3u8
 #EXTINF:-1,TV 8 (1080p) [Not 24/7]
@@ -18707,8 +18685,6 @@ http://cfd-v4-service-channel-stitcher-use1-1.prd.pluto.tv/stitch/hls/channel/5b
 https://5f8e578f.wurl.com/master/f36d25e7e52f1ba8d7e56eb859c636563214f541/Um9rdV9VblhwbGFpbmVkWm9uZV9ITFM/playlist.m3u8
 #EXTINF:-1,UnXplained Zone
 http://cfd-v4-service-channel-stitcher-use1-1.prd.pluto.tv/stitch/hls/channel/656538f8954b020008d389db/master.m3u8?appName=web&appVersion=unknown&clientTime=0&deviceDNT=0&deviceId=6c2cc204-30d3-11ef-9cf5-e9ddff8ff496&deviceMake=Chrome&deviceModel=web&deviceType=web&deviceVersion=unknown&includeExtendedEvents=false&serverSideAds=false&sid=13e8f8b3-086c-4316-bc80-5d9ac1d1a45d
-#EXTINF:-1,Up TV (1080p)
-https://fl1.moveonjoy.com/Up_Tv/index.m3u8
 #EXTINF:-1,UPEA TV (720p)
 https://tvstream.upea.bo/hls/oSs0jSWumTFIIVY97559.m3u8
 #EXTINF:-1,UPP TV/Bolivisión SCZ (720p) [Not 24/7]
@@ -26875,7 +26851,7 @@ https://stream1.freetv.fun/qmusic-2.m3u8
 https://stream1.freetv.fun/ca-ctv-comedy-channel-1.ctv
 #EXTINF:-1,[HD]ca ctv drama channel
 https://stream1.freetv.fun/ca-ctv-drama-channel-1.ctv
-#EXTINF:-1,[HD]dazn ringside
+#EXTINF:-1,[HD]dazn ringside[geo-blocked]
 https://stream1.freetv.fun/dazn-ringside-2.m3u8
 #EXTINF:-1,[BD]discovery h h
 https://stream1.freetv.fun/discovery-h-h-3.ctv
@@ -26945,7 +26921,7 @@ https://stream1.freetv.fun/ca-smithsonian-channel-1.ctv
 https://stream1.freetv.fun/smithsonian-channel-2.ctv
 #EXTINF:-1,[SD]smithsonian channel =
 https://stream1.freetv.fun/smithsonian-channel-3.ctv
-#EXTINF:-1,[HD]smithsonian channel selects
+#EXTINF:-1,[SD]smithsonian channel selects
 https://stream1.freetv.fun/smithsonian-channel-selects-1.m3u8
 #EXTINF:-1,[HD]gold star[geo-blocked]
 https://stream1.freetv.fun/gold-star-1.m3u8
@@ -27193,6 +27169,8 @@ https://stream1.freetv.fun/4c8e6b3157fb284596bc1c4e59bc9d2536a4570785dd96194a44a
 https://stream1.freetv.fun/d5a6ec037d2c4635d144520d0ddf989faeb6a5f8d5d85e3c5a5c07d2ca2d79b3.m3u8
 #EXTINF:-1,[HD]中视新闻 *wj
 https://stream1.freetv.fun/568259ef3782aa44e045004ec466480383ce71b8f580dd30901f9f7aa4caf87c.m3u8
+#EXTINF:-1,[HD]中视经典
+https://stream1.freetv.fun/f011a428fab735796e6c5c5f2df0c46acd2524969a4d24dbb32a6fbb38ea95b5.ctv
 #EXTINF:-1,[HD]人间卫视
 https://stream1.freetv.fun/1f63ffacdc4c93b5736f59829aac1fccdf3df1e37bf8ba95c258b6e7d946d8a7.m3u8
 #EXTINF:-1,[HD]人间卫视
@@ -27267,10 +27245,6 @@ https://stream1.freetv.fun/33ae9aa2523492a0deb1bebba74b646b746cf674d50b753e7c4c0
 https://stream1.freetv.fun/409fbf8e0ec33500b4d76956cca00af9fddacac6dd2f8822f464b089fb583a6b.m3u8
 #EXTINF:-1,[BD]纬来育乐[geo-blocked]
 https://stream1.freetv.fun/3abfaa9bfc01013d7459fb45d6a8d8dbdf1a788ee158c13c66e1d79d7e74fe96.ctv
-#EXTINF:-1,[BD]美亚电影
-https://stream1.freetv.fun/5ba5784d5512b5c0eb223dc9718bc8523b5bcb18ea8dfb02eecfd70e4a089719.ctv
-#EXTINF:-1,[BD]美亚电影
-https://stream1.freetv.fun/12e25aeffeee85d6fe045a3f3edb6f0cf25782b51d9d2708ea5d9c0fc9bdf0db.ctv
 #EXTINF:-1,[BD]台視新聞
 https://stream1.freetv.fun/62baa54083438e0ff42bd762a75f962b815d012dc6d9b56df64929f5c12e2bdf.m3u8
 #EXTINF:-1,[BD]台視新聞
@@ -41229,7 +41203,7 @@ https://stream1.freetv.fun/hell-s-kitchen-germany-1.m3u8
 https://stream1.freetv.fun/hell-s-kitchen-italy-1.m3u8
 #EXTINF:-1,[BD]hell's kitchen
 https://stream1.freetv.fun/hell-s-kitchen-4.m3u8
-#EXTINF:-1,[SD]kitchen battles
+#EXTINF:-1,[HD]kitchen battles
 https://stream1.freetv.fun/kitchen-battles-1.m3u8
 #EXTINF:-1,[SD]america's test kitchen
 https://stream1.freetv.fun/america-s-test-kitchen-1.m3u8
@@ -41395,7 +41369,7 @@ https://stream1.freetv.fun/abc-2.m3u8
 https://stream1.freetv.fun/abc-australia-6.m3u8
 #EXTINF:-1,[SD]abc
 https://stream1.freetv.fun/abc-5.m3u8
-#EXTINF:-1,[HD]miami
+#EXTINF:-1,[SD]miami
 https://stream1.freetv.fun/miami-1.m3u8
 #EXTINF:-1,[HD]abc news
 https://stream1.freetv.fun/abc-news-6.m3u8
@@ -41483,7 +41457,7 @@ https://stream1.freetv.fun/amc-thrillers-2.ctv
 https://stream1.freetv.fun/amc-thrillers-4.ctv
 #EXTINF:-1,[BD]amc thrillers =
 https://stream1.freetv.fun/amc-thrillers-3.ctv
-#EXTINF:-1,[HD]thrillers 365
+#EXTINF:-1,[SD]thrillers 365
 https://stream1.freetv.fun/thrillers-365-1.m3u8
 #EXTINF:-1,[HD]tele m1
 https://stream1.freetv.fun/tele-m1-1.m3u8
@@ -41703,6 +41677,8 @@ https://stream1.freetv.fun/arirang-k-pop-1.m3u8
 https://stream1.freetv.fun/armenia-1-1.m3u8
 #EXTINF:-1,[VGA]artn tv
 https://stream1.freetv.fun/artn-tv-1.m3u8
+#EXTINF:-1,[HD]arti tv
+https://stream1.freetv.fun/arti-tv-2.m3u8
 #EXTINF:-1,[HD]arta tv
 https://stream1.freetv.fun/arta-tv-1.m3u8
 #EXTINF:-1,[BD]tv asia
@@ -41777,8 +41753,6 @@ https://stream1.freetv.fun/mbc-persia-2.m3u8
 https://stream1.freetv.fun/bbc-persian-2.m3u8
 #EXTINF:-1,[HD]bbc persian
 https://stream1.freetv.fun/bbc-persian-1.m3u8
-#EXTINF:-1,[HD]bbc three
-https://stream1.freetv.fun/bbc-three-3.m3u8
 #EXTINF:-1,[HD]bbc world news *wj
 https://stream1.freetv.fun/bbc-world-news--wj-1.m3u8
 #EXTINF:-1,[BD]bbc world news *m[geo-blocked]
@@ -42103,7 +42077,9 @@ https://stream1.freetv.fun/cctv1-6.ctv
 https://stream1.freetv.fun/cctv1-63.ctv
 #EXTINF:-1,[BD]cctv1
 https://stream1.freetv.fun/cctv1-89.ctv
-#EXTINF:-1,[BD]cctv1[geo-blocked]
+#EXTINF:-1,[BD]cctv1
+https://stream1.freetv.fun/cctv1-5.m3u8
+#EXTINF:-1,[BD]cctv1
 https://stream1.freetv.fun/cctv1-43.m3u8
 #EXTINF:-1,[BD]cctv-1高清[geo-blocked]
 https://stream1.freetv.fun/cctv-1gao-qing-1.m3u8
@@ -42659,6 +42635,10 @@ https://stream1.freetv.fun/cdn-1.m3u8
 https://stream1.freetv.fun/cetv4-13.m3u8
 #EXTINF:-1,[SD]cetv4
 https://stream1.freetv.fun/cetv4-14.m3u8
+#EXTINF:-1,[BD]cetv4
+https://stream1.freetv.fun/cetv4-3.m3u8
+#EXTINF:-1,[BD]cetv4[geo-blocked]
+https://stream1.freetv.fun/cetv4-9.m3u8
 #EXTINF:-1,[HD]cetv4
 https://stream1.freetv.fun/cetv4-4.m3u8
 #EXTINF:-1,[BD]cetv1
@@ -42849,13 +42829,13 @@ https://stream1.freetv.fun/beyblade-en-espanol-1.m3u8
 https://stream1.freetv.fun/cops-en-espanol-1.m3u8
 #EXTINF:-1,[SD]csi en español
 https://stream1.freetv.fun/csi-en-espanol-1.m3u8
-#EXTINF:-1,[HD]ny en español
+#EXTINF:-1,[HD]ny en español[geo-blocked]
 https://stream1.freetv.fun/ny-en-espanol-1.m3u8
 #EXTINF:-1,[HD]ช่อง cp 24
 https://stream1.freetv.fun/ch-ng-cp-24-2.m3u8
 #EXTINF:-1,[HD]csi
 https://stream1.freetv.fun/csi-1.m3u8
-#EXTINF:-1,[HD]csi
+#EXTINF:-1,[HD]csi[geo-blocked]
 https://stream1.freetv.fun/csi-2.m3u8
 #EXTINF:-1,[SD]csi
 https://stream1.freetv.fun/csi-3.m3u8
@@ -42873,7 +42853,7 @@ https://stream1.freetv.fun/california-music-channel-usa-1.m3u8
 https://stream1.freetv.fun/ch-ng-california-music-channel-1.m3u8
 #EXTINF:-1,[BD]ช่อง california music channel
 https://stream1.freetv.fun/ch-ng-california-music-channel-2.m3u8
-#EXTINF:-1,[BD]california music channel[geo-blocked]
+#EXTINF:-1,[BD]california music channel
 https://stream1.freetv.fun/california-music-channel-1.m3u8
 #EXTINF:-1,[BD]music channel
 https://stream1.freetv.fun/music-channel-1.m3u8
@@ -42917,7 +42897,7 @@ https://stream1.freetv.fun/canal-14-israel-1.m3u8
 https://stream1.freetv.fun/nuestro-canal-1.m3u8
 #EXTINF:-1,[HD]canal ipe ᴴᴰ
 https://stream1.freetv.fun/canal-ipe-hd-1.m3u8
-#EXTINF:-1,[VGA]canal e
+#EXTINF:-1,[VGA]canal e[geo-blocked]
 https://stream1.freetv.fun/canal-e-1.m3u8
 #EXTINF:-1,[HD]canal once ᴴᴰ
 https://stream1.freetv.fun/canal-once-hd-1.m3u8
@@ -42937,7 +42917,7 @@ https://stream1.freetv.fun/canal-multivision-1.m3u8
 https://stream1.freetv.fun/fifa-plus-spain-1.m3u8
 #EXTINF:-1,[BD]la 1 uhd[geo-blocked]
 https://stream1.freetv.fun/la-1-uhd-2.m3u8
-#EXTINF:-1,[HD]canale 7[geo-blocked]
+#EXTINF:-1,[HD]canale 7
 https://stream1.freetv.fun/canale-7-7.m3u8
 #EXTINF:-1,[BD]caracol tv
 https://stream1.freetv.fun/caracol-tv-1.m3u8
@@ -43079,7 +43059,7 @@ https://stream1.freetv.fun/comedy-central-south-park-1.m3u8
 https://stream1.freetv.fun/comedy-central-south-park-2.m3u8
 #EXTINF:-1,[SD]comedy central animation
 https://stream1.freetv.fun/comedy-central-animation-1.m3u8
-#EXTINF:-1,[HD]comedy central
+#EXTINF:-1,[SD]comedy central
 https://stream1.freetv.fun/comedy-central-14.m3u8
 #EXTINF:-1,[SD]comedy central south park
 https://stream1.freetv.fun/comedy-central-south-park-3.m3u8
@@ -43093,7 +43073,7 @@ https://stream1.freetv.fun/comedy-central--m-1.ctv
 https://stream1.freetv.fun/comedy-central--m-2.ctv
 #EXTINF:-1,[SD]comedy central animation
 https://stream1.freetv.fun/comedy-central-animation-2.m3u8
-#EXTINF:-1,[HD]pluto tv comedy movies
+#EXTINF:-1,[SD]pluto tv comedy movies
 https://stream1.freetv.fun/pluto-tv-comedy-movies-1.m3u8
 #EXTINF:-1,[BD]rakuten tv comedy movies[geo-blocked]
 https://stream1.freetv.fun/rakuten-tv-comedy-movies-2.m3u8
@@ -43283,7 +43263,7 @@ https://stream1.freetv.fun/dizimax-sci-fi-trk-2.ctv
 https://stream1.freetv.fun/docubox-1.m3u8
 #EXTINF:-1,[HD]dora tv
 https://stream1.freetv.fun/dora-tv-2.m3u8
-#EXTINF:-1,[HD]dora tv
+#EXTINF:-1,[SD]dora tv
 https://stream1.freetv.fun/dora-tv-5.m3u8
 #EXTINF:-1,[SD]dora tv
 https://stream1.freetv.fun/dora-tv-4.m3u8
@@ -43407,7 +43387,7 @@ https://stream1.freetv.fun/etv-5.m3u8
 https://stream1.freetv.fun/etv-3.m3u8
 #EXTINF:-1,[VGA]etv
 https://stream1.freetv.fun/etv-4.m3u8
-#EXTINF:-1,[VGA]etv ⓖ
+#EXTINF:-1,[HD]etv ⓖ
 https://stream1.freetv.fun/etv-g-1.m3u8
 #EXTINF:-1,[HD]metv
 https://stream1.freetv.fun/metv-1.m3u8
@@ -43515,8 +43495,10 @@ https://stream1.freetv.fun/fox-11-los-angeles-ca-1.m3u8
 https://stream1.freetv.fun/abc-7-los-angeles-ca-1.m3u8
 #EXTINF:-1,[BD]fox now[geo-blocked]
 https://stream1.freetv.fun/fox-now-1.m3u8
-#EXTINF:-1,[SD]fox sports[geo-blocked]
+#EXTINF:-1,[HD]fox sports[geo-blocked]
 https://stream1.freetv.fun/fox-sports-3.m3u8
+#EXTINF:-1,[BD]fox sports
+https://stream1.freetv.fun/fox-sports-1.m3u8
 #EXTINF:-1,[SD]fox sports =
 https://stream1.freetv.fun/fox-sports-4.ctv
 #EXTINF:-1,[SD]fox sports ==[geo-blocked]
@@ -43641,8 +43623,6 @@ https://stream1.freetv.fun/france-24-ar-2.m3u8
 https://stream1.freetv.fun/france-24-english-5.m3u8
 #EXTINF:-1,[BD]france 24 fast english
 https://stream1.freetv.fun/france-24-fast-english-1.m3u8
-#EXTINF:-1,[HD]france info[geo-blocked]
-https://stream1.freetv.fun/france-info-2.m3u8
 #EXTINF:-1,[HD]france24 *wj
 https://stream1.freetv.fun/france24--wj-1.m3u8
 #EXTINF:-1,[HD]freeдom
@@ -43655,7 +43635,7 @@ https://stream1.freetv.fun/ch-ng-french-lover-1.m3u8
 https://stream1.freetv.fun/frisbee-2.m3u8
 #EXTINF:-1,[BD]fuel tv
 https://stream1.freetv.fun/fuel-tv-1.m3u8
-#EXTINF:-1,[HD]futura
+#EXTINF:-1,[BD]futura
 https://stream1.freetv.fun/futura-1.m3u8
 #EXTINF:-1,[SD]gemini life
 https://stream1.freetv.fun/gemini-life-1.ctv
@@ -43789,7 +43769,7 @@ https://stream1.freetv.fun/hallmark-channel-east-2.m3u8
 https://stream1.freetv.fun/hallmark-movies--s-1.m3u8
 #EXTINF:-1,[HD]hallmark movies mysteries east
 https://stream1.freetv.fun/hallmark-movies-mysteries-east-2.m3u8
-#EXTINF:-1,[SD]hallmark movies more
+#EXTINF:-1,[SD]hallmark movies more[geo-blocked]
 https://stream1.freetv.fun/hallmark-movies-more-3.m3u8
 #EXTINF:-1,[SD]hallmark movies more
 https://stream1.freetv.fun/hallmark-movies-more-2.m3u8
@@ -44187,7 +44167,7 @@ https://stream1.freetv.fun/motorvision-tv-4.m3u8
 https://stream1.freetv.fun/motorvision-tv-6.m3u8
 #EXTINF:-1,[BD]mytime movie network
 https://stream1.freetv.fun/mytime-movie-network-2.m3u8
-#EXTINF:-1,[BD]悬疑movie
+#EXTINF:-1,[HD]悬疑movie
 https://stream1.freetv.fun/xuan-yi-movie-1.ctv
 #EXTINF:-1,[SD]paramount movie channel
 https://stream1.freetv.fun/paramount-movie-channel-1.m3u8
@@ -44577,7 +44557,7 @@ https://stream1.freetv.fun/one-31-1.m3u8
 https://stream1.freetv.fun/one-2.m3u8
 #EXTINF:-1,[SD]orf 1[geo-blocked]
 https://stream1.freetv.fun/orf-1-1.m3u8
-#EXTINF:-1,[HD]cine premiere
+#EXTINF:-1,[SD]cine premiere
 https://stream1.freetv.fun/cine-premiere-1.m3u8
 #EXTINF:-1,[BD]plus 2
 https://stream1.freetv.fun/plus-2-1.ctv
@@ -44761,7 +44741,7 @@ https://stream1.freetv.fun/welat-tv-2.m3u8
 https://stream1.freetv.fun/uranio-tv-1.m3u8
 #EXTINF:-1,[BD]th quảng ninh
 https://stream1.freetv.fun/th-quang-ninh-1.m3u8
-#EXTINF:-1,[SD]radio 51 tv[geo-blocked]
+#EXTINF:-1,[SD]radio 51 tv
 https://stream1.freetv.fun/radio-51-tv-1.m3u8
 #EXTINF:-1,[HD]360 ru
 https://stream1.freetv.fun/360-ru-1.m3u8
@@ -45095,7 +45075,7 @@ https://stream1.freetv.fun/star-sports-3-1.ctv
 https://stream1.freetv.fun/stv-3.m3u8
 #EXTINF:-1,[HD]sfera tv
 https://stream1.freetv.fun/sfera-tv-1.m3u8
-#EXTINF:-1,[BD]saga tv[geo-blocked]
+#EXTINF:-1,[BD]saga tv
 https://stream1.freetv.fun/saga-tv-2.ctv
 #EXTINF:-1,[BD]sana tv
 https://stream1.freetv.fun/sana-tv-1.m3u8
@@ -45291,7 +45271,7 @@ https://stream1.freetv.fun/sony-sports-ten-2-2.ctv
 https://stream1.freetv.fun/sony-sports-ten-3-1.ctv
 #EXTINF:-1,[SD]south park italy
 https://stream1.freetv.fun/south-park-italy-1.m3u8
-#EXTINF:-1,[HD]south park en français
+#EXTINF:-1,[HD]south park en français[geo-blocked]
 https://stream1.freetv.fun/south-park-en-francais-1.m3u8
 #EXTINF:-1,[HD]south park
 https://stream1.freetv.fun/south-park-1.m3u8
@@ -45833,7 +45813,7 @@ https://stream1.freetv.fun/tvn-3-1.m3u8
 https://stream1.freetv.fun/tvo-2.m3u8
 #EXTINF:-1,[HD]tvo
 https://stream1.freetv.fun/tvo-1.m3u8
-#EXTINF:-1,[BD]tvp 1
+#EXTINF:-1,[BD]tvp 1[geo-blocked]
 https://stream1.freetv.fun/tvp-1-3.m3u8
 #EXTINF:-1,[HD]tv land
 https://stream1.freetv.fun/tv-land-1.m3u8
@@ -45915,7 +45895,7 @@ https://stream1.freetv.fun/thai-pbs-3-1.m3u8
 https://stream1.freetv.fun/thai-pbs-4.m3u8
 #EXTINF:-1,[HD]thairath tv[geo-blocked]
 https://stream1.freetv.fun/thairath-tv-1.m3u8
-#EXTINF:-1,[HD]ttv - th thanh hóa[geo-blocked]
+#EXTINF:-1,[HD]ttv - th thanh hóa
 https://stream1.freetv.fun/ttv---th-thanh-hoa-2.m3u8
 #EXTINF:-1,[BD]ttv - th thanh hóa
 https://stream1.freetv.fun/ttv---th-thanh-hoa-3.ctv
@@ -46109,7 +46089,7 @@ https://stream1.freetv.fun/vevo-retro-rock-3.m3u8
 https://stream1.freetv.fun/vevo--90s-3.m3u8
 #EXTINF:-1,[BD]us vh1
 https://stream1.freetv.fun/us-vh1-1.ctv
-#EXTINF:-1,[HD]mtv classic[geo-blocked]
+#EXTINF:-1,[SD]mtv classic[geo-blocked]
 https://stream1.freetv.fun/mtv-classic-3.m3u8
 #EXTINF:-1,[BD]plus 1
 https://stream1.freetv.fun/plus-1-1.ctv
@@ -46165,7 +46145,7 @@ https://stream1.freetv.fun/viutvsix-2.ctv
 https://stream1.freetv.fun/w-sports--v-1.ctv
 #EXTINF:-1,[HD]wdr
 https://stream1.freetv.fun/wdr-2.ctv
-#EXTINF:-1,[HD]wnbc-dt1
+#EXTINF:-1,[BD]wnbc-dt1
 https://stream1.freetv.fun/wnbc-dt1-2.m3u8
 #EXTINF:-1,[BD]world fashion channel
 https://stream1.freetv.fun/world-fashion-channel-2.m3u8
@@ -46201,7 +46181,7 @@ https://stream1.freetv.fun/wildearth-3.m3u8
 https://stream1.freetv.fun/wild-earth-2.m3u8
 #EXTINF:-1,[BD]wild earth *y
 https://stream1.freetv.fun/wild-earth--y-1.m3u8
-#EXTINF:-1,[SD]wild 'n out
+#EXTINF:-1,[HD]wild 'n out
 https://stream1.freetv.fun/wild--n-out-2.m3u8
 #EXTINF:-1,[SD]wild 'n out
 https://stream1.freetv.fun/wild--n-out-3.m3u8
@@ -46273,8 +46253,6 @@ https://stream1.freetv.fun/atv-10.m3u8
 https://stream1.freetv.fun/atv-7.m3u8
 #EXTINF:-1,[SD]atv
 https://stream1.freetv.fun/atv-4.ctv
-#EXTINF:-1,[VGA]atv[geo-blocked]
-https://stream1.freetv.fun/atv-2.m3u8
 #EXTINF:-1,[BD]atv
 https://stream1.freetv.fun/atv-5.m3u8
 #EXTINF:-1,[BD]saga music
@@ -46579,9 +46557,9 @@ https://stream1.freetv.fun/radost--moia-2.m3u8
 https://stream1.freetv.fun/radost-1.m3u8
 #EXTINF:-1,[BD]россия 1[geo-blocked]
 https://stream1.freetv.fun/rossiia-1-4.m3u8
-#EXTINF:-1,[BD]россия 1[geo-blocked]
+#EXTINF:-1,[BD]россия 1
 https://stream1.freetv.fun/rossiia-1-2.m3u8
-#EXTINF:-1,[SD]россия 1[geo-blocked]
+#EXTINF:-1,[SD]россия 1
 https://stream1.freetv.fun/rossiia-1-6.m3u8
 #EXTINF:-1,[BD]россия 1
 https://stream1.freetv.fun/rossiia-1-9.m3u8
@@ -46937,6 +46915,8 @@ https://stream1.freetv.fun/bai-cheng-xin-wen-zong-he-3.m3u8
 https://stream1.freetv.fun/bai-cheng-xin-wen-zong-he-2.m3u8
 #EXTINF:-1,[BD]东南卫视 8m1080
 https://stream1.freetv.fun/dong-nan-wei-shi--8m1080-1.m3u8
+#EXTINF:-1,[BD]东方影视
+https://stream1.freetv.fun/dong-fang-ying-shi-5.m3u8
 #EXTINF:-1,[HD]上视东方影视
 https://stream1.freetv.fun/shang-shi-dong-fang-ying-shi-1.ctv
 #EXTINF:-1,[BD]东方卫视 8m1080
