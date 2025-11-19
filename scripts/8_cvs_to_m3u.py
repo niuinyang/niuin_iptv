@@ -183,11 +183,13 @@ def channel_sort_key(channel_name):
 
 
 def group_sort_key(group_name):
-    """分组排序键，优先级列表顺序，未匹配放最后"""
+    """分组排序键，优先级列表顺序，未匹配按拼音排序"""
     try:
-        return GROUP_PRIORITY.index(group_name)
+        priority_index = GROUP_PRIORITY.index(group_name)
+        return (0, priority_index, "")
     except ValueError:
-        return len(GROUP_PRIORITY)
+        pinyin = get_pinyin_key(group_name)
+        return (1, len(GROUP_PRIORITY), pinyin)
 
 
 def source_sort_key(source_name, dxl=True):
