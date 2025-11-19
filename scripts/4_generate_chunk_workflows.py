@@ -32,8 +32,10 @@ os.makedirs(WORKFLOW_DIR, exist_ok=True)
 TEMPLATE = """name: Scan_{n}
 
 on:
-  repository_dispatch:
-    types: [run-scan-chunk]
+  workflow_run:
+    workflows: ["4生成chunk_workflows"]
+    types:
+      - completed
   workflow_dispatch:
 
 permissions:
@@ -41,8 +43,6 @@ permissions:
 
 jobs:
   scan_{n}:
-    if: github.event_name == 'workflow_dispatch' || github.event.client_payload.chunk_id == '{n}'
-
     runs-on: ubuntu-latest
     steps:
       - name: Checkout repository
