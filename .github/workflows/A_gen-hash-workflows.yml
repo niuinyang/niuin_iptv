@@ -2,10 +2,10 @@ name: A生成并执行缓存workflow
 
 on:
   workflow_dispatch:
-   schedule:
-     - cron: '11 0 * * *'
-     - cron: '12 8 * * *'
-     - cron: '13 13 * * *'
+  schedule:
+    - cron: '11 0 * * *'
+    - cron: '12 8 * * *'
+    - cron: '13 13 * * *'
 
 permissions:
   contents: write
