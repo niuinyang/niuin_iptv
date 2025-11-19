@@ -1,0 +1,47 @@
+name: Merge Cache
+
+on:
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  merge_cache_job:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Setup Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: "3.11"
+
+      - name: Install dependencies
+        run: |
+          python -m pip install --upgrade pip
+
+      - name: Run merge script
+        run: |
+          python scripts/C_merge_cache.py
+
+      - name: Commit merged cache
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+
+          # 添加 total_cache.json，如果不存在不会报错
+          git add output/cache/total_cache.json || true
+
+          # 如果没有改动就退出，不要报错
+          if git diff --cached --quiet; then
+            echo "No changes to commit."
+            exit 0
+          fi
+
+          git commit -m "Update total_cache.json (auto merge)"
+          git push
