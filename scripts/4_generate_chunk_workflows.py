@@ -28,7 +28,7 @@ clean_dir("output/middle/final")
 # --------------------------------------------
 os.makedirs(WORKFLOW_DIR, exist_ok=True)
 
-# GitHub Actions workflow 模板字符串（已加入 chunk_id 条件过滤）
+# GitHub Actions workflow 模板字符串
 TEMPLATE = """name: Scan_{n}
 
 on:
@@ -36,15 +36,11 @@ on:
     types: [run-scan-chunk]
   workflow_dispatch:
 
-env:
-  COMMIT_SHA: ${{{{ github.sha }}}}
-
 permissions:
   contents: write
 
 jobs:
   scan_{n}:
-    # 🔥 只有当 chunk_id 匹配时才执行，避免重复触发
     if: github.event_name == 'workflow_dispatch' || github.event.client_payload.chunk_id == '{n}'
 
     runs-on: ubuntu-latest
@@ -131,15 +127,27 @@ print("🧹 清理旧的 workflow 文件...")
 
 # 删除旧的 scan_*.yml workflow 文件
 for f in os.listdir(WORKFLOW_DIR):
-    if re.match(r"scan_.+\\.yml", f):
+    if re.match(r"scan_.+\.yml", f):       # ← 修复：正确的正则
         os.remove(os.path.join(WORKFLOW_DIR, f))
 
-# 获取 chunk 文件列表，符合 chunk-数字.csv 格式
-chunks = sorted([f for f in os.listdir(CHUNK_DIR) if re.match(r"chunk-?\\d+\\.csv", f)])
+# 确保 chunk 目录存在
+if not os.path.exists(CHUNK_DIR):
+    raise RuntimeError(f"❌ CHUNK_DIR 不存在：{CHUNK_DIR}")
+
+# 获取 chunk 文件（严格模式：chunk-数字.csv）
+chunks = sorted([
+    f for f in os.listdir(CHUNK_DIR)
+    if re.match(r"chunk-\d+\.csv", f)      # ← 修复：正确的正则
+])
+
+if not chunks:
+    raise RuntimeError(f"❌ 未找到任何 chunk CSV 文件，请检查目录：{CHUNK_DIR}")
+
+print(f"📦 找到 {len(chunks)} 个 chunk 文件")
 
 # 生成新的 workflow 文件
 for chunk_file in chunks:
-    chunk_id = os.path.splitext(chunk_file)[0]  # e.g. "chunk-5"
+    chunk_id = os.path.splitext(chunk_file)[0]  # 例如 "chunk-5"
 
     workflow_filename = f"scan_{chunk_id}.yml"
     workflow_path = os.path.join(WORKFLOW_DIR, workflow_filename)
