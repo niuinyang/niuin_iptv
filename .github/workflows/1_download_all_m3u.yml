@@ -3,7 +3,7 @@ name: 1下载全部M3U
 on:
   workflow_dispatch:
   schedule:
-    - cron: '00 15 * * *'  # 北京时间 23:00
+    - cron: '05 16 * * *'  # 北京时间 00:05
 
 permissions:
   contents: write
