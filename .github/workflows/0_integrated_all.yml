@@ -201,8 +201,43 @@ jobs:
       - id: set_done
         run: echo "done=true" >> $GITHUB_OUTPUT
 
-  wait_for_scan:
+  trigger_chunk_workflows:
     needs: generate_chunk_workflow
+    runs-on: ubuntu-latest
+    env:
+      GITHUB_TOKEN: ${{ secrets.PUSH_TOKEN1 }}
+      REPO: ${{ github.repository }}
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Trigger chunk workflows via repository_dispatch
+        run: |
+          echo "Scanning .github/workflows for scan_*.yml files..."
+          files=$(ls .github/workflows/scan_*.yml || true)
+          if [ -z "$files" ]; then
+            echo "No chunk workflows found to trigger."
+            exit 0
+          fi
+
+          for wf_file in $files; do
+            chunk_id=$(basename "$wf_file" .yml | cut -d'_' -f2)
+            echo "Triggering chunk workflow for chunk_id: $chunk_id"
+            curl -X POST \
+              -H "Accept: application/vnd.github+json" \
+              -H "Authorization: Bearer $GITHUB_TOKEN" \
+              https://api.github.com/repos/$REPO/dispatches \
+              -d '{"event_type":"run-scan-chunk", "client_payload": {"chunk_id": "'"$chunk_id"'"}}'
+            sleep 1
+          done
+
+      - id: set_done
+        run: echo "done=true" >> $GITHUB_OUTPUT
+
+  wait_for_scan:
+    needs: trigger_chunk_workflows
     runs-on: ubuntu-latest
     env:
       GITHUB_TOKEN: ${{ secrets.PUSH_TOKEN1 }}
