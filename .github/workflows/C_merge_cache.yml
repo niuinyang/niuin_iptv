@@ -39,8 +39,10 @@ jobs:
 
       - name: Pull latest changes before commit
         run: |
-          git pull --rebase origin main            # 拉取远程最新代码并rebase，防止冲突
-        continue-on-error: true                    # 即使pull失败（如无更新），也不报错中断
+          git reset --hard HEAD            # 重置所有本地改动，避免pull报错
+          git clean -fd                   # 删除未跟踪文件和目录
+          git pull --rebase origin main  # 拉取远程最新代码并rebase
+        continue-on-error: false          # 失败则终止job
 
       - name: Add and commit merged cache files
         run: |
