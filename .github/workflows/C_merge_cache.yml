@@ -1,0 +1,76 @@
+name: C合并缓存  # workflow名称
+
+on:
+  workflow_run:
+    workflows:
+      - "B检查缓存workflow执行完毕合并"  # 监听此workflow执行完毕后触发本workflow
+    types:
+      - completed                   # 仅在被监听workflow完成后触发
+  workflow_dispatch:               # 支持手动触发
+
+jobs:
+  merge-and-push:
+    runs-on: ubuntu-latest        # 使用ubuntu最新环境执行
+
+    steps:
+      - name: Checkout repository (full history)
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0           # 拉取完整历史，方便后续pull/rebase等操作
+
+      - name: Set up Python 3.11
+        uses: actions/setup-python@v4
+        with:
+          python-version: "3.11"   # 设置Python版本，确保环境一致
+
+      - name: Install dependencies
+        run: |
+          python -m pip install --upgrade pip          # 升级pip
+          pip install zoneinfo || true                  # 安装zoneinfo（根据需要）
+          pip install -r requirements.txt || true      # 安装其它依赖（如有requirements.txt）
+
+      - name: Run merge cache script
+        run: python scripts/C_merge_cache.py          # 执行你的合并缓存Python脚本
+
+      - name: Configure Git user
+        run: |
+          git config user.name "github-actions[bot]"                # 设置提交用户名
+          git config user.email "github-actions[bot]@users.noreply.github.com"  # 设置提交邮箱
+
+      - name: Pull latest changes before commit
+        run: |
+          git pull --rebase origin main            # 拉取远程最新代码并rebase，防止冲突
+        continue-on-error: true                    # 即使pull失败（如无更新），也不报错中断
+
+      - name: Add and commit merged cache files
+        run: |
+          # 添加合并后生成的文件（包含合并记录）
+          git add output/cache/total_cache.json output/cache/merge_record.json || true
+
+          # 判断是否有变化，若无变化则跳过提交
+          if ! git diff --cached --quiet; then
+            git commit -m "自动合并缓存数据 $(date +'%Y-%m-%d %H:%M:%S')"   # 有变化则提交，附带时间戳
+          else
+            echo "无变动，跳过提交。"
+            exit 0       # 无变化直接结束job成功
+          fi
+
+      - name: Push changes with retry
+        run: |
+          MAX_RETRIES=3
+          count=0
+
+          # 推送操作失败时，最多重试3次，间隔5秒
+          until [ $count -ge $MAX_RETRIES ]
+          do
+            git push origin main && break
+            count=$((count+1))
+            echo "Push失败，重试第 $count 次..."
+            sleep 5
+          done
+
+          # 超过最大重试次数仍失败则终止并标记失败
+          if [ $count -eq $MAX_RETRIES ]; then
+            echo "Push操作失败，达到最大重试次数 $MAX_RETRIES"
+            exit 1
+          fi
