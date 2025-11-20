@@ -13,7 +13,7 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v4
         with:
-          fetch-depth: 0   # 完整历史，方便后续commit推送
+          fetch-depth: 0   # 拉取完整历史，方便后续操作
 
       - name: Set up Python
         uses: actions/setup-python@v4
@@ -30,7 +30,7 @@ jobs:
 
       - name: Add and commit deletion changes
         run: |
-          git add -u output/cache/chunk/     # 添加所有删除变动
+          git add -u output/cache/chunk/
           if ! git diff --cached --quiet; then
             git commit -m "自动清理 cache_hashes_chunk_chunk 开头的JSON文件"
           else
@@ -38,5 +38,9 @@ jobs:
             exit 0
           fi
 
-      - name: Push changes
-        run: git push origin main
+      - name: Pull latest changes and push
+        run: |
+          git reset --hard HEAD
+          git clean -fd
+          git pull --rebase origin main
+          git push origin main
