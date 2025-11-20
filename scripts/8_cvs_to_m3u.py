@@ -214,14 +214,47 @@ def resolution_area(row):
     return 0
 
 
-def resolution_area_detecttime_key(row):
-    """网络源排序键：分辨率面积降序，检测时间升序"""
-    area = resolution_area(row)
+def safe_float(val, default=0):
     try:
-        detect = float(row.get("检测时间", 0))
+        return float(val)
     except Exception:
-        detect = 0
-    return (-area, detect)
+        return default
+
+
+def compute_network_source_score(rows, alpha=0.7, beta=0.3):
+    """
+    给网络源列表计算综合评分，画质和速度折中。
+    alpha: 画质权重
+    beta: 速度权重
+    返回：排序后的行列表，score越大越优先
+    """
+    areas = []
+    detects = []
+    for r in rows:
+        area = resolution_area(r)
+        detect = safe_float(r.get("检测时间", 0))
+        areas.append(area)
+        detects.append(detect)
+
+    def normalize(lst):
+        if not lst:
+            return []
+        min_v = min(lst)
+        max_v = max(lst)
+        if max_v == min_v:
+            return [1.0] * len(lst)
+        return [(v - min_v) / (max_v - min_v) for v in lst]
+
+    norm_areas = normalize(areas)  # 越大越好
+    norm_detects = normalize(detects)  # 越小越好，后面取负号
+
+    scored_rows = []
+    for i, row in enumerate(rows):
+        score = alpha * norm_areas[i] - beta * norm_detects[i]
+        scored_rows.append((row, score))
+
+    scored_rows.sort(key=lambda x: x[1], reverse=True)
+    return [r[0] for r in scored_rows]
 
 
 def sort_rows(rows, dxl=True):
@@ -264,7 +297,7 @@ def sort_rows(rows, dxl=True):
             for s, lst in others_sources_sorted:
                 sorted_rows.extend(lst)
             if network_source_rows:
-                network_source_rows_sorted = sorted(network_source_rows, key=resolution_area_detecttime_key)
+                network_source_rows_sorted = compute_network_source_score(network_source_rows, alpha=0.7, beta=0.3)
                 sorted_rows.extend(network_source_rows_sorted)
 
             final_sorted.extend(sorted_rows)
