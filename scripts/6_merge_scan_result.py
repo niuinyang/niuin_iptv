@@ -12,6 +12,11 @@ def merge_csv_files(input_folder, output_file):
     df_list = []
     for file in csv_files:
         df = pd.read_csv(file)
+
+        # 统一字段名（如果存在 name 则改成 频道名）
+        if "name" in df.columns and "频道名" not in df.columns:
+            df = df.rename(columns={"name": "频道名"})
+
         df_list.append(df)
 
     merged_df = pd.concat(df_list, ignore_index=True)
@@ -38,11 +43,11 @@ def generate_m3u(df, m3u_path):
     """
     基于 DataFrame 自动生成 M3U 文件
     使用字段：
-    - name：频道名称（你的文件中必须叫 “name”）
+    - 频道名：频道名称
     - 地址：播放源 URL
     """
 
-    required = {"name", "地址"}
+    required = {"频道名", "地址"}
     if not required.issubset(df.columns):
         print(f"Cannot generate M3U — missing columns: {required - set(df.columns)}")
         return
@@ -50,7 +55,7 @@ def generate_m3u(df, m3u_path):
     lines = ["#EXTM3U"]
 
     for _, row in df.iterrows():
-        name = str(row["name"])
+        name = str(row["频道名"])
         url = str(row["地址"])
 
         lines.append(f"#EXTINF:-1,{name}")
