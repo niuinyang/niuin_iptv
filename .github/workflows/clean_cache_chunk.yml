@@ -1,0 +1,22 @@
+name: Clean Cache Chunk JSON Files
+
+on:
+  workflow_dispatch:      # 支持手动触发
+  schedule:
+    - cron: '0 3 * * *'  # 每天凌晨3点执行，可根据需要修改
+
+jobs:
+  clean-cache:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: "3.x"
+
+      - name: Run cache chunk clean script
+        run: python scripts/clean_cache_chunk.py
