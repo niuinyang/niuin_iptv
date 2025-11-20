@@ -1,0 +1,6330 @@
+{
+  "http://104.244.79.187:4994/proxy?url=http%3A//104.244.79.187%3A5050/litv/4gtv-4gtv057": {
+    "0811": {
+      "phash": null,
+      "ahash": null,
+      "dhash": null,
+      "error": "[hls @ 0x56321e126f00] Error when loading first segment 'http://104.244.79.187:4994/proxy?url=https%3A//litvpc-hichannel.cdn.hinet.net/live/pool/4gtv-4gtv057/litv-pc/4gtv-4gtv057-avc1_6000000%3D1-mp4a_134000_zho%3D8-begin%3D3435341400000000-dur%3D40000000-seq%3D85883535.ts'\n[in#0 @ 0x56321e126e00] Error opening input: Invalid data found when processing input\nError opening input file http://104.244.79.187:4994/proxy?url=http%3A//104.244.79.187%3A5050/litv/4gtv-4gtv057.\nError opening input files: Invalid data found when processing input\n"
+    }
+  },
+  "http://110.19.181.138:10080/hls/F509Rh7GR/F509Rh7GR_live.m3u8?zneimd": {
+    "0811": {
+      "phash": null,
+      "ahash": null,
+      "dhash": null,
+      "error": "[tcp @ 0x556815e52540] Connection to tcp://110.19.181.138:10080 failed: Connection timed out\n[in#0 @ 0x556815e90e00] Error opening input: Connection timed out\nError opening input file http://110.19.181.138:10080/hls/F509Rh7GR/F509Rh7GR_live.m3u8?zneimd.\nError opening input files: Connection timed out\n"
+    }
+  },
+  "http://111.31.106.140/downflv.brtvcloud.com/8klive/8kliveok.m3u8": {
+    "0811": {
+      "phash": null,
+      "ahash": null,
+      "dhash": null,
+      "error": "[in#0 @ 0x557631455e00] Error opening input: Server returned 4XX Client Error, but not one of 40{0,1,3,4}\nError opening input file http://111.31.106.140/downflv.brtvcloud.com/8klive/8kliveok.m3u8.\nError opening input files: Server returned 4XX Client Error, but not one of 40{0,1,3,4}\n"
+    }
+  },
+  "http://112.46.105.20:8009/hls/18/index.m3u8": {
+    "0811": {
+      "phash": null,
+      "ahash": null,
+      "dhash": null,
+      "error": ""
+    }
+  },
+  "http://112.46.105.20:8009/hls/20/index.m3u8": {
+    "0811": {
+      "phash": null,
+      "ahash": null,
+      "dhash": null,
+      "error": ""
+    }
+  },
+  "http://112.46.105.20:8009/hls/22/index.m3u8": {
+    "0811": {
+      "phash": "93126de10ae4f34f",
+      "ahash": "000c1c1c0cffff08",
+      "dhash": "9cb878787998126b",
+      "error": null
+    }
+  },
+  "http://112.46.105.20:8009/hls/23/index.m3u8": {
+    "0811": {
+      "phash": "f134167b53968965",
+      "ahash": "4242c3cbcbe9ffff",
+      "dhash": "949496d212131606",
+      "error": null
+    }
+  },
+  "http://112.46.105.20:8009/hls/28/index.m3u8": {
+    "0811": {
+      "phash": null,
+      "ahash": null,
+      "dhash": null,
+      "error": ""
+    }
+  },
+  "http://112.46.105.20:8009/hls/29/index.m3u8": {
+    "0811": {
+      "phash": null,
+      "ahash": null,
+      "dhash": null,
+      "error": ""
+    }
+  },
+  "http://120.238.94.10:9901/tsfile/live/1008_1.m3u8": {
+    "0811": {
+      "phash": null,
+      "ahash": null,
+      "dhash": null,
+      "error": ""
+    }
+  },
+  "http://120.238.94.10:9901/tsfile/live/1009_1.m3u8": {
+    "0811": {
+      "phash": "bf55c4d651c0d4d2",
+      "ahash": "fe838387878fffff",
+      "dhash": "dc3e3f1e1c3ccb09",
+      "error": null
+    }
+  },
+  "http://120.238.94.10:9901/tsfile/live/1069_1.m3u8": {
+    "0811": {
+      "phash": "bf96e0c125847b1b",
+      "ahash": "ffbf81131fbfff81",
+      "dhash": "be6d756769693717",
+      "error": null
+    }
+  },
+  "http://120.76.248.139/live/bfgd/4200000146.m3u8": {
+    "0811": {
+      "phash": null,
+      "ahash": null,
+      "dhash": null,
+      "error": "[in#0 @ 0x5606d85e7e00] Error opening input: Invalid data found when processing input\nError opening input file http://120.76.248.139/live/bfgd/4200000146.m3u8.\nError opening input files: Invalid data found when processing input\n"
+    }
+  },
+  "http://120.76.248.139/live/bfgd/4200000147.m3u8": {
+    "0811": {
+      "phash": null,
+      "ahash": null,
+      "dhash": null,
+      "error": ""
+    }
+  },
+  "http://120.76.248.139/live/bfgd/4200000149.m3u8": {
+    "0811": {
+      "phash": null,
+      "ahash": null,
+      "dhash": null,
+      "error": "[in#0 @ 0x565281357e00] Error opening input: Invalid data found when processing input\nError opening input file http://120.76.248.139/live/bfgd/4200000149.m3u8.\nError opening input files: Invalid data found when processing input\n"
+    }
+  },
+  "http://120.76.248.139/live/bfgd/4200000153.m3u8": {
+    "0811": {
+      "phash": null,
+      "ahash": null,
+      "dhash": null,
+      "error": "[in#0 @ 0x562f43619e00] Error opening input: Invalid data found when processing input\nError opening input file http://120.76.248.139/live/bfgd/4200000153.m3u8.\nError opening input files: Invalid data found when processing input\n"
+    }
+  },
+  "http://120.76.248.139/live/bfgd/4200000158.m3u8": {
+    "0811": {
+      "phash": null,
+      "ahash": null,
+      "dhash": null,
+      "error": ""
+    }
+  },
+  "http://120.76.248.139/live/bfgd/4200000229.m3u8": {
+    "0811": {
+      "phash": null,
+      "ahash": null,
+      "dhash": null,
+      "error": ""
+    }
+  },
+  "http://120.76.248.139/live/bfgd/4200000249.m3u8": {
+    "0811": {
+      "phash": null,
+      "ahash": null,
+      "dhash": null,
+      "error": ""
+    }
+  },
+  "http://12371ksc.v.kcdnvip.com/12371/dangyuanwang_1/index.m3u8": {
+    "0811": {
+      "phash": null,
+      "ahash": null,
+      "dhash": null,
+      "error": "[in#0 @ 0x563172d25e00] Error opening input: Server returned 5XX Server Error reply\nError opening input file http://12371ksc.v.kcdnvip.com/12371/dangyuanwang_1/index.m3u8.\nError opening input files: Server returned 5XX Server Error reply\n"
+    }
+  },
+  "http://124.88.144.73:1935/live/xwzh/playlist.m3u8?zxinjd": {
+    "0811": {
+      "phash": null,
+      "ahash": null,
+      "dhash": null,
+      "error": "[tcp @ 0x559254f82540] Connection to tcp://124.88.144.73:1935 failed: Connection timed out\n[in#0 @ 0x559254fc0e00] Error opening input: Connection timed out\nError opening input file http://124.88.144.73:1935/live/xwzh/playlist.m3u8?zxinjd.\nError opening input files: Connection timed out\n"
+    }
+  },
+  "http://182.150.23.74:808/hls/27/index.m3u8": {
+    "0811": {
+      "phash": null,
+      "ahash": null,
+      "dhash": null,
+      "error": ""
+    }
+  },
+  "http://38.64.72.148:80/hls/modn/list/4009/chunklist0.m3u8": {
+    "0811": {
+      "phash": "8f7056a7aaa95645",
+      "ahash": "9000181b3b3b3b31",
+      "dhash": "2624303363636323",
+      "error": null
+    }
+  },
+  "http://38.64.72.148:80/hls/modn/list/4009/playlist.m3u8": {
+    "0811": {
+      "phash": "bc66f59172479506",
+      "ahash": "e08010000d9f9f9f",
+      "dhash": "063327a535303f38",
+      "error": null
+    }
+  },
+  "http://3gvod.zjgonline.com.cn:1935/live/_definst_/shehuishenghuo_app/chunklist.m3u8": {
+    "0811": {
+      "phash": null,
+      "ahash": null,
+      "dhash": null,
+      "error": "[tcp @ 0x55c990391540] Connection to tcp://3gvod.zjgonline.com.cn:1935 failed: Connection timed out\n[in#0 @ 0x55c9903cfe00] Error opening input: Connection timed out\nError opening input file http://3gvod.zjgonline.com.cn:1935/live/_definst_/shehuishenghuo_app/chunklist.m3u8.\nError opening input files: Connection timed out\n"
+    }
+  },
+  "http://3gvod.zjgonline.com.cn:1935/live/_definst_/xinwenzonghe_app/chunklist.m3u8": {
+    "0811": {
+      "phash": null,
+      "ahash": null,
+      "dhash": null,
+      "error": "[tcp @ 0x560c3a37f540] Connection to tcp://3gvod.zjgonline.com.cn:1935 failed: Connection timed out\n[in#0 @ 0x560c3a3bde00] Error opening input: Connection timed out\nError opening input file http://3gvod.zjgonline.com.cn:1935/live/_definst_/xinwenzonghe_app/chunklist.m3u8.\nError opening input files: Connection timed out\n"
+    }
+  },
+  "http://8.138.7.223/tv/hxws.m3u8": {
+    "0811": {
+      "phash": "d92c6ed2ac918b65",
+      "ahash": "8000581edeecec9f",
+      "dhash": "3b11d2b6b259882a",
+      "error": null
+    }
+  },
+  "http://8.138.7.223/【公众号：榴芒电视】/cctv1.m3u8": {
+    "0811": {
+      "phash": null,
+      "ahash": null,
+      "dhash": null,
+      "error": "[tcp @ 0x55ba4f4493c0] Connection to tcp://106.53.99.30:80 failed: Connection timed out\n[in#0 @ 0x55ba4f440e00] Error opening input: Connection timed out\nError opening input file http://8.138.7.223/【公众号：榴芒电视】/cctv1.m3u8.\nError opening input files: Connection timed out\n"
+    }
+  },
+  "http://8.138.7.223/【公众号：榴芒电视】/cctv7.m3u8": {
+    "0811": {
+      "phash": null,
+      "ahash": null,
+      "dhash": null,
+      "error": ""
+    }
+  },
+  "http://8.138.7.223/【公众号：榴芒电视】/农林卫视.m3u8": {
+    "0811": {
+      "phash": null,
+      "ahash": null,
+      "dhash": null,
+      "error": "[tcp @ 0x5570bf6b2540] Connection to tcp://gxlive.snrtv.com:80 failed: Connection timed out\n[in#0 @ 0x5570bf6f0e00] Error opening input: Connection timed out\nError opening input file http://8.138.7.223/【公众号：榴芒电视】/农林卫视.m3u8.\nError opening input files: Connection timed out\n"
+    }
+  },
+  "http://cm-wshls.homecdn.com/live/2aa50.m3u8": {
+    "0811": {
+      "phash": "999b626c55264d9b",
+      "ahash": "001cbfbf9e180000",
+      "dhash": "867979703030a48d",
+      "error": null
+    }
+  },
+  "http://ebsonairios.ebs.co.kr/ebsutablet500k/tablet500k/playlist.m3u8": {
+    "0811": {
+      "phash": "921f39fca86c2563",
+      "ahash": "1d1c2435f747c343",
+      "dhash": "bb6969edcd949696",
+      "error": null
+    }
+  },
+  "http://english-livetx.cgtn.com/hls/yypdyyctzb_hd.m3u8": {
+    "0811": {
+      "phash": "811e2dce3ec99a65",
+      "ahash": "1f130fce9ffd7841",
+      "dhash": "74d6dc5c54e9c282",
+      "error": null
+    }
+  },
+  "http://espanol-liveali.cgtn.com/hls/LSveOGBaBw41Ea7ukkVAUdKQ220802LSTexu6xAuFH8VZNBLE1ZNEa220802cd.m3u8": {
+    "0811": {
+      "phash": "a2b84f5fb00b7499",
+      "ahash": "7fffffcf4f002000",
+      "dhash": "e8b99b9d99a9ebc5",
+      "error": null
+    }
+  },
+  "http://genglei.8866.org:9901/tsfile/live/1011_1.m3u8?key=txiptv&playlive=1&authid=0": {
+    "0811": {
+      "phash": null,
+      "ahash": null,
+      "dhash": null,
+      "error": "[tcp @ 0x559e9f2b5540] Connection to tcp://genglei.8866.org:9901 failed: Connection timed out\n[in#0 @ 0x559e9f2f3e00] Error opening input: Connection timed out\nError opening input file http://genglei.8866.org:9901/tsfile/live/1011_1.m3u8?key=txiptv&playlive=1&authid=0.\nError opening input files: Connection timed out\n"
+    }
+  },
+  "http://gmxw.7766.org:808/hls/175/index.m3u8": {
+    "0811": {
+      "phash": null,
+      "ahash": null,
+      "dhash": null,
+      "error": ""
+    }
+  },
+  "http://iot-mqqt.111yao.cn:8080/live/diyp_fhdy.m3u8": {
+    "0811": {
+      "phash": "afb1504e352d9699",
+      "ahash": "0048ffa3bfb51000",
+      "dhash": "82929b622b6d7390",
+      "error": null
+    }
+  },
+  "http://jsmov2.a.yximgs.com/bs3/video-hls/5203346449046555193_hlsb.m3u8": {
+    "0811": {
+      "phash": "c111beeec45879a9",
+      "ahash": "ff6f084860e0ffff",
+      "dhash": "c08a9aaaeaa240c4",
+      "error": null
+    }
+  },
+  "http://jsmov2.a.yximgs.com/bs3/video-hls/5216294367991385255_hlsb.m3u8": {
+    "0811": {
+      "phash": "d74e286b2cb03c6b",
+      "ahash": "0030fefefefc3000",
+      "dhash": "6060606040606060",
+      "error": null
+    }
+  },
+  "http://jsmov2.a.yximgs.com/bs3/video-hls/5232901391302199073_hlsb.m3u8": {
+    "0811": {
+      "phash": "0000000000000000",
+      "ahash": "0000000000000000",
+      "dhash": "0000000000000000",
+      "error": null
+    }
+  },
+  "http://jsmov2.a.yximgs.com/bs3/video-hls/5250634317044855747_hlsb.m3u8": {
+    "0811": {
+      "phash": "d7682a6e27d1256a",
+      "ahash": "0010fefefefc3800",
+      "dhash": "6060606060406040",
+      "error": null
+    }
+  },
+  "http://live.dxhmt.cn:9081/tv/10185-1.m3u8": {
+    "0811": {
+      "phash": "b2e969162d93934d",
+      "ahash": "cfc7cfcf07070606",
+      "dhash": "989c9c9c2c2c6c6c",
+      "error": null
+    }
+  },
+  "http://live.dxhmt.cn:9081/tv/10225-1.m3u8": {
+    "0811": {
+      "phash": "b0705d639f2b60d6",
+      "ahash": "c0c0cf4767417dfc",
+      "dhash": "9f9b9d95dddde9f0",
+      "error": null
+    }
+  },
+  "http://live.dxhmt.cn:9081/tv/10327-1.m3u8": {
+    "0811": {
+      "phash": "9dc96407578ec387",
+      "ahash": "b8d8dd9f0f0f0702",
+      "dhash": "72b391325c7c6c3c",
+      "error": null
+    }
+  },
+  "http://live.dxhmt.cn:9081/tv/10421-1.m3u8": {
+    "0811": {
+      "phash": "d8c2273d0767651d",
+      "ahash": "00fdddddddd98800",
+      "dhash": "69b1313131333333",
+      "error": null
+    }
+  },
+  "http://live.dxhmt.cn:9081/tv/10425-1.m3u8": {
+    "0811": {
+      "phash": "ef4a1435439e1e33",
+      "ahash": "00c1f9ffebc38700",
+      "dhash": "240363435a0e1e14",
+      "error": null
+    }
+  },
+  "http://live.dxhmt.cn:9081/tv/10781-1.m3u8": {
+    "0811": {
+      "phash": "d38f247039706d7a",
+      "ahash": "003ffffffdfe0400",
+      "dhash": "206c6ad9d9dac989",
+      "error": null
+    }
+  },
+  "http://live.dxhmt.cn:9081/tv/10825-1.m3u8": {
+    "0811": {
+      "phash": "f0cf1c19c1e1e3f0",
+      "ahash": "f880e0e0e0c0c0c0",
+      "dhash": "12300a420a1ba3a3",
+      "error": null
+    }
+  },
+  "http://live.dxhmt.cn:9081/tv/11024-1.m3u8": {
+    "0811": {
+      "phash": "b4844b793a4b35b6",
+      "ahash": "0017373717070000",
+      "dhash": "80a6e6a6a6a6ea01",
+      "error": null
+    }
+  },
+  "http://live.dxhmt.cn:9081/tv/11122-1.m3u8": {
+    "0811": {
+      "phash": null,
+      "ahash": null,
+      "dhash": null,
+      "error": ""
+    }
+  },
+  "http://live.dxhmt.cn:9081/tv/11221-1.m3u8": {
+    "0811": {
+      "phash": "d36c2cf041916eee",
+      "ahash": "4090bc3cfcfe9e00",
+      "dhash": "882c68d989581c1c",
+      "error": null
+    }
+  },
+  "http://live.dxhmt.cn:9081/tv/11326-1.m3u8": {
+    "0811": {
+      "phash": "f687f409fdd908a0",
+      "ahash": "ffe664a44200c3c7",
+      "dhash": "cccccc48cc949696",
+      "error": null
+    }
+  },
+  "http://live.dxhmt.cn:9081/tv/11522-1.m3u8": {
+    "0811": {
+      "phash": "976a69956e994385",
+      "ahash": "000024247e7fff00",
+      "dhash": "824d4d4cccccce92",
+      "error": null
+    }
+  },
+  "http://live.dxhmt.cn:9081/tv/11523-1.m3u8": {
+    "0811": {
+      "phash": "e4da1b4e0ee4f232",
+      "ahash": "f7dfe7f323636303",
+      "dhash": "25b38ca6a786a6a6",
+      "error": null
+    }
+  },
+  "http://live.dxhmt.cn:9081/tv/11525-1.m3u8": {
+    "0811": {
+      "phash": "9dd272e464694b95",
+      "ahash": "041e3c3b3f3f1a02",
+      "dhash": "387478f2f6f2f2b2",
+      "error": null
+    }
+  },
+  "http://live.dxhmt.cn:9081/tv/11526-1.m3u8": {
+    "0811": {
+      "phash": null,
+      "ahash": null,
+      "dhash": null,
+      "error": ""
+    }
+  },
+  "http://live.dxhmt.cn:9081/tv/11622-1.m3u8": {
+    "0811": {
+      "phash": null,
+      "ahash": null,
+      "dhash": null,
+      "error": ""
+    }
+  },
+  "http://live.dxhmt.cn:9081/tv/11726-1.m3u8": {
+    "0811": {
+      "phash": "e9f8020654fda9b3",
+      "ahash": "0080fbffff3b0000",
+      "dhash": "808b0b0aca534300",
+      "error": null
+    }
+  },
+  "http://live.dxhmt.cn:9081/tv/11729-1.m3u8": {
+    "0811": {
+      "phash": "80bcdb9f646a75c0",
+      "ahash": "fffff77373342000",
+      "dhash": "a8a4a6e6e4cdd9d9",
+      "error": null
+    }
+  },
+  "http://live.metshop.top/huya/11336587?cdn=alicdn": {
+    "0811": {
+      "phash": null,
+      "ahash": null,
+      "dhash": null,
+      "error": ""
+    }
+  },
+  "http://live.metshop.top/huya/11342424?cdn=alicdn": {
+    "0811": {
+      "phash": "c20adab769e833b4",
+      "ahash": "7c3c3d61e7e7ff70",
+      "dhash": "e9e9e9c3cfcce4c0",
+      "error": null
+    }
+  },
+  "http://live.metshop.top/huya/11342429?cdn=alicdn": {
+    "0811": {
+      "phash": "b46a49b546994f95",
+      "ahash": "0081d1dfd7dfdf00",
+      "dhash": "9737339d143e9e96",
+      "error": null
+    }
+  },
+  "http://live.metshop.top/huya/11352884?cdn=alicdn": {
+    "0811": {
+      "phash": "8ca4725a1f1753ec",
+      "ahash": "00fbfb3b3b180000",
+      "dhash": "75b6e6663339b230",
+      "error": null
+    }
+  },
+  "http://live.metshop.top/huya/11352941?cdn=alicdn": {
+    "0811": {
+      "phash": null,
+      "ahash": null,
+      "dhash": null,
+      "error": "[in#0 @ 0x5653c230be00] Error opening input: Server returned 403 Forbidden (access denied)\nError opening input file http://live.metshop.top/huya/11352941?cdn=alicdn.\nError opening input files: Server returned 403 Forbidden (access denied)\n"
+    }
+  },
+  "http://live.metshop.top/huya/11601971?cdn=alicdn": {
+    "0811": {
+      "phash": "d4a0dc68679a3f1c",
+      "ahash": "fe7e3e2400001c9c",
+      "dhash": "b4bcacccecb83874",
+      "error": null
+    }
+  },
+  "http://live.metshop.top/huya/11601977?cdn=alicdn": {
+    "0811": {
+      "phash": "ce9f0e4f83e36160",
+      "ahash": "b098f0f8f8f0f0e0",
+      "dhash": "6122829180000400",
+      "error": null
+    }
+  },
+  "http://live.metshop.top/huya/11602077?cdn=alicdn": {
+    "0811": {
+      "phash": "92ec7c33974d3432",
+      "ahash": "c4d4f03c2e2e2c06",
+      "dhash": "1c941468ccdcd8dc",
+      "error": null
+    }
+  },
+  "http://live.metshop.top/huya/21059574?cdn=alicdn": {
+    "0811": {
+      "phash": "a7a59456c78a51cb",
+      "ahash": "7763637331200101",
+      "dhash": "e6c6c7c343436767",
+      "error": null
+    }
+  },
+  "http://live.metshop.top/huya/21059578?cdn=alicdn": {
+    "0811": {
+      "phash": null,
+      "ahash": null,
+      "dhash": null,
+      "error": "[in#0 @ 0x562275a5ee00] Error opening input: Server returned 403 Forbidden (access denied)\nError opening input file http://live.metshop.top/huya/21059578?cdn=alicdn.\nError opening input files: Server returned 403 Forbidden (access denied)\n"
+    }
+  },
+  "http://live.metshop.top/huya/21059585?cdn=alicdn": {
+    "0811": {
+      "phash": "c8d63771150f2727",
+      "ahash": "00fdfdf9f9791900",
+      "dhash": "10a5a5b1d191d152",
+      "error": null
+    }
+  },
+  "http://live.ottiptv.cc/huya/11342421": {
+    "0811": {
+      "phash": null,
+      "ahash": null,
+      "dhash": null,
+      "error": "[tcp @ 0x5590ce3e0f40] Connection to tcp://live.ottiptv.cc:80 failed: Connection timed out\n[in#0 @ 0x5590ce41fe00] Error opening input: Connection timed out\nError opening input file http://live.ottiptv.cc/huya/11342421.\nError opening input files: Connection timed out\n"
+    }
+  },
+  "http://live.ottiptv.cc/huya/29465859": {
+    "0811": {
+      "phash": null,
+      "ahash": null,
+      "dhash": null,
+      "error": ""
+    }
+  },
+  "http://live.yantaitv.cn/live/27f84144e95a4652ae9e5c211b2a6b55/405f3e33ba384aa0a16014d0becd1261-1.m3u8": {
+    "0811": {
+      "phash": null,
+      "ahash": null,
+      "dhash": null,
+      "error": ""
+    }
+  },
+  "http://live.yantaitv.cn/live/3e81a8879da44c5dadf3bd9c10468e1c/9b776d420ee4438199b7657c8eb88f07-1.m3u8": {
+    "0811": {
+      "phash": null,
+      "ahash": null,
+      "dhash": null,
+      "error": ""
+    }
+  },
+  "http://live.yantaitv.cn/live/e50f104a4ffe4a41b2217cbda534146f/d86092e69df94668b33390278b061700-1.m3u8": {
+    "0811": {
+      "phash": null,
+      "ahash": null,
+      "dhash": null,
+      "error": ""
+    }
+  },
+  "http://lu.wqwqwq.sbs/itv/1000000006000233002.m3u8?cdn=ystenlive": {
+    "0811": {
+      "phash": null,
+      "ahash": null,
+      "dhash": null,
+      "error": "[in#0 @ 0x55723d009e00] Error opening input: Server returned 5XX Server Error reply\nError opening input file http://lu.wqwqwq.sbs/itv/1000000006000233002.m3u8?cdn=ystenlive.\nError opening input files: Server returned 5XX Server Error reply\n"
+    }
+  },
+  "http://newcntv.qcloudcdn.com/asp/hls/1200/0303000a/3/default/81a1ad3a661748bfb8560c92d38204ca/1200.m3u8": {
+    "0811": {
+      "phash": "88ed163ce95e3227",
+      "ahash": "fffffbfb7b0f0000",
+      "dhash": "b2baf7f3f2b4f1e1",
+      "error": null
+    }
+  },
+  "http://newcntv.qcloudcdn.com/asp/hls/1200/0303000a/3/default/c6baf6f74bb944aeacee1065ea72c798/1200.m3u8": {
+    "0811": {
+      "phash": null,
+      "ahash": null,
+      "dhash": null,
+      "error": ""
+    }
+  },
+  "http://newcntv.qcloudcdn.com/asp/hls/4000/0303000a/3/default/93fc12dbf14241c18c23da104fbade23/4000.m3u8": {
+    "0811": {
+      "phash": "817a74658bb05bcd",
+      "ahash": "0000086d7d60fe7f",
+      "dhash": "a2b2dbcbc1dc96fc",
+      "error": null
+    }
+  },
+  "http://play-flive.ifeng.com/live/06OLEEWQKN4.m3u8": {
+    "0811": {
+      "phash": null,
+      "ahash": null,
+      "dhash": null,
+      "error": "[in#0 @ 0x55e1ee786e00] Error opening input: Server returned 404 Not Found\nError opening input file http://play-flive.ifeng.com/live/06OLEEWQKN4.m3u8.\nError opening input files: Server returned 404 Not Found\n"
+    }
+  },
+  "http://play-flive.ifeng.com/live/06OLEGEGM4G.m3u8": {
+    "0811": {
+      "phash": null,
+      "ahash": null,
+      "dhash": null,
+      "error": "[in#0 @ 0x55aaf01fce00] Error opening input: Server returned 404 Not Found\nError opening input file http://play-flive.ifeng.com/live/06OLEGEGM4G.m3u8.\nError opening input files: Server returned 404 Not Found\n"
+    }
+  },
+  "http://r.jdshipin.com/WtYt3": {
+    "0811": {
+      "phash": "834d752dc30fcf82",
+      "ahash": "20023c3c3c1801e7",
+      "dhash": "4e9c6969696b6dcd",
+      "error": null
+    }
+  },
+  "http://russian-livews.cgtn.com/hls/LSvexABhNipibK5KRuUkvHZ7220802LSTeze9o8tdFXMHsb1VosgoT220802cd.m3u8": {
+    "0811": {
+      "phash": "ec13e1e4455bb658",
+      "ahash": "c2828400f3f3f3f3",
+      "dhash": "8a3e7c7576663797",
+      "error": null
+    }
+  },
+  "http://satellitepull.cnr.cn/live/wx32dycjgb/playlist.m3u8": {
+    "0811": {
+      "phash": null,
+      "ahash": null,
+      "dhash": null,
+      "error": "[out#0/image2 @ 0x559860365640] Output file does not contain any stream\nError opening output file pipe:1.\nError opening output files: Invalid argument\n"
+    }
+  },
+  "http://stream.hrbtv.net/zxpd/sd/live.m3u8?zheild": {
+    "0811": {
+      "phash": "808080808080802a",
+      "ahash": "ffff000000000000",
+      "dhash": "8000000000000000",
+      "error": null
+    }
+  },
+  "http://stream8.jlntv.cn/baishan2/playlist.m3u8?zjild": {
+    "0811": {
+      "phash": "f550263fca8638d5",
+      "ahash": "0000c0f8f8c3e7f7",
+      "dhash": "ac8c90a0120f4ecf",
+      "error": null
+    }
+  },
+  "http://tencentplay.gztv.com/live/fazhi.m3u8?txSecret=3e84cd8eba844b5dc2150612295c7a52&txTime=18d578f4493": {
+    "0811": {
+      "phash": null,
+      "ahash": null,
+      "dhash": null,
+      "error": ""
+    }
+  },
+  "http://tpc.x3322.net:9901/tsfile/live/1010_1.m3u8": {
+    "0811": {
+      "phash": null,
+      "ahash": null,
+      "dhash": null,
+      "error": ""
+    }
+  },
+  "http://tv.drs.ganzitv.com:8100/channellive/gztv.flv": {
+    "0811": {
+      "phash": null,
+      "ahash": null,
+      "dhash": null,
+      "error": "[tcp @ 0x55ceee494540] Connection to tcp://tv.drs.ganzitv.com:8100 failed: Connection timed out\n[in#0 @ 0x55ceee4d2e00] Error opening input: Connection timed out\nError opening input file http://tv.drs.ganzitv.com:8100/channellive/gztv.flv.\nError opening input files: Connection timed out\n"
+    }
+  },
+  "http://tvfile.jjrm.org.cn/nmip-media/channellive/channel106282/playlist.m3u8?zsicd": {
+    "0811": {
+      "phash": null,
+      "ahash": null,
+      "dhash": null,
+      "error": "[tcp @ 0x5647d6de8540] Connection to tcp://tvfile.jjrm.org.cn:80 failed: Connection timed out\n[in#0 @ 0x5647d6e26e00] Error opening input: Connection timed out\nError opening input file http://tvfile.jjrm.org.cn/nmip-media/channellive/channel106282/playlist.m3u8?zsicd.\nError opening input files: Connection timed out\n"
+    }
+  },
+  "http://video.epaper.pybtv.cn:8080/live/rtmp_live_demo.flv": {
+    "0811": {
+      "phash": "d320b273e983dad4",
+      "ahash": "e1471438f82c7efe",
+      "dhash": "cf8da4d2b269cccc",
+      "error": null
+    }
+  },
+  "http://www.cdnstv.com:6398/hls/1112/index.m3u8": {
+    "0811": {
+      "phash": null,
+      "ahash": null,
+      "dhash": null,
+      "error": ""
+    }
+  },
+  "http://www.cdnstv.com:6398/hls/1113/index.m3u8": {
+    "0811": {
+      "phash": null,
+      "ahash": null,
+      "dhash": null,
+      "error": ""
+    }
+  },
+  "http://www.cdnstv.com:6398/hls/1114/index.m3u8": {
+    "0811": {
+      "phash": null,
+      "ahash": null,
+      "dhash": null,
+      "error": ""
+    }
+  },
+  "http://www.cdnstv.com:6398/hls/1116/index.m3u8": {
+    "0811": {
+      "phash": null,
+      "ahash": null,
+      "dhash": null,
+      "error": ""
+    }
+  },
+  "http://www.cdnstv.com:6398/hls/1118/index.m3u8": {
+    "0811": {
+      "phash": "9e4ae1a53535c378",
+      "ahash": "12783c15173f7f16",
+      "dhash": "aa99796d6c68b0ae",
+      "error": null
+    }
+  },
+  "http://www.cdnstv.com:6398/hls/1119/index.m3u8": {
+    "0811": {
+      "phash": null,
+      "ahash": null,
+      "dhash": null,
+      "error": ""
+    }
+  },
+  "http://yixing-tv-ori-hls.jstv.com/yixing-tv-ori/yixing_xw.m3u8": {
+    "0811": {
+      "phash": "8f78ad5330c73a85",
+      "ahash": "00101010003c7f7f",
+      "dhash": "303435a1c5e96257",
+      "error": null
+    }
+  },
+  "https://0472.org/hls/cgtn.m3u8": {
+    "0811": {
+      "phash": "cbcbc23270d8cf64",
+      "ahash": "fcf83818001e3fbf",
+      "dhash": "917162727478f868",
+      "error": null
+    }
+  },
+  "https://0472.org/hls/cgtna.m3u8": {
+    "0811": {
+      "phash": "85831c9cba2b2b9f",
+      "ahash": "7ffffff7ff000000",
+      "dhash": "f8f0cbebe4a62624",
+      "error": null
+    }
+  },
+  "https://0472.org/hls/cgtnd.m3u8": {
+    "0811": {
+      "phash": "f1c3f80e60fc0f25",
+      "ahash": "e0e0e0e0e080c0c0",
+      "dhash": "10080584ca401c9b",
+      "error": null
+    }
+  },
+  "https://0472.org/hls/cgtne.m3u8": {
+    "0811": {
+      "phash": "e9adb57292362487",
+      "ahash": "fffbf1f1f8c080ff",
+      "dhash": "92530321c90311e1",
+      "error": null
+    }
+  },
+  "https://0472.org/hls/cgtnf.m3u8": {
+    "0811": {
+      "phash": "fcd1866621d3c6ac",
+      "ahash": "fcd8d8c8c0909417",
+      "dhash": "909292982a2c6d64",
+      "error": null
+    }
+  },
+  "https://0472.org/hls/cgtnx.m3u8": {
+    "0811": {
+      "phash": "a4f29aac2d876897",
+      "ahash": "c7fff40303033f03",
+      "dhash": "3f0c89e67616d677",
+      "error": null
+    }
+  },
+  "https://alimov2.a.kwimgs.com/upic/2023/01/06/16/BMjAyMzAxMDYxNjMxMTNfNDAzMDAxOTlfOTI4OTY2ODAzNjlfMF8z_b_Bdee65c77f9e7b2120a185c919dad81d2.mp4": {
+    "0811": {
+      "phash": "8ccc33734d96194f",
+      "ahash": "cbdb1f3e100c0400",
+      "dhash": "b2b731b4a4bcece3",
+      "error": null
+    }
+  },
+  "https://alimov2.a.kwimgs.com/upic/2023/01/06/16/BMjAyMzAxMDYxNjMxMTRfNDAzMDAxOTlfOTI4OTY2ODE2MTBfMF8z_b_B11a778e34390a21de42d407e94f45b91.mp4": {
+    "0811": {
+      "phash": "956d287b79202f47",
+      "ahash": "8382361e3e2e3e0e",
+      "dhash": "3a2e6efe786cdcb8",
+      "error": null
+    }
+  },
+  "https://alimov2.a.kwimgs.com/upic/2023/01/13/20/BMjAyMzAxMTMyMDA5MjJfNDAzMDAxOTlfOTM0OTkwNDQ0MjlfMF8z_b_B8818807a00eed329a69fb494f405bd43.mp4": {
+    "0811": {
+      "phash": "eb8a314beb286745",
+      "ahash": "e9de7ffff8a00002",
+      "dhash": "cb38ea296144bb1e",
+      "error": null
+    }
+  },
+  "https://alimov2.a.kwimgs.com/upic/2023/01/13/20/BMjAyMzAxMTMyMDA5MjJfNDAzMDAxOTlfOTM0OTkwNDQ1NjNfMF8z_b_B4fea55408dca4471a68a963ae096be59.mp4": {
+    "0811": {
+      "phash": "f4a431b504cf1b5b",
+      "ahash": "42f6f8f8f8f8e000",
+      "dhash": "86a6212220000202",
+      "error": null
+    }
+  },
+  "https://alimov2.a.kwimgs.com/upic/2023/01/13/20/BMjAyMzAxMTMyMDA5MjJfNDAzMDAxOTlfOTM0OTkwNDQwNzVfMF8z_b_B811c0dec6b9a3d3074a18522c185010a.mp4": {
+    "0811": {
+      "phash": "953673b31f796028",
+      "ahash": "2626523a3e7fcc48",
+      "dhash": "4c6ca676709a9b91",
+      "error": null
+    }
+  },
+  "https://alimov2.a.kwimgs.com/upic/2023/01/13/20/BMjAyMzAxMTMyMDA5MjJfNDAzMDAxOTlfOTM0OTkwNDQyMDFfMF8z_b_B70592cb7c4054e9cabb675e849bbf4bd.mp4": {
+    "0811": {
+      "phash": "9d666b996699a542",
+      "ahash": "00009c1e1e1f1d00",
+      "dhash": "1421247c787abad9",
+      "error": null
+    }
+  },
+  "https://alimov2.a.kwimgs.com/upic/2023/01/13/20/BMjAyMzAxMTMyMDA5MjJfNDAzMDAxOTlfOTM0OTkwNDQyMzhfMF8z_b_B35ad7cc86aec8fc9e5ddfb31fc7bed63.mp4": {
+    "0811": {
+      "phash": "94907bc7c579c392",
+      "ahash": "003e7e7e7e7e0000",
+      "dhash": "d0ccf8cccccc32e0",
+      "error": null
+    }
+  },
+  "https://alimov2.a.kwimgs.com/upic/2023/01/13/20/BMjAyMzAxMTMyMDA5MjJfNDAzMDAxOTlfOTM0OTkwNDQyNzlfMF8z_b_Bbc3703fc331dc994c50859c19aad28ff.mp4": {
+    "0811": {
+      "phash": "9db1627e8bc9c0d8",
+      "ahash": "00067e7f3e181800",
+      "dhash": "fcfcb2f2f0b0b0e0",
+      "error": null
+    }
+  },
+  "https://alimov2.a.kwimgs.com/upic/2023/01/13/20/BMjAyMzAxMTMyMDA5MjJfNDAzMDAxOTlfOTM0OTkwNDQzMjNfMF8z_b_B00b069c7899976459ceeaa99353dfefe.mp4": {
+    "0811": {
+      "phash": "8913323557d266e7",
+      "ahash": "070f7d3c73073f3f",
+      "dhash": "9bbbf9f8c61ff3f3",
+      "error": null
+    }
+  },
+  "https://alimov2.a.kwimgs.com/upic/2023/01/13/20/BMjAyMzAxMTMyMDA5MjJfNDAzMDAxOTlfOTM0OTkwNDQzOTBfMF8z_b_B29a36a85e0277f6c2a1f033ef7c10708.mp4": {
+    "0811": {
+      "phash": "909a6f616f0f94d2",
+      "ahash": "000c3e3e7e7f0000",
+      "dhash": "f0f8f8f8e8b6f0f0",
+      "error": null
+    }
+  },
+  "https://alimov2.a.kwimgs.com/upic/2023/01/13/21/BMjAyMzAxMTMyMTE4MzRfNDAzMDAxOTlfOTM1MDY4ODIxMTNfMF8z_b_Bdddf4e7ef0ff6cfd477857bb40e78419.mp4": {
+    "0811": {
+      "phash": "d42c539e639c6553",
+      "ahash": "200ed252441e5e68",
+      "dhash": "4cdc96a69c7494c9",
+      "error": null
+    }
+  },
+  "https://alimov2.a.kwimgs.com/upic/2023/01/13/21/BMjAyMzAxMTMyMTE4MzRfNDAzMDAxOTlfOTM1MDY4ODIxNDdfMF8z_b_Ba6271d10b7e6cfae83759033a091f257.mp4": {
+    "0811": {
+      "phash": "8962708fc3cd63f2",
+      "ahash": "600018383d3d1f1c",
+      "dhash": "cc8ef2736973b2b8",
+      "error": null
+    }
+  },
+  "https://alimov2.a.kwimgs.com/upic/2023/01/13/21/BMjAyMzAxMTMyMTE4MzRfNDAzMDAxOTlfOTM1MDY4ODIxOTVfMF8z_b_B86c4430b82ff5a7f4e8132f6ee558536.mp4": {
+    "0811": {
+      "phash": "c08b9d3cb2c32e9d",
+      "ahash": "747070e4e4f07064",
+      "dhash": "c8c6c3c9aca7c2c8",
+      "error": null
+    }
+  },
+  "https://alimov2.a.kwimgs.com/upic/2023/01/13/22/BMjAyMzAxMTMyMjEwMDNfNDAzMDAxOTlfOTM1MTIzMzYwODJfMF8z_b_B647d10e431b4cc5e48e6c77347d69021.mp4": {
+    "0811": {
+      "phash": "c0693f049f3f48bc",
+      "ahash": "00e0f0fcfe78061e",
+      "dhash": "d48aabcaa8a0eca8",
+      "error": null
+    }
+  },
+  "https://alimov2.a.kwimgs.com/upic/2023/01/13/22/BMjAyMzAxMTMyMjEwMDNfNDAzMDAxOTlfOTM1MTIzMzYxMjNfMF8z_b_B3dde97f36273f04403d4dc5eec611a35.mp4": {
+    "0811": {
+      "phash": "81e41fc3789f236c",
+      "ahash": "7ffff7ff7f3f1f0f",
+      "dhash": "b2a2a6be98c272ba",
+      "error": null
+    }
+  },
+  "https://alimov2.a.kwimgs.com/upic/2023/01/13/22/BMjAyMzAxMTMyMjEwMDNfNDAzMDAxOTlfOTM1MTIzMzYxNTJfMF8z_b_Bd841eae10ab1c9955ef55fbedfae6c45.mp4": {
+    "0811": {
+      "phash": "dcdc4cc82533f2d2",
+      "ahash": "f8f8fe8602e00000",
+      "dhash": "b0b0b81e8e83e0b0",
+      "error": null
+    }
+  },
+  "https://alimov2.a.kwimgs.com/upic/2023/01/14/23/BMjAyMzAxMTQyMzQxNDdfNDAzMDAxOTlfOTM2MTU0MTk1NDFfMF8z_b_B182749d2cd2ea9323639254af385f24b.mp4": {
+    "0811": {
+      "phash": "9e8e791967642e26",
+      "ahash": "183c3c3c3c3c1800",
+      "dhash": "f0f0e0e0e8f0f0f0",
+      "error": null
+    }
+  },
+  "https://english-livetx.cgtn.com/hls/yypdjlctzb_hd.m3u8": {
+    "0811": {
+      "phash": "cec66b682fe82c23",
+      "ahash": "703c3e3e36121109",
+      "dhash": "e1e4e464a4a4e5eb",
+      "error": null
+    }
+  },
+  "https://event.pull.hebtv.com:443/live/live101.m3u8": {
+    "0811": {
+      "phash": "9b1b64e4929b1bd1",
+      "ahash": "0000080cffffffff",
+      "dhash": "797279793498e060",
+      "error": null
+    }
+  },
+  "https://gcwbndali.v.myalicdn.com/gcwbnd/ipanda1000_2/index.m3u8": {
+    "0811": {
+      "phash": "bcc933934969cd8c",
+      "ahash": "4c97bb1b9e0f0703",
+      "dhash": "d82c26b6b42c0e26",
+      "error": null
+    }
+  },
+  "https://gdcucc.v1.mk/gdcucc/brtv8k.m3u8": {
+    "0811": {
+      "phash": null,
+      "ahash": null,
+      "dhash": null,
+      "error": "[in#0 @ 0x56126b982e00] Error opening input: Invalid data found when processing input\nError opening input file https://gdcucc.v1.mk/gdcucc/brtv8k.m3u8.\nError opening input files: Invalid data found when processing input\n"
+    }
+  },
+  "https://hdl-vip-ws.qf.56.com/live/lc_11730.flv": {
+    "0811": {
+      "phash": "c7753856be111e51",
+      "ahash": "206060727070717b",
+      "dhash": "cec6c6c6c6c4c3c3",
+      "error": null
+    }
+  },
+  "https://hls.cntv.lxdns.com/asp/hls/2000/0303000a/3/default/f0a47e155d32450daa1d36a04fd7d262/2000.m3u8": {
+    "0811": {
+      "phash": "81c73e609f37601f",
+      "ahash": "ff7f7e7e7e400000",
+      "dhash": "f0d2d0f0d08edef0",
+      "error": null
+    }
+  },
+  "https://jwcdnqx.hebyun.com.cn/live/luquaner/1500k/tzwj_video.m3u8": {
+    "0811": {
+      "phash": "f5d22bb4c18f84cc",
+      "ahash": "efc4f4fcf6868301",
+      "dhash": "d8989488a6242622",
+      "error": null
+    }
+  },
+  "https://jwcdnqx.hebyun.com.cn/live/xtcsshpd/1500k/tzwj_video.m3u8": {
+    "0811": {
+      "phash": "fcf033330fdc608c",
+      "ahash": "e4c2dad8d0809c18",
+      "dhash": "9c9cb62635153130",
+      "error": null
+    }
+  },
+  "https://live.ottiptv.cc/huya/11342386": {
+    "0811": {
+      "phash": "f763009c5e187bb1",
+      "ahash": "00e0e3e7e7d70e00",
+      "dhash": "e0425a5c0c2634b6",
+      "error": null
+    }
+  },
+  "https://live.ottiptv.cc/huya/11342390": {
+    "0811": {
+      "phash": "e6d5b18e0c8e3b19",
+      "ahash": "fffef4b030301000",
+      "dhash": "240404242465a52d",
+      "error": null
+    }
+  },
+  "https://live.ottiptv.cc/huya/11342414": {
+    "0811": {
+      "phash": "cef621218ede7960",
+      "ahash": "0000f4bf3480a000",
+      "dhash": "28d22868e4524230",
+      "error": null
+    }
+  },
+  "https://live.ottiptv.cc/huya/11342424": {
+    "0811": {
+      "phash": "b04f057af88d8f38",
+      "ahash": "002427ffc5c74747",
+      "dhash": "d5cc6eaf898d9e96",
+      "error": null
+    }
+  },
+  "https://live.ottiptv.cc/huya/11342427": {
+    "0811": {
+      "phash": "cc3332c9d9364c9d",
+      "ahash": "00001030b8383e3e",
+      "dhash": "08a4642373716464",
+      "error": null
+    }
+  },
+  "https://live.ottiptv.cc/huya/11342428": {
+    "0811": {
+      "phash": null,
+      "ahash": null,
+      "dhash": null,
+      "error": "[in#0 @ 0x557491bdfe00] Error opening input: Server returned 5XX Server Error reply\nError opening input file https://live.ottiptv.cc/huya/11342428.\nError opening input files: Server returned 5XX Server Error reply\n"
+    }
+  },
+  "https://live.ottiptv.cc/huya/11352876": {
+    "0811": {
+      "phash": null,
+      "ahash": null,
+      "dhash": null,
+      "error": "[in#0 @ 0x5599f66f1e00] Error opening input: End of file\nError opening input file https://live.ottiptv.cc/huya/11352876.\nError opening input files: End of file\n"
+    }
+  },
+  "https://live.ottiptv.cc/huya/11352941": {
+    "0811": {
+      "phash": "ddd9333626a62623",
+      "ahash": "0098f8fa383c3c00",
+      "dhash": "10323332727179b2",
+      "error": null
+    }
+  },
+  "https://live.ottiptv.cc/huya/11352962": {
+    "0811": {
+      "phash": null,
+      "ahash": null,
+      "dhash": null,
+      "error": "[in#0 @ 0x55ce18607e00] Error opening input: Server returned 403 Forbidden (access denied)\nError opening input file https://live.ottiptv.cc/huya/11352962.\nError opening input files: Server returned 403 Forbidden (access denied)\n"
+    }
+  },
+  "https://live.ottiptv.cc/huya/11601986": {
+    "0811": {
+      "phash": null,
+      "ahash": null,
+      "dhash": null,
+      "error": "[in#0 @ 0x55c348e49e00] Error opening input: Server returned 5XX Server Error reply\nError opening input file https://live.ottiptv.cc/huya/11601986.\nError opening input files: Server returned 5XX Server Error reply\n"
+    }
+  },
+  "https://live.ottiptv.cc/huya/11602058": {
+    "0811": {
+      "phash": null,
+      "ahash": null,
+      "dhash": null,
+      "error": "[in#0 @ 0x55fcf2c63e00] Error opening input: Server returned 403 Forbidden (access denied)\nError opening input file https://live.ottiptv.cc/huya/11602058.\nError opening input files: Server returned 403 Forbidden (access denied)\n"
+    }
+  },
+  "https://live.ottiptv.cc/huya/21059574": {
+    "0811": {
+      "phash": null,
+      "ahash": null,
+      "dhash": null,
+      "error": "[tcp @ 0x55be0901a000] Connection to tcp://live.ottiptv.cc:443 failed: Connection timed out\n[in#0 @ 0x55be09016e00] Error opening input: Connection timed out\nError opening input file https://live.ottiptv.cc/huya/21059574.\nError opening input files: Connection timed out\n"
+    }
+  },
+  "https://live.ottiptv.cc/huya/21059579": {
+    "0811": {
+      "phash": null,
+      "ahash": null,
+      "dhash": null,
+      "error": "[https @ 0x557351e35540] Stream ends prematurely at 29130, should be 18446744073709551615\n    Last message repeated 1 times\n[in#0/flv @ 0x557351e73e00] Error during demuxing: Input/output error\n[in#0/flv @ 0x557351e73e00] Error retrieving a packet from demuxer: Input/output error\n"
+    }
+  },
+  "https://live.ottiptv.cc/huya/21059585": {
+    "0811": {
+      "phash": "92b649696c453e9b",
+      "ahash": "002efef6f6ec6c00",
+      "dhash": "81cd2d2c2dddc8a2",
+      "error": null
+    }
+  },
+  "https://live.ottiptv.cc/huya/23749096": {
+    "0811": {
+      "phash": "ba762b354cacd489",
+      "ahash": "8185ddd4dc9fdffb",
+      "dhash": "2f591925303dbbe3",
+      "error": null
+    }
+  },
+  "https://live.ottiptv.cc/huya/23865080": {
+    "0811": {
+      "phash": "8a0ada5e7db5a581",
+      "ahash": "3c3c7f830083ffff",
+      "dhash": "79e9d90fe10f8400",
+      "error": null
+    }
+  },
+  "https://live.ottiptv.cc/huya/30080229": {
+    "0811": {
+      "phash": "ce113fae50c403f7",
+      "ahash": "000000ffffffff00",
+      "dhash": "843bd9a5a465652c",
+      "error": null
+    }
+  },
+  "https://liveout.btzx.com.cn/62ds9e/6o77s4.m3u8?zxinjd": {
+    "0811": {
+      "phash": null,
+      "ahash": null,
+      "dhash": null,
+      "error": "[out#0/image2 @ 0x55fc12968080] Output file does not contain any stream\nError opening output file pipe:1.\nError opening output files: Invalid argument\n"
+    }
+  },
+  "https://newcntv.qcloudcdn.com/asp/hls/2000/0303000a/3/default/d2454bbb542d4613a9db478dab2addfd/2000.m3u8": {
+    "0811": {
+      "phash": "87d478639f3f4218",
+      "ahash": "ffff7f3f3f200000",
+      "dhash": "e890d06060cdaaf8",
+      "error": null
+    }
+  },
+  "https://stream.ads.ottera.tv/playlist.m3u8?network_id=595": {
+    "0811": {
+      "phash": "d1c32e3463db1566",
+      "ahash": "007f7e78425e5c00",
+      "dhash": "d9f4d8d896b6b8a9",
+      "error": null
+    }
+  },
+  "https://stream.ads.ottera.tv/playlist.m3u8?network_id=743": {
+    "0811": {
+      "phash": "8cc43932f27b762a",
+      "ahash": "db7b327e3d340901",
+      "dhash": "b6f6e6e4e5e9f373",
+      "error": null
+    }
+  },
+  "https://stream.sun0769.com/dgrtv1/mp4tv1_800/index.m3u8": {
+    "0811": {
+      "phash": "9eae8e01c16ebe45",
+      "ahash": "ff1f9ff0780000ff",
+      "dhash": "a77b2501c0a82322",
+      "error": null
+    }
+  },
+  "https://stream.sun0769.com/dgrtv1/mp4tv2_800/index.m3u8": {
+    "0811": {
+      "phash": "dc29f866a27e815c",
+      "ahash": "0018180010189cff",
+      "dhash": "2bb0f0f0e0e03434",
+      "error": null
+    }
+  },
+  "https://stream1.freetv.fun/360deg-podmoskov-e-1.m3u8": {
+    "0811": {
+      "phash": "f66c09ed49995a0d",
+      "ahash": "f0e0e4e4e4e4e664",
+      "dhash": "c7c48c8c8c8c8c88",
+      "error": null
+    }
+  },
+  "https://stream1.freetv.fun/4knan-guo-du-shi-1.m3u8": {
+    "0811": {
+      "phash": null,
+      "ahash": null,
+      "dhash": null,
+      "error": ""
+    }
+  },
+  "https://stream1.freetv.fun/4tv-news-1.m3u8": {
+    "0811": {
+      "phash": null,
+      "ahash": null,
+      "dhash": null,
+      "error": ""
+    }
+  },
+  "https://stream1.freetv.fun/aflam-1.m3u8": {
+    "0811": {
+      "phash": "eb9094301f6e734e",
+      "ahash": "7ffff1e161e1f131",
+      "dhash": "c5cac3434383c363",
+      "error": null
+    }
+  },
+  "https://stream1.freetv.fun/ai-qi-yi-6.ctv": {
+    "0811": {
+      "phash": "d0ad928ad1e86f66",
+      "ahash": "ff0f000800007cfe",
+      "dhash": "f8fc129398b1a98c",
+      "error": null
+    }
+  },
+  "https://stream1.freetv.fun/al-dafrah-tv-1.m3u8": {
+    "0811": {
+      "phash": "c3e721193c2ddac6",
+      "ahash": "00f0f0c00c58703c",
+      "dhash": "5bc3c00338d0d2e9",
+      "error": null
+    }
+  },
+  "https://stream1.freetv.fun/al-taghier-1.m3u8": {
+    "0811": {
+      "phash": "d196666ce923e0cd",
+      "ahash": "fcdefe4e4a400040",
+      "dhash": "243cdcd892928f91",
+      "error": null
+    }
+  },
+  "https://stream1.freetv.fun/altv-5.m3u8": {
+    "0811": {
+      "phash": "e5cd9548622dd695",
+      "ahash": "f0faf6e0e0c0c3c7",
+      "dhash": "e646240b0503171c",
+      "error": null
+    }
+  },
+  "https://stream1.freetv.fun/altv-6.m3u8": {
+    "0811": {
+      "phash": "ad9bd30659b88c0f",
+      "ahash": "2fe7dbdb0013f3e3",
+      "dhash": "5e57573636b65656",
+      "error": null
+    }
+  },
+  "https://stream1.freetv.fun/amedia-1-5.m3u8": {
+    "0811": {
+      "phash": "bf8aa552a3aba921",
+      "ahash": "bfbf9f8100000002",
+      "dhash": "6b6e3b2b1d1d162e",
+      "error": null
+    }
+  },
+  "https://stream1.freetv.fun/amedia-2-4.m3u8": {
+    "0811": {
+      "phash": "e1a0e61fe883fc07",
+      "ahash": "f3f3e2f872202060",
+      "dhash": "87868696d646c8c0",
+      "error": null
+    }
+  },
+  "https://stream1.freetv.fun/an-hui-wei-shi--8m1080-1.m3u8": {
+    "0811": {
+      "phash": "9c66394c33e66d19",
+      "ahash": "00183c3c18181818",
+      "dhash": "ccf0f0c8f0b2b2b2",
+      "error": null
+    }
+  },
+  "https://stream1.freetv.fun/an-hui-wei-shi--8m1080-2.m3u8": {
+    "0811": {
+      "phash": "b68a5d7969954385",
+      "ahash": "01953737d5069706",
+      "dhash": "2325ededa59d242c",
+      "error": null
+    }
+  },
+  "https://stream1.freetv.fun/angel-tv-africa-1.m3u8": {
+    "0811": {
+      "phash": null,
+      "ahash": null,
+      "dhash": null,
+      "error": ""
+    }
+  },
+  "https://stream1.freetv.fun/ao-men-macau-1.m3u8": {
+    "0811": {
+      "phash": "8ce3936333338d6a",
+      "ahash": "8f1b1b121a1a1018",
+      "dhash": "1a323236b6363630",
+      "error": null
+    }
+  },
+  "https://stream1.freetv.fun/ao-men-macau-2.m3u8": {
+    "0811": {
+      "phash": "9de9a663367a8468",
+      "ahash": "831b1b1b1a1a183e",
+      "dhash": "0a32323236723274",
+      "error": null
+    }
+  },
+  "https://stream1.freetv.fun/ao-men-ti-yu-1.m3u8": {
+    "0811": {
+      "phash": "8b2ee0279a9fb164",
+      "ahash": "0b030b1d070f3d7f",
+      "dhash": "f3f3f379fbfaf199",
+      "error": null
+    }
+  },
+  "https://stream1.freetv.fun/ao-men-zi-xun-2.m3u8": {
+    "0811": {
+      "phash": "cad815ad27b47782",
+      "ahash": "f0f8f8f9f9f93100",
+      "dhash": "e2f111119333d7c9",
+      "error": null
+    }
+  },
+  "https://stream1.freetv.fun/ao-men-zong-yi-1.m3u8": {
+    "0811": {
+      "phash": "a39c99c58be1d364",
+      "ahash": "ffff0000e0a00001",
+      "dhash": "59369cc54d460e49",
+      "error": null
+    }
+  },
+  "https://stream1.freetv.fun/ao-shi-ao-men-1.m3u8": {
+    "0811": {
+      "phash": "df9b7a02c2e2643c",
+      "ahash": "adbfffff1c000080",
+      "dhash": "69587460704c2921",
+      "error": null
+    }
+  },
+  "https://stream1.freetv.fun/ao-shi-ao-men-7.m3u8": {
+    "0811": {
+      "phash": "958f6f3f9a234301",
+      "ahash": "3fff7e3f1e000000",
+      "dhash": "7978c4f8b454cee4",
+      "error": null
+    }
+  },
+  "https://stream1.freetv.fun/ao-shi-pu-wen-1.m3u8": {
+    "0811": {
+      "phash": "a92df027d81fb261",
+      "ahash": "1f1b0b1b03030dff",
+      "dhash": "f3f3fbf3f3effb99",
+      "error": null
+    }
+  },
+  "https://stream1.freetv.fun/ao-shi-pu-wen-3.m3u8": {
+    "0811": {
+      "phash": "a92df027d81fb261",
+      "ahash": "1f1b0b1b03030dff",
+      "dhash": "f3f3fbf3f3effb99",
+      "error": null
+    }
+  },
+  "https://stream1.freetv.fun/ao-shi-ti-yu-2.m3u8": {
+    "0811": {
+      "phash": "b10dc93f3f4a36c0",
+      "ahash": "000076c7c3c7ffff",
+      "dhash": "2a8a8c8c8e0e8e9a",
+      "error": null
+    }
+  },
+  "https://stream1.freetv.fun/ao-shi-zi-xun-1.m3u8": {
+    "0811": {
+      "phash": "b1fd4f12b0954f84",
+      "ahash": "fbebffcf45000000",
+      "dhash": "5613169a9d9dd6ef",
+      "error": null
+    }
+  },
+  "https://stream1.freetv.fun/ao-shi-zong-yi-2.m3u8": {
+    "0811": {
+      "phash": "db9688663609d2e7",
+      "ahash": "ffffff0000000000",
+      "dhash": "dd31f8184ee0d333",
+      "error": null
+    }
+  },
+  "https://stream1.freetv.fun/atv-10.m3u8": {
+    "0811": {
+      "phash": "ff94426788992367",
+      "ahash": "fefedfdf83808080",
+      "dhash": "30143430074b1109",
+      "error": null
+    }
+  },
+  "https://stream1.freetv.fun/atv-12.m3u8": {
+    "0811": {
+      "phash": "ff94426788992367",
+      "ahash": "fefedfdfc3808080",
+      "dhash": "30143432074b110b",
+      "error": null
+    }
+  },
+  "https://stream1.freetv.fun/atv-4.ctv": {
+    "0811": {
+      "phash": "9c66394c33e66d19",
+      "ahash": "00183c3c18181818",
+      "dhash": "ccf0f0c8f0b2b2b2",
+      "error": null
+    }
+  },
+  "https://stream1.freetv.fun/atv-5.m3u8": {
+    "0811": {
+      "phash": null,
+      "ahash": null,
+      "dhash": null,
+      "error": "[in#0 @ 0x555918d50e00] Error opening input: Server returned 403 Forbidden (access denied)\nError opening input file https://stream1.freetv.fun/atv-5.m3u8.\nError opening input files: Server returned 403 Forbidden (access denied)\n"
+    }
+  },
+  "https://stream1.freetv.fun/atv-7.m3u8": {
+    "0811": {
+      "phash": "c139363dc1cb99c6",
+      "ahash": "00017c7878f8f0f8",
+      "dhash": "baefb0c2c2e2e0e0",
+      "error": null
+    }
+  },
+  "https://stream1.freetv.fun/avto-plius-1.m3u8": {
+    "0811": {
+      "phash": "8cece492ab3b131b",
+      "ahash": "fffb00930c0c0000",
+      "dhash": "f4f6982778fc6ace",
+      "error": null
+    }
+  },
+  "https://stream1.freetv.fun/avto-plius-2.m3u8": {
+    "0811": {
+      "phash": "94ece69a9265135b",
+      "ahash": "ffffc0120c0c0000",
+      "dhash": "f4f694a6b8f8e2c8",
+      "error": null
+    }
+  },
+  "https://stream1.freetv.fun/bai-cheng-xin-wen-zong-he-2.m3u8": {
+    "0811": {
+      "phash": "cbabe8f072274a89",
+      "ahash": "f93939286c7a2a30",
+      "dhash": "8bdbdbc9d8dacae0",
+      "error": null
+    }
+  },
+  "https://stream1.freetv.fun/bai-cheng-xin-wen-zong-he-3.m3u8": {
+    "0811": {
+      "phash": "c98b8a2db9e93513",
+      "ahash": "393938786a323838",
+      "dhash": "73f1d1d2dae2e1f1",
+      "error": null
+    }
+  },
+  "https://stream1.freetv.fun/bai-shan-xin-wen-zong-he-2.m3u8": {
+    "0811": {
+      "phash": "a4271b434f68d7d8",
+      "ahash": "070707037767071f",
+      "dhash": "dffeb6e7acccbf72",
+      "error": null
+    }
+  },
+  "https://stream1.freetv.fun/band-news-1.m3u8": {
+    "0811": {
+      "phash": "bbffe0c0e2c82ac1",
+      "ahash": "f18e888e6e0f7f03",
+      "dhash": "055251555aded7df",
+      "error": null
+    }
+  },
+  "https://stream1.freetv.fun/band-news-2.m3u8": {
+    "0811": {
+      "phash": "abffe0c0eac82ac1",
+      "ahash": "f18a888a6a073f2f",
+      "dhash": "055255555aded7df",
+      "error": null
+    }
+  },
+  "https://stream1.freetv.fun/bei-jing-wei-shi--8m1080-1.m3u8": {
+    "0811": {
+      "phash": "9c66394c33e66d19",
+      "ahash": "00183c3c18181818",
+      "dhash": "ccf0f0c8f0b2b2b2",
+      "error": null
+    }
+  },
+  "https://stream1.freetv.fun/bei-jing-wei-shi--8m1080-2.m3u8": {
+    "0811": {
+      "phash": "9c66394c33e66d19",
+      "ahash": "00183c3c18181818",
+      "dhash": "ccf0f0c8f0b2b2b2",
+      "error": null
+    }
+  },
+  "https://stream1.freetv.fun/bei-jing-wei-shi--8m1080-3.m3u8": {
+    "0811": {
+      "phash": "9495f9e04ecc4f8c",
+      "ahash": "dece9e3e04c0c080",
+      "dhash": "98183ca8acaaaaa9",
+      "error": null
+    }
+  },
+  "https://stream1.freetv.fun/bei-jing-wei-shi--8m1080-4.m3u8": {
+    "0811": {
+      "phash": "d597b9e04ec84e8c",
+      "ahash": "decebe3e04c0c080",
+      "dhash": "98187ca8ac8ca839",
+      "error": null
+    }
+  },
+  "https://stream1.freetv.fun/belarus--1-2.m3u8": {
+    "0811": {
+      "phash": "fea5a5a5a542525a",
+      "ahash": "f0f0f0f0f0f0f0f0",
+      "dhash": "0200000000000000",
+      "error": null
+    }
+  },
+  "https://stream1.freetv.fun/belarus--2-2.m3u8": {
+    "0811": {
+      "phash": "feada5a5a5a05252",
+      "ahash": "f0f0f0f0f0f0f0f0",
+      "dhash": "0200000000000000",
+      "error": null
+    }
+  },
+  "https://stream1.freetv.fun/belarus--24-3.m3u8": {
+    "0811": {
+      "phash": "e3b4dace60966b14",
+      "ahash": "ffe3030363f97cc0",
+      "dhash": "e5c69ace824b5941",
+      "error": null
+    }
+  },
+  "https://stream1.freetv.fun/belarus--24-4.m3u8": {
+    "0811": {
+      "phash": "c0efa9d235642bd8",
+      "ahash": "e1f970267c7c7c1f",
+      "dhash": "c3d3c2ccfcc8c0d2",
+      "error": null
+    }
+  },
+  "https://stream1.freetv.fun/belarus--3-2.m3u8": {
+    "0811": {
+      "phash": "feadadada5005252",
+      "ahash": "f0f0f0f0f0f0f0f0",
+      "dhash": "0200000000000000",
+      "error": null
+    }
+  },
+  "https://stream1.freetv.fun/belarus--5-1.m3u8": {
+    "0811": {
+      "phash": "feada5a5a5035252",
+      "ahash": "f0f0f0f0f0f0f0f0",
+      "dhash": "0200000000000000",
+      "error": null
+    }
+  },
+  "https://stream1.freetv.fun/ch-ng-ao-shi-ao-men-1.m3u8": {
+    "0811": {
+      "phash": "df9b7a02c2e2643c",
+      "ahash": "adbfffff1c000080",
+      "dhash": "69587460704c2921",
+      "error": null
+    }
+  },
+  "https://stream1.freetv.fun/ch-ng-ao-shi-ao-men-2.m3u8": {
+    "0811": {
+      "phash": "bfd803e7d12e5890",
+      "ahash": "ffdf9f9f9f830304",
+      "dhash": "7931303730635f58",
+      "error": null
+    }
+  },
+  "https://stream1.freetv.fun/ch-ng-ao-shi-pu-wen-1.m3u8": {
+    "0811": {
+      "phash": "a92df027d81fb261",
+      "ahash": "1f1b0b1b03030dff",
+      "dhash": "f3f3fbf3f3effb99",
+      "error": null
+    }
+  },
+  "https://stream1.freetv.fun/ch-ng-ao-shi-ti-yu-1.m3u8": {
+    "0811": {
+      "phash": "8b2ee0279a9fb164",
+      "ahash": "0b030b1d070f3d7f",
+      "dhash": "f3f3f379fbfaf199",
+      "error": null
+    }
+  },
+  "https://stream1.freetv.fun/ch-ng-ao-shi-ti-yu-2.m3u8": {
+    "0811": {
+      "phash": "8b2ee0279a9fb164",
+      "ahash": "0b030b1d070f3d7f",
+      "dhash": "f3f3f379fbfaf199",
+      "error": null
+    }
+  },
+  "https://stream1.freetv.fun/ch-ng-ao-shi-zi-xun-1.m3u8": {
+    "0811": {
+      "phash": "8cd5b9aa63253f82",
+      "ahash": "ffdf060000011f7b",
+      "dhash": "36baeec2adb7b7cb",
+      "error": null
+    }
+  },
+  "https://stream1.freetv.fun/ch-ng-black-news-channel-1.m3u8": {
+    "0811": {
+      "phash": "dadc40b3cd82e723",
+      "ahash": "fcdc9c9c8c8c0400",
+      "dhash": "3030383838181961",
+      "error": null
+    }
+  },
+  "https://stream1.freetv.fun/ch-ng-vevo--70s-1.m3u8": {
+    "0811": {
+      "phash": "c7cb2d9e1d4cc0e1",
+      "ahash": "3838783c3c3c3010",
+      "dhash": "e2e2e0e0e0e4e4d6",
+      "error": null
+    }
+  },
+  "https://stream1.freetv.fun/ch-ng-vevo--80s-1.m3u8": {
+    "0811": {
+      "phash": "c462b1966b9d366c",
+      "ahash": "60703038343e3e7e",
+      "dhash": "c8c4e4e8e8ecf4f2",
+      "error": null
+    }
+  },
+  "https://stream1.freetv.fun/ch-ng-vevo--90s-1.m3u8": {
+    "0811": {
+      "phash": "c09d3f6c0fd30e61",
+      "ahash": "0a4e7e7c78706020",
+      "dhash": "9a989c9892a488c9",
+      "error": null
+    }
+  },
+  "https://stream1.freetv.fun/ch-ng-vevo-2k-1.m3u8": {
+    "0811": {
+      "phash": "c495943d3fe18599",
+      "ahash": "063e7e7c2070783c",
+      "dhash": "ecece0c8e8d4f0e9",
+      "error": null
+    }
+  },
+  "https://stream1.freetv.fun/ch-ng-vevo-country-1.m3u8": {
+    "0811": {
+      "phash": "8547f8f84758bca2",
+      "ahash": "6000000027ffffff",
+      "dhash": "c2c2c6cc4db6b4b5",
+      "error": null
+    }
+  },
+  "https://stream1.freetv.fun/ch-ng-vevo-pop-1.m3u8": {
+    "0811": {
+      "phash": "d4d02bd46aca3a3b",
+      "ahash": "007e7e7e7e7e7c00",
+      "dhash": "f0d4dcc4dcd4e8e0",
+      "error": null
+    }
+  },
+  "https://stream1.freetv.fun/ch-ng-vevo-retro-rock-1.m3u8": {
+    "0811": {
+      "phash": "c7c838c4e7cf3838",
+      "ahash": "7c183cbe3e3e1c00",
+      "dhash": "d4d0f068e8e4e09d",
+      "error": null
+    }
+  },
+  "https://stream1.freetv.fun/ch-ng-world-poker-tour-1.m3u8": {
+    "0811": {
+      "phash": "d7b3e14c58c71866",
+      "ahash": "ff2f1e041030f0fc",
+      "dhash": "484e6c6c25e34648",
+      "error": null
+    }
+  },
+  "https://stream1.freetv.fun/chang-chun-zong-he-3.m3u8": {
+    "0811": {
+      "phash": "c17f7cc032c2338f",
+      "ahash": "00c0effe7fff7e00",
+      "dhash": "80325bccf0d2e470",
+      "error": null
+    }
+  },
+  "https://stream1.freetv.fun/chang-chun-zong-he-4.m3u8": {
+    "0811": {
+      "phash": "b5fc1e2a590743d1",
+      "ahash": "00ffffe3e0671f00",
+      "dhash": "0e34ce8e8a4feeec",
+      "error": null
+    }
+  },
+  "https://stream1.freetv.fun/chang-shan-xin-wen-zong-he-1.m3u8": {
+    "0811": {
+      "phash": "ac4d316a0b1dd39b",
+      "ahash": "80d29e91f8f49f6f",
+      "dhash": "33b63237252534ce",
+      "error": null
+    }
+  },
+  "https://stream1.freetv.fun/channel-news-asia-2.m3u8": {
+    "0811": {
+      "phash": "890dbe52e3038e7d",
+      "ahash": "13120b69480c00ff",
+      "dhash": "36b6f3d393d95919",
+      "error": null
+    }
+  },
+  "https://stream1.freetv.fun/channelnewsasia-1.m3u8": {
+    "0811": {
+      "phash": "9780ff10e33e8374",
+      "ahash": "d7ffffff040000ff",
+      "dhash": "2f6cecd49cfa344e",
+      "error": null
+    }
+  },
+  "https://stream1.freetv.fun/cheng-de-xin-wen-zong-he-11.m3u8": {
+    "0811": {
+      "phash": "89706d1f1ed23ec1",
+      "ahash": "0048e07e3f1d7d3b",
+      "dhash": "369293acfbfbd3f2",
+      "error": null
+    }
+  },
+  "https://stream1.freetv.fun/cheng-du-du-shi-2.m3u8": {
+    "0811": {
+      "phash": "9c66394c33e66d19",
+      "ahash": "00183c3c18181818",
+      "dhash": "ccf0f0c8f0b2b2b2",
+      "error": null
+    }
+  },
+  "https://stream1.freetv.fun/cheng-du-gong-gong-4.m3u8": {
+    "0811": {
+      "phash": "9c66394c33e66d19",
+      "ahash": "00183c3c18181818",
+      "dhash": "ccf0f0c8f0b2b2b2",
+      "error": null
+    }
+  },
+  "https://stream1.freetv.fun/cheng-du-jian-yang-xin-wen-zong-he-1.m3u8": {
+    "0811": {
+      "phash": "c0c2362cd93b3f8d",
+      "ahash": "04747cfcfa100000",
+      "dhash": "25e5e99ab22616c4",
+      "error": null
+    }
+  },
+  "https://stream1.freetv.fun/cheng-du-jian-yang-xin-wen-zong-he-2.ctv": {
+    "0811": {
+      "phash": "c8c2663c193b37ce",
+      "ahash": "84f47c1818100000",
+      "dhash": "25e5e91ab2a656c4",
+      "error": null
+    }
+  },
+  "https://stream1.freetv.fun/cheng-du-jing-ji-2.m3u8": {
+    "0811": {
+      "phash": "9c66394c33e66d19",
+      "ahash": "00183c3c18181818",
+      "dhash": "ccf0f0c8f0b2b2b2",
+      "error": null
+    }
+  },
+  "https://stream1.freetv.fun/cheng-du-xin-wen-2.m3u8": {
+    "0811": {
+      "phash": "9c66394c33e66d19",
+      "ahash": "00183c3c18181818",
+      "dhash": "ccf0f0c8f0b2b2b2",
+      "error": null
+    }
+  },
+  "https://stream1.freetv.fun/cheng-du-ying-shi-3.m3u8": {
+    "0811": {
+      "phash": "9c66394c33e66d19",
+      "ahash": "00183c3c18181818",
+      "dhash": "ccf0f0c8f0b2b2b2",
+      "error": null
+    }
+  },
+  "https://stream1.freetv.fun/chi-la-ameng-1.m3u8": {
+    "0811": {
+      "phash": "9931b64a576c5596",
+      "ahash": "0c0e0e086c18ffff",
+      "dhash": "d8989a12d839b3dc",
+      "error": null
+    }
+  },
+  "https://stream1.freetv.fun/cinema-1.m3u8": {
+    "0811": {
+      "phash": "99b8536764cd64c3",
+      "ahash": "004f5f5b535b3800",
+      "dhash": "129bbbb2b7bada52",
+      "error": null
+    }
+  },
+  "https://stream1.freetv.fun/cinema-4.m3u8": {
+    "0811": {
+      "phash": "9392786d66e66a64",
+      "ahash": "000e2e6e3e382800",
+      "dhash": "9b98d8ccc4c8e8ce",
+      "error": null
+    }
+  },
+  "https://stream1.freetv.fun/cnews-4.m3u8": {
+    "0811": {
+      "phash": "f0cb0bf569d820c7",
+      "ahash": "c8f4f5f9e0c2fe00",
+      "dhash": "19698f130a06148b",
+      "error": null
+    }
+  },
+  "https://stream1.freetv.fun/cnews-6.m3u8": {
+    "0811": {
+      "phash": "e5c72b4f158919c9",
+      "ahash": "fbf3fbf6e2004101",
+      "dhash": "474722d68627870f",
+      "error": null
+    }
+  },
+  "https://stream1.freetv.fun/da-li-xin-wen-zong-he-1.m3u8": {
+    "0811": {
+      "phash": "edcb16305b660d66",
+      "ahash": "00fffbfbf3e3e300",
+      "dhash": "2ca2434b438686a5",
+      "error": null
+    }
+  },
+  "https://stream1.freetv.fun/da-wan-qu-wei-shi-14.ctv": {
+    "0811": {
+      "phash": "b801c20fef5c89bb",
+      "ahash": "7f670f800f1b9fff",
+      "dhash": "dccc9a323632398d",
+      "error": null
+    }
+  },
+  "https://stream1.freetv.fun/da-wan-qu-wei-shi-5.ctv": {
+    "0811": {
+      "phash": "9c66394c33e66d19",
+      "ahash": "00183c3c18181818",
+      "dhash": "ccf0f0c8f0b2b2b2",
+      "error": null
+    }
+  },
+  "https://stream1.freetv.fun/deng-feng-xin-wen-zong-he-1.m3u8": {
+    "0811": {
+      "phash": "98d4b16163e2b61f",
+      "ahash": "dede9e1c08040c0e",
+      "dhash": "98383c7571f579f8",
+      "error": null
+    }
+  },
+  "https://stream1.freetv.fun/desire-1.m3u8": {
+    "0811": {
+      "phash": null,
+      "ahash": null,
+      "dhash": null,
+      "error": ""
+    }
+  },
+  "https://stream1.freetv.fun/dian-ying-107.m3u8": {
+    "0811": {
+      "phash": null,
+      "ahash": null,
+      "dhash": null,
+      "error": ""
+    }
+  },
+  "https://stream1.freetv.fun/dian-ying-28.m3u8": {
+    "0811": {
+      "phash": "9b936e6c2125654f",
+      "ahash": "001c9e8e8e8c8c00",
+      "dhash": "0038383818183869",
+      "error": null
+    }
+  },
+  "https://stream1.freetv.fun/dian-ying-30.m3u8": {
+    "0811": {
+      "phash": "9035aced439ef231",
+      "ahash": "de8e0e0c08dc1f7e",
+      "dhash": "16149cb4baaaaab2",
+      "error": null
+    }
+  },
+  "https://stream1.freetv.fun/dian-ying-40.m3u8": {
+    "0811": {
+      "phash": "c1cb0ec2453eb3b3",
+      "ahash": "797def4060600000",
+      "dhash": "e3d1998bc8d49496",
+      "error": null
+    }
+  },
+  "https://stream1.freetv.fun/dian-ying-44.ctv": {
+    "0811": {
+      "phash": null,
+      "ahash": null,
+      "dhash": null,
+      "error": "[in#0 @ 0x555737fd4e00] Error opening input: Server returned 403 Forbidden (access denied)\nError opening input file https://stream1.freetv.fun/dian-ying-44.ctv.\nError opening input files: Server returned 403 Forbidden (access denied)\n"
+    }
+  },
+  "https://stream1.freetv.fun/dian-ying-53.m3u8": {
+    "0811": {
+      "phash": "9d6a2633cd9cc98c",
+      "ahash": "00041e1e1e1e1e3e",
+      "dhash": "645d7470f2f8f4f4",
+      "error": null
+    }
+  },
+  "https://stream1.freetv.fun/dian-ying-69.m3u8": {
+    "0811": {
+      "phash": "80da37656da549d5",
+      "ahash": "007ffffb7b7b6700",
+      "dhash": "71bd919797878c4c",
+      "error": null
+    }
+  },
+  "https://stream1.freetv.fun/dian-ying-75.m3u8": {
+    "0811": {
+      "phash": "8d667c1952ad52a7",
+      "ahash": "003f777f3f1f1b00",
+      "dhash": "6066c6ce4af2b632",
+      "error": null
+    }
+  },
+  "https://stream1.freetv.fun/dian-ying-83.m3u8": {
+    "0811": {
+      "phash": "d0c34e3f3d2c4f12",
+      "ahash": "00fefedfcfc74400",
+      "dhash": "4ad8d89a989a9db0",
+      "error": null
+    }
+  },
+  "https://stream1.freetv.fun/dian-ying-97.m3u8": {
+    "0811": {
+      "phash": "d03f6f4e4a387918",
+      "ahash": "00224e7e7e7e7e7a",
+      "dhash": "a2ea9e948484bea6",
+      "error": null
+    }
+  },
+  "https://stream1.freetv.fun/dian-ying-99.m3u8": {
+    "0811": {
+      "phash": null,
+      "ahash": null,
+      "dhash": null,
+      "error": ""
+    }
+  },
+  "https://stream1.freetv.fun/dltv-10-1.m3u8": {
+    "0811": {
+      "phash": "b69bc4e448c51e3e",
+      "ahash": "ffef0f478181e300",
+      "dhash": "c95a595d0f25a7ad",
+      "error": null
+    }
+  },
+  "https://stream1.freetv.fun/dom-1.ctv": {
+    "0811": {
+      "phash": "8ce80ccab65f38b9",
+      "ahash": "183919ffff381810",
+      "dhash": "b3f3f368e4f072f6",
+      "error": null
+    }
+  },
+  "https://stream1.freetv.fun/dom-kino-2.m3u8": {
+    "0811": {
+      "phash": "e7668c99332366cc",
+      "ahash": "ffffe7e7ffffffff",
+      "dhash": "0000040800000000",
+      "error": null
+    }
+  },
+  "https://stream1.freetv.fun/dom-kino-6.m3u8": {
+    "0811": {
+      "phash": "d4c639e619c615b9",
+      "ahash": "f0f0f0f0f0f0f0f8",
+      "dhash": "8080808080808030",
+      "error": null
+    }
+  },
+  "https://stream1.freetv.fun/dom-kino-7.m3u8": {
+    "0811": {
+      "phash": "b03ce3598e99d89c",
+      "ahash": "c3c3c7c7c3c7efe7",
+      "dhash": "9e8e9e25359c884d",
+      "error": null
+    }
+  },
+  "https://stream1.freetv.fun/dong-fang-wei-shi--4m1080-1.m3u8": {
+    "0811": {
+      "phash": "9c66394c33e66d19",
+      "ahash": "00183c3c18181818",
+      "dhash": "ccf0f0c8f0b2b2b2",
+      "error": null
+    }
+  },
+  "https://stream1.freetv.fun/dong-fang-wei-shi--4m1080-2.m3u8": {
+    "0811": {
+      "phash": "c61c1dc7e5ed5610",
+      "ahash": "3e1c1cf8f4f0f8f8",
+      "dhash": "627074c0c8e14050",
+      "error": null
+    }
+  },
+  "https://stream1.freetv.fun/dong-fang-wei-shi--8m1080-1.m3u8": {
+    "0811": {
+      "phash": "9c66394c33e66d19",
+      "ahash": "00183c3c18181818",
+      "dhash": "ccf0f0c8f0b2b2b2",
+      "error": null
+    }
+  },
+  "https://stream1.freetv.fun/dong-fang-wei-shi--8m1080-2.m3u8": {
+    "0811": {
+      "phash": "9c66394c33e66d19",
+      "ahash": "00183c3c18181818",
+      "dhash": "ccf0f0c8f0b2b2b2",
+      "error": null
+    }
+  },
+  "https://stream1.freetv.fun/dong-fang-wei-shi--8m1080-3.m3u8": {
+    "0811": {
+      "phash": "c0380de7e3e143ed",
+      "ahash": "f9d8d8f0f0f0f0b0",
+      "dhash": "82a3b181c4c46361",
+      "error": null
+    }
+  },
+  "https://stream1.freetv.fun/dong-fang-wei-shi--8m1080-4.m3u8": {
+    "0811": {
+      "phash": "c7a7ddb128a9560a",
+      "ahash": "7e3c3e3e7c7c3c3c",
+      "dhash": "cacac8c8c8c8c8e0",
+      "error": null
+    }
+  },
+  "https://stream1.freetv.fun/dong-fang-ying-shi-5.m3u8": {
+    "0811": {
+      "phash": null,
+      "ahash": null,
+      "dhash": null,
+      "error": "[hls @ 0x55a876977f00] Error when loading first segment 'http://shyd.695847.xyz/cms001/ch00000090990000001016/8000-10-27582561.ts?zduration=10.24&prog_time=20251120021329&ts_min=1&ispcode=12&IASHttpSessionId=OTT2831920251119142239022850&ztecid=ch00000090990000001016'\n[in#0 @ 0x55a876977e00] Error opening input: Invalid data found when processing input\nError opening input file https://stream1.freetv.fun/dong-fang-ying-shi-5.m3u8.\nError opening input files: Invalid data found when processing input\n"
+    }
+  },
+  "https://stream1.freetv.fun/dong-man-xiu-chang-3.m3u8": {
+    "0811": {
+      "phash": null,
+      "ahash": null,
+      "dhash": null,
+      "error": ""
+    }
+  },
+  "https://stream1.freetv.fun/dong-nan-wei-shi--8m1080-1.m3u8": {
+    "0811": {
+      "phash": "9c66394c33e66d19",
+      "ahash": "00183c3c18181818",
+      "dhash": "ccf0f0c8f0b2b2b2",
+      "error": null
+    }
+  },
+  "https://stream1.freetv.fun/dong-nan-wei-shi--8m1080-2.m3u8": {
+    "0811": {
+      "phash": "a7a796c2e8d0c9a9",
+      "ahash": "672f0b91b120e0f2",
+      "dhash": "ec6e723363419402",
+      "error": null
+    }
+  },
+  "https://stream1.freetv.fun/dong-wan-xin-wen-zong-he-1.m3u8": {
+    "0811": {
+      "phash": "b17076076f398e38",
+      "ahash": "00ffdfdf3b3f0313",
+      "dhash": "28949493eaea9af6",
+      "error": null
+    }
+  },
+  "https://stream1.freetv.fun/dong-wan-xin-wen-zong-he-2.m3u8": {
+    "0811": {
+      "phash": "9db67c51285b622d",
+      "ahash": "00ffff3f3f280039",
+      "dhash": "233e6cf8d0d07071",
+      "error": null
+    }
+  },
+  "https://stream1.freetv.fun/dong-wan-xin-wen-zong-he-5.ctv": {
+    "0811": {
+      "phash": "b48b4be84e6ee249",
+      "ahash": "79efef170fcf0000",
+      "dhash": "e1d85c243e9caaa3",
+      "error": null
+    }
+  },
+  "https://stream1.freetv.fun/dong-wan-zong-he-1.m3u8": {
+    "0811": {
+      "phash": "eec2c01e5f299e15",
+      "ahash": "fdffff0000ff01ff",
+      "dhash": "a1a58c037c5dbb86",
+      "error": null
+    }
+  },
+  "https://stream1.freetv.fun/drtv-1.m3u8": {
+    "0811": {
+      "phash": "c726f8c934d926c3",
+      "ahash": "2030302020f8fc00",
+      "dhash": "6b6a686844c01000",
+      "error": null
+    }
+  },
+  "https://stream1.freetv.fun/dtv-3.m3u8": {
+    "0811": {
+      "phash": "851b7c17cb2558a7",
+      "ahash": "0e063e7e7e1e0276",
+      "dhash": "d4d6f6dac8f6c686",
+      "error": null
+    }
+  },
+  "https://stream1.freetv.fun/e-mei-dian-ying-3.m3u8": {
+    "0811": {
+      "phash": "9c66394c33e66d19",
+      "ahash": "00183c3c18181818",
+      "dhash": "ccf0f0c8f0b2b2b2",
+      "error": null
+    }
+  },
+  "https://stream1.freetv.fun/e-mei-shan-zong-he-1.m3u8": {
+    "0811": {
+      "phash": "88d4b3f5364b4e89",
+      "ahash": "c7df1c1c1a180901",
+      "dhash": "2c94f430b2b2d31b",
+      "error": null
+    }
+  },
+  "https://stream1.freetv.fun/ekol-tv-1.m3u8": {
+    "0811": {
+      "phash": null,
+      "ahash": null,
+      "dhash": null,
+      "error": "[h264 @ 0x555b4153dac0] mmco: unref short failure\n"
+    }
+  },
+  "https://stream1.freetv.fun/ekol-tv-2.m3u8": {
+    "0811": {
+      "phash": "b544da6a2bde5aa0",
+      "ahash": "005e5e5b43027f0f",
+      "dhash": "369696969e94bebe",
+      "error": null
+    }
+  },
+  "https://stream1.freetv.fun/ert-news-1.m3u8": {
+    "0811": {
+      "phash": "a266d98f4b994b98",
+      "ahash": "e767476767275f0c",
+      "dhash": "cccd8ccdeccd92dd",
+      "error": null
+    }
+  },
+  "https://stream1.freetv.fun/ert-news-g-1.m3u8": {
+    "0811": {
+      "phash": "8073db39658c6de4",
+      "ahash": "880c605a420b7fff",
+      "dhash": "3909c0b696b2b3e2",
+      "error": null
+    }
+  },
+  "https://stream1.freetv.fun/etv-cinema-1.m3u8": {
+    "0811": {
+      "phash": "92f969165743063f",
+      "ahash": "00ff3f7e3e3e1d00",
+      "dhash": "9a9779e86cf5f50b",
+      "error": null
+    }
+  },
+  "https://stream1.freetv.fun/etv-life-1.m3u8": {
+    "0811": {
+      "phash": "87f879b451964aa5",
+      "ahash": "58b0303437373730",
+      "dhash": "b0616165e6646643",
+      "error": null
+    }
+  },
+  "https://stream1.freetv.fun/extra-tv-1.m3u8": {
+    "0811": {
+      "phash": "8dc5648b133b2e1f",
+      "ahash": "7b7b3b3b39110100",
+      "dhash": "e2e262fb6b6b63eb",
+      "error": null
+    }
+  },
+  "https://stream1.freetv.fun/extra-tv-3.m3u8": {
+    "0811": {
+      "phash": "c68f59c7117ca38c",
+      "ahash": "3c3c37273764c0c0",
+      "dhash": "f071656fcccc2498",
+      "error": null
+    }
+  },
+  "https://stream1.freetv.fun/extrema-cartoons-1.m3u8": {
+    "0811": {
+      "phash": "c4767cf8f8383183",
+      "ahash": "c0b030707e7e1e1e",
+      "dhash": "0c60c0c1d492b074",
+      "error": null
+    }
+  },
+  "https://stream1.freetv.fun/fashion-tv-africa-1.m3u8": {
+    "0811": {
+      "phash": "a7e515bbc20cf093",
+      "ahash": "e3e3e3f3e7c30000",
+      "dhash": "ce4ec6e7cb8beee6",
+      "error": null
+    }
+  },
+  "https://stream1.freetv.fun/fei-cui-1.ctv": {
+    "0811": {
+      "phash": "cc0c673399cc6e27",
+      "ahash": "00203c5c18007e00",
+      "dhash": "3244f4f050ccd4c4",
+      "error": null
+    }
+  },
+  "https://stream1.freetv.fun/fei-cui-12.ctv": {
+    "0811": {
+      "phash": "b6bfa02653c073d8",
+      "ahash": "87878f8f87074747",
+      "dhash": "0e3e3c582dcd94dc",
+      "error": null
+    }
+  },
+  "https://stream1.freetv.fun/fei-cui-13.ctv": {
+    "0811": {
+      "phash": "cc0c673399cc6e27",
+      "ahash": "00203c5c18007e00",
+      "dhash": "3244f4f050ccd4c4",
+      "error": null
+    }
+  },
+  "https://stream1.freetv.fun/fei-cui-14.ctv": {
+    "0811": {
+      "phash": "99643c9b669bc964",
+      "ahash": "00000000003c3c00",
+      "dhash": "0004140804787804",
+      "error": null
+    }
+  },
+  "https://stream1.freetv.fun/fei-cui-15.ctv": {
+    "0811": {
+      "phash": "cc0c673399cc6e27",
+      "ahash": "00203c5c18007e00",
+      "dhash": "3244f4f050ccd4c4",
+      "error": null
+    }
+  },
+  "https://stream1.freetv.fun/fei-cui-16.ctv": {
+    "0811": {
+      "phash": "b0de889cdea2da86",
+      "ahash": "3c08000004004340",
+      "dhash": "a010880024148e90",
+      "error": null
+    }
+  },
+  "https://stream1.freetv.fun/fei-cui-18.ctv": {
+    "0811": {
+      "phash": "b6bfa02653c073d8",
+      "ahash": "87878f8f87074747",
+      "dhash": "0e3e3c582dcd94dc",
+      "error": null
+    }
+  },
+  "https://stream1.freetv.fun/fei-cui-2.ctv": {
+    "0811": {
+      "phash": "b11d6d4a58d1d333",
+      "ahash": "00070fffe6ffffc0",
+      "dhash": "ba3edc980cb9ce06",
+      "error": null
+    }
+  },
+  "https://stream1.freetv.fun/fei-cui-20.ctv": {
+    "0811": {
+      "phash": "ffff81c381818383",
+      "ahash": "bf80808080808080",
+      "dhash": "4040404040404040",
+      "error": null
+    }
+  },
+  "https://stream1.freetv.fun/fei-cui-3.ctv": {
+    "0811": {
+      "phash": "a16187ab69ede162",
+      "ahash": "ebefc10000efffff",
+      "dhash": "dba9af939b5fa8e8",
+      "error": null
+    }
+  },
+  "https://stream1.freetv.fun/fei-cui-4.ctv": {
+    "0811": {
+      "phash": "cc0c673399cc6e27",
+      "ahash": "00203c5c18007e00",
+      "dhash": "3244f4f050ccd4c4",
+      "error": null
+    }
+  },
+  "https://stream1.freetv.fun/fei-cui-5.ctv": {
+    "0811": {
+      "phash": "f0e8f04a57175517",
+      "ahash": "00c0000000000000",
+      "dhash": "0081000000000000",
+      "error": null
+    }
+  },
+  "https://stream1.freetv.fun/fei-cui-8.m3u8": {
+    "0811": {
+      "phash": "c9891bc6c7c3d1b1",
+      "ahash": "3c995af87af80000",
+      "dhash": "e83392e2c4e0e1b2",
+      "error": null
+    }
+  },
+  "https://stream1.freetv.fun/fei-cui-9.ctv": {
+    "0811": {
+      "phash": "fe43c98f37202c27",
+      "ahash": "38f8d0878797d79f",
+      "dhash": "6361a52d2c2c2c34",
+      "error": null
+    }
+  },
+  "https://stream1.freetv.fun/feng-huang-dian-ying-2.ctv": {
+    "0811": {
+      "phash": null,
+      "ahash": null,
+      "dhash": null,
+      "error": "[tcp @ 0x5651693aa640] Connection to tcp://106.53.99.30:80 failed: Connection timed out\n[in#0 @ 0x5651692a0e00] Error opening input: Connection timed out\nError opening input file https://stream1.freetv.fun/feng-huang-dian-ying-2.ctv.\nError opening input files: Connection timed out\n"
+    }
+  },
+  "https://stream1.freetv.fun/feng-huang-dian-ying-3.m3u8": {
+    "0811": {
+      "phash": "ccf030c3270f8f1f",
+      "ahash": "42da183838381800",
+      "dhash": "82b2706260606001",
+      "error": null
+    }
+  },
+  "https://stream1.freetv.fun/feng-huang-wei-shi---wj-2.m3u8": {
+    "0811": {
+      "phash": "d04d7227f7a15f01",
+      "ahash": "40181aff760647ff",
+      "dhash": "8c92f2d6d4549d3d",
+      "error": null
+    }
+  },
+  "https://stream1.freetv.fun/feng-huang-xiang-gang---wj-2.m3u8": {
+    "0811": {
+      "phash": "e18e2e711e257873",
+      "ahash": "007e7e7fefe3e300",
+      "dhash": "e6e4c8ccdcd6d6c6",
+      "error": null
+    }
+  },
+  "https://stream1.freetv.fun/feng-huang-zhong-wen---wj-2.m3u8": {
+    "0811": {
+      "phash": "d04d7227f7a15f01",
+      "ahash": "40181aff760647ff",
+      "dhash": "8c92f2d6d4549d3d",
+      "error": null
+    }
+  },
+  "https://stream1.freetv.fun/feng-qiu-xin-wen-zong-he-1.m3u8": {
+    "0811": {
+      "phash": "b5594faa66b41951",
+      "ahash": "00080f1f0f1f1700",
+      "dhash": "2b52dafcfff4360d",
+      "error": null
+    }
+  },
+  "https://stream1.freetv.fun/fo-shan-gong-gong-6.ctv": {
+    "0811": {
+      "phash": null,
+      "ahash": null,
+      "dhash": null,
+      "error": "[h264 @ 0x55bbfd9b3500] non-existing PPS 0 referenced\n    Last message repeated 1 times\n[h264 @ 0x55bbfd9b3500] decode_slice_header error\n[h264 @ 0x55bbfd9b3500] no frame!\n[h264 @ 0x55bbfd9b3500] non-existing PPS 0 referenced\n    Last message repeated 2 times\n[h264 @ 0x55bbfd9b3500] decode_slice_header error\n[h264 @ 0x55bbfd9b3500] no frame!\n[h264 @ 0x55bbfd9b3500] non-existing PPS 0 referenced\n[h264 @ 0x55bbfd9b3500] decode_slice_header error\n[h264 @ 0x55bbfd9b3500] no frame!\n[h264 @ 0x55bbfd9b3500] non-existing PPS 0 referenced\n    Last message repeated 2 times\n[h264 @ 0x55bbfd9b3500] decode_slice_header error\n[h264 @ 0x55bbfd9b3500] no frame!\n[h264 @ 0x55bbfd9b3500] non-existing PPS 0 referenced\n[h264 @ 0x55bbfd9b3500] decode_slice_header error\n[h264 @ 0x55bbfd9b3500] no frame!\n[h264 @ 0x55bbfd9b3500] non-existing PPS 0 referenced\n    Last message repeated 2 times\n[h264 @ 0x55bbfd9b3500] decode_slice_header error\n[h264 @ 0x55bbfd9b3500] no frame!\n[h264 @ 0x55bbfd9b3500] non-existing PPS 0 referenced\n[h264 @ 0x55bbfd9b3500] decode_slice_header error\n[h264 @ 0x55bbfd9b3500] no frame!\n[https @ 0x55bbfd8f1500] Stream ends prematurely at 263200, should be 18446744073709551615\n[h264 @ 0x55bbfd9b3500] non-existing PPS 0 referenced\n    Last message repeated 1 times\n[h264 @ 0x55bbfd9b3500] decode_slice_header error\n[h264 @ 0x55bbfd9b3500] no frame!\n[h264 @ 0x55bbfd9b3500] non-existing PPS 0 referenced\n    Last message repeated 1 times\n[h264 @ 0x55bbfd9b3500] decode_slice_header error\n[h264 @ 0x55bbfd9b3500] no frame!\n[NULL @ 0x55bbfd9b3500] non-existing PPS 0 referenced\n    Last message repeated 4 times\n[h264 @ 0x55bbfd949040] non-existing PPS 0 referenced\n[h264 @ 0x55bbfd949040] decode_slice_header error\n[h264 @ 0x55bbfd949040] no frame!\n[h264 @ 0x55bbfd90b640] non-existing PPS 0 referenced\n[h264 @ 0x55bbfd90b640] decode_slice_header error\n[h264 @ 0x55bbfd90b640] no frame!\n[NULL @ 0x55bbfd9b3500] non-existing PPS 0 referenced\n    Last message repeated 1 times\n[h264 @ 0x55bbfd927580] non-existing PPS 0 referenced\n[h264 @ 0x55bbfd927580] decode_slice_header error\n[h264 @ 0x55bbfd927580] no frame!\n[h264 @ 0x55bbfda1dd80] non-existing PPS 0 referenced\n[h264 @ 0x55bbfda1dd80] decode_slice_header error\n[h264 @ 0x55bbfda1dd80] no frame!\n[vist#0:0/h264 @ 0x55bbfdca2880] Error submitting packet to decoder: Invalid data found when processing input\n[https @ 0x55bbfd8f1500] Stream ends prematurely at 263200, should be 18446744073709551615\n[NULL @ 0x55bbfd9b3500] non-existing PPS 0 referenced\n[h264 @ 0x55bbfda3bd40] non-existing PPS 0 referenced\n[h264 @ 0x55bbfda3bd40] decode_slice_header error\n[h264 @ 0x55bbfda3bd40] no frame!\n[vist#0:0/h264 @ 0x55bbfdca2880] Error submitting packet to decoder: Invalid data found when processing input\n[h264 @ 0x55bbfd949040] non-existing PPS 0 referenced\n[h264 @ 0x55bbfd949040] decode_slice_header error\n[h264 @ 0x55bbfd949040] no frame!\n[vist#0:0/h264 @ 0x55bbfdca2880] Error submitting packet to decoder: Invalid data found when processing input\n[h264 @ 0x55bbfd90b640] non-existing PPS 0 referenced\n[h264 @ 0x55bbfd90b640] decode_slice_header error\n[h264 @ 0x55bbfd90b640] no frame!\n[vist#0:0/h264 @ 0x55bbfdca2880] Error submitting packet to decoder: Invalid data found when processing input\n[NULL @ 0x55bbfd9b3500] non-existing PPS 0 referenced\n[h264 @ 0x55bbfd927580] non-existing PPS 0 referenced\n[h264 @ 0x55bbfd927580] decode_slice_header error\n[h264 @ 0x55bbfd927580] no frame!\n[in#0/mpegts @ 0x55bbfd8f0e00] Error during demuxing: Input/output error\n[vist#0:0/h264 @ 0x55bbfdca2880] Error submitting packet to decoder: Invalid data found when processing input\n[h264 @ 0x55bbfda1dd80] non-existing PPS 0 referenced\n[h264 @ 0x55bbfda1dd80] decode_slice_header error\n[h264 @ 0x55bbfda1dd80] no frame!\n[in#0/mpegts @ 0x55bbfd8f0e00] Error retrieving a packet from demuxer: Input/output error\n[vist#0:0/h264 @ 0x55bbfdca2880] Decoding error: Invalid data found when processing input\n    Last message repeated 3 times\nCannot determine format of input stream 0:0 after EOF\nError marking filters as finished\nError while filtering: Invalid data found when processing input\n[vist#0:0/h264 @ 0x55bbfdca2880] Decode error rate 1 exceeds maximum 0.666667\n[out#0/image2 @ 0x55bbfdca2400] Nothing was written into output file, because at least one of its streams received no packets.\n"
+    }
+  },
+  "https://stream1.freetv.fun/fo-shan-zong-he-12.ctv": {
+    "0811": {
+      "phash": "d85858425a5b7b79",
+      "ahash": "1810dbffffffffff",
+      "dhash": "90f0322190414000",
+      "error": null
+    }
+  },
+  "https://stream1.freetv.fun/gb-news-1.m3u8": {
+    "0811": {
+      "phash": "f57c80e21e1a69c7",
+      "ahash": "e6f20a04e0e07c3f",
+      "dhash": "a426723c4c12d4dc",
+      "error": null
+    }
+  },
+  "https://stream1.freetv.fun/gb-news-2.m3u8": {
+    "0811": {
+      "phash": "d858a33207b962f7",
+      "ahash": "c0d8d8180000ff7f",
+      "dhash": "89b03030611db4e4",
+      "error": null
+    }
+  },
+  "https://stream1.freetv.fun/gb-news-4.m3u8": {
+    "0811": {
+      "phash": "f75c84e21a1a61cf",
+      "ahash": "e6fa0204e0e0cf3f",
+      "dhash": "a426623c4c8616d9",
+      "error": null
+    }
+  },
+  "https://stream1.freetv.fun/global-fashion-channel-1.m3u8": {
+    "0811": {
+      "phash": "adc4d2693c84c37b",
+      "ahash": "ffffffc381000000",
+      "dhash": "000040262b239080",
+      "error": null
+    }
+  },
+  "https://stream1.freetv.fun/gong-yi-xin-wen-zong-he-4.m3u8": {
+    "0811": {
+      "phash": "96dc6931650e3b9a",
+      "ahash": "00de9ebebe061400",
+      "dhash": "86343c647c2c6d0d",
+      "error": null
+    }
+  },
+  "https://stream1.freetv.fun/gui-zhou-wei-shi--8m1080-1.m3u8": {
+    "0811": {
+      "phash": "9c66394c33e66d19",
+      "ahash": "00183c3c18181818",
+      "dhash": "ccf0f0c8f0b2b2b2",
+      "error": null
+    }
+  },
+  "https://stream1.freetv.fun/gui-zhou-wei-shi--8m1080-2.m3u8": {
+    "0811": {
+      "phash": "95d6aab5dad2540a",
+      "ahash": "7e07060e0e020b19",
+      "dhash": "bcee7cd4d6f6f3f3",
+      "error": null
+    }
+  },
+  "https://stream1.freetv.fun/ha-er-bin-xin-wen-3.m3u8": {
+    "0811": {
+      "phash": "a2e8e9b245a7934d",
+      "ahash": "c3c38303028707a1",
+      "dhash": "87071757540d4d4b",
+      "error": null
+    }
+  },
+  "https://stream1.freetv.fun/hai-xia-wei-shi-10.m3u8": {
+    "0811": {
+      "phash": "ad9b9aeac40452f6",
+      "ahash": "9f9bbb3393931313",
+      "dhash": "332b666666262637",
+      "error": null
+    }
+  },
+  "https://stream1.freetv.fun/hai-xia-wei-shi-4.m3u8": {
+    "0811": {
+      "phash": "b5c3a5e5b38a0596",
+      "ahash": "efcf8f8fc7828787",
+      "dhash": "da1b3b191e363634",
+      "error": null
+    }
+  },
+  "https://stream1.freetv.fun/hai-xia-wei-shi-6.m3u8": {
+    "0811": {
+      "phash": "e29238fc9cd5a19c",
+      "ahash": "f6e56030f1e0e000",
+      "dhash": "8ccdcd6465c7c321",
+      "error": null
+    }
+  },
+  "https://stream1.freetv.fun/hai-xia-wei-shi-7.m3u8": {
+    "0811": {
+      "phash": "ccc333f04ccfcca1",
+      "ahash": "eee6703810d08080",
+      "dhash": "18cce662a6a62614",
+      "error": null
+    }
+  },
+  "https://stream1.freetv.fun/halk-tv-7.m3u8": {
+    "0811": {
+      "phash": "803d655b5ae53f48",
+      "ahash": "00173f3c3c3c7e7c",
+      "dhash": "6eb6b6e8e9f888d8",
+      "error": null
+    }
+  },
+  "https://stream1.freetv.fun/han-guo-dian-ying-1-1.m3u8": {
+    "0811": {
+      "phash": "a536294a6a85fccd",
+      "ahash": "0007ff5670d07b4b",
+      "dhash": "c39636a685b6d292",
+      "error": null
+    }
+  },
+  "https://stream1.freetv.fun/han-guo-dian-ying-2-1.m3u8": {
+    "0811": {
+      "phash": "e3af80e0a7c83ec9",
+      "ahash": "736380e0e0c0f860",
+      "dhash": "c7c7290a8a8c9188",
+      "error": null
+    }
+  },
+  "https://stream1.freetv.fun/he-bei-wei-shi--8m1080-1.m3u8": {
+    "0811": {
+      "phash": "9c66394c33e66d19",
+      "ahash": "00183c3c18181818",
+      "dhash": "ccf0f0c8f0b2b2b2",
+      "error": null
+    }
+  },
+  "https://stream1.freetv.fun/he-bei-wei-shi--8m1080-2.m3u8": {
+    "0811": {
+      "phash": "db7034d312a223fe",
+      "ahash": "e0f0a178bcbdfd00",
+      "dhash": "8a1223ab684b4b69",
+      "error": null
+    }
+  },
+  "https://stream1.freetv.fun/he-nan-dian-shi-ju-7.m3u8": {
+    "0811": {
+      "phash": "d9e6e65889668971",
+      "ahash": "f8f0f8181818001f",
+      "dhash": "8080d0d2923030f2",
+      "error": null
+    }
+  },
+  "https://stream1.freetv.fun/he-nan-xin-wen-2.m3u8": {
+    "0811": {
+      "phash": "db098e71bd82073e",
+      "ahash": "1919393dc0e0dc97",
+      "dhash": "93fb6bbb12192d37",
+      "error": null
+    }
+  },
+  "https://stream1.freetv.fun/hei-long-jiang-ha-er-bin-du-shi-zi-xun-1.m3u8": {
+    "0811": {
+      "phash": "808080808080802a",
+      "ahash": "ffff000000000000",
+      "dhash": "8000000000000000",
+      "error": null
+    }
+  },
+  "https://stream1.freetv.fun/hei-long-jiang-wei-shi--4m1080-1.m3u8": {
+    "0811": {
+      "phash": "9c66394c33e66d19",
+      "ahash": "00183c3c18181818",
+      "dhash": "ccf0f0c8f0b2b2b2",
+      "error": null
+    }
+  },
+  "https://stream1.freetv.fun/hei-long-jiang-wei-shi--4m1080-2.m3u8": {
+    "0811": {
+      "phash": "981171be0ff813f1",
+      "ahash": "0f0f0f1f1f1fdf24",
+      "dhash": "7abe98fd7dbd3d69",
+      "error": null
+    }
+  },
+  "https://stream1.freetv.fun/hei-long-jiang-wei-shi--8m1080-1.m3u8": {
+    "0811": {
+      "phash": "9c66394c33e66d19",
+      "ahash": "00183c3c18181818",
+      "dhash": "ccf0f0c8f0b2b2b2",
+      "error": null
+    }
+  },
+  "https://stream1.freetv.fun/hei-long-jiang-wei-shi--8m1080-2.m3u8": {
+    "0811": {
+      "phash": "8d49c38562e725f3",
+      "ahash": "7a180000001fffff",
+      "dhash": "e2f0706172aa2a69",
+      "error": null
+    }
+  },
+  "https://stream1.freetv.fun/himlen-tv7-4.m3u8": {
+    "0811": {
+      "phash": "a2be88510fb86b97",
+      "ahash": "d9ffe7c726604700",
+      "dhash": "332b0d0dcc8aafd3",
+      "error": null
+    }
+  },
+  "https://stream1.freetv.fun/himlen-tv7-8.m3u8": {
+    "0811": {
+      "phash": "a2fe88514fb06997",
+      "ahash": "dbefe7c726604700",
+      "dhash": "332b0d0dcc8aadd3",
+      "error": null
+    }
+  },
+  "https://stream1.freetv.fun/hu-bei-wei-shi---wj-1.m3u8": {
+    "0811": {
+      "phash": "9de66a2934b60f0d",
+      "ahash": "90f83ebf1b1f0d09",
+      "dhash": "67626a6c72f3dbbb",
+      "error": null
+    }
+  },
+  "https://stream1.freetv.fun/hu-bei-wei-shi--4m1080-1.m3u8": {
+    "0811": {
+      "phash": "9c66394c33e66d19",
+      "ahash": "00183c3c18181818",
+      "dhash": "ccf0f0c8f0b2b2b2",
+      "error": null
+    }
+  },
+  "https://stream1.freetv.fun/hu-bei-wei-shi--4m1080-2.m3u8": {
+    "0811": {
+      "phash": "9c33333333333333",
+      "ahash": "1a9a9a9a9a9a9a9a",
+      "dhash": "3232323232323232",
+      "error": null
+    }
+  },
+  "https://stream1.freetv.fun/hu-bei-wei-shi--8m1080-1.m3u8": {
+    "0811": {
+      "phash": "9c66394c33e66d19",
+      "ahash": "00183c3c18181818",
+      "dhash": "ccf0f0c8f0b2b2b2",
+      "error": null
+    }
+  },
+  "https://stream1.freetv.fun/hu-bei-wei-shi--8m1080-2.m3u8": {
+    "0811": {
+      "phash": "8c84d4da909f175f",
+      "ahash": "9f93131311119999",
+      "dhash": "b426a72323737373",
+      "error": null
+    }
+  },
+  "https://stream1.freetv.fun/hu-nan-wei-shi--8m1080-1.m3u8": {
+    "0811": {
+      "phash": "9c66394c33e66d19",
+      "ahash": "00183c3c18181818",
+      "dhash": "ccf0f0c8f0b2b2b2",
+      "error": null
+    }
+  },
+  "https://stream1.freetv.fun/hu-nan-wei-shi--8m1080-2.m3u8": {
+    "0811": {
+      "phash": "8cd02e6551af57ca",
+      "ahash": "819f9fdbd8131301",
+      "dhash": "1b3535b2b37767a3",
+      "error": null
+    }
+  },
+  "https://stream1.freetv.fun/hu-zhou-yu-le-1.m3u8": {
+    "0811": {
+      "phash": "c0703bcd6e171f07",
+      "ahash": "804046f2fa7a3e1c",
+      "dhash": "3894aea6d6f2e8f8",
+      "error": null
+    }
+  },
+  "https://stream1.freetv.fun/huai-bei-jing-ji-sheng-huo-2.ctv": {
+    "0811": {
+      "phash": null,
+      "ahash": null,
+      "dhash": null,
+      "error": ""
+    }
+  },
+  "https://stream1.freetv.fun/huo-jia-xin-wen-zong-he-1.m3u8": {
+    "0811": {
+      "phash": "c19d636f3b959484",
+      "ahash": "6a6e7e6e6e6e6264",
+      "dhash": "cacad4d8da8acec8",
+      "error": null
+    }
+  },
+  "https://stream1.freetv.fun/hype-visual-radio-1.m3u8": {
+    "0811": {
+      "phash": "d3872c2c7b7160f2",
+      "ahash": "007ffffcec100000",
+      "dhash": "33e4cc58d8b3bbaa",
+      "error": null
+    }
+  },
+  "https://stream1.freetv.fun/i24-news-2.m3u8": {
+    "0811": {
+      "phash": "d9adc66c29c62dd0",
+      "ahash": "7afef8080088fcec",
+      "dhash": "f0f0929aba2a0848",
+      "error": null
+    }
+  },
+  "https://stream1.freetv.fun/i24-news-arabic-1.m3u8": {
+    "0811": {
+      "phash": "9325dc6c2dd829d3",
+      "ahash": "002e0f030101fefc",
+      "dhash": "654cdade4b538068",
+      "error": null
+    }
+  },
+  "https://stream1.freetv.fun/i24-news-arabic-2.m3u8": {
+    "0811": {
+      "phash": "d22ddacd25d025d6",
+      "ahash": "000000000078fefc",
+      "dhash": "2361c494c4f13888",
+      "error": null
+    }
+  },
+  "https://stream1.freetv.fun/i24-news-en-1.m3u8": {
+    "0811": {
+      "phash": "c37130e769526c2f",
+      "ahash": "e0ef00ecf8747c5b",
+      "dhash": "869c35c86aeae8b2",
+      "error": null
+    }
+  },
+  "https://stream1.freetv.fun/inews-2.m3u8": {
+    "0811": {
+      "phash": "d4008b3fbf716949",
+      "ahash": "007e78fec68000ff",
+      "dhash": "ebe4968c2e24cc51",
+      "error": null
+    }
+  },
+  "https://stream1.freetv.fun/inter-1.ctv": {
+    "0811": {
+      "phash": "8ce90ccab65f18b9",
+      "ahash": "183919ffff381810",
+      "dhash": "b3f3f368e4f072f6",
+      "error": null
+    }
+  },
+  "https://stream1.freetv.fun/inter-3.ctv": {
+    "0811": {
+      "phash": "8ce90ccab65f18b9",
+      "ahash": "183919ffff381810",
+      "dhash": "b3f3f368e4f072f6",
+      "error": null
+    }
+  },
+  "https://stream1.freetv.fun/iqraa-africa-europe-1.m3u8": {
+    "0811": {
+      "phash": "c3380ec33ccf31dc",
+      "ahash": "3060606860603830",
+      "dhash": "63cbd090dacac264",
+      "error": null
+    }
+  },
+  "https://stream1.freetv.fun/ji-lin-xin-wen-zong-he-1.m3u8": {
+    "0811": {
+      "phash": "cda013732e4f681f",
+      "ahash": "00fffffbfff83800",
+      "dhash": "74c8a32266927030",
+      "error": null
+    }
+  },
+  "https://stream1.freetv.fun/jia-jia-qia-tong-29.ctv": {
+    "0811": {
+      "phash": null,
+      "ahash": null,
+      "dhash": null,
+      "error": "[https @ 0x559794904500] Stream ends prematurely at 0, should be 18446744073709551615\n[in#0 @ 0x559794903e00] Error opening input: Input/output error\nError opening input file https://stream1.freetv.fun/jia-jia-qia-tong-29.ctv.\nError opening input files: Input/output error\n"
+    }
+  },
+  "https://stream1.freetv.fun/jia-jia-qia-tong-4.ctv": {
+    "0811": {
+      "phash": null,
+      "ahash": null,
+      "dhash": null,
+      "error": "[tcp @ 0x55e71b550ac0] Connection to tcp://116.30.248.123:9876 failed: Connection timed out\n[in#0 @ 0x55e71b19de00] Error opening input: Connection timed out\nError opening input file https://stream1.freetv.fun/jia-jia-qia-tong-4.ctv.\nError opening input files: Connection timed out\n"
+    }
+  },
+  "https://stream1.freetv.fun/jian-yang-xin-wen-zong-he-2.ctv": {
+    "0811": {
+      "phash": "8c72b30d4da706f3",
+      "ahash": "00000018181cffff",
+      "dhash": "a888d4b2b2f2f2f2",
+      "error": null
+    }
+  },
+  "https://stream1.freetv.fun/jiang-su-ti-yu-2.ctv": {
+    "0811": {
+      "phash": "fc83633b443c33c6",
+      "ahash": "f0fcfededec480c0",
+      "dhash": "00802830301c3184",
+      "error": null
+    }
+  },
+  "https://stream1.freetv.fun/jiang-su-ti-yu-3.ctv": {
+    "0811": {
+      "phash": "fc83633b443c33c6",
+      "ahash": "f0fcfededec480c0",
+      "dhash": "00802830301c3184",
+      "error": null
+    }
+  },
+  "https://stream1.freetv.fun/jiang-su-ti-yu-5.ctv": {
+    "0811": {
+      "phash": "fc83633b443c33c6",
+      "ahash": "f0fcfededec480c0",
+      "dhash": "00802830301c3184",
+      "error": null
+    }
+  },
+  "https://stream1.freetv.fun/jiang-su-wei-shi--4m1080-1.m3u8": {
+    "0811": {
+      "phash": "9c66394c33e66d19",
+      "ahash": "00183c3c18181818",
+      "dhash": "ccf0f0c8f0b2b2b2",
+      "error": null
+    }
+  },
+  "https://stream1.freetv.fun/jiang-su-wei-shi--4m1080-2.m3u8": {
+    "0811": {
+      "phash": null,
+      "ahash": null,
+      "dhash": null,
+      "error": ""
+    }
+  },
+  "https://stream1.freetv.fun/jiang-su-wei-shi--8m1080-1.m3u8": {
+    "0811": {
+      "phash": "9c66394c33e66d19",
+      "ahash": "00183c3c18181818",
+      "dhash": "ccf0f0c8f0b2b2b2",
+      "error": null
+    }
+  },
+  "https://stream1.freetv.fun/jiang-su-wei-shi--8m1080-2.m3u8": {
+    "0811": {
+      "phash": "9c66394c33e66d19",
+      "ahash": "00183c3c18181818",
+      "dhash": "ccf0f0c8f0b2b2b2",
+      "error": null
+    }
+  },
+  "https://stream1.freetv.fun/jiang-su-wei-shi--8m1080-3.m3u8": {
+    "0811": {
+      "phash": "915de6c21a3d7546",
+      "ahash": "7cfc1a091c7c7fff",
+      "dhash": "d4d0f63bf9d0e7d4",
+      "error": null
+    }
+  },
+  "https://stream1.freetv.fun/jiang-su-wei-shi--8m1080-4.m3u8": {
+    "0811": {
+      "phash": "a55251a5adad515d",
+      "ahash": "020000131707171f",
+      "dhash": "969aa36766e6e6f6",
+      "error": null
+    }
+  },
+  "https://stream1.freetv.fun/jiang-su-wei-shi-102.m3u8": {
+    "0811": {
+      "phash": null,
+      "ahash": null,
+      "dhash": null,
+      "error": "[hls @ 0x55ad71a19f00] Error when loading first segment 'http://shyd.695847.xyz/cms001/ch00000090990000001033/8000-10-27582573.ts?zduration=10.24&prog_time=20251120021530&ts_min=1&IASHttpSessionId=OTT2836320251120021853022422&stbid=00400300000109006001C0132B856D0D&userid=00400300000109006001C0132B856D0D&ispcode=12&ztecid=ch00000090990000001033'\n[in#0 @ 0x55ad71a19e00] Error opening input: Invalid data found when processing input\nError opening input file https://stream1.freetv.fun/jiang-su-wei-shi-102.m3u8.\nError opening input files: Invalid data found when processing input\n"
+    }
+  },
+  "https://stream1.freetv.fun/jiang-su-ying-shi-1.ctv": {
+    "0811": {
+      "phash": "fc83633b443c33c6",
+      "ahash": "f0fcfededec480c0",
+      "dhash": "00802830301c3184",
+      "error": null
+    }
+  },
+  "https://stream1.freetv.fun/jiang-su-ying-shi-2.m3u8": {
+    "0811": {
+      "phash": "996bb66288762d99",
+      "ahash": "81898b99190e0e1f",
+      "dhash": "0f13133373517c36",
+      "error": null
+    }
+  },
+  "https://stream1.freetv.fun/jiang-su-ying-shi-5.ctv": {
+    "0811": {
+      "phash": "a702e9bc82bd3e19",
+      "ahash": "0020202226c7ebff",
+      "dhash": "4e4dc7c44c161643",
+      "error": null
+    }
+  },
+  "https://stream1.freetv.fun/jiang-xi-wei-shi--4m1080-1.m3u8": {
+    "0811": {
+      "phash": "9c66394c33e66d19",
+      "ahash": "00183c3c18181818",
+      "dhash": "ccf0f0c8f0b2b2b2",
+      "error": null
+    }
+  },
+  "https://stream1.freetv.fun/jiang-xi-wei-shi--4m1080-2.m3u8": {
+    "0811": {
+      "phash": null,
+      "ahash": null,
+      "dhash": null,
+      "error": ""
+    }
+  },
+  "https://stream1.freetv.fun/jie-yang-zong-he-4.m3u8": {
+    "0811": {
+      "phash": "8df9d0f4b2b69290",
+      "ahash": "9b991b1b1b1b1f1c",
+      "dhash": "3233337372727579",
+      "error": null
+    }
+  },
+  "https://stream1.freetv.fun/jin-cheng-gong-gong-1.m3u8": {
+    "0811": {
+      "phash": "c4592c4a9607de3f",
+      "ahash": "d0d0f8fcfc700317",
+      "dhash": "a59291c8d9e5c7a6",
+      "error": null
+    }
+  },
+  "https://stream1.freetv.fun/jin-cheng-gong-gong-3.m3u8": {
+    "0811": {
+      "phash": "9d60d6c696b22b3a",
+      "ahash": "3400010f1f3fffff",
+      "dhash": "ecd29b3f74f07c3c",
+      "error": null
+    }
+  },
+  "https://stream1.freetv.fun/jin-cheng-xin-wen-1.m3u8": {
+    "0811": {
+      "phash": "c1e1e1ee1c63e61c",
+      "ahash": "6060606850706058",
+      "dhash": "cbc3c9dbb1e7cab1",
+      "error": null
+    }
+  },
+  "https://stream1.freetv.fun/jin-cheng-xin-wen-2.m3u8": {
+    "0811": {
+      "phash": "88a435da97a98775",
+      "ahash": "7f435b7939390800",
+      "dhash": "afafb3f3e9f1f9fb",
+      "error": null
+    }
+  },
+  "https://stream1.freetv.fun/jin-cheng-xin-wen-3.m3u8": {
+    "0811": {
+      "phash": "fef860048c71f70e",
+      "ahash": "c0c0c0c890a02020",
+      "dhash": "0a2a2b1a214ec149",
+      "error": null
+    }
+  },
+  "https://stream1.freetv.fun/jin-cheng-xin-wen-4.m3u8": {
+    "0811": {
+      "phash": "8aea60caaae996ab",
+      "ahash": "fdfc3c3d3d3c0001",
+      "dhash": "8949f9f97968a9f5",
+      "error": null
+    }
+  },
+  "https://stream1.freetv.fun/ju-ji-2.m3u8": {
+    "0811": {
+      "phash": null,
+      "ahash": null,
+      "dhash": null,
+      "error": ""
+    }
+  },
+  "https://stream1.freetv.fun/k1-1.ctv": {
+    "0811": {
+      "phash": "8ce90ccab65f18b9",
+      "ahash": "183919ffff381810",
+      "dhash": "b3f3f368e4f072f6",
+      "error": null
+    }
+  },
+  "https://stream1.freetv.fun/k1-3.ctv": {
+    "0811": {
+      "phash": "8ce90ccab65f18b9",
+      "ahash": "183919ffff381810",
+      "dhash": "b3f3f368e4f072f6",
+      "error": null
+    }
+  },
+  "https://stream1.freetv.fun/k2-1.ctv": {
+    "0811": {
+      "phash": "8ce80ccab65f38b9",
+      "ahash": "183919ffff381810",
+      "dhash": "b3f3f368e4f072f6",
+      "error": null
+    }
+  },
+  "https://stream1.freetv.fun/k2-2.ctv": {
+    "0811": {
+      "phash": "8ce80ccab65f38b9",
+      "ahash": "183919ffff381810",
+      "dhash": "b3f3f368e4f072f6",
+      "error": null
+    }
+  },
+  "https://stream1.freetv.fun/kalac-tv-2.m3u8": {
+    "0811": {
+      "phash": "a7f3c16979d86098",
+      "ahash": "ebf7b61703033f02",
+      "dhash": "d34c6c26b66666e6",
+      "error": null
+    }
+  },
+  "https://stream1.freetv.fun/kan-11-israel-1.m3u8": {
+    "0811": {
+      "phash": "8dd17a2b35d55312",
+      "ahash": "fffffe7f03010100",
+      "dhash": "53d5f0f65743b3ee",
+      "error": null
+    }
+  },
+  "https://stream1.freetv.fun/karusel-1.m3u8": {
+    "0811": {
+      "phash": "966f781b3f064ac1",
+      "ahash": "00c070360f3c7e7e",
+      "dhash": "6524e5647cfdf8ec",
+      "error": null
+    }
+  },
+  "https://stream1.freetv.fun/karusel-3.m3u8": {
+    "0811": {
+      "phash": null,
+      "ahash": null,
+      "dhash": null,
+      "error": ""
+    }
+  },
+  "https://stream1.freetv.fun/kinokhit-4.m3u8": {
+    "0811": {
+      "phash": "d4cccc0cee2e9e8c",
+      "ahash": "f0f8fee63c00c0f8",
+      "dhash": "a080a88ce0ec0080",
+      "error": null
+    }
+  },
+  "https://stream1.freetv.fun/kinokomediia-2.m3u8": {
+    "0811": {
+      "phash": "b89c476347792f21",
+      "ahash": "00df9fdfcfcfcd00",
+      "dhash": "823031319d99999b",
+      "error": null
+    }
+  },
+  "https://stream1.freetv.fun/kinoseriia-1.m3u8": {
+    "0811": {
+      "phash": "cdd9625893979c52",
+      "ahash": "fefafaba38101000",
+      "dhash": "b2b272525025646c",
+      "error": null
+    }
+  },
+  "https://stream1.freetv.fun/kkhl-tv-1.m3u8": {
+    "0811": {
+      "phash": "907e71c0767e5916",
+      "ahash": "0000071f7f7f3f1f",
+      "dhash": "9cfcbefcf492d4fc",
+      "error": null
+    }
+  },
+  "https://stream1.freetv.fun/kkhl-tv-2.m3u8": {
+    "0811": {
+      "phash": "84797b6630c42d7d",
+      "ahash": "00001f7f7f3f3f1f",
+      "dhash": "a979fcf4a465e4fb",
+      "error": null
+    }
+  },
+  "https://stream1.freetv.fun/kto-est--kto-1.ctv": {
+    "0811": {
+      "phash": "95959b1a496d6566",
+      "ahash": "1e1e166e06040020",
+      "dhash": "fcfcfcde9cfcecca",
+      "error": null
+    }
+  },
+  "https://stream1.freetv.fun/kvn-tv-1.m3u8": {
+    "0811": {
+      "phash": "c4949a612dd85bd7",
+      "ahash": "7e7e7e7662607430",
+      "dhash": "b4a4e4c6c68eecec",
+      "error": null
+    }
+  },
+  "https://stream1.freetv.fun/lale-1.m3u8": {
+    "0811": {
+      "phash": "a62742d0d0fcff21",
+      "ahash": "272727b7fffffffd",
+      "dhash": "cc4d6f6fb333b781",
+      "error": null
+    }
+  },
+  "https://stream1.freetv.fun/li-jiang-xin-wen-zong-he-1.m3u8": {
+    "0811": {
+      "phash": "84586db5955b5617",
+      "ahash": "38713c3e3f373333",
+      "dhash": "f2e3f1f0fce5e7e6",
+      "error": null
+    }
+  },
+  "https://stream1.freetv.fun/liao-zhu-wei-shi--8m1080-1.m3u8": {
+    "0811": {
+      "phash": "9c66394c33e66d19",
+      "ahash": "00183c3c18181818",
+      "dhash": "ccf0f0c8f0b2b2b2",
+      "error": null
+    }
+  },
+  "https://stream1.freetv.fun/liao-zhu-wei-shi--8m1080-2.m3u8": {
+    "0811": {
+      "phash": "b652cb3542b425db",
+      "ahash": "80840404060fffff",
+      "dhash": "1c69690c1cbe3e69",
+      "error": null
+    }
+  },
+  "https://stream1.freetv.fun/liao-zhu-wei-shi-56.m3u8": {
+    "0811": {
+      "phash": null,
+      "ahash": null,
+      "dhash": null,
+      "error": ""
+    }
+  },
+  "https://stream1.freetv.fun/ling-nan-xi-qu-1.ctv": {
+    "0811": {
+      "phash": "d3300b4fd7db480d",
+      "ahash": "0c46cfefef400c6c",
+      "dhash": "d89c9898dcd158d8",
+      "error": null
+    }
+  },
+  "https://stream1.freetv.fun/ling-nan-xi-qu-12.ctv": {
+    "0811": {
+      "phash": null,
+      "ahash": null,
+      "dhash": null,
+      "error": "[tcp @ 0x55abe720aac0] Connection to tcp://14.153.179.49:8686 failed: Connection refused\n[in#0 @ 0x55abe6e57e00] Error opening input: Connection refused\nError opening input file https://stream1.freetv.fun/ling-nan-xi-qu-12.ctv.\nError opening input files: Connection refused\n"
+    }
+  },
+  "https://stream1.freetv.fun/ling-nan-xi-qu-2.ctv": {
+    "0811": {
+      "phash": "c2951f6b9c9c9cc8",
+      "ahash": "fce4f6fcf0f0e0d0",
+      "dhash": "c8ccd4c4c1c18121",
+      "error": null
+    }
+  },
+  "https://stream1.freetv.fun/ling-nan-xi-qu-3.ctv": {
+    "0811": {
+      "phash": null,
+      "ahash": null,
+      "dhash": null,
+      "error": "[tcp @ 0x55a68879aac0] Connection to tcp://116.30.248.123:9876 failed: Connection timed out\n[in#0 @ 0x55a6883e7e00] Error opening input: Connection timed out\nError opening input file https://stream1.freetv.fun/ling-nan-xi-qu-3.ctv.\nError opening input files: Connection timed out\n"
+    }
+  },
+  "https://stream1.freetv.fun/ling-nan-xi-qu-7.ctv": {
+    "0811": {
+      "phash": "d2954d4bcf8c8c4e",
+      "ahash": "f8ccdefcf0f0f0f0",
+      "dhash": "d098a89889898989",
+      "error": null
+    }
+  },
+  "https://stream1.freetv.fun/ling-nan-xi-qu-8.ctv": {
+    "0811": {
+      "phash": null,
+      "ahash": null,
+      "dhash": null,
+      "error": "[h264 @ 0x5642111c7500] non-existing PPS 0 referenced\n    Last message repeated 1 times\n[h264 @ 0x5642111c7500] decode_slice_header error\n[h264 @ 0x5642111c7500] no frame!\n[h264 @ 0x5642111c7500] non-existing PPS 0 referenced\n    Last message repeated 1 times\n[h264 @ 0x5642111c7500] decode_slice_header error\n[h264 @ 0x5642111c7500] no frame!\n[h264 @ 0x5642111c7500] non-existing PPS 0 referenced\n    Last message repeated 1 times\n[h264 @ 0x5642111c7500] decode_slice_header error\n[h264 @ 0x5642111c7500] no frame!\n[h264 @ 0x5642111c7500] non-existing PPS 0 referenced\n    Last message repeated 1 times\n[h264 @ 0x5642111c7500] decode_slice_header error\n[h264 @ 0x5642111c7500] no frame!\n[h264 @ 0x5642111c7500] non-existing PPS 0 referenced\n    Last message repeated 1 times\n[h264 @ 0x5642111c7500] decode_slice_header error\n[h264 @ 0x5642111c7500] no frame!\n[h264 @ 0x5642111c7500] non-existing PPS 0 referenced\n    Last message repeated 1 times\n[h264 @ 0x5642111c7500] decode_slice_header error\n[h264 @ 0x5642111c7500] no frame!\n[h264 @ 0x5642111c7500] non-existing PPS 0 referenced\n    Last message repeated 1 times\n[h264 @ 0x5642111c7500] decode_slice_header error\n[h264 @ 0x5642111c7500] no frame!\n[h264 @ 0x5642111c7500] non-existing PPS 0 referenced\n    Last message repeated 1 times\n[h264 @ 0x5642111c7500] decode_slice_header error\n[h264 @ 0x5642111c7500] no frame!\n[https @ 0x564211105500] Stream ends prematurely at 405972, should be 18446744073709551615\n[h264 @ 0x5642111c7500] non-existing PPS 0 referenced\n    Last message repeated 1 times\n[h264 @ 0x5642111c7500] decode_slice_header error\n[h264 @ 0x5642111c7500] no frame!\n[h264 @ 0x5642111c7500] non-existing PPS 0 referenced\n    Last message repeated 1 times\n[h264 @ 0x5642111c7500] decode_slice_header error\n[h264 @ 0x5642111c7500] no frame!\n[NULL @ 0x5642111c7500] non-existing PPS 0 referenced\n    Last message repeated 3 times\n[h264 @ 0x56421112cd80] non-existing PPS 0 referenced\n[h264 @ 0x56421112cd80] decode_slice_header error\n[h264 @ 0x56421112cd80] no frame!\n[NULL @ 0x5642111c7500] non-existing PPS 0 referenced\n[h264 @ 0x5642112f4040] non-existing PPS 0 referenced\n[h264 @ 0x5642112f4040] decode_slice_header error\n[h264 @ 0x5642112f4040] no frame!\n[NULL @ 0x5642111c7500] non-existing PPS 0 referenced\n[h264 @ 0x56421128da80] non-existing PPS 0 referenced\n[h264 @ 0x56421128da80] decode_slice_header error\n[h264 @ 0x56421128da80] no frame!\n[NULL @ 0x5642111c7500] non-existing PPS 0 referenced\n[h264 @ 0x5642111d2840] non-existing PPS 0 referenced\n[h264 @ 0x5642111d2840] decode_slice_header error\n[h264 @ 0x5642111d2840] no frame!\n[vist#0:0/h264 @ 0x5642114b6880] Error submitting packet to decoder: Invalid data found when processing input\n[NULL @ 0x5642111c7500] non-existing PPS 0 referenced\n[h264 @ 0x56421136da40] non-existing PPS 0 referenced\n[h264 @ 0x56421136da40] decode_slice_header error\n[h264 @ 0x56421136da40] no frame!\n[vist#0:0/h264 @ 0x5642114b6880] Error submitting packet to decoder: Invalid data found when processing input\n[h264 @ 0x56421112cd80] non-existing PPS 0 referenced\n[h264 @ 0x56421112cd80] decode_slice_header error\n[h264 @ 0x56421112cd80] no frame!\n[https @ 0x564211105500] Stream ends prematurely at 405972, should be 18446744073709551615\n[NULL @ 0x5642111c7500] non-existing PPS 0 referenced\n[vist#0:0/h264 @ 0x5642114b6880] Error submitting packet to decoder: Invalid data found when processing input\n[h264 @ 0x5642112f4040] non-existing PPS 0 referenced\n[h264 @ 0x5642112f4040] decode_slice_header error\n[h264 @ 0x5642112f4040] no frame!\n[NULL @ 0x5642111c7500] non-existing PPS 0 referenced\n[vist#0:0/h264 @ 0x5642114b6880] Error submitting packet to decoder: Invalid data found when processing input\n[h264 @ 0x56421128da80] non-existing PPS 0 referenced\n[h264 @ 0x56421128da80] decode_slice_header error\n[h264 @ 0x56421128da80] no frame!\n[in#0/mpegts @ 0x564211104e00] Error during demuxing: Input/output error\n[vist#0:0/h264 @ 0x5642114b6880] Error submitting packet to decoder: Invalid data found when processing input\n[h264 @ 0x5642111d2840] non-existing PPS 0 referenced\n[h264 @ 0x5642111d2840] decode_slice_header error\n[h264 @ 0x5642111d2840] no frame!\n[vist#0:0/h264 @ 0x5642114b6880] Error submitting packet to decoder: Invalid data found when processing input\n[h264 @ 0x56421136da40] non-existing PPS 0 referenced\n[h264 @ 0x56421136da40] decode_slice_header error\n[h264 @ 0x56421136da40] no frame!\n[in#0/mpegts @ 0x564211104e00] Error retrieving a packet from demuxer: Input/output error\n[vist#0:0/h264 @ 0x5642114b6880] Decoding error: Invalid data found when processing input\n    Last message repeated 3 times\nCannot determine format of input stream 0:0 after EOF\nError marking filters as finished\nError while filtering: Invalid data found when processing input\n[vist#0:0/h264 @ 0x5642114b6880] Decode error rate 1 exceeds maximum 0.666667\n[out#0/image2 @ 0x5642114b6400] Nothing was written into output file, because at least one of its streams received no packets.\n"
+    }
+  },
+  "https://stream1.freetv.fun/lu-zhou-xin-wen-zong-he-1.m3u8": {
+    "0811": {
+      "phash": "d4a293cd229d9f98",
+      "ahash": "7f7ffe60c0d81e06",
+      "dhash": "c684a4848632b2ac",
+      "error": null
+    }
+  },
+  "https://stream1.freetv.fun/lu-zhou-xin-wen-zong-he-2.m3u8": {
+    "0811": {
+      "phash": "c4c0830f2b35decf",
+      "ahash": "7fffffc280000000",
+      "dhash": "c0c080962620b6a2",
+      "error": null
+    }
+  },
+  "https://stream1.freetv.fun/luch-1.m3u8": {
+    "0811": {
+      "phash": "bfdda4c898505e52",
+      "ahash": "db8f8c1f1f130707",
+      "dhash": "336a687978f6cc5c",
+      "error": null
+    }
+  },
+  "https://stream1.freetv.fun/match--arena-1.m3u8": {
+    "0811": {
+      "phash": "9979e4e6261cf1a1",
+      "ahash": "c0881c1c0cfefeff",
+      "dhash": "9e1b3a797998b0b0",
+      "error": null
+    }
+  },
+  "https://stream1.freetv.fun/match--arena-2.m3u8": {
+    "0811": {
+      "phash": "8c63b370b947cc96",
+      "ahash": "000010101050ffff",
+      "dhash": "1be2e667b5b4643a",
+      "error": null
+    }
+  },
+  "https://stream1.freetv.fun/match--arena-3.m3u8": {
+    "0811": {
+      "phash": "8169bef429e142de",
+      "ahash": "000000687b7fffff",
+      "dhash": "165252d2d284a428",
+      "error": null
+    }
+  },
+  "https://stream1.freetv.fun/match--borets-1.m3u8": {
+    "0811": {
+      "phash": "cbc7c1b513c5dc90",
+      "ahash": "7c7c38380490f9e9",
+      "dhash": "c0e9f1e16d669399",
+      "error": null
+    }
+  },
+  "https://stream1.freetv.fun/match--igra-2.m3u8": {
+    "0811": {
+      "phash": "f04bb10ced075af2",
+      "ahash": "4060ec34c400c7cf",
+      "dhash": "968888e8acac9e1e",
+      "error": null
+    }
+  },
+  "https://stream1.freetv.fun/match-2.m3u8": {
+    "0811": {
+      "phash": "f807351712e4e5ce",
+      "ahash": "0208f9d818dbdbdb",
+      "dhash": "1eb3939229ba1695",
+      "error": null
+    }
+  },
+  "https://stream1.freetv.fun/match-boets-1.m3u8": {
+    "0811": {
+      "phash": "ce0233ff18bc0756",
+      "ahash": "0130341fbcbbf300",
+      "dhash": "07636435746b2a00",
+      "error": null
+    }
+  },
+  "https://stream1.freetv.fun/match-planeta-1.ctv": {
+    "0811": {
+      "phash": "952a258b78dd78d2",
+      "ahash": "01003c3c3c7f7e62",
+      "dhash": "abd4d4e8f9f0e0d6",
+      "error": null
+    }
+  },
+  "https://stream1.freetv.fun/mega-news-1.m3u8": {
+    "0811": {
+      "phash": "abd4d00f97349f44",
+      "ahash": "f8e1f3bf330101ff",
+      "dhash": "54d3475e465393cf",
+      "error": null
+    }
+  },
+  "https://stream1.freetv.fun/mei-shan-dan-leng-zong-he-1.m3u8": {
+    "0811": {
+      "phash": "bfee41359a08d62c",
+      "ahash": "afb3b58f8f86020c",
+      "dhash": "6a6e6d3d1c14d698",
+      "error": null
+    }
+  },
+  "https://stream1.freetv.fun/mei-shan-dan-leng-zong-he-2.ctv": {
+    "0811": {
+      "phash": "93d265f2c32fd083",
+      "ahash": "c68e1f8eee8e0100",
+      "dhash": "4c1c5858583c3272",
+      "error": null
+    }
+  },
+  "https://stream1.freetv.fun/mei-shan-zong-he-2.m3u8": {
+    "0811": {
+      "phash": "9c66394c33e66d19",
+      "ahash": "00183c3c18181818",
+      "dhash": "ccf0f0c8f0b2b2b2",
+      "error": null
+    }
+  },
+  "https://stream1.freetv.fun/mian-yang-xin-wen-2.m3u8": {
+    "0811": {
+      "phash": "9c66394c33e66d19",
+      "ahash": "00183c3c18181818",
+      "dhash": "ccf0f0c8f0b2b2b2",
+      "error": null
+    }
+  },
+  "https://stream1.freetv.fun/ming-zhu-10.ctv": {
+    "0811": {
+      "phash": "c03fc03ec7d827d8",
+      "ahash": "0000000000005c7c",
+      "dhash": "000000000000a0d0",
+      "error": null
+    }
+  },
+  "https://stream1.freetv.fun/ming-zhu-11.ctv": {
+    "0811": {
+      "phash": "b54a9724daa55aa5",
+      "ahash": "00000000000023ef",
+      "dhash": "0000000000014a48",
+      "error": null
+    }
+  },
+  "https://stream1.freetv.fun/ming-zhu-2.ctv": {
+    "0811": {
+      "phash": "a7895862d36699ce",
+      "ahash": "797f7f6767230000",
+      "dhash": "c3c3eececece0723",
+      "error": null
+    }
+  },
+  "https://stream1.freetv.fun/ming-zhu-7.ctv": {
+    "0811": {
+      "phash": "c0c5c5c5c5c5c7c7",
+      "ahash": "7070707070707070",
+      "dhash": "c2c8c8c8c8c8c8c8",
+      "error": null
+    }
+  },
+  "https://stream1.freetv.fun/ming-zhu-8.ctv": {
+    "0811": {
+      "phash": "d926d12e90ed26d9",
+      "ahash": "000000000000eafe",
+      "dhash": "0000000000001290",
+      "error": null
+    }
+  },
+  "https://stream1.freetv.fun/ming-zhu-9.ctv": {
+    "0811": {
+      "phash": "ea2c1feff0000f1b",
+      "ahash": "80c0e0f0f0f0e0c0",
+      "dhash": "0505858101010111",
+      "error": null
+    }
+  },
+  "https://stream1.freetv.fun/mir-2.m3u8": {
+    "0811": {
+      "phash": "94b0b3c9627272dd",
+      "ahash": "1e1e1e1c183c3c38",
+      "dhash": "d4f4f4a4f0f0f0e0",
+      "error": null
+    }
+  },
+  "https://stream1.freetv.fun/mir-24-1.m3u8": {
+    "0811": {
+      "phash": "b6f88cf133e88ca1",
+      "ahash": "ffffffc3c3180000",
+      "dhash": "1606230f1fa0c4e8",
+      "error": null
+    }
+  },
+  "https://stream1.freetv.fun/mir-24-3.m3u8": {
+    "0811": {
+      "phash": "86ab4f482f47cb8c",
+      "ahash": "10c77f7f1338103f",
+      "dhash": "638fe3ecf6e1e46a",
+      "error": null
+    }
+  },
+  "https://stream1.freetv.fun/moia-planeta-2.m3u8": {
+    "0811": {
+      "phash": "ad8494aa637a3b93",
+      "ahash": "ff7f3b0021010000",
+      "dhash": "f6e676434333b3c2",
+      "error": null
+    }
+  },
+  "https://stream1.freetv.fun/mtv-classic-3.m3u8": {
+    "0811": {
+      "phash": "cdc36763d91a303c",
+      "ahash": "2020181818180000",
+      "dhash": "494cb6b2b2326860",
+      "error": null
+    }
+  },
+  "https://stream1.freetv.fun/mul-tilandiia-1.m3u8": {
+    "0811": {
+      "phash": "e06bcf4498bc558d",
+      "ahash": "f1e1c1c36070f3ff",
+      "dhash": "854b0f9796c42787",
+      "error": null
+    }
+  },
+  "https://stream1.freetv.fun/muzyka-pervogo-1.m3u8": {
+    "0811": {
+      "phash": null,
+      "ahash": null,
+      "dhash": null,
+      "error": ""
+    }
+  },
+  "https://stream1.freetv.fun/nan-chong-ke-jiao-sheng-huo-2.ctv": {
+    "0811": {
+      "phash": "e5185b6b1695666c",
+      "ahash": "6868727f71617373",
+      "dhash": "dad2d6d6c7c3c2c6",
+      "error": null
+    }
+  },
+  "https://stream1.freetv.fun/nan-chong-zong-he-1.ctv": {
+    "0811": {
+      "phash": "b8d0cc5ee42ab26d",
+      "ahash": "dcdccf8e8e0c00ff",
+      "dhash": "b099991c1c19796b",
+      "error": null
+    }
+  },
+  "https://stream1.freetv.fun/nan-chong-zong-he-2.m3u8": {
+    "0811": {
+      "phash": "85f087780f61f786",
+      "ahash": "7e7eff8183c33f3f",
+      "dhash": "cccccc0b279eee60",
+      "error": null
+    }
+  },
+  "https://stream1.freetv.fun/nan-chong-zong-he-3.ctv": {
+    "0811": {
+      "phash": "9566daa2499a35cd",
+      "ahash": "1406060a3b0f1f1e",
+      "dhash": "f4f4f6f2f2def8b0",
+      "error": null
+    }
+  },
+  "https://stream1.freetv.fun/nan-chong-zong-he-5.m3u8": {
+    "0811": {
+      "phash": "9c66394c33e66d19",
+      "ahash": "00183c3c18181818",
+      "dhash": "ccf0f0c8f0b2b2b2",
+      "error": null
+    }
+  },
+  "https://stream1.freetv.fun/nastoiashchee-vremia-1.m3u8": {
+    "0811": {
+      "phash": "838f5e2a95dcca31",
+      "ahash": "3f3f3f3f23610000",
+      "dhash": "64eceed6dfc1a9b8",
+      "error": null
+    }
+  },
+  "https://stream1.freetv.fun/nei-jiang-ke-jiao-sheng-huo-1.m3u8": {
+    "0811": {
+      "phash": "b9c80637d8a46fd8",
+      "ahash": "ffdfd9db8d800200",
+      "dhash": "b4b333b3395e7c7c",
+      "error": null
+    }
+  },
+  "https://stream1.freetv.fun/nei-jiang-zi-zhong-zong-he-1.m3u8": {
+    "0811": {
+      "phash": "e0ec54b115875cf9",
+      "ahash": "73f1717161414000",
+      "dhash": "a7a3e3c3d3938b9f",
+      "error": null
+    }
+  },
+  "https://stream1.freetv.fun/nei-jiang-zi-zhong-zong-he-2.ctv": {
+    "0811": {
+      "phash": "b000c1c1e7777bb9",
+      "ahash": "3f1f0f070f038bff",
+      "dhash": "febebf2cbe3f3797",
+      "error": null
+    }
+  },
+  "https://stream1.freetv.fun/nei-jiang-zong-he-1.m3u8": {
+    "0811": {
+      "phash": "db6664622fd24c99",
+      "ahash": "e0e0f8f8f9f8f8d8",
+      "dhash": "cd4450595b53b832",
+      "error": null
+    }
+  },
+  "https://stream1.freetv.fun/nei-jiang-zong-he-2.m3u8": {
+    "0811": {
+      "phash": "c57a39c8e6930d0f",
+      "ahash": "40c02064747e7e3e",
+      "dhash": "96a664cce4d0d8f2",
+      "error": null
+    }
+  },
+  "https://stream1.freetv.fun/nei-jiang-zong-he-4.m3u8": {
+    "0811": {
+      "phash": "9c66394c33e66d19",
+      "ahash": "00183c3c18181818",
+      "dhash": "ccf0f0c8f0b2b2b2",
+      "error": null
+    }
+  },
+  "https://stream1.freetv.fun/nei-meng-gu-wei-shi-19.ctv": {
+    "0811": {
+      "phash": null,
+      "ahash": null,
+      "dhash": null,
+      "error": "[tcp @ 0x5615a2832640] Connection to tcp://106.53.99.30:80 failed: Connection timed out\n[in#0 @ 0x5615a2728e00] Error opening input: Connection timed out\nError opening input file https://stream1.freetv.fun/nei-meng-gu-wei-shi-19.ctv.\nError opening input files: Connection timed out\n"
+    }
+  },
+  "https://stream1.freetv.fun/newsy-3.m3u8": {
+    "0811": {
+      "phash": "acd6b52b1a14eda4",
+      "ahash": "fffff00001010307",
+      "dhash": "c8c0e6e1b333769f",
+      "error": null
+    }
+  },
+  "https://stream1.freetv.fun/nofesh-1.m3u8": {
+    "0811": {
+      "phash": "b3c10b3e99ccbe0c",
+      "ahash": "4fefffff8f870007",
+      "dhash": "9adcdc9c3c2c3c3e",
+      "error": null
+    }
+  },
+  "https://stream1.freetv.fun/nostal-giia-1.m3u8": {
+    "0811": {
+      "phash": "f81a2f2400eefae3",
+      "ahash": "0088dcdceae0e0fd",
+      "dhash": "0b1839b88a8e066b",
+      "error": null
+    }
+  },
+  "https://stream1.freetv.fun/now-sports-premier-league-3-1.ctv": {
+    "0811": {
+      "phash": "d0d45e2f2f61c0da",
+      "ahash": "001efe630000403c",
+      "dhash": "c63c989626c9c3f0",
+      "error": null
+    }
+  },
+  "https://stream1.freetv.fun/nowcai-jing-2.m3u8": {
+    "0811": {
+      "phash": "973ecad21acd6982",
+      "ahash": "0e07030707e6ff7f",
+      "dhash": "3c6c6e0ecc0ee8d8",
+      "error": null
+    }
+  },
+  "https://stream1.freetv.fun/nowsports-1.m3u8": {
+    "0811": {
+      "phash": "f0873e96c632caca",
+      "ahash": "86c2e0e0f0e0c4c0",
+      "dhash": "0c1e8286828c8c8c",
+      "error": null
+    }
+  },
+  "https://stream1.freetv.fun/ntn-1.ctv": {
+    "0811": {
+      "phash": "8ce90ccab65f18b9",
+      "ahash": "183919ffff381810",
+      "dhash": "b3f3f368e4f072f6",
+      "error": null
+    }
+  },
+  "https://stream1.freetv.fun/ntv-13.m3u8": {
+    "0811": {
+      "phash": null,
+      "ahash": null,
+      "dhash": null,
+      "error": ""
+    }
+  },
+  "https://stream1.freetv.fun/ntv-mir-3.m3u8": {
+    "0811": {
+      "phash": "d4a5402d8ac52ffe",
+      "ahash": "7efefefedc00f0e4",
+      "dhash": "fc9c14841c7ca42c",
+      "error": null
+    }
+  },
+  "https://stream1.freetv.fun/ntv-serial-1.m3u8": {
+    "0811": {
+      "phash": null,
+      "ahash": null,
+      "dhash": null,
+      "error": "[in#0 @ 0x55597d61ce00] Error opening input: Server returned 403 Forbidden (access denied)\nError opening input file https://stream1.freetv.fun/ntv-serial-1.m3u8.\nError opening input files: Server returned 403 Forbidden (access denied)\n"
+    }
+  },
+  "https://stream1.freetv.fun/one-channel-g-1.m3u8": {
+    "0811": {
+      "phash": "9d2ba07c830d7cb3",
+      "ahash": "00000a3a18987fff",
+      "dhash": "37b3766a3a3272e8",
+      "error": null
+    }
+  },
+  "https://stream1.freetv.fun/panamericana-tv-1.m3u8": {
+    "0811": {
+      "phash": "f0670718cf5eb864",
+      "ahash": "61e0e0fcfacc00bf",
+      "dhash": "c7c68e203298e866",
+      "error": null
+    }
+  },
+  "https://stream1.freetv.fun/perets-1.ctv": {
+    "0811": {
+      "phash": "8ca383596e770ec3",
+      "ahash": "7d7f7f9018181818",
+      "dhash": "c9cde426b2b292b3",
+      "error": null
+    }
+  },
+  "https://stream1.freetv.fun/pershii-1.m3u8": {
+    "0811": {
+      "phash": "cd927ef002c51dc7",
+      "ahash": "ce871e3c7adaf0c0",
+      "dhash": "303c74f0d296c607",
+      "error": null
+    }
+  },
+  "https://stream1.freetv.fun/pershii-3.ctv": {
+    "0811": {
+      "phash": "8ce90ccab65f18b9",
+      "ahash": "183919ffff381810",
+      "dhash": "b3f3f368e4f072f6",
+      "error": null
+    }
+  },
+  "https://stream1.freetv.fun/pershii-4.ctv": {
+    "0811": {
+      "phash": "8ce90ccab65f18b9",
+      "ahash": "183919ffff381810",
+      "dhash": "b3f3f368e4f072f6",
+      "error": null
+    }
+  },
+  "https://stream1.freetv.fun/ping-xiang-zong-he-1.m3u8": {
+    "0811": {
+      "phash": null,
+      "ahash": null,
+      "dhash": null,
+      "error": "[in#0 @ 0x55a42bfe0e00] Error opening input: Server returned 403 Forbidden (access denied)\nError opening input file https://stream1.freetv.fun/ping-xiang-zong-he-1.m3u8.\nError opening input files: Server returned 403 Forbidden (access denied)\n"
+    }
+  },
+  "https://stream1.freetv.fun/ping-yu-xin-wen-zong-he-1.m3u8": {
+    "0811": {
+      "phash": "f88203bd31d79547",
+      "ahash": "8dcd8ecec8dab0c0",
+      "dhash": "1ba92c3c3b3625b2",
+      "error": null
+    }
+  },
+  "https://stream1.freetv.fun/plus-1-1.ctv": {
+    "0811": {
+      "phash": "89997463666c6ccb",
+      "ahash": "001f1b3d3d090000",
+      "dhash": "085233236b5b3910",
+      "error": null
+    }
+  },
+  "https://stream1.freetv.fun/powernation-tv-1.m3u8": {
+    "0811": {
+      "phash": "8ac6ae1b69632774",
+      "ahash": "383e7478182d0d09",
+      "dhash": "6165e4d1f9d9993b",
+      "error": null
+    }
+  },
+  "https://stream1.freetv.fun/prime-2.m3u8": {
+    "0811": {
+      "phash": null,
+      "ahash": null,
+      "dhash": null,
+      "error": "[tcp @ 0x5605e040f680] Connection to tcp://168.205.87.198:8555 failed: Connection timed out\n[in#0 @ 0x5605e008ae00] Error opening input: Connection timed out\nError opening input file https://stream1.freetv.fun/prime-2.m3u8.\nError opening input files: Connection timed out\n"
+    }
+  },
+  "https://stream1.freetv.fun/qian-nan-xin-wen-zong-he-1.m3u8": {
+    "0811": {
+      "phash": "d7497bc69c852649",
+      "ahash": "f8e860f6f4e6e6cc",
+      "dhash": "0a5b4426244ccc98",
+      "error": null
+    }
+  },
+  "https://stream1.freetv.fun/qing-he-xin-wen-zong-he-1.m3u8": {
+    "0811": {
+      "phash": "8e3679cb34cd4a4a",
+      "ahash": "0017373737797800",
+      "dhash": "0d2c64a666e3f2d1",
+      "error": null
+    }
+  },
+  "https://stream1.freetv.fun/qing-he-xin-wen-zong-he-2.m3u8": {
+    "0811": {
+      "phash": "9a3266de69cd6292",
+      "ahash": "001f1f1b1dbf3e00",
+      "dhash": "323df9b339797022",
+      "error": null
+    }
+  },
+  "https://stream1.freetv.fun/qing-yuan-xin-wen-zong-he-3.m3u8": {
+    "0811": {
+      "phash": "e60663628dfd1e19",
+      "ahash": "f0f090f0f0e0e0f8",
+      "dhash": "c6ac242424a50243",
+      "error": null
+    }
+  },
+  "https://stream1.freetv.fun/qing-yuan-zong-he-1.m3u8": {
+    "0811": {
+      "phash": "8cc4b7b352cd1d1a",
+      "ahash": "f3f31b1808091900",
+      "dhash": "e68733b1313b7336",
+      "error": null
+    }
+  },
+  "https://stream1.freetv.fun/que-shan-xin-wen-zong-he-1.m3u8": {
+    "0811": {
+      "phash": "8feac29b12bb24e4",
+      "ahash": "3f3f131f1f170707",
+      "dhash": "69677774767676f6",
+      "error": null
+    }
+  },
+  "https://stream1.freetv.fun/quran-2.m3u8": {
+    "0811": {
+      "phash": null,
+      "ahash": null,
+      "dhash": null,
+      "error": ""
+    }
+  },
+  "https://stream1.freetv.fun/r-bangla-1.m3u8": {
+    "0811": {
+      "phash": "953f60c213736fc2",
+      "ahash": "040b8e8f7f7efc40",
+      "dhash": "c8363a5cfce88498",
+      "error": null
+    }
+  },
+  "https://stream1.freetv.fun/radio-shanson-3.m3u8": {
+    "0811": {
+      "phash": "c92e326e86798799",
+      "ahash": "2161f9f9fbf8c87e",
+      "dhash": "cbc3d3e3f3d39898",
+      "error": null
+    }
+  },
+  "https://stream1.freetv.fun/radost--moia-2.m3u8": {
+    "0811": {
+      "phash": "ea270e8e3dcc311d",
+      "ahash": "81c1c1c181c1d9c1",
+      "dhash": "230f1b1b1b13313b",
+      "error": null
+    }
+  },
+  "https://stream1.freetv.fun/radost-1.m3u8": {
+    "0811": {
+      "phash": "ea370e0e3dcc311d",
+      "ahash": "81c1c1c181c1d9c1",
+      "dhash": "030b131b1b13333b",
+      "error": null
+    }
+  },
+  "https://stream1.freetv.fun/rcn-mas-2.m3u8": {
+    "0811": {
+      "phash": "e18479138b9c7bca",
+      "ahash": "7960f0f370c0c8c8",
+      "dhash": "d1c6e6e6c0199999",
+      "error": null
+    }
+  },
+  "https://stream1.freetv.fun/rossiia-1-1.m3u8": {
+    "0811": {
+      "phash": "eaee811b96b2a585",
+      "ahash": "fdd9f1941881c97f",
+      "dhash": "2b23232d693b9bd0",
+      "error": null
+    }
+  },
+  "https://stream1.freetv.fun/rossiia-1-11.m3u8": {
+    "0811": {
+      "phash": "b99679e343211e39",
+      "ahash": "cfcfcfffefef4100",
+      "dhash": "193c361c9c8c9333",
+      "error": null
+    }
+  },
+  "https://stream1.freetv.fun/rossiia-1-2.m3u8": {
+    "0811": {
+      "phash": "a0a0907ee59973bb",
+      "ahash": "7f7763738100187f",
+      "dhash": "948696a32b2ba996",
+      "error": null
+    }
+  },
+  "https://stream1.freetv.fun/rossiia-1-4.m3u8": {
+    "0811": {
+      "phash": null,
+      "ahash": null,
+      "dhash": null,
+      "error": "[out#0/image2 @ 0x55d4d04a3d80] Output file does not contain any stream\nError opening output file pipe:1.\nError opening output files: Invalid argument\n"
+    }
+  },
+  "https://stream1.freetv.fun/rossiia-1-5.m3u8": {
+    "0811": {
+      "phash": "85466a79cad543bc",
+      "ahash": "30363e3edf0f1b39",
+      "dhash": "e4e464e0b25ab2f3",
+      "error": null
+    }
+  },
+  "https://stream1.freetv.fun/rossiia-1-6.m3u8": {
+    "0811": {
+      "phash": "e83de54f6ea23230",
+      "ahash": "e1c3cfd18040efff",
+      "dhash": "262abb3323839d8d",
+      "error": null
+    }
+  },
+  "https://stream1.freetv.fun/rossiia-1-9.m3u8": {
+    "0811": {
+      "phash": "84e090a73f3b7f88",
+      "ahash": "7f7f700030303f3f",
+      "dhash": "eea3a3236662edf4",
+      "error": null
+    }
+  },
+  "https://stream1.freetv.fun/rossiia-24-6.m3u8": {
+    "0811": {
+      "phash": "fafa851a9a11e80f",
+      "ahash": "cde1e1c5c1c000ff",
+      "dhash": "198b89892989cd45",
+      "error": null
+    }
+  },
+  "https://stream1.freetv.fun/rov-tv-1.m3u8": {
+    "0811": {
+      "phash": "c5c66f137839d314",
+      "ahash": "20787efe7e7e0e00",
+      "dhash": "c2e0e4a2d8d8fa28",
+      "error": null
+    }
+  },
+  "https://stream1.freetv.fun/rov-tv-2.m3u8": {
+    "0811": {
+      "phash": "c5c67f1378283317",
+      "ahash": "70787e7e7e7e1c00",
+      "dhash": "c0e0e0a0ccd8f478",
+      "error": null
+    }
+  },
+  "https://stream1.freetv.fun/rt-news-1.m3u8": {
+    "0811": {
+      "phash": "e78e5e7195f01829",
+      "ahash": "b7b7bfffe3c0c080",
+      "dhash": "666767265a9a0e1a",
+      "error": null
+    }
+  },
+  "https://stream1.freetv.fun/rt-news-10.m3u8": {
+    "0811": {
+      "phash": "83137c3c3cc997c3",
+      "ahash": "002c3c3c3c1c78fe",
+      "dhash": "f8e8c9e9e969f0e0",
+      "error": null
+    }
+  },
+  "https://stream1.freetv.fun/rt-news-2.m3u8": {
+    "0811": {
+      "phash": "c3a53c5c3cc3e31c",
+      "ahash": "72576f6626602400",
+      "dhash": "a6a6d5c4ccc8e869",
+      "error": null
+    }
+  },
+  "https://stream1.freetv.fun/rt-news-5.m3u8": {
+    "0811": {
+      "phash": "d9c21d686e546727",
+      "ahash": "d9ddfdddd9c80809",
+      "dhash": "b399b9b93b93b333",
+      "error": null
+    }
+  },
+  "https://stream1.freetv.fun/rt-news-7.m3u8": {
+    "0811": {
+      "phash": "d607788796682bd6",
+      "ahash": "0000347e7e0080c0",
+      "dhash": "000244c4ec612220",
+      "error": null
+    }
+  },
+  "https://stream1.freetv.fun/rta-news-2.m3u8": {
+    "0811": {
+      "phash": "a6249a699abd989b",
+      "ahash": "f763736361e3a3b7",
+      "dhash": "8de7e6e7ebaf6b6d",
+      "error": null
+    }
+  },
+  "https://stream1.freetv.fun/rtp-1.m3u8": {
+    "0811": {
+      "phash": "9d79e09286fdc832",
+      "ahash": "0a08181b1f3fbfbf",
+      "dhash": "b29232727e756465",
+      "error": null
+    }
+  },
+  "https://stream1.freetv.fun/rui-an-xin-wen-zong-he-1.m3u8": {
+    "0811": {
+      "phash": "a6a75348b91d6ca3",
+      "ahash": "ffffffffff000000",
+      "dhash": "d7ed2e368727e48a",
+      "error": null
+    }
+  },
+  "https://stream1.freetv.fun/russkii-bestseler-1.m3u8": {
+    "0811": {
+      "phash": "93656c937369d292",
+      "ahash": "000000083e3e1c00",
+      "dhash": "c3e3d2d8f8f8f8f8",
+      "error": null
+    }
+  },
+  "https://stream1.freetv.fun/russkii-bestseller-3.m3u8": {
+    "0811": {
+      "phash": "84ba6e13746f3945",
+      "ahash": "ffffffff3f000000",
+      "dhash": "fcfcfffffcf8e7e6",
+      "error": null
+    }
+  },
+  "https://stream1.freetv.fun/ryzhii-2.m3u8": {
+    "0811": {
+      "phash": "cf6db26fc07248c2",
+      "ahash": "3838383838383c7e",
+      "dhash": "627272727260e8e8",
+      "error": null
+    }
+  },
+  "https://stream1.freetv.fun/sabc-news-2.m3u8": {
+    "0811": {
+      "phash": "d031a5fc8670fa4b",
+      "ahash": "470e084cdcdcc07f",
+      "dhash": "969a9294d438b0c1",
+      "error": null
+    }
+  },
+  "https://stream1.freetv.fun/saga-music-1.m3u8": {
+    "0811": {
+      "phash": "cb3e69391de036c4",
+      "ahash": "081c3c3c3c2c7838",
+      "dhash": "3278686979c9c9f2",
+      "error": null
+    }
+  },
+  "https://stream1.freetv.fun/saga-music-2.m3u8": {
+    "0811": {
+      "phash": "c13fc3a51dc13ec1",
+      "ahash": "220000620a427a78",
+      "dhash": "d2d498969696c4f0",
+      "error": null
+    }
+  },
+  "https://stream1.freetv.fun/salem-news-channel-1.m3u8": {
+    "0811": {
+      "phash": "d150afa88aad18ef",
+      "ahash": "ff0000000000ffff",
+      "dhash": "118cd4d488940b6b",
+      "error": null
+    }
+  },
+  "https://stream1.freetv.fun/salem-news-channel-2.m3u8": {
+    "0811": {
+      "phash": "a7c83d07d0dc166b",
+      "ahash": "ffff9fff27070707",
+      "dhash": "b453757c4d6d6f5f",
+      "error": null
+    }
+  },
+  "https://stream1.freetv.fun/salira-tv-1.m3u8": {
+    "0811": {
+      "phash": "cfc070f72ac017ad",
+      "ahash": "f8feff39a3ffff00",
+      "dhash": "1022625b57440303",
+      "error": null
+    }
+  },
+  "https://stream1.freetv.fun/shan-dong-wei-shi--4m1080-1.m3u8": {
+    "0811": {
+      "phash": "9c66394c33e66d19",
+      "ahash": "00183c3c18181818",
+      "dhash": "ccf0f0c8f0b2b2b2",
+      "error": null
+    }
+  },
+  "https://stream1.freetv.fun/shan-dong-wei-shi--4m1080-2.m3u8": {
+    "0811": {
+      "phash": "a5968339c5d89b9c",
+      "ahash": "ffe7f7f763014163",
+      "dhash": "8fcfedcec69b97c6",
+      "error": null
+    }
+  },
+  "https://stream1.freetv.fun/shan-dong-wei-shi--8m1080-1.m3u8": {
+    "0811": {
+      "phash": "9c66394c33e66d19",
+      "ahash": "00183c3c18181818",
+      "dhash": "ccf0f0c8f0b2b2b2",
+      "error": null
+    }
+  },
+  "https://stream1.freetv.fun/shan-dong-wei-shi--8m1080-2.m3u8": {
+    "0811": {
+      "phash": "a5d68339c5d8999c",
+      "ahash": "fff7f7e743010163",
+      "dhash": "afcfedce869b83c6",
+      "error": null
+    }
+  },
+  "https://stream1.freetv.fun/shan-tou-sheng-huo-1.m3u8": {
+    "0811": {
+      "phash": "b491a9acd29cc62f",
+      "ahash": "4f4f074f06078382",
+      "dhash": "9e9e2ebc2e263606",
+      "error": null
+    }
+  },
+  "https://stream1.freetv.fun/shan-tou-zong-he-14.m3u8": {
+    "0811": {
+      "phash": "bd5932654a964cb6",
+      "ahash": "8b8b8b9b8b8b8f87",
+      "dhash": "5a1a3a3a3a3a1e0d",
+      "error": null
+    }
+  },
+  "https://stream1.freetv.fun/shang-shi-dong-fang-ying-shi-1.ctv": {
+    "0811": {
+      "phash": "dc337260ad89338f",
+      "ahash": "c0c41c1819183818",
+      "dhash": "9ab9303037b77070",
+      "error": null
+    }
+  },
+  "https://stream1.freetv.fun/shanson-tv-3.m3u8": {
+    "0811": {
+      "phash": "ff0905fa03de1453",
+      "ahash": "0000f0f0e0e0e020",
+      "dhash": "0303202208080800",
+      "error": null
+    }
+  },
+  "https://stream1.freetv.fun/shen-zhen-dian-shi-1.m3u8": {
+    "0811": {
+      "phash": "942f69d04f4936e6",
+      "ahash": "0096373f7ffff800",
+      "dhash": "b2a4a773f49db3a8",
+      "error": null
+    }
+  },
+  "https://stream1.freetv.fun/shen-zhen-du-shi-1.ctv": {
+    "0811": {
+      "phash": "ccb36b6c32d83315",
+      "ahash": "00b31e7e72f8f800",
+      "dhash": "256650b4a6a2b320",
+      "error": null
+    }
+  },
+  "https://stream1.freetv.fun/shen-zhen-du-shi-10.ctv": {
+    "0811": {
+      "phash": "8c3c3b6b429b3867",
+      "ahash": "00001e3c30ffffff",
+      "dhash": "353434e4e4a61184",
+      "error": null
+    }
+  },
+  "https://stream1.freetv.fun/shen-zhen-du-shi-13.ctv": {
+    "0811": {
+      "phash": "9c66394c33e66d19",
+      "ahash": "00183c3c18181818",
+      "dhash": "ccf0f0c8f0b2b2b2",
+      "error": null
+    }
+  },
+  "https://stream1.freetv.fun/shen-zhen-du-shi-16.ctv": {
+    "0811": {
+      "phash": "fd7d26a2a2705c45",
+      "ahash": "008080c9ffffffff",
+      "dhash": "335212114a04a900",
+      "error": null
+    }
+  },
+  "https://stream1.freetv.fun/shen-zhen-du-shi-5.ctv": {
+    "0811": {
+      "phash": null,
+      "ahash": null,
+      "dhash": null,
+      "error": "[https @ 0x563447666500] Stream ends prematurely at 0, should be 18446744073709551615\n[in#0 @ 0x563447665e00] Error opening input: Input/output error\nError opening input file https://stream1.freetv.fun/shen-zhen-du-shi-5.ctv.\nError opening input files: Input/output error\n"
+    }
+  },
+  "https://stream1.freetv.fun/shen-zhen-du-shi-8.ctv": {
+    "0811": {
+      "phash": "d82a62f92fe02755",
+      "ahash": "00fc3c3cfefefe00",
+      "dhash": "21b1e0a170b0a0b0",
+      "error": null
+    }
+  },
+  "https://stream1.freetv.fun/shen-zhen-wei-shi--4m1080-1.m3u8": {
+    "0811": {
+      "phash": "9c66394c33e66d19",
+      "ahash": "00183c3c18181818",
+      "dhash": "ccf0f0c8f0b2b2b2",
+      "error": null
+    }
+  },
+  "https://stream1.freetv.fun/shen-zhen-wei-shi--4m1080-2.m3u8": {
+    "0811": {
+      "phash": "9e7a693942a55b85",
+      "ahash": "818514141414073c",
+      "dhash": "3735f5e5f53557f1",
+      "error": null
+    }
+  },
+  "https://stream1.freetv.fun/shen-zhen-wei-shi--8m1080-1.m3u8": {
+    "0811": {
+      "phash": "9c66394c33e66d19",
+      "ahash": "00183c3c18181818",
+      "dhash": "ccf0f0c8f0b2b2b2",
+      "error": null
+    }
+  },
+  "https://stream1.freetv.fun/shen-zhen-wei-shi--8m1080-2.m3u8": {
+    "0811": {
+      "phash": "94da69b952a75b05",
+      "ahash": "819516161e1e0301",
+      "dhash": "3715545454545693",
+      "error": null
+    }
+  },
+  "https://stream1.freetv.fun/shen-zhen-wei-shi-49.ctv": {
+    "0811": {
+      "phash": null,
+      "ahash": null,
+      "dhash": null,
+      "error": "[mpeg2video @ 0x55ea55311500] Invalid frame dimensions 0x0.\n    Last message repeated 6 times\n[https @ 0x55ea5524f500] Stream ends prematurely at 960680, should be 18446744073709551615\n[mpeg2video @ 0x55ea55311500] Invalid frame dimensions 0x0.\n    Last message repeated 1 times\n[mpeg2video @ 0x55ea552771c0] Invalid frame dimensions 0x0.\n[vist#0:0/mpeg2video @ 0x55ea556034c0] Error submitting packet to decoder: Invalid data found when processing input\n[mpeg2video @ 0x55ea552771c0] Invalid frame dimensions 0x0.\n[vist#0:0/mpeg2video @ 0x55ea556034c0] Error submitting packet to decoder: Invalid data found when processing input\n[mpeg2video @ 0x55ea552771c0] Invalid frame dimensions 0x0.\n[vist#0:0/mpeg2video @ 0x55ea556034c0] Error submitting packet to decoder: Invalid data found when processing input\n[mpeg2video @ 0x55ea552771c0] Invalid frame dimensions 0x0.\n[vist#0:0/mpeg2video @ 0x55ea556034c0] Error submitting packet to decoder: Invalid data found when processing input\n[mpeg2video @ 0x55ea552771c0] Invalid frame dimensions 0x0.\n[vist#0:0/mpeg2video @ 0x55ea556034c0] Error submitting packet to decoder: Invalid data found when processing input\n[mpeg2video @ 0x55ea552771c0] Invalid frame dimensions 0x0.\n[vist#0:0/mpeg2video @ 0x55ea556034c0] Error submitting packet to decoder: Invalid data found when processing input\n[https @ 0x55ea5524f500] Stream ends prematurely at 960680, should be 18446744073709551615\n[mpeg2video @ 0x55ea552771c0] Invalid frame dimensions 0x0.\n[vist#0:0/mpeg2video @ 0x55ea556034c0] Error submitting packet to decoder: Invalid data found when processing input\n[in#0/mpegts @ 0x55ea5524ee00] Error during demuxing: Input/output error\n[mpeg2video @ 0x55ea552771c0] Invalid frame dimensions 0x0.\n[vist#0:0/mpeg2video @ 0x55ea556034c0] Error submitting packet to decoder: Invalid data found when processing input\n[mpeg2video @ 0x55ea552771c0] Invalid frame dimensions 0x0.\n[vist#0:0/mpeg2video @ 0x55ea556034c0] Error submitting packet to decoder: Invalid data found when processing input\n[in#0/mpegts @ 0x55ea5524ee00] Error retrieving a packet from demuxer: Input/output error\nCannot determine format of input stream 0:0 after EOF\nError marking filters as finished\nError while filtering: Invalid data found when processing input\n[vist#0:0/mpeg2video @ 0x55ea556034c0] Decode error rate 1 exceeds maximum 0.666667\n[out#0/image2 @ 0x55ea55600400] Nothing was written into output file, because at least one of its streams received no packets.\n"
+    }
+  },
+  "https://stream1.freetv.fun/shen-zhen-wei-shi-68.m3u8": {
+    "0811": {
+      "phash": "caa5a74ab5524ab5",
+      "ahash": "fffffffffffdfdff",
+      "dhash": "0a02048000010902",
+      "error": null
+    }
+  },
+  "https://stream1.freetv.fun/shi-yan-jing-ji-lu-you-2.m3u8": {
+    "0811": {
+      "phash": "e694087989f21eeb",
+      "ahash": "f7f7f6f6e1e0e000",
+      "dhash": "a4a4a48ccb8b8bd3",
+      "error": null
+    }
+  },
+  "https://stream1.freetv.fun/si-chuan-fu-nu-2.m3u8": {
+    "0811": {
+      "phash": "9c66394c33e66d19",
+      "ahash": "00183c3c18181818",
+      "dhash": "ccf0f0c8f0b2b2b2",
+      "error": null
+    }
+  },
+  "https://stream1.freetv.fun/si-chuan-jing-ji-2.m3u8": {
+    "0811": {
+      "phash": "9c66394c33e66d19",
+      "ahash": "00183c3c18181818",
+      "dhash": "ccf0f0c8f0b2b2b2",
+      "error": null
+    }
+  },
+  "https://stream1.freetv.fun/si-chuan-wei-shi-47.m3u8": {
+    "0811": {
+      "phash": null,
+      "ahash": null,
+      "dhash": null,
+      "error": "[hls @ 0x563fbafb5f00] Error when loading first segment 'http://shyd.695847.xyz/cms001/ch00000090990000001690/36000-10-27582547.ts?zduration=10&prog_time=20251120021109&ts_min=1&ispcode=12&IASHttpSessionId=RR4967720251014100028031761&ztecid=ch00000090990000001690'\n[in#0 @ 0x563fbafb5e00] Error opening input: Invalid data found when processing input\nError opening input file https://stream1.freetv.fun/si-chuan-wei-shi-47.m3u8.\nError opening input files: Invalid data found when processing input\n"
+    }
+  },
+  "https://stream1.freetv.fun/si-chuan-wen-hua-2.m3u8": {
+    "0811": {
+      "phash": "9c66394c33e66d19",
+      "ahash": "00183c3c18181818",
+      "dhash": "ccf0f0c8f0b2b2b2",
+      "error": null
+    }
+  },
+  "https://stream1.freetv.fun/si-chuan-ying-shi-3.m3u8": {
+    "0811": {
+      "phash": "9c66394c33e66d19",
+      "ahash": "00183c3c18181818",
+      "dhash": "ccf0f0c8f0b2b2b2",
+      "error": null
+    }
+  },
+  "https://stream1.freetv.fun/si-ping-xin-wen-zong-he-1.m3u8": {
+    "0811": {
+      "phash": "97afe05019a5534f",
+      "ahash": "ffff3f1f0c040000",
+      "dhash": "ff776e7e759cb4d3",
+      "error": null
+    }
+  },
+  "https://stream1.freetv.fun/si-ping-xin-wen-zong-he-2.m3u8": {
+    "0811": {
+      "phash": "95fa2b028578d766",
+      "ahash": "fffff77e7e04003e",
+      "dhash": "f76f2eaeccccccea",
+      "error": null
+    }
+  },
+  "https://stream1.freetv.fun/sibir--24-4.m3u8": {
+    "0811": {
+      "phash": "c446a679b90cbc67",
+      "ahash": "f0f07010e0f070ff",
+      "dhash": "a6e1a0a293a3a1c9",
+      "error": null
+    }
+  },
+  "https://stream1.freetv.fun/sibir--24-5.m3u8": {
+    "0811": {
+      "phash": "c94ce646e6648f78",
+      "ahash": "f01808c81808c0ff",
+      "dhash": "a2d01213b1d181af",
+      "error": null
+    }
+  },
+  "https://stream1.freetv.fun/sk1-1.m3u8": {
+    "0811": {
+      "phash": "880bf425765a779a",
+      "ahash": "011b1d290d039ddf",
+      "dhash": "d7f3fbd1d9bab524",
+      "error": null
+    }
+  },
+  "https://stream1.freetv.fun/snap-1.m3u8": {
+    "0811": {
+      "phash": "947176c262abab55",
+      "ahash": "c0868b1f3e3f3e3f",
+      "dhash": "9c3c3a3be4e0e0e0",
+      "error": null
+    }
+  },
+  "https://stream1.freetv.fun/soiuz-1.m3u8": {
+    "0811": {
+      "phash": "9a658666998e79c6",
+      "ahash": "050c18189c0c3c1c",
+      "dhash": "ad3db0b139a9e9f9",
+      "error": null
+    }
+  },
+  "https://stream1.freetv.fun/soiuz-3.m3u8": {
+    "0811": {
+      "phash": "98658666b98e59e6",
+      "ahash": "040c18180c1c3c3c",
+      "dhash": "adb8b0b1b9a9e9f9",
+      "error": null
+    }
+  },
+  "https://stream1.freetv.fun/sol-tv-2.m3u8": {
+    "0811": {
+      "phash": "c96d4dd3adc60c4a",
+      "ahash": "780020ffff7c7c58",
+      "dhash": "7292c4c5fbd8c8b2",
+      "error": null
+    }
+  },
+  "https://stream1.freetv.fun/sport-1.m3u8": {
+    "0811": {
+      "phash": "aeac1593b874646d",
+      "ahash": "f37ff3c137300000",
+      "dhash": "e6e3a7af6b698bca",
+      "error": null
+    }
+  },
+  "https://stream1.freetv.fun/sts-kids-2.m3u8": {
+    "0811": {
+      "phash": "b99c8665d3a2e01f",
+      "ahash": "ff9f8fcc88c083ff",
+      "dhash": "3136351919170eac",
+      "error": null
+    }
+  },
+  "https://stream1.freetv.fun/stv-belarus-1.m3u8": {
+    "0811": {
+      "phash": "fe55a954522a56aa",
+      "ahash": "f0f0f0f0f0f0f0f0",
+      "dhash": "0000000000000000",
+      "error": null
+    }
+  },
+  "https://stream1.freetv.fun/su-zhou-dian-ying-yu-le-xin-xi-2.ctv": {
+    "0811": {
+      "phash": "c4dc78ed4e07231b",
+      "ahash": "58fe3e3e3e3a3e3c",
+      "dhash": "b4a4ece4d4c2e2e0",
+      "error": null
+    }
+  },
+  "https://stream1.freetv.fun/sun-life-1.ctv": {
+    "0811": {
+      "phash": "e70f0df062d96499",
+      "ahash": "60b0b8e0e0e0cac0",
+      "dhash": "c84441498d969686",
+      "error": null
+    }
+  },
+  "https://stream1.freetv.fun/sun-life-2.ctv": {
+    "0811": {
+      "phash": "e7071d70e0d1d8ab",
+      "ahash": "70b0b8e0e1e0c2c8",
+      "dhash": "c844414a8d949692",
+      "error": null
+    }
+  },
+  "https://stream1.freetv.fun/sun-news-2.ctv": {
+    "0811": {
+      "phash": "f4d01a41273f6e2b",
+      "ahash": "7cfef7e6e2e00000",
+      "dhash": "dc98ac8cce861665",
+      "error": null
+    }
+  },
+  "https://stream1.freetv.fun/supertv-1.m3u8": {
+    "0811": {
+      "phash": "ef8d986b7b81841c",
+      "ahash": "f9ffffa080e0fac0",
+      "dhash": "5366664949476215",
+      "error": null
+    }
+  },
+  "https://stream1.freetv.fun/t-news-1.m3u8": {
+    "0811": {
+      "phash": "cdc07ab48778896b",
+      "ahash": "c6f8f8fb7fff0000",
+      "dhash": "84b011d2c696166b",
+      "error": null
+    }
+  },
+  "https://stream1.freetv.fun/tai-zhou-xin-wen-zong-he-5.m3u8": {
+    "0811": {
+      "phash": "cc0c3cbeda89a758",
+      "ahash": "18103878fcf3e1e0",
+      "dhash": "22e6e2e1e12b0795",
+      "error": null
+    }
+  },
+  "https://stream1.freetv.fun/talk-news-1.m3u8": {
+    "0811": {
+      "phash": "980f640fcafe21f8",
+      "ahash": "00080f3f3f0fc2c2",
+      "dhash": "f1f8987878d83e9e",
+      "error": null
+    }
+  },
+  "https://stream1.freetv.fun/tekhno-24-1.m3u8": {
+    "0811": {
+      "phash": "c3f1b0c4341c7d1f",
+      "ahash": "fe6d28e8f0f87000",
+      "dhash": "acc94bd24848e9cb",
+      "error": null
+    }
+  },
+  "https://stream1.freetv.fun/tele-news-1.m3u8": {
+    "0811": {
+      "phash": "8d7bd2a468c2c46f",
+      "ahash": "fe0f9989813b7f7e",
+      "dhash": "9c7a7b333366d8c4",
+      "error": null
+    }
+  },
+  "https://stream1.freetv.fun/teledom-1.m3u8": {
+    "0811": {
+      "phash": "b0c8070ff9e34e5c",
+      "ahash": "ff9fd7cfcf030707",
+      "dhash": "2737949a97b60e0e",
+      "error": null
+    }
+  },
+  "https://stream1.freetv.fun/telekafe-1.m3u8": {
+    "0811": {
+      "phash": "e00e08fb82fbd2f2",
+      "ahash": "78f0e0e0e0e0e060",
+      "dhash": "9187878c8999cb86",
+      "error": null
+    }
+  },
+  "https://stream1.freetv.fun/telekanal-mtm-1.ctv": {
+    "0811": {
+      "phash": "8ce90ccab65f18b9",
+      "ahash": "183919ffff381810",
+      "dhash": "b3f3f368e4f072f6",
+      "error": null
+    }
+  },
+  "https://stream1.freetv.fun/telesistema-11-1.m3u8": {
+    "0811": {
+      "phash": "964876d0d0b97657",
+      "ahash": "c040017f3e070707",
+      "dhash": "89a945b2e4766e74",
+      "error": null
+    }
+  },
+  "https://stream1.freetv.fun/tenger-tv-1.m3u8": {
+    "0811": {
+      "phash": "9a2de1ac2ed23dc2",
+      "ahash": "0300001c0d8dfcfc",
+      "dhash": "3f0f49793939d9e9",
+      "error": null
+    }
+  },
+  "https://stream1.freetv.fun/tian-jin-wei-shi--4m1080-1.m3u8": {
+    "0811": {
+      "phash": "9c66394c33e66d19",
+      "ahash": "00183c3c18181818",
+      "dhash": "ccf0f0c8f0b2b2b2",
+      "error": null
+    }
+  },
+  "https://stream1.freetv.fun/tian-jin-wei-shi--4m1080-2.m3u8": {
+    "0811": {
+      "phash": "d0e3b8630fb26336",
+      "ahash": "e0f8fc3c3860dc1a",
+      "dhash": "94b4206060d1b4b2",
+      "error": null
+    }
+  },
+  "https://stream1.freetv.fun/tian-jin-wei-shi--8m1080-1.m3u8": {
+    "0811": {
+      "phash": "9c66394c33e66d19",
+      "ahash": "00183c3c18181818",
+      "dhash": "ccf0f0c8f0b2b2b2",
+      "error": null
+    }
+  },
+  "https://stream1.freetv.fun/tian-jin-wei-shi--8m1080-2.m3u8": {
+    "0811": {
+      "phash": "c4e5a9751eb05b31",
+      "ahash": "727a7a3c1c744e1d",
+      "dhash": "d6c2d2b0b4d494b9",
+      "error": null
+    }
+  },
+  "https://stream1.freetv.fun/tian-ying-3.ctv": {
+    "0811": {
+      "phash": "95ed6d9136a6264c",
+      "ahash": "0078fffffefe3c00",
+      "dhash": "02f2e4cc9cd8d000",
+      "error": null
+    }
+  },
+  "https://stream1.freetv.fun/tian-ying-jing-dian-12.ctv": {
+    "0811": {
+      "phash": "9f67219879b6424d",
+      "ahash": "0121b4befe5f9f00",
+      "dhash": "1e6b6c6c32b0365a",
+      "error": null
+    }
+  },
+  "https://stream1.freetv.fun/tian-ying-jing-dian-2.ctv": {
+    "0811": {
+      "phash": "bcc937f945270a94",
+      "ahash": "00df1ff3dbc98700",
+      "dhash": "1a93a726b2bb2e44",
+      "error": null
+    }
+  },
+  "https://stream1.freetv.fun/tv-land-drama-1.m3u8": {
+    "0811": {
+      "phash": "954f8f3972c0339c",
+      "ahash": "3e3e76460e0e1e0e",
+      "dhash": "cccccc8c9c9cbcdc",
+      "error": null
+    }
+  },
+  "https://stream1.freetv.fun/tv-land-drama-2.m3u8": {
+    "0811": {
+      "phash": "c46378b3cec8354e",
+      "ahash": "0000107c7e7e5c18",
+      "dhash": "e4d4b6f4e4d4b0b2",
+      "error": null
+    }
+  },
+  "https://stream1.freetv.fun/tv-tsentr-1.m3u8": {
+    "0811": {
+      "phash": "fcf1a916a9b10d1c",
+      "ahash": "ced6dbd39212929b",
+      "dhash": "96a6b6a626263636",
+      "error": null
+    }
+  },
+  "https://stream1.freetv.fun/tv-zoom-1.m3u8": {
+    "0811": {
+      "phash": "d1348c71a6ce6d6c",
+      "ahash": "7f4c484c48687c7e",
+      "dhash": "f0d89099d9d0d0e0",
+      "error": null
+    }
+  },
+  "https://stream1.freetv.fun/tv-zoom-2.m3u8": {
+    "0811": {
+      "phash": "d1348c79a68e756c",
+      "ahash": "7f6c406c40687c7c",
+      "dhash": "f0d898d9d9d8d0e0",
+      "error": null
+    }
+  },
+  "https://stream1.freetv.fun/tv5-news-1.m3u8": {
+    "0811": {
+      "phash": "bc84675b88da23f4",
+      "ahash": "3e87871f1f05c001",
+      "dhash": "7a662cb5b55d1493",
+      "error": null
+    }
+  },
+  "https://stream1.freetv.fun/tv7-1.m3u8": {
+    "0811": {
+      "phash": "e6071f3073d9b123",
+      "ahash": "2030f0f0f0f0f0d0",
+      "dhash": "686565c4c4272305",
+      "error": null
+    }
+  },
+  "https://stream1.freetv.fun/tvb-viet-nam-1.m3u8": {
+    "0811": {
+      "phash": "86cb491ba7599939",
+      "ahash": "3f3f3f37071e0407",
+      "dhash": "e9e9f9eceeacaca6",
+      "error": null
+    }
+  },
+  "https://stream1.freetv.fun/us-vh1-1.ctv": {
+    "0811": {
+      "phash": "d0b3cc73999249ae",
+      "ahash": "ecccdccc46405458",
+      "dhash": "18b8b9b8a88ab5b3",
+      "error": null
+    }
+  },
+  "https://stream1.freetv.fun/us-world-fishing-network-1.ctv": {
+    "0811": {
+      "phash": "9a4a7b5ab515264e",
+      "ahash": "0009131f1f1f1f0f",
+      "dhash": "fbfbe3febdbd3d3e",
+      "error": null
+    }
+  },
+  "https://stream1.freetv.fun/v6-news-1.m3u8": {
+    "0811": {
+      "phash": "812f2fc07a2ccb6e",
+      "ahash": "0002025efeff0200",
+      "dhash": "425676949898a213",
+      "error": null
+    }
+  },
+  "https://stream1.freetv.fun/velayat-tv-2.m3u8": {
+    "0811": {
+      "phash": "e8c03706b48f9ed3",
+      "ahash": "71f179717130a080",
+      "dhash": "8783a3a7a7676b2e",
+      "error": null
+    }
+  },
+  "https://stream1.freetv.fun/venevision-1.m3u8": {
+    "0811": {
+      "phash": "cad8ddb09289e9b2",
+      "ahash": "fc3d5911c5411131",
+      "dhash": "b175b161a9a1a12d",
+      "error": null
+    }
+  },
+  "https://stream1.freetv.fun/vevo--70s-1.m3u8": {
+    "0811": {
+      "phash": "d8dc26e09b9fe0c4",
+      "ahash": "7e005a1c7cc0000d",
+      "dhash": "d430b478909010db",
+      "error": null
+    }
+  },
+  "https://stream1.freetv.fun/vevo--70s-2.m3u8": {
+    "0811": {
+      "phash": "9594939398993b9b",
+      "ahash": "7e7600183800787c",
+      "dhash": "dccc34b4f270d0d0",
+      "error": null
+    }
+  },
+  "https://stream1.freetv.fun/vevo--80s-2.m3u8": {
+    "0811": {
+      "phash": "85c27a394e2d3ab5",
+      "ahash": "727e7e7a7e1e1a02",
+      "dhash": "cecceee2e6b6b2b6",
+      "error": null
+    }
+  },
+  "https://stream1.freetv.fun/vevo--90s-1.ctv": {
+    "0811": {
+      "phash": "96c96564cd793293",
+      "ahash": "303c1c3c3c141404",
+      "dhash": "e0e8e9f0e8e4f4ed",
+      "error": null
+    }
+  },
+  "https://stream1.freetv.fun/vevo--90s-2.m3u8": {
+    "0811": {
+      "phash": "c496c9d83ec91ce5",
+      "ahash": "3c3c7e3c067ef820",
+      "dhash": "f4e8e4fcccd4c2ca",
+      "error": null
+    }
+  },
+  "https://stream1.freetv.fun/vevo--90s-3.m3u8": {
+    "0811": {
+      "phash": "91c3ae91ccd23973",
+      "ahash": "7e7e6e7e7e4e6e36",
+      "dhash": "c4c8d8c0d898ace6",
+      "error": null
+    }
+  },
+  "https://stream1.freetv.fun/vevo-70s-1.m3u8": {
+    "0811": {
+      "phash": "cc39ce3366b32c43",
+      "ahash": "0018181a101c3c30",
+      "dhash": "30b232b6f6f4e865",
+      "error": null
+    }
+  },
+  "https://stream1.freetv.fun/vevo-90s-1.m3u8": {
+    "0811": {
+      "phash": "c0e4da179ef1a538",
+      "ahash": "7e585a621662585c",
+      "dhash": "a4b49696a4d6b2b9",
+      "error": null
+    }
+  },
+  "https://stream1.freetv.fun/vevo-country-2.m3u8": {
+    "0811": {
+      "phash": "c6e351563878e62e",
+      "ahash": "0037f7f3b7f61c00",
+      "dhash": "8aebc557646c3430",
+      "error": null
+    }
+  },
+  "https://stream1.freetv.fun/vevo-country-5.m3u8": {
+    "0811": {
+      "phash": "bfc05d1c20faf21a",
+      "ahash": "c033f7e707838081",
+      "dhash": "846e4d4d7d75135b",
+      "error": null
+    }
+  },
+  "https://stream1.freetv.fun/vevo-hip-hop-r-b-2.m3u8": {
+    "0811": {
+      "phash": "948c69e361c33f4e",
+      "ahash": "7e5e3e3e6e642400",
+      "dhash": "c4a4a4d4ccccccd8",
+      "error": null
+    }
+  },
+  "https://stream1.freetv.fun/vevo-latino-1.m3u8": {
+    "0811": {
+      "phash": "99d364cd629a2b66",
+      "ahash": "6c6c2c0c4c181c04",
+      "dhash": "dadad8d998f0b095",
+      "error": null
+    }
+  },
+  "https://stream1.freetv.fun/vevo-latino-2.m3u8": {
+    "0811": {
+      "phash": "d1c1e092603e3f6f",
+      "ahash": "6e7e62606e2c2460",
+      "dhash": "c8cac6d4dcd8c8dc",
+      "error": null
+    }
+  },
+  "https://stream1.freetv.fun/vevo-pop-3.m3u8": {
+    "0811": {
+      "phash": "87a9b215fc5ac90b",
+      "ahash": "1f27393c3e3c3c7c",
+      "dhash": "fcced3f4e4e8e9cc",
+      "error": null
+    }
+  },
+  "https://stream1.freetv.fun/vevo-pop-fast-1.m3u8": {
+    "0811": {
+      "phash": "8955265789572677",
+      "ahash": "0000003c3c000001",
+      "dhash": "0010003030001003",
+      "error": null
+    }
+  },
+  "https://stream1.freetv.fun/vevo-pop-italy-1.m3u8": {
+    "0811": {
+      "phash": "a2c75794983d5396",
+      "ahash": "7363634347070707",
+      "dhash": "c6c7c797958f8f0f",
+      "error": null
+    }
+  },
+  "https://stream1.freetv.fun/vevo-retro-rock-2.m3u8": {
+    "0811": {
+      "phash": "b15c7266a5569c99",
+      "ahash": "0000180a7bf7efff",
+      "dhash": "341a3252d2c6ccce",
+      "error": null
+    }
+  },
+  "https://stream1.freetv.fun/vevo-retro-rock-3.m3u8": {
+    "0811": {
+      "phash": "d06f94348ec3e5a3",
+      "ahash": "000020383cfefefe",
+      "dhash": "e691c9c1e0b098b8",
+      "error": null
+    }
+  },
+  "https://stream1.freetv.fun/vevo-retro-rock-4.m3u8": {
+    "0811": {
+      "phash": "821c71e427ff6893",
+      "ahash": "040c1c3130fcffef",
+      "dhash": "3cbcb161c1c5898a",
+      "error": null
+    }
+  },
+  "https://stream1.freetv.fun/vevo-retro-rock-5.m3u8": {
+    "0811": {
+      "phash": "c2c23ac9379ccd36",
+      "ahash": "7c7c7c7c7c7c1c00",
+      "dhash": "c4c5e0e0c8f0f88d",
+      "error": null
+    }
+  },
+  "https://stream1.freetv.fun/vevo-true-school-hip-hop-2.m3u8": {
+    "0811": {
+      "phash": "85c4389f26d3d8d6",
+      "ahash": "76727272361e0c00",
+      "dhash": "e4e6c6c66468f8b0",
+      "error": null
+    }
+  },
+  "https://stream1.freetv.fun/viasat-sport-3.ctv": {
+    "0811": {
+      "phash": "d3fc1388f50b08f5",
+      "ahash": "f0f0f0f0f0192466",
+      "dhash": "000000000071c8cc",
+      "error": null
+    }
+  },
+  "https://stream1.freetv.fun/vice-tv-1.m3u8": {
+    "0811": {
+      "phash": "995a1e8cd89c1e9e",
+      "ahash": "1c000c5fdf3f7f1e",
+      "dhash": "b1d9f89958f1f0d0",
+      "error": null
+    }
+  },
+  "https://stream1.freetv.fun/vice-tv-2.m3u8": {
+    "0811": {
+      "phash": "c0c1213f3f6b419f",
+      "ahash": "3c7e7c7c3c7c0c1c",
+      "dhash": "f0f0e0e070a838f0",
+      "error": null
+    }
+  },
+  "https://stream1.freetv.fun/vice-tv-3.m3u8": {
+    "0811": {
+      "phash": "cedab9b91a87a0c4",
+      "ahash": "bc3c383830303010",
+      "dhash": "7063e3e1e3e363e3",
+      "error": null
+    }
+  },
+  "https://stream1.freetv.fun/viu6tv-1.ctv": {
+    "0811": {
+      "phash": "e3695d929c9ea261",
+      "ahash": "0000000000000000",
+      "dhash": "0000000000000000",
+      "error": null
+    }
+  },
+  "https://stream1.freetv.fun/viu6tv-2.ctv": {
+    "0811": {
+      "phash": "80ffbf00ff00807f",
+      "ahash": "ffffffffff7f7fff",
+      "dhash": "0000000000888004",
+      "error": null
+    }
+  },
+  "https://stream1.freetv.fun/viutv-1.ctv": {
+    "0811": {
+      "phash": "a70a60bf87f06666",
+      "ahash": "2709007f3fbf4762",
+      "dhash": "4ef92dd9766b96ce",
+      "error": null
+    }
+  },
+  "https://stream1.freetv.fun/viutv-10.m3u8": {
+    "0811": {
+      "phash": "952534bcb61656d6",
+      "ahash": "00000037ffffffff",
+      "dhash": "94d24ae71043962c",
+      "error": null
+    }
+  },
+  "https://stream1.freetv.fun/viutv-12.ctv": {
+    "0811": {
+      "phash": "a70a60bf87f06666",
+      "ahash": "2709007f3fbf4762",
+      "dhash": "4ef92dd9766b96ce",
+      "error": null
+    }
+  },
+  "https://stream1.freetv.fun/viutv-13.ctv": {
+    "0811": {
+      "phash": "8129797267455f39",
+      "ahash": "000f3f7fef947f78",
+      "dhash": "dfd971e6c82d86d0",
+      "error": null
+    }
+  },
+  "https://stream1.freetv.fun/viutv-3.ctv": {
+    "0811": {
+      "phash": "933d3ff3938c8181",
+      "ahash": "07003b1f6fefff7c",
+      "dhash": "7e4bd6f5c808f5c8",
+      "error": null
+    }
+  },
+  "https://stream1.freetv.fun/viutv-4.m3u8": {
+    "0811": {
+      "phash": "d02eaed242e453af",
+      "ahash": "3400000010fcffff",
+      "dhash": "a8ba1296f0d8e0e2",
+      "error": null
+    }
+  },
+  "https://stream1.freetv.fun/viutv-6.ctv": {
+    "0811": {
+      "phash": "e43e9062f6543fc1",
+      "ahash": "00010080f1e1ffff",
+      "dhash": "aeab2a260787929e",
+      "error": null
+    }
+  },
+  "https://stream1.freetv.fun/viutv-7.ctv": {
+    "0811": {
+      "phash": "933d3ff3938c8181",
+      "ahash": "07003b1f6fefff7c",
+      "dhash": "7e4bd6f5c808f5c8",
+      "error": null
+    }
+  },
+  "https://stream1.freetv.fun/viutv-9.ctv": {
+    "0811": {
+      "phash": "c6cce6bbb2913981",
+      "ahash": "f67070360401f377",
+      "dhash": "84e4e3e6ad67c7c5",
+      "error": null
+    }
+  },
+  "https://stream1.freetv.fun/viutv6-1.m3u8": {
+    "0811": {
+      "phash": "bc2324fb9ed9c02c",
+      "ahash": "07070f8f8f8f8f97",
+      "dhash": "fc3c1c38383c3434",
+      "error": null
+    }
+  },
+  "https://stream1.freetv.fun/viutvsix-1.ctv": {
+    "0811": {
+      "phash": "891fc818cac6ded6",
+      "ahash": "1d1b2b2b0b2b7b79",
+      "dhash": "f1fbebebda9b8393",
+      "error": null
+    }
+  },
+  "https://stream1.freetv.fun/viutvsix-2.ctv": {
+    "0811": {
+      "phash": "af35583e30d90e78",
+      "ahash": "03233323a3b1f979",
+      "dhash": "464646466f635393",
+      "error": null
+    }
+  },
+  "https://stream1.freetv.fun/voa-tv-africa-1.m3u8": {
+    "0811": {
+      "phash": "dd21b6691ccb2476",
+      "ahash": "000804381873bcfe",
+      "dhash": "f6caccf032d26934",
+      "error": null
+    }
+  },
+  "https://stream1.freetv.fun/voprosy-i-otvety-2.m3u8": {
+    "0811": {
+      "phash": "c0c12c67cddc3b36",
+      "ahash": "7e7e7e7c6e041414",
+      "dhash": "c4ccd8d0cccca4a4",
+      "error": null
+    }
+  },
+  "https://stream1.freetv.fun/voprosy-otvety-1.m3u8": {
+    "0811": {
+      "phash": "859f2d619e686372",
+      "ahash": "7e7e7e7e76606242",
+      "dhash": "d0f2d4f4ccd696c4",
+      "error": null
+    }
+  },
+  "https://stream1.freetv.fun/vox1-1.m3u8": {
+    "0811": {
+      "phash": "bf41d54f18ca2f60",
+      "ahash": "80c2819981b1ffcf",
+      "dhash": "721c5d31336b293f",
+      "error": null
+    }
+  },
+  "https://stream1.freetv.fun/w-network-1.m3u8": {
+    "0811": {
+      "phash": "95cd3232d99b6c34",
+      "ahash": "7e1a1b7a5a070f04",
+      "dhash": "56d6f6d2d62ce9ac",
+      "error": null
+    }
+  },
+  "https://stream1.freetv.fun/w-network-2.m3u8": {
+    "0811": {
+      "phash": "c98d33c3b6161676",
+      "ahash": "1f795afffc780000",
+      "dhash": "d65354b4d5d04acd",
+      "error": null
+    }
+  },
+  "https://stream1.freetv.fun/w-sports--v-1.ctv": {
+    "0811": {
+      "phash": "d8e2a7bcb4c33650",
+      "ahash": "f7f0f0f0909e78e0",
+      "dhash": "2e8181813434d008",
+      "error": null
+    }
+  },
+  "https://stream1.freetv.fun/walla-plus-1.m3u8": {
+    "0811": {
+      "phash": "c4cc3b133f78923c",
+      "ahash": "007a7e3a3a7e1800",
+      "dhash": "cbe2e4e2f2c4f092",
+      "error": null
+    }
+  },
+  "https://stream1.freetv.fun/wanasah-2.m3u8": {
+    "0811": {
+      "phash": "e73459c638c916ea",
+      "ahash": "00e7e3e3f7ffff00",
+      "dhash": "324d4d476decc3db",
+      "error": null
+    }
+  },
+  "https://stream1.freetv.fun/warner-tv-4.m3u8": {
+    "0811": {
+      "phash": "8df22d827807d2bd",
+      "ahash": "ffffffffff3f1300",
+      "dhash": "9a96feeab2d4f633",
+      "error": null
+    }
+  },
+  "https://stream1.freetv.fun/waterbear-2.m3u8": {
+    "0811": {
+      "phash": "b9c8ce827287c3ce",
+      "ahash": "ffdfdbcb80030280",
+      "dhash": "9193129a1c1e3e36",
+      "error": null
+    }
+  },
+  "https://stream1.freetv.fun/waterbear-3.m3u8": {
+    "0811": {
+      "phash": "f1cbce16588dcd42",
+      "ahash": "ffefebcb440300c0",
+      "dhash": "e35b5a9a9a1a1e1e",
+      "error": null
+    }
+  },
+  "https://stream1.freetv.fun/wbtv-love-desire-1.m3u8": {
+    "0811": {
+      "phash": "96886de46d2d562d",
+      "ahash": "3c3c3c1c34640300",
+      "dhash": "f1e8edb9edcdae68",
+      "error": null
+    }
+  },
+  "https://stream1.freetv.fun/wdr-2.ctv": {
+    "0811": {
+      "phash": "ab15e626b2d3fb00",
+      "ahash": "07070b0b0381f1f1",
+      "dhash": "ce9ebabaab236381",
+      "error": null
+    }
+  },
+  "https://stream1.freetv.fun/weathernation-new-york-1.m3u8": {
+    "0811": {
+      "phash": "8b8a3474e569d58b",
+      "ahash": "473d3d3939000101",
+      "dhash": "cbe9f9f3f1694bdb",
+      "error": null
+    }
+  },
+  "https://stream1.freetv.fun/wen-shan-xin-wen-zong-he-1.m3u8": {
+    "0811": {
+      "phash": "bdf1a600172e974b",
+      "ahash": "83cbdb8b88038383",
+      "dhash": "2e33333232332727",
+      "error": null
+    }
+  },
+  "https://stream1.freetv.fun/wild--n-out-2.m3u8": {
+    "0811": {
+      "phash": "fd9b34f0c1c51683",
+      "ahash": "fe8080f8f9c0c0d0",
+      "dhash": "963328c2d184a626",
+      "error": null
+    }
+  },
+  "https://stream1.freetv.fun/wild--n-out-3.m3u8": {
+    "0811": {
+      "phash": "c39f3c603e2fc2c1",
+      "ahash": "3f3f7e247c600000",
+      "dhash": "e868e849c0888a3a",
+      "error": null
+    }
+  },
+  "https://stream1.freetv.fun/wild-earth--y-1.m3u8": {
+    "0811": {
+      "phash": "d0da2768273b6a1d",
+      "ahash": "fcfe7c7c58580002",
+      "dhash": "61e0b0b8b0b0b6c6",
+      "error": null
+    }
+  },
+  "https://stream1.freetv.fun/wild-earth-1.m3u8": {
+    "0811": {
+      "phash": "c42eeea31bc86ea2",
+      "ahash": "00000000efffffff",
+      "dhash": "0752a6f088a4d090",
+      "error": null
+    }
+  },
+  "https://stream1.freetv.fun/wild-earth-2.m3u8": {
+    "0811": {
+      "phash": "b3184be14e37339c",
+      "ahash": "00000606ffefffff",
+      "dhash": "c9f03c3c149e4c48",
+      "error": null
+    }
+  },
+  "https://stream1.freetv.fun/wildearth-3.m3u8": {
+    "0811": {
+      "phash": "91636e9c6d696c1c",
+      "ahash": "006c646c1e1f1e10",
+      "dhash": "89c8c9d8d8f0f0b0",
+      "error": null
+    }
+  },
+  "https://stream1.freetv.fun/willow-2.m3u8": {
+    "0811": {
+      "phash": "a4bf78c714af5281",
+      "ahash": "8fcf1f3f7f63f300",
+      "dhash": "3f17ff6fcecb07b6",
+      "error": null
+    }
+  },
+  "https://stream1.freetv.fun/wnbc-dt1-2.m3u8": {
+    "0811": {
+      "phash": "c3c3383c2e36763c",
+      "ahash": "007c7cee97d60c00",
+      "dhash": "d0d0d84875b49820",
+      "error": null
+    }
+  },
+  "https://stream1.freetv.fun/world-fashion-channel-2.m3u8": {
+    "0811": {
+      "phash": null,
+      "ahash": null,
+      "dhash": null,
+      "error": ""
+    }
+  },
+  "https://stream1.freetv.fun/world-fishing-network-1.ctv": {
+    "0811": {
+      "phash": "ff00e01ee0fec6a2",
+      "ahash": "1700e0800181e1e0",
+      "dhash": "25d544666f6b0381",
+      "error": null
+    }
+  },
+  "https://stream1.freetv.fun/world-fishing-network-4.ctv": {
+    "0811": {
+      "phash": "b700ffa1b7a0c0b9",
+      "ahash": "6f2200200fefc381",
+      "dhash": "daeaa8cc5e8b0b43",
+      "error": null
+    }
+  },
+  "https://stream1.freetv.fun/world-fishing-network-5.ctv": {
+    "0811": {
+      "phash": "9598c2cf9aeece02",
+      "ahash": "7f0f07070e226000",
+      "dhash": "f11a9e967aeace0e",
+      "error": null
+    }
+  },
+  "https://stream1.freetv.fun/world-fishing-network-6.ctv": {
+    "0811": {
+      "phash": "9598c2cf9aeece02",
+      "ahash": "7f0f07070e226000",
+      "dhash": "f11a9e967aeace0e",
+      "error": null
+    }
+  },
+  "https://stream1.freetv.fun/world-poker-1.ctv": {
+    "0811": {
+      "phash": "d29619e96c93e538",
+      "ahash": "0404743460fe0c04",
+      "dhash": "ecadcd6d8d8ad8cd",
+      "error": null
+    }
+  },
+  "https://stream1.freetv.fun/world-poker-tour-1.m3u8": {
+    "0811": {
+      "phash": "d00d9f706fb20e3c",
+      "ahash": "00001040c0ecffff",
+      "dhash": "d05030908299992a",
+      "error": null
+    }
+  },
+  "https://stream1.freetv.fun/world-poker-tour-10.m3u8": {
+    "0811": {
+      "phash": "cdc36763d91a303c",
+      "ahash": "2020181818180000",
+      "dhash": "494cb6b2b2326860",
+      "error": null
+    }
+  },
+  "https://stream1.freetv.fun/world-poker-tour-11.m3u8": {
+    "0811": {
+      "phash": "d29f1de82916e929",
+      "ahash": "04042664f0f42404",
+      "dhash": "aced4ccdada5cdcd",
+      "error": null
+    }
+  },
+  "https://stream1.freetv.fun/world-poker-tour-5.ctv": {
+    "0811": {
+      "phash": "8929f14326f9dae4",
+      "ahash": "091b1d19333ce87c",
+      "dhash": "53d3316bee7912d8",
+      "error": null
+    }
+  },
+  "https://stream1.freetv.fun/world-poker-tour-7.m3u8": {
+    "0811": {
+      "phash": "8928f1e326f99ae4",
+      "ahash": "a91b1d1b333ce8fc",
+      "dhash": "5bd3316b6ef952d0",
+      "error": null
+    }
+  },
+  "https://stream1.freetv.fun/world-poker-tour-9.m3u8": {
+    "0811": {
+      "phash": "c41739e8c4379f62",
+      "ahash": "00002037f7ff6f24",
+      "dhash": "f0e048e4a6b38ae8",
+      "error": null
+    }
+  },
+  "https://stream1.freetv.fun/wu-jiang-xin-wen-zong-he-1.m3u8": {
+    "0811": {
+      "phash": "f15e5fa42ca31cc2",
+      "ahash": "00c8c8cb4fcfe988",
+      "dhash": "1698999396969b19",
+      "error": null
+    }
+  },
+  "https://stream1.freetv.fun/wu-xi-yi-xing-xin-wen-1.m3u8": {
+    "0811": {
+      "phash": "dcfc7c7921830707",
+      "ahash": "c0d83c1c001c3c00",
+      "dhash": "11306c7010706830",
+      "error": null
+    }
+  },
+  "https://stream1.freetv.fun/wu-yang-xin-wen-zong-he-1.m3u8": {
+    "0811": {
+      "phash": null,
+      "ahash": null,
+      "dhash": null,
+      "error": ""
+    }
+  },
+  "https://stream1.freetv.fun/wwe-network-2.ctv": {
+    "0811": {
+      "phash": "c93df1c036d92587",
+      "ahash": "fcd818103078f87f",
+      "dhash": "9893733363c391c9",
+      "error": null
+    }
+  },
+  "https://stream1.freetv.fun/wwe-network-3.ctv": {
+    "0811": {
+      "phash": "c93df1c036d92587",
+      "ahash": "fcd818103078f87f",
+      "dhash": "9893733363c391c9",
+      "error": null
+    }
+  },
+  "https://stream1.freetv.fun/wwwe-1.ctv": {
+    "0811": {
+      "phash": null,
+      "ahash": null,
+      "dhash": null,
+      "error": "[mov,mp4,m4a,3gp,3g2,mj2 @ 0x564d53e38f00] moov atom not found\n[in#0 @ 0x564d53e38e00] Error opening input: Invalid data found when processing input\nError opening input file https://stream1.freetv.fun/wwwe-1.ctv.\nError opening input files: Invalid data found when processing input\n"
+    }
+  },
+  "https://stream1.freetv.fun/xi-an-du-shi-1.m3u8": {
+    "0811": {
+      "phash": "dcf02e0f43276237",
+      "ahash": "00dfdffef83d0b00",
+      "dhash": "10b8ac8a48717673",
+      "error": null
+    }
+  },
+  "https://stream1.freetv.fun/xi-an-du-shi-3.m3u8": {
+    "0811": {
+      "phash": null,
+      "ahash": null,
+      "dhash": null,
+      "error": ""
+    }
+  },
+  "https://stream1.freetv.fun/xi-an-shang-wu-zi-xun-1.ctv": {
+    "0811": {
+      "phash": "8c3be0364ca3bde8",
+      "ahash": "c0009918191f7f78",
+      "dhash": "9f3233333377c7d7",
+      "error": null
+    }
+  },
+  "https://stream1.freetv.fun/xi-an-shang-wu-zi-xun-2.m3u8": {
+    "0811": {
+      "phash": "fce0e0fc0f07070f",
+      "ahash": "c0c0008080808080",
+      "dhash": "0080000000000000",
+      "error": null
+    }
+  },
+  "https://stream1.freetv.fun/xi-an-xi-ju-ying-shi-1.ctv": {
+    "0811": {
+      "phash": "f402e97c171d689e",
+      "ahash": "f0f0f4f4b4e0c0fb",
+      "dhash": "24a5a4e464161252",
+      "error": null
+    }
+  },
+  "https://stream1.freetv.fun/xi-an-xin-wen-zong-he-1.m3u8": {
+    "0811": {
+      "phash": "da614dda359e2526",
+      "ahash": "00f8fddfcfddbc00",
+      "dhash": "28b995951d392971",
+      "error": null
+    }
+  },
+  "https://stream1.freetv.fun/xi-an-ying-shi-1.m3u8": {
+    "0811": {
+      "phash": "e1d78b5294a72a9c",
+      "ahash": "ffffe3c3c1c06173",
+      "dhash": "8a990b868687cbe3",
+      "error": null
+    }
+  },
+  "https://stream1.freetv.fun/xi-zhu-xin-wen-1.m3u8": {
+    "0811": {
+      "phash": "8080808080800000",
+      "ahash": "ffff000000000000",
+      "dhash": "0000000000000000",
+      "error": null
+    }
+  },
+  "https://stream1.freetv.fun/xian-feng-ping-yu-9.m3u8": {
+    "0811": {
+      "phash": "9c66394c33e66d19",
+      "ahash": "00183c3c18181818",
+      "dhash": "ccf0f0c8f0b2b2b2",
+      "error": null
+    }
+  },
+  "https://stream1.freetv.fun/xin-shi-jue-2.m3u8": {
+    "0811": {
+      "phash": "9c66394c33e66d19",
+      "ahash": "00183c3c18181818",
+      "dhash": "ccf0f0c8f0b2b2b2",
+      "error": null
+    }
+  },
+  "https://stream1.freetv.fun/xin-xian-xin-wen-zong-he-1.m3u8": {
+    "0811": {
+      "phash": "aca5e287455a7738",
+      "ahash": "77d70b131b1a9880",
+      "dhash": "c696363772323123",
+      "error": null
+    }
+  },
+  "https://stream1.freetv.fun/xin-xiang-xian-xin-wen-zong-he-1.m3u8": {
+    "0811": {
+      "phash": "a8d9572639d8a92b",
+      "ahash": "0080dbdf9fb30000",
+      "dhash": "002a93b133272500",
+      "error": null
+    }
+  },
+  "https://stream1.freetv.fun/xin-xiang-zong-he-1.m3u8": {
+    "0811": {
+      "phash": "a9d856372bd88927",
+      "ahash": "0080dbdb93ff0000",
+      "dhash": "012a93b3272a2a00",
+      "error": null
+    }
+  },
+  "https://stream1.freetv.fun/xin-ye-xin-wen-zong-he-1.m3u8": {
+    "0811": {
+      "phash": "f8f80764b2a43aad",
+      "ahash": "c0c0c8c8c8d8d8c4",
+      "dhash": "071313119191949c",
+      "error": null
+    }
+  },
+  "https://stream1.freetv.fun/xing-kong-guo-ji-1.m3u8": {
+    "0811": {
+      "phash": null,
+      "ahash": null,
+      "dhash": null,
+      "error": ""
+    }
+  },
+  "https://stream1.freetv.fun/xing-tai-sheng-huo-1.m3u8": {
+    "0811": {
+      "phash": "e1dd76661e991d08",
+      "ahash": "e0e27bfbe3e3e100",
+      "dhash": "4ed6d2d2d7c6d715",
+      "error": null
+    }
+  },
+  "https://stream1.freetv.fun/xite-5.m3u8": {
+    "0811": {
+      "phash": "99c1ce5c33330d1f",
+      "ahash": "787c7c4c1c1c1c1c",
+      "dhash": "f0f0d0d8d8b0b8b8",
+      "error": null
+    }
+  },
+  "https://stream1.freetv.fun/yan-dong-jing-ji-ke-jiao-13.ctv": {
+    "0811": {
+      "phash": "a4dada2da5b59192",
+      "ahash": "df74761313131313",
+      "dhash": "b4a5b4a626262626",
+      "error": null
+    }
+  },
+  "https://stream1.freetv.fun/yan-dong-jing-ji-ke-jiao-14.ctv": {
+    "0811": {
+      "phash": null,
+      "ahash": null,
+      "dhash": null,
+      "error": "[tcp @ 0x556701404800] Connection to tcp://14.153.179.49:8686 failed: Connection refused\n[in#0 @ 0x55670121ee00] Error opening input: Connection refused\nError opening input file https://stream1.freetv.fun/yan-dong-jing-ji-ke-jiao-14.ctv.\nError opening input files: Connection refused\n"
+    }
+  },
+  "https://stream1.freetv.fun/yan-dong-jing-ji-ke-jiao-3.ctv": {
+    "0811": {
+      "phash": "946a6af8b5b1b183",
+      "ahash": "d734361616161616",
+      "dhash": "b464d4f4f4f4f4f4",
+      "error": null
+    }
+  },
+  "https://stream1.freetv.fun/yan-dong-jing-ji-ke-jiao-4.ctv": {
+    "0811": {
+      "phash": null,
+      "ahash": null,
+      "dhash": null,
+      "error": "[https @ 0x565128660500] Stream ends prematurely at 319788, should be 18446744073709551615\n[h264 @ 0x565128a10b40] non-existing PPS 0 referenced\n    Last message repeated 1 times\n[h264 @ 0x565128a10b40] decode_slice_header error\n[h264 @ 0x565128a10b40] no frame!\n[h264 @ 0x565128a10b40] non-existing PPS 0 referenced\n    Last message repeated 1 times\n[h264 @ 0x565128a10b40] decode_slice_header error\n[h264 @ 0x565128a10b40] no frame!\n[https @ 0x565128660500] Stream ends prematurely at 319788, should be 18446744073709551615\n[NULL @ 0x565128a10b40] non-existing PPS 0 referenced\n    Last message repeated 1 times\n[in#0/mpegts @ 0x56512865fe00] Error during demuxing: Input/output error\n[h264 @ 0x565128785580] non-existing PPS 0 referenced\n[h264 @ 0x565128785580] decode_slice_header error\n[h264 @ 0x565128785580] no frame!\n[in#0/mpegts @ 0x56512865fe00] Error retrieving a packet from demuxer: Input/output error\n[h264 @ 0x56512872c140] non-existing PPS 0 referenced\n[h264 @ 0x56512872c140] decode_slice_header error\n[h264 @ 0x56512872c140] no frame!\n[vist#0:0/h264 @ 0x565128919ac0] Decoding error: Invalid data found when processing input\n    Last message repeated 1 times\nCannot determine format of input stream 0:0 after EOF\nError marking filters as finished\nError while filtering: Invalid data found when processing input\n[vist#0:0/h264 @ 0x565128919ac0] Decode error rate 1 exceeds maximum 0.666667\n[out#0/image2 @ 0x565128a22a40] Nothing was written into output file, because at least one of its streams received no packets.\n"
+    }
+  },
+  "https://stream1.freetv.fun/yan-dong-jing-ji-ke-jiao-6.ctv": {
+    "0811": {
+      "phash": "9c66394c33e66d19",
+      "ahash": "00183c3c18181818",
+      "dhash": "ccf0f0c8f0b2b2b2",
+      "error": null
+    }
+  },
+  "https://stream1.freetv.fun/yan-dong-min-sheng-12.ctv": {
+    "0811": {
+      "phash": null,
+      "ahash": null,
+      "dhash": null,
+      "error": "[tcp @ 0x55f663994ac0] Connection to tcp://116.30.248.123:9876 failed: Connection timed out\n[in#0 @ 0x55f6635e1e00] Error opening input: Connection timed out\nError opening input file https://stream1.freetv.fun/yan-dong-min-sheng-12.ctv.\nError opening input files: Connection timed out\n"
+    }
+  },
+  "https://stream1.freetv.fun/yan-dong-min-sheng-14.ctv": {
+    "0811": {
+      "phash": "8ec5fb3d2c870332",
+      "ahash": "fffc343001001dbd",
+      "dhash": "6160c5e52f797975",
+      "error": null
+    }
+  },
+  "https://stream1.freetv.fun/yan-dong-shao-er-1.ctv": {
+    "0811": {
+      "phash": "931b91919190ddfd",
+      "ahash": "1e0c0000081c7fff",
+      "dhash": "d879288d196ab918",
+      "error": null
+    }
+  },
+  "https://stream1.freetv.fun/yan-dong-shao-er-14.ctv": {
+    "0811": {
+      "phash": "94236bcd2ce2b5a6",
+      "ahash": "0100665737fe7c08",
+      "dhash": "e7cbcca4ae76e991",
+      "error": null
+    }
+  },
+  "https://stream1.freetv.fun/yan-dong-shao-er-2.m3u8": {
+    "0811": {
+      "phash": null,
+      "ahash": null,
+      "dhash": null,
+      "error": ""
+    }
+  },
+  "https://stream1.freetv.fun/yan-dong-shao-er-21.ctv": {
+    "0811": {
+      "phash": "994d67f32273252a",
+      "ahash": "68b818180ccece07",
+      "dhash": "db73b2b3b998189f",
+      "error": null
+    }
+  },
+  "https://stream1.freetv.fun/yan-dong-shao-er-23.ctv": {
+    "0811": {
+      "phash": "835cac474c96d4bd",
+      "ahash": "38391f1c082e3f3f",
+      "dhash": "f5f3bcfc58d8daf7",
+      "error": null
+    }
+  },
+  "https://stream1.freetv.fun/yan-dong-shao-er-7.ctv": {
+    "0811": {
+      "phash": null,
+      "ahash": null,
+      "dhash": null,
+      "error": ""
+    }
+  },
+  "https://stream1.freetv.fun/yan-dong-shao-er-8.ctv": {
+    "0811": {
+      "phash": "9c66394c33e66d19",
+      "ahash": "00183c3c18181818",
+      "dhash": "ccf0f0c8f0b2b2b2",
+      "error": null
+    }
+  },
+  "https://stream1.freetv.fun/yan-dong-ti-yu-20.ctv": {
+    "0811": {
+      "phash": null,
+      "ahash": null,
+      "dhash": null,
+      "error": "[https @ 0x563924ee6500] Stream ends prematurely at 0, should be 18446744073709551615\n[in#0 @ 0x563924ee5e00] Error opening input: Input/output error\nError opening input file https://stream1.freetv.fun/yan-dong-ti-yu-20.ctv.\nError opening input files: Input/output error\n"
+    }
+  },
+  "https://stream1.freetv.fun/yan-dong-ti-yu-37.m3u8": {
+    "0811": {
+      "phash": null,
+      "ahash": null,
+      "dhash": null,
+      "error": ""
+    }
+  },
+  "https://stream1.freetv.fun/yan-dong-wei-shi--4m1080-1.m3u8": {
+    "0811": {
+      "phash": "9c66394c33e66d19",
+      "ahash": "00183c3c18181818",
+      "dhash": "ccf0f0c8f0b2b2b2",
+      "error": null
+    }
+  },
+  "https://stream1.freetv.fun/yan-dong-wei-shi--4m1080-2.m3u8": {
+    "0811": {
+      "phash": "e1e0483c2f1f5bc3",
+      "ahash": "e0e0e0e2e3800000",
+      "dhash": "91828a8a0b1a82b3",
+      "error": null
+    }
+  },
+  "https://stream1.freetv.fun/yan-dong-wei-shi--8m1080-1.m3u8": {
+    "0811": {
+      "phash": "9c66394c33e66d19",
+      "ahash": "00183c3c18181818",
+      "dhash": "ccf0f0c8f0b2b2b2",
+      "error": null
+    }
+  },
+  "https://stream1.freetv.fun/yan-dong-wei-shi--8m1080-2.m3u8": {
+    "0811": {
+      "phash": "b8f0ddb085d5a4c5",
+      "ahash": "fffd510105070809",
+      "dhash": "9a99d795951593f3",
+      "error": null
+    }
+  },
+  "https://stream1.freetv.fun/yan-dong-wei-shi-63.ctv": {
+    "0811": {
+      "phash": "b44acacacacbcaca",
+      "ahash": "d2c6c6c6c6c6c6c6",
+      "dhash": "b6b6b6b6b6b6b6b6",
+      "error": null
+    }
+  },
+  "https://stream1.freetv.fun/yan-dong-wei-shi-96.ctv": {
+    "0811": {
+      "phash": null,
+      "ahash": null,
+      "dhash": null,
+      "error": "[https @ 0x56141f2f7500] Stream ends prematurely at 0, should be 18446744073709551615\n[in#0 @ 0x56141f2f6e00] Error opening input: Input/output error\nError opening input file https://stream1.freetv.fun/yan-dong-wei-shi-96.ctv.\nError opening input files: Input/output error\n"
+    }
+  },
+  "https://stream1.freetv.fun/yan-dong-ying-shi-12.ctv": {
+    "0811": {
+      "phash": null,
+      "ahash": null,
+      "dhash": null,
+      "error": ""
+    }
+  },
+  "https://stream1.freetv.fun/yan-dong-ying-shi-14.ctv": {
+    "0811": {
+      "phash": "9867676763233313",
+      "ahash": "859f1e1f1f1f1f9f",
+      "dhash": "99b1b0b0b0b0b0b0",
+      "error": null
+    }
+  },
+  "https://stream1.freetv.fun/yan-dong-ying-shi-15.ctv": {
+    "0811": {
+      "phash": "9cb8fb7106f142a9",
+      "ahash": "cf9f9f1c1090dbb8",
+      "dhash": "b93131343420322a",
+      "error": null
+    }
+  },
+  "https://stream1.freetv.fun/yan-dong-ying-shi-16.ctv": {
+    "0811": {
+      "phash": null,
+      "ahash": null,
+      "dhash": null,
+      "error": "[tcp @ 0x55dd808efac0] Connection to tcp://116.30.248.123:9876 failed: Connection timed out\n[in#0 @ 0x55dd8053ce00] Error opening input: Connection timed out\nError opening input file https://stream1.freetv.fun/yan-dong-ying-shi-16.ctv.\nError opening input files: Connection timed out\n"
+    }
+  },
+  "https://stream1.freetv.fun/yan-dong-ying-shi-19.ctv": {
+    "0811": {
+      "phash": "88e3c4e363e4e45b",
+      "ahash": "707c1908081a1b1b",
+      "dhash": "c1d9b3b119323332",
+      "error": null
+    }
+  },
+  "https://stream1.freetv.fun/yan-dong-ying-shi-8.ctv": {
+    "0811": {
+      "phash": null,
+      "ahash": null,
+      "dhash": null,
+      "error": "[https @ 0x56146e03a500] Stream ends prematurely at 2632, should be 18446744073709551615\n    Last message repeated 1 times\n[out#0/image2 @ 0x56146e2a2440] Output file does not contain any stream\nError opening output file pipe:1.\nError opening output files: Invalid argument\n"
+    }
+  },
+  "https://stream1.freetv.fun/yan-dong-ying-shi-gao-qing-2.m3u8": {
+    "0811": {
+      "phash": "8d7087b473ae3427",
+      "ahash": "df581818001b3b7f",
+      "dhash": "36b3b3b1103666d2",
+      "error": null
+    }
+  },
+  "https://stream1.freetv.fun/yan-dong-zhu-jiang-14.ctv": {
+    "0811": {
+      "phash": null,
+      "ahash": null,
+      "dhash": null,
+      "error": "[https @ 0x5571b95e6500] Stream ends prematurely at 86856, should be 18446744073709551615\n    Last message repeated 2 times\n[out#0/image2 @ 0x5571b9997400] Output file does not contain any stream\nError opening output file pipe:1.\nError opening output files: Invalid argument\n"
+    }
+  },
+  "https://stream1.freetv.fun/yan-dong-zong-yi-14.ctv": {
+    "0811": {
+      "phash": "aa8dbd32c5c26d8c",
+      "ahash": "1f1f397170010500",
+      "dhash": "bfb7e3c3edadbdb0",
+      "error": null
+    }
+  },
+  "https://stream1.freetv.fun/yan-dong-zong-yi-3.ctv": {
+    "0811": {
+      "phash": "e6e6e6e6e6a4a0a0",
+      "ahash": "ff00000000000000",
+      "dhash": "4600200000000000",
+      "error": null
+    }
+  },
+  "https://stream1.freetv.fun/yan-dong-zong-yi-5.ctv": {
+    "0811": {
+      "phash": "9c66394c33e66d19",
+      "ahash": "00183c3c18181818",
+      "dhash": "ccf0f0c8f0b2b2b2",
+      "error": null
+    }
+  },
+  "https://stream1.freetv.fun/yan-dong-zong-yi-7.ctv": {
+    "0811": {
+      "phash": "8e9b3336cccc33c1",
+      "ahash": "0000000000000000",
+      "dhash": "0000000000000000",
+      "error": null
+    }
+  },
+  "https://stream1.freetv.fun/yan-dong-zong-yi-8.ctv": {
+    "0811": {
+      "phash": null,
+      "ahash": null,
+      "dhash": null,
+      "error": "[tcp @ 0x562669ce2ac0] Connection to tcp://14.153.179.49:8686 failed: Connection refused\n[in#0 @ 0x56266992fe00] Error opening input: Connection refused\nError opening input file https://stream1.freetv.fun/yan-dong-zong-yi-8.ctv.\nError opening input files: Connection refused\n"
+    }
+  },
+  "https://stream1.freetv.fun/yan-xi-guo-ji-5.m3u8": {
+    "0811": {
+      "phash": "ffed53286f602640",
+      "ahash": "8183838381818181",
+      "dhash": "2525252525252525",
+      "error": null
+    }
+  },
+  "https://stream1.freetv.fun/yan-xi-guo-ji-7.m3u8": {
+    "0811": {
+      "phash": "80d07af07a7a787a",
+      "ahash": "7e7e7e7e7e7e7e7e",
+      "dhash": "e0e0e0e0e0e0e0e0",
+      "error": null
+    }
+  },
+  "https://stream1.freetv.fun/yan-zhou-dian-shi-tai-xin-wen-1.m3u8": {
+    "0811": {
+      "phash": null,
+      "ahash": null,
+      "dhash": null,
+      "error": ""
+    }
+  },
+  "https://stream1.freetv.fun/yan-zhou-fa-zhi-10.ctv": {
+    "0811": {
+      "phash": null,
+      "ahash": null,
+      "dhash": null,
+      "error": "[tcp @ 0x5600e4d18ac0] Connection to tcp://116.30.248.123:9876 failed: Connection timed out\n[in#0 @ 0x5600e4965e00] Error opening input: Connection timed out\nError opening input file https://stream1.freetv.fun/yan-zhou-fa-zhi-10.ctv.\nError opening input files: Connection timed out\n"
+    }
+  },
+  "https://stream1.freetv.fun/yan-zhou-fa-zhi-11.m3u8": {
+    "0811": {
+      "phash": "da9a91d9999d111d",
+      "ahash": "ff7d14b5a5e4e060",
+      "dhash": "b9adad29290d4c4b",
+      "error": null
+    }
+  },
+  "https://stream1.freetv.fun/yan-zhou-fa-zhi-14.ctv": {
+    "0811": {
+      "phash": "b4c0ab17c7e34707",
+      "ahash": "66c646c686060707",
+      "dhash": "cc8c8cac2c2e3e3e",
+      "error": null
+    }
+  },
+  "https://stream1.freetv.fun/yan-zhou-fa-zhi-17.ctv": {
+    "0811": {
+      "phash": null,
+      "ahash": null,
+      "dhash": null,
+      "error": ""
+    }
+  },
+  "https://stream1.freetv.fun/yan-zhou-fa-zhi-2.m3u8": {
+    "0811": {
+      "phash": "d68289aaa9ad2dad",
+      "ahash": "fff454e484848000",
+      "dhash": "a5adacad2d342432",
+      "error": null
+    }
+  },
+  "https://stream1.freetv.fun/yan-zhou-fa-zhi-4.ctv": {
+    "0811": {
+      "phash": "d9c82572e38d1e1d",
+      "ahash": "e0e8b8f8c80c0a0a",
+      "dhash": "8292525059b89a52",
+      "error": null
+    }
+  },
+  "https://stream1.freetv.fun/yan-zhou-fa-zhi-5.ctv": {
+    "0811": {
+      "phash": "9c9e94dc98b91b25",
+      "ahash": "ffff3f0800000000",
+      "dhash": "b4242832726386e2",
+      "error": null
+    }
+  },
+  "https://stream1.freetv.fun/yan-zhou-fa-zhi-7.ctv": {
+    "0811": {
+      "phash": "d29e94dccdad9811",
+      "ahash": "fffc7ca000000000",
+      "dhash": "a4add94249c98aea",
+      "error": null
+    }
+  },
+  "https://stream1.freetv.fun/yan-zhou-fa-zhi-8.m3u8": {
+    "0811": {
+      "phash": "fdf10048e3950f2f",
+      "ahash": "40c0ffffd8101000",
+      "dhash": "9294365632353636",
+      "error": null
+    }
+  },
+  "https://stream1.freetv.fun/yan-zhou-nan-guo-du-shi-1.m3u8": {
+    "0811": {
+      "phash": null,
+      "ahash": null,
+      "dhash": null,
+      "error": ""
+    }
+  },
+  "https://stream1.freetv.fun/yan-zhou-nan-guo-du-shi-2.m3u8": {
+    "0811": {
+      "phash": "e160dab925479e0f",
+      "ahash": "4000004242ffffff",
+      "dhash": "8692d5d6963b9350",
+      "error": null
+    }
+  },
+  "https://stream1.freetv.fun/yan-zhou-nan-guo-du-shi-3.m3u8": {
+    "0811": {
+      "phash": null,
+      "ahash": null,
+      "dhash": null,
+      "error": ""
+    }
+  },
+  "https://stream1.freetv.fun/yan-zhou-nan-guo-du-shi-5.m3u8": {
+    "0811": {
+      "phash": null,
+      "ahash": null,
+      "dhash": null,
+      "error": ""
+    }
+  },
+  "https://stream1.freetv.fun/yan-zhou-nan-guo-du-shi-7.ctv": {
+    "0811": {
+      "phash": "da72e54efb0d9804",
+      "ahash": "e0c04c8c1c1c13ff",
+      "dhash": "889d98197830661a",
+      "error": null
+    }
+  },
+  "https://stream1.freetv.fun/yan-zhou-zong-he-23.ctv": {
+    "0811": {
+      "phash": "9d7123a094552faf",
+      "ahash": "43038b1e1f1f1f1f",
+      "dhash": "8a1b5a3c34777575",
+      "error": null
+    }
+  },
+  "https://stream1.freetv.fun/yan-zhou-zong-he-27.ctv": {
+    "0811": {
+      "phash": "a090b6aef5168adb",
+      "ahash": "ffe77c42db030000",
+      "dhash": "8e97f09693670fc9",
+      "error": null
+    }
+  },
+  "https://stream1.freetv.fun/yi-ma-xin-wen-zong-he-1.m3u8": {
+    "0811": {
+      "phash": null,
+      "ahash": null,
+      "dhash": null,
+      "error": ""
+    }
+  },
+  "https://stream1.freetv.fun/you-man-qia-tong-29.ctv": {
+    "0811": {
+      "phash": "ce4c39a91616ab6d",
+      "ahash": "d0d0f074f06d8b8f",
+      "dhash": "a03165e4e0cb131e",
+      "error": null
+    }
+  },
+  "https://stream1.freetv.fun/yun-nan-du-shi-4.m3u8": {
+    "0811": {
+      "phash": "944d001fcfdc0fdc",
+      "ahash": "000003ff9c0ffe7f",
+      "dhash": "b197b62331feb48c",
+      "error": null
+    }
+  },
+  "https://stream1.freetv.fun/yun-nan-ying-shi-1.m3u8": {
+    "0811": {
+      "phash": "d400000000000000",
+      "ahash": "f0f0f0f0f0f0f0f0",
+      "dhash": "0000000000000000",
+      "error": null
+    }
+  },
+  "https://stream1.freetv.fun/yun-nan-yu-le-3.m3u8": {
+    "0811": {
+      "phash": "c6d3bd4ea01be426",
+      "ahash": "7e7c3c3c343424c3",
+      "dhash": "f0e8c8c8ece45486",
+      "error": null
+    }
+  },
+  "https://stream1.freetv.fun/zagros-2.m3u8": {
+    "0811": {
+      "phash": "dd51a56626343e4b",
+      "ahash": "c2f8988a2080dbff",
+      "dhash": "56523a1a4b241652",
+      "error": null
+    }
+  },
+  "https://stream1.freetv.fun/zarok-tv-1.m3u8": {
+    "0811": {
+      "phash": "889ce5c39a9ab276",
+      "ahash": "bf1b931d19090079",
+      "dhash": "72b23539292b63d2",
+      "error": null
+    }
+  },
+  "https://stream1.freetv.fun/zarok-tv-sorani-1.m3u8": {
+    "0811": {
+      "phash": "c4f0f0d8ad130f2f",
+      "ahash": "fef4e6523b1c0800",
+      "dhash": "b48c4ca62229a8d6",
+      "error": null
+    }
+  },
+  "https://stream1.freetv.fun/zee-action-1.ctv": {
+    "0811": {
+      "phash": "94ff6b0a72c63891",
+      "ahash": "009affff1f137f00",
+      "dhash": "46323424bcb7f4e2",
+      "error": null
+    }
+  },
+  "https://stream1.freetv.fun/zee-cinema-2.m3u8": {
+    "0811": {
+      "phash": "fc3d13d003cb65c5",
+      "ahash": "00c783d3d6f0fd00",
+      "dhash": "363f371714b40542",
+      "error": null
+    }
+  },
+  "https://stream1.freetv.fun/zee-kannada-1.ctv": {
+    "0811": {
+      "phash": "c5be39c16e7066b0",
+      "ahash": "001e14ff7e787800",
+      "dhash": "9df064e2e2c2d2d2",
+      "error": null
+    }
+  },
+  "https://stream1.freetv.fun/zee-news-1.m3u8": {
+    "0811": {
+      "phash": "9ef5811f1a173a98",
+      "ahash": "7effe78418000000",
+      "dhash": "dca60f6d7161bab0",
+      "error": null
+    }
+  },
+  "https://stream1.freetv.fun/zee-news-3.m3u8": {
+    "0811": {
+      "phash": "a52f5855b24f0f0b",
+      "ahash": "000139e7e762187e",
+      "dhash": "68af638f8cd6b2b8",
+      "error": null
+    }
+  },
+  "https://stream1.freetv.fun/zee-tv-2.ctv": {
+    "0811": {
+      "phash": "d61cc9e60913d5f2",
+      "ahash": "fcfcfc0e04f4e4fc",
+      "dhash": "f0e4dc3cb44448ca",
+      "error": null
+    }
+  },
+  "https://stream1.freetv.fun/zhao-qing-zong-he-2.m3u8": {
+    "0811": {
+      "phash": "ddb5242691dd9646",
+      "ahash": "c38b18181818d8c0",
+      "dhash": "861232f271731292",
+      "error": null
+    }
+  },
+  "https://stream1.freetv.fun/zhe-jiang--shang-yu-xin-wen-zong-he-1.m3u8": {
+    "0811": {
+      "phash": "b16fc274cec98686",
+      "ahash": "000001c3c3cfef7f",
+      "dhash": "152b4b9a969e9ecc",
+      "error": null
+    }
+  },
+  "https://stream1.freetv.fun/zhe-jiang-wei-shi---wj-1.m3u8": {
+    "0811": {
+      "phash": "8c2673d9249c7367",
+      "ahash": "0013361f1b1cbf00",
+      "dhash": "336ee67677b03062",
+      "error": null
+    }
+  },
+  "https://stream1.freetv.fun/zhe-jiang-wei-shi--4m1080-1.m3u8": {
+    "0811": {
+      "phash": "9c66394c33e66d19",
+      "ahash": "00183c3c18181818",
+      "dhash": "ccf0f0c8f0b2b2b2",
+      "error": null
+    }
+  },
+  "https://stream1.freetv.fun/zhe-jiang-wei-shi--4m1080-2.m3u8": {
+    "0811": {
+      "phash": "996e64d163a92aa7",
+      "ahash": "001e1f1f1c1c7e00",
+      "dhash": "283475f8f8d8d8c2",
+      "error": null
+    }
+  },
+  "https://stream1.freetv.fun/zhe-jiang-wei-shi--8m1080-1.m3u8": {
+    "0811": {
+      "phash": "9c66394c33e66d19",
+      "ahash": "00183c3c18181818",
+      "dhash": "ccf0f0c8f0b2b2b2",
+      "error": null
+    }
+  },
+  "https://stream1.freetv.fun/zhe-jiang-wei-shi--8m1080-2.m3u8": {
+    "0811": {
+      "phash": "9c66394c33e66d19",
+      "ahash": "00183c3c18181818",
+      "dhash": "ccf0f0c8f0b2b2b2",
+      "error": null
+    }
+  },
+  "https://stream1.freetv.fun/zhe-jiang-wei-shi--8m1080-3.m3u8": {
+    "0811": {
+      "phash": "93666d9b26945b23",
+      "ahash": "00882c6e6c3c7f00",
+      "dhash": "09585cdcd9d9d8ca",
+      "error": null
+    }
+  },
+  "https://stream1.freetv.fun/zhe-jiang-wei-shi--8m1080-4.m3u8": {
+    "0811": {
+      "phash": "99746c9262c97ba5",
+      "ahash": "009e9f0e0e1e3f00",
+      "dhash": "3814525ad858f2a2",
+      "error": null
+    }
+  },
+  "https://stream1.freetv.fun/zhe-jiang-wei-shi-107.m3u8": {
+    "0811": {
+      "phash": null,
+      "ahash": null,
+      "dhash": null,
+      "error": "[in#0 @ 0x5611138a3e00] Error opening input: Server returned 403 Forbidden (access denied)\nError opening input file https://stream1.freetv.fun/zhe-jiang-wei-shi-107.m3u8.\nError opening input files: Server returned 403 Forbidden (access denied)\n"
+    }
+  },
+  "https://stream1.freetv.fun/zhen-jiang-xin-wen-zong-he-2.m3u8": {
+    "0811": {
+      "phash": "b8ea5b5727474107",
+      "ahash": "00dfdfd797d60000",
+      "dhash": "2b39b3a526a4a82c",
+      "error": null
+    }
+  },
+  "https://stream1.freetv.fun/zhen-jiang-xin-wen-zong-he-3.m3u8": {
+    "0811": {
+      "phash": "b8ea5b5727474107",
+      "ahash": "00dfdfd797d60000",
+      "dhash": "2b39b3a526a4a82c",
+      "error": null
+    }
+  },
+  "https://stream1.freetv.fun/zhen-jiang-xin-wen-zong-he-4.m3u8": {
+    "0811": {
+      "phash": "d9c3263b260d2f39",
+      "ahash": "00fcf8fccdcd0800",
+      "dhash": "a9989a99981bbaba",
+      "error": null
+    }
+  },
+  "https://stream1.freetv.fun/zhivi-2.m3u8": {
+    "0811": {
+      "phash": "99e8c74738f06647",
+      "ahash": "ffffff8f0000feff",
+      "dhash": "327a9038787498ba",
+      "error": null
+    }
+  },
+  "https://stream1.freetv.fun/zhong-qing-ke-jiao-gao-qing-1.ctv": {
+    "0811": {
+      "phash": "c5d23a3d1a0ecdf0",
+      "ahash": "1cfefc7842030200",
+      "dhash": "f88cc0e09ac6a6c0",
+      "error": null
+    }
+  },
+  "https://stream1.freetv.fun/zhong-qing-wei-shi-94.m3u8": {
+    "0811": {
+      "phash": null,
+      "ahash": null,
+      "dhash": null,
+      "error": "[in#0 @ 0x55c601275e00] Error opening input: Server returned 403 Forbidden (access denied)\nError opening input file https://stream1.freetv.fun/zhong-qing-wei-shi-94.m3u8.\nError opening input files: Server returned 403 Forbidden (access denied)\n"
+    }
+  },
+  "https://stream1.freetv.fun/zhou-run-fa-1.m3u8": {
+    "0811": {
+      "phash": "853d38774e6a4e26",
+      "ahash": "000f1f3f363c2f3d",
+      "dhash": "329afeeaeec8e9e9",
+      "error": null
+    }
+  },
+  "https://stream1.freetv.fun/zhou-run-fa-2.m3u8": {
+    "0811": {
+      "phash": "c8273833ce3ed836",
+      "ahash": "0040f0f0f0f8f8f8",
+      "dhash": "8586a2a08080a8a0",
+      "error": null
+    }
+  },
+  "https://stream1.freetv.fun/zhu-bo-xin-wen-zong-he-1.m3u8": {
+    "0811": {
+      "phash": "d2a8ad449d9b726c",
+      "ahash": "7fe9c8ccc4e4fcfe",
+      "dhash": "998b991829cc5c2e",
+      "error": null
+    }
+  },
+  "https://stream1.freetv.fun/zhu-xia-wei-shi-73.m3u8": {
+    "0811": {
+      "phash": "b7b9c635a70c4b48",
+      "ahash": "878f8c8f8f0f1c3c",
+      "dhash": "3e3e381c1a1c28e4",
+      "error": null
+    }
+  },
+  "https://stream1.freetv.fun/zi-gong-zong-he-1.ctv": {
+    "0811": {
+      "phash": "9a63956a94d23b95",
+      "ahash": "408084851d1d3e3e",
+      "dhash": "8d0f4d4de979f0f4",
+      "error": null
+    }
+  },
+  "https://stream1.freetv.fun/zi-gong-zong-he-2.ctv": {
+    "0811": {
+      "phash": "9a63956a95d23b94",
+      "ahash": "408084851d1d3e3e",
+      "dhash": "8d0f4d696979f0fc",
+      "error": null
+    }
+  },
+  "https://stream1.freetv.fun/zi-gong-zong-he-3.ctv": {
+    "0811": {
+      "phash": "df3166ec20969699",
+      "ahash": "94989c9c989cbcbc",
+      "dhash": "3430343432246161",
+      "error": null
+    }
+  },
+  "https://stream1.freetv.fun/zi-gong-zong-he-4.m3u8": {
+    "0811": {
+      "phash": null,
+      "ahash": null,
+      "dhash": null,
+      "error": "[in#0 @ 0x560a45ccce00] Error opening input: Server returned 5XX Server Error reply\nError opening input file https://stream1.freetv.fun/zi-gong-zong-he-4.m3u8.\nError opening input files: Server returned 5XX Server Error reply\n"
+    }
+  },
+  "https://stream1.freetv.fun/zi-gong-zong-he-5.m3u8": {
+    "0811": {
+      "phash": "9c66394c33e66d19",
+      "ahash": "00183c3c18181818",
+      "dhash": "ccf0f0c8f0b2b2b2",
+      "error": null
+    }
+  },
+  "https://stream1.freetv.fun/zi-gong-zong-he-6.m3u8": {
+    "0811": {
+      "phash": "ca76bb6886b3308e",
+      "ahash": "81809092b1d9dddd",
+      "dhash": "1d23252627b3bb39",
+      "error": null
+    }
+  },
+  "https://stream1.freetv.fun/zoom-1.ctv": {
+    "0811": {
+      "phash": "8ce90ccab65f18b9",
+      "ahash": "183919ffff381810",
+      "dhash": "b3f3f368e4f072f6",
+      "error": null
+    }
+  },
+  "https://stream1.freetv.fun/zoom-2.m3u8": {
+    "0811": {
+      "phash": "c33027c739d6c969",
+      "ahash": "040e5c5c78787c38",
+      "dhash": "dcd8d0d0d3e160e2",
+      "error": null
+    }
+  },
+  "https://stream1.freetv.fun/zoom-3.ctv": {
+    "0811": {
+      "phash": "8ce80ccab65f38b9",
+      "ahash": "183919ffff381810",
+      "dhash": "b3f3f368e4f072f6",
+      "error": null
+    }
+  },
+  "https://stream1.freetv.fun/zvezda-5.m3u8": {
+    "0811": {
+      "phash": "a5f61f9d729022d8",
+      "ahash": "a6a34343523b1b12",
+      "dhash": "4c6e8e8e96f2f2b6",
+      "error": null
+    }
+  },
+  "https://svip.high24-playback.com/20250129/17159_7bca93c4/2000k/hls/mixed.m3u8": {
+    "0811": {
+      "phash": "947a69a017923f2f",
+      "ahash": "0000000e7ffffffe",
+      "dhash": "b0a0f8fcfcbec060",
+      "error": null
+    }
+  },
+  "https://svipsvip.ffzyread1.com/20250129/35458_c988286f/index.m3u8": {
+    "0811": {
+      "phash": null,
+      "ahash": null,
+      "dhash": null,
+      "error": "[in#0 @ 0x55dfdfe88e00] Error opening input: Server returned 403 Forbidden (access denied)\nError opening input file https://svipsvip.ffzyread1.com/20250129/35458_c988286f/index.m3u8.\nError opening input files: Server returned 403 Forbidden (access denied)\n"
+    }
+  },
+  "https://tv.cry33.com/ys4k.php?id=8k": {
+    "0811": {
+      "phash": null,
+      "ahash": null,
+      "dhash": null,
+      "error": "[in#0 @ 0x562bbbfebe00] Error opening input: Server returned 404 Not Found\nError opening input file https://tv.cry33.com/ys4k.php?id=8k.\nError opening input files: Server returned 404 Not Found\n"
+    }
+  },
+  "https://txmov2.a.kwimgs.com/bs3/video-hls/5194620763762726260_hlsb.m3u8": {
+    "0811": {
+      "phash": "869678697bc3843e",
+      "ahash": "00007e7effff0000",
+      "dhash": "4825e4ccc8c64304",
+      "error": null
+    }
+  },
+  "https://txmov2.a.kwimgs.com/bs3/video-hls/5195746663405928031_hlsb.m3u8": {
+    "0811": {
+      "phash": "86c63c397bc3843e",
+      "ahash": "00007e7effff0000",
+      "dhash": "8825e4ccc8c65328",
+      "error": null
+    }
+  },
+  "https://txmov2.a.kwimgs.com/bs3/video-hls/5210946337266019890_hlshd15.m3u8": {
+    "0811": {
+      "phash": "c03b906c3bec15bd",
+      "ahash": "00003831047cff7f",
+      "dhash": "f8c8d0eb7ce0a2d8",
+      "error": null
+    }
+  },
+  "https://txmov2.a.kwimgs.com/bs3/video-hls/5216575810935394655_hlsb.m3u8": {
+    "0811": {
+      "phash": "86d63c297bc3843e",
+      "ahash": "00007e7effff0000",
+      "dhash": "4925e4ccc8d6d208",
+      "error": null
+    }
+  },
+  "https://tylive.kan0512.com/norecord/csztv4k_4k.m3u8": {
+    "0811": {
+      "phash": "988ee378c43f8f22",
+      "ahash": "ffff9f1e0cc8c0e0",
+      "dhash": "33b27d3cb8111d8c",
+      "error": null
+    }
+  },
+  "https://vd3.bdstatic.com/mda-rkaittm5s06vzzyq/sc/cae_h264/1762869883709304452/mda-rkaittm5s06vzzyq.mp4": {
+    "0811": {
+      "phash": "8ef8bc2cf08cb952",
+      "ahash": "d31bbf3901131f0f",
+      "dhash": "27367bd3e977f7fb",
+      "error": null
+    }
+  },
+  "https://vip.ffzy-online.com/20221015/719_80ff87c2/index.m3u8": {
+    "0811": {
+      "phash": null,
+      "ahash": null,
+      "dhash": null,
+      "error": "[in#0 @ 0x5609db632e00] Error opening input: Server returned 403 Forbidden (access denied)\nError opening input file https://vip.ffzy-online.com/20221015/719_80ff87c2/index.m3u8.\nError opening input files: Server returned 403 Forbidden (access denied)\n"
+    }
+  },
+  "https://vip.ffzy-online.com/20221015/722_e32c42bc/index.m3u8": {
+    "0811": {
+      "phash": null,
+      "ahash": null,
+      "dhash": null,
+      "error": "[in#0 @ 0x55f566196e00] Error opening input: Server returned 403 Forbidden (access denied)\nError opening input file https://vip.ffzy-online.com/20221015/722_e32c42bc/index.m3u8.\nError opening input files: Server returned 403 Forbidden (access denied)\n"
+    }
+  },
+  "https://vip.ffzy-play.com/20221018/1951_47e1adc8/index.m3u8": {
+    "0811": {
+      "phash": null,
+      "ahash": null,
+      "dhash": null,
+      "error": "[in#0 @ 0x56003f59be00] Error opening input: Server returned 403 Forbidden (access denied)\nError opening input file https://vip.ffzy-play.com/20221018/1951_47e1adc8/index.m3u8.\nError opening input files: Server returned 403 Forbidden (access denied)\n"
+    }
+  },
+  "https://vip.ffzy-play.com/20221018/1953_2d6ba500/index.m3u8": {
+    "0811": {
+      "phash": null,
+      "ahash": null,
+      "dhash": null,
+      "error": "[in#0 @ 0x55acf70ffe00] Error opening input: Server returned 403 Forbidden (access denied)\nError opening input file https://vip.ffzy-play.com/20221018/1953_2d6ba500/index.m3u8.\nError opening input files: Server returned 403 Forbidden (access denied)\n"
+    }
+  },
+  "https://vip.ffzy-play1.com/20221018/478_c3afed66/index.m3u8": {
+    "0811": {
+      "phash": null,
+      "ahash": null,
+      "dhash": null,
+      "error": "[in#0 @ 0x55f83a4a9e00] Error opening input: Server returned 403 Forbidden (access denied)\nError opening input file https://vip.ffzy-play1.com/20221018/478_c3afed66/index.m3u8.\nError opening input files: Server returned 403 Forbidden (access denied)\n"
+    }
+  },
+  "https://vip.ffzy-play6.com/20221019/157_bf0740ee/index.m3u8": {
+    "0811": {
+      "phash": null,
+      "ahash": null,
+      "dhash": null,
+      "error": "[in#0 @ 0x562142df7e00] Error opening input: Server returned 403 Forbidden (access denied)\nError opening input file https://vip.ffzy-play6.com/20221019/157_bf0740ee/index.m3u8.\nError opening input files: Server returned 403 Forbidden (access denied)\n"
+    }
+  },
+  "https://vip.ffzy-play7.com/20230112/11082_fde1a94d/index.m3u8": {
+    "0811": {
+      "phash": null,
+      "ahash": null,
+      "dhash": null,
+      "error": "[in#0 @ 0x555792845e00] Error opening input: Server returned 403 Forbidden (access denied)\nError opening input file https://vip.ffzy-play7.com/20230112/11082_fde1a94d/index.m3u8.\nError opening input files: Server returned 403 Forbidden (access denied)\n"
+    }
+  },
+  "https://vip.ffzy-play7.com/20230116/11563_b9f44814/index.m3u8": {
+    "0811": {
+      "phash": null,
+      "ahash": null,
+      "dhash": null,
+      "error": "[in#0 @ 0x55f9b6c53e00] Error opening input: Server returned 403 Forbidden (access denied)\nError opening input file https://vip.ffzy-play7.com/20230116/11563_b9f44814/index.m3u8.\nError opening input files: Server returned 403 Forbidden (access denied)\n"
+    }
+  }
+}
