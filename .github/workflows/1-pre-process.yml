@@ -3,7 +3,7 @@ name: 1预处理-下载-合并-分割-生成
 on:
   workflow_dispatch:
   schedule:
-    - cron: '55 16 * * *'  # UTC 16:05 = 北京时间 00:05
+    - cron: '05 16 * * *'  # UTC 16:05 = 北京时间 00:05
 
 permissions:
   contents: write
