@@ -85,6 +85,33 @@ def main():
 
     channel_data = read_csv_auto_encoding(CHANNEL_DATA_PATH)
 
+    # 新增默认列：来源、输出顺序、是否已维护
+    # 来源列填充逻辑：从 my_sum 和 working 取对应频道名的来源字段
+    source_dict = {}
+    for df in [my_sum, working]:
+        for idx, row in df.iterrows():
+            orig_name = row.get("频道名", "")
+            src = row.get("来源", "")
+            if orig_name and src:
+                if orig_name not in source_dict:
+                    source_dict[orig_name] = src
+
+    # 赋默认值和映射
+    if "来源" not in channel_data.columns:
+        channel_data["来源"] = channel_data["原始名"].map(source_dict).fillna("")
+    else:
+        # 如果已存在来源列，更新映射但保留已有非空值
+        channel_data["来源"] = channel_data.apply(
+            lambda row: source_dict.get(row["原始名"], row["来源"]) if not row["来源"] else row["来源"],
+            axis=1
+        )
+
+    if "输出顺序" not in channel_data.columns:
+        channel_data["输出顺序"] = "未排序"
+
+    if "是否已维护" not in channel_data.columns:
+        channel_data["是否已维护"] = "否"
+
     # =============================
     # 网络频道库
     # =============================
@@ -145,7 +172,10 @@ def main():
                 "原始名": orig_name,
                 "标准名": std_name,
                 "拟匹配频道名": std_name,
-                "分组": group_label
+                "分组": group_label,
+                "来源": source_dict.get(orig_name, ""),
+                "输出顺序": "未排序",
+                "是否已维护": "否"
             }
             channel_data = pd.concat(
                 [channel_data, pd.DataFrame([new_row])],
@@ -174,30 +204,26 @@ def main():
             match_info = "未匹配"
             match_score = 0.0
 
-            # ——精准匹配：原始名——
+            # ——精准匹配：原始名且 是否已维护 == "是" —— 修改点
             if original_name in existing_orig_names:
                 matched_std_name = channel_data.loc[
                     channel_data["原始名"] == original_name, "标准名"
                 ].values
-                pending_val = channel_data.loc[
-                    channel_data["原始名"] == original_name, "拟匹配频道名"
+                maintained_val = channel_data.loc[
+                    channel_data["原始名"] == original_name, "是否已维护"
                 ].values
 
-                if len(matched_std_name) > 0:
-                    if len(pending_val) > 0:
-                        pv = pending_val[0]
-                        if pd.isna(pv) or pv == "":
-                            matched_name = matched_std_name[0]
-                            match_info = "精准匹配"
-                            match_score = 100.0
-                            precise_match_count += 1
-                        else:
-                            matched_name = None
-                    else:
+                if len(matched_std_name) > 0 and len(maintained_val) > 0:
+                    mv = maintained_val[0]
+                    if isinstance(mv, str) and mv.strip() == "是":
                         matched_name = matched_std_name[0]
                         match_info = "精准匹配"
                         match_score = 100.0
                         precise_match_count += 1
+                    else:
+                        matched_name = None
+                else:
+                    matched_name = None
 
             # ——模糊匹配——
             if matched_name is None:
@@ -250,10 +276,10 @@ def main():
         ]
     )
 
-    # 保存 channel_data.csv
+    # 保存 channel_data.csv，新增三列
     channel_data.to_csv(
         OUTPUT_CHANNEL_DATA, index=False, encoding="utf-8-sig",
-        columns=["原始名", "标准名", "拟匹配频道名", "分组"]
+        columns=["原始名", "标准名", "拟匹配频道名", "分组", "来源", "输出顺序", "是否已维护"]
     )
 
     print("🎉 CSV 标准化处理完成！")
