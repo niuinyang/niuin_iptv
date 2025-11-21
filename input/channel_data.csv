@@ -1,4 +1,4 @@
-﻿原始名,标准名,拟匹配频道名,分组,来源,输出顺序,是否已维护
+原始名,标准名,拟匹配频道名,分组,来源,输出顺序,是否已维护
 cctv1,CCTV1,CCTV-1,央视频道,山东移动单播,未排序,是
 CCTV1,CCTV1,CCTV-1,央视频道,上海移动单播,未排序,是
 CCTV-1 综合,CCTV1,CCTV-1 综合,央视频道,济南电信单播,未排序,是
@@ -407,7 +407,7 @@ qtv-5,青岛QTV5,QTV-5,山东频道,山东移动单播,未排序,是
 沂水生活,沂水生活,沂水生活,山东频道,济南电信单播,未排序,是
 沂水综合,沂水综合,沂水综合,山东频道,济南电信单播,未排序,是
 沂源综合,沂源综合,沂源综合,山东频道,济南电信单播,未排序,是
-已停用,已停用,已停用,停用,济南电信组播,未排序,是
+已停用,停用已停用,已停用,停用,济南电信组播,未排序,是
 音乐现场,音乐现场,音乐现场,数字频道,济南联通组播,未排序,是
 优购物,优购物,优购物,数字频道,济南联通组播,未排序,是
 优漫卡通,优漫卡通,优漫卡通,数字频道,济南电信单播,未排序,是
@@ -487,13 +487,13 @@ qtv-5,青岛QTV5,QTV-5,山东频道,山东移动单播,未排序,是
 [BD]al arabiya,Alarabiya,Alarabiya,待确认分组,网络源,未排序,否
 [BD]al arabiya business,Al Arabiya Business,Al Arabiya Business,待确认分组,网络源,未排序,否
 [BD]al horreya tv,Al Horreya Tv,Al Horreya Tv,待确认分组,网络源,未排序,否
-[BD]al jazeera,Al Jazeera,Al Jazeera,待确认分组,网络源,未排序,否
-[BD]al jazeera mubasher,Al Jazeera Mubasher,Al Jazeera Mubasher,待确认分组,网络源,未排序,否
-[BD]al jazeera mubasher 2,Al Jazeera Mubasher 24,Al Jazeera Mubasher 24,待确认分组,网络源,未排序,否
-[BD]al jazeera mubasher 24,Al Jazeera Mubasher 24,Al Jazeera Mubasher 24,待确认分组,网络源,未排序,否
-[BD]al jazeera mubasher[geo-blocked],Al Jazeera Mubasher,Al Jazeera Mubasher,待确认分组,网络源,未排序,否
-[BD]al jazeera news,[BD]al jazeera news,[BD]al jazeera news,待标准化,网络源,未排序,否
-[BD]al jazeera العربية,Al Jazeera,Al Jazeera,待确认分组,网络源,未排序,否
+[BD]al jazeera,Al Jazeera,Al Jazeera,国际频道,网络源,未排序,是
+[BD]al jazeera mubasher,Al Jazeera,Al Jazeera Mubasher,国际频道,网络源,未排序,是
+[BD]al jazeera mubasher 2,Al Jazeera,Al Jazeera Mubasher 24,国际频道,网络源,未排序,是
+[BD]al jazeera mubasher 24,Al Jazeera,Al Jazeera Mubasher 24,国际频道,网络源,未排序,是
+[BD]al jazeera mubasher[geo-blocked],Al Jazeera,Al Jazeera Mubasher,国际频道,网络源,未排序,是
+[BD]al jazeera news,Al Jazeera,[BD]al jazeera news,国际频道,网络源,未排序,是
+[BD]al jazeera العربية,Al Jazeera,Al Jazeera,国际频道,网络源,未排序,是
 [BD]al qamar tv,Al Qamar Tv,Al Qamar Tv,待确认分组,网络源,未排序,否
 [BD]al rayyan old tv,Al Rayyan Old Tv,Al Rayyan Old Tv,待确认分组,网络源,未排序,否
 [BD]al shallal tv,Al Shallal Tv,Al Shallal Tv,待确认分组,网络源,未排序,否
@@ -549,12 +549,12 @@ qtv-5,青岛QTV5,QTV-5,山东频道,山东移动单播,未排序,是
 [BD]bibel tv musik,Bibel Tv Musik,Bibel Tv Musik,待确认分组,网络源,未排序,否
 [BD]bike channel,Bike Channel,Bike Channel,待确认分组,网络源,未排序,否
 [BD]biz tv,Biz Tv,Biz Tv,待确认分组,网络源,未排序,否
-[BD]bloomberg fr[geo-blocked],[BD]bloomberg fr[geoblocked],[BD]bloomberg fr[geo-blocked],待标准化,网络源,未排序,否
-[BD]bloomberg news *m[geo-blocked],[BD]bloomberg news *m[geoblocked],[BD]bloomberg news *m[geo-blocked],待标准化,网络源,未排序,否
-[BD]bloomberg originals[geo-blocked],Bloomberg Originals,Bloomberg Originals,待确认分组,网络源,未排序,否
-[BD]bloomberg tv plus,[BD]bloomberg tv plus,[BD]bloomberg tv plus,待标准化,网络源,未排序,否
-[BD]bloomberg tv plus (1080p),[BD]bloomberg tv plus (1080p),[BD]bloomberg tv plus (1080p),待标准化,网络源,未排序,否
-[BD]bloomberg tv plus[geo-blocked],[BD]bloomberg tv plus[geoblocked],[BD]bloomberg tv plus[geo-blocked],待标准化,网络源,未排序,否
+[BD]bloomberg fr[geo-blocked],Bloomberg,[BD]bloomberg fr[geo-blocked],国际频道,网络源,未排序,是
+[BD]bloomberg news *m[geo-blocked],Bloomberg,[BD]bloomberg news *m[geo-blocked],国际频道,网络源,未排序,是
+[BD]bloomberg originals[geo-blocked],Bloomberg Originals,Bloomberg Originals,国际频道,网络源,未排序,是
+[BD]bloomberg tv plus,Bloomberg+,[BD]bloomberg tv plus,国际频道,网络源,未排序,是
+[BD]bloomberg tv plus (1080p),Bloomberg+,[BD]bloomberg tv plus (1080p),国际频道,网络源,未排序,是
+[BD]bloomberg tv plus[geo-blocked],Bloomberg+,[BD]bloomberg tv plus[geo-blocked],国际频道,网络源,未排序,是
 [BD]bollywood classic[geo-blocked],Bollywood Classic,Bollywood Classic,待确认分组,网络源,未排序,否
 [BD]bollywood[geo-blocked],Bollywood,Bollywood,待确认分组,网络源,未排序,否
 [BD]bolt,Bolt,Bolt,待确认分组,网络源,未排序,否
@@ -586,9 +586,9 @@ qtv-5,青岛QTV5,QTV-5,山东频道,山东移动单播,未排序,是
 [BD]cartoon network 1 *m[geo-blocked],Cartoon Network,Cartoon Network,待确认分组,网络源,未排序,否
 [BD]cartoon netwrk *m[geo-blocked],Cartoon Network,Cartoon Network,待确认分组,网络源,未排序,否
 [BD]catholic tv,Catholic Tv,Catholic Tv,待确认分组,网络源,未排序,否
-[BD]cbbc *m[geo-blocked],,[BD]cbbc *m[geo-blocked],待标准化,网络源,未排序,否
-[BD]cbbc bbc 4 uhd *m[geo-blocked],,[BD]cbbc bbc 4 uhd *m[geo-blocked],待标准化,网络源,未排序,否
-[BD]cbbc uhd *m[geo-blocked],,[BD]cbbc uhd *m[geo-blocked],待标准化,网络源,未排序,否
+[BD]cbbc *m[geo-blocked],BBC4,[BD]cbbc *m[geo-blocked],国际频道,网络源,未排序,是
+[BD]cbbc bbc 4 uhd *m[geo-blocked],BBC4,[BD]cbbc bbc 4 uhd *m[geo-blocked],国际频道,网络源,未排序,是
+[BD]cbbc uhd *m[geo-blocked],BBC4,[BD]cbbc uhd *m[geo-blocked],国际频道,网络源,未排序,是
 [BD]cbc news international[geo-blocked],[BD]cbc news international[geoblocked],[BD]cbc news international[geo-blocked],待标准化,网络源,未排序,否
 [BD]cbc news[geo-blocked],[BD]cbc news[geoblocked],[BD]cbc news[geo-blocked],待标准化,网络源,未排序,否
 [BD]cbeebies uhd *m[geo-blocked],[BD]cbeebies uhd *m[geoblocked],[BD]cbeebies uhd *m[geo-blocked],待标准化,网络源,未排序,否
@@ -749,11 +749,11 @@ qtv-5,青岛QTV5,QTV-5,山东频道,山东移动单播,未排序,是
 [BD]classic movies =,Classic Movies,Classic Movies,待确认分组,网络源,未排序,否
 [BD]classic movies ==,Classic Movies,Classic Movies,待确认分组,网络源,未排序,否
 [BD]cmc,[BD]cmc,[BD]cmc,待标准化,网络源,未排序,否
-[BD]cna,Cna,Cna,待确认分组,网络源,未排序,否
-[BD]cnbc,Cnbc,Cnbc,待确认分组,网络源,未排序,否
-[BD]cnbc arabiya,Cnbc Arabiya,Cnbc Arabiya,待确认分组,网络源,未排序,否
-[BD]cnbc europe,Cnbc Europe,Cnbc Europe,待确认分组,网络源,未排序,否
-[BD]cnbc-e,CNBCe,CNBC-e,待确认分组,网络源,未排序,否
+[BD]cna,CNA,Cna,国际频道,网络源,未排序,是
+[BD]cnbc,CNBC,Cnbc,国际频道,网络源,未排序,是
+[BD]cnbc arabiya,CNBC阿语,Cnbc Arabiya,国际频道（小语种）,网络源,未排序,是
+[BD]cnbc europe,CNBC欧洲,Cnbc Europe,国际频道（小语种）,网络源,未排序,是
+[BD]cnbc-e,CNBC欧洲,CNBC-e,国际频道（小语种）,网络源,未排序,是
 [BD]cnews,Cnews,Cnews,待确认分组,网络源,未排序,否
 [BD]cnn *m[geo-blocked],CNN,[BD]cnn *m[geo-blocked],国际频道,网络源,未排序,是
 [BD]cnn brasil,CNN巴西,Cnn Brasil,国际频道（小语种）,网络源,未排序,是
@@ -1011,7 +1011,7 @@ qtv-5,青岛QTV5,QTV-5,山东频道,山东移动单播,未排序,是
 [BD]newsmax tv,Newsmax Tv,Newsmax Tv,待确认分组,网络源,未排序,否
 [BD]newsmaxtv,Newsmax Tv,Newsmax Tv,待确认分组,网络源,未排序,否
 [BD]newsy,Newsy,Newsy,待确认分组,网络源,未排序,否
-[BD]nhk world-japan,Nhk WorldJapan,Nhk World-Japan,待确认分组,网络源,未排序,否
+[BD]nhk world-japan,NHK,Nhk World-Japan,国际频道,网络源,未排序,是
 [BD]nick jr,Nick Jr.,Nick Jr.,待确认分组,网络源,未排序,否
 [BD]nickelodeon,Nickelodeon,Nickelodeon,待确认分组,网络源,未排序,否
 [BD]nickelodeon[geo-blocked],Nickelodeon,Nickelodeon,待确认分组,网络源,未排序,否
@@ -1020,9 +1020,9 @@ qtv-5,青岛QTV5,QTV-5,山东频道,山东移动单播,未排序,是
 [BD]nile family =,Nile Family,Nile Family,待确认分组,网络源,未排序,否
 [BD]nofesh,[BD]nofesh,[BD]nofesh,待标准化,网络源,未排序,否
 [BD]nove[geo-blocked],Nove,Nove,待确认分组,网络源,未排序,否
-[BD]nowsports,Now Sports,Now Sports,待确认分组,网络源,未排序,否
-[BD]now财经,[BD]now财经,[BD]now财经,待标准化,网络源,未排序,否
-[BD]now新闻,[BD]now新闻,[BD]now新闻,待标准化,网络源,未排序,否
+[BD]nowsports,Now Sports,Now Sports,香港频道,网络源,未排序,是
+[BD]now财经,NOW财经,[BD]now财经,香港频道,网络源,未排序,是
+[BD]now新闻,NOW新闻,[BD]now新闻,香港频道,网络源,未排序,是
 [BD]ntk tv,Ntk Tv,Ntk Tv,待确认分组,网络源,未排序,否
 [BD]ntv,Ntv,Ntv,待确认分组,网络源,未排序,否
 [BD]Okey *t[geo-blocked],[BD]Okey *t[geoblocked],[BD]Okey *t[geo-blocked],待标准化,网络源,未排序,否
@@ -1130,43 +1130,43 @@ qtv-5,青岛QTV5,QTV-5,山东频道,山东移动单播,未排序,是
 [BD]showtime next =,Showtime Next,Showtime Next,待确认分组,网络源,未排序,否
 [BD]showtime next ==,Showtime Next,Showtime Next,待确认分组,网络源,未排序,否
 [BD]sic,Sic,Sic,待确认分组,网络源,未排序,否
-[BD]sky cinema-,[BD]sky cinema,[BD]sky cinema-,待标准化,网络源,未排序,否
-[BD]sky cinema--,[BD]sky cinema,[BD]sky cinema--,待标准化,网络源,未排序,否
-[BD]sky cinema action *m[geo-blocked],Sky Cinema Action,Sky Cinema Action,待确认分组,网络源,未排序,否
-[BD]sky cinema action *s[geo-blocked],Sky Cinema Action,Sky Cinema Action,待确认分组,网络源,未排序,否
-[BD]sky cinema comedy *m[geo-blocked],Sky Cinema Comedy,Sky Cinema Comedy,待确认分组,网络源,未排序,否
-[BD]sky cinema drama romantic *m[geo-blocked],[BD]sky cinema drama romantic *m[geoblocked],[BD]sky cinema drama romantic *m[geo-blocked],待标准化,网络源,未排序,否
-[BD]sky cinema family *m[geo-blocked],Sky Cinema Family,Sky Cinema Family,待确认分组,网络源,未排序,否
-[BD]sky cinema greats *m[geo-blocked],Sky Cinema Greats,Sky Cinema Greats,待确认分组,网络源,未排序,否
-[BD]sky cinema hits *m[geo-blocked],Sky Cinema Hits,Sky Cinema Hits,待确认分组,网络源,未排序,否
-[BD]sky cinema premier *m[geo-blocked],Sky Cinema Premiere,Sky Cinema Premiere,待确认分组,网络源,未排序,否
-[BD]sky cinema sci-fi *m[geo-blocked],Sky Cinema SciFi,Sky Cinema Sci-Fi,待确认分组,网络源,未排序,否
-[BD]sky cinema scifi horror *m[geo-blocked],Sky Cinema SciFi Horror,Sky Cinema Sci-Fi Horror,待确认分组,网络源,未排序,否
-[BD]sky cinema select *m[geo-blocked],Sky Cinema Select,Sky Cinema Select,待确认分组,网络源,未排序,否
-[BD]sky cinema select *s[geo-blocked],Sky Cinema Select,Sky Cinema Select,待确认分组,网络源,未排序,否
-[BD]sky cinema thriller *m[geo-blocked],Sky Cinema Thriller,Sky Cinema Thriller,待确认分组,网络源,未排序,否
-[BD]sky comedy ==[geo-blocked],Sky Comedy,Sky Comedy,待确认分组,网络源,未排序,否
-[BD]sky comedy=,Sky Comedy,Sky Comedy,待确认分组,网络源,未排序,否
-[BD]sky drama ==,[BD]sky drama ==,[BD]sky drama ==,待标准化,网络源,未排序,否
-[BD]sky movies drama romance uk =,[BD]sky movies drama romance uk =,[BD]sky movies drama romance uk =,待标准化,网络源,未排序,否
-[BD]sky movies greats *m[geo-blocked],Sky Movies Greats,Sky Movies Greats,待确认分组,网络源,未排序,否
-[BD]sky movies modern greats uk =,[BD]sky movies modern greats uk =,[BD]sky movies modern greats uk =,待标准化,网络源,未排序,否
-[BD]sky movies premier *m[geo-blocked],Sky Movies Premiere,Sky Movies Premiere,待确认分组,网络源,未排序,否
-[BD]sky movies premiere uk *s[geo-blocked],Sky Movies Premiere,Sky Movies Premiere,待确认分组,网络源,未排序,否
-[BD]sky movies thriller *m[geo-blocked],[BD]sky movies thriller *m[geoblocked],[BD]sky movies thriller *m[geo-blocked],待标准化,网络源,未排序,否
-[BD]sky nature uhd *m[geo-blocked],[BD]sky nature uhd *m[geoblocked],[BD]sky nature uhd *m[geo-blocked],待标准化,网络源,未排序,否
-[BD]sky news,Sky News,Sky News,待确认分组,网络源,未排序,否
-[BD]sky news *m[geo-blocked],Sky News,Sky News,待确认分组,网络源,未排序,否
-[BD]sky news arabia,Sky News Arabia,Sky News Arabia,待确认分组,网络源,未排序,否
-[BD]sky news now,[BD]sky news now,[BD]sky news now,待标准化,网络源,未排序,否
-[BD]sky sports f1,Sky Sports F1,Sky Sports F1,待确认分组,网络源,未排序,否
-[BD]sky sports f1 =,Sky Sports F1,Sky Sports F1,待确认分组,网络源,未排序,否
-[BD]sky sports f1 ==,Sky Sports F1,Sky Sports F1,待确认分组,网络源,未排序,否
-[BD]sky sports f1-[geo-blocked],Sky Sports F1,Sky Sports F1,待确认分组,网络源,未排序,否
-[BD]sky sports golf ==,Sky Sports Golf,Sky Sports Golf,待确认分组,网络源,未排序,否
-[BD]sky sports golf=[geo-blocked],Sky Sports Golf,Sky Sports Golf,待确认分组,网络源,未排序,否
-[BD]sky sports mix=,Sky Sports Mix,Sky Sports Mix,待确认分组,网络源,未排序,否
-[BD]sky sports news ==,Sky Sports News,Sky Sports News,待确认分组,网络源,未排序,否
+[BD]sky cinema-,Sky Cinema,[BD]sky cinema-,国际频道,网络源,未排序,是
+[BD]sky cinema--,Sky Cinema,[BD]sky cinema--,国际频道,网络源,未排序,是
+[BD]sky cinema action *m[geo-blocked],Sky Cinema Action,Sky Cinema Action,国际频道,网络源,未排序,是
+[BD]sky cinema action *s[geo-blocked],Sky Cinema Action,Sky Cinema Action,国际频道,网络源,未排序,是
+[BD]sky cinema comedy *m[geo-blocked],Sky Cinema Comedy,Sky Cinema Comedy,国际频道,网络源,未排序,是
+[BD]sky cinema drama romantic *m[geo-blocked],Sky Movies Drama Romance,[BD]sky cinema drama romantic *m[geo-blocked],国际频道,网络源,未排序,是
+[BD]sky cinema family *m[geo-blocked],Sky Cinema Family,Sky Cinema Family,国际频道,网络源,未排序,是
+[BD]sky cinema greats *m[geo-blocked],Sky Cinema Greats,Sky Cinema Greats,国际频道,网络源,未排序,是
+[BD]sky cinema hits *m[geo-blocked],Sky Cinema Hits,Sky Cinema Hits,国际频道,网络源,未排序,是
+[BD]sky cinema premier *m[geo-blocked],Sky Cinema Premiere,Sky Cinema Premiere,国际频道,网络源,未排序,是
+[BD]sky cinema sci-fi *m[geo-blocked],Sky Cinema SciFi,Sky Cinema Sci-Fi,国际频道,网络源,未排序,是
+[BD]sky cinema scifi horror *m[geo-blocked],Sky Cinema SciFi Horror,Sky Cinema Sci-Fi Horror,国际频道,网络源,未排序,是
+[BD]sky cinema select *m[geo-blocked],Sky Cinema Select,Sky Cinema Select,国际频道,网络源,未排序,是
+[BD]sky cinema select *s[geo-blocked],Sky Cinema Select,Sky Cinema Select,国际频道,网络源,未排序,是
+[BD]sky cinema thriller *m[geo-blocked],Sky Cinema Thriller,Sky Cinema Thriller,国际频道,网络源,未排序,是
+[BD]sky comedy ==[geo-blocked],Sky Comedy,Sky Comedy,国际频道,网络源,未排序,是
+[BD]sky comedy=,Sky Comedy,Sky Comedy,国际频道,网络源,未排序,是
+[BD]sky drama ==,Sky Drama,[BD]sky drama ==,国际频道,网络源,未排序,是
+[BD]sky movies drama romance uk =,Sky Movies Drama Romance,[BD]sky movies drama romance uk =,国际频道,网络源,未排序,是
+[BD]sky movies greats *m[geo-blocked],Sky Cinema Greats,Sky Movies Greats,国际频道,网络源,未排序,是
+[BD]sky movies modern greats uk =,Sky Movies Modern,[BD]sky movies modern greats uk =,国际频道,网络源,未排序,是
+[BD]sky movies premier *m[geo-blocked],Sky Movies Premiere,Sky Movies Premiere,国际频道,网络源,未排序,是
+[BD]sky movies premiere uk *s[geo-blocked],Sky Movies Premiere,Sky Movies Premiere,国际频道,网络源,未排序,是
+[BD]sky movies thriller *m[geo-blocked],Sky Movies Thriller,[BD]sky movies thriller *m[geo-blocked],国际频道,网络源,未排序,是
+[BD]sky nature uhd *m[geo-blocked],Sky Nature,[BD]sky nature uhd *m[geo-blocked],国际频道,网络源,未排序,是
+[BD]sky news,Sky News,Sky News,国际频道,网络源,未排序,是
+[BD]sky news *m[geo-blocked],Sky News,Sky News,国际频道,网络源,未排序,是
+[BD]sky news arabia,Sky News阿语,Sky News Arabia,国际频道（小语种）,网络源,未排序,是
+[BD]sky news now,Sky News Now,[BD]sky news now,国际频道,网络源,未排序,是
+[BD]sky sports f1,Sky Sports F1,Sky Sports F1,国际频道,网络源,未排序,是
+[BD]sky sports f1 =,Sky Sports F1,Sky Sports F1,国际频道,网络源,未排序,是
+[BD]sky sports f1 ==,Sky Sports F1,Sky Sports F1,国际频道,网络源,未排序,是
+[BD]sky sports f1-[geo-blocked],Sky Sports F1,Sky Sports F1,国际频道,网络源,未排序,是
+[BD]sky sports golf ==,Sky Sports Golf,Sky Sports Golf,国际频道,网络源,未排序,是
+[BD]sky sports golf=[geo-blocked],Sky Sports Golf,Sky Sports Golf,国际频道,网络源,未排序,是
+[BD]sky sports mix=,Sky Sports Mix,Sky Sports Mix,国际频道,网络源,未排序,是
+[BD]sky sports news ==,Sky Sports News,Sky Sports News,国际频道,网络源,未排序,是
 [BD]snap,[BD]snap,[BD]snap,待标准化,网络源,未排序,否
 [BD]sony channel,Sony Channel,Sony Channel,待确认分组,网络源,未排序,否
 [BD]sony one faves[geo-blocked],[BD]sony one faves[geoblocked],[BD]sony one faves[geo-blocked],待标准化,网络源,未排序,否
@@ -1280,13 +1280,13 @@ qtv-5,青岛QTV5,QTV-5,山东频道,山东移动单播,未排序,是
 [BD]tv5monde plus chefs[geo-blocked],[BD]tv5monde plus chefs[geoblocked],[BD]tv5monde plus chefs[geo-blocked],待标准化,网络源,未排序,否
 [BD]tv6[geo-blocked],TV6,TV6,待确认分组,网络源,未排序,否
 [BD]tva,Tva,Tva,待确认分组,网络源,未排序,否
-[BD]tvb plus,Tv Plus,Tv Plus,待确认分组,网络源,未排序,否
+[BD]tvb plus,TVB Plus,Tv Plus,香港频道,网络源,未排序,是
 [BD]tvb việt nam,[BD]tvb việt nam,[BD]tvb việt nam,待标准化,网络源,未排序,否
-[BD]tvbplus,Tv Plus,Tv Plus,待确认分组,网络源,未排序,否
-[BD]tvbs-asia,TVBSAsia,TVBS-Asia,待确认分组,网络源,未排序,否
-[BD]tvbs亚洲,[BD]tvbs亚洲,[BD]tvbs亚洲,待标准化,网络源,未排序,否
-[BD]tvbs亞洲,[BD]tvbs亞洲,[BD]tvbs亞洲,待标准化,网络源,未排序,否
-[BD]tvb翡翠,[BD]tvb翡翠,[BD]tvb翡翠,待标准化,网络源,未排序,否
+[BD]tvbplus,TVB Plus,Tv Plus,香港频道,网络源,未排序,是
+[BD]tvbs-asia,TVBS亚洲,TVBS-Asia,香港频道,网络源,未排序,是
+[BD]tvbs亚洲,TVBS亚洲,[BD]tvbs亚洲,香港频道,网络源,未排序,是
+[BD]tvbs亞洲,TVBS亚洲,[BD]tvbs亞洲,香港频道,网络源,未排序,是
+[BD]tvb翡翠,TVBS翡翠,[BD]tvb翡翠,香港频道,网络源,未排序,是
 [BD]tve 24 h[geo-blocked],[BD]tve 24 h[geoblocked],[BD]tve 24 h[geo-blocked],待标准化,网络源,未排序,否
 [BD]tve la 2[geo-blocked],[BD]tve la 2[geoblocked],[BD]tve la 2[geo-blocked],待标准化,网络源,未排序,否
 [BD]tve tdp[geo-blocked],[BD]tve tdp[geoblocked],[BD]tve tdp[geo-blocked],待标准化,网络源,未排序,否
@@ -1296,7 +1296,7 @@ qtv-5,青岛QTV5,QTV-5,山东频道,山东移动单播,未排序,是
 [BD]tvn5,[BD]tvn5,[BD]tvn5,待标准化,网络源,未排序,否
 [BD]tyt turk,Tyt Turk,Tyt Turk,待确认分组,网络源,未排序,否
 [BD]ufc,[BD]ufc,[BD]ufc,待标准化,网络源,未排序,否
-[BD]uk sky sports f1 f,[BD]uk sky sports f1 f,[BD]uk sky sports f1 f,待标准化,网络源,未排序,否
+[BD]uk sky sports f1 f,Sky Sports F1,[BD]uk sky sports f1 f,国际频道,网络源,未排序,是
 [BD]uk-boomerang,[BD]ukboomerang,[BD]uk-boomerang,待标准化,网络源,未排序,否
 [BD]unife tv,Unife Tv,Unife Tv,待确认分组,网络源,未排序,否
 [BD]univer tv[geo-blocked],Univer Tv,Univer Tv,待确认分组,网络源,未排序,否
@@ -1335,8 +1335,8 @@ qtv-5,青岛QTV5,QTV-5,山东频道,山东移动单播,未排序,是
 [BD]viju plus megahit,[BD]viju plus megahit,[BD]viju plus megahit,待标准化,网络源,未排序,否
 [BD]viju plus premiere,[BD]viju plus premiere,[BD]viju plus premiere,待标准化,网络源,未排序,否
 [BD]viju plus serial,[BD]viju plus serial,[BD]viju plus serial,待标准化,网络源,未排序,否
-[BD]viutv,Viutv,Viutv,待确认分组,网络源,未排序,否
-[BD]viutv6,Viutv,Viutv,待确认分组,网络源,未排序,否
+[BD]viutv,Viutv99,Viutv,香港频道,网络源,未排序,是
+[BD]viutv6,Viutv96,Viutv,香港频道,网络源,未排序,是
 [BD]voa tv africa,Voa Tv Africa,Voa Tv Africa,待确认分组,网络源,未排序,否
 [BD]voice of america,[BD]voice of america,[BD]voice of america,待标准化,网络源,未排序,否
 [BD]votv,Votv,Votv,待确认分组,网络源,未排序,否
@@ -1410,15 +1410,15 @@ qtv-5,青岛QTV5,QTV-5,山东频道,山东移动单播,未排序,是
 [BD]ช่อง vevo country,Vevo Country,Vevo Country,待确认分组,网络源,未排序,否
 [BD]ช่อง vevo pop,Vevo Pop,Vevo Pop,待确认分组,网络源,未排序,否
 [BD]ช่อง vevo retro rock,Vevo Retro Rock,Vevo Retro Rock,待确认分组,网络源,未排序,否
-[BD]ช่อง 澳视澳门,[BD]ช่อง 澳视澳门,[BD]ช่อง 澳视澳门,待标准化,网络源,未排序,否
+[BD]ช่อง 澳视澳门,澳视澳门,[BD]ช่อง 澳视澳门,澳门频道,网络源,未排序,是
 [BD]ช่อง 澳视葡文,[BD]ช่อง 澳视葡文,[BD]ช่อง 澳视葡文,待标准化,网络源,未排序,否
 [BD]ช่อง 澳视资讯,[BD]ช่อง 澳视资讯,[BD]ช่อง 澳视资讯,待标准化,网络源,未排序,否
 [BD]安徽卫视 8m1080,[BD]安徽卫视 8m1080,[BD]安徽卫视 8m1080,待标准化,网络源,未排序,否
-[BD]澳门macau,[BD]澳门macau,[BD]澳门macau,待标准化,网络源,未排序,否
+[BD]澳门macau,澳门macau,[BD]澳门macau,澳门频道,网络源,未排序,是
 [BD]澳門MACAU,[BD]澳門MACAU,[BD]澳門MACAU,待标准化,网络源,未排序,否
 [BD]澳門資訊,[BD]澳門資訊,[BD]澳門資訊,待标准化,网络源,未排序,否
 [BD]澳門綜藝,[BD]澳門綜藝,[BD]澳門綜藝,待标准化,网络源,未排序,否
-[BD]澳视澳门,[BD]澳视澳门,[BD]澳视澳门,待标准化,网络源,未排序,否
+[BD]澳视澳门,澳视澳门,[BD]澳视澳门,澳门频道,网络源,未排序,是
 [BD]澳视葡文,[BD]澳视葡文,[BD]澳视葡文,待标准化,网络源,未排序,否
 [BD]澳视体育,[BD]澳视体育,[BD]澳视体育,待标准化,网络源,未排序,否
 [BD]澳视资讯,[BD]澳视资讯,[BD]澳视资讯,待标准化,网络源,未排序,否
@@ -1426,7 +1426,7 @@ qtv-5,青岛QTV5,QTV-5,山东频道,山东移动单播,未排序,是
 [BD]澳視澳門,[BD]澳視澳門,[BD]澳視澳門,待标准化,网络源,未排序,否
 [BD]澳視葡文,[BD]澳視葡文,[BD]澳視葡文,待标准化,网络源,未排序,否
 [BD]北京卫视 8m1080,[BD]北京卫视 8m1080,[BD]北京卫视 8m1080,待标准化,网络源,未排序,否
-[BD]博斯魅力 *wj,[BD]博斯魅力 *wj,[BD]博斯魅力 *wj,待标准化,网络源,未排序,否
+[BD]博斯魅力 *wj,博斯魅力,[BD]博斯魅力 *wj,台湾频道,网络源,未排序,是
 [BD]成都都市,[BD]成都都市,[BD]成都都市,待标准化,网络源,未排序,否
 [BD]成都公共,[BD]成都公共,[BD]成都公共,待标准化,网络源,未排序,否
 [BD]成都经济,[BD]成都经济,[BD]成都经济,待标准化,网络源,未排序,否
@@ -1448,7 +1448,7 @@ qtv-5,青岛QTV5,QTV-5,山东频道,山东移动单播,未排序,是
 [BD]東森美洲,[BD]東森美洲,[BD]東森美洲,待标准化,网络源,未排序,否
 [BD]峨眉山综合,[BD]峨眉山综合,[BD]峨眉山综合,待标准化,网络源,未排序,否
 [BD]峨嵋电影,[BD]峨嵋电影,[BD]峨嵋电影,待标准化,网络源,未排序,否
-[BD]翡翠,[BD]翡翠,[BD]翡翠,待标准化,网络源,未排序,否
+[BD]翡翠,TVBS翡翠,[BD]翡翠,香港频道,网络源,未排序,是
 [BD]佛山公共[geo-blocked],[BD]佛山公共[geoblocked],[BD]佛山公共[geo-blocked],待标准化,网络源,未排序,否
 [BD]佛山综合,[BD]佛山综合,[BD]佛山综合,待标准化,网络源,未排序,否
 [BD]巩义新闻综合,[BD]巩义新闻综合,[BD]巩义新闻综合,待标准化,网络源,未排序,否
@@ -1488,9 +1488,9 @@ qtv-5,青岛QTV5,QTV-5,山东频道,山东移动单播,未排序,是
 [BD]岭南戏曲[geo-blocked],[BD]岭南戏曲[geoblocked],[BD]岭南戏曲[geo-blocked],待标准化,网络源,未排序,否
 [BD]眉山综合,[BD]眉山综合,[BD]眉山综合,待标准化,网络源,未排序,否
 [BD]绵阳新闻,[BD]绵阳新闻,[BD]绵阳新闻,待标准化,网络源,未排序,否
-[BD]民視新聞,[BD]民視新聞,[BD]民視新聞,待标准化,网络源,未排序,否
-[BD]明珠,[BD]明珠,[BD]明珠,待标准化,网络源,未排序,否
-[BD]明珠[geo-blocked],[BD]明珠[geoblocked],[BD]明珠[geo-blocked],待标准化,网络源,未排序,否
+[BD]民視新聞,民视新闻,[BD]民視新聞,台湾频道,网络源,未排序,是
+[BD]明珠,明珠台,[BD]明珠,香港频道,网络源,未排序,是
+[BD]明珠[geo-blocked],明珠台,[BD]明珠[geo-blocked],香港频道,网络源,未排序,是
 [BD]南充综合,[BD]南充综合,[BD]南充综合,待标准化,网络源,未排序,否
 [BD]内江资中综合,[BD]内江资中综合,[BD]内江资中综合,待标准化,网络源,未排序,否
 [BD]宁波新闻综合,[BD]宁波新闻综合,[BD]宁波新闻综合,待标准化,网络源,未排序,否
@@ -1523,7 +1523,7 @@ qtv-5,青岛QTV5,QTV-5,山东频道,山东移动单播,未排序,是
 [BD]西安戏剧影视,[BD]西安戏剧影视,[BD]西安戏剧影视,待标准化,网络源,未排序,否
 [BD]西安新闻综合,[BD]西安新闻综合,[BD]西安新闻综合,待标准化,网络源,未排序,否
 [BD]西安影视,[BD]西安影视,[BD]西安影视,待标准化,网络源,未排序,否
-[BD]香港c plus,[BD]香港c plus,[BD]香港c plus,待标准化,网络源,未排序,否
+[BD]香港c plus,香港C Plus,[BD]香港c plus,香港频道,网络源,未排序,是
 [BD]新视觉,[BD]新视觉,[BD]新视觉,待标准化,网络源,未排序,否
 [BD]新乡县新闻综合频道,[BD]新乡县新闻综合频道,[BD]新乡县新闻综合频道,待标准化,网络源,未排序,否
 [BD]新野新闻综合频道,[BD]新野新闻综合频道,[BD]新野新闻综合频道,待标准化,网络源,未排序,否
@@ -1639,11 +1639,11 @@ qtv-5,青岛QTV5,QTV-5,山东频道,山东移动单播,未排序,是
 [HD]billiard tv,Billiard Tv,Billiard Tv,待确认分组,网络源,未排序,否
 [HD]billiard tv[geo-blocked],Billiard Tv,Billiard Tv,待确认分组,网络源,未排序,否
 [HD]biz tv,Biz Tv,Biz Tv,待确认分组,网络源,未排序,否
-[HD]bloomberg ht,Bloomberg Ht,Bloomberg Ht,待确认分组,网络源,未排序,否
-[HD]bloomberg tv,Bloomberg Tv,Bloomberg Tv,待确认分组,网络源,未排序,否
-[HD]bloomberg tv asia (720p),[HD]bloomberg tv asia (720p),[HD]bloomberg tv asia (720p),待标准化,网络源,未排序,否
-[HD]bloomberg tv australia (270p),[HD]bloomberg tv australia (270p),[HD]bloomberg tv australia (270p),待标准化,网络源,未排序,否
-[HD]bloomberg tv europe (720p),[HD]bloomberg tv europe (720p),[HD]bloomberg tv europe (720p),待标准化,网络源,未排序,否
+[HD]bloomberg ht,Bloomberg Ht,Bloomberg Ht,国际频道,网络源,未排序,是
+[HD]bloomberg tv,Bloomberg,Bloomberg Tv,国际频道,网络源,未排序,是
+[HD]bloomberg tv asia (720p),Bloomberg亚洲,[HD]bloomberg tv asia (720p),国际频道,网络源,未排序,是
+[HD]bloomberg tv australia (270p),Bloomberg澳洲,[HD]bloomberg tv australia (270p),国际频道,网络源,未排序,是
+[HD]bloomberg tv europe (720p),Bloomberg欧洲,[HD]bloomberg tv europe (720p),国际频道,网络源,未排序,是
 [HD]bravo =[geo-blocked],Bravo,Bravo,待确认分组,网络源,未排序,否
 [HD]bravo east,[HD]bravo east,[HD]bravo east,待标准化,网络源,未排序,否
 [HD]brividy cinema,[HD]brividy cinema,[HD]brividy cinema,待标准化,网络源,未排序,否
@@ -1678,14 +1678,14 @@ qtv-5,青岛QTV5,QTV-5,山东频道,山东移动单播,未排序,是
 [HD]cartoon network uhd *m[geo-blocked],Cartoon Network HD+,Cartoon Network HD+,待确认分组,网络源,未排序,否
 [HD]cay tv,Cay Tv,Cay Tv,待确认分组,网络源,未排序,否
 [HD]cbn tv (720p),Cbn Tv,Cbn Tv,待确认分组,网络源,未排序,否
-[HD]cbs (wcbs) new york,[HD]cbs (wcbs) new york,[HD]cbs (wcbs) new york,待标准化,网络源,未排序,否
-[HD]cbs news,[HD]cbs news,[HD]cbs news,待标准化,网络源,未排序,否
-[HD]cbs news *wj,[HD]cbs news *wj,[HD]cbs news *wj,待标准化,网络源,未排序,否
-[HD]cbs news colorado (720p),Cbs News Colorado,Cbs News Colorado,待确认分组,网络源,未排序,否
-[HD]cbs news los angeles (720p),Cbs News Los Angeles,Cbs News Los Angeles,待确认分组,网络源,未排序,否
-[HD]cbs news texas[geo-blocked],[HD]cbs news texas[geoblocked],[HD]cbs news texas[geo-blocked],待标准化,网络源,未排序,否
-[HD]cbs sports network =,Cbs Sports Network Usa,Cbs Sports Network Usa,待确认分组,网络源,未排序,否
-[HD]cbs sports network ==,Cbs Sports Network Usa,Cbs Sports Network Usa,待确认分组,网络源,未排序,否
+[HD]cbs (wcbs) new york,CBS News New York,[HD]cbs (wcbs) new york,国际频道,网络源,未排序,是
+[HD]cbs news,CBS News,[HD]cbs news,国际频道,网络源,未排序,是
+[HD]cbs news *wj,CBS News,[HD]cbs news *wj,国际频道,网络源,未排序,是
+[HD]cbs news colorado (720p),Cbs News Colorado,Cbs News Colorado,国际频道,网络源,未排序,是
+[HD]cbs news los angeles (720p),Cbs News Los Angeles,Cbs News Los Angeles,国际频道,网络源,未排序,是
+[HD]cbs news texas[geo-blocked],CBS News Texas,[HD]cbs news texas[geo-blocked],国际频道,网络源,未排序,是
+[HD]cbs sports network =,CBS Sports,Cbs Sports Network Usa,国际频道,网络源,未排序,是
+[HD]cbs sports network ==,CBS Sports,Cbs Sports Network Usa,国际频道,网络源,未排序,是
 [HD]cctv1,CCTV1,CCTV-1,央视频道,网络源,未排序,是
 [HD]cctv-1,CCTV1,CCTV-1,央视频道,网络源,未排序,是
 [HD]cctv-10,CCTV10,CCTV-10,央视频道,网络源,未排序,是
@@ -1724,10 +1724,10 @@ qtv-5,青岛QTV5,QTV-5,山东频道,山东移动单播,未排序,是
 [HD]classic tv,Classic Tv,Classic Tv,待确认分组,网络源,未排序,否
 [HD]cleo tv,Cleo Tv,Cleo Tv,待确认分组,网络源,未排序,否
 [HD]cmtv *y,[HD]cmtv *y,[HD]cmtv *y,待标准化,网络源,未排序,否
-[HD]cnbc mgl,[HD]cnbc mgl,[HD]cnbc mgl,待标准化,网络源,未排序,否
-[HD]cnbc tv18[geo-blocked],Cnbc TV18,Cnbc TV18,待确认分组,网络源,未排序,否
-[HD]cnbc(usa) =,Cnbc,Cnbc,待确认分组,网络源,未排序,否
-[HD]cnbc(usa) ==,Cnbc,Cnbc,待确认分组,网络源,未排序,否
+[HD]cnbc mgl,CNBC蒙古,[HD]cnbc mgl,国际频道（小语种）,网络源,未排序,是
+[HD]cnbc tv18[geo-blocked],CNBC印度,Cnbc TV18,国际频道（小语种）,网络源,未排序,是
+[HD]cnbc(usa) =,CNBC,Cnbc,国际频道,网络源,未排序,是
+[HD]cnbc(usa) ==,CNBC,Cnbc,国际频道,网络源,未排序,是
 [HD]cnn,CNN,Cnn,国际频道,网络源,未排序,是
 [HD]cnn =[geo-blocked],CNN,Cnn,国际频道,网络源,未排序,是
 [HD]cnn ==,CNN,Cnn,国际频道,网络源,未排序,是
@@ -1787,13 +1787,13 @@ qtv-5,青岛QTV5,QTV-5,山东频道,山东移动单播,未排序,是
 [HD]etv,e.tv,e.tv,待确认分组,网络源,未排序,否
 [HD]etv ⓖ,e.tv,e.tv,待确认分组,网络源,未排序,否
 [HD]euro d,Euro D,Euro D,待确认分组,网络源,未排序,否
-[HD]euronews,Euronews,Euronews,待确认分组,网络源,未排序,否
-[HD]euronews de,[HD]euronews de,[HD]euronews de,待标准化,网络源,未排序,否
-[HD]euronews english (720p),Euronews English,Euronews English,待确认分组,网络源,未排序,否
-[HD]euronews it,[HD]euronews it,[HD]euronews it,待标准化,网络源,未排序,否
-[HD]euronews pt,[HD]euronews pt,[HD]euronews pt,待标准化,网络源,未排序,否
-[HD]euronews spanish[geo-blocked],Euronews Spanish,Euronews Spanish,待确认分组,网络源,未排序,否
-[HD]euronews[geo-blocked],Euronews,Euronews,待确认分组,网络源,未排序,否
+[HD]euronews,Euronews,Euronews,国际频道,网络源,未排序,是
+[HD]euronews de,Euronews德语,[HD]euronews de,国际频道（小语种）,网络源,未排序,是
+[HD]euronews english (720p),Euronews,Euronews English,国际频道,网络源,未排序,是
+[HD]euronews it,Euronews意大利语,[HD]euronews it,国际频道（小语种）,网络源,未排序,是
+[HD]euronews pt,Euronews葡萄牙语,[HD]euronews pt,国际频道（小语种）,网络源,未排序,是
+[HD]euronews spanish[geo-blocked],Euronews西语,Euronews Spanish,国际频道（小语种）,网络源,未排序,是
+[HD]euronews[geo-blocked],Euronews,Euronews,国际频道,网络源,未排序,是
 [HD]ewtn africa-asia[geo-blocked],[HD]ewtn africaasia[geoblocked],[HD]ewtn africa-asia[geo-blocked],待标准化,网络源,未排序,否
 [HD]ewtn tv,[HD]ewtn tv,[HD]ewtn tv,待标准化,网络源,未排序,否
 [HD]ewtn[geo-blocked],Ewtn,Ewtn,待确认分组,网络源,未排序,否
@@ -1954,8 +1954,8 @@ qtv-5,青岛QTV5,QTV-5,山东频道,山东移动单播,未排序,是
 [HD]newport beach television (720p),[HD]newport beach television (720p),[HD]newport beach television (720p),待标准化,网络源,未排序,否
 [HD]news 24,News24,News24,待确认分组,网络源,未排序,否
 [HD]nfl network,Nfl Network,Nfl Network,待确认分组,网络源,未排序,否
-[HD]nhk japan ᴴᴰ,[HD]nhk japan ᴴᴰ,[HD]nhk japan ᴴᴰ,待标准化,网络源,未排序,否
-[HD]nhk world japan[geo-blocked],Nhk WorldJapan,Nhk World-Japan,待确认分组,网络源,未排序,否
+[HD]nhk japan ᴴᴰ,NHK,[HD]nhk japan ᴴᴰ,国际频道,网络源,未排序,是
+[HD]nhk world japan[geo-blocked],NHK,Nhk World-Japan,国际频道,网络源,未排序,是
 [HD]nickelodeon,Nickelodeon,Nickelodeon,待确认分组,网络源,未排序,否
 [HD]nicktoons,Nicktoons,Nicktoons,待确认分组,网络源,未排序,否
 [HD]nonstop drama,[HD]nonstop drama,[HD]nonstop drama,待标准化,网络源,未排序,否
@@ -2016,8 +2016,8 @@ qtv-5,青岛QTV5,QTV-5,山东频道,山东移动单播,未排序,是
 [HD]rik sat cyprus,[HD]rik sat cyprus,[HD]rik sat cyprus,待标准化,网络源,未排序,否
 [HD]rock tv,Rock Tv,Rock Tv,待确认分组,网络源,未排序,否
 [HD]rtg tv,Rtg Tv,Rtg Tv,待确认分组,网络源,未排序,否
-[HD]rthk-32,[HD]rthk32,[HD]rthk-32,待标准化,网络源,未排序,否
-[HD]rthk32 *wj,[HD]rthk32 *wj,[HD]rthk32 *wj,待标准化,网络源,未排序,否
+[HD]rthk-32,港台电视32,[HD]rthk-32,香港频道,网络源,未排序,是
+[HD]rthk32 *wj,港台电视32,[HD]rthk32 *wj,香港频道,网络源,未排序,是
 [HD]rtp,Rtp,Rtp,待确认分组,网络源,未排序,否
 [HD]rts svet[geo-blocked],Rts Svet,Rts Svet,待确认分组,网络源,未排序,否
 [HD]rtsh 2,Rtsh 2,Rtsh 2,待确认分组,网络源,未排序,否
@@ -2045,13 +2045,13 @@ qtv-5,青岛QTV5,QTV-5,山东频道,山东移动单播,未排序,是
 [HD]showtime ==,Showtime,Showtime,待确认分组,网络源,未排序,否
 [HD]showtime 2 east,[HD]showtime 2 east,[HD]showtime 2 east,待标准化,网络源,未排序,否
 [HD]sic,Sic,Sic,待确认分组,网络源,未排序,否
-[HD]sky atlantic *m[geo-blocked],Sky Atlantic,Sky Atlantic,待确认分组,网络源,未排序,否
-[HD]sky cinema ==,[HD]sky cinema ==,[HD]sky cinema ==,待标准化,网络源,未排序,否
-[HD]sky cinema action *m[geo-blocked],Sky Cinema Action,Sky Cinema Action,待确认分组,网络源,未排序,否
-[HD]sky comedy *s[geo-blocked],Sky Comedy,Sky Comedy,待确认分组,网络源,未排序,否
-[HD]sky max *m[geo-blocked],Sky Max,Sky Max,待确认分组,网络源,未排序,否
-[HD]sky movies sci-fi horror uk=,[HD]sky movies scifi horror uk=,[HD]sky movies sci-fi horror uk=,待标准化,网络源,未排序,否
-[HD]sky news,Sky News,Sky News,待确认分组,网络源,未排序,否
+[HD]sky atlantic *m[geo-blocked],Sky Atlantic,Sky Atlantic,国际频道,网络源,未排序,是
+[HD]sky cinema ==,Sky Cinema,[HD]sky cinema ==,国际频道,网络源,未排序,是
+[HD]sky cinema action *m[geo-blocked],Sky Cinema Action,Sky Cinema Action,国际频道,网络源,未排序,是
+[HD]sky comedy *s[geo-blocked],Sky Cinema Comedy,Sky Comedy,国际频道,网络源,未排序,是
+[HD]sky max *m[geo-blocked],Sky Max,Sky Max,国际频道,网络源,未排序,是
+[HD]sky movies sci-fi horror uk=,Sky Movies Scifi Horror,[HD]sky movies sci-fi horror uk=,国际频道,网络源,未排序,是
+[HD]sky news,Sky News,Sky News,国际频道,网络源,未排序,是
 [HD]smithsonian channel east,Smithsonian Channel Asia,Smithsonian Channel Asia,待确认分组,网络源,未排序,否
 [HD]soap latino,[HD]soap latino,[HD]soap latino,待标准化,网络源,未排序,否
 [HD]sol tv,Soltv,Soltv,待确认分组,网络源,未排序,否
@@ -2122,10 +2122,10 @@ qtv-5,青岛QTV5,QTV-5,山东频道,山东移动单播,未排序,是
 [HD]tv8,Tv 8,Tv 8,待确认分组,网络源,未排序,否
 [HD]tv9 telegu,[HD]tv9 telegu,[HD]tv9 telegu,待标准化,网络源,未排序,否
 [HD]tva,Tva,Tva,待确认分组,网络源,未排序,否
-[HD]tvbplus,Tv Plus,Tv Plus,待确认分组,网络源,未排序,否
-[HD]tvb翡翠,[HD]tvb翡翠,[HD]tvb翡翠,待标准化,网络源,未排序,否
-[HD]tvb星河,[HD]tvb星河,[HD]tvb星河,待标准化,网络源,未排序,否
-[HD]tvb娱乐新闻,[HD]tvb娱乐新闻,[HD]tvb娱乐新闻,待标准化,网络源,未排序,否
+[HD]tvbplus,TVB Plus,Tv Plus,香港频道,网络源,未排序,是
+[HD]tvb翡翠,TVBS翡翠,[HD]tvb翡翠,香港频道,网络源,未排序,是
+[HD]tvb星河,TVBS星河,[HD]tvb星河,香港频道,网络源,未排序,是
+[HD]tvb娱乐新闻,TVBS娱乐新闻,[HD]tvb娱乐新闻,香港频道,网络源,未排序,是
 [HD]tve 24h,[HD]tve 24h,[HD]tve 24h,待标准化,网络源,未排序,否
 [HD]tvku,Tvku,Tvku,待确认分组,网络源,未排序,否
 [HD]tvo,Tvo,Tvo,待确认分组,网络源,未排序,否
@@ -2137,7 +2137,7 @@ qtv-5,青岛QTV5,QTV-5,山东频道,山东移动单播,未排序,是
 [HD]upea tv[geo-blocked],Upea Tv,Upea Tv,待确认分组,网络源,未排序,否
 [HD]urban docs,Urban Docs,Urban Docs,待确认分组,网络源,未排序,否
 [HD]urban travel,Urban Travel,Urban Travel,待确认分组,网络源,未排序,否
-[HD]us cnbc,[HD]us cnbc,[HD]us cnbc,待标准化,网络源,未排序,否
+[HD]us cnbc,CNBC,[HD]us cnbc,国际频道,网络源,未排序,是
 [HD]us espn news,[HD]us espn news,[HD]us espn news,待标准化,网络源,未排序,否
 [HD]us fox news,FOX News,[HD]us fox news,国际频道,网络源,未排序,是
 [HD]us fxx,[HD]us fxx,[HD]us fxx,待标准化,网络源,未排序,否
@@ -2153,8 +2153,8 @@ qtv-5,青岛QTV5,QTV-5,山东频道,山东移动单播,未排序,是
 [HD]vevo '80s,Vevo '80s,Vevo '80s,待确认分组,网络源,未排序,否
 [HD]vevo '90s,Vevo '90s,Vevo '90s,待确认分组,网络源,未排序,否
 [HD]vevo true school hip-hop,Vevo True School HipHop,Vevo True School Hip-Hop,待确认分组,网络源,未排序,否
-[HD]viutv,Viutv,Viutv,待确认分组,网络源,未排序,否
-[HD]viutvsix,Viutvsix,Viutvsix,待确认分组,网络源,未排序,否
+[HD]viutv,Viutv99,Viutv,香港频道,网络源,未排序,是
+[HD]viutvsix,Viutv96,Viutvsix,香港频道,网络源,未排序,是
 [HD]vox1,VOX1,VOX1,待确认分组,网络源,未排序,否
 [HD]w network,W Network,W Network,待确认分组,网络源,未排序,否
 [HD]wdr fernsehen,Wdr Fernsehen,Wdr Fernsehen,待确认分组,网络源,未排序,否
@@ -2176,7 +2176,7 @@ qtv-5,青岛QTV5,QTV-5,山东频道,山东移动单播,未排序,是
 [HD]стс kids,[HD]стс kids,[HD]стс kids,待标准化,网络源,未排序,否
 [HD]теледом,[HD]теледом,[HD]теледом,待标准化,网络源,未排序,否
 [HD]ช่อง 30a tv classic movies,30A Tv Classic Movies,30A Tv Classic Movies,待确认分组,网络源,未排序,否
-[HD]ช่อง bloomberg,[HD]ช่อง bloomberg,[HD]ช่อง bloomberg,待标准化,网络源,未排序,否
+[HD]ช่อง bloomberg,Bloomberg,[HD]ช่อง bloomberg,国际频道,网络源,未排序,是
 [HD]ช่อง boomerang thai,[HD]ช่อง boomerang thai,[HD]ช่อง boomerang thai,待标准化,网络源,未排序,否
 [HD]ช่อง celestial movies,Celestial Movies,Celestial Movies,待确认分组,网络源,未排序,否
 [HD]ช่อง cnn indonesia,CNN印度尼西亚,Cnn Indonesia,国际频道（小语种）,网络源,未排序,是
@@ -2188,11 +2188,11 @@ qtv-5,青岛QTV5,QTV-5,山东频道,山东移动单播,未排序,是
 [HD]ช่อง trans tv,Trans Tv,Trans Tv,待确认分组,网络源,未排序,否
 [HD]ช่อง world poker tour,World Poker Tour,World Poker Tour,待确认分组,网络源,未排序,否
 [HD]爱奇艺,[HD]爱奇艺,[HD]爱奇艺,待标准化,网络源,未排序,否
-[HD]博斯高球二 *wj,[HD]博斯高球二 *wj,[HD]博斯高球二 *wj,待标准化,网络源,未排序,否
-[HD]博斯网球 *wj,[HD]博斯网球 *wj,[HD]博斯网球 *wj,待标准化,网络源,未排序,否
-[HD]博斯网球 *wj[geo-blocked],[HD]博斯网球 *wj[geoblocked],[HD]博斯网球 *wj[geo-blocked],待标准化,网络源,未排序,否
-[HD]博斯运动二 *wj,[HD]博斯运动二 *wj,[HD]博斯运动二 *wj,待标准化,网络源,未排序,否
-[HD]博斯運動1,[HD]博斯運動1,[HD]博斯運動1,待标准化,网络源,未排序,否
+[HD]博斯高球二 *wj,博斯高球二,[HD]博斯高球二 *wj,台湾频道,网络源,未排序,是
+[HD]博斯网球 *wj,博斯网球,[HD]博斯网球 *wj,台湾频道,网络源,未排序,是
+[HD]博斯网球 *wj[geo-blocked],博斯网球,[HD]博斯网球 *wj[geo-blocked],台湾频道,网络源,未排序,是
+[HD]博斯运动二 *wj,博斯运动二,[HD]博斯运动二 *wj,台湾频道,网络源,未排序,是
+[HD]博斯運動1,博斯運動1,[HD]博斯運動1,台湾频道,网络源,未排序,是
 [HD]成都简阳新闻综合,[HD]成都简阳新闻综合,[HD]成都简阳新闻综合,待标准化,网络源,未排序,否
 [HD]成龙[geo-blocked],[HD]成龙[geoblocked],[HD]成龙[geo-blocked],待标准化,网络源,未排序,否
 [HD]大愛電视 *wj,[HD]大愛電视 *wj,[HD]大愛電视 *wj,待标准化,网络源,未排序,否
@@ -2200,8 +2200,8 @@ qtv-5,青岛QTV5,QTV-5,山东频道,山东移动单播,未排序,是
 [HD]东莞新闻综合,[HD]东莞新闻综合,[HD]东莞新闻综合,待标准化,网络源,未排序,否
 [HD]东莞综合,[HD]东莞综合,[HD]东莞综合,待标准化,网络源,未排序,否
 [HD]东森财经 *wj,东森财经,[HD]东森财经 *wj,台湾频道,网络源,未排序,是
-[HD]翡翠,[HD]翡翠,[HD]翡翠,待标准化,网络源,未排序,否
-[HD]翡翠[geo-blocked],[HD]翡翠[geoblocked],[HD]翡翠[geo-blocked],待标准化,网络源,未排序,否
+[HD]翡翠,TVBS翡翠,[HD]翡翠,香港频道,网络源,未排序,是
+[HD]翡翠[geo-blocked],TVBS翡翠,[HD]翡翠[geo-blocked],香港频道,网络源,未排序,是
 [HD]凤凰卫视 *wj,凤凰卫视,[HD]凤凰卫视 *wj,香港频道,网络源,未排序,是
 [HD]凤凰中文 *wj,凤凰中文,[HD]凤凰中文 *wj,香港频道,网络源,未排序,是
 [HD]广州法治,[HD]广州法治,[HD]广州法治,待标准化,网络源,未排序,否
@@ -2219,8 +2219,8 @@ qtv-5,青岛QTV5,QTV-5,山东频道,山东移动单播,未排序,是
 [HD]丽江新闻综合,[HD]丽江新闻综合,[HD]丽江新闻综合,待标准化,网络源,未排序,否
 [HD]泸州新闻综合,[HD]泸州新闻综合,[HD]泸州新闻综合,待标准化,网络源,未排序,否
 [HD]眉山丹棱综合,[HD]眉山丹棱综合,[HD]眉山丹棱综合,待标准化,网络源,未排序,否
-[HD]民視綜藝,[HD]民視綜藝,[HD]民視綜藝,待标准化,网络源,未排序,否
-[HD]明珠,[HD]明珠,[HD]明珠,待标准化,网络源,未排序,否
+[HD]民視綜藝,民视综艺,[HD]民視綜藝,台湾频道,网络源,未排序,是
+[HD]明珠,明珠台,[HD]明珠,香港频道,网络源,未排序,是
 [HD]南充科教生活,[HD]南充科教生活,[HD]南充科教生活,待标准化,网络源,未排序,否
 [HD]南充综合,[HD]南充综合,[HD]南充综合,待标准化,网络源,未排序,否
 [HD]内江科教生活,[HD]内江科教生活,[HD]内江科教生活,待标准化,网络源,未排序,否
@@ -2294,8 +2294,8 @@ qtv-5,青岛QTV5,QTV-5,山东频道,山东移动单播,未排序,是
 [SD]biznet lifestyle,Biznet Lifestyle,Biznet Lifestyle,待确认分组,网络源,未排序,否
 [SD]black cinema,Black Cinema,Black Cinema,待确认分组,网络源,未排序,否
 [SD]black classics,Black Classics,Black Classics,待确认分组,网络源,未排序,否
-[SD]bloomberg =,[SD]bloomberg =,[SD]bloomberg =,待标准化,网络源,未排序,否
-[SD]bloomberg ==,[SD]bloomberg ==,[SD]bloomberg ==,待标准化,网络源,未排序,否
+[SD]bloomberg =,Bloomberg,[SD]bloomberg =,国际频道,网络源,未排序,是
+[SD]bloomberg ==,Bloomberg,[SD]bloomberg ==,国际频道,网络源,未排序,是
 [SD]bollywood[geo-blocked],Bollywood,Bollywood,待确认分组,网络源,未排序,否
 [SD]boomerang (fr) *s[geo-blocked],Boomerang,Boomerang,待确认分组,网络源,未排序,否
 [SD]bravo plus 1,[SD]bravo plus 1,[SD]bravo plus 1,待标准化,网络源,未排序,否
@@ -2316,8 +2316,8 @@ qtv-5,青岛QTV5,QTV-5,山东频道,山东移动单播,未排序,是
 [SD]cartoon network =[geo-blocked],Cartoon Network,Cartoon Network,待确认分组,网络源,未排序,否
 [SD]cartoon network ==,Cartoon Network,Cartoon Network,待确认分组,网络源,未排序,否
 [SD]cartoonito *m[geo-blocked],Cartoonito,Cartoonito,待确认分组,网络源,未排序,否
-[SD]cbs network =,[SD]cbs network =,[SD]cbs network =,待标准化,网络源,未排序,否
-[SD]cbs network ==,[SD]cbs network ==,[SD]cbs network ==,待标准化,网络源,未排序,否
+[SD]cbs network =,CBS News,[SD]cbs network =,国际频道,网络源,未排序,是
+[SD]cbs network ==,CBS News,[SD]cbs network ==,国际频道,网络源,未排序,是
 [SD]cctv1,CCTV1,CCTV-1,央视频道,网络源,未排序,是
 [SD]cctv11,CCTV11,CCTV-11,央视频道,网络源,未排序,是
 [SD]cctv11-戏曲,CCTV11,[SD]cctv11-戏曲,央视频道,网络源,未排序,是
@@ -2356,7 +2356,7 @@ qtv-5,青岛QTV5,QTV-5,山东频道,山东移动单播,未排序,是
 [SD]dora tv,Dora Tv,Dora Tv,待确认分组,网络源,未排序,否
 [SD]dream tv,Dream Tv,Dream Tv,待确认分组,网络源,未排序,否
 [SD]e!entertainment =,Entertainment,Entertainment,待确认分组,网络源,未排序,否
-[SD]euronews *m[geo-blocked],Euronews,Euronews,待确认分组,网络源,未排序,否
+[SD]euronews *m[geo-blocked],Euronews,Euronews,国际频道,网络源,未排序,是
 [SD]family ties,Family Ties,Family Ties,待确认分组,网络源,未排序,否
 [SD]feniks plus kino,Feniks Plus Kino,Feniks Plus Kino,待确认分组,网络源,未排序,否
 [SD]fightbox,Fightbox,Fightbox,待确认分组,网络源,未排序,否
@@ -2614,8 +2614,8 @@ qtv-5,青岛QTV5,QTV-5,山东频道,山东移动单播,未排序,是
 [VGA]bbc persian,BBC波斯语,Bbc Persian,国际频道（小语种）,网络源,未排序,是
 [VGA]beyaz tv,Beyaz Tv,Beyaz Tv,待确认分组,网络源,未排序,否
 [VGA]bhojpuri cinema,Bhojpuri Cinema,Bhojpuri Cinema,待确认分组,网络源,未排序,否
-[VGA]bloomberg ht,Bloomberg Ht,Bloomberg Ht,待确认分组,网络源,未排序,否
-[VGA]bloomberg tv europe,[VGA]bloomberg tv europe,[VGA]bloomberg tv europe,待标准化,网络源,未排序,否
+[VGA]bloomberg ht,Bloomberg Ht,Bloomberg Ht,国际频道,网络源,未排序,是
+[VGA]bloomberg tv europe,Bloomberg欧洲,[VGA]bloomberg tv europe,国际频道,网络源,未排序,是
 [VGA]bride tv,Bride Tv,Bride Tv,待确认分组,网络源,未排序,否
 [VGA]btv,Btv,Btv,待确认分组,网络源,未排序,否
 [VGA]ca sportsnet ontario,[VGA]ca sportsnet ontario,[VGA]ca sportsnet ontario,待标准化,网络源,未排序,否
@@ -3949,22 +3949,22 @@ Blaze Live,Blaze Live,Blaze Live,待确认分组,网络源,未排序,否
 Bleav Football,Bleav Football,Bleav Football,待标准化,网络源,未排序,否
 Blessing TV Tamil (720p),Blessing Tv Tamil,Blessing Tv Tamil,待确认分组,网络源,未排序,否
 BLK Regional TV (1080p),Blk Regional Tv,Blk Regional Tv,待确认分组,网络源,未排序,否
-Bloomberg HT (720p) [Not 24/7],Bloomberg Ht,Bloomberg Ht,待确认分组,网络源,未排序,否
-Bloomberg Originals,Bloomberg Originals,Bloomberg Originals,待确认分组,网络源,未排序,否
-Bloomberg Quicktake (1080p),Bloomberg Quicktake,Bloomberg Quicktake,待确认分组,网络源,未排序,否
-Bloomberg Television,Bloomberg Television,Bloomberg Television,待标准化,网络源,未排序,否
-Bloomberg TV + (2160p),Bloomberg Tv,Bloomberg Tv,待确认分组,网络源,未排序,否
-Bloomberg TV Asia (720p),Bloomberg TV Asia (720p),Bloomberg TV Asia (720p),待标准化,网络源,未排序,否
-Bloomberg TV Asia Live Event (720p),Bloomberg TV Asia Live Event (720p),Bloomberg TV Asia Live Event (720p),待标准化,网络源,未排序,否
-Bloomberg TV Australia (270p),Bloomberg TV Australia (270p),Bloomberg TV Australia (270p),待标准化,网络源,未排序,否
-Bloomberg TV EMEA Live Event (720p),Bloomberg TV EMEA Live Event (720p),Bloomberg TV EMEA Live Event (720p),待标准化,网络源,未排序,否
-Bloomberg TV Europe (720p),Bloomberg TV Europe (720p),Bloomberg TV Europe (720p),待标准化,网络源,未排序,否
-Bloomberg TV Mongolia HD (720p),Bloomberg Tv Mongolia,Bloomberg Tv Mongolia,待确认分组,网络源,未排序,否
-Bloomberg TV US Live Event (720p),Bloomberg TV US Live Event (720p),Bloomberg TV US Live Event (720p),待标准化,网络源,未排序,否
-Bloomberg TV US Politics Live Event (720p),Bloomberg TV US Politics Live Event (720p),Bloomberg TV US Politics Live Event (720p),待标准化,网络源,未排序,否
-Bloomberg TV+,Bloomberg Tv,Bloomberg Tv,待确认分组,网络源,未排序,否
+Bloomberg HT (720p) [Not 24/7],Bloomberg Ht,Bloomberg Ht,国际频道,网络源,未排序,是
+Bloomberg Originals,Bloomberg Originals,Bloomberg Originals,国际频道,网络源,未排序,是
+Bloomberg Quicktake (1080p),Bloomberg Quicktake,Bloomberg Quicktake,国际频道,网络源,未排序,是
+Bloomberg Television,Bloomberg,Bloomberg Television,国际频道,网络源,未排序,是
+Bloomberg TV + (2160p),Bloomberg+,Bloomberg Tv,国际频道,网络源,未排序,是
+Bloomberg TV Asia (720p),Bloomberg亚洲,Bloomberg TV Asia (720p),国际频道,网络源,未排序,是
+Bloomberg TV Asia Live Event (720p),Bloomberg亚洲,Bloomberg TV Asia Live Event (720p),国际频道,网络源,未排序,是
+Bloomberg TV Australia (270p),Bloomberg澳洲,Bloomberg TV Australia (270p),国际频道,网络源,未排序,是
+Bloomberg TV EMEA Live Event (720p),Bloomberg,Bloomberg TV EMEA Live Event (720p),国际频道,网络源,未排序,是
+Bloomberg TV Europe (720p),Bloomberg欧洲,Bloomberg TV Europe (720p),国际频道,网络源,未排序,是
+Bloomberg TV Mongolia HD (720p),Bloomberg蒙古,Bloomberg Tv Mongolia,国际频道（小语种）,网络源,未排序,是
+Bloomberg TV US Live Event (720p),Bloomberg,Bloomberg TV US Live Event (720p),国际频道,网络源,未排序,是
+Bloomberg TV US Politics Live Event (720p),Bloomberg,Bloomberg TV US Politics Live Event (720p),国际频道,网络源,未排序,是
+Bloomberg TV+,Bloomberg+,Bloomberg Tv,国际频道,网络源,未排序,是
 Blue Bloods,Blue Bloods,Blue Bloods,待确认分组,网络源,未排序,否
-Blue Sky TV (720p),Blue Sky Tv,Blue Sky Tv,待确认分组,网络源,未排序,否
+Blue Sky TV (720p),Blue Sky Tv,Blue Sky Tv,国际频道,网络源,未排序,是
 Blues TV,Blues TV,Blues TV,待标准化,网络源,未排序,否
 BMC-HD TV,BMCHD Tv,BMC-HD Tv,待确认分组,网络源,未排序,否
 BN TV (480p),Bn Tv,Bn Tv,待确认分组,网络源,未排序,否
@@ -4318,34 +4318,34 @@ CBN Espanol (1080p),Cbn Espanol,Cbn Espanol,待确认分组,网络源,未排序,
 CBN Family (1080p),Cbn Family,Cbn Family,待确认分组,网络源,未排序,否
 CBN News Channel (1080p),CBN News Channel (1080p),CBN News Channel (1080p),待标准化,网络源,未排序,否
 CBN TV (720p),Cbn Tv,Cbn Tv,待确认分组,网络源,未排序,否
-CBS 2 Billings MT (KTVQ) (1080p),CBS 2 Billings MT (KTVQ) (1080p),CBS 2 Billings MT (KTVQ) (1080p),待标准化,网络源,未排序,否
-CBS 3 Great Falls MT (KRTV) (720p),CBS 3 Great Falls MT (KRTV) (720p),CBS 3 Great Falls MT (KRTV) (720p),待标准化,网络源,未排序,否
-CBS 3 Norfolk VA (WTKR) (720p),CBS 3 Norfolk VA (WTKR) (720p),CBS 3 Norfolk VA (WTKR) (720p),待标准化,网络源,未排序,否
-CBS 3 Omaha NE (KMTV-TV) (720p),CBS 3 Omaha NE (KMTVTV) (720p),CBS 3 Omaha NE (KMTV-TV) (720p),待标准化,网络源,未排序,否
-CBS 32 Louisville KY (WLKY) (720p),CBS 32 Louisville KY (WLKY) (720p),CBS 32 Louisville KY (WLKY) (720p),待标准化,网络源,未排序,否
-CBS 5 Nashville TN (WTVF) (720p),CBS 5 Nashville TN (WTVF) (720p),CBS 5 Nashville TN (WTVF) (720p),待标准化,网络源,未排序,否
-CBS 6 Richmond VA (WTVR) (720p),CBS 6 Richmond VA (WTVR) (720p),CBS 6 Richmond VA (WTVR) (720p),待标准化,网络源,未排序,否
-CBS 7 Bozeman MT (KBZK) (720p),CBS 7 Bozeman MT (KBZK) (720p),CBS 7 Bozeman MT (KBZK) (720p),待标准化,网络源,未排序,否
-CBS 8 Des Moines IA (KCCI) (720p),CBS 8 Des Moines IA (KCCI) (720p),CBS 8 Des Moines IA (KCCI) (720p),待标准化,网络源,未排序,否
-CBS 8 Missoula MT (KPAX) (720p),CBS 8 Missoula MT (KPAX) (720p),CBS 8 Missoula MT (KPAX) (720p),待标准化,网络源,未排序,否
-CBS 9 Oklahoma City OK (KWTV-DT1) (720p) [Not 24/7],CBS 9 Oklahoma City OK (KWTVDT1) (720p) [Not 24/7],CBS 9 Oklahoma City OK (KWTV-DT1) (720p) [Not 24/7],待标准化,网络源,未排序,否
-CBS News Bay Area (720p),Cbs News Bay Area,Cbs News Bay Area,待确认分组,网络源,未排序,否
-CBS News Boston (720p),Cbs News Boston,Cbs News Boston,待确认分组,网络源,未排序,否
-CBS News Chicago (720p),Cbs News Chicago,Cbs News Chicago,待确认分组,网络源,未排序,否
-CBS News Colorado (720p),Cbs News Colorado,Cbs News Colorado,待确认分组,网络源,未排序,否
-CBS News Detroit (720p),Cbs News Detroit,Cbs News Detroit,待确认分组,网络源,未排序,否
-CBS News Los Angeles (720p),Cbs News Los Angeles,Cbs News Los Angeles,待确认分组,网络源,未排序,否
-CBS News Miami (720p),Cbs News Miami,Cbs News Miami,待确认分组,网络源,未排序,否
-CBS News Minnesota (720p),Cbs News Minnesota,Cbs News Minnesota,待确认分组,网络源,未排序,否
-CBS News New York (720p),Cbs News New York,Cbs News New York,待确认分组,网络源,未排序,否
-CBS News Philadelphia (720p),CBS News Philadelphia (720p),CBS News Philadelphia (720p),待标准化,网络源,未排序,否
-CBS News Pittsburgh (720p),Cbs News Pittsburgh,Cbs News Pittsburgh,待确认分组,网络源,未排序,否
-CBS News Sacramento (720p),Cbs News Sacramento,Cbs News Sacramento,待确认分组,网络源,未排序,否
-CBS News Texas,CBS News Texas,CBS News Texas,待标准化,网络源,未排序,否
-CBS News Texas (720p),CBS News Texas (720p),CBS News Texas (720p),待标准化,网络源,未排序,否
-CBS Sports Golazo Network,Cbs Sports Golazo Network,Cbs Sports Golazo Network,待确认分组,网络源,未排序,否
-CBS Sports HQ,Cbs Sports Hq,Cbs Sports Hq,待确认分组,网络源,未排序,否
-CBS Sports Network USA,Cbs Sports Network Usa,Cbs Sports Network Usa,待确认分组,网络源,未排序,否
+CBS 2 Billings MT (KTVQ) (1080p),CBS News Billings,CBS 2 Billings MT (KTVQ) (1080p),国际频道,网络源,未排序,是
+CBS 3 Great Falls MT (KRTV) (720p),CBS News Great Falls,CBS 3 Great Falls MT (KRTV) (720p),国际频道,网络源,未排序,是
+CBS 3 Norfolk VA (WTKR) (720p),CBS News Norfolk,CBS 3 Norfolk VA (WTKR) (720p),国际频道,网络源,未排序,是
+CBS 3 Omaha NE (KMTV-TV) (720p),CBS News Omaha,CBS 3 Omaha NE (KMTV-TV) (720p),国际频道,网络源,未排序,是
+CBS 32 Louisville KY (WLKY) (720p),CBS News Louisville,CBS 32 Louisville KY (WLKY) (720p),国际频道,网络源,未排序,是
+CBS 5 Nashville TN (WTVF) (720p),CBS News Nashville,CBS 5 Nashville TN (WTVF) (720p),国际频道,网络源,未排序,是
+CBS 6 Richmond VA (WTVR) (720p),CBS News Richmond,CBS 6 Richmond VA (WTVR) (720p),国际频道,网络源,未排序,是
+CBS 7 Bozeman MT (KBZK) (720p),CBS News Bozeman,CBS 7 Bozeman MT (KBZK) (720p),国际频道,网络源,未排序,是
+CBS 8 Des Moines IA (KCCI) (720p),CBS News Des Moines,CBS 8 Des Moines IA (KCCI) (720p),国际频道,网络源,未排序,是
+CBS 8 Missoula MT (KPAX) (720p),CBS News Missoula,CBS 8 Missoula MT (KPAX) (720p),国际频道,网络源,未排序,是
+CBS 9 Oklahoma City OK (KWTV-DT1) (720p) [Not 24/7],CBS News Oklahoma,CBS 9 Oklahoma City OK (KWTV-DT1) (720p) [Not 24/7],国际频道,网络源,未排序,是
+CBS News Bay Area (720p),CBS News Bay Area,Cbs News Bay Area,国际频道,网络源,未排序,是
+CBS News Boston (720p),CBS News Boston,Cbs News Boston,国际频道,网络源,未排序,是
+CBS News Chicago (720p),CBS News Chicago,Cbs News Chicago,国际频道,网络源,未排序,是
+CBS News Colorado (720p),CBS News Colorado,Cbs News Colorado,国际频道,网络源,未排序,是
+CBS News Detroit (720p),CBS News Detroit,Cbs News Detroit,国际频道,网络源,未排序,是
+CBS News Los Angeles (720p),CBS News Los Angeles,Cbs News Los Angeles,国际频道,网络源,未排序,是
+CBS News Miami (720p),CBS News Miami,Cbs News Miami,国际频道,网络源,未排序,是
+CBS News Minnesota (720p),CBS News Minnesota,Cbs News Minnesota,国际频道,网络源,未排序,是
+CBS News New York (720p),CBS News New York,Cbs News New York,国际频道,网络源,未排序,是
+CBS News Philadelphia (720p),CBS News Philadelphia,CBS News Philadelphia (720p),国际频道,网络源,未排序,是
+CBS News Pittsburgh (720p),CBS News Pittsburgh,Cbs News Pittsburgh,国际频道,网络源,未排序,是
+CBS News Sacramento (720p),CBS News Sacramento,Cbs News Sacramento,国际频道,网络源,未排序,是
+CBS News Texas,CBS News Texas,CBS News Texas,国际频道,网络源,未排序,是
+CBS News Texas (720p),CBS News Texas,CBS News Texas (720p),国际频道,网络源,未排序,是
+CBS Sports Golazo Network,CBS Sports,Cbs Sports Golazo Network,国际频道,网络源,未排序,是
+CBS Sports HQ,CBS Sports,Cbs Sports Hq,国际频道,网络源,未排序,是
+CBS Sports Network USA,CBS Sports,Cbs Sports Network Usa,国际频道,网络源,未排序,是
 CC Pluto TV,Cc Pluto Tv,Cc Pluto Tv,待确认分组,网络源,未排序,否
 CCPV TV (1080p),Ccptv,Ccptv,待确认分组,网络源,未排序,否
 CCTN 47 (1080p) [Not 24/7],Cctn 47,Cctn 47,待确认分组,网络源,未排序,否
@@ -4499,7 +4499,7 @@ CJ OnStyle Plus (540p),CJ OnStyle Plus (540p),CJ OnStyle Plus (540p),待标准�
 Clan (1280p),Clan,Clan,待确认分组,网络源,未排序,否
 Clan Internacional Americas (1080p) [Geo-blocked],Clan Internacional Americas (1080p) [Geoblocked],Clan Internacional Americas (1080p) [Geo-blocked],待标准化,网络源,未排序,否
 Claro Visión TV (720p),Claro Vision Tv,Claro Vision Tv,待确认分组,网络源,未排序,否
-Class CNBC,Class Cnbc,Class Cnbc,待确认分组,网络源,未排序,否
+Class CNBC,CNBC,Class Cnbc,国际频道,网络源,未排序,是
 Class TV Moda,Class Tv Moda,Class Tv Moda,待确认分组,网络源,未排序,否
 Classic Arts Showcase,Classic Arts Showcase,Classic Arts Showcase,待确认分组,网络源,未排序,否
 Classic Cinema (240p) [Not 24/7],Classic Cinema,Classic Cinema,待确认分组,网络源,未排序,否
@@ -4519,16 +4519,16 @@ CMB Television (1080p),Cmb Television,Cmb Television,待确认分组,网络源,�
 CMC TV (1080p),Cmc Tv,Cmc Tv,待确认分组,网络源,未排序,否
 CMT East,CMT East,CMT East,待标准化,网络源,未排序,否
 CMT Equal Play,Cmt Equal Play,Cmt Equal Play,待确认分组,网络源,未排序,否
-CNA,Cna,Cna,待确认分组,网络源,未排序,否
-CNA (1080p) [Geo-blocked],Cna,Cna,待确认分组,网络源,未排序,否
-CNAæ–°é—»,Cna,Cna,待确认分组,网络源,未排序,否
-CNBC,Cnbc,Cnbc,待确认分组,网络源,未排序,否
-CNBC Arabiya (1080p),Cnbc Arabiya,Cnbc Arabiya,待确认分组,网络源,未排序,否
-CNBC Europe HD (1080p),Cnbc Europe,Cnbc Europe,待确认分组,网络源,未排序,否
-CNBC Indonesia (720p),Cnbc Indonesia,Cnbc Indonesia,待确认分组,网络源,未排序,否
-CNBC MGL (720p),CNBC MGL (720p),CNBC MGL (720p),待标准化,网络源,未排序,否
-CNBC TV18 (1080p),Cnbc TV18,Cnbc TV18,待确认分组,网络源,未排序,否
-CNBC World,Cnbc World,Cnbc World,待确认分组,网络源,未排序,否
+CNA,CNA,Cna,国际频道,网络源,未排序,是
+CNA (1080p) [Geo-blocked],CNA,Cna,国际频道,网络源,未排序,是
+CNAæ–°é—»,CNA,Cna,国际频道,网络源,未排序,是
+CNBC,CNBC,Cnbc,国际频道,网络源,未排序,是
+CNBC Arabiya (1080p),CNBC阿语,Cnbc Arabiya,国际频道（小语种）,网络源,未排序,是
+CNBC Europe HD (1080p),CNBC欧洲,Cnbc Europe,国际频道（小语种）,网络源,未排序,是
+CNBC Indonesia (720p),CNBC印度,Cnbc Indonesia,国际频道（小语种）,网络源,未排序,是
+CNBC MGL (720p),CNBC蒙古,CNBC MGL (720p),国际频道（小语种）,网络源,未排序,是
+CNBC TV18 (1080p),CNBC印度,Cnbc TV18,国际频道（小语种）,网络源,未排序,是
+CNBC World,CNBC World,Cnbc World,国际频道,网络源,未排序,是
 CNC Santander de Quilichao (480p),Cnc Santander De Quilichao,Cnc Santander De Quilichao,待确认分组,网络源,未排序,否
 CNews (1080p) [Geo-blocked],Cnews,Cnews,待确认分组,网络源,未排序,否
 CNN,CNN,Cnn,国际频道,网络源,未排序,是
@@ -5183,10 +5183,10 @@ ETV2 (720p),Etv 2,Etv 2,待确认分组,网络源,未排序,否
 Euro D (1080p),Euro D,Euro D,待确认分组,网络源,未排序,否
 Euro Indie Music Chart TV (360p),Euro Indie Music Chart Tv,Euro Indie Music Chart Tv,待确认分组,网络源,未排序,否
 Euro TV (720p) [Not 24/7],Euro Tv,Euro Tv,待确认分组,网络源,未排序,否
-Euronews,Euronews,Euronews,待确认分组,网络源,未排序,否
-Euronews English (720p),Euronews English,Euronews English,待确认分组,网络源,未排序,否
-Euronews French HD,Euronews French,Euronews French,待确认分组,网络源,未排序,否
-Euronews Spanish (1080p),Euronews Spanish,Euronews Spanish,待确认分组,网络源,未排序,否
+Euronews,Euronews,Euronews,国际频道,网络源,未排序,是
+Euronews English (720p),Euronews,Euronews English,国际频道,网络源,未排序,是
+Euronews French HD,Euronews法语,Euronews French,国际频道（小语种）,网络源,未排序,是
+Euronews Spanish (1080p),Euronews西语,Euronews Spanish,国际频道（小语种）,网络源,未排序,是
 EUTV (720p),Eutv,Eutv,待确认分组,网络源,未排序,否
 Everyday Refresh,Everyday Refresh,Everyday Refresh,待标准化,网络源,未排序,否
 EVI TV (720p),Evi Tv,Evi Tv,待确认分组,网络源,未排序,否
@@ -5876,7 +5876,7 @@ Iunior TV (1080p),Iunior Tv,Iunior Tv,待确认分组,网络源,未排序,否
 Iunior TV (720p) [Not 24/7],Iunior Tv,Iunior Tv,待确认分组,网络源,未排序,否
 Ivoire Channel (720p),Ivoire Channel,Ivoire Channel,待确认分组,网络源,未排序,否
 Izzah TV (480p),Izzah Tv,Izzah Tv,待确认分组,网络源,未排序,否
-J2,J2,J2,待确认分组,网络源,未排序,否
+J2,J2,J2,香港频道,网络源,未排序,是
 Jahanbin,Jahanbin,Jahanbin,待标准化,网络源,未排序,否
 Jail,Jail,Jail,待确认分组,网络源,未排序,否
 Jail (720p),Jail,Jail,待确认分组,网络源,未排序,否
@@ -6818,7 +6818,7 @@ NG Federal (720p),Ng Federal,Ng Federal,待确认分组,网络源,未排序,否
 NG Radio TV (360p),Ng Radio Tv,Ng Radio Tv,待确认分组,网络源,未排序,否
 Nghe An TV,Nghe An Tv,Nghe An Tv,待确认分组,网络源,未排序,否
 NH Niews (1080p),NH Niews (1080p),NH Niews (1080p),待标准化,网络源,未排序,否
-NHK World-Japan (1080p),Nhk WorldJapan,Nhk World-Japan,待确认分组,网络源,未排序,否
+NHK World-Japan (1080p),NHK,Nhk World-Japan,国际频道,网络源,未排序,是
 NHL,NHL,NHL,待标准化,网络源,未排序,否
 NHL Centre Ice 4,Nhl Centre Ice 4,Nhl Centre Ice 4,待确认分组,网络源,未排序,否
 NHL Centre Ice 5,Nhl Centre Ice 5,Nhl Centre Ice 5,待确认分组,网络源,未排序,否
@@ -7844,7 +7844,7 @@ RTB Sukmaindera (720p),Rtb Sukmaindera,Rtb Sukmaindera,待确认分组,网络源
 RTD,Rtd,Rtd,待确认分组,网络源,未排序,否
 RTG 1,Rtg 1,Rtg 1,待确认分组,网络源,未排序,否
 RTG TV,Rtg Tv,Rtg Tv,待确认分组,网络源,未排序,否
-RTHK TV 32 (港台電視32) (1080p) [Geo-blocked],Rthk Tv 32,Rthk Tv 32,待确认分组,网络源,未排序,否
+RTHK TV 32 (港台電視32) (1080p) [Geo-blocked],港台电视32,Rthk Tv 32,香港频道,网络源,未排序,是
 RTH-TV1 (1080p),RTHTV1,RTH-TV1,待确认分组,网络源,未排序,否
 RTH-TV2 Gospel (1080p),RTHTV2 Gospel,RTH-TV2 Gospel,待确认分组,网络源,未排序,否
 RTI 1 (1080p) [Not 24/7],Rti 1,Rti 1,待确认分组,网络源,未排序,否
@@ -8105,15 +8105,15 @@ SIXO TV (360p),Sixo Tv,Sixo Tv,待确认分组,网络源,未排序,否
 SK 1 (720p),Sk 1,Sk 1,待确认分组,网络源,未排序,否
 Skai TV (720p),Skai Tv,Skai Tv,待确认分组,网络源,未排序,否
 SKWAD (1080p),Skwad,Skwad,待确认分组,网络源,未排序,否
-Sky Folk TV (720p) [Not 24/7],Sky Folk Tv,Sky Folk Tv,待确认分组,网络源,未排序,否
-Sky News,Sky News,Sky News,待确认分组,网络源,未排序,否
-Sky News Arabia (1080p),Sky News Arabia,Sky News Arabia,待确认分组,网络源,未排序,否
-Sky News Arabia (1080p) [Not 24/7],Sky News Arabia,Sky News Arabia,待确认分组,网络源,未排序,否
-Sky News Arabia (Portrait) (1280p) [Not 24/7],Sky News Arabia,Sky News Arabia,待确认分组,网络源,未排序,否
-Sky News Arabia Vertical (1080p),Sky News Arabia Vertical,Sky News Arabia Vertical,待确认分组,网络源,未排序,否
-Sky News Extra 1 (540p),Sky News Extra 1,Sky News Extra 1,待确认分组,网络源,未排序,否
-Sky News Extra 2 (540p) [Not 24/7],Sky News Extra 2,Sky News Extra 2,待确认分组,网络源,未排序,否
-Sky News Weather (720p),Sky News Weather,Sky News Weather,待确认分组,网络源,未排序,否
+Sky Folk TV (720p) [Not 24/7],Sky Folk Tv,Sky Folk Tv,国际频道,网络源,未排序,是
+Sky News,Sky News,Sky News,国际频道,网络源,未排序,是
+Sky News Arabia (1080p),Sky News阿语,Sky News Arabia,国际频道（小语种）,网络源,未排序,是
+Sky News Arabia (1080p) [Not 24/7],Sky News阿语,Sky News Arabia,国际频道（小语种）,网络源,未排序,是
+Sky News Arabia (Portrait) (1280p) [Not 24/7],Sky News阿语,Sky News Arabia,国际频道（小语种）,网络源,未排序,是
+Sky News Arabia Vertical (1080p),Sky News阿语,Sky News Arabia Vertical,国际频道（小语种）,网络源,未排序,是
+Sky News Extra 1 (540p),Sky News Extra 1,Sky News Extra 1,国际频道,网络源,未排序,是
+Sky News Extra 2 (540p) [Not 24/7],Sky News Extra 2,Sky News Extra 2,国际频道,网络源,未排序,是
+Sky News Weather (720p),Sky News Weather,Sky News Weather,国际频道,网络源,未排序,是
 SL 1,Sl 1,Sl 1,待确认分组,网络源,未排序,否
 SL 2,Sl 2,Sl 2,待确认分组,网络源,未排序,否
 Sleutelstad TV (720p),Sleutelstad Tv,Sleutelstad Tv,待确认分组,网络源,未排序,否
@@ -8415,11 +8415,11 @@ TBN Pacific,Tbn Pacific,Tbn Pacific,待确认分组,网络源,未排序,否
 TBN TV (720p) [Not 24/7],TBN TV (720p) [Not 24/7],TBN TV (720p) [Not 24/7],待标准化,网络源,未排序,否
 TBN UK (1080p),Tbn Uk,Tbn Uk,待确认分组,网络源,未排序,否
 TBN Україна (720p),Tbn,Tbn,待确认分组,网络源,未排序,否
-TBS Seoul (720p),TBS Seoul (720p),TBS Seoul (720p),待标准化,网络源,未排序,否
+TBS Seoul (720p),TBS Seoul,TBS Seoul (720p),国际频道,网络源,未排序,是
 TCS+ (480p) [Not 24/7],TCS+,TCS+,待确认分组,网络源,未排序,否
 TD Ameritrade Network (1080p),Td Ameritrade Network,Td Ameritrade Network,待确认分组,网络源,未排序,否
 TDI Radio TV,Tdi Radio Tv,Tdi Radio Tv,待确认分组,网络源,未排序,否
-TDM Entertainment Ch. 95 (720p),TDM Entertainment Ch. 95 (720p),TDM Entertainment Ch. 95 (720p),待标准化,网络源,未排序,否
+TDM Entertainment Ch. 95 (720p),澳门综艺,TDM Entertainment Ch. 95 (720p),澳门频道,网络源,未排序,是
 TDT Multimedia (720p),Tdt Multimedia,Tdt Multimedia,待确认分组,网络源,未排序,否
 TDtv (720p),Tdtv,Tdtv,待确认分组,网络源,未排序,否
 Te Reo,Te Reo,Te Reo,待确认分组,网络源,未排序,否
@@ -9251,8 +9251,8 @@ VisionNDV TV,VisionNDV TV,VisionNDV TV,待标准化,网络源,未排序,否
 Vísir (1080p),Vísir (1080p),Vísir (1080p),待标准化,网络源,未排序,否
 Visual Radio (576p) [Not 24/7],Visual Radio,Visual Radio,待确认分组,网络源,未排序,否
 VITAL Drive [Not 24/7],Vital Drive,Vital Drive,待确认分组,网络源,未排序,否
-VIUTV,Viutv,Viutv,待确认分组,网络源,未排序,否
-Viutv,Viutv,Viutv,待确认分组,网络源,未排序,否
+VIUTV,Viutv99,Viutv,香港频道,网络源,未排序,是
+Viutv,Viutv99,Viutv,香港频道,网络源,未排序,是
 Viva TV Yurimaguas (720p),Viva Tv Yurimaguas,Viva Tv Yurimaguas,待确认分组,网络源,未排序,否
 Vive Kanal D Drama (1080p),Vive Kanal D Drama (1080p),Vive Kanal D Drama (1080p),待标准化,网络源,未排序,否
 Vive TV Colombia (1080p),Vive TV Colombia (1080p),Vive TV Colombia (1080p),待标准化,网络源,未排序,否
@@ -9897,11 +9897,11 @@ Bonce TV (480p) [Not 24/7],Bonce Tv,Bonce Tv,待确认分组,网络源,未排序
 Canal 3 Impresionante (480p),Canal 3 Impresionante,Canal 3 Impresionante,待确认分组,网络源,未排序,否
 Canal 13 Esquipulas (720p),Canal 13 Esquipulas,Canal 13 Esquipulas,待确认分组,网络源,未排序,否
 Canal 26 TV IAP (1080p),Canal 26 Tv Iap,Canal 26 Tv Iap,待确认分组,网络源,未排序,否
-CBS News 24/7,Cbs News 24/7,Cbs News 24/7,待确认分组,网络源,未排序,否
+CBS News 24/7,CBS News,Cbs News 24/7,国际频道,网络源,未排序,是
 Canal Macau Ch. 92 (720p) [Not 24/7],Canal Macau Ch. 92 (720p) [Not 24/7],Canal Macau Ch. 92 (720p) [Not 24/7],待标准化,网络源,未排序,否
 Canal 10 SOL TV (1080p),Canal 10 Sol Tv,Canal 10 Sol Tv,待确认分组,网络源,未排序,否
 Cao Bang TV (480p),Cao Bang Tv,Cao Bang Tv,待确认分组,网络源,未排序,否
-RTHK TV 31 (港台電視31) (1080p) [Geo-blocked],Rthk Tv 31,Rthk Tv 31,待确认分组,网络源,未排序,否
+RTHK TV 31 (港台電視31) (1080p) [Geo-blocked],港台电视31,Rthk Tv 31,香港频道,网络源,未排序,是
 TAG TV (1080p) [Not 24/7],Tag Tv,Tag Tv,待确认分组,网络源,未排序,否
 RTU (1080p) [Not 24/7],Rtu,Rtu,待确认分组,网络源,未排序,否
 RTV Canal 57 (720p),Rtv Canal 57,Rtv Canal 57,待确认分组,网络源,未排序,否
@@ -9933,7 +9933,7 @@ Rakuten TV Thrillers Spain (1080p),Rakuten TV Thrillers Spain (1080p),Rakuten TV
 [HD]miami,Miao Mi,Miao Mi,待确认分组,网络源,未排序,否
 [BD]bbc news *m[geo-blocked],BBC News,Bbc News,国际频道,网络源,未排序,是
 [HD]documentary plus,[HD]documentary plus,[HD]documentary plus,待标准化,网络源,未排序,否
-[SD]cbs news texas,[SD]cbs news texas,[SD]cbs news texas,待标准化,网络源,未排序,否
+[SD]cbs news texas,CBS News Texas,[SD]cbs news texas,国际频道,网络源,未排序,是
 [BD]cctv-11[geo-blocked],CCTV11,CCTV-11,央视频道,网络源,未排序,是
 [SD]ajman tv (1080p),Ajman Tv,Ajman Tv,待确认分组,网络源,未排序,否
 [BD]al rayyan,[BD]al rayyan,[BD]al rayyan,待标准化,网络源,未排序,否
@@ -9979,7 +9979,7 @@ TV Sayohi (1080p),Tv Sayohi,Tv Sayohi,待确认分组,网络源,未排序,否
 TV Brasil Oeste (720p),Tv Brasil Oeste,Tv Brasil Oeste,待确认分组,网络源,未排序,否
 TV Kulob (576p),Tv Kulob,Tv Kulob,待确认分组,网络源,未排序,否
 TV Bahoriston (1080p),Tv Bahoriston,Tv Bahoriston,待确认分组,网络源,未排序,否
-TDM Sports Ch. 93 (720p),TDM Sports Ch. 93 (720p),TDM Sports Ch. 93 (720p),待标准化,网络源,未排序,否
+TDM Sports Ch. 93 (720p),澳门体育,TDM Sports Ch. 93 (720p),澳门频道,网络源,未排序,是
 TV Rivne 1 (720p),TV Rivne 1 (720p),TV Rivne 1 (720p),待标准化,网络源,未排序,否
 Luna Estéreo 106.4 FM (720p) [Not 24/7],Luna Estereo 106.4 Fm,Luna Estereo 106.4 Fm,待确认分组,网络源,未排序,否
 meWATCH LIVE 1 (1080p),Mewatch Live 1,Mewatch Live 1,待确认分组,网络源,未排序,否
@@ -10113,7 +10113,7 @@ TVRI Sport (720p),Tvri Sport,Tvri Sport,待确认分组,网络源,未排序,否
 泌阳新闻综合,泌阳新闻综合,泌阳新闻综合,待标准化,网络源,未排序,否
 [BD]岭南戏曲,[BD]岭南戏曲,[BD]岭南戏曲,待标准化,网络源,未排序,否
 新蔡综合,新蔡综合,新蔡综合,待标准化,网络源,未排序,否
-[HD]凤凰香港 *wj,[HD]凤凰香港 *wj,[HD]凤凰香港 *wj,待标准化,网络源,未排序,否
+[HD]凤凰香港 *wj,凤凰香港,[HD]凤凰香港 *wj,香港频道,网络源,未排序,是
 [BD]江苏影视[geo-blocked],[BD]江苏影视[geoblocked],[BD]江苏影视[geo-blocked],待标准化,网络源,未排序,否
 活佛济公3,活佛济公3,活佛济公3,待标准化,网络源,未排序,否
 喜羊羊与灰太狼,喜羊羊与灰太狼,喜羊羊与灰太狼,待标准化,网络源,未排序,否
@@ -10138,8 +10138,8 @@ TVRI Sport (720p),Tvri Sport,Tvri Sport,待确认分组,网络源,未排序,否
 [BD]新县新闻综合,[BD]新县新闻综合,[BD]新县新闻综合,待标准化,网络源,未排序,否
 [BD]drtv,Drtv,Drtv,待确认分组,网络源,未排序,否
 登封综合,登封综合,登封综合,待标准化,网络源,未排序,否
-[BD]sky movies sci-fi horror uk=[geo-blocked],[BD]sky movies scifi horror uk=[geoblocked],[BD]sky movies sci-fi horror uk=[geo-blocked],待标准化,网络源,未排序,否
-[BD]sky comedy *s[geo-blocked],Sky Comedy,Sky Comedy,待确认分组,网络源,未排序,否
+[BD]sky movies sci-fi horror uk=[geo-blocked],Sky Movies Scifi Horror,[BD]sky movies sci-fi horror uk=[geo-blocked],国际频道,网络源,未排序,是
+[BD]sky comedy *s[geo-blocked],Sky Comedy,Sky Comedy,国际频道,网络源,未排序,是
 [SD]vevo country,Vevo Country,Vevo Country,待确认分组,网络源,未排序,否
 [HD]vevo retro rock,Vevo Retro Rock,Vevo Retro Rock,待确认分组,网络源,未排序,否
 [VGA]sciences et vie,[VGA]sciences et vie,[VGA]sciences et vie,待标准化,网络源,未排序,否
@@ -10149,7 +10149,7 @@ TVRI Sport (720p),Tvri Sport,Tvri Sport,待确认分组,网络源,未排序,否
 [VGA]starz cinema--,Starz Cinema,Starz Cinema,待确认分组,网络源,未排序,否
 [BD]showtime-[geo-blocked],Showtime,Showtime,待确认分组,网络源,未排序,否
 [HD]wnbc-dt1,WNBCDT1,WNBC-DT1,待确认分组,网络源,未排序,否
-[BD]sky cinema hits *m,Sky Cinema Hits,Sky Cinema Hits,待确认分组,网络源,未排序,否
+[BD]sky cinema hits *m,Sky Cinema Hits,Sky Cinema Hits,国际频道,网络源,未排序,是
 [BD]sana tv,Sana Tv,Sana Tv,待确认分组,网络源,未排序,否
 [SD]fanduel sports network detroit,Fanduel Sports Network Detroit,Fanduel Sports Network Detroit,待确认分组,网络源,未排序,否
 [BD]showtime----[geo-blocked],Showtime,Showtime,待确认分组,网络源,未排序,否
@@ -10157,7 +10157,7 @@ TVRI Sport (720p),Tvri Sport,Tvri Sport,待确认分组,网络源,未排序,否
 [BD]tnt ==,Tnt,Tnt,待确认分组,网络源,未排序,否
 [BD]sportsnet east ==[geo-blocked],[BD]sportsnet east ==[geoblocked],[BD]sportsnet east ==[geo-blocked],待标准化,网络源,未排序,否
 [BD]premiere[geo-blocked],[BD]premiere[geoblocked],[BD]premiere[geo-blocked],待标准化,网络源,未排序,否
-[BD]sky movies drama romance uk =[geo-blocked],[BD]sky movies drama romance uk =[geoblocked],[BD]sky movies drama romance uk =[geo-blocked],待标准化,网络源,未排序,否
+[BD]sky movies drama romance uk =[geo-blocked],Sky Movies Scifi Horror,[BD]sky movies drama romance uk =[geo-blocked],国际频道,网络源,未排序,是
 [SD]black classics[geo-blocked],Black Classics,Black Classics,待确认分组,网络源,未排序,否
 [HD]sportsnet ontario ==,[HD]sportsnet ontario ==,[HD]sportsnet ontario ==,待标准化,网络源,未排序,否
 [SD]nba tv ==[geo-blocked],Nba Tv,Nba Tv,待确认分组,网络源,未排序,否
@@ -10173,9 +10173,9 @@ TVRI Sport (720p),Tvri Sport,Tvri Sport,待确认分组,网络源,未排序,否
 [VGA]show,[VGA]show,[VGA]show,待标准化,网络源,未排序,否
 [HD]nat geo *m,[HD]nat geo *m,[HD]nat geo *m,待标准化,网络源,未排序,否
 [HD]toon google,[HD]toon google,[HD]toon google,待标准化,网络源,未排序,否
-[BD]sky cinema select *m,Sky Cinema Select,Sky Cinema Select,待确认分组,网络源,未排序,否
-[BD]sky comedy ==,Sky Comedy,Sky Comedy,待确认分组,网络源,未排序,否
-[BD]sky sports f1-,Sky Sports F1,Sky Sports F1,待确认分组,网络源,未排序,否
+[BD]sky cinema select *m,Sky Cinema Select,Sky Cinema Select,国际频道,网络源,未排序,是
+[BD]sky comedy ==,Sky Comedy,Sky Comedy,国际频道,网络源,未排序,是
+[BD]sky sports f1-,Sky Sports F1,Sky Sports F1,国际频道,网络源,未排序,是
 [HD]motor racing[geo-blocked],[HD]motor racing[geoblocked],[HD]motor racing[geo-blocked],待标准化,网络源,未排序,否
 [HD]wwwe,[HD]wwwe,[HD]wwwe,待标准化,网络源,未排序,否
 [HD]sportsnet pacific[geo-blocked],[HD]sportsnet pacific[geoblocked],[HD]sportsnet pacific[geo-blocked],待标准化,网络源,未排序,否
@@ -10184,7 +10184,7 @@ TVRI Sport (720p),Tvri Sport,Tvri Sport,待确认分组,网络源,未排序,否
 [BD]paramount network ==,Paramount Network,Paramount Network,待确认分组,网络源,未排序,否
 [BD]sportsnet west,[BD]sportsnet west,[BD]sportsnet west,待标准化,网络源,未排序,否
 [HD]upea tv,Upea Tv,Upea Tv,待确认分组,网络源,未排序,否
-[BD]sky cinema sci-fi *m,Sky Cinema SciFi,Sky Cinema Sci-Fi,待确认分组,网络源,未排序,否
+[BD]sky cinema sci-fi *m,Sky Cinema SciFi,Sky Cinema Sci-Fi,国际频道,网络源,未排序,是
 [BD]usa cmt[geo-blocked],[BD]usa cmt[geoblocked],[BD]usa cmt[geo-blocked],待标准化,网络源,未排序,否
 [HD]powernation tv,Powernation Tv,Powernation Tv,待确认分组,网络源,未排序,否
 [HD]cine premiere,Cine Premiere,Cine Premiere,待确认分组,网络源,未排序,否
@@ -10192,211 +10192,9 @@ TVRI Sport (720p),Tvri Sport,Tvri Sport,待确认分组,网络源,未排序,否
 [SD]tsn 1 (usa) ==,TSN1,TSN1,待确认分组,网络源,未排序,否
 [HD]vevo country,Vevo Country,Vevo Country,待确认分组,网络源,未排序,否
 [SD]fanduel sports network socal,Fanduel Sports Network Socal,Fanduel Sports Network Socal,待确认分组,网络源,未排序,否
-[BD]sky sports f1 =[geo-blocked],Sky Sports F1,Sky Sports F1,待确认分组,网络源,未排序,否
+[BD]sky sports f1 =[geo-blocked],Sky Sports F1,Sky Sports F1,国际频道,网络源,未排序,是
 [VGA]premier sports 5,Premier Sports 5,Premier Sports 5,待确认分组,网络源,未排序,否
 [HD]tvj,Tvj,Tvj,待确认分组,网络源,未排序,否
 é»‘é¾™æ±Ÿæ–‡ä½“,é»‘é¾™æ±Ÿæ–‡ä½“,é»‘é¾™æ±Ÿæ–‡ä½“,待标准化,网络源,未排序,否
 é™‡å·ç»¼åˆ,é™‡å·ç»¼åˆ,é™‡å·ç»¼åˆ,待标准化,网络源,未排序,否
 原始名,标准名,拟匹配频道名,分组,来源,输出顺序,是否已维护
-è§£è¯´_é¹¿å“¥ç”µå½±,è§£è¯´_é¹¿å“¥ç”µå½±,è§£è¯´_é¹¿å“¥ç”µå½±,待标准化,网络源,未排序,否
-åŸ‹å †å †18,åŸ‹å †å †18,åŸ‹å †å †18,待标准化,网络源,未排序,否
-Cherniveckiy promin (720p),Cherniveckiy Promin,Cherniveckiy Promin,待确认分组,网络源,未排序,否
-Charlotte County CC-TV (Charlotte County FA) (720p),Charlotte County CC-TV (Charlotte County FA) (720p),Charlotte County CC-TV (Charlotte County FA) (720p),待标准化,网络源,未排序,否
-Canal Claro (720p),Canal Claro,Canal Claro,待确认分组,网络源,未排序,否
-RTV Noord Extra (1080p) [Not 24/7],Rtv Noord Extra,Rtv Noord Extra,待确认分组,网络源,未排序,否
-STOU Channel (720p),Stou Channel,Stou Channel,待确认分组,网络源,未排序,否
-Siyatha TV,Siyatha Tv,Siyatha Tv,待确认分组,网络源,未排序,否
-Swadesh News (720p),Swadesh News,Swadesh News,待确认分组,网络源,未排序,否
-Swaraj Express SMBC (720p) [Not 24/7],Swaraj Express Smbc,Swaraj Express Smbc,待确认分组,网络源,未排序,否
-DD Bharati (720p),Dd Bharati,Dd Bharati,待确认分组,网络源,未排序,否
-DD Rajasthan (720p),Dd Rajasthan,Dd Rajasthan,待确认分组,网络源,未排序,否
-Pluto TV Novelas (720p),Pluto Tv Novelas,Pluto Tv Novelas,待确认分组,网络源,未排序,否
-Pluto TV Historia (720p),Pluto Tv Historia,Pluto Tv Historia,待确认分组,网络源,未排序,否
-Pluto TV Velocidad​ (720p),Pluto Tv Velocidad,Pluto Tv Velocidad,待确认分组,网络源,未排序,否
-[HD]cctv10,CCTV-10,CCTV-10,待确认分组,网络源,未排序,否
-[HD]animal planet *m[geo-blocked],Animal Planet,Animal Planet,待确认分组,网络源,未排序,否
-[HD]btv,Btv,Btv,待确认分组,网络源,未排序,否
-[SD]manatee schools television mstv (manatee county fl) (1080p),[SD]manatee schools television mstv (manatee county fl) (1080p),[SD]manatee schools television mstv (manatee county fl) (1080p),待标准化,网络源,未排序,否
-[BD]cctv-8高清[geo-blocked],[BD]cctv-8高清[geo-blocked],[BD]cctv-8高清[geo-blocked],待标准化,网络源,未排序,否
-[BD]taber tv,Tabertv,Tabertv,待确认分组,网络源,未排序,否
-[SD]billiard tv,Billiard Tv,Billiard Tv,待确认分组,网络源,未排序,否
-[HD]al alaraby,[HD]al alaraby,[HD]al alaraby,待标准化,网络源,未排序,否
-[HD]cbeebies uhd *m[geo-blocked],[HD]cbeebies uhd *m[geo-blocked],[HD]cbeebies uhd *m[geo-blocked],待标准化,网络源,未排序,否
-[BD]cctv-01[geo-blocked],CCTV-1,CCTV-1,待确认分组,网络源,未排序,否
-[HD]beyaz tv,Beyaz Tv,Beyaz Tv,待确认分组,网络源,未排序,否
-[HD]america's test kitchen,America's Test Kitchen,America's Test Kitchen,待确认分组,网络源,未排序,否
-[BD]cctv-10高清[geo-blocked],[BD]cctv-10高清[geo-blocked],[BD]cctv-10高清[geo-blocked],待标准化,网络源,未排序,否
-[HD]astro premier league *v[geo-blocked],Astro Premier League,Astro Premier League,待确认分组,网络源,未排序,否
-[HD]astro aod *v[geo-blocked],Astro Aod,Astro Aod,待确认分组,网络源,未排序,否
-[SD]illusion plus[geo-blocked],[SD]illusion plus[geo-blocked],[SD]illusion plus[geo-blocked],待标准化,网络源,未排序,否
-[BD]antena 1 tv,Antena Tv,Antena Tv,待确认分组,网络源,未排序,否
-ä¸­è§†ç»å…¸,ä¸­è§†ç»å…¸,ä¸­è§†ç»å…¸,待标准化,网络源,未排序,否
-é™ˆæƒ…ä»¤,é™ˆæƒ…ä»¤,é™ˆæƒ…ä»¤,待标准化,网络源,未排序,否
-é–å¤©ç”µå½±,é–å¤©ç”µå½±,é–å¤©ç”µå½±,待标准化,网络源,未排序,否
-ç”µå½±_å‘¨æ˜Ÿæ˜Ÿ,ç”µå½±_å‘¨æ˜Ÿæ˜Ÿ,ç”µå½±_å‘¨æ˜Ÿæ˜Ÿ,待标准化,网络源,未排序,否
-æ²ˆè…¾,æ²ˆè…¾,æ²ˆè…¾,待标准化,网络源,未排序,否
-ç”µå½±_å¤å¢“ç³»åˆ—,ç”µå½±_å¤å¢“ç³»åˆ—,ç”µå½±_å¤å¢“ç³»åˆ—,待标准化,网络源,未排序,否
-Good News Today (720p),Good News Today,Good News Today,待确认分组,网络源,未排序,否
-Hadi TV Azeri and Russian (720p),Hadi TV Azeri and Russian (720p),Hadi TV Azeri and Russian (720p),待标准化,网络源,未排序,否
-Hadi TV Indonesian and Thai (720p),Hadi TV Indonesian and Thai (720p),Hadi TV Indonesian and Thai (720p),待标准化,网络源,未排序,否
-Hadi TV English and Urdu (720p),Hadi TV English and Urdu (720p),Hadi TV English and Urdu (720p),待标准化,网络源,未排序,否
-Hadi TV French (720p),Hadi TV French (720p),Hadi TV French (720p),待标准化,网络源,未排序,否
-Geo Tez (576i),Geo Tez,Geo Tez,待确认分组,网络源,未排序,否
-99TV (720p),99 Tv,99 Tv,待确认分组,网络源,未排序,否
-Atambua TV (720p),Atambua Tv,Atambua Tv,待确认分组,网络源,未排序,否
-Thanthi TV (576p),Thanthi Tv,Thanthi Tv,待确认分组,网络源,未排序,否
-Telesol TV (720p),Telesol Tv,Telesol Tv,待确认分组,网络源,未排序,否
-TV Den (576p) [Not 24/7],Tv Den,Tv Den,待确认分组,网络源,未排序,否
-Logos TV Estudio (720p) [Not 24/7],Logos Tv Estudio,Logos Tv Estudio,待确认分组,网络源,未排序,否
-Midpen Media Center Diversity and Culture Channel 75 (720p),Midpen Media Center Diversity and Culture Channel 75 (720p),Midpen Media Center Diversity and Culture Channel 75 (720p),待标准化,网络源,未排序,否
-Litoral Atlántico HD (720p),Litoral Atlantico Hd,Litoral Atlantico Hd,待确认分组,网络源,未排序,否
-Midpen Media Center Government etc Channel 29 (720p),Midpen Media Center Government etc Channel 29 (720p),Midpen Media Center Government etc Channel 29 (720p),待标准化,网络源,未排序,否
-[SD]lego kids tv,Lego Kids Tv,Lego Kids Tv,待确认分组,网络源,未排序,否
-[HD]70s cinema,70s Cinema,70s Cinema,待确认分组,网络源,未排序,否
-[VGA]diaspora 24,Diaspora 24,Diaspora 24,待确认分组,网络源,未排序,否
-[HD]dubai sports 2,Dubai Sports 2,Dubai Sports 2,待确认分组,网络源,未排序,否
-[HD]canal claro[geo-blocked],Canal Claro,Canal Claro,待确认分组,网络源,未排序,否
-[BD]cctv-7高清[geo-blocked],[BD]cctv-7高清[geo-blocked],[BD]cctv-7高清[geo-blocked],待标准化,网络源,未排序,否
-[SD]beyond history,[SD]beyond history,[SD]beyond history,待标准化,网络源,未排序,否
-[VGA]etv,e.tv,e.tv,待确认分组,网络源,未排序,否
-[HD]cctv8[geo-blocked],CCTV-8,CCTV-8,待确认分组,网络源,未排序,否
-[BD]hbo zone *m[geo-blocked],Hbo Zone,Hbo Zone,待确认分组,网络源,未排序,否
-[SD]hollywire,Hollywire,Hollywire,待确认分组,网络源,未排序,否
-[HD]cctv15,CCTV-15,CCTV-15,待确认分组,网络源,未排序,否
-[BD]cctv-15高清[geo-blocked],[BD]cctv-15高清[geo-blocked],[BD]cctv-15高清[geo-blocked],待标准化,网络源,未排序,否
-[BD]cctv-9高清[geo-blocked],[BD]cctv-9高清[geo-blocked],[BD]cctv-9高清[geo-blocked],待标准化,网络源,未排序,否
-[BD]yo! mtv,Yo! Mtv,Yo! Mtv,待确认分组,网络源,未排序,否
-[BD]cctv-3高清[geo-blocked],[BD]cctv-3高清[geo-blocked],[BD]cctv-3高清[geo-blocked],待标准化,网络源,未排序,否
-[HD]cctv4,CCTV-14,CCTV-14,待确认分组,网络源,未排序,否
-[SD]feel good drama,[SD]feel good drama,[SD]feel good drama,待标准化,网络源,未排序,否
-[BD]cinebox[geo-blocked],cine.box,cine.box,待确认分组,网络源,未排序,否
-[BD]cctv-12高清[geo-blocked],[BD]cctv-12高清[geo-blocked],[BD]cctv-12高清[geo-blocked],待标准化,网络源,未排序,否
-[BD]cctv-14高清[geo-blocked],[BD]cctv-14高清[geo-blocked],[BD]cctv-14高清[geo-blocked],待标准化,网络源,未排序,否
-[BD]canal 4 jujuy[geo-blocked],Canal 4 Jujuy,Canal 4 Jujuy,待确认分组,网络源,未排序,否
-[BD]cctv-6高清[geo-blocked],[BD]cctv-6高清[geo-blocked],[BD]cctv-6高清[geo-blocked],待标准化,网络源,未排序,否
-[HD]mtv live *s[geo-blocked],Mtv Live,Mtv Live,待确认分组,网络源,未排序,否
-[HD]hallmark movies more,Hallmark Movies & More,Hallmark Movies & More,待确认分组,网络源,未排序,否
-[SD]nonstop drama,[SD]nonstop drama,[SD]nonstop drama,待标准化,网络源,未排序,否
-[BD]hbo comedy *m[geo-blocked],Hbo Comedy,Hbo Comedy,待确认分组,网络源,未排序,否
-[BD]eurosport,Eurosport,Eurosport,待确认分组,网络源,未排序,否
-[BD]fox 5 new york ny,[BD]fox 5 new york ny,[BD]fox 5 new york ny,待标准化,网络源,未排序,否
-[SD]hallmark movies more,Hallmark Movies & More,Hallmark Movies & More,待确认分组,网络源,未排序,否
-[BD]cctv-5高清[geo-blocked],[BD]cctv-5高清[geo-blocked],[BD]cctv-5高清[geo-blocked],待标准化,网络源,未排序,否
-[VGA]mbc[geo-blocked],Mbc,Mbc,待确认分组,网络源,未排序,否
-[BD]hgtv *m[geo-blocked],[BD]hgtv *m[geo-blocked],[BD]hgtv *m[geo-blocked],待标准化,网络源,未排序,否
-[HD]cctv11,CCTV-11,CCTV-11,待确认分组,网络源,未排序,否
-[BD]cctv5 plus[geo-blocked],[BD]cctv5 plus[geo-blocked],[BD]cctv5 plus[geo-blocked],待标准化,网络源,未排序,否
-[BD]history2(usa) *s[geo-blocked],History 2,History 2,待确认分组,网络源,未排序,否
-[HD]cctv7[geo-blocked],CCTV-7,CCTV-7,待确认分组,网络源,未排序,否
-[BD]cctv-17[geo-blocked],CCTV-17,CCTV-17,待确认分组,网络源,未排序,否
-Óčko (540p),Óčko (540p),Óčko (540p),待标准化,网络源,未排序,否
-Music India (720p) [Not 24/7],Music India,Music India,待确认分组,网络源,未排序,否
-NHL Centre Ice 9,Nhl Centre Ice 9,Nhl Centre Ice 9,待确认分组,网络源,未排序,否
-Öncü TV (1024p) [Not 24/7],Nctv,Nctv,待确认分组,网络源,未排序,否
-NHL Centre Ice 10,Nhl Centre Ice 10,Nhl Centre Ice 10,待确认分组,网络源,未排序,否
-NHL Centre Ice 11,Nhl Centre Ice 11,Nhl Centre Ice 11,待确认分组,网络源,未排序,否
-MTV Uutiset (720p),Mtv Uutiset,Mtv Uutiset,待确认分组,网络源,未排序,否
-NHL Centre Ice 1,Nhl Centre Ice 1,Nhl Centre Ice 1,待确认分组,网络源,未排序,否
-NHL Center Ice 12 (720p),Nhl Center Ice 12,Nhl Center Ice 12,待确认分组,网络源,未排序,否
-Zoy TV Sports 1 (1080p) [Not 24/7],Zoy Tv Sports 1,Zoy Tv Sports 1,待确认分组,网络源,未排序,否
-宿州科教 (1080p) [Not 24/7],宿州科教 (1080p) [Not 24/7],宿州科教 (1080p) [Not 24/7],待标准化,网络源,未排序,否
-о2тв,о2тв,о2тв,待标准化,网络源,未排序,否
-CCTV-8,CCTV-8,CCTV-8,待确认分组,网络源,未排序,否
-Феникс плюс Кино,Феникс плюс Кино,Феникс плюс Кино,待标准化,网络源,未排序,否
-Россия К,Россия К,Россия К,待标准化,网络源,未排序,否
-Vendhar TV (720p) [Not 24/7],Vendhar Tv,Vendhar Tv,待确认分组,网络源,未排序,否
-TVRI Jawa Barat (480p),TVRI Jawa Barat (480p),TVRI Jawa Barat (480p),待标准化,网络源,未排序,否
-TVRI Kalimantan Tengah (480p),TVRI Kalimantan Tengah (480p),TVRI Kalimantan Tengah (480p),待标准化,网络源,未排序,否
-TVRI Jambi (720p) [Not 24/7],TVRI Jambi (720p) [Not 24/7],TVRI Jambi (720p) [Not 24/7],待标准化,网络源,未排序,否
-TVRI Riau (720p) [Not 24/7],TVRI Riau (720p) [Not 24/7],TVRI Riau (720p) [Not 24/7],待标准化,网络源,未排序,否
-TVRI Nusa Tenggara Timur (480p),TVRI Nusa Tenggara Timur (480p),TVRI Nusa Tenggara Timur (480p),待标准化,网络源,未排序,否
-Vanitha TV (720p),Vanitha Tv,Vanitha Tv,待确认分组,网络源,未排序,否
-TVRI Sumatera Barat (720p),TVRI Sumatera Barat (720p),TVRI Sumatera Barat (720p),待标准化,网络源,未排序,否
-[BD]中天新聞,[BD]中天新聞,[BD]中天新聞,待标准化,网络源,未排序,否
-[HD]food network(tw) *s[geo-blocked],Food Network,Food Network,待确认分组,网络源,未排序,否
-[BD]民視新聞[geo-blocked],[BD]民視新聞[geo-blocked],[BD]民視新聞[geo-blocked],待标准化,网络源,未排序,否
-ã€ŒBç«™ã€è‹±é›„è”ç›Ÿ,ã€ŒBç«™ã€è‹±é›„è”ç›Ÿ,ã€ŒBç«™ã€è‹±é›„è”ç›Ÿ,待标准化,网络源,未排序,否
-[SD]мультиландия,[SD]мультиландия,[SD]мультиландия,待标准化,网络源,未排序,否
-[SD]西安都市[geo-blocked],[SD]西安都市[geo-blocked],[SD]西安都市[geo-blocked],待标准化,网络源,未排序,否
-临颍综合,临颍综合,临颍综合,待标准化,网络源,未排序,否
-[SD]兵团卫视,[SD]兵团卫视,[SD]兵团卫视,待标准化,网络源,未排序,否
-[BD]浙江卫视,[BD]浙江卫视,[BD]浙江卫视,待标准化,网络源,未排序,否
-[BD]西藏卫视[geo-blocked],[BD]西藏卫视[geo-blocked],[BD]西藏卫视[geo-blocked],待标准化,网络源,未排序,否
-[BD]劲爆体育,[BD]劲爆体育,[BD]劲爆体育,待标准化,网络源,未排序,否
-[BD]动漫秀场,[BD]动漫秀场,[BD]动漫秀场,待标准化,网络源,未排序,否
-河南电视剧,河南电视剧,河南电视剧,待标准化,网络源,未排序,否
-[HD]моя планета,[HD]моя планета,[HD]моя планета,待标准化,网络源,未排序,否
-[BD]湖南卫视,[BD]湖南卫视,[BD]湖南卫视,待标准化,网络源,未排序,否
-[BD]dltv 10 (1080p)[geo-blocked],Dltv 10,Dltv 10,待确认分组,网络源,未排序,否
-武侠电影,武侠电影,武侠电影,待标准化,网络源,未排序,否
-[BD]确山新闻综合频道[geo-blocked],[BD]确山新闻综合频道[geo-blocked],[BD]确山新闻综合频道[geo-blocked],待标准化,网络源,未排序,否
-[BD]prime[geo-blocked],Prime,Prime,待确认分组,网络源,未排序,否
-[BD]文山新闻综合[geo-blocked],[BD]文山新闻综合[geo-blocked],[BD]文山新闻综合[geo-blocked],待标准化,网络源,未排序,否
-[BD]甘肃卫视,[BD]甘肃卫视,[BD]甘肃卫视,待标准化,网络源,未排序,否
-[HD]白山新闻综合,[HD]白山新闻综合,[HD]白山新闻综合,待标准化,网络源,未排序,否
-[BD]佛山综合[geo-blocked],[BD]佛山综合[geo-blocked],[BD]佛山综合[geo-blocked],待标准化,网络源,未排序,否
-[BD]贵州卫视,[BD]贵州卫视,[BD]贵州卫视,待标准化,网络源,未排序,否
-[BD]四川新闻,[BD]四川新闻,[BD]四川新闻,待标准化,网络源,未排序,否
-[SD]海南卫视,[SD]海南卫视,[SD]海南卫视,待标准化,网络源,未排序,否
-[BD]贵州卫视[geo-blocked],[BD]贵州卫视[geo-blocked],[BD]贵州卫视[geo-blocked],待标准化,网络源,未排序,否
-[BD]山东教育卫视,[BD]山东教育卫视,[BD]山东教育卫视,待标准化,网络源,未排序,否
-[BD]江西卫视[geo-blocked],[BD]江西卫视[geo-blocked],[BD]江西卫视[geo-blocked],待标准化,网络源,未排序,否
-[SD]inews[geo-blocked],I News,I News,待确认分组,网络源,未排序,否
-[HD]内江科教生活[geo-blocked],[HD]内江科教生活[geo-blocked],[HD]内江科教生活[geo-blocked],待标准化,网络源,未排序,否
-创世纪,创世纪,创世纪,待标准化,网络源,未排序,否
-[BD]辽宁卫视[geo-blocked],[BD]辽宁卫视[geo-blocked],[BD]辽宁卫视[geo-blocked],待标准化,网络源,未排序,否
-[BD]江西卫视,[BD]江西卫视,[BD]江西卫视,待标准化,网络源,未排序,否
-[BD]广东卫视,[BD]广东卫视,[BD]广东卫视,待标准化,网络源,未排序,否
-[SD]вопросы и ответы,[SD]вопросы и ответы,[SD]вопросы и ответы,待标准化,网络源,未排序,否
-[SD]кинокомедия,[SD]кинокомедия,[SD]кинокомедия,待标准化,网络源,未排序,否
-[SD]матч! игра,[SD]матч! игра,[SD]матч! игра,待标准化,网络源,未排序,否
-[BD]天津卫视,[BD]天津卫视,[BD]天津卫视,待标准化,网络源,未排序,否
-[BD]陕西卫视,[BD]陕西卫视,[BD]陕西卫视,待标准化,网络源,未排序,否
-[SD]舞阳新闻综合频道[geo-blocked],[SD]舞阳新闻综合频道[geo-blocked],[SD]舞阳新闻综合频道[geo-blocked],待标准化,网络源,未排序,否
-[BD]广东体育,[BD]广东体育,[BD]广东体育,待标准化,网络源,未排序,否
-[BD]黑龙江卫视,[BD]黑龙江卫视,[BD]黑龙江卫视,待标准化,网络源,未排序,否
-[BD]广东民生,[BD]广东民生,[BD]广东民生,待标准化,网络源,未排序,否
-[BD]生活时尚,[BD]生活时尚,[BD]生活时尚,待标准化,网络源,未排序,否
-[BD]澳视体育[geo-blocked],[BD]澳视体育[geo-blocked],[BD]澳视体育[geo-blocked],待标准化,网络源,未排序,否
-[SD]电影[geo-blocked],[SD]电影[geo-blocked],[SD]电影[geo-blocked],待标准化,网络源,未排序,否
-[VGA]atv[geo-blocked],Atv,Atv,待确认分组,网络源,未排序,否
-[BD]haiti news channel,Haiti News Channel,Haiti News Channel,待确认分组,网络源,未排序,否
-[BD]四川科教,[BD]四川科教,[BD]四川科教,待标准化,网络源,未排序,否
-电影嫣然影厅,电影嫣然影厅,电影嫣然影厅,待标准化,网络源,未排序,否
-[BD]重庆卫视,[BD]重庆卫视,[BD]重庆卫视,待标准化,网络源,未排序,否
-[BD]大湾区卫视,[BD]大湾区卫视,[BD]大湾区卫视,待标准化,网络源,未排序,否
-[BD]四川经济,[BD]四川经济,[BD]四川经济,待标准化,网络源,未排序,否
-[BD]东方卫视[geo-blocked],[BD]东方卫视[geo-blocked],[BD]东方卫视[geo-blocked],待标准化,网络源,未排序,否
-[BD]四川卫视,[BD]四川卫视,[BD]四川卫视,待标准化,网络源,未排序,否
-[SD]周润发[geo-blocked],[SD]周润发[geo-blocked],[SD]周润发[geo-blocked],待标准化,网络源,未排序,否
-[BD]安徽卫视,[BD]安徽卫视,[BD]安徽卫视,待标准化,网络源,未排序,否
-[SD]кхл тв,[SD]кхл тв,[SD]кхл тв,待标准化,网络源,未排序,否
-[SD]广西卫视,[SD]广西卫视,[SD]广西卫视,待标准化,网络源,未排序,否
-[BD]金鹰卡通[geo-blocked],[BD]金鹰卡通[geo-blocked],[BD]金鹰卡通[geo-blocked],待标准化,网络源,未排序,否
-[BD]河南卫视,[BD]河南卫视,[BD]河南卫视,待标准化,网络源,未排序,否
-[BD]河南卫视[geo-blocked],[BD]河南卫视[geo-blocked],[BD]河南卫视[geo-blocked],待标准化,网络源,未排序,否
-长影频道,长影频道,长影频道,待标准化,网络源,未排序,否
-[SD]матч боец,[SD]матч боец,[SD]матч боец,待标准化,网络源,未排序,否
-[BD]quran,[BD]quran,[BD]quran,待标准化,网络源,未排序,否
-[BD]us nickelodeon east,[BD]us nickelodeon east,[BD]us nickelodeon east,待标准化,网络源,未排序,否
-[HD]wbtv at the movies,[HD]wbtv at the movies,[HD]wbtv at the movies,待标准化,网络源,未排序,否
-[SD]tlc *m[geo-blocked],[SD]tlc *m[geo-blocked],[SD]tlc *m[geo-blocked],待标准化,网络源,未排序,否
-[BD]sportsnet pacific,[BD]sportsnet pacific,[BD]sportsnet pacific,待标准化,网络源,未排序,否
-[BD]dltv 2 (1080p)[geo-blocked],Dltv 2,Dltv 2,待确认分组,网络源,未排序,否
-[HD]la 2 catalunya[geo-blocked],La 2 Catalunya,La 2 Catalunya,待确认分组,网络源,未排序,否
-[SD]ptc chakde[geo-blocked],Ptc Chakde,Ptc Chakde,待确认分组,网络源,未排序,否
-[HD]travel channel *m[geo-blocked],Travel Channel,Travel Channel,待确认分组,网络源,未排序,否
-[HD]uranio tv,Uranio Tv,Uranio Tv,待确认分组,网络源,未排序,否
-[HD]top rank classics,[HD]top rank classics,[HD]top rank classics,待标准化,网络源,未排序,否
-[BD]tvri world,Tvri World,Tvri World,待确认分组,网络源,未排序,否
-[HD]o2tv,o2tv,o2tv,待确认分组,网络源,未排序,否
-[VGA]ht spor,[VGA]ht spor,[VGA]ht spor,待标准化,网络源,未排序,否
-[VGA]trt 1,Trt 1,Trt 1,待确认分组,网络源,未排序,否
-[BD]dltv 5 (1080p)[geo-blocked],Dltv 5,Dltv 5,待确认分组,网络源,未排序,否
-[BD]cctv-2高清[geo-blocked],[BD]cctv-2高清[geo-blocked],[BD]cctv-2高清[geo-blocked],待标准化,网络源,未排序,否
-[HD]black classics,Black Classics,Black Classics,待确认分组,网络源,未排序,否
-[HD]la 2 catalunya,La 2 Catalunya,La 2 Catalunya,待确认分组,网络源,未排序,否
-[BD]us oxygen,[BD]us oxygen,[BD]us oxygen,待标准化,网络源,未排序,否
-[SD]us usa network,Usa Network,Usa Network,待确认分组,网络源,未排序,否
-å±±è¥¿ç»æµä¸ç§‘æŠ€,å±±è¥¿ç»æµä¸ç§‘æŠ€,å±±è¥¿ç»æµä¸ç§‘æŠ€,待标准化,网络源,未排序,否
-çº¬æ¥è‚²ä¹,çº¬æ¥è‚²ä¹,çº¬æ¥è‚²ä¹,待标准化,网络源,未排序,否
