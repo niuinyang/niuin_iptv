@@ -37,7 +37,7 @@ jobs:
           git config user.email "github-actions[bot]@users.noreply.github.com"
 
       - name: Pull latest changes before commit
-        run: git pull --rebase origin main
+        run: git pull --rebase --autostash origin main
 
       - name: Add and commit merged cache files
         run: |
