@@ -119,11 +119,7 @@ def make_tvg_logo(channel_name, local_png_set):
 
 def construct_catchup(url):
     """
-    构造 catchup-source URL，严格按照范例逻辑：
-    - IP 地址保持和播放地址一致
-    - 去掉路径中的 /import 片段
-    - 截断路径，保留到第一个以 .rsc 结尾的位置
-    - 在URL尾部添加时间参数 ?tvdr={utc:YmdHMS}GMT-{utcend:YmdHMS}GMT
+    构造 catchup-source URL
     """
     try:
         parsed = urlparse(url)
@@ -138,19 +134,19 @@ def construct_catchup(url):
         if path.startswith("/iptv/import"):
             path = path.replace("/iptv/import", "/iptv", 1)
 
-        # 截断路径到第一个 .rsc 结尾（包含.rsc）
+        # 截断路径到第一个 .rsc 结尾
         rsc_pos = path.find(".rsc")
         if rsc_pos != -1:
-            path = path[:rsc_pos + 4]  # 保留 .rsc 结尾部分
+            path = path[:rsc_pos + 4]
 
         time_params = "?tvdr={utc:YmdHMS}GMT-{utcend:YmdHMS}GMT"
         new_url = urlunparse((
             parsed.scheme,
             parsed.netloc,
             path,
-            '',  # params
-            time_params[1:],  # query 不带 '?'
-            ''   # fragment
+            '',
+            time_params[1:],
+            ''
         ))
         return new_url
     except Exception:
@@ -158,11 +154,6 @@ def construct_catchup(url):
 
 
 def build_extinf_line(csv_row, local_png_set):
-    """
-    构造 #EXTINF 行，严格对应范例：
-    - 仅对来源为“济南联通组播”添加 catchup 参数
-    - tvg-logo 优先使用本地，无则用远程模板
-    """
     channel = csv_row.get("频道名", "").strip()
     url = csv_row.get("地址", "").strip()
     group = csv_row.get("分组", "").strip()
@@ -182,26 +173,31 @@ def build_extinf_line(csv_row, local_png_set):
 
 
 def parse_csv():
-    """读取CSV，返回列表(dict)"""
+    """读取CSV，返回列表(dict)，过滤来源 + 过滤停用频道"""
     rows = []
     with open(CSV_INPUT, newline='', encoding='utf-8-sig') as f:
         reader = csv.DictReader(f)
         for row in reader:
+
+            # ① 过滤来源
             if row.get("来源", "") in FILTER_SOURCE:
                 continue
+
+            # ② 过滤分组为“停用”的频道（新增）
+            if row.get("分组", "").strip() == "停用":
+                continue
+
             rows.append(row)
     return rows
 
 
 def channel_sort_key(channel_name):
-    """频道名排序键：英文字母顺序，中文拼音首字母顺序，数字按数值大小"""
     pinyin_key = get_pinyin_key(channel_name)
     alpha_num = split_alpha_num(pinyin_key)
     return alpha_num
 
 
 def group_sort_key(group_name):
-    """分组排序键，优先级列表顺序，未匹配按拼音排序"""
     try:
         priority_index = GROUP_PRIORITY.index(group_name)
         return (0, priority_index, "")
@@ -211,7 +207,6 @@ def group_sort_key(group_name):
 
 
 def source_sort_key(source_name, dxl=True):
-    """来源排序键，dxl/sjmz两种不同优先级"""
     if dxl:
         try:
             return SOURCE_PRIORITY_DXL.index(source_name)
@@ -225,7 +220,6 @@ def source_sort_key(source_name, dxl=True):
 
 
 def resolution_area(row):
-    """计算分辨率面积"""
     m = re.match(r'(\d+)[xX](\d+)', row.get("分辨率", ""))
     if m:
         return int(m.group(1)) * int(m.group(2))
@@ -240,12 +234,6 @@ def safe_float(val, default=0):
 
 
 def compute_network_source_score(rows, alpha=0.7, beta=0.3):
-    """
-    给网络源列表计算综合评分，画质和速度折中。
-    alpha: 画质权重
-    beta: 速度权重
-    返回：排序后的行列表，score越大越优先
-    """
     areas = []
     detects = []
     for r in rows:
@@ -263,8 +251,8 @@ def compute_network_source_score(rows, alpha=0.7, beta=0.3):
             return [1.0] * len(lst)
         return [(v - min_v) / (max_v - min_v) for v in lst]
 
-    norm_areas = normalize(areas)  # 越大越好
-    norm_detects = normalize(detects)  # 越小越好，后面取负号
+    norm_areas = normalize(areas)
+    norm_detects = normalize(detects)
 
     scored_rows = []
     for i, row in enumerate(rows):
@@ -276,14 +264,6 @@ def compute_network_source_score(rows, alpha=0.7, beta=0.3):
 
 
 def sort_rows(rows, dxl=True):
-    """
-    综合排序：
-    1. 分组优先
-    2. 频道名排序
-    3. 多来源排序（优先级）
-    4. 同一来源内部网络源排序（分辨率面积+检测时间）
-    5. 网络源放最后
-    """
     group_dict = defaultdict(list)
     for r in rows:
         group_dict[r.get("分组", "待标准化")].append(r)
@@ -324,7 +304,6 @@ def sort_rows(rows, dxl=True):
 
 
 def generate_m3u(rows, output_file, dxl=True, local_png_set=None):
-    """生成m3u文件"""
     with open(output_file, "w", encoding="utf-8") as f:
         f.write("#EXTM3U\n")
         for row in rows:
@@ -336,7 +315,7 @@ def generate_m3u(rows, output_file, dxl=True, local_png_set=None):
 async def main():
     print("读取CSV文件...")
     rows = parse_csv()
-    print(f"CSV条目数(过滤来源后)：{len(rows)}")
+    print(f"CSV条目数(过滤来源+停用后)：{len(rows)}")
 
     print("加载本地图标文件...")
     local_png_set = load_local_png_set()
