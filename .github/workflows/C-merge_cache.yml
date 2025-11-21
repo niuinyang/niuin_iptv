@@ -29,6 +29,9 @@ jobs:
           pip install zoneinfo || true                  # 安装zoneinfo（根据需要）
           pip install -r requirements.txt || true      # 安装其它依赖（如有requirements.txt）
 
+      - name: List cache files
+        run: ls -R output/cache/chunk || echo "No cache directory found"
+        
       - name: Run merge cache script
         run: python scripts/C_merge_cache.py          # 执行你的合并缓存Python脚本
 
