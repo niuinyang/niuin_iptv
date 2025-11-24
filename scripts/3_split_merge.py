@@ -3,21 +3,23 @@ import csv
 import os
 import sys
 
-# === 获取脚本所在目录，确保路径永远正确 ===
-BASE_DIR = os.path.dirname(os.path.abspath(__file__))
+# === 自动定位仓库根目录 ===
+SCRIPT_DIR = os.path.dirname(os.path.abspath(__file__))   # scripts/
+REPO_ROOT = os.path.dirname(SCRIPT_DIR)                   # niuin_iptv/
 
 def split_deep_scan(
-        input_path=os.path.join(BASE_DIR, "output/middle/merge/networksource_total.csv"),
+        input_path=os.path.join(REPO_ROOT, "output/middle/merge/networksource_total.csv"),
         chunk_size=1000,
-        output_dir=os.path.join(BASE_DIR, "output/middle/chunk")
+        output_dir=os.path.join(REPO_ROOT, "output/middle/chunk")
     ):
     """
     读取 CSV，将其按指定大小分割成多个分片文件 chunk-N.csv。
-    自动清理旧分片文件，路径基于脚本实际位置，避免 GitHub Actions 路径错乱。
+    删除旧分片文件，路径基于仓库根目录，避免 GitHub Actions 路径错乱。
     """
 
     print("=== 路径检查 ===")
-    print("脚本所在目录 BASE_DIR:", BASE_DIR)
+    print("脚本目录 SCRIPT_DIR:", SCRIPT_DIR)
+    print("仓库根目录 REPO_ROOT:", REPO_ROOT)
     print("当前工作目录 os.getcwd():", os.getcwd())
     print("输入文件绝对路径:", os.path.abspath(input_path))
     print("chunk 输出目录绝对路径:", os.path.abspath(output_dir))
@@ -30,20 +32,19 @@ def split_deep_scan(
     # 创建输出目录
     os.makedirs(output_dir, exist_ok=True)
 
-    # === 删除 output/middle/chunk 中旧的分片文件 ===
+    # === 清理旧 chunk 文件 ===
     print("\n=== 清理旧的分片文件 ===")
     for filename in os.listdir(output_dir):
         full_path = os.path.join(output_dir, filename)
         print(f"发现文件: {full_path}")
 
-        # 删除 chunk-*.csv
         if filename.startswith("chunk") and filename.endswith(".csv"):
             os.remove(full_path)
             print(f"👉 已删除: {full_path}")
         else:
             print(f"❌ 跳过（不是 chunk*.csv）: {full_path}")
 
-    # === 读取 CSV 文件 ===
+    # === 读取 CSV ===
     print("\n=== 读取 CSV 文件 ===")
     try:
         with open(input_path, newline='', encoding="utf-8") as f:
@@ -67,7 +68,7 @@ def split_deep_scan(
     total_rows = len(rows)
     print(f"读取行数: {total_rows}")
 
-    # === 开始拆分 ===
+    # === 拆分 CSV ===
     total_chunks = (total_rows + chunk_size - 1) // chunk_size
     print(f"预计生成 {total_chunks} 个分片文件")
 
