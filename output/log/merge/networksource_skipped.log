@@ -182,6 +182,7 @@ TV Cidade Verde Cuiaba,#EXTVLCOPT:http-referrer=https://www.tvcidadeverde.com.br
 TV Costa Brava (1080p),#EXTVLCOPT:http-user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/83.0.4103.97 Safari/537.36 CrKey/1.44.191160,无效URL（非 http/https/rtsp 开头）
 TV Estrella (720p),#EXTVLCOPT:http-referrer=https://player.castr.com/live_ab3fd7a07fff11eea3d485758bf6a333,无效URL（非 http/https/rtsp 开头）
 TV L'Hospitalet (1080p),#EXTVLCOPT:http-user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/83.0.4103.97 Safari/537.36 CrKey/1.44.191160,无效URL（非 http/https/rtsp 开头）
+TV Peru (1080p),#EXTVLCOPT:http-referrer=http://tvperu.gob.pe/,无效URL（非 http/https/rtsp 开头）
 TV Peru Internacional (720p),#EXTVLCOPT:http-referrer=https://www.tvperu.gob.pe/internacional,无效URL（非 http/https/rtsp 开头）
 TV Peru Noticias (360p),#EXTVLCOPT:http-referrer=http://www.tvperu.gob.pe/noticias,无效URL（非 http/https/rtsp 开头）
 TV Ripollès (1080p),#EXTVLCOPT:http-user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/83.0.4103.97 Safari/537.36 CrKey/1.44.191160,无效URL（非 http/https/rtsp 开头）
@@ -372,6 +373,7 @@ CCTV-1,http://a.402089.xyz:4022/rtp/233.50.200.143:5140,重复URL
 ä¸­å›½è“æ–°é—»,https://ali-m-l.cztv.com/channels/lantian/channel009/1080p.m3u8,重复URL
 ä¸Šè™æ–‡åŒ–å½±è§†,http://l.cztvcloud.com/channels/lantian/SXshangyu2/720p.m3u8,重复URL
 æ¬¢ç¬‘å‰§åœº,https://shyd.695847.xyz/cms001/ch00000090990000001490/index.m3u8?IASHttpSessionId=RR4967720251014100028031761&ispcode=12,重复URL
+é‡åº†æ±½æ‘©,http://183.64.181.25:40023/rongchang01.m3u8,重复URL
 é‡åº†æ±½æ‘©,http://123.146.162.24:8013/tslslive/PU2vzMI/hls/live_sd.m3u8,重复URL
 é‡åº†æ±½æ‘©,http://222.179.155.21:1935/ch1.m3u8,重复URL
 å«æ±Ÿç»¼åˆ,rtmp://play-sh.quklive.com/live/1672366847646284,无效URL（非 http/https/rtsp 开头）
@@ -511,6 +513,11 @@ CCTV-1,http://a.402089.xyz:4022/rtp/233.50.200.143:5140,重复URL
 é–å¤©èµ„è®¯,http://breezy-audrie-zspace-7524863c.koyeb.app/vipsir?token=leifeng&id=4gtv-4gtv065,重复URL
 é–å¤©èµ„è®¯,https://mao.ffmking888.dpdns.org/?id=6Z2W5aSp6LOH6KiK5Yaw&auth=30234cedf871581989d3c91a3daec1e9f50e024aafcfa2247e7d44d91bb8d02fbc3f571b2d67f9d82642cc1d0f133d89,重复URL
 é–å¤©æ˜ ç”»,http://breezy-audrie-zspace-7524863c.koyeb.app/vipsir?token=leifeng&id=4gtv-4gtv055,重复URL
+é–å¤©æ˜ ç”»,https://4gtv.dxjc.pp.ua/li-4gtv-4gtv055/index.m3u8,重复URL
+é–å¤©æ˜ ç”»,https://4gtv.dxjc.pp.ua/4gtv-4gtv055/index.m3u8,重复URL
+é–å¤©æ˜ ç”»,https://mao.ffmking888.dpdns.org/?id=6Z2W5aSp5pig55Wr&auth=30234cedf871581989d3c91a3daec1e9f50e024aafcfa2247e7d44d91bb8d02fbc3f571b2d67f9d82642cc1d0f133d89,重复URL
+é–å¤©æˆå‰§,http://breezy-audrie-zspace-7524863c.koyeb.app/vipsir?token=leifeng&id=4gtv-4gtv058,重复URL
+é–å¤©æˆå‰§,https://mao.ffmking888.dpdns.org/?id=6Z2W5aSp5oiy5YqH5Yaw&auth=30234cedf871581989d3c91a3daec1e9f50e024aafcfa2247e7d44d91bb8d02fbc3f571b2d67f9d82642cc1d0f133d89,重复URL
 ä¸œæ£®ç”µå½±,http://mytv.cdn.com.mp/live/dsdy/stream.m3u8,重复URL
 ä¸œæ£®ç”µå½±,https://smart.pendy.dpdns.org/Smart.php?id=ettvmovie,重复URL
 ä¸œæ£®ç”µå½±,https://stream1.freetv.fun/dong-sen-dian-ying-6.ctv,重复URL
@@ -662,7 +669,7 @@ CCTV-15,http://[2409:8087:1a01:df::4077]/ottrrs.hl.chinamobile.com/PLTV/88888888
 [HD]dazn1[geo-blocked],rtmp://f13h.mine.nu/sat/tv731,无效URL（非 http/https/rtsp 开头）
 [HD]dazn 2[geo-blocked],rtmp://f13h.mine.nu/sat/tv741,无效URL（非 http/https/rtsp 开头）
 [HD]momo综合[geo-blocked],rtmp://f13h.mine.nu/sat/tv761,无效URL（非 http/https/rtsp 开头）
-[BD]三立新聞[geo-blocked],https://stream1.freetv.fun/san-li-xin-wen-6.ctv,重复URL
+[BD]三立新聞,https://stream1.freetv.fun/san-li-xin-wen-6.ctv,重复URL
 [BD]三立新聞[geo-blocked],https://stream1.freetv.fun/san-li-xin-wen-5.ctv,重复URL
 [BD]三立台湾,https://stream1.freetv.fun/san-li-tai-wan-1.ctv,重复URL
 [HD]中视[geo-blocked],rtmp://f13h.mine.nu:1935/sat/tv091,无效URL（非 http/https/rtsp 开头）
@@ -677,6 +684,10 @@ CCTV-15,http://[2409:8087:1a01:df::4077]/ottrrs.hl.chinamobile.com/PLTV/88888888
 [HD]纬来体育[geo-blocked],rtmp://f13h.mine.nu/sat/tv721,无效URL（非 http/https/rtsp 开头）
 [HD]华视[geo-blocked],rtmp://f13h.mine.nu:1935/sat/tv111,无效URL（非 http/https/rtsp 开头）
 [HD]華視[geo-blocked],rtmp://f13h.mine.nu/sat/tv111,无效URL（非 http/https/rtsp 开头）
+[BD]靖天戲劇,https://stream1.freetv.fun/jing-tian-xi-ju-4.m3u8,重复URL
+[BD]靖天戲劇,https://stream1.freetv.fun/jing-tian-xi-ju-1.m3u8,重复URL
+[BD]靖天資訊,https://stream1.freetv.fun/jing-tian-zi-xun-2.m3u8,重复URL
+[BD]靖天資訊,https://stream1.freetv.fun/jing-tian-zi-xun-3.m3u8,重复URL
 [HD]dazn1[geo-blocked],rtmp://f13h.mine.nu/sat/tv731,无效URL（非 http/https/rtsp 开头）
 [HD]dazn 2[geo-blocked],rtmp://f13h.mine.nu/sat/tv741,无效URL（非 http/https/rtsp 开头）
 [HD]momo综合[geo-blocked],rtmp://f13h.mine.nu/sat/tv761,无效URL（非 http/https/rtsp 开头）
@@ -743,6 +754,7 @@ CCTVé£äº‘è¶³çƒ,https://epg.pw/stream/ac8062ec9484078061d3bef507c15a42
 CETV1,https://migu.188766.xyz/?migutoken=a55dadc35d37e3e168faf8268cc6fa97&id=CETV1&type=yy,重复URL
 CETV1,http://171.125.90.120:6001/rtp/226.0.2.181:9360,重复URL
 CETV1,http://a.402089.xyz:4022/rtp/233.50.200.169:5140,重复URL
+CETV1,http://[2409:8087:1a15:10d1::34]/ottrrs.hl.chinamobile.com/PLTV/88888888/224/3221225652/index.m3u8,重复URL
 CETV2,http://ottrrs.hl.chinamobile.com/PLTV/88888888/224/3221226425/index.m3u8,重复URL
 CETV2,https://migu.188766.xyz/?migutoken=98daa3ba4c81372351b73d9075023b9b&id=CETV2&type=yy,重复URL
 CETV4,http://ottrrs.hl.chinamobile.com/PLTV/88888888/224/3221225783/index.m3u8,重复URL
@@ -789,6 +801,7 @@ CETV4,https://migu.188766.xyz/?migutoken=d5d19d868e1df41e984866fc7ca15071&id=CET
 å®å¤å«è§†,http://j.x.bkpcp.top/jx/NXWS,重复URL
 å±±ä¸œå«è§†,http://j.x.bkpcp.top/jx/SHANDHD,重复URL
 å±±ä¸œå«è§†,http://z.b.bkpcp.top/m.php?id=sdws,重复URL
+å±±ä¸œå«è§†,http://live.dxhmt.cn:9081/tv/11521-1.m3u8,重复URL
 å±±è¥¿å«è§†,https://stream1.freetv.fun/shan-xi-wei-shi-25.m3u8,重复URL
 å±±è¥¿å«è§†,http://j.x.bkpcp.top/jx/SXWS,重复URL
 å±±è¥¿å«è§†,http://m3u8.channel.wsrtv.com.cn/cms/videos/nmip-media/channellive/channel7/playlist.m3u8,重复URL
@@ -911,6 +924,8 @@ TVBæ˜Ÿæ²³,http://tl.061833.xyz/tl/null-7,重复URL
 TVBæ˜Ÿæ²³,https://smt.1678520.xyz/smt3.2.1.php?id=Xinhe,重复URL
 TVBæ˜Ÿæ²³,http://php.jdshipin.com/smt.php?id=Xinhe,重复URL
 TVBæ˜Ÿæ²³,http://php.jdshipin.com:8880/TVOD/iptv.php?id=xinghe,重复URL
+TVBæ˜Ÿæ²³,https://cdn9.163189.xyz/smt1.1.php?id=Xinhe,重复URL
+TVBæ˜Ÿæ²³,https://cdn9.163189.xyz/smt3.1.1.php?id=Xinhe,重复URL
 TVBæ— çº¿æ–°é—»,http://php.jdshipin.com:8880/TVOD/iptv.php?id=tvbxw,重复URL
 TVBSæ–°é—»,http://breezy-audrie-zspace-7524863c.koyeb.app/vipsir?token=leifeng&id=4gtv-4gtv072,重复URL
 TVBSæ–°é—»,http://xtvantsc.xyz/litv_ts.php?id=4gtv-4gtv072,重复URL
@@ -929,7 +944,6 @@ VIUTV,http://php.jdshipin.com:8880/PLTV/iptv.php?id=viutv,重复URL
 å…«å¤§ç²¾å½©,https://stream1.freetv.fun/ba-da-jing-cai-7.m3u8,重复URL
 å…«å¤§ç²¾å½©,https://stream1.freetv.fun/ba-da-jing-cai-1.m3u8,重复URL
 å…«å¤§ç²¾å½©,https://stream1.freetv.fun/ba-da-jing-cai-3.m3u8,重复URL
-å…«å¤§ç²¾å½©,https://stream1.freetv.fun/ba-da-jing-cai-6.m3u8,重复URL
 å…«å¤§ç»¼è‰º,http://breezy-audrie-zspace-7524863c.koyeb.app/vipsir?token=leifeng&id=4gtv-4gtv039,重复URL
 å…«å¤§ç»¼è‰º,https://stream1.freetv.fun/ba-da-zong-yi-5.m3u8,重复URL
 å…«å¤§ç»¼è‰º,http://xtvantsc.xyz/litv_ts.php?id=4gtv-4gtv039,重复URL
@@ -963,13 +977,14 @@ VIUTV,http://php.jdshipin.com:8880/PLTV/iptv.php?id=viutv,重复URL
 å°è§†æ–°é—»,https://stream1.freetv.fun/tai-shi-xin-wen-4.m3u8,重复URL
 å°è§†æ–°é—»,https://stream1.freetv.fun/tai-shi-xin-wen-17.m3u8,重复URL
 å°è§†æ–°é—»,https://stream1.freetv.fun/tai-shi-xin-wen-18.ctv,重复URL
+å°è§†æ–°é—»,https://stream1.freetv.fun/tai-shi-xin-wen-5.m3u8,重复URL
+å°è§†æ–°é—»,https://pxuchylhjchl.us-east-1.clawcloudrun.com/index.m3u8?pid=4gtv-4gtv051&sd=1080&proxy=false,重复URL
 å¤§çˆ±ç”µè§†,https://stream1.freetv.fun/da-ai-dian-shi-3.m3u8,重复URL
 å¤§çˆ±ç”µè§†,https://stream1.freetv.fun/da-ai-dian-shi-2.m3u8,重复URL
 å¤§çˆ±ç”µè§†,https://stream1.freetv.fun/da-ai-dian-shi-4.ctv,重复URL
 å¤§çˆ±ç”µè§†,https://stream1.freetv.fun/da-ai-dian-shi-1.ctv,重复URL
 ä¸­å¤©æ–°é—»,http://breezy-audrie-zspace-7524863c.koyeb.app/vipsir?token=leifeng&id=4gtv-4gtv009,重复URL
 ä¸­å¤©æ–°é—»,https://stream1.freetv.fun/zhong-tian-xin-wen-11.m3u8,重复URL
-ä¸­å¤©æ–°é—»,https://stream1.freetv.fun/zhong-tian-xin-wen-17.m3u8,重复URL
 ä¸­å¤©æ–°é—»,https://stream1.freetv.fun/zhong-tian-xin-wen-15.m3u8,重复URL
 ä¸­å¤©æ–°é—»,https://stream1.freetv.fun/zhong-tian-xin-wen-14.m3u8,重复URL
 ä¸­å¤©æ–°é—»,http://xtvantsc.xyz/litv_ts.php?id=4gtv-4gtv009,重复URL
@@ -979,6 +994,9 @@ VIUTV,http://php.jdshipin.com:8880/PLTV/iptv.php?id=viutv,重复URL
 ä¸­å¤©æ–°é—»,https://stream1.freetv.fun/zhong-tian-xin-wen-4.ctv,重复URL
 ä¸­å¤©æ–°é—»,https://stream1.freetv.fun/zhong-tian-xin-wen-8.ctv,重复URL
 ä¸­å¤©æ–°é—»,https://stream1.freetv.fun/zhong-tian-xin-wen-9.ctv,重复URL
+ä¸­å¤©æ–°é—»,https://stream1.freetv.fun/zhong-tian-xin-wen-18.m3u8,重复URL
+ä¸­å¤©æ–°é—»,https://pxuchylhjchl.us-east-1.clawcloudrun.com/index.m3u8?pid=4gtv-4gtv009&sd=1080&proxy=false,重复URL
+ä¸­å¤©æ–°é—»,https://edgeone.passwdword.xyz/ofiii.php?token=passwd&id=4gtv-4gtv009,重复URL
 ä¸­å¤©å¨±ä¹,https://stream1.freetv.fun/zhong-tian-yu-le-5.m3u8,重复URL
 ä¸­å¤©å¨±ä¹,https://stream1.freetv.fun/zhong-tian-yu-le-2.ctv,重复URL
 ä¸­å¤©å¨±ä¹,https://stream1.freetv.fun/zhong-tian-yu-le-6.ctv,重复URL
@@ -988,25 +1006,23 @@ VIUTV,http://php.jdshipin.com:8880/PLTV/iptv.php?id=viutv,重复URL
 ä¸­å¤©äºšæ´²,http://breezy-audrie-zspace-7524863c.koyeb.app/vipsir?token=leifeng&id=4gtv-4gtv109,重复URL
 ä¸­å¤©äºšæ´²,https://stream1.freetv.fun/zhong-tian-ya-zhou-2.m3u8,重复URL
 ä¸­å¤©äºšæ´²,http://xtvantsc.xyz/litv_ts.php?id=4gtv-4gtv109,重复URL
-ä¸­å¤©äºšæ´²,https://stream1.freetv.fun/zhong-tian-ya-zhou-1.m3u8,重复URL
 ä¸­å¤©äºšæ´²,https://stream1.freetv.fun/zhong-tian-ya-zhou-10.m3u8,重复URL
 ä¸­å¤©äºšæ´²,https://stream1.freetv.fun/zhong-tian-ya-zhou-8.ctv,重复URL
 ä¸­è§†æ–°é—»,http://breezy-audrie-zspace-7524863c.koyeb.app/vipsir?token=leifeng&id=4gtv-4gtv074,重复URL
 ä¸­è§†æ–°é—»,https://stream1.freetv.fun/zhong-shi-xin-wen-4.m3u8,重复URL
 ä¸­è§†æ–°é—»,https://stream1.freetv.fun/zhong-shi-xin-wen-5.ctv,重复URL
 ä¸­è§†æ–°é—»,https://stream1.freetv.fun/zhong-shi-xin-wen-6.m3u8,重复URL
+ä¸­è§†æ–°é—»,https://stream1.freetv.fun/zhong-shi-xin-wen-7.m3u8,重复URL
 ä¸­è§†æ–°é—»,https://stream1.freetv.fun/zhong-shi-xin-wen-3.m3u8,重复URL
 ä¸­è§†èé‡‡,http://breezy-audrie-zspace-7524863c.koyeb.app/vipsir?token=leifeng&id=4gtv-4gtv064,重复URL
 ä¸­è§†èé‡‡,https://stream1.freetv.fun/zhong-shi-jing-cai-2.m3u8,重复URL
 ä¸­è§†èé‡‡,https://stream1.freetv.fun/zhong-shi-jing-cai-5.m3u8,重复URL
 ä¸­è§†èé‡‡,http://xtvantsc.xyz/litv_ts.php?id=4gtv-4gtv064,重复URL
 ä¸­è§†èé‡‡,https://stream1.freetv.fun/zhong-shi-jing-cai-4.m3u8,重复URL
-ä¸­è§†èé‡‡,https://stream1.freetv.fun/zhong-shi-jing-cai-7.m3u8,重复URL
 ä¸­è§†èé‡‡,https://stream1.freetv.fun/zhong-shi-jing-cai-3.m3u8,重复URL
 ä¸­è§†ç»å…¸,http://breezy-audrie-zspace-7524863c.koyeb.app/vipsir?token=leifeng&id=4gtv-4gtv080,重复URL
 ä¸­è§†ç»å…¸,https://stream1.freetv.fun/zhong-shi-jing-dian-7.m3u8,重复URL
 ä¸­è§†ç»å…¸,http://xtvantsc.xyz/litv_ts.php?id=4gtv-4gtv080,重复URL
-ä¸­è§†ç»å…¸,https://stream1.freetv.fun/zhong-shi-jing-dian-8.m3u8,重复URL
 ä¸­è§†ç»å…¸,https://stream1.freetv.fun/zhong-shi-jing-dian-4.m3u8,重复URL
 ä¸­è§†ç»å…¸,https://stream1.freetv.fun/zhong-shi-jing-dian-5.m3u8,重复URL
 ä¸­è§†ç»å…¸,https://stream1.freetv.fun/zhong-shi-jing-dian-6.m3u8,重复URL
@@ -1023,7 +1039,6 @@ VIUTV,http://php.jdshipin.com:8880/PLTV/iptv.php?id=viutv,重复URL
 æ°‘è§†,http://xtvantsc.xyz/litv_ts.php?id=4gtv-4gtv002,重复URL
 æ°‘è§†,https://stream1.freetv.fun/min-shi-4.m3u8,重复URL
 æ°‘è§†,http://xtvantsc.xyz/litv_ts.php?id=4gtv-4gtv155,重复URL
-æ°‘è§†,https://stream1.freetv.fun/min-shi-9.m3u8,重复URL
 æ°‘è§†,https://stream1.freetv.fun/min-shi-11.ctv,重复URL
 æ°‘è§†,https://stream1.freetv.fun/min-shi-10.ctv,重复URL
 æ°‘è§†,https://stream1.freetv.fun/min-shi-8.ctv,重复URL
@@ -1033,6 +1048,7 @@ VIUTV,http://php.jdshipin.com:8880/PLTV/iptv.php?id=viutv,重复URL
 æ°‘è§†å½±å‰§,http://xtvantsc.xyz/litv_ts.php?id=litv-ftv09,重复URL
 æ°‘è§†å½±å‰§,https://stream1.freetv.fun/min-shi-ying-ju-1.m3u8,重复URL
 æ°‘è§†å½±å‰§,https://stream1.freetv.fun/min-shi-ying-ju-5.m3u8,重复URL
+æ°‘è§†å½±å‰§,https://stream1.freetv.fun/min-shi-ying-ju-7.m3u8,重复URL
 æ°‘è§†æ–°é—»,http://breezy-audrie-zspace-7524863c.koyeb.app/vipsir?token=leifeng&id=litv-ftv13,重复URL
 æ°‘è§†æ–°é—»,https://stream1.freetv.fun/min-shi-xin-wen-14.m3u8,重复URL
 æ°‘è§†æ–°é—»,https://stream1.freetv.fun/min-shi-xin-wen-12.m3u8,重复URL
@@ -1041,23 +1057,22 @@ VIUTV,http://php.jdshipin.com:8880/PLTV/iptv.php?id=viutv,重复URL
 æ°‘è§†æ–°é—»,https://stream1.freetv.fun/min-shi-xin-wen-16.m3u8,重复URL
 æ°‘è§†æ–°é—»,https://stream1.freetv.fun/min-shi-xin-wen-17.m3u8,重复URL
 æ°‘è§†æ–°é—»,https://stream1.freetv.fun/min-shi-xin-wen-20.ctv,重复URL
-æ°‘è§†æ–°é—»,https://stream1.freetv.fun/min-shi-xin-wen-1.ctv,重复URL
+æ°‘è§†æ–°é—»,https://stream1.freetv.fun/min-shi-xin-wen-15.m3u8,重复URL
 æ°‘è§†å°æ¹¾,http://breezy-audrie-zspace-7524863c.koyeb.app/vipsir?token=leifeng&id=4gtv-4gtv001,重复URL
 æ°‘è§†å°æ¹¾,https://stream1.freetv.fun/min-shi-tai-wan-1.m3u8,重复URL
 æ°‘è§†å°æ¹¾,https://stream1.freetv.fun/min-shi-tai-wan-6.m3u8,重复URL
 æ°‘è§†å°æ¹¾,http://xtvantsc.xyz/litv_ts.php?id=4gtv-4gtv001,重复URL
-æ°‘è§†å°æ¹¾,https://stream1.freetv.fun/min-shi-tai-wan-8.m3u8,重复URL
 æ°‘è§†å°æ¹¾,https://stream1.freetv.fun/min-shi-tai-wan-3.m3u8,重复URL
 æ°‘è§†å°æ¹¾,https://stream1.freetv.fun/min-shi-tai-wan-5.m3u8,重复URL
 æ°‘è§†å°æ¹¾,https://stream1.freetv.fun/min-shi-tai-wan-4.ctv,重复URL
+æ°‘è§†å°æ¹¾,https://stream1.freetv.fun/min-shi-tai-wan-7.m3u8,重复URL
 æ°‘è§†ç¬¬ä¸€,http://breezy-audrie-zspace-7524863c.koyeb.app/vipsir?token=leifeng&id=4gtv-4gtv003,重复URL
 æ°‘è§†ç¬¬ä¸€,https://stream1.freetv.fun/min-shi-di-yi-4.m3u8,重复URL
 æ°‘è§†ç¬¬ä¸€,https://stream1.freetv.fun/min-shi-di-yi-1.m3u8,重复URL
-æ°‘è§†ç¬¬ä¸€,https://stream1.freetv.fun/min-shi-di-yi-2.m3u8,重复URL
 æ°‘è§†ç¬¬ä¸€,http://xtvantsc.xyz/litv_ts.php?id=4gtv-4gtv003,重复URL
 æ°‘è§†ç¬¬ä¸€,https://stream1.freetv.fun/min-shi-di-yi-6.m3u8,重复URL
-æ°‘è§†ç¬¬ä¸€,https://stream1.freetv.fun/min-shi-di-yi-7.m3u8,重复URL
 æ°‘è§†ç¬¬ä¸€,https://stream1.freetv.fun/min-shi-di-yi-3.m3u8,重复URL
+æ°‘è§†ç¬¬ä¸€,https://stream1.freetv.fun/min-shi-di-yi-5.m3u8,重复URL
 æ°‘è§†æ—…æ¸¸,https://stream1.freetv.fun/min-shi-lu-you-6.m3u8,重复URL
 æ°‘è§†æ—…æ¸¸,https://stream1.freetv.fun/min-shi-lu-you-5.m3u8,重复URL
 æ°‘è§†æ—…æ¸¸,http://xtvantsc.xyz/litv_ts.php?id=litv-ftv07,重复URL
@@ -1135,6 +1150,8 @@ CHCåŠ¨ä½œç”µå½±,http://z.b.bkpcp.top/m.php,重复URL
 é–å¤©ç”µå½±,https://stream1.freetv.fun/jing-tian-dian-ying-6.m3u8,重复URL
 é–å¤©ç”µå½±,http://xtvantsc.xyz/litv_ts.php?id=4gtv-4gtv061,重复URL
 é–å¤©ç”µå½±,https://stream1.freetv.fun/jing-tian-dian-ying-1.m3u8,重复URL
+é–å¤©ç”µå½±,https://stream1.freetv.fun/jing-tian-dian-ying-7.m3u8,重复URL
+ä¸œæ£®ç”µå½±,https://stream1.freetv.fun/dong-sen-dian-ying-5.m3u8,重复URL
 ä¸œæ£®ç”µå½±,https://stream1.freetv.fun/dong-sen-dian-ying-8.ctv,重复URL
 ä¸œæ£®ç”µå½±,https://cdn.iptv8k.top/dl/jrys.php?id=231&time=20240926215313&ip=111.229.253.40,重复URL
 ä¸œæ£®ç”µå½±,https://stream1.freetv.fun/dong-sen-dian-ying-6.ctv,重复URL
@@ -1143,9 +1160,8 @@ CHCåŠ¨ä½œç”µå½±,http://z.b.bkpcp.top/m.php,重复URL
 é¾™åç”µå½±,http://breezy-audrie-zspace-7524863c.koyeb.app/vipsir?token=leifeng&id=litv-longturn03,重复URL
 é¾™åç”µå½±,https://stream1.freetv.fun/long-hua-dian-ying-4.m3u8,重复URL
 é¾™åç”µå½±,http://xtvantsc.xyz/litv_ts.php?id=litv-longturn03,重复URL
-é¾™åç”µå½±,https://stream1.freetv.fun/long-hua-dian-ying-2.m3u8,重复URL
 é¾™åç”µå½±,https://stream1.freetv.fun/long-hua-dian-ying-5.m3u8,重复URL
-é¾™åç”µå½±,https://stream1.freetv.fun/long-hua-dian-ying-3.m3u8,重复URL
+é¾™åç”µå½±,https://pxuchylhjchl.us-east-1.clawcloudrun.com/index.m3u8?pid=litv-longturn03&sd=1080&proxy=false,重复URL
 ç»å…¸ç”µå½±,https://tv.iill.top/4gtv/201,重复URL
 ç»å…¸ç”µå½±,https://stream1.freetv.fun/jing-dian-dian-ying-2.m3u8,重复URL
 ç»å…¸ç”µå½±,https://stream1.freetv.fun/jing-dian-dian-ying-1.ctv,重复URL
@@ -1232,7 +1248,6 @@ NewTVé»‘è“ç”µå½±,https://epg.pw/stream/ffcb6572863f0745a7369fbd9d9
 é­…åŠ›è¶³çƒ,http://z.b.bkpcp.top/m.php?id=mlzq,重复URL
 é­…åŠ›è¶³çƒ,http://gat.bkpcp.top/ymg.php?id=mlzq,重复URL
 é­…åŠ›è¶³çƒ,http://goo.bkpcp.top/mg/mlzq,重复URL
-åŸ‹å †å †14,http://cfss.cc/cdn/hy/23863804.flv,重复URL
 é˜…è¯»â€¢å­¦ä¹ ã€ŒéŸ³ä¹ã€,https://live.iill.top/huya/21241813,重复URL
 éŸ³ä¹çŸ³æ¦´ã€ŒéŸ³ä¹ã€,https://live.iill.top/huya/17091681,重复URL
 ã€ŒBç«™ã€CS_2,https://live.iill.top/bilibili/21622811,重复URL
@@ -1297,11 +1312,11 @@ NewTVé»‘è“ç”µå½±,https://epg.pw/stream/ffcb6572863f0745a7369fbd9d9
 é–å¤©å¡é€š,http://breezy-audrie-zspace-7524863c.koyeb.app/vipsir?token=leifeng&id=4gtv-4gtv044,重复URL
 é–å¤©å¡é€š,http://xtvantsc.xyz/litv_ts.php?id=4gtv-4gtv044,重复URL
 é–å¤©å¡é€š,https://stream1.freetv.fun/jing-tian-qia-tong-6.m3u8,重复URL
-é–å¤©å¡é€š,https://stream1.freetv.fun/jing-tian-qia-tong-8.m3u8,重复URL
 é–å¤©å¡é€š,https://stream1.freetv.fun/jing-tian-qia-tong-5.m3u8,重复URL
 é–å¤©å¡é€š,https://stream1.freetv.fun/jing-tian-qia-tong-4.m3u8,重复URL
 é–å¤©å¡é€š,https://stream1.freetv.fun/jing-tian-qia-tong-3.m3u8,重复URL
 é–å¤©å¡é€š,https://stream1.freetv.fun/jing-tian-qia-tong-1.ctv,重复URL
+é–å¤©å¡é€š,https://stream1.freetv.fun/jing-tian-qia-tong-7.m3u8,重复URL
 é¾™åå¡é€š,http://breezy-audrie-zspace-7524863c.koyeb.app/vipsir?token=leifeng&id=litv-longturn01,重复URL
 é¾™åå¡é€š,https://stream1.freetv.fun/long-hua-qia-tong-1.m3u8,重复URL
 é¾™åå¡é€š,http://xtvantsc.xyz/litv_ts.php?id=litv-longturn01,重复URL
@@ -1314,13 +1329,13 @@ NewTVé»‘è“ç”µå½±,https://epg.pw/stream/ffcb6572863f0745a7369fbd9d9
 é–æ´‹å¡é€š,https://stream1.freetv.fun/jing-yang-qia-tong-4.m3u8,重复URL
 é–æ´‹å¡é€š,https://stream1.freetv.fun/jing-yang-qia-tong-2.m3u8,重复URL
 é–æ´‹å¡é€š,https://stream1.freetv.fun/jing-yang-qia-tong-3.m3u8,重复URL
+é–æ´‹å¡é€š,https://stream1.freetv.fun/jing-yang-qia-tong-6.m3u8,重复URL
 é‡‘é¹°å¡é€š,https://stream1.freetv.fun/jin-ying-qia-tong-39.m3u8,重复URL
 é‡‘é¹°å¡é€š,https://stream1.freetv.fun/jin-ying-qia-tong-9.ctv,重复URL
 é‡‘é¹°å¡é€š,https://stream1.freetv.fun/jin-ying-qia-tong-13.m3u8,重复URL
 é‡‘é¹°å¡é€š,https://stream1.freetv.fun/jin-ying-qia-tong-22.m3u8,重复URL
 é‡‘é¹°å¡é€š,https://stream1.freetv.fun/jin-ying-qia-tong-10.m3u8,重复URL
 é‡‘é¹°å¡é€š,https://stream1.freetv.fun/jin-ying-qia-tong-34.m3u8,重复URL
-é‡‘é¹°å¡é€š,https://stream1.freetv.fun/jin-ying-qia-tong-41.ctv,重复URL
 å“ˆå“ˆç‚«åŠ¨,https://stream1.freetv.fun/ipv6-ha-ha-xuan-dong-10.m3u8,重复URL
 å“ˆå“ˆç‚«åŠ¨,https://stream1.freetv.fun/ipv6-ha-ha-xuan-dong-8.m3u8,重复URL
 å“ˆå“ˆç‚«åŠ¨,https://stream1.freetv.fun/ha-ha-xuan-dong-8.m3u8,重复URL
@@ -1387,12 +1402,13 @@ VOAç¾å›½ä¹‹éŸ³,https://voa-ingest.akamaized.net/hls/live/2033878/tv
 CNA,http://d2e1asnsl7br7b.cloudfront.net/7782e205e72f43aeb4a48ec97f66ebbe/index_4.m3u8,重复URL
 CNA,https://live1.mediadesk.al/cnatvlive.m3u8,重复URL
 ä¸œæ£®æˆå‰§,https://stream1.freetv.fun/dong-sen-xi-ju-4.ctv,重复URL
-ä¸œæ£®æˆå‰§,https://stream1.freetv.fun/dong-sen-xi-ju-1.ctv,重复URL
 é¾™åæˆå‰§,http://breezy-audrie-zspace-7524863c.koyeb.app/vipsir?token=leifeng&id=litv-longturn18,重复URL
 é¾™åæˆå‰§,http://xtvantsc.xyz/litv_ts.php?id=litv-longturn18,重复URL
 é¾™åæˆå‰§,https://stream1.freetv.fun/long-hua-xi-ju-7.m3u8,重复URL
 é¾™åæˆå‰§,https://stream1.freetv.fun/long-hua-xi-ju-4.ctv,重复URL
-é¾™åæˆå‰§,https://stream1.freetv.fun/long-hua-xi-ju-9.m3u8,重复URL
+é¾™åæˆå‰§,https://stream1.freetv.fun/long-hua-xi-ju-3.m3u8,重复URL
+é¾™åæˆå‰§,https://pxuchylhjchl.us-east-1.clawcloudrun.com/index.m3u8?pid=litv-longturn18&sd=1080&proxy=false,重复URL
+é¾™åæˆå‰§,https://edgeone.passwdword.xyz/ofiii.php?token=passwd&id=litv-longturn18,重复URL
 ä¸‰ç«‹æˆå‰§,https://stream1.freetv.fun/san-li-xi-ju-3.ctv,重复URL
 å…¬è§†æˆå‰§,http://breezy-audrie-zspace-7524863c.koyeb.app/vipsir?token=leifeng&id=4gtv-4gtv042,重复URL
 å…¬è§†æˆå‰§,https://stream1.freetv.fun/gong-shi-xi-ju-5.m3u8,重复URL
@@ -1400,6 +1416,7 @@ CNA,https://live1.mediadesk.al/cnatvlive.m3u8,重复URL
 å…¬è§†æˆå‰§,http://xtvantsc.xyz/litv_ts.php?id=4gtv-4gtv042,重复URL
 å…¬è§†æˆå‰§,https://stream1.freetv.fun/gong-shi-xi-ju-6.m3u8,重复URL
 å…¬è§†æˆå‰§,https://stream1.freetv.fun/gong-shi-xi-ju-2.m3u8,重复URL
+å…¬è§†æˆå‰§,https://stream1.freetv.fun/gong-shi-xi-ju-7.m3u8,重复URL
 ä¸Šæµ·çºªå®,https://stream1.freetv.fun/ipv6-shang-hai-ji-shi-ren-wen-2.m3u8,重复URL
 ä¸Šæµ·çºªå®,https://stream1.freetv.fun/ipv6-shang-hai-ji-shi-ren-wen-3.m3u8,重复URL
 ä¸Šæµ·çºªå®,https://stream1.freetv.fun/shang-hai-ji-shi-ren-wen-1.m3u8,重复URL
@@ -1426,6 +1443,7 @@ CNA,https://live1.mediadesk.al/cnatvlive.m3u8,重复URL
 æ–°é—»ç»¼åˆ,https://m3u8channel.yunxya.com/nmip-media/channellive/channel100028/playlist.m3u8,重复URL
 æ–°é—»ç»¼åˆ,http://z.b.bkpcp.top/m.php?id=shxw,重复URL
 æ³•æ²»å¤©åœ°,http://[2409:8087:1e01:20::3]:80/PLTV/11/224/3221225994/1.m3u8,重复URL
+æ³•æ²»å¤©åœ°,http://iptv.666230.xyz/iptv/hnyx.php/fztx,重复URL
 ç”Ÿæ´»æ—¶å°š,https://stream1.freetv.fun/sheng-huo-shi-shang-9.ctv,重复URL
 ç”Ÿæ´»æ—¶å°š,https://stream1.freetv.fun/sheng-huo-shi-shang-13.m3u8,重复URL
 ç”Ÿæ´»æ—¶å°š,https://stream1.freetv.fun/sheng-huo-shi-shang-29.m3u8,重复URL
@@ -1569,11 +1587,11 @@ CNA,https://live1.mediadesk.al/cnatvlive.m3u8,重复URL
 å¹¿ä¸œæ–°é—»,https://stream1.freetv.fun/yan-dong-xin-wen-27.ctv,重复URL
 å¹¿ä¸œæ–°é—»,https://stream1.freetv.fun/yan-dong-xin-wen-20.ctv,重复URL
 å¹¿ä¸œæ–°é—»,https://stream1.freetv.fun/yan-dong-xin-wen-25.ctv,重复URL
-å¹¿ä¸œæ–°é—»,https://stream1.freetv.fun/yan-dong-xin-wen-21.ctv,重复URL
 å¹¿ä¸œæ–°é—»,https://stream1.freetv.fun/yan-dong-xin-wen-9.ctv,重复URL
 å¹¿ä¸œæ–°é—»,https://stream1.freetv.fun/yan-dong-xin-wen-14.ctv,重复URL
 å¹¿ä¸œæ–°é—»,https://stream1.freetv.fun/yan-dong-xin-wen-12.ctv,重复URL
 å¹¿ä¸œæ–°é—»,https://stream1.freetv.fun/yan-dong-xin-wen-24.ctv,重复URL
+å¹¿ä¸œæ–°é—»,https://stream1.freetv.fun/yan-dong-xin-wen-25.m3u8,重复URL
 å¹¿ä¸œæ°‘ç”Ÿ,https://stream1.freetv.fun/yan-dong-min-sheng-24.ctv,重复URL
 å¹¿ä¸œæ°‘ç”Ÿ,https://stream1.freetv.fun/yan-dong-min-sheng-36.ctv,重复URL
 å¹¿ä¸œæ°‘ç”Ÿ,https://stream1.freetv.fun/yan-dong-min-sheng-18.ctv,重复URL
@@ -1863,6 +1881,7 @@ CNA,https://live1.mediadesk.al/cnatvlive.m3u8,重复URL
 å±±ä¸œä½“è‚²,https://stream1.freetv.fun/shan-dong-ti-yu-8.m3u8,重复URL
 å±±ä¸œä½“è‚²,https://stream1.freetv.fun/shan-dong-ti-yu-5.m3u8,重复URL
 å±±ä¸œæ–‡æ—…,http://58.57.40.22:9901/tsfile/live/1023_1.m3u8,重复URL
+å±±ä¸œæ–‡æ—…,http://221.2.148.205:8154/tsfile/live/1004_1.m3u8?key=txiptv&playlive=1&authid=0,重复URL
 æµå—ç»¼åˆ,https://stream1.freetv.fun/ji-nan-zong-he-3.m3u8,重复URL
 æµå—ç»¼åˆ,https://stream1.freetv.fun/ji-nan-zong-he-1.m3u8,重复URL
 æµå—æ–°é—»ç»¼åˆ,https://stream1.freetv.fun/ji-nan-xin-wen-zong-he-7.m3u8,重复URL
@@ -2013,6 +2032,7 @@ CNA,https://live1.mediadesk.al/cnatvlive.m3u8,重复URL
 é•¿å­ç»¼åˆ,https://83awgyp5.live.sxmty.com/live/hls/6f6f4b36f9bd42628b718b595ba507ed/724b7e8907a8414d873eb2a2f69bfa18.m3u8?zshanxd,重复URL
 é•¿å­ç»¼åˆ,https://www.wxhcgbds.com:8081/channelTv/WXTV_1.m3u8?zshanxd,重复URL
 é•¿æ²»å…¬å…±,http://live.njgdmm.com/changzhi/cztv2.m3u8,重复URL
+é»åŸç»¼åˆ,http://111.53.96.67:8081/live/1/index.m3u8,重复URL
 é»åŸç»¼åˆ,http://111.53.96.67:8081/live/1/index.m3u8?%E5%85%B3%E6%B3%A8%E5%BE%AE%E4%BF%A1%E5%85%AC%E4%BC%97%E5%8F%B7[%E6%99%B4%E5%9B%AD],重复URL
 å±è¾¹ç»¼åˆ,http://live.ynurl.com/video/s10040-pbzh/index.m3u8?zyund,重复URL
 å³¨å±±ç”µè§†,http://live.ynurl.com/video/s10034-ESTV/index.m3u8,重复URL
@@ -2066,13 +2086,15 @@ CNA,https://live1.mediadesk.al/cnatvlive.m3u8,重复URL
 ä¸‡å·ç»¼åˆ,http://live.xmcdn.com/live/1678/64.m3u8,重复URL
 æ±Ÿæ´¥æ–°é—»ç»¼åˆ,http://222.179.155.21:1935/ch1.m3u8?zzhongqd,重复URL
 æ½¼å—ç»¼åˆ,http://183.230.184.51:65500/tntv1.m3u8,重复URL
-ç’§å±±ç»¼åˆ,http://222.179.42.129:8181/hls1.m3u8?zzhongqd,重复URL
 è£æ˜Œç»¼åˆ,http://183.64.181.25:40023/rongchang01.m3u8,重复URL
 é‡åº†æ±½æ‘©,http://120.76.248.139/live/bfgd/4200000168.m3u8,重复URL
 é‡åº†æ±½æ‘©,http://183.230.184.51:65500/tntv1.m3u8?zzhongqd,重复URL
+é‡åº†æ±½æ‘©,http://183.64.181.25:40023/rongchang01.m3u8?%E5%85%B3%E6%B3%A8%E5%BE%AE%E4%BF%A1%E5%85%AC%E4%BC%97%E5%8F%B7[%E6%99%B4%E5%9B%AD],重复URL
 é‡åº†æ±½æ‘©,http://222.179.155.21:1935/ch1.m3u8,重复URL
 é‡åº†æ±½æ‘©,http://222.179.155.21:1935/ch1.m3u8?%E5%85%B3%E6%B3%A8%E5%BE%AE%E4%BF%A1%E5%85%AC%E4%BC%97%E5%8F%B7[%E6%99%B4%E5%9B%AD],重复URL
 é‡åº†æ±½æ‘©,rtsp://123.147.112.17:8089/04000001/01000000004000000000000000000371?AuthInfo=xxx&userid=gf001&userid=gf001,重复URL
+é“œæ¢ç»¼åˆ,http://183.64.174.171:40123/ch1.m3u8,重复URL
+é“œæ¢ç»¼åˆ,http://183.64.174.171:40123/ch1.m3u8?zzhongqd,重复URL
 ä¸‰æ˜æ–°é—»ç»¼åˆ,http://ls.qingting.fm/live/4885.m3u8,重复URL
 ä¸‰æ˜æ–°é—»ç»¼åˆ,https://ls.qingting.fm/live/5022100/64k.m3u8,重复URL
 äº‘éœ„ç»¼åˆ,http://live.zzyxxw.com:85/live/xwzh.m3u8,重复URL
@@ -2198,7 +2220,7 @@ CNA,https://live1.mediadesk.al/cnatvlive.m3u8,重复URL
 æ²³å—éƒ½å¸‚,https://migu.188766.xyz/?migutoken=d8baa9c6f8f07f20ac65a02d15b59731&id=%E9%83%BD%E5%B8%82%E9%A2%91%E9%81%93&type=yy,重复URL
 æ²³å—éƒ½å¸‚,https://stream1.freetv.fun/he-nan-du-shi-1.ctv,重复URL
 ä¸ƒå°æ²³æ–°é—»ç»¼åˆ,http://live.qthnews.org.cn:1935/live/live1/800k/tzwj_video.m3u8,重复URL
-å“ˆå°”æ»¨å¨±ä¹,http://stream.hrbtv.net/ylpd/sd/live.m3u8,重复URL
+å“ˆå°”æ»¨å¨±ä¹,http://stream.hrbtv.net/ylpd/sd/live.m3u8?zheild,重复URL
 å“ˆå°”æ»¨å½±è§†,http://111.43.126.240:9003/hls/5/index.m3u8,重复URL
 å“ˆå°”æ»¨å½±è§†,http://stream.hrbtv.net/yspd/sd/live.m3u8,重复URL
 å“ˆå°”æ»¨å½±è§†,http://stream.hrbtv.net/yspd/sd/live.m3u8?zheild,重复URL
@@ -2336,20 +2358,20 @@ CNA,https://live1.mediadesk.al/cnatvlive.m3u8,重复URL
 å¥å±¯å“ˆè¨å…‹è¯­,http://218.84.12.186:8002/hls/main/playlist.m3u8,重复URL
 å¥å±¯å“ˆè¨å…‹è¯­,http://218.84.12.186:8002/hls/main/playlist.m3u8?zxinjd,重复URL
 ç›çº³æ–¯ç»¼åˆ,http://218.84.127.245:1026/hls/main1/playlist.m3u8,重复URL
+ç›çº³æ–¯ç»¼åˆ,http://218.84.127.245:1026/hls/main1/playlist.m3u8?zxinjd,重复URL
 ä¸Šæµ·ç¬¬ä¸€è´¢ç»å¹¿æ’­,https://satellitepull.cnr.cn/live/wx32dycjgb/playlist.m3u8,重复URL
 [BD]3说电影,https://stream1.freetv.fun/3shuo-dian-ying-1.ctv,重复URL
-[HD]3030相声小品,https://stream1.freetv.fun/3030xiang-sheng-xiao-pin-1.ctv,重复URL
+[SD]3030相声小品,https://stream1.freetv.fun/3030xiang-sheng-xiao-pin-1.ctv,重复URL
 [BD]b站王者荣耀,https://stream1.freetv.fun/bzhan-wang-zhe-rong-yao-1.ctv,重复URL
-[BD]afn *sm,https://stream1.freetv.fun/afn--sm-1.ctv,重复URL
-[BD]amc電影,https://stream1.freetv.fun/amcdian-ying-5.ctv,重复URL
-[BD]amc電影[geo-blocked],https://stream1.freetv.fun/amcdian-ying-4.ctv,重复URL
+[BD]amc電影[geo-blocked],https://stream1.freetv.fun/amcdian-ying-5.ctv,重复URL
+[BD]amc電影,https://stream1.freetv.fun/amcdian-ying-4.ctv,重复URL
 [BD]amc電影[geo-blocked],https://stream1.freetv.fun/amcdian-ying-3.ctv,重复URL
 [BD]amc電影,https://stream1.freetv.fun/amcdian-ying-2.m3u8,重复URL
 [BD]amc電影,https://stream1.freetv.fun/amcdian-ying-1.m3u8,重复URL
-[BD]amc電影,https://stream1.freetv.fun/amcdian-ying-6.m3u8,重复URL
+[BD]amc電影[geo-blocked],https://stream1.freetv.fun/amcdian-ying-6.m3u8,重复URL
 [BD]amc電影台 *4g,https://stream1.freetv.fun/amcdian-ying-tai---4g-1.m3u8,重复URL
 [BD]bbc earth,https://stream1.freetv.fun/bbc-earth-12.m3u8,重复URL
-[BD]bbc earth[geo-blocked],https://stream1.freetv.fun/bbc-earth-3.ctv,重复URL
+[HD]bbc earth,https://stream1.freetv.fun/bbc-earth-3.ctv,重复URL
 [BD]ช่อง bbc earth,https://stream1.freetv.fun/ch-ng-bbc-earth-1.m3u8,重复URL
 [BD]bbc earth us,https://stream1.freetv.fun/bbc-earth-us-1.m3u8,重复URL
 [BD]唐河一套,https://stream1.freetv.fun/tang-he-yi-tao-1.m3u8,重复URL
@@ -2370,7 +2392,7 @@ CNA,https://live1.mediadesk.al/cnatvlive.m3u8,重复URL
 [VGA]light channel,https://stream1.freetv.fun/light-channel-5.m3u8,重复URL
 [BD]pursuit channel,https://stream1.freetv.fun/pursuit-channel-2.m3u8,重复URL
 [BD]bike channel,https://stream1.freetv.fun/bike-channel-1.m3u8,重复URL
-[BD]chc动作电影,https://stream1.freetv.fun/chcdong-zuo-dian-ying-16.m3u8,重复URL
+[BD]chc动作电影[geo-blocked],https://stream1.freetv.fun/chcdong-zuo-dian-ying-16.m3u8,重复URL
 [BD]chc动作电影,https://stream1.freetv.fun/chcdong-zuo-dian-ying-14.m3u8,重复URL
 [BD]chc家庭影院[geo-blocked],https://stream1.freetv.fun/chcjia-ting-ying-yuan-9.ctv,重复URL
 [BD]chc家庭影院[geo-blocked],https://stream1.freetv.fun/chcjia-ting-ying-yuan-11.ctv,重复URL
@@ -2379,12 +2401,11 @@ CNA,https://live1.mediadesk.al/cnatvlive.m3u8,重复URL
 [BD]chc家庭影院[geo-blocked],https://stream1.freetv.fun/chcjia-ting-ying-yuan-13.m3u8,重复URL
 [BD]ci罪案偵查,https://stream1.freetv.fun/cizui-an-zhen-cha-2.m3u8,重复URL
 [BD]ci罪案偵查,https://stream1.freetv.fun/cizui-an-zhen-cha-3.m3u8,重复URL
-[BD]ci罪案偵查,https://stream1.freetv.fun/cizui-an-zhen-cha-4.m3u8,重复URL
 [BD]ci罪案偵查  *4g,https://stream1.freetv.fun/cizui-an-zhen-cha---4g-1.m3u8,重复URL
 [HD]qmusic,https://stream1.freetv.fun/qmusic-2.m3u8,重复URL
-[BD]dazn 1,https://stream1.freetv.fun/dazn-1-5.ctv,重复URL
+[BD]dazn 1[geo-blocked],https://stream1.freetv.fun/dazn-1-5.ctv,重复URL
 [HD]dazn1[geo-blocked],rtmp://f13h.mine.nu/sat/tv731,无效URL（非 http/https/rtsp 开头）
-[BD]dazn 1[geo-blocked],https://stream1.freetv.fun/dazn-1-2.ctv,重复URL
+[BD]dazn 1,https://stream1.freetv.fun/dazn-1-2.ctv,重复URL
 [BD]dazn 1[geo-blocked],https://stream1.freetv.fun/dazn-1-1.ctv,重复URL
 [HD]dazn ringside,https://stream1.freetv.fun/dazn-ringside-2.m3u8,重复URL
 [HD]dazn 2[geo-blocked],rtmp://f13h.mine.nu/sat/tv741,无效URL（非 http/https/rtsp 开头）
@@ -2394,58 +2415,57 @@ CNA,https://live1.mediadesk.al/cnatvlive.m3u8,重复URL
 [BD]discovery world tamil,https://stream1.freetv.fun/discovery-world-tamil-1.ctv,重复URL
 [HD]discovery(tw) *s[geo-blocked],https://stream1.freetv.fun/discovery--s-1.m3u8,重复URL
 [HD]asharq discovery,https://stream1.freetv.fun/asharq-discovery-4.m3u8,重复URL
-[BD]discovery[geo-blocked],https://stream1.freetv.fun/discovery-5.ctv,重复URL
+[BD]discovery,https://stream1.freetv.fun/discovery-5.ctv,重复URL
 [BD]dreamworks,https://stream1.freetv.fun/dreamworks-5.m3u8,重复URL
 [BD]dreamworks,https://stream1.freetv.fun/dreamworks-1.m3u8,重复URL
+[BD]dreamworks *sm,https://stream1.freetv.fun/dreamworks--sm-1.ctv,重复URL
 [BD]dreamworks *4g,https://stream1.freetv.fun/dreamworks--4g-1.m3u8,重复URL
 [BD]dreamworks,https://stream1.freetv.fun/dreamworks-3.ctv,重复URL
-[BD]elta娛樂,https://stream1.freetv.fun/eltayu-le-3.m3u8,重复URL
-[BD]elta娛樂[geo-blocked],https://stream1.freetv.fun/eltayu-le-4.m3u8,重复URL
+[BD]elta娛樂[geo-blocked],https://stream1.freetv.fun/eltayu-le-3.m3u8,重复URL
+[BD]elta娛樂,https://stream1.freetv.fun/eltayu-le-4.m3u8,重复URL
 [BD]elta娛樂,https://stream1.freetv.fun/eltayu-le-5.m3u8,重复URL
 [BD]elta娛樂,https://stream1.freetv.fun/eltayu-le-6.m3u8,重复URL
-[BD]elta娛樂,https://stream1.freetv.fun/eltayu-le-7.m3u8,重复URL
 [BD]elta娛樂 *4g,https://stream1.freetv.fun/eltayu-le---4g-1.m3u8,重复URL
-[BD]elta娛樂 *4g,https://stream1.freetv.fun/eltayu-le---4g-2.m3u8,重复URL
+[BD]elta娛樂 *4g[geo-blocked],https://stream1.freetv.fun/eltayu-le---4g-2.m3u8,重复URL
 [BD]elta生活旅遊,https://stream1.freetv.fun/eltasheng-huo-lu-you-2.m3u8,重复URL
 [BD]elta生活旅遊,https://stream1.freetv.fun/eltasheng-huo-lu-you-3.m3u8,重复URL
 [BD]elta生活旅遊 *4g,https://stream1.freetv.fun/eltasheng-huo-lu-you---4g-1.m3u8,重复URL
+[SD]elta爱尔达体育2 *sm,https://stream1.freetv.fun/eltaai-er-da-ti-yu-2--sm-1.ctv,重复URL
+[SD]elta爱尔达体育3 *sm,https://stream1.freetv.fun/eltaai-er-da-ti-yu-3--sm-1.ctv,重复URL
 [BD]cctv-4k[geo-blocked],https://stream1.freetv.fun/cctv-4k-1.ctv,重复URL
 [HD]delta tv,https://stream1.freetv.fun/delta-tv-3.m3u8,重复URL
 [HD]delta tv,https://stream1.freetv.fun/delta-tv-2.m3u8,重复URL
-[BD]eltv生活英語[geo-blocked],https://stream1.freetv.fun/eltvsheng-huo-ying-yu-3.m3u8,重复URL
 [BD]eltv生活英語,https://stream1.freetv.fun/eltvsheng-huo-ying-yu-5.m3u8,重复URL
 [BD]eltv生活英語,https://stream1.freetv.fun/eltvsheng-huo-ying-yu-6.m3u8,重复URL
 [BD]eltv生活英語[geo-blocked],https://stream1.freetv.fun/eltvsheng-huo-ying-yu-7.m3u8,重复URL
 [BD]eltv生活英語,https://stream1.freetv.fun/eltvsheng-huo-ying-yu-8.m3u8,重复URL
 [BD]eltv生活英語[geo-blocked],https://stream1.freetv.fun/eltvsheng-huo-ying-yu-9.m3u8,重复URL
 [BD]eltv生活英語,https://stream1.freetv.fun/eltvsheng-huo-ying-yu-10.m3u8,重复URL
-[BD]eltv生活英語[geo-blocked],https://stream1.freetv.fun/eltvsheng-huo-ying-yu-12.m3u8,重复URL
 [BD]eltv生活英語台 *4g,https://stream1.freetv.fun/eltvsheng-huo-ying-yu-tai---4g-1.m3u8,重复URL
 [BD]eltv生活英語台 *4g,https://stream1.freetv.fun/eltvsheng-huo-ying-yu-tai---4g-2.m3u8,重复URL
 [BD]eltv生活英語台 *4g[geo-blocked],https://stream1.freetv.fun/eltvsheng-huo-ying-yu-tai---4g-3.m3u8,重复URL
-[BD]eyetv 戏剧 *sm,https://stream1.freetv.fun/eyetvxi-ju---sm-1.ctv,重复URL
-[SD]eyetv 旅游 *sm,https://stream1.freetv.fun/eyetvlu-you---sm-1.ctv,重复URL
+[HD]eyetv 戏剧 *sm[geo-blocked],https://stream1.freetv.fun/eyetvxi-ju---sm-1.ctv,重复URL
+[HD]eyetv 旅游 *sm,https://stream1.freetv.fun/eyetvlu-you---sm-1.ctv,重复URL
 [BD]fun探索娛樂,https://stream1.freetv.fun/funtan-suo-yu-le-2.m3u8,重复URL
 [BD]fun探索娛樂,https://stream1.freetv.fun/funtan-suo-yu-le-3.m3u8,重复URL
-[BD]fun探索娛樂,https://stream1.freetv.fun/funtan-suo-yu-le-4.m3u8,重复URL
 [BD]fun探索娛樂 *4g,https://stream1.freetv.fun/funtan-suo-yu-le---4g-1.m3u8,重复URL
 [HD]food network,https://stream1.freetv.fun/food-network-8.m3u8,重复URL
 [BD]food network[geo-blocked],https://stream1.freetv.fun/food-network-4.m3u8,重复URL
 [HD]food network(tw) *s[geo-blocked],https://stream1.freetv.fun/food-network--s-1.m3u8,重复URL
 [HD]ช่อง food network,https://stream1.freetv.fun/ch-ng-food-network-3.m3u8,重复URL
 [SD]food network *m[geo-blocked],https://stream1.freetv.fun/food-network--m-1.ctv,重复URL
-[BD]foodnetwork,https://stream1.freetv.fun/foodnetwork-3.ctv,重复URL
 [BD]food network *sm,https://stream1.freetv.fun/food-network--sm-1.ctv,重复URL
 [VGA]Global Treckker *a,https://stream1.freetv.fun/global-treckker--a-1.m3u8,重复URL
 [BD]global trekker,https://stream1.freetv.fun/global-trekker-2.m3u8,重复URL
 [BD]global trekker,https://stream1.freetv.fun/global-trekker-3.m3u8,重复URL
 [BD]global trekker *4g,https://stream1.freetv.fun/global-trekker--4g-1.m3u8,重复URL
+[BD]hbo asia *sm,https://stream1.freetv.fun/hbo-asia--sm-1.ctv,重复URL
 [HD]hgtv,https://stream1.freetv.fun/hgtv-5.ctv,重复URL
 [HD]ช่อง hgtv,https://stream1.freetv.fun/ch-ng-hgtv-1.m3u8,重复URL
-[BD]hgtv *sm,https://stream1.freetv.fun/hgtv--sm-1.ctv,重复URL
+[HD]hgtv *sm,https://stream1.freetv.fun/hgtv--sm-1.ctv,重复URL
 [HD]mix hollywood,https://stream1.freetv.fun/mix-hollywood-1.m3u8,重复URL
+[BD]hollywood movies *sm,https://stream1.freetv.fun/hollywood-movies--sm-1.ctv,重复URL
 [HD]lifetime east,https://stream1.freetv.fun/lifetime-east-2.m3u8,重复URL
-[BD]lifetime,https://stream1.freetv.fun/lifetime-16.m3u8,重复URL
 [BD]lifetime[geo-blocked],https://stream1.freetv.fun/lifetime-15.m3u8,重复URL
 [HD]ช่อง lifetime,https://stream1.freetv.fun/ch-ng-lifetime-2.m3u8,重复URL
 [SD]lifetime(tw)---,https://stream1.freetv.fun/lifetime-4.ctv,重复URL
@@ -2457,10 +2477,9 @@ CNA,https://live1.mediadesk.al/cnatvlive.m3u8,重复URL
 [BD]love nature,https://stream1.freetv.fun/love-nature-27.m3u8,重复URL
 [BD]love nature[geo-blocked],https://stream1.freetv.fun/love-nature-12.m3u8,重复URL
 [BD]love nature,https://stream1.freetv.fun/love-nature-21.m3u8,重复URL
-[VGA]Love Nature *a[geo-blocked],https://stream1.freetv.fun/love-nature--a-1.m3u8,重复URL
+[VGA]Love Nature *a,https://stream1.freetv.fun/love-nature--a-1.m3u8,重复URL
 [BD]love nature,https://stream1.freetv.fun/love-nature-29.m3u8,重复URL
 [BD]love nature *4g,https://stream1.freetv.fun/love-nature--4g-1.m3u8,重复URL
-[BD]love nature,https://stream1.freetv.fun/love-nature-1.m3u8,重复URL
 [BD]love nature,https://stream1.freetv.fun/love-nature-6.m3u8,重复URL
 [HD]mezzo live[geo-blocked],https://stream1.freetv.fun/mezzo-live-5.m3u8,重复URL
 [HD]mezzo live,https://stream1.freetv.fun/mezzo-live-1.m3u8,重复URL
@@ -2468,7 +2487,7 @@ CNA,https://live1.mediadesk.al/cnatvlive.m3u8,重复URL
 [HD]mezzo live,https://stream1.freetv.fun/mezzo-live-7.m3u8,重复URL
 [HD]mezzo live,https://stream1.freetv.fun/mezzo-live-2.m3u8,重复URL
 [BD]mezzo live *4g,https://stream1.freetv.fun/mezzo-live--4g-1.m3u8,重复URL
-[BD]momo綜合,https://stream1.freetv.fun/momozong-he-5.ctv,重复URL
+[BD]momo綜合[geo-blocked],https://stream1.freetv.fun/momozong-he-5.ctv,重复URL
 [HD]momo综合[geo-blocked],rtmp://f13h.mine.nu/sat/tv761,无效URL（非 http/https/rtsp 开头）
 [BD]momo綜合[geo-blocked],https://stream1.freetv.fun/momozong-he-3.ctv,重复URL
 [BD]momo綜合,https://stream1.freetv.fun/momozong-he-4.ctv,重复URL
@@ -2483,49 +2502,48 @@ CNA,https://live1.mediadesk.al/cnatvlive.m3u8,重复URL
 [BD]pet club tv,https://stream1.freetv.fun/pet-club-tv-2.m3u8,重复URL
 [BD]rock entertainment,https://stream1.freetv.fun/rock-entertainment-6.m3u8,重复URL
 [BD]rock entertainment,https://stream1.freetv.fun/rock-entertainment-1.m3u8,重复URL
+[BD]rock entertainment *sm,https://stream1.freetv.fun/rock-entertainment--sm-1.ctv,重复URL
 [BD]rock entertainment *4g,https://stream1.freetv.fun/rock-entertainment--4g-1.m3u8,重复URL
 [BD]rock entertainment,https://stream1.freetv.fun/rock-entertainment-3.ctv,重复URL
 [BD]sbn全球財經,https://stream1.freetv.fun/sbnquan-qiu-cai-jing-2.m3u8,重复URL
 [BD]sbn全球財經,https://stream1.freetv.fun/sbnquan-qiu-cai-jing-3.m3u8,重复URL
+[BD]sbn全球財經台 *4g,https://stream1.freetv.fun/sbnquan-qiu-cai-jing-tai---4g-1.m3u8,重复URL
 [BD]smart知識,https://stream1.freetv.fun/smartzhi-shi-3.m3u8,重复URL
 [BD]smart知識[geo-blocked],https://stream1.freetv.fun/smartzhi-shi-4.m3u8,重复URL
 [BD]smart知識,https://stream1.freetv.fun/smartzhi-shi-5.m3u8,重复URL
 [BD]smart知識[geo-blocked],https://stream1.freetv.fun/smartzhi-shi-6.m3u8,重复URL
-[BD]smart知識[geo-blocked],https://stream1.freetv.fun/smartzhi-shi-7.m3u8,重复URL
 [HD]smithsonian channel east,https://stream1.freetv.fun/smithsonian-channel-east-1.m3u8,重复URL
-[SD]smithsonian channel ==[geo-blocked],https://stream1.freetv.fun/smithsonian-channel-2.ctv,重复URL
-[SD]smithsonian channel selects,https://stream1.freetv.fun/smithsonian-channel-selects-1.m3u8,重复URL
+[SD]smithsonian channel ==,https://stream1.freetv.fun/smithsonian-channel-2.ctv,重复URL
+[HD]smithsonian channel selects,https://stream1.freetv.fun/smithsonian-channel-selects-1.m3u8,重复URL
 [SD]smithsonian channel selects,https://stream1.freetv.fun/smithsonian-channel-selects-2.m3u8,重复URL
 [HD]gold star,https://stream1.freetv.fun/gold-star-1.m3u8,重复URL
 [BD]star movies select,https://stream1.freetv.fun/star-movies-select-1.ctv,重复URL
 [BD]tlc旅遊生活,https://stream1.freetv.fun/tlclu-you-sheng-huo-3.ctv,重复URL
 [BD]tvbs-asia,https://stream1.freetv.fun/tvbs-asia-8.m3u8,重复URL
 [SD]tvb asia,https://stream1.freetv.fun/tvb-asia-1.ctv,重复URL
-[BD]tvbs,https://stream1.freetv.fun/tvbs-9.ctv,重复URL
+[SD]tvb asia *sm,https://stream1.freetv.fun/tvb-asia--sm-1.ctv,重复URL
 [BD]tvbs,https://stream1.freetv.fun/tvbs-1.ctv,重复URL
-[BD]tvbs,https://stream1.freetv.fun/tvbs-6.m3u8,重复URL
 [BD]tvbs,https://stream1.freetv.fun/tvbs-10.m3u8,重复URL
 [BD]tvbs,https://stream1.freetv.fun/tvbs-7.m3u8,重复URL
 [BD]tvbs台劇,https://stream1.freetv.fun/tvbstai-ju-2.m3u8,重复URL
 [BD]tvbs,https://stream1.freetv.fun/tvbs-3.m3u8,重复URL
 [BD]tvbs,https://stream1.freetv.fun/tvbs-8.m3u8,重复URL
 [BD]tvbs台劇,https://stream1.freetv.fun/tvbstai-ju-3.m3u8,重复URL
-[BD]tvbs,https://stream1.freetv.fun/tvbs-2.m3u8,重复URL
 [BD]tvbs *sm,https://stream1.freetv.fun/tvbs--sm-1.ctv,重复URL
 [BD]tvbs *4g,https://stream1.freetv.fun/tvbs--4g-1.m3u8,重复URL
 [BD]tvbs *4g,https://stream1.freetv.fun/tvbs--4g-2.m3u8,重复URL
 [BD]tvbs,https://stream1.freetv.fun/tvbs-5.ctv,重复URL
-[BD]tvbs,https://stream1.freetv.fun/tvbs-4.m3u8,重复URL
+[BD]tvbs,https://stream1.freetv.fun/tvbs-9.ctv,重复URL
 [BD]tvbs新聞,https://stream1.freetv.fun/tvbsxin-wen-4.m3u8,重复URL
 [BD]tvbs新聞,https://stream1.freetv.fun/tvbsxin-wen-7.m3u8,重复URL
-[BD]tvbs新闻 *sm,https://stream1.freetv.fun/tvbsxin-wen---sm-1.ctv,重复URL
+[HD]tvbs新闻 *sm,https://stream1.freetv.fun/tvbsxin-wen---sm-1.ctv,重复URL
 [SD]tvbs新聞台 *4g,https://stream1.freetv.fun/tvbsxin-wen-tai---4g-1.m3u8,重复URL
 [BD]tvbs新聞[geo-blocked],https://stream1.freetv.fun/tvbsxin-wen-3.ctv,重复URL
-[BD]tvbs新聞[geo-blocked],https://stream1.freetv.fun/tvbsxin-wen-6.ctv,重复URL
+[BD]tvbs新聞,https://stream1.freetv.fun/tvbsxin-wen-6.ctv,重复URL
 [HD]tvbs新闻,https://stream1.freetv.fun/tvbsxin-wen-8.ctv,重复URL
-[BD]tvbs歡樂[geo-blocked],https://stream1.freetv.fun/tvbshuan-le-7.ctv,重复URL
-[BD]tvbs歡樂[geo-blocked],https://stream1.freetv.fun/tvbshuan-le-9.m3u8,重复URL
-[BD]tvbs歡樂,https://stream1.freetv.fun/tvbshuan-le-3.ctv,重复URL
+[BD]tvbs歡樂,https://stream1.freetv.fun/tvbshuan-le-7.ctv,重复URL
+[BD]tvbs歡樂,https://stream1.freetv.fun/tvbshuan-le-9.m3u8,重复URL
+[BD]tvbs歡樂[geo-blocked],https://stream1.freetv.fun/tvbshuan-le-3.ctv,重复URL
 [BD]tvbs歡樂,https://stream1.freetv.fun/tvbshuan-le-5.m3u8,重复URL
 [BD]tvbs歡樂,https://stream1.freetv.fun/tvbshuan-le-4.m3u8,重复URL
 [BD]tvbs歡樂,https://stream1.freetv.fun/tvbshuan-le-2.m3u8,重复URL
@@ -2533,8 +2551,7 @@ CNA,https://live1.mediadesk.al/cnatvlive.m3u8,重复URL
 [BD]tvbs 欢乐 *sm,https://stream1.freetv.fun/tvbshuan-le---sm-1.ctv,重复URL
 [BD]tvbs歡樂台 *4g,https://stream1.freetv.fun/tvbshuan-le-tai---4g-1.m3u8,重复URL
 [BD]tvbs歡樂台 *4g,https://stream1.freetv.fun/tvbshuan-le-tai---4g-2.m3u8,重复URL
-[BD]tvbs欢乐,https://stream1.freetv.fun/tvbshuan-le-1.ctv,重复URL
-[BD]tvbs精采,https://stream1.freetv.fun/tvbsjing-cai-7.m3u8,重复URL
+[BD]tvbs欢乐[geo-blocked],https://stream1.freetv.fun/tvbshuan-le-1.ctv,重复URL
 [BD]tvbs精采,https://stream1.freetv.fun/tvbsjing-cai-2.m3u8,重复URL
 [BD]tvbs精采,https://stream1.freetv.fun/tvbsjing-cai-1.m3u8,重复URL
 [BD]tvbs精采,https://stream1.freetv.fun/tvbsjing-cai-4.m3u8,重复URL
@@ -2558,34 +2575,32 @@ CNA,https://live1.mediadesk.al/cnatvlive.m3u8,重复URL
 [HD]三沙卫视,https://stream1.freetv.fun/san-sha-wei-shi-25.m3u8,重复URL
 [SD]三沙卫视,https://stream1.freetv.fun/san-sha-wei-shi-38.m3u8,重复URL
 [HD]三沙卫视,https://stream1.freetv.fun/san-sha-wei-shi-43.m3u8,重复URL
-[BD]三立inews,https://stream1.freetv.fun/san-li-inews-4.m3u8,重复URL
+[BD]三立inews[geo-blocked],https://stream1.freetv.fun/san-li-inews-4.m3u8,重复URL
 [BD]三立inews[geo-blocked],https://stream1.freetv.fun/san-li-inews-2.m3u8,重复URL
 [BD]三立inews,https://stream1.freetv.fun/san-li-inews-5.m3u8,重复URL
 [BD]三立inews[geo-blocked],https://stream1.freetv.fun/san-li-inews-6.m3u8,重复URL
-[BD]三立inews,https://stream1.freetv.fun/san-li-inews-7.m3u8,重复URL
-[BD]三立inews[geo-blocked],https://stream1.freetv.fun/san-li-inews-8.m3u8,重复URL
+[BD]三立inews[geo-blocked],https://stream1.freetv.fun/san-li-inews-7.m3u8,重复URL
 [BD]三立inews *4g,https://stream1.freetv.fun/san-li-inews--4g-1.m3u8,重复URL
 [BD]三立inews *4g[geo-blocked],https://stream1.freetv.fun/san-li-inews--4g-2.m3u8,重复URL
-[BD]三立戏剧,https://stream1.freetv.fun/san-li-xi-ju-3.ctv,重复URL
-[BD]三立戏剧 *sm,https://stream1.freetv.fun/san-li-xi-ju---sm-1.ctv,重复URL
+[BD]三立戏剧[geo-blocked],https://stream1.freetv.fun/san-li-xi-ju-3.ctv,重复URL
+[BD]三立戏剧 *sm[geo-blocked],https://stream1.freetv.fun/san-li-xi-ju---sm-1.ctv,重复URL
 [BD]三立新聞,https://stream1.freetv.fun/san-li-xin-wen-3.ctv,重复URL
-[BD]三立新聞[geo-blocked],https://stream1.freetv.fun/san-li-xin-wen-6.ctv,重复URL
+[BD]三立新聞,https://stream1.freetv.fun/san-li-xin-wen-6.ctv,重复URL
 [BD]三立新聞[geo-blocked],https://stream1.freetv.fun/san-li-xin-wen-5.ctv,重复URL
-[BD]三立綜合合,https://stream1.freetv.fun/san-li-zong-he-he-3.m3u8,重复URL
+[BD]三立綜合合[geo-blocked],https://stream1.freetv.fun/san-li-zong-he-he-3.m3u8,重复URL
 [BD]三立綜合合,https://stream1.freetv.fun/san-li-zong-he-he-4.m3u8,重复URL
-[BD]三立综合 *sm,https://stream1.freetv.fun/san-li-zong-he---sm-1.ctv,重复URL
 [BD]三立綜合合 *4g,https://stream1.freetv.fun/san-li-zong-he-he---4g-1.m3u8,重复URL
 [BD]三立综合[geo-blocked],https://stream1.freetv.fun/san-li-zong-he-1.ctv,重复URL
 [BD]三立台湾[geo-blocked],https://stream1.freetv.fun/san-li-tai-wan-4.ctv,重复URL
 [BD]三立台湾,https://stream1.freetv.fun/san-li-tai-wan-1.ctv,重复URL
-[BD]三立台灣,https://stream1.freetv.fun/san-li-tai-wan-3.ctv,重复URL
+[BD]三立台灣[geo-blocked],https://stream1.freetv.fun/san-li-tai-wan-3.ctv,重复URL
 [BD]三立台灣[geo-blocked],https://stream1.freetv.fun/san-li-tai-wan-7.ctv,重复URL
 [BD]三立台湾 *sm,https://stream1.freetv.fun/san-li-tai-wan---sm-1.ctv,重复URL
 [BD]三立都會,https://stream1.freetv.fun/san-li-du-hui-4.ctv,重复URL
 [BD]三立都會,https://stream1.freetv.fun/san-li-du-hui-2.ctv,重复URL
 [BD]上海新闻综合[geo-blocked],https://stream1.freetv.fun/shang-hai-xin-wen-zong-he-9.ctv,重复URL
 [BD]上海新闻综合[geo-blocked],https://stream1.freetv.fun/shang-hai-xin-wen-zong-he-8.ctv,重复URL
-[BD]上海卫视,https://stream1.freetv.fun/shang-hai-wei-shi-4.m3u8,重复URL
+[BD]上海卫视[geo-blocked],https://stream1.freetv.fun/shang-hai-wei-shi-4.m3u8,重复URL
 [BD]上海都市[geo-blocked],https://stream1.freetv.fun/shang-hai-du-shi-7.ctv,重复URL
 [BD]上海都市[geo-blocked],https://stream1.freetv.fun/shang-hai-du-shi-10.ctv,重复URL
 [BD]上虞文化,https://stream1.freetv.fun/shang-yu-wen-hua-1.m3u8,重复URL
@@ -2597,90 +2612,84 @@ CNA,https://live1.mediadesk.al/cnatvlive.m3u8,重复URL
 [BD]上虞新闻综合,https://stream1.freetv.fun/shang-yu-xin-wen-zong-he-2.m3u8,重复URL
 [BD]中天亞洲台 *4g,https://stream1.freetv.fun/zhong-tian-ya-zhou-tai---4g-1.m3u8,重复URL
 [BD]中天亚洲[geo-blocked],https://stream1.freetv.fun/zhong-tian-ya-zhou-8.ctv,重复URL
-[BD]中天亞洲,https://stream1.freetv.fun/zhong-tian-ya-zhou-1.m3u8,重复URL
 [BD]中天亞洲,https://stream1.freetv.fun/zhong-tian-ya-zhou-2.m3u8,重复URL
 [BD]中天亞洲,https://stream1.freetv.fun/zhong-tian-ya-zhou-10.m3u8,重复URL
-[BD]中天亚洲 *sm,https://stream1.freetv.fun/zhong-tian-ya-zhou---sm-1.ctv,重复URL
+[HD]中天亚洲 *sm[geo-blocked],https://stream1.freetv.fun/zhong-tian-ya-zhou---sm-1.ctv,重复URL
 [BD]中天娱乐[geo-blocked],https://stream1.freetv.fun/zhong-tian-yu-le-2.ctv,重复URL
 [BD]中天娛樂,https://stream1.freetv.fun/zhong-tian-yu-le-6.ctv,重复URL
 [HD]中天娱乐[geo-blocked],https://stream1.freetv.fun/zhong-tian-yu-le-5.m3u8,重复URL
-[BD]中天娛樂,https://stream1.freetv.fun/zhong-tian-yu-le-1.ctv,重复URL
-[BD]中天娛樂[geo-blocked],https://stream1.freetv.fun/zhong-tian-yu-le-4.ctv,重复URL
-[BD]中天娱乐 *sm,https://stream1.freetv.fun/zhong-tian-yu-le---sm-1.ctv,重复URL
-[SD]中天新聞台 *4g,https://stream1.freetv.fun/zhong-tian-xin-wen-tai---4g-3.m3u8,重复URL
-[BD]中天新聞[geo-blocked],https://stream1.freetv.fun/zhong-tian-xin-wen-10.ctv,重复URL
-[BD]中天新聞[geo-blocked],https://stream1.freetv.fun/zhong-tian-xin-wen-8.ctv,重复URL
+[BD]中天娛樂[geo-blocked],https://stream1.freetv.fun/zhong-tian-yu-le-1.ctv,重复URL
+[BD]中天娛樂,https://stream1.freetv.fun/zhong-tian-yu-le-4.ctv,重复URL
+[BD]中天娱乐 *sm[geo-blocked],https://stream1.freetv.fun/zhong-tian-yu-le---sm-1.ctv,重复URL
+[SD]中天新聞台 *4g[geo-blocked],https://stream1.freetv.fun/zhong-tian-xin-wen-tai---4g-3.m3u8,重复URL
+[BD]中天新聞,https://stream1.freetv.fun/zhong-tian-xin-wen-10.ctv,重复URL
+[BD]中天新聞,https://stream1.freetv.fun/zhong-tian-xin-wen-8.ctv,重复URL
 [BD]中天新聞[geo-blocked],https://stream1.freetv.fun/zhong-tian-xin-wen-9.ctv,重复URL
 [HD]中天新聞,https://stream1.freetv.fun/zhong-tian-xin-wen-11.m3u8,重复URL
 [BD]中天新聞,https://stream1.freetv.fun/zhong-tian-xin-wen-12.m3u8,重复URL
 [BD]中天新聞[geo-blocked],https://stream1.freetv.fun/zhong-tian-xin-wen-13.m3u8,重复URL
-[HD]中天新聞,https://stream1.freetv.fun/zhong-tian-xin-wen-14.m3u8,重复URL
 [BD]中天新聞,https://stream1.freetv.fun/zhong-tian-xin-wen-15.m3u8,重复URL
 [BD]中天新聞[geo-blocked],https://stream1.freetv.fun/zhong-tian-xin-wen-16.m3u8,重复URL
-[HD]中天新聞,https://stream1.freetv.fun/zhong-tian-xin-wen-17.m3u8,重复URL
 [BD]中天新聞[geo-blocked],https://stream1.freetv.fun/zhong-tian-xin-wen-18.m3u8,重复URL
-[BD]中天新闻 *sm,https://stream1.freetv.fun/zhong-tian-xin-wen---sm-1.ctv,重复URL
+[HD]中天新闻 *sm,https://stream1.freetv.fun/zhong-tian-xin-wen---sm-1.ctv,重复URL
 [SD]中天新聞台 *4g,https://stream1.freetv.fun/zhong-tian-xin-wen-tai---4g-1.m3u8,重复URL
 [SD]中天新聞台 *4g,https://stream1.freetv.fun/zhong-tian-xin-wen-tai---4g-2.m3u8,重复URL
+[HD]中天新聞,https://stream1.freetv.fun/zhong-tian-xin-wen-14.m3u8,重复URL
 [BD]中天新聞,https://stream1.freetv.fun/zhong-tian-xin-wen-4.ctv,重复URL
 [HD]中天新闻,https://stream1.freetv.fun/zhong-tian-xin-wen-6.ctv,重复URL
 [BD]中天新闻[geo-blocked],https://stream1.freetv.fun/zhong-tian-xin-wen-7.m3u8,重复URL
 [BD]中天综合,https://stream1.freetv.fun/zhong-tian-zong-he-3.ctv,重复URL
 [BD]中天綜合[geo-blocked],https://stream1.freetv.fun/zhong-tian-zong-he-6.ctv,重复URL
-[BD]中天綜合,https://stream1.freetv.fun/zhong-tian-zong-he-2.ctv,重复URL
+[BD]中天綜合[geo-blocked],https://stream1.freetv.fun/zhong-tian-zong-he-2.ctv,重复URL
 [BD]中天综合 *sm,https://stream1.freetv.fun/zhong-tian-zong-he---sm-1.ctv,重复URL
 [BD]中視,https://stream1.freetv.fun/zhong-shi-16.m3u8,重复URL
-[BD]中视[geo-blocked],https://stream1.freetv.fun/zhong-shi-1.ctv,重复URL
+[BD]中视,https://stream1.freetv.fun/zhong-shi-1.ctv,重复URL
 [HD]中视[geo-blocked],rtmp://f13h.mine.nu:1935/sat/tv091,无效URL（非 http/https/rtsp 开头）
 [BD]中視 *4g,https://stream1.freetv.fun/zhong-shi---4g-1.m3u8,重复URL
 [BD]中視 *4g,https://stream1.freetv.fun/zhong-shi---4g-2.m3u8,重复URL
 [BD]中視 *4g[geo-blocked],https://stream1.freetv.fun/zhong-shi---4g-3.m3u8,重复URL
 [HD]中視[geo-blocked],rtmp://f13h.mine.nu/sat/tv091,无效URL（非 http/https/rtsp 开头）
-[BD]中視,https://stream1.freetv.fun/zhong-shi-10.ctv,重复URL
+[BD]中視[geo-blocked],https://stream1.freetv.fun/zhong-shi-10.ctv,重复URL
 [BD]中視[geo-blocked],https://stream1.freetv.fun/zhong-shi-15.ctv,重复URL
-[BD]中視,https://stream1.freetv.fun/zhong-shi-8.m3u8,重复URL
+[BD]中視[geo-blocked],https://stream1.freetv.fun/zhong-shi-8.m3u8,重复URL
 [BD]中視[geo-blocked],https://stream1.freetv.fun/zhong-shi-2.m3u8,重复URL
 [BD]中視,https://stream1.freetv.fun/zhong-shi-7.m3u8,重复URL
 [BD]中視,https://stream1.freetv.fun/zhong-shi-11.m3u8,重复URL
 [BD]中視[geo-blocked],https://stream1.freetv.fun/zhong-shi-12.m3u8,重复URL
-[BD]中視[geo-blocked],https://stream1.freetv.fun/zhong-shi-14.m3u8,重复URL
 [BD]中视 *sm,https://stream1.freetv.fun/zhong-shi---sm-1.ctv,重复URL
 [BD]中视新闻[geo-blocked],https://stream1.freetv.fun/zhong-shi-xin-wen-5.ctv,重复URL
-[SD]中視新聞台 *4g,https://stream1.freetv.fun/zhong-shi-xin-wen-tai---4g-1.m3u8,重复URL
+[SD]中視新聞台 *4g[geo-blocked],https://stream1.freetv.fun/zhong-shi-xin-wen-tai---4g-1.m3u8,重复URL
 [BD]中視新聞[geo-blocked],https://stream1.freetv.fun/zhong-shi-xin-wen-7.m3u8,重复URL
 [BD]中視新聞,https://stream1.freetv.fun/zhong-shi-xin-wen-6.m3u8,重复URL
 [BD]中視新聞[geo-blocked],https://stream1.freetv.fun/zhong-shi-xin-wen-1.m3u8,重复URL
 [BD]中視新聞,https://stream1.freetv.fun/zhong-shi-xin-wen-4.m3u8,重复URL
 [BD]中視新聞[geo-blocked],https://stream1.freetv.fun/zhong-shi-xin-wen-2.m3u8,重复URL
 [BD]中視新聞[geo-blocked],https://stream1.freetv.fun/zhong-shi-xin-wen-3.m3u8,重复URL
-[BD]中视新闻 *sm,https://stream1.freetv.fun/zhong-shi-xin-wen---sm-1.ctv,重复URL
+[HD]中视新闻 *sm[geo-blocked],https://stream1.freetv.fun/zhong-shi-xin-wen---sm-1.ctv,重复URL
 [HD]中視經典,https://stream1.freetv.fun/zhong-shi-jing-dian-4.m3u8,重复URL
 [HD]中視經典,https://stream1.freetv.fun/zhong-shi-jing-dian-5.m3u8,重复URL
 [HD]中視經典,https://stream1.freetv.fun/zhong-shi-jing-dian-6.m3u8,重复URL
 [HD]中視經典,https://stream1.freetv.fun/zhong-shi-jing-dian-7.m3u8,重复URL
-[HD]中視經典,https://stream1.freetv.fun/zhong-shi-jing-dian-8.m3u8,重复URL
 [BD]中視經典台 *4g,https://stream1.freetv.fun/zhong-shi-jing-dian-tai---4g-1.m3u8,重复URL
 [BD]中视经典[geo-blocked],https://stream1.freetv.fun/zhong-shi-jing-dian-1.ctv,重复URL
 [BD]中視菁采,https://stream1.freetv.fun/zhong-shi-jing-cai-4.m3u8,重复URL
-[BD]中視菁采,https://stream1.freetv.fun/zhong-shi-jing-cai-3.m3u8,重复URL
+[BD]中視菁采[geo-blocked],https://stream1.freetv.fun/zhong-shi-jing-cai-3.m3u8,重复URL
 [BD]中視菁采,https://stream1.freetv.fun/zhong-shi-jing-cai-5.m3u8,重复URL
 [BD]中視菁采,https://stream1.freetv.fun/zhong-shi-jing-cai-2.m3u8,重复URL
-[BD]中視菁采,https://stream1.freetv.fun/zhong-shi-jing-cai-7.m3u8,重复URL
 [BD]中視菁采台 *4g,https://stream1.freetv.fun/zhong-shi-jing-cai-tai---4g-1.m3u8,重复URL
 [BD]中視菁采台 *4g,https://stream1.freetv.fun/zhong-shi-jing-cai-tai---4g-2.m3u8,重复URL
 [BD]五星体育[geo-blocked],https://stream1.freetv.fun/wu-xing-ti-yu-7.ctv,重复URL
 [BD]五星体育[geo-blocked],https://stream1.freetv.fun/wu-xing-ti-yu-11.ctv,重复URL
 [BD]亞洲旅遊[geo-blocked],https://stream1.freetv.fun/ya-zhou-lu-you-1.ctv,重复URL
-[BD]亞洲旅遊,https://stream1.freetv.fun/ya-zhou-lu-you-5.ctv,重复URL
-[BD]亞洲旅遊,https://stream1.freetv.fun/ya-zhou-lu-you-2.ctv,重复URL
+[BD]亞洲旅遊[geo-blocked],https://stream1.freetv.fun/ya-zhou-lu-you-5.ctv,重复URL
+[BD]亞洲旅遊[geo-blocked],https://stream1.freetv.fun/ya-zhou-lu-you-2.ctv,重复URL
 [BD]亞洲旅遊[geo-blocked],https://stream1.freetv.fun/ya-zhou-lu-you-15.m3u8,重复URL
 [BD]亞洲旅遊,https://stream1.freetv.fun/ya-zhou-lu-you-9.m3u8,重复URL
-[BD]亞洲旅遊[geo-blocked],https://stream1.freetv.fun/ya-zhou-lu-you-10.m3u8,重复URL
+[BD]亞洲旅遊,https://stream1.freetv.fun/ya-zhou-lu-you-10.m3u8,重复URL
 [BD]亞洲旅遊[geo-blocked],https://stream1.freetv.fun/ya-zhou-lu-you-11.m3u8,重复URL
 [BD]亞洲旅遊,https://stream1.freetv.fun/ya-zhou-lu-you-12.m3u8,重复URL
 [BD]亞洲旅遊,https://stream1.freetv.fun/ya-zhou-lu-you-13.m3u8,重复URL
 [BD]亞洲旅遊[geo-blocked],https://stream1.freetv.fun/ya-zhou-lu-you-14.m3u8,重复URL
-[BD]亞洲旅遊[geo-blocked],https://stream1.freetv.fun/ya-zhou-lu-you-16.m3u8,重复URL
 [BD]亚洲旅游 *sm,https://stream1.freetv.fun/ya-zhou-lu-you---sm-1.ctv,重复URL
 [BD]亞洲旅遊 *4g,https://stream1.freetv.fun/ya-zhou-lu-you---4g-3.m3u8,重复URL
 [BD]亞洲旅遊 *4g[geo-blocked],https://stream1.freetv.fun/ya-zhou-lu-you---4g-2.m3u8,重复URL
@@ -2690,20 +2699,19 @@ CNA,https://live1.mediadesk.al/cnatvlive.m3u8,重复URL
 [BD]人間衛視,https://stream1.freetv.fun/ren-jian-wei-shi-12.ctv,重复URL
 [BD]人間衛視,https://stream1.freetv.fun/ren-jian-wei-shi-1.m3u8,重复URL
 [BD]人間衛視,https://stream1.freetv.fun/ren-jian-wei-shi-4.m3u8,重复URL
-[BD]人間衛視,https://stream1.freetv.fun/ren-jian-wei-shi-9.m3u8,重复URL
 [HD]人间卫视,https://stream1.freetv.fun/ren-jian-wei-shi-3.m3u8,重复URL
 [HD]人间卫视,https://stream1.freetv.fun/ren-jian-wei-shi-5.m3u8,重复URL
 [HD]人间卫视,https://stream1.freetv.fun/ren-jian-wei-shi-7.ctv,重复URL
 [BD]人間衛視 *4g,https://stream1.freetv.fun/ren-jian-wei-shi---4g-1.m3u8,重复URL
 [HD]人间卫视,https://stream1.freetv.fun/ren-jian-wei-shi-10.ctv,重复URL
 [BD]佛山公共,https://stream1.freetv.fun/fo-shan-gong-gong-8.ctv,重复URL
-[BD]佛山公共[geo-blocked],https://stream1.freetv.fun/fo-shan-gong-gong-4.ctv,重复URL
+[BD]佛山公共,https://stream1.freetv.fun/fo-shan-gong-gong-4.ctv,重复URL
 [BD]凉山新闻综合[geo-blocked],https://stream1.freetv.fun/liang-shan-xin-wen-zong-he-3.m3u8,重复URL
 [HD]萧山新闻综合,https://stream1.freetv.fun/xiao-shan-xin-wen-zong-he-6.m3u8,重复URL
 [BD]象山新闻综合,https://stream1.freetv.fun/xiang-shan-xin-wen-zong-he-2.m3u8,重复URL
 [HD]萧山新闻综合,https://stream1.freetv.fun/xiao-shan-xin-wen-zong-he-8.m3u8,重复URL
 [BD]佛山综合,https://stream1.freetv.fun/fo-shan-zong-he-15.ctv,重复URL
-[BD]佛山综合[geo-blocked],https://stream1.freetv.fun/fo-shan-zong-he-12.ctv,重复URL
+[BD]佛山综合,https://stream1.freetv.fun/fo-shan-zong-he-12.ctv,重复URL
 [SD]优漫卡通,https://stream1.freetv.fun/you-man-qia-tong-29.ctv,重复URL
 [SD]优漫卡通,https://stream1.freetv.fun/you-man-qia-tong-21.m3u8,重复URL
 [BD]内蒙古文体娱乐,https://stream1.freetv.fun/nei-meng-gu-wen-ti-yu-le-1.m3u8,重复URL
@@ -2711,6 +2719,7 @@ CNA,https://live1.mediadesk.al/cnatvlive.m3u8,重复URL
 [BD]内蒙古蒙语文化,https://stream1.freetv.fun/nei-meng-gu-meng-yu-wen-hua-1.m3u8,重复URL
 [BD]内蒙古卫视,https://stream1.freetv.fun/nei-meng-gu-wei-shi-49.m3u8,重复URL
 [BD]内蒙古卫视,https://stream1.freetv.fun/nei-meng-gu-wei-shi-34.m3u8,重复URL
+[BD]内蒙古卫视[geo-blocked],https://stream1.freetv.fun/nei-meng-gu-wei-shi-38.ctv,重复URL
 [SD]内蒙古卫视,https://stream1.freetv.fun/nei-meng-gu-wei-shi-47.m3u8,重复URL
 [BD]内蒙古蒙语卫视,https://stream1.freetv.fun/nei-meng-gu-meng-yu-wei-shi-7.m3u8,重复URL
 [BD]内蒙古卫视,https://stream1.freetv.fun/nei-meng-gu-wei-shi-37.m3u8,重复URL
@@ -2719,35 +2728,32 @@ CNA,https://live1.mediadesk.al/cnatvlive.m3u8,重复URL
 [BD]内蒙古卫视,https://stream1.freetv.fun/nei-meng-gu-wei-shi-18.m3u8,重复URL
 [BD]内蒙古农牧,https://stream1.freetv.fun/nei-meng-gu-nong-mu-2.m3u8,重复URL
 [VGA]八大娱乐,https://stream1.freetv.fun/ba-da-yu-le-2.ctv,重复URL
-[HD]八大娱乐 *sm,https://stream1.freetv.fun/ba-da-yu-le---sm-1.ctv,重复URL
+[VGA]八大娱乐 *sm,https://stream1.freetv.fun/ba-da-yu-le---sm-1.ctv,重复URL
 [BD]八大戏剧,https://stream1.freetv.fun/ba-da-xi-ju-6.ctv,重复URL
-[BD]八大戲劇,https://stream1.freetv.fun/ba-da-xi-ju-4.ctv,重复URL
+[BD]八大戲劇[geo-blocked],https://stream1.freetv.fun/ba-da-xi-ju-4.ctv,重复URL
 [BD]八大戏剧 *sm,https://stream1.freetv.fun/ba-da-xi-ju---sm-1.ctv,重复URL
 [BD]八大第一 *sm,https://stream1.freetv.fun/ba-da-di-yi---sm-1.ctv,重复URL
-[BD]八大精彩,https://stream1.freetv.fun/ba-da-jing-cai-6.m3u8,重复URL
 [BD]八大精彩,https://stream1.freetv.fun/ba-da-jing-cai-4.m3u8,重复URL
 [BD]八大精彩,https://stream1.freetv.fun/ba-da-jing-cai-1.m3u8,重复URL
 [BD]八大精彩,https://stream1.freetv.fun/ba-da-jing-cai-3.m3u8,重复URL
-[BD]八大精彩 *4g,https://stream1.freetv.fun/ba-da-jing-cai---4g-2.m3u8,重复URL
+[BD]八大精彩 *4g[geo-blocked],https://stream1.freetv.fun/ba-da-jing-cai---4g-2.m3u8,重复URL
 [BD]八大精彩 *4g,https://stream1.freetv.fun/ba-da-jing-cai---4g-1.m3u8,重复URL
-[BD]八大精彩[geo-blocked],https://stream1.freetv.fun/ba-da-jing-cai-7.m3u8,重复URL
-[BD]八大綜合[geo-blocked],https://stream1.freetv.fun/ba-da-zong-he-6.ctv,重复URL
+[BD]八大精彩,https://stream1.freetv.fun/ba-da-jing-cai-7.m3u8,重复URL
+[BD]八大綜合,https://stream1.freetv.fun/ba-da-zong-he-6.ctv,重复URL
 [BD]八大綜合,https://stream1.freetv.fun/ba-da-zong-he-1.ctv,重复URL
 [BD]八大綜合,https://stream1.freetv.fun/ba-da-zong-he-4.ctv,重复URL
 [BD]八大綜藝,https://stream1.freetv.fun/ba-da-zong-yi-2.m3u8,重复URL
 [BD]八大綜藝,https://stream1.freetv.fun/ba-da-zong-yi-4.m3u8,重复URL
 [BD]八大綜藝,https://stream1.freetv.fun/ba-da-zong-yi-5.m3u8,重复URL
 [BD]八大綜藝,https://stream1.freetv.fun/ba-da-zong-yi-6.m3u8,重复URL
-[BD]八大綜藝[geo-blocked],https://stream1.freetv.fun/ba-da-zong-yi-7.m3u8,重复URL
 [BD]八大綜藝 *4g,https://stream1.freetv.fun/ba-da-zong-yi---4g-1.m3u8,重复URL
 [BD]八大綜藝 *4g,https://stream1.freetv.fun/ba-da-zong-yi---4g-2.m3u8,重复URL
-[BD]公视2 *sm,https://stream1.freetv.fun/gong-shi-2--sm-1.ctv,重复URL
 [BD]公視[geo-blocked],https://stream1.freetv.fun/gong-shi-3.ctv,重复URL
 [BD]公視[geo-blocked],https://stream1.freetv.fun/gong-shi-2.ctv,重复URL
 [BD]公视 *sm,https://stream1.freetv.fun/gong-shi---sm-1.ctv,重复URL
-[HD]公视,https://stream1.freetv.fun/gong-shi-6.ctv,重复URL
+[HD]公视[geo-blocked],https://stream1.freetv.fun/gong-shi-6.ctv,重复URL
 [BD]公視戲劇[geo-blocked],https://stream1.freetv.fun/gong-shi-xi-ju-7.m3u8,重复URL
-[BD]公視戲劇,https://stream1.freetv.fun/gong-shi-xi-ju-2.m3u8,重复URL
+[BD]公視戲劇[geo-blocked],https://stream1.freetv.fun/gong-shi-xi-ju-2.m3u8,重复URL
 [BD]公視戲劇,https://stream1.freetv.fun/gong-shi-xi-ju-4.m3u8,重复URL
 [BD]公視戲劇,https://stream1.freetv.fun/gong-shi-xi-ju-5.m3u8,重复URL
 [BD]公視戲劇,https://stream1.freetv.fun/gong-shi-xi-ju-6.m3u8,重复URL
@@ -2757,9 +2763,9 @@ CNA,https://live1.mediadesk.al/cnatvlive.m3u8,重复URL
 [SD]兵团卫视,https://stream1.freetv.fun/bing-tuan-wei-shi-6.m3u8,重复URL
 [SD]兵团卫视[geo-blocked],https://stream1.freetv.fun/bing-tuan-wei-shi-42.m3u8,重复URL
 [SD]兵团卫视,https://stream1.freetv.fun/bing-tuan-wei-shi-20.m3u8,重复URL
-[BD]兵团卫视[geo-blocked],https://stream1.freetv.fun/bing-tuan-wei-shi-14.m3u8,重复URL
+[BD]兵团卫视,https://stream1.freetv.fun/bing-tuan-wei-shi-14.m3u8,重复URL
 [BD]兵团卫视,https://stream1.freetv.fun/bing-tuan-wei-shi-11.m3u8,重复URL
-[BD]兵团卫视[geo-blocked],https://stream1.freetv.fun/bing-tuan-wei-shi-23.m3u8,重复URL
+[BD]兵团卫视,https://stream1.freetv.fun/bing-tuan-wei-shi-23.m3u8,重复URL
 [BD]劲爆体育,https://stream1.freetv.fun/jing-bao-ti-yu-9.m3u8,重复URL
 [BD]劲爆体育,https://stream1.freetv.fun/jing-bao-ti-yu-4.m3u8,重复URL
 [BD]劲爆体育,https://stream1.freetv.fun/jing-bao-ti-yu-8.m3u8,重复URL
@@ -2768,12 +2774,12 @@ CNA,https://live1.mediadesk.al/cnatvlive.m3u8,重复URL
 [BD]动漫秀场,https://stream1.freetv.fun/dong-man-xiu-chang-6.m3u8,重复URL
 [HD]动漫秀场,https://stream1.freetv.fun/dong-man-xiu-chang-25.m3u8,重复URL
 [BD]动漫秀场,https://stream1.freetv.fun/dong-man-xiu-chang-5.m3u8,重复URL
-[BD]動物星球[geo-blocked],https://stream1.freetv.fun/dong-wu-xing-qiu-4.ctv,重复URL
-[BD]動物星球[geo-blocked],https://stream1.freetv.fun/dong-wu-xing-qiu-2.ctv,重复URL
+[BD]動物星球,https://stream1.freetv.fun/dong-wu-xing-qiu-4.ctv,重复URL
+[BD]動物星球,https://stream1.freetv.fun/dong-wu-xing-qiu-2.ctv,重复URL
 [BD]北京卫视,https://stream1.freetv.fun/bei-jing-wei-shi-89.m3u8,重复URL
 [BD]北京卫视,https://stream1.freetv.fun/bei-jing-wei-shi-77.ctv,重复URL
 [BD]北京卫视[geo-blocked],https://stream1.freetv.fun/bei-jing-wei-shi-26.ctv,重复URL
-[BD]北京卫视[geo-blocked],https://stream1.freetv.fun/bei-jing-wei-shi-50.m3u8,重复URL
+[BD]北京卫视,https://stream1.freetv.fun/bei-jing-wei-shi-50.m3u8,重复URL
 [BD]北京卫视[geo-blocked],https://stream1.freetv.fun/bei-jing-wei-shi-23.m3u8,重复URL
 [BD]北京卫视,https://stream1.freetv.fun/bei-jing-wei-shi-71.m3u8,重复URL
 [BD]北京卫视,https://stream1.freetv.fun/bei-jing-wei-shi-94.m3u8,重复URL
@@ -2784,6 +2790,7 @@ CNA,https://live1.mediadesk.al/cnatvlive.m3u8,重复URL
 [VGA]北京卫视[geo-blocked],https://stream1.freetv.fun/bei-jing-wei-shi-5.ctv,重复URL
 [BD]北京卫视,https://stream1.freetv.fun/bei-jing-wei-shi-19.m3u8,重复URL
 [HD]北京卫视,https://stream1.freetv.fun/bei-jing-wei-shi-7.m3u8,重复URL
+[BD]北京卫视,https://stream1.freetv.fun/bei-jing-wei-shi-20.ctv,重复URL
 [BD]北京卫视[geo-blocked],https://stream1.freetv.fun/bei-jing-wei-shi-21.m3u8,重复URL
 [BD]北京卫视,https://stream1.freetv.fun/bei-jing-wei-shi-81.m3u8,重复URL
 [BD]北京卫视[geo-blocked],https://stream1.freetv.fun/bei-jing-wei-shi-88.m3u8,重复URL
@@ -2812,59 +2819,52 @@ CNA,https://live1.mediadesk.al/cnatvlive.m3u8,重复URL
 [SD]辉南新闻综合,https://stream1.freetv.fun/hui-nan-xin-wen-zong-he-2.m3u8,重复URL
 [VGA]平凉新闻综合,https://stream1.freetv.fun/ping-liang-xin-wen-zong-he-3.ctv,重复URL
 [BD]新昌新聞綜合[geo-blocked],https://stream1.freetv.fun/xin-chang-xin-wen-zong-he-4.m3u8,重复URL
-[BD]沁阳新闻综合频道[geo-blocked],https://stream1.freetv.fun/qin-yang-xin-wen-zong-he-1.m3u8,重复URL
+[BD]沁阳新闻综合频道,https://stream1.freetv.fun/qin-yang-xin-wen-zong-he-1.m3u8,重复URL
 [HD]博斯无限,https://stream1.freetv.fun/bo-si-wu-xian-3.ctv,重复URL
 [HD]博斯無限ii,https://stream1.freetv.fun/bo-si-wu-xian-ii-2.m3u8,重复URL
 [BD]博斯無限i,https://stream1.freetv.fun/bo-si-wu-xian-i-2.m3u8,重复URL
 [HD]博斯無限ii,https://stream1.freetv.fun/bo-si-wu-xian-ii-3.m3u8,重复URL
 [BD]博斯無限i,https://stream1.freetv.fun/bo-si-wu-xian-i-3.m3u8,重复URL
-[BD]博斯无限 *sm,https://stream1.freetv.fun/bo-si-wu-xian---sm-1.ctv,重复URL
+[HD]博斯无限 *sm,https://stream1.freetv.fun/bo-si-wu-xian---sm-1.ctv,重复URL
 [HD]博斯网球,https://stream1.freetv.fun/bo-si-wang-qiu-4.ctv,重复URL
-[BD]博斯網球,https://stream1.freetv.fun/bo-si-wang-qiu-3.m3u8,重复URL
 [BD]博斯網球,https://stream1.freetv.fun/bo-si-wang-qiu-1.m3u8,重复URL
 [BD]博斯網球,https://stream1.freetv.fun/bo-si-wang-qiu-2.m3u8,重复URL
-[BD]博斯网球 *sm,https://stream1.freetv.fun/bo-si-wang-qiu---sm-1.ctv,重复URL
+[HD]博斯网球 *sm,https://stream1.freetv.fun/bo-si-wang-qiu---sm-1.ctv,重复URL
 [BD]博斯網球 *4g,https://stream1.freetv.fun/bo-si-wang-qiu---4g-1.m3u8,重复URL
-[BD]博斯运动一[geo-blocked],https://stream1.freetv.fun/bo-si-yun-dong-yi-4.ctv,重复URL
-[BD]博斯運動一[geo-blocked],https://stream1.freetv.fun/bo-si-yun-dong-yi-5.ctv,重复URL
+[BD]博斯运动一,https://stream1.freetv.fun/bo-si-yun-dong-yi-4.ctv,重复URL
+[BD]博斯運動一,https://stream1.freetv.fun/bo-si-yun-dong-yi-5.ctv,重复URL
 [BD]博斯運動一[geo-blocked],https://stream1.freetv.fun/bo-si-yun-dong-yi-3.ctv,重复URL
 [BD]博斯运动二[geo-blocked],https://stream1.freetv.fun/bo-si-yun-dong-er-1.ctv,重复URL
 [BD]博斯運動i,https://stream1.freetv.fun/bo-si-yun-dong-i-2.m3u8,重复URL
 [BD]博斯運動ii,https://stream1.freetv.fun/bo-si-yun-dong-ii-2.m3u8,重复URL
 [BD]博斯運動i,https://stream1.freetv.fun/bo-si-yun-dong-i-3.m3u8,重复URL
 [BD]博斯運動ii,https://stream1.freetv.fun/bo-si-yun-dong-ii-3.m3u8,重复URL
-[BD]博斯运动 *sm,https://stream1.freetv.fun/bo-si-yun-dong---sm-1.ctv,重复URL
-[BD]博斯运动2 *sm,https://stream1.freetv.fun/bo-si-yun-dong-2--sm-1.ctv,重复URL
-[BD]博斯高球ii,https://stream1.freetv.fun/bo-si-gao-qiu-ii-3.m3u8,重复URL
-[BD]博斯高球i,https://stream1.freetv.fun/bo-si-gao-qiu-i-3.m3u8,重复URL
 [HD]博斯高球二,https://stream1.freetv.fun/bo-si-gao-qiu-er-3.ctv,重复URL
 [BD]博斯高球i,https://stream1.freetv.fun/bo-si-gao-qiu-i-1.m3u8,重复URL
 [BD]博斯高球ii,https://stream1.freetv.fun/bo-si-gao-qiu-ii-1.m3u8,重复URL
 [BD]博斯高球i,https://stream1.freetv.fun/bo-si-gao-qiu-i-2.m3u8,重复URL
 [BD]博斯高球ii,https://stream1.freetv.fun/bo-si-gao-qiu-ii-2.m3u8,重复URL
-[BD]博斯魅力,https://stream1.freetv.fun/bo-si-mei-li-3.m3u8,重复URL
 [BD]博斯魅力,https://stream1.freetv.fun/bo-si-mei-li-5.m3u8,重复URL
 [BD]博斯魅力 *4g,https://stream1.freetv.fun/bo-si-mei-li---4g-1.m3u8,重复URL
-[BD]原住民族電視,https://stream1.freetv.fun/yuan-zhu-min-zu-dian-shi-2.m3u8,重复URL
+[BD]原住民族電視[geo-blocked],https://stream1.freetv.fun/yuan-zhu-min-zu-dian-shi-2.m3u8,重复URL
 [BD]原住民族電視,https://stream1.freetv.fun/yuan-zhu-min-zu-dian-shi-3.m3u8,重复URL
-[BD]台视 *sm,https://stream1.freetv.fun/tai-shi---sm-1.ctv,重复URL
 [BD]台視hd *4g,https://stream1.freetv.fun/tai-shi-hd--4g-1.m3u8,重复URL
 [BD]台視hd *4g[geo-blocked],https://stream1.freetv.fun/tai-shi-hd--4g-2.m3u8,重复URL
 [BD]台视[geo-blocked],https://stream1.freetv.fun/tai-shi-5.ctv,重复URL
 [HD]台视[geo-blocked],rtmp://f13h.mine.nu/sat/tv071,无效URL（非 http/https/rtsp 开头）
 [HD]台视[geo-blocked],rtmp://f13h.mine.nu:1935/sat/tv071,无效URL（非 http/https/rtsp 开头）
-[SD]台視新聞台 *4g,https://stream1.freetv.fun/tai-shi-xin-wen-tai---4g-2.m3u8,重复URL
-[BD]台视新闻 *sm,https://stream1.freetv.fun/tai-shi-xin-wen---sm-1.ctv,重复URL
+[SD]台視新聞台 *4g[geo-blocked],https://stream1.freetv.fun/tai-shi-xin-wen-tai---4g-2.m3u8,重复URL
 [SD]台視新聞台 *4g,https://stream1.freetv.fun/tai-shi-xin-wen-tai---4g-1.m3u8,重复URL
-[HD]台视新闻[geo-blocked],https://stream1.freetv.fun/tai-shi-xin-wen-18.ctv,重复URL
+[BD]台视新闻[geo-blocked],https://stream1.freetv.fun/tai-shi-xin-wen-18.ctv,重复URL
 [BD]台视新闻,https://stream1.freetv.fun/tai-shi-xin-wen-17.m3u8,重复URL
 [BD]吉林卫视,https://stream1.freetv.fun/ji-lin-wei-shi-32.ctv,重复URL
 [BD]吉林卫视[geo-blocked],https://stream1.freetv.fun/ji-lin-wei-shi-33.m3u8,重复URL
 [BD]吉林卫视[geo-blocked],https://stream1.freetv.fun/ji-lin-wei-shi-61.ctv,重复URL
+[BD]吉林卫视[geo-blocked],https://stream1.freetv.fun/ji-lin-wei-shi-29.ctv,重复URL
 [BD]吉林卫视,https://stream1.freetv.fun/ji-lin-wei-shi-36.m3u8,重复URL
-[SD]吉林卫视,https://stream1.freetv.fun/ji-lin-wei-shi-38.m3u8,重复URL
+[SD]吉林卫视[geo-blocked],https://stream1.freetv.fun/ji-lin-wei-shi-38.m3u8,重复URL
 [BD]吉林卫视,https://stream1.freetv.fun/ji-lin-wei-shi-68.m3u8,重复URL
-[HD]吉林卫视,https://stream1.freetv.fun/ji-lin-wei-shi-12.m3u8,重复URL
+[HD]吉林卫视[geo-blocked],https://stream1.freetv.fun/ji-lin-wei-shi-12.m3u8,重复URL
 [BD]吉林卫视,https://stream1.freetv.fun/ji-lin-wei-shi-76.m3u8,重复URL
 [HD]吉林卫视,https://stream1.freetv.fun/ji-lin-wei-shi-9.m3u8,重复URL
 [VGA]哈尔滨娱乐,https://stream1.freetv.fun/ha-er-bin-yu-le-1.m3u8,重复URL
@@ -2874,6 +2874,7 @@ CNA,https://live1.mediadesk.al/cnatvlive.m3u8,重复URL
 [VGA]哈尔滨影视,https://stream1.freetv.fun/ha-er-bin-ying-shi-6.m3u8,重复URL
 [VGA]哈尔滨影视,https://stream1.freetv.fun/ha-er-bin-ying-shi-2.m3u8,重复URL
 [VGA]哈尔滨影视,https://stream1.freetv.fun/ha-er-bin-ying-shi-4.m3u8,重复URL
+[VGA]哈尔滨影视,https://stream1.freetv.fun/ha-er-bin-ying-shi-5.m3u8,重复URL
 [VGA]哈尔滨新闻综合,https://stream1.freetv.fun/ha-er-bin-xin-wen-zong-he-5.m3u8,重复URL
 [VGA]哈尔滨新闻综合,https://stream1.freetv.fun/ha-er-bin-xin-wen-zong-he-3.m3u8,重复URL
 [VGA]哈尔滨生活[geo-blocked],https://stream1.freetv.fun/ha-er-bin-sheng-huo-6.m3u8,重复URL
@@ -2885,7 +2886,7 @@ CNA,https://live1.mediadesk.al/cnatvlive.m3u8,重复URL
 [SD]嘉佳卡通,https://stream1.freetv.fun/jia-jia-qia-tong-22.m3u8,重复URL
 [BD]嘉佳卡通[geo-blocked],https://stream1.freetv.fun/jia-jia-qia-tong-21.ctv,重复URL
 [BD]嘉佳卡通,https://stream1.freetv.fun/jia-jia-qia-tong-6.ctv,重复URL
-[BD]嘉佳卡通,https://stream1.freetv.fun/jia-jia-qia-tong-26.ctv,重复URL
+[BD]嘉佳卡通[geo-blocked],https://stream1.freetv.fun/jia-jia-qia-tong-26.ctv,重复URL
 [SD]嘉佳卡通,https://stream1.freetv.fun/jia-jia-qia-tong-4.m3u8,重复URL
 [BD]嘉佳卡通高清,https://stream1.freetv.fun/jia-jia-qia-tong-gao-qing-1.m3u8,重复URL
 [BD]嘉佳卡通,https://stream1.freetv.fun/jia-jia-qia-tong-16.ctv,重复URL
@@ -2900,25 +2901,25 @@ CNA,https://live1.mediadesk.al/cnatvlive.m3u8,重复URL
 [BD]四川卫视,https://stream1.freetv.fun/si-chuan-wei-shi-39.m3u8,重复URL
 [BD]四川卫视[geo-blocked],https://stream1.freetv.fun/si-chuan-wei-shi-22.ctv,重复URL
 [BD]四川卫视[geo-blocked],https://stream1.freetv.fun/si-chuan-wei-shi-10.ctv,重复URL
-[BD]四川卫视,https://stream1.freetv.fun/si-chuan-wei-shi-71.ctv,重复URL
+[BD]四川卫视[geo-blocked],https://stream1.freetv.fun/si-chuan-wei-shi-71.ctv,重复URL
 [BD]四川卫视,https://stream1.freetv.fun/si-chuan-wei-shi-52.m3u8,重复URL
 [SD]四川卫视,https://stream1.freetv.fun/si-chuan-wei-shi-85.ctv,重复URL
 [HD]四川卫视,https://stream1.freetv.fun/si-chuan-wei-shi-37.m3u8,重复URL
 [BD]四川卫视,https://stream1.freetv.fun/si-chuan-wei-shi-34.m3u8,重复URL
 [HD]四川卫视,https://stream1.freetv.fun/si-chuan-wei-shi-48.m3u8,重复URL
+[BD]四川卫视[geo-blocked],https://stream1.freetv.fun/si-chuan-wei-shi-82.ctv,重复URL
 [BD]四川卫视,https://stream1.freetv.fun/si-chuan-wei-shi-72.m3u8,重复URL
-[HD]四川卫视,https://stream1.freetv.fun/si-chuan-wei-shi-83.ctv,重复URL
+[BD]四川卫视[geo-blocked],https://stream1.freetv.fun/si-chuan-wei-shi-83.ctv,重复URL
 [BD]四川卫视[geo-blocked],https://stream1.freetv.fun/si-chuan-wei-shi-53.m3u8,重复URL
 [BD]四川卫视,https://stream1.freetv.fun/si-chuan-wei-shi-8.m3u8,重复URL
 [BD]四川卫视,https://stream1.freetv.fun/si-chuan-wei-shi-5.m3u8,重复URL
 [BD]國會 1,https://stream1.freetv.fun/guo-hui--1-14.m3u8,重复URL
 [BD]國會 1[geo-blocked],https://stream1.freetv.fun/guo-hui--1-12.m3u8,重复URL
-[BD]國會 1,https://stream1.freetv.fun/guo-hui--1-7.m3u8,重复URL
+[BD]國會 1[geo-blocked],https://stream1.freetv.fun/guo-hui--1-7.m3u8,重复URL
 [BD]國會 1[geo-blocked],https://stream1.freetv.fun/guo-hui--1-8.m3u8,重复URL
 [BD]國會 1,https://stream1.freetv.fun/guo-hui--1-9.m3u8,重复URL
 [BD]國會 1,https://stream1.freetv.fun/guo-hui--1-10.m3u8,重复URL
 [BD]國會 1[geo-blocked],https://stream1.freetv.fun/guo-hui--1-11.m3u8,重复URL
-[BD]國會 1[geo-blocked],https://stream1.freetv.fun/guo-hui--1-13.m3u8,重复URL
 [BD]國會 1 *4g,https://stream1.freetv.fun/guo-hui--1--4g-1.m3u8,重复URL
 [BD]國會 1 *4g[geo-blocked],https://stream1.freetv.fun/guo-hui--1--4g-2.m3u8,重复URL
 [HD]國會 2,https://stream1.freetv.fun/guo-hui--2-12.m3u8,重复URL
@@ -2928,32 +2929,29 @@ CNA,https://live1.mediadesk.al/cnatvlive.m3u8,重复URL
 [HD]國會 2,https://stream1.freetv.fun/guo-hui--2-7.m3u8,重复URL
 [HD]國會 2,https://stream1.freetv.fun/guo-hui--2-8.m3u8,重复URL
 [HD]國會 2[geo-blocked],https://stream1.freetv.fun/guo-hui--2-9.m3u8,重复URL
-[HD]國會 2[geo-blocked],https://stream1.freetv.fun/guo-hui--2-11.m3u8,重复URL
 [BD]國會 2 *4g,https://stream1.freetv.fun/guo-hui--2--4g-1.m3u8,重复URL
 [BD]國會 2 *4g,https://stream1.freetv.fun/guo-hui--2--4g-2.m3u8,重复URL
 [BD]國會 2 *4g[geo-blocked],https://stream1.freetv.fun/guo-hui--2--4g-3.m3u8,重复URL
 [BD]壹新聞[geo-blocked],https://stream1.freetv.fun/yi-xin-wen-2.ctv,重复URL
-[BD]大爱1 *sm,https://stream1.freetv.fun/da-ai-1--sm-1.ctv,重复URL
+[HD]大爱2 *sm,https://stream1.freetv.fun/da-ai-2--sm-1.ctv,重复URL
+[HD]大爱1 *sm[geo-blocked],https://stream1.freetv.fun/da-ai-1--sm-1.ctv,重复URL
 [HD]大愛二,https://stream1.freetv.fun/da-ai-er-1.ctv,重复URL
 [BD]大愛二,https://stream1.freetv.fun/da-ai-er-3.m3u8,重复URL
 [BD]大愛二,https://stream1.freetv.fun/da-ai-er-4.m3u8,重复URL
-[BD]大愛二,https://stream1.freetv.fun/da-ai-er-5.m3u8,重复URL
 [BD]大愛二台 *4g,https://stream1.freetv.fun/da-ai-er-tai---4g-1.m3u8,重复URL
 [HD]大愛電視,https://stream1.freetv.fun/da-ai-dian-shi-4.ctv,重复URL
 [BD]大愛電視,https://stream1.freetv.fun/da-ai-dian-shi-1.ctv,重复URL
-[BD]大愛電視,https://stream1.freetv.fun/da-ai-dian-shi-2.m3u8,重复URL
+[BD]大愛電視[geo-blocked],https://stream1.freetv.fun/da-ai-dian-shi-2.m3u8,重复URL
 [BD]大愛電視,https://stream1.freetv.fun/da-ai-dian-shi-3.m3u8,重复URL
 [BD]大愛電視 *4g,https://stream1.freetv.fun/da-ai-dian-shi---4g-1.m3u8,重复URL
-[BD]大愛電視[geo-blocked],https://stream1.freetv.fun/da-ai-dian-shi-5.ctv,重复URL
+[BD]大愛電視,https://stream1.freetv.fun/da-ai-dian-shi-5.ctv,重复URL
 [BD]大湾区卫视,https://stream1.freetv.fun/da-wan-qu-wei-shi-15.ctv,重复URL
-[BD]大湾区卫视,https://stream1.freetv.fun/da-wan-qu-wei-shi-16.m3u8,重复URL
 [BD]大湾区卫视[geo-blocked],https://stream1.freetv.fun/da-wan-qu-wei-shi-19.m3u8,重复URL
+[BD]大湾区卫视高清[geo-blocked],https://stream1.freetv.fun/da-wan-qu-wei-shi-gao-qing-2.m3u8,重复URL
 [BD]大湾区卫视高清[geo-blocked],https://stream1.freetv.fun/da-wan-qu-wei-shi-gao-qing-1.m3u8,重复URL
 [BD]大湾区卫视[geo-blocked],https://stream1.freetv.fun/da-wan-qu-wei-shi-8.m3u8,重复URL
 [BD]大湾区卫视[geo-blocked],https://stream1.freetv.fun/da-wan-qu-wei-shi-25.m3u8,重复URL
-[BD]大湾区卫视[geo-blocked],https://stream1.freetv.fun/da-wan-qu-wei-shi-18.ctv,重复URL
-[BD]大湾区卫视[geo-blocked],https://stream1.freetv.fun/da-wan-qu-wei-shi-3.m3u8,重复URL
-[BD]大湾区卫视,https://stream1.freetv.fun/da-wan-qu-wei-shi-20.m3u8,重复URL
+[BD]大湾区卫视,https://stream1.freetv.fun/da-wan-qu-wei-shi-3.m3u8,重复URL
 [BD]天津卫视,https://stream1.freetv.fun/tian-jin-wei-shi-90.ctv,重复URL
 [BD]天津卫视,https://stream1.freetv.fun/tian-jin-wei-shi-25.m3u8,重复URL
 [BD]天津卫视,https://stream1.freetv.fun/tian-jin-wei-shi-85.m3u8,重复URL
@@ -2963,41 +2961,39 @@ CNA,https://live1.mediadesk.al/cnatvlive.m3u8,重复URL
 [HD]天津卫视,https://stream1.freetv.fun/tian-jin-wei-shi-61.m3u8,重复URL
 [BD]天津卫视,https://stream1.freetv.fun/tian-jin-wei-shi-73.m3u8,重复URL
 [SD]天津卫视[geo-blocked],https://stream1.freetv.fun/tian-jin-wei-shi-36.ctv,重复URL
+[BD]天津卫视,https://stream1.freetv.fun/tian-jin-wei-shi-19.ctv,重复URL
 [BD]太谷新闻综合,https://stream1.freetv.fun/tai-gu-xin-wen-zong-he-2.m3u8,重复URL
 [BD]太谷新闻综合,https://stream1.freetv.fun/tai-gu-xin-wen-zong-he-1.m3u8,重复URL
 [BD]太谷新闻综合,https://stream1.freetv.fun/tai-gu-xin-wen-zong-he-3.m3u8,重复URL
 [BD]太谷新闻综合,https://stream1.freetv.fun/tai-gu-xin-wen-zong-he-4.m3u8,重复URL
-[BD]好萊塢電影[geo-blocked],https://stream1.freetv.fun/hao-lai-wu-dian-ying-5.ctv,重复URL
-[BD]好萊塢電影[geo-blocked],https://stream1.freetv.fun/hao-lai-wu-dian-ying-2.ctv,重复URL
+[BD]好萊塢電影,https://stream1.freetv.fun/hao-lai-wu-dian-ying-5.ctv,重复URL
+[BD]好萊塢電影,https://stream1.freetv.fun/hao-lai-wu-dian-ying-2.ctv,重复URL
 [BD]好萊塢電影,https://stream1.freetv.fun/hao-lai-wu-dian-ying-4.ctv,重复URL
 [BD]好萊塢電影,https://stream1.freetv.fun/hao-lai-wu-dian-ying-6.ctv,重复URL
 [HD]好消息[geo-blocked],https://stream1.freetv.fun/hao-xiao-xi-4.m3u8,重复URL
 [BD]好消息[geo-blocked],https://stream1.freetv.fun/hao-xiao-xi-3.ctv,重复URL
-[BD]好消息,https://stream1.freetv.fun/hao-xiao-xi-7.m3u8,重复URL
+[BD]好消息[geo-blocked],https://stream1.freetv.fun/hao-xiao-xi-7.m3u8,重复URL
 [BD]好消息,https://stream1.freetv.fun/hao-xiao-xi-8.m3u8,重复URL
 [BD]好消息[geo-blocked],https://stream1.freetv.fun/hao-xiao-xi-9.m3u8,重复URL
 [BD]好消息,https://stream1.freetv.fun/hao-xiao-xi-10.m3u8,重复URL
 [BD]好消息,https://stream1.freetv.fun/hao-xiao-xi-11.m3u8,重复URL
 [BD]好消息[geo-blocked],https://stream1.freetv.fun/hao-xiao-xi-12.m3u8,重复URL
-[BD]好消息[geo-blocked],https://stream1.freetv.fun/hao-xiao-xi-14.m3u8,重复URL
 [BD]好消息 *4g,https://stream1.freetv.fun/hao-xiao-xi---4g-1.m3u8,重复URL
 [BD]好消息 *4g,https://stream1.freetv.fun/hao-xiao-xi---4g-2.m3u8,重复URL
 [BD]好消息 *4g[geo-blocked],https://stream1.freetv.fun/hao-xiao-xi---4g-3.m3u8,重复URL
 [BD]好消息[geo-blocked],https://stream1.freetv.fun/hao-xiao-xi-1.ctv,重复URL
 [HD]好消息2[geo-blocked],https://stream1.freetv.fun/hao-xiao-xi-2-2.m3u8,重复URL
-[HD]好消息 2[geo-blocked],https://stream1.freetv.fun/hao-xiao-xi--2-1.ctv,重复URL
-[BD]好消息 2 *sm,https://stream1.freetv.fun/hao-xiao-xi--2--sm-1.ctv,重复URL
+[HD]好消息 2,https://stream1.freetv.fun/hao-xiao-xi--2-1.ctv,重复URL
+[HD]好消息 2 *sm[geo-blocked],https://stream1.freetv.fun/hao-xiao-xi--2--sm-1.ctv,重复URL
 [BD]好消息2台 *4g,https://stream1.freetv.fun/hao-xiao-xi-2tai---4g-1.m3u8,重复URL
 [BD]好消息2台 *4g,https://stream1.freetv.fun/hao-xiao-xi-2tai---4g-2.m3u8,重复URL
 [BD]好消息2台 *4g[geo-blocked],https://stream1.freetv.fun/hao-xiao-xi-2tai---4g-3.m3u8,重复URL
-[BD]好消息2,https://stream1.freetv.fun/hao-xiao-xi-2-6.m3u8,重复URL
-[BD]好消息2,https://stream1.freetv.fun/hao-xiao-xi-2-7.m3u8,重复URL
+[BD]好消息2[geo-blocked],https://stream1.freetv.fun/hao-xiao-xi-2-6.m3u8,重复URL
+[BD]好消息2[geo-blocked],https://stream1.freetv.fun/hao-xiao-xi-2-7.m3u8,重复URL
 [BD]好消息2[geo-blocked],https://stream1.freetv.fun/hao-xiao-xi-2-8.m3u8,重复URL
 [BD]好消息2,https://stream1.freetv.fun/hao-xiao-xi-2-9.m3u8,重复URL
 [BD]好消息2,https://stream1.freetv.fun/hao-xiao-xi-2-10.m3u8,重复URL
 [BD]好消息2[geo-blocked],https://stream1.freetv.fun/hao-xiao-xi-2-11.m3u8,重复URL
-[BD]好消息2,https://stream1.freetv.fun/hao-xiao-xi-2-12.m3u8,重复URL
-[BD]好消息2[geo-blocked],https://stream1.freetv.fun/hao-xiao-xi-2-13.m3u8,重复URL
 [SD]安多卫视,https://stream1.freetv.fun/an-duo-wei-shi-23.m3u8,重复URL
 [BD]安多卫视,https://stream1.freetv.fun/an-duo-wei-shi-4.m3u8,重复URL
 [BD]安徽卫视,https://stream1.freetv.fun/an-hui-wei-shi-58.ctv,重复URL
@@ -3005,28 +3001,31 @@ CNA,https://live1.mediadesk.al/cnatvlive.m3u8,重复URL
 [BD]安徽卫视[geo-blocked],https://stream1.freetv.fun/an-hui-wei-shi-94.m3u8,重复URL
 [HD]安徽卫视,https://stream1.freetv.fun/an-hui-wei-shi-88.m3u8,重复URL
 [SD]安徽卫视,https://stream1.freetv.fun/an-hui-wei-shi-26.m3u8,重复URL
-[SD]安徽卫视,https://stream1.freetv.fun/an-hui-wei-shi-61.m3u8,重复URL
+[SD]安徽卫视[geo-blocked],https://stream1.freetv.fun/an-hui-wei-shi-61.m3u8,重复URL
 [BD]安徽卫视,https://stream1.freetv.fun/an-hui-wei-shi-5.ctv,重复URL
 [BD]安徽卫视[geo-blocked],https://stream1.freetv.fun/an-hui-wei-shi-64.m3u8,重复URL
-[BD]安徽卫视[geo-blocked],https://stream1.freetv.fun/an-hui-wei-shi-47.ctv,重复URL
+[BD]安徽卫视,https://stream1.freetv.fun/an-hui-wei-shi-47.ctv,重复URL
 [BD]安徽卫视,https://stream1.freetv.fun/an-hui-wei-shi-50.m3u8,重复URL
 [HD]安徽卫视,https://stream1.freetv.fun/an-hui-wei-shi-52.m3u8,重复URL
 [BD]安徽卫视,https://stream1.freetv.fun/an-hui-wei-shi-72.m3u8,重复URL
+[BD]安徽卫视,https://stream1.freetv.fun/an-hui-wei-shi-8.ctv,重复URL
 [BD]雅安新闻综合,https://stream1.freetv.fun/ya-an-xin-wen-zong-he-1.m3u8,重复URL
 [BD]淮安新闻综合[geo-blocked],https://stream1.freetv.fun/huai-an-xin-wen-zong-he-2.ctv,重复URL
 [HD]宜兴新闻,https://stream1.freetv.fun/yi-xing-xin-wen-2.m3u8,重复URL
 [BD]客家電視,https://stream1.freetv.fun/ke-jia-dian-shi-3.m3u8,重复URL
 [BD]客家電視,https://stream1.freetv.fun/ke-jia-dian-shi-2.m3u8,重复URL
-[BD]客家電視,https://stream1.freetv.fun/ke-jia-dian-shi-4.m3u8,重复URL
+[BD]客家電視[geo-blocked],https://stream1.freetv.fun/ke-jia-dian-shi-4.m3u8,重复URL
 [BD]客家電視 *4g,https://stream1.freetv.fun/ke-jia-dian-shi---4g-2.m3u8,重复URL
 [BD]家庭剧场,https://stream1.freetv.fun/jia-ting-ju-chang-1.m3u8,重复URL
-[BD]家庭剧场,https://stream1.freetv.fun/jia-ting-ju-chang-3.m3u8,重复URL
+[BD]家庭剧场[geo-blocked],https://stream1.freetv.fun/jia-ting-ju-chang-3.m3u8,重复URL
 [BD]宁夏卫视,https://stream1.freetv.fun/zhu-xia-wei-shi-32.m3u8,重复URL
+[BD]宁夏卫视,https://stream1.freetv.fun/zhu-xia-wei-shi-28.ctv,重复URL
 [SD]宁夏卫视,https://stream1.freetv.fun/zhu-xia-wei-shi-21.m3u8,重复URL
-[BD]宁夏卫视[geo-blocked],https://stream1.freetv.fun/zhu-xia-wei-shi-50.m3u8,重复URL
+[BD]宁夏卫视,https://stream1.freetv.fun/zhu-xia-wei-shi-50.m3u8,重复URL
 [BD]宁夏卫视,https://stream1.freetv.fun/zhu-xia-wei-shi-69.m3u8,重复URL
-[SD]宁夏卫视,https://stream1.freetv.fun/zhu-xia-wei-shi-86.ctv,重复URL
-[SD]宁夏卫视,https://stream1.freetv.fun/zhu-xia-wei-shi-38.ctv,重复URL
+[SD]宁夏卫视[geo-blocked],https://stream1.freetv.fun/zhu-xia-wei-shi-86.ctv,重复URL
+[SD]宁夏卫视[geo-blocked],https://stream1.freetv.fun/zhu-xia-wei-shi-38.ctv,重复URL
+[SD]宁夏卫视,https://stream1.freetv.fun/zhu-xia-wei-shi-71.m3u8,重复URL
 [SD]宁夏卫视,https://stream1.freetv.fun/zhu-xia-wei-shi-59.m3u8,重复URL
 [BD]寰宇新聞,https://stream1.freetv.fun/huan-yu-xin-wen-16.ctv,重复URL
 [BD]寰宇新聞,https://stream1.freetv.fun/huan-yu-xin-wen-1.m3u8,重复URL
@@ -3035,42 +3034,39 @@ CNA,https://live1.mediadesk.al/cnatvlive.m3u8,重复URL
 [BD]寰宇新聞,https://stream1.freetv.fun/huan-yu-xin-wen-11.m3u8,重复URL
 [BD]寰宇新聞,https://stream1.freetv.fun/huan-yu-xin-wen-12.m3u8,重复URL
 [BD]寰宇新聞[geo-blocked],https://stream1.freetv.fun/huan-yu-xin-wen-13.m3u8,重复URL
-[BD]寰宇新聞[geo-blocked],https://stream1.freetv.fun/huan-yu-xin-wen-15.m3u8,重复URL
 [BD]寰宇新聞 *4g,https://stream1.freetv.fun/huan-yu-xin-wen---4g-2.m3u8,重复URL
 [SD]寰宇新聞台灣台 *4g,https://stream1.freetv.fun/huan-yu-xin-wen-tai-wan-tai---4g-1.m3u8,重复URL
 [BD]寰宇新聞 *4g,https://stream1.freetv.fun/huan-yu-xin-wen---4g-3.m3u8,重复URL
 [BD]寰宇新聞 *4g[geo-blocked],https://stream1.freetv.fun/huan-yu-xin-wen---4g-1.m3u8,重复URL
 [BD]寰宇新聞,https://stream1.freetv.fun/huan-yu-xin-wen-6.ctv,重复URL
-[BD]寰宇新聞[geo-blocked],https://stream1.freetv.fun/huan-yu-xin-wen-3.ctv,重复URL
+[BD]寰宇新聞,https://stream1.freetv.fun/huan-yu-xin-wen-3.ctv,重复URL
 [SD]寰宇新聞台灣台 *4g,https://stream1.freetv.fun/huan-yu-xin-wen-tai-wan-tai---4g-2.m3u8,重复URL
-[SD]寰宇新聞台灣台 *4g,https://stream1.freetv.fun/huan-yu-xin-wen-tai-wan-tai---4g-3.m3u8,重复URL
-[BD]寰宇新闻 *sm,https://stream1.freetv.fun/huan-yu-xin-wen---sm-1.ctv,重复URL
+[SD]寰宇新聞台灣台 *4g[geo-blocked],https://stream1.freetv.fun/huan-yu-xin-wen-tai-wan-tai---4g-3.m3u8,重复URL
 [BD]寰宇新闻[geo-blocked],https://stream1.freetv.fun/huan-yu-xin-wen-2.ctv,重复URL
 [BD]寰宇新聞台灣[geo-blocked],https://stream1.freetv.fun/huan-yu-xin-wen-tai-wan-11.m3u8,重复URL
 [BD]寰宇新聞台灣,https://stream1.freetv.fun/huan-yu-xin-wen-tai-wan-5.m3u8,重复URL
-[BD]寰宇新聞台灣[geo-blocked],https://stream1.freetv.fun/huan-yu-xin-wen-tai-wan-6.m3u8,重复URL
+[BD]寰宇新聞台灣,https://stream1.freetv.fun/huan-yu-xin-wen-tai-wan-6.m3u8,重复URL
 [BD]寰宇新聞台灣[geo-blocked],https://stream1.freetv.fun/huan-yu-xin-wen-tai-wan-7.m3u8,重复URL
 [BD]寰宇新聞台灣,https://stream1.freetv.fun/huan-yu-xin-wen-tai-wan-8.m3u8,重复URL
 [BD]寰宇新聞台灣,https://stream1.freetv.fun/huan-yu-xin-wen-tai-wan-9.m3u8,重复URL
 [BD]寰宇新聞台灣[geo-blocked],https://stream1.freetv.fun/huan-yu-xin-wen-tai-wan-10.m3u8,重复URL
-[BD]寰宇新聞台灣[geo-blocked],https://stream1.freetv.fun/huan-yu-xin-wen-tai-wan-12.m3u8,重复URL
 [VGA]寰宇财经,https://stream1.freetv.fun/huan-yu-cai-jing-3.ctv,重复URL
 [BD]寰宇財經,https://stream1.freetv.fun/huan-yu-cai-jing-1.m3u8,重复URL
 [BD]寰宇財經[geo-blocked],https://stream1.freetv.fun/huan-yu-cai-jing-4.m3u8,重复URL
 [BD]寰宇財經,https://stream1.freetv.fun/huan-yu-cai-jing-5.m3u8,重复URL
 [BD]寰宇財經[geo-blocked],https://stream1.freetv.fun/huan-yu-cai-jing-6.m3u8,重复URL
-[BD]寰宇財經[geo-blocked],https://stream1.freetv.fun/huan-yu-cai-jing-7.m3u8,重复URL
-[HD]寰宇财经 *sm,https://stream1.freetv.fun/huan-yu-cai-jing---sm-1.ctv,重复URL
+[VGA]寰宇财经 *sm,https://stream1.freetv.fun/huan-yu-cai-jing---sm-1.ctv,重复URL
 [BD]寰宇財經 *4g,https://stream1.freetv.fun/huan-yu-cai-jing---4g-2.m3u8,重复URL
 [BD]寰宇財經 *4g[geo-blocked],https://stream1.freetv.fun/huan-yu-cai-jing---4g-1.m3u8,重复URL
 [HD]山东教育,https://stream1.freetv.fun/shan-dong-jiao-yu-9.m3u8,重复URL
 [SD]山东教育,https://stream1.freetv.fun/shan-dong-jiao-yu-1.m3u8,重复URL
 [BD]山东卫视,https://stream1.freetv.fun/shan-dong-wei-shi-71.m3u8,重复URL
 [HD]山东卫视,https://stream1.freetv.fun/shan-dong-wei-shi-37.m3u8,重复URL
+[BD]山东卫视,https://stream1.freetv.fun/shan-dong-wei-shi-23.ctv,重复URL
 [BD]山东卫视[geo-blocked],https://stream1.freetv.fun/shan-dong-wei-shi-24.m3u8,重复URL
 [BD]山东卫视,https://stream1.freetv.fun/shan-dong-wei-shi-32.ctv,重复URL
 [BD]山东卫视,https://stream1.freetv.fun/shan-dong-wei-shi-21.m3u8,重复URL
-[BD]山东卫视[geo-blocked],https://stream1.freetv.fun/shan-dong-wei-shi-33.ctv,重复URL
+[BD]山东卫视,https://stream1.freetv.fun/shan-dong-wei-shi-33.ctv,重复URL
 [BD]山东卫视,https://stream1.freetv.fun/shan-dong-wei-shi-48.m3u8,重复URL
 [HD]山东卫视,https://stream1.freetv.fun/shan-dong-wei-shi-36.m3u8,重复URL
 [BD]山东卫视[geo-blocked],https://stream1.freetv.fun/shan-dong-wei-shi-55.m3u8,重复URL
@@ -3082,25 +3078,29 @@ CNA,https://live1.mediadesk.al/cnatvlive.m3u8,重复URL
 [BD]山西卫视,https://stream1.freetv.fun/shan-xi-wei-shi-90.m3u8,重复URL
 [BD]山西卫视,https://stream1.freetv.fun/shan-xi-wei-shi-40.m3u8,重复URL
 [SD]山西卫视,https://stream1.freetv.fun/shan-xi-wei-shi-55.m3u8,重复URL
-[SD]山西卫视,https://stream1.freetv.fun/shan-xi-wei-shi-69.ctv,重复URL
+[SD]山西卫视[geo-blocked],https://stream1.freetv.fun/shan-xi-wei-shi-69.ctv,重复URL
 [SD]山西卫视,https://stream1.freetv.fun/shan-xi-wei-shi-81.m3u8,重复URL
 [BD]山西卫视,https://stream1.freetv.fun/shan-xi-wei-shi-130.m3u8,重复URL
+[BD]山西卫视,https://stream1.freetv.fun/shan-xi-wei-shi-72.ctv,重复URL
 [BD]山西卫视[geo-blocked],https://stream1.freetv.fun/shan-xi-wei-shi-18.m3u8,重复URL
-[SD]山西卫视,https://stream1.freetv.fun/shan-xi-wei-shi-87.m3u8,重复URL
+[SD]山西卫视[geo-blocked],https://stream1.freetv.fun/shan-xi-wei-shi-87.m3u8,重复URL
 [BD]山西卫视,https://stream1.freetv.fun/shan-xi-wei-shi-73.m3u8,重复URL
-[SD]山西卫视,https://stream1.freetv.fun/shan-xi-wei-shi-109.m3u8,重复URL
+[SD]山西卫视[geo-blocked],https://stream1.freetv.fun/shan-xi-wei-shi-109.m3u8,重复URL
 [SD]山西卫视,https://stream1.freetv.fun/shan-xi-wei-shi-100.m3u8,重复URL
 [BD]年代新聞[geo-blocked],https://stream1.freetv.fun/nian-dai-xin-wen-5.ctv,重复URL
 [BD]年代新聞[geo-blocked],https://stream1.freetv.fun/nian-dai-xin-wen-2.ctv,重复URL
 [BD]年代新闻 *sm,https://stream1.freetv.fun/nian-dai-xin-wen---sm-1.ctv,重复URL
 [BD]年代新聞[geo-blocked],https://stream1.freetv.fun/nian-dai-xin-wen-7.ctv,重复URL
+[SD]康巴卫视[geo-blocked],https://stream1.freetv.fun/kang-ba-wei-shi-7.ctv,重复URL
 [SD]康巴卫视,https://stream1.freetv.fun/kang-ba-wei-shi-13.m3u8,重复URL
 [SD]康巴卫视,https://stream1.freetv.fun/kang-ba-wei-shi-25.m3u8,重复URL
-[SD]康巴卫视,https://stream1.freetv.fun/kang-ba-wei-shi-29.m3u8,重复URL
-[BD]廈門衛視[geo-blocked],https://stream1.freetv.fun/sha-men-wei-shi-2.ctv,重复URL
-[BD]廈門衛視,https://stream1.freetv.fun/sha-men-wei-shi-16.ctv,重复URL
+[SD]康巴卫视[geo-blocked],https://stream1.freetv.fun/kang-ba-wei-shi-29.m3u8,重复URL
+[BD]廈門衛視,https://stream1.freetv.fun/sha-men-wei-shi-2.ctv,重复URL
+[BD]廈門衛視[geo-blocked],https://stream1.freetv.fun/sha-men-wei-shi-16.ctv,重复URL
+[SD]厦门卫视,https://stream1.freetv.fun/sha-men-wei-shi-13.ctv,重复URL
 [SD]厦门卫视[geo-blocked],https://stream1.freetv.fun/sha-men-wei-shi-26.m3u8,重复URL
-[SD]厦门卫视,https://stream1.freetv.fun/sha-men-wei-shi-15.m3u8,重复URL
+[SD]厦门卫视[geo-blocked],https://stream1.freetv.fun/sha-men-wei-shi-15.m3u8,重复URL
+[SD]厦门卫视[geo-blocked],https://stream1.freetv.fun/sha-men-wei-shi-39.m3u8,重复URL
 [SD]厦门卫视,https://stream1.freetv.fun/sha-men-wei-shi-10.ctv,重复URL
 [BD]厦门卫视,https://stream1.freetv.fun/sha-men-wei-shi-1.m3u8,重复URL
 [HD]广元综合,https://stream1.freetv.fun/yan-yuan-zong-he-2.m3u8,重复URL
@@ -3112,13 +3112,13 @@ CNA,https://live1.mediadesk.al/cnatvlive.m3u8,重复URL
 [HD]广州新闻,https://stream1.freetv.fun/yan-zhou-xin-wen-9.m3u8,重复URL
 [HD]广州新闻,https://stream1.freetv.fun/yan-zhou-xin-wen-2.ctv,重复URL
 [BD]广州新闻[geo-blocked],https://stream1.freetv.fun/yan-zhou-xin-wen-1.ctv,重复URL
-[BD]广州新闻[geo-blocked],https://stream1.freetv.fun/yan-zhou-xin-wen-25.ctv,重复URL
+[BD]广州新闻,https://stream1.freetv.fun/yan-zhou-xin-wen-25.ctv,重复URL
 [BD]广州新闻[geo-blocked],https://stream1.freetv.fun/yan-zhou-xin-wen-27.ctv,重复URL
 [SD]广州新闻,https://stream1.freetv.fun/yan-zhou-xin-wen-6.m3u8,重复URL
 [HD]广州新闻,https://stream1.freetv.fun/yan-zhou-xin-wen-5.m3u8,重复URL
 [HD]广州新闻,https://stream1.freetv.fun/yan-zhou-xin-wen-24.m3u8,重复URL
-[BD]广州竞赛,https://stream1.freetv.fun/yan-zhou-jing-sai-29.ctv,重复URL
-[BD]广州竞赛,https://stream1.freetv.fun/yan-zhou-jing-sai-15.ctv,重复URL
+[BD]广州竞赛[geo-blocked],https://stream1.freetv.fun/yan-zhou-jing-sai-29.ctv,重复URL
+[BD]广州竞赛[geo-blocked],https://stream1.freetv.fun/yan-zhou-jing-sai-15.ctv,重复URL
 [HD]广州竞赛,https://stream1.freetv.fun/yan-zhou-jing-sai-22.m3u8,重复URL
 [HD]广州综合,https://stream1.freetv.fun/yan-zhou-zong-he-4.m3u8,重复URL
 [HD]广州综合,https://stream1.freetv.fun/yan-zhou-zong-he-28.m3u8,重复URL
@@ -3135,33 +3135,30 @@ CNA,https://live1.mediadesk.al/cnatvlive.m3u8,重复URL
 [BD]广州综合,https://stream1.freetv.fun/yan-zhou-zong-he-13.ctv,重复URL
 [BD]广州综合[geo-blocked],https://stream1.freetv.fun/yan-zhou-zong-he-18.ctv,重复URL
 [HD]广东新闻,https://stream1.freetv.fun/yan-dong-xin-wen-9.m3u8,重复URL
-[BD]广东新闻,https://stream1.freetv.fun/yan-dong-xin-wen-12.ctv,重复URL
+[BD]广东新闻[geo-blocked],https://stream1.freetv.fun/yan-dong-xin-wen-12.ctv,重复URL
 [BD]广东新闻,https://stream1.freetv.fun/yan-dong-xin-wen-11.ctv,重复URL
 [BD]广东新闻[geo-blocked],https://stream1.freetv.fun/yan-dong-xin-wen-24.ctv,重复URL
 [BD]广东新闻[geo-blocked],https://stream1.freetv.fun/yan-dong-xin-wen-23.m3u8,重复URL
 [BD]广东新闻高清,https://stream1.freetv.fun/yan-dong-xin-wen-gao-qing-1.m3u8,重复URL
-[BD]广东民生[geo-blocked],https://stream1.freetv.fun/yan-dong-min-sheng-17.ctv,重复URL
+[BD]广东民生,https://stream1.freetv.fun/yan-dong-min-sheng-17.ctv,重复URL
 [BD]广东民生,https://stream1.freetv.fun/yan-dong-min-sheng-14.ctv,重复URL
 [BD]广东民生[geo-blocked],https://stream1.freetv.fun/yan-dong-min-sheng-30.ctv,重复URL
 [BD]广东民生,https://stream1.freetv.fun/yan-dong-min-sheng-22.m3u8,重复URL
 [BD]广东民生[geo-blocked],https://stream1.freetv.fun/yan-dong-min-sheng-39.ctv,重复URL
 [BD]广东民生[geo-blocked],https://stream1.freetv.fun/yan-dong-min-sheng-10.m3u8,重复URL
-[BD]广东民生,https://stream1.freetv.fun/yan-dong-min-sheng-38.m3u8,重复URL
-[BD]广东民生,https://stream1.freetv.fun/yan-dong-min-sheng-26.m3u8,重复URL
 [BD]广东民生高清,https://stream1.freetv.fun/yan-dong-min-sheng-gao-qing-1.m3u8,重复URL
 [HD]广东珠江[geo-blocked],https://stream1.freetv.fun/yan-dong-zhu-jiang-27.m3u8,重复URL
 [BD]广东珠江,https://stream1.freetv.fun/yan-dong-zhu-jiang-31.m3u8,重复URL
 [BD]广东珠江[geo-blocked],https://stream1.freetv.fun/yan-dong-zhu-jiang-7.m3u8,重复URL
 [BD]广东珠江[geo-blocked],https://stream1.freetv.fun/yan-dong-zhu-jiang-25.m3u8,重复URL
 [BD]广东珠江[geo-blocked],https://stream1.freetv.fun/yan-dong-zhu-jiang-4.ctv,重复URL
-[BD]广东珠江,https://stream1.freetv.fun/yan-dong-zhu-jiang-13.ctv,重复URL
-[BD]广东珠江,https://stream1.freetv.fun/yan-dong-zhu-jiang-12.ctv,重复URL
+[BD]广东珠江[geo-blocked],https://stream1.freetv.fun/yan-dong-zhu-jiang-13.ctv,重复URL
+[BD]广东珠江[geo-blocked],https://stream1.freetv.fun/yan-dong-zhu-jiang-12.ctv,重复URL
 [BD]广东珠江[geo-blocked],https://stream1.freetv.fun/yan-dong-zhu-jiang-8.m3u8,重复URL
-[BD]广东珠江,https://stream1.freetv.fun/yan-dong-zhu-jiang-26.m3u8,重复URL
-[BD]广东卫视[geo-blocked],https://stream1.freetv.fun/yan-dong-wei-shi-87.m3u8,重复URL
+[BD]广东卫视,https://stream1.freetv.fun/yan-dong-wei-shi-87.m3u8,重复URL
 [HD]广东卫视,https://stream1.freetv.fun/yan-dong-wei-shi-100.m3u8,重复URL
 [BD]广东卫视[geo-blocked],https://stream1.freetv.fun/yan-dong-wei-shi-18.m3u8,重复URL
-[BD]广东卫视[geo-blocked],https://stream1.freetv.fun/yan-dong-wei-shi-73.ctv,重复URL
+[BD]广东卫视,https://stream1.freetv.fun/yan-dong-wei-shi-73.ctv,重复URL
 [BD]广东卫视,https://stream1.freetv.fun/yan-dong-wei-shi-33.m3u8,重复URL
 [BD]广东卫视,https://stream1.freetv.fun/yan-dong-wei-shi-80.m3u8,重复URL
 [BD]广东卫视,https://stream1.freetv.fun/yan-dong-wei-shi-83.ctv,重复URL
@@ -3172,37 +3169,35 @@ CNA,https://live1.mediadesk.al/cnatvlive.m3u8,重复URL
 [BD]广东卫视,https://stream1.freetv.fun/yan-dong-wei-shi-36.m3u8,重复URL
 [BD]广东卫视,https://stream1.freetv.fun/yan-dong-wei-shi-52.m3u8,重复URL
 [BD]广东体育[geo-blocked],https://stream1.freetv.fun/yan-dong-ti-yu-36.ctv,重复URL
-[BD]广东体育,https://stream1.freetv.fun/yan-dong-ti-yu-32.m3u8,重复URL
 [BD]广东体育,https://stream1.freetv.fun/yan-dong-ti-yu-37.ctv,重复URL
+[BD]广东体育,https://stream1.freetv.fun/yan-dong-ti-yu-24.m3u8,重复URL
 [BD]广东体育[geo-blocked],https://stream1.freetv.fun/yan-dong-ti-yu-16.m3u8,重复URL
+[BD]广东体育[geo-blocked],https://stream1.freetv.fun/yan-dong-ti-yu-5.m3u8,重复URL
 [BD]广东体育[geo-blocked],https://stream1.freetv.fun/yan-dong-ti-yu-33.ctv,重复URL
+[BD]广东体育高清,https://stream1.freetv.fun/yan-dong-ti-yu-gao-qing-1.m3u8,重复URL
 [BD]广东体育高清,https://stream1.freetv.fun/yan-dong-ti-yu-gao-qing-2.m3u8,重复URL
 [HD]广东体育,https://stream1.freetv.fun/yan-dong-ti-yu-35.m3u8,重复URL
 [BD]广东体育[geo-blocked],https://stream1.freetv.fun/yan-dong-ti-yu-6.m3u8,重复URL
-[BD]广东体育,https://stream1.freetv.fun/yan-dong-ti-yu-10.m3u8,重复URL
 [SD]广西卫视,https://stream1.freetv.fun/yan-xi-wei-shi-64.m3u8,重复URL
-[VGA]广西卫视[geo-blocked],https://stream1.freetv.fun/yan-xi-wei-shi-22.ctv,重复URL
+[BD]广西卫视[geo-blocked],https://stream1.freetv.fun/yan-xi-wei-shi-81.ctv,重复URL
 [HD]广西卫视,https://stream1.freetv.fun/yan-xi-wei-shi-79.m3u8,重复URL
 [HD]广西卫视,https://stream1.freetv.fun/yan-xi-wei-shi-8.m3u8,重复URL
 [BD]广西卫视,https://stream1.freetv.fun/yan-xi-wei-shi-70.m3u8,重复URL
-[BD]广西卫视[geo-blocked],https://stream1.freetv.fun/yan-xi-wei-shi-29.ctv,重复URL
+[BD]广西卫视,https://stream1.freetv.fun/yan-xi-wei-shi-29.ctv,重复URL
 [SD]广西卫视[geo-blocked],https://stream1.freetv.fun/yan-xi-wei-shi-43.m3u8,重复URL
 [BD]广西卫视,https://stream1.freetv.fun/yan-xi-wei-shi-74.m3u8,重复URL
 [BD]广西卫视,https://stream1.freetv.fun/yan-xi-wei-shi-83.ctv,重复URL
-[BD]广西卫视[geo-blocked],https://stream1.freetv.fun/yan-xi-wei-shi-26.ctv,重复URL
+[HD]广西卫视,https://stream1.freetv.fun/yan-xi-wei-shi-26.ctv,重复URL
 [BD]广西卫视[geo-blocked],https://stream1.freetv.fun/yan-xi-wei-shi-15.m3u8,重复URL
 [SD]广西卫视,https://stream1.freetv.fun/yan-xi-wei-shi-76.m3u8,重复URL
-[BD]广西卫视[geo-blocked],https://stream1.freetv.fun/yan-xi-wei-shi-65.ctv,重复URL
 [BD]延边卫视[geo-blocked],https://stream1.freetv.fun/yan-bian-wei-shi-17.m3u8,重复URL
-[SD]延边卫视[geo-blocked],https://stream1.freetv.fun/yan-bian-wei-shi-33.m3u8,重复URL
 [SD]延边卫视,https://stream1.freetv.fun/yan-bian-wei-shi-25.m3u8,重复URL
 [BD]影迷數位紀實,https://stream1.freetv.fun/ying-mi-shu-wei-ji-shi-3.m3u8,重复URL
 [BD]影迷數位紀實,https://stream1.freetv.fun/ying-mi-shu-wei-ji-shi-4.m3u8,重复URL
 [BD]影迷數位紀實,https://stream1.freetv.fun/ying-mi-shu-wei-ji-shi-5.m3u8,重复URL
 [BD]影迷數位紀實,https://stream1.freetv.fun/ying-mi-shu-wei-ji-shi-6.m3u8,重复URL
-[BD]影迷數位紀實,https://stream1.freetv.fun/ying-mi-shu-wei-ji-shi-7.m3u8,重复URL
+[BD]影迷數位紀實[geo-blocked],https://stream1.freetv.fun/ying-mi-shu-wei-ji-shi-7.m3u8,重复URL
 [BD]影迷數位電影[geo-blocked],https://stream1.freetv.fun/ying-mi-shu-wei-dian-ying-6.m3u8,重复URL
-[BD]影迷數位電影,https://stream1.freetv.fun/ying-mi-shu-wei-dian-ying-7.m3u8,重复URL
 [BD]影迷數位電影,https://stream1.freetv.fun/ying-mi-shu-wei-dian-ying-5.m3u8,重复URL
 [BD]影迷數位電影,https://stream1.freetv.fun/ying-mi-shu-wei-dian-ying-3.m3u8,重复URL
 [BD]影迷數位電影,https://stream1.freetv.fun/ying-mi-shu-wei-dian-ying-2.m3u8,重复URL
@@ -3216,7 +3211,8 @@ CNA,https://live1.mediadesk.al/cnatvlive.m3u8,重复URL
 [SD]新疆卫视,https://stream1.freetv.fun/xin-jiang-wei-shi-15.m3u8,重复URL
 [BD]新疆卫视,https://stream1.freetv.fun/xin-jiang-wei-shi-38.m3u8,重复URL
 [BD]新疆卫视,https://stream1.freetv.fun/xin-jiang-wei-shi-6.m3u8,重复URL
-[BD]新疆卫视,https://stream1.freetv.fun/xin-jiang-wei-shi-29.m3u8,重复URL
+[BD]新疆卫视,https://stream1.freetv.fun/xin-jiang-wei-shi-55.ctv,重复URL
+[BD]新疆卫视[geo-blocked],https://stream1.freetv.fun/xin-jiang-wei-shi-29.m3u8,重复URL
 [SD]星空卫视,https://stream1.freetv.fun/xing-kong-wei-shi-13.m3u8,重复URL
 [HD]時尚運動x[geo-blocked],https://stream1.freetv.fun/shi-shang-yun-dong-x-7.m3u8,重复URL
 [HD]時尚運動x,https://stream1.freetv.fun/shi-shang-yun-dong-x-3.m3u8,重复URL
@@ -3226,7 +3222,7 @@ CNA,https://live1.mediadesk.al/cnatvlive.m3u8,重复URL
 [BD]時尚運動x *4g,https://stream1.freetv.fun/shi-shang-yun-dong-x--4g-1.m3u8,重复URL
 [BD]時尚運動x *4g,https://stream1.freetv.fun/shi-shang-yun-dong-x--4g-2.m3u8,重复URL
 [BD]郸城新闻综合,https://stream1.freetv.fun/dan-cheng-xin-wen-zong-he-4.m3u8,重复URL
-[BD]郸城新闻综合,https://stream1.freetv.fun/dan-cheng-xin-wen-zong-he-1.m3u8,重复URL
+[BD]郸城新闻综合[geo-blocked],https://stream1.freetv.fun/dan-cheng-xin-wen-zong-he-1.m3u8,重复URL
 [HD]智林體育[geo-blocked],https://stream1.freetv.fun/zhi-lin-ti-yu-7.m3u8,重复URL
 [HD]智林體育,https://stream1.freetv.fun/zhi-lin-ti-yu-3.m3u8,重复URL
 [HD]智林體育,https://stream1.freetv.fun/zhi-lin-ti-yu-4.m3u8,重复URL
@@ -3239,33 +3235,31 @@ CNA,https://live1.mediadesk.al/cnatvlive.m3u8,重复URL
 [BD]东南卫视,https://stream1.freetv.fun/dong-nan-wei-shi-62.m3u8,重复URL
 [BD]东南卫视,https://stream1.freetv.fun/dong-nan-wei-shi-38.m3u8,重复URL
 [HD]东南卫视[geo-blocked],https://stream1.freetv.fun/dong-nan-wei-shi-79.m3u8,重复URL
-[BD]东南卫视[geo-blocked],https://stream1.freetv.fun/dong-nan-wei-shi-75.ctv,重复URL
-[BD]东南卫视[geo-blocked],https://stream1.freetv.fun/dong-nan-wei-shi-34.ctv,重复URL
+[BD]东南卫视,https://stream1.freetv.fun/dong-nan-wei-shi-90.ctv,重复URL
+[BD]东南卫视,https://stream1.freetv.fun/dong-nan-wei-shi-75.ctv,重复URL
+[BD]东南卫视,https://stream1.freetv.fun/dong-nan-wei-shi-34.ctv,重复URL
 [VGA]东南卫视[geo-blocked],https://stream1.freetv.fun/dong-nan-wei-shi-53.ctv,重复URL
 [BD]东南卫视,https://stream1.freetv.fun/dong-nan-wei-shi-33.m3u8,重复URL
 [BD]东方影视[geo-blocked],https://stream1.freetv.fun/dong-fang-ying-shi-4.ctv,重复URL
 [HD]东方卫视,https://stream1.freetv.fun/dong-fang-wei-shi-23.m3u8,重复URL
 [BD]东方卫视,https://stream1.freetv.fun/dong-fang-wei-shi-39.m3u8,重复URL
 [BD]东方卫视,https://stream1.freetv.fun/dong-fang-wei-shi-67.m3u8,重复URL
-[BD]东方卫视,https://stream1.freetv.fun/dong-fang-wei-shi-9.m3u8,重复URL
-[BD]东方卫视,https://stream1.freetv.fun/dong-fang-wei-shi-90.ctv,重复URL
+[BD]东方卫视[geo-blocked],https://stream1.freetv.fun/dong-fang-wei-shi-90.ctv,重复URL
 [BD]东方卫视,https://stream1.freetv.fun/dong-fang-wei-shi-24.m3u8,重复URL
 [HD]东方卫视,https://stream1.freetv.fun/dong-fang-wei-shi-102.m3u8,重复URL
 [BD]东方卫视[geo-blocked],https://stream1.freetv.fun/dong-fang-wei-shi-31.ctv,重复URL
 [BD]东方卫视,https://stream1.freetv.fun/dong-fang-wei-shi-42.m3u8,重复URL
 [BD]东方卫视[geo-blocked],https://stream1.freetv.fun/dong-fang-wei-shi-70.m3u8,重复URL
-[BD]東方衛視[geo-blocked],https://stream1.freetv.fun/dong-fang-wei-shi-30.ctv,重复URL
+[BD]東方衛視,https://stream1.freetv.fun/dong-fang-wei-shi-30.ctv,重复URL
 [BD]東方衛視[geo-blocked],https://stream1.freetv.fun/dong-fang-wei-shi-41.ctv,重复URL
 [SD]东方卫视,https://stream1.freetv.fun/dong-fang-wei-shi-45.ctv,重复URL
 [BD]东方卫视,https://stream1.freetv.fun/dong-fang-wei-shi-57.m3u8,重复URL
 [BD]东方卫视,https://stream1.freetv.fun/dong-fang-wei-shi-95.m3u8,重复URL
 [BD]东方卫视[geo-blocked],https://stream1.freetv.fun/dong-fang-wei-shi-52.m3u8,重复URL
-[BD]東森幼幼[geo-blocked],https://stream1.freetv.fun/dong-sen-you-you-5.ctv,重复URL
+[BD]東森幼幼,https://stream1.freetv.fun/dong-sen-you-you-5.ctv,重复URL
 [BD]東森幼幼[geo-blocked],https://stream1.freetv.fun/dong-sen-you-you-6.ctv,重复URL
-[BD]东森幼幼yoyo *sm,https://stream1.freetv.fun/dong-sen-you-you-yoyo--sm-1.ctv,重复URL
 [BD]东森幼幼[geo-blocked],https://stream1.freetv.fun/dong-sen-you-you-1.ctv,重复URL
 [BD]東森戲劇[geo-blocked],https://stream1.freetv.fun/dong-sen-xi-ju-3.ctv,重复URL
-[BD]東森戲劇[geo-blocked],https://stream1.freetv.fun/dong-sen-xi-ju-1.ctv,重复URL
 [BD]东森戏剧 *sm,https://stream1.freetv.fun/dong-sen-xi-ju---sm-1.ctv,重复URL
 [BD]东森戏剧,https://stream1.freetv.fun/dong-sen-xi-ju-4.ctv,重复URL
 [HD]东森新闻,https://stream1.freetv.fun/dong-sen-xin-wen-2.ctv,重复URL
@@ -3277,11 +3271,11 @@ CNA,https://live1.mediadesk.al/cnatvlive.m3u8,重复URL
 [BD]東森新聞,https://stream1.freetv.fun/dong-sen-xin-wen-9.m3u8,重复URL
 [BD]東森新聞,https://stream1.freetv.fun/dong-sen-xin-wen-7.m3u8,重复URL
 [BD]東森新聞,https://stream1.freetv.fun/dong-sen-xin-wen-5.m3u8,重复URL
-[BD]东森新闻 *sm,https://stream1.freetv.fun/dong-sen-xin-wen---sm-1.ctv,重复URL
-[BD]東森新聞[geo-blocked],https://stream1.freetv.fun/dong-sen-xin-wen-6.ctv,重复URL
+[HD]东森新闻 *sm,https://stream1.freetv.fun/dong-sen-xin-wen---sm-1.ctv,重复URL
+[BD]東森新聞,https://stream1.freetv.fun/dong-sen-xin-wen-6.ctv,重复URL
 [HD]东森洋片,https://stream1.freetv.fun/dong-sen-yang-pian-4.ctv,重复URL
-[BD]東森綜合,https://stream1.freetv.fun/dong-sen-zong-he-5.ctv,重复URL
-[BD]东森综合 *sm,https://stream1.freetv.fun/dong-sen-zong-he---sm-1.ctv,重复URL
+[HD]东森洋片 *sm,https://stream1.freetv.fun/dong-sen-yang-pian---sm-1.ctv,重复URL
+[BD]東森綜合[geo-blocked],https://stream1.freetv.fun/dong-sen-zong-he-5.ctv,重复URL
 [BD]东森综合[geo-blocked],https://stream1.freetv.fun/dong-sen-zong-he-4.ctv,重复URL
 [BD]東森美洲,https://stream1.freetv.fun/dong-sen-mei-zhou-3.m3u8,重复URL
 [BD]东森美洲2,https://stream1.freetv.fun/dong-sen-mei-zhou-2-1.m3u8,重复URL
@@ -3289,12 +3283,11 @@ CNA,https://live1.mediadesk.al/cnatvlive.m3u8,重复URL
 [BD]東森財經[geo-blocked],https://stream1.freetv.fun/dong-sen-cai-jing-2.ctv,重复URL
 [BD]東森財經[geo-blocked],https://stream1.freetv.fun/dong-sen-cai-jing-1.ctv,重复URL
 [BD]東森財經,https://stream1.freetv.fun/dong-sen-cai-jing-4.ctv,重复URL
-[BD]東森財經新聞[geo-blocked],https://stream1.freetv.fun/dong-sen-cai-jing-xin-wen-8.m3u8,重复URL
 [BD]東森財經新聞,https://stream1.freetv.fun/dong-sen-cai-jing-xin-wen-1.m3u8,重复URL
 [BD]東森財經新聞,https://stream1.freetv.fun/dong-sen-cai-jing-xin-wen-2.m3u8,重复URL
 [BD]東森財經新聞,https://stream1.freetv.fun/dong-sen-cai-jing-xin-wen-3.m3u8,重复URL
 [BD]東森財經新聞,https://stream1.freetv.fun/dong-sen-cai-jing-xin-wen-7.m3u8,重复URL
-[BD]东森财经新闻 *sm,https://stream1.freetv.fun/dong-sen-cai-jing-xin-wen---sm-1.ctv,重复URL
+[HD]东森财经新闻 *sm,https://stream1.freetv.fun/dong-sen-cai-jing-xin-wen---sm-1.ctv,重复URL
 [BD]東森財經新聞 *4g,https://stream1.freetv.fun/dong-sen-cai-jing-xin-wen---4g-1.m3u8,重复URL
 [HD]东森财经新闻,https://stream1.freetv.fun/dong-sen-cai-jing-xin-wen-5.ctv,重复URL
 [BD]东森超视,https://stream1.freetv.fun/dong-sen-chao-shi-8.m3u8,重复URL
@@ -3302,16 +3295,17 @@ CNA,https://live1.mediadesk.al/cnatvlive.m3u8,重复URL
 [BD]东森超视,https://stream1.freetv.fun/dong-sen-chao-shi-3.m3u8,重复URL
 [BD]东森超视34.5,https://stream1.freetv.fun/dong-sen-chao-shi-34-5-1.m3u8,重复URL
 [BD]东森电影,https://stream1.freetv.fun/dong-sen-dian-ying-4.ctv,重复URL
+[BD]东森电影 *sm,https://stream1.freetv.fun/dong-sen-dian-ying---sm-1.ctv,重复URL
+[BD]东森电影,https://stream1.freetv.fun/dong-sen-dian-ying-5.m3u8,重复URL
 [HD]武乡新闻综合,https://stream1.freetv.fun/wu-xiang-xin-wen-zong-he-3.m3u8,重复URL
 [HD]武乡新闻综合,https://stream1.freetv.fun/wu-xiang-xin-wen-zong-he-2.m3u8,重复URL
-[BD]民視,https://stream1.freetv.fun/min-shi-10.ctv,重复URL
+[BD]民視[geo-blocked],https://stream1.freetv.fun/min-shi-10.ctv,重复URL
 [BD]民視,https://stream1.freetv.fun/min-shi-7.m3u8,重复URL
 [BD]民視,https://stream1.freetv.fun/min-shi-4.m3u8,重复URL
-[BD]民视 *sm,https://stream1.freetv.fun/min-shi---sm-1.ctv,重复URL
+[HD]民视 *sm,https://stream1.freetv.fun/min-shi---sm-1.ctv,重复URL
 [BD]民視hd *4g,https://stream1.freetv.fun/min-shi-hd--4g-1.m3u8,重复URL
-[BD]民視[geo-blocked],https://stream1.freetv.fun/min-shi-3.ctv,重复URL
-[BD]民視,https://stream1.freetv.fun/min-shi-9.m3u8,重复URL
-[BD]民視[geo-blocked],https://stream1.freetv.fun/min-shi-8.ctv,重复URL
+[BD]民視,https://stream1.freetv.fun/min-shi-3.ctv,重复URL
+[BD]民視,https://stream1.freetv.fun/min-shi-8.ctv,重复URL
 [HD]民视[geo-blocked],rtmp://f13h.mine.nu/sat/tv051,无效URL（非 http/https/rtsp 开头）
 [HD]民视[geo-blocked],rtmp://f13h.mine.nu:1935/sat/tv051,无效URL（非 http/https/rtsp 开头）
 [HD]民视,https://stream1.freetv.fun/min-shi-11.ctv,重复URL
@@ -3323,20 +3317,18 @@ CNA,https://live1.mediadesk.al/cnatvlive.m3u8,重复URL
 [BD]民視影劇,https://stream1.freetv.fun/min-shi-ying-ju-5.m3u8,重复URL
 [BD]民視影劇,https://stream1.freetv.fun/min-shi-ying-ju-6.m3u8,重复URL
 [BD]民視新聞[geo-blocked],https://stream1.freetv.fun/min-shi-xin-wen-13.ctv,重复URL
-[BD]民視新聞[geo-blocked],https://stream1.freetv.fun/min-shi-xin-wen-1.ctv,重复URL
 [BD]民視新聞[geo-blocked],https://stream1.freetv.fun/min-shi-xin-wen-15.m3u8,重复URL
 [BD]民視新聞,https://stream1.freetv.fun/min-shi-xin-wen-11.m3u8,重复URL
 [BD]民視新聞,https://stream1.freetv.fun/min-shi-xin-wen-12.m3u8,重复URL
 [BD]民視新聞,https://stream1.freetv.fun/min-shi-xin-wen-16.m3u8,重复URL
 [BD]民視新聞,https://stream1.freetv.fun/min-shi-xin-wen-14.m3u8,重复URL
 [BD]民視新聞,https://stream1.freetv.fun/min-shi-xin-wen-17.m3u8,重复URL
-[BD]民视新闻 *sm,https://stream1.freetv.fun/min-shi-xin-wen---sm-1.ctv,重复URL
+[HD]民视新闻 *sm[geo-blocked],https://stream1.freetv.fun/min-shi-xin-wen---sm-1.ctv,重复URL
 [BD]民視新聞 *4g,https://stream1.freetv.fun/min-shi-xin-wen---4g-2.m3u8,重复URL
 [BD]民視新聞 *4g,https://stream1.freetv.fun/min-shi-xin-wen---4g-1.m3u8,重复URL
 [BD]民视新闻[geo-blocked],https://stream1.freetv.fun/min-shi-xin-wen-20.ctv,重复URL
-[BD]民視旅遊[geo-blocked],https://stream1.freetv.fun/min-shi-lu-you-7.m3u8,重复URL
 [BD]民視旅遊[geo-blocked],https://stream1.freetv.fun/min-shi-lu-you-3.m3u8,重复URL
-[BD]民視旅遊[geo-blocked],https://stream1.freetv.fun/min-shi-lu-you-2.m3u8,重复URL
+[BD]民視旅遊,https://stream1.freetv.fun/min-shi-lu-you-2.m3u8,重复URL
 [BD]民視旅遊,https://stream1.freetv.fun/min-shi-lu-you-5.m3u8,重复URL
 [BD]民視旅遊,https://stream1.freetv.fun/min-shi-lu-you-6.m3u8,重复URL
 [BD]民視旅遊 *4g,https://stream1.freetv.fun/min-shi-lu-you---4g-1.m3u8,重复URL
@@ -3344,26 +3336,21 @@ CNA,https://live1.mediadesk.al/cnatvlive.m3u8,重复URL
 [BD]民視第一台 *4g,https://stream1.freetv.fun/min-shi-di-yi-tai---4g-1.m3u8,重复URL
 [BD]民視第一台 *4g,https://stream1.freetv.fun/min-shi-di-yi-tai---4g-2.m3u8,重复URL
 [BD]民視第一[geo-blocked],https://stream1.freetv.fun/min-shi-di-yi-5.m3u8,重复URL
-[BD]民視第一,https://stream1.freetv.fun/min-shi-di-yi-2.m3u8,重复URL
-[BD]民視第一,https://stream1.freetv.fun/min-shi-di-yi-7.m3u8,重复URL
 [BD]民視第一,https://stream1.freetv.fun/min-shi-di-yi-3.m3u8,重复URL
 [BD]民視第一,https://stream1.freetv.fun/min-shi-di-yi-4.m3u8,重复URL
 [BD]民視第一,https://stream1.freetv.fun/min-shi-di-yi-6.m3u8,重复URL
 [BD]民視第一,https://stream1.freetv.fun/min-shi-di-yi-1.m3u8,重复URL
 [BD]民視綜藝 *4g,https://stream1.freetv.fun/min-shi-zong-yi---4g-2.m3u8,重复URL
-[BD]民視綜藝[geo-blocked],https://stream1.freetv.fun/min-shi-zong-yi-7.m3u8,重复URL
-[BD]民視綜藝,https://stream1.freetv.fun/min-shi-zong-yi-2.m3u8,重复URL
-[BD]民視綜藝[geo-blocked],https://stream1.freetv.fun/min-shi-zong-yi-4.m3u8,重复URL
+[BD]民視綜藝[geo-blocked],https://stream1.freetv.fun/min-shi-zong-yi-2.m3u8,重复URL
+[BD]民視綜藝,https://stream1.freetv.fun/min-shi-zong-yi-4.m3u8,重复URL
 [BD]民視綜藝,https://stream1.freetv.fun/min-shi-zong-yi-5.m3u8,重复URL
 [BD]民視綜藝,https://stream1.freetv.fun/min-shi-zong-yi-6.m3u8,重复URL
 [BD]民视台湾[geo-blocked],https://stream1.freetv.fun/min-shi-tai-wan-4.ctv,重复URL
 [BD]民視台灣[geo-blocked],https://stream1.freetv.fun/min-shi-tai-wan-7.m3u8,重复URL
-[BD]民視台灣,https://stream1.freetv.fun/min-shi-tai-wan-8.m3u8,重复URL
-[BD]民視台灣,https://stream1.freetv.fun/min-shi-tai-wan-3.m3u8,重复URL
-[BD]民視台灣,https://stream1.freetv.fun/min-shi-tai-wan-1.m3u8,重复URL
+[BD]民視台灣[geo-blocked],https://stream1.freetv.fun/min-shi-tai-wan-3.m3u8,重复URL
+[BD]民視台灣[geo-blocked],https://stream1.freetv.fun/min-shi-tai-wan-1.m3u8,重复URL
 [BD]民視台灣,https://stream1.freetv.fun/min-shi-tai-wan-5.m3u8,重复URL
 [BD]民視台灣,https://stream1.freetv.fun/min-shi-tai-wan-6.m3u8,重复URL
-[BD]民视台湾 *sm,https://stream1.freetv.fun/min-shi-tai-wan---sm-1.ctv,重复URL
 [BD]民視台灣台 *4g,https://stream1.freetv.fun/min-shi-tai-wan-tai---4g-2.m3u8,重复URL
 [BD]民視台灣台 *4g,https://stream1.freetv.fun/min-shi-tai-wan-tai---4g-1.m3u8,重复URL
 [BD]永嘉新闻综合[geo-blocked],https://stream1.freetv.fun/yong-jia-xin-wen-zong-he-2.m3u8,重复URL
@@ -3376,9 +3363,9 @@ CNA,https://live1.mediadesk.al/cnatvlive.m3u8,重复URL
 [BD]江苏卫视,https://stream1.freetv.fun/jiang-su-wei-shi-101.ctv,重复URL
 [BD]江苏卫视,https://stream1.freetv.fun/jiang-su-wei-shi-3.m3u8,重复URL
 [BD]江苏卫视[geo-blocked],https://stream1.freetv.fun/jiang-su-wei-shi-72.m3u8,重复URL
-[BD]江苏卫视[geo-blocked],https://stream1.freetv.fun/jiang-su-wei-shi-109.m3u8,重复URL
+[BD]江苏卫视,https://stream1.freetv.fun/jiang-su-wei-shi-109.m3u8,重复URL
 [HD]江苏卫视,https://stream1.freetv.fun/jiang-su-wei-shi-110.m3u8,重复URL
-[BD]江苏卫视[geo-blocked],https://stream1.freetv.fun/jiang-su-wei-shi-106.ctv,重复URL
+[HD]江苏卫视,https://stream1.freetv.fun/jiang-su-wei-shi-106.ctv,重复URL
 [BD]江苏卫视[geo-blocked],https://stream1.freetv.fun/jiang-su-wei-shi-34.m3u8,重复URL
 [BD]江苏卫视,https://stream1.freetv.fun/jiang-su-wei-shi-10.m3u8,重复URL
 [BD]江苏卫视[geo-blocked],https://stream1.freetv.fun/jiang-su-wei-shi-26.ctv,重复URL
@@ -3396,17 +3383,20 @@ CNA,https://live1.mediadesk.al/cnatvlive.m3u8,重复URL
 [HD]江西卫视,https://stream1.freetv.fun/jiang-xi-wei-shi-77.m3u8,重复URL
 [SD]江西卫视,https://stream1.freetv.fun/jiang-xi-wei-shi-100.m3u8,重复URL
 [SD]江西卫视,https://stream1.freetv.fun/jiang-xi-wei-shi-90.m3u8,重复URL
+[BD]河北卫视,https://stream1.freetv.fun/he-bei-wei-shi-10.m3u8,重复URL
 [SD]河北卫视,https://stream1.freetv.fun/he-bei-wei-shi-81.m3u8,重复URL
 [BD]河北卫视,https://stream1.freetv.fun/he-bei-wei-shi-87.m3u8,重复URL
 [BD]河北卫视,https://stream1.freetv.fun/he-bei-wei-shi-82.m3u8,重复URL
 [SD]河北卫视,https://stream1.freetv.fun/he-bei-wei-shi-30.ctv,重复URL
-[BD]河北卫视[geo-blocked],https://stream1.freetv.fun/he-bei-wei-shi-64.m3u8,重复URL
+[BD]河北卫视,https://stream1.freetv.fun/he-bei-wei-shi-64.m3u8,重复URL
+[BD]河北卫视,https://stream1.freetv.fun/he-bei-wei-shi-24.ctv,重复URL
 [BD]河北卫视,https://stream1.freetv.fun/he-bei-wei-shi-21.m3u8,重复URL
 [HD]河北农民,https://stream1.freetv.fun/he-bei-nong-min-17.m3u8,重复URL
 [BD]河南民生[geo-blocked],https://stream1.freetv.fun/he-nan-min-sheng-5.ctv,重复URL
 [BD]河南民生[geo-blocked],https://stream1.freetv.fun/he-nan-min-sheng-1.ctv,重复URL
 [HD]河南卫视[geo-blocked],https://stream1.freetv.fun/he-nan-wei-shi-75.m3u8,重复URL
 [BD]河南卫视,https://stream1.freetv.fun/he-nan-wei-shi-34.m3u8,重复URL
+[BD]河南卫视,https://stream1.freetv.fun/he-nan-wei-shi-91.ctv,重复URL
 [BD]河南卫视[geo-blocked],https://stream1.freetv.fun/he-nan-wei-shi-9.ctv,重复URL
 [BD]河南卫视[geo-blocked],https://stream1.freetv.fun/he-nan-wei-shi-48.ctv,重复URL
 [BD]河南卫视,https://stream1.freetv.fun/he-nan-wei-shi-76.m3u8,重复URL
@@ -3416,7 +3406,7 @@ CNA,https://live1.mediadesk.al/cnatvlive.m3u8,重复URL
 [BD]河南卫视[geo-blocked],https://stream1.freetv.fun/he-nan-wei-shi-53.m3u8,重复URL
 [SD]河南卫视,https://stream1.freetv.fun/he-nan-wei-shi-88.m3u8,重复URL
 [SD]河南卫视,https://stream1.freetv.fun/he-nan-wei-shi-68.m3u8,重复URL
-[BD]河南卫视,https://stream1.freetv.fun/he-nan-wei-shi-92.ctv,重复URL
+[BD]河南卫视[geo-blocked],https://stream1.freetv.fun/he-nan-wei-shi-92.ctv,重复URL
 [SD]河南卫视,https://stream1.freetv.fun/he-nan-wei-shi-72.m3u8,重复URL
 [BD]河南都市[geo-blocked],https://stream1.freetv.fun/he-nan-du-shi-1.ctv,重复URL
 [BD]河南都市[geo-blocked],https://stream1.freetv.fun/he-nan-du-shi-10.ctv,重复URL
@@ -3462,6 +3452,7 @@ CNA,https://live1.mediadesk.al/cnatvlive.m3u8,重复URL
 [VGA]浙江卫视,https://stream1.freetv.fun/zhe-jiang-wei-shi-56.m3u8,重复URL
 [BD]浙江卫视,https://stream1.freetv.fun/zhe-jiang-wei-shi-79.ctv,重复URL
 [VGA]浙江卫视,https://stream1.freetv.fun/zhe-jiang-wei-shi-104.m3u8,重复URL
+[BD]浙江卫视,https://stream1.freetv.fun/zhe-jiang-wei-shi-114.ctv,重复URL
 [BD]浙江卫视,https://stream1.freetv.fun/zhe-jiang-wei-shi-3.ctv,重复URL
 [BD]浙江卫视,https://stream1.freetv.fun/zhe-jiang-wei-shi-58.m3u8,重复URL
 [HD]浙江卫视,https://stream1.freetv.fun/zhe-jiang-wei-shi-106.m3u8,重复URL
@@ -3479,41 +3470,44 @@ CNA,https://live1.mediadesk.al/cnatvlive.m3u8,重复URL
 [BD]浙江卫视,https://stream1.freetv.fun/zhe-jiang-wei-shi-103.m3u8,重复URL
 [BD]浙江卫视,https://stream1.freetv.fun/zhe-jiang-wei-shi-50.ctv,重复URL
 [SD]浙江卫视[geo-blocked],https://stream1.freetv.fun/zhe-jiang-wei-shi-6.m3u8,重复URL
-[BD]浙江衛視[geo-blocked],https://stream1.freetv.fun/zhe-jiang-wei-shi-23.ctv,重复URL
+[BD]浙江衛視,https://stream1.freetv.fun/zhe-jiang-wei-shi-23.ctv,重复URL
 [BD]浙江钱江,https://stream1.freetv.fun/zhe-jiang-qian-jiang-4.m3u8,重复URL
 [BD]浙江钱江,https://stream1.freetv.fun/zhe-jiang-qian-jiang-1.m3u8,重复URL
 [HD]浙江钱江,https://stream1.freetv.fun/zhe-jiang-qian-jiang-3.m3u8,重复URL
 [VGA]浙江钱江都市,https://stream1.freetv.fun/zhe-jiang-qian-jiang-du-shi-3.m3u8,重复URL
-[SD]海南公共[geo-blocked],https://stream1.freetv.fun/hai-nan-gong-gong-7.m3u8,重复URL
+[SD]海南公共,https://stream1.freetv.fun/hai-nan-gong-gong-7.m3u8,重复URL
 [BD]海南文旅[geo-blocked],https://stream1.freetv.fun/hai-nan-wen-lu-8.ctv,重复URL
 [HD]海南卫视,https://stream1.freetv.fun/hai-nan-wei-shi-18.m3u8,重复URL
 [BD]海南卫视,https://stream1.freetv.fun/hai-nan-wei-shi-21.m3u8,重复URL
 [HD]海南卫视,https://stream1.freetv.fun/hai-nan-wei-shi-78.m3u8,重复URL
 [SD]海南卫视,https://stream1.freetv.fun/hai-nan-wei-shi-72.ctv,重复URL
-[BD]海南卫视,https://stream1.freetv.fun/hai-nan-wei-shi-37.m3u8,重复URL
+[BD]海南卫视[geo-blocked],https://stream1.freetv.fun/hai-nan-wei-shi-37.m3u8,重复URL
 [BD]海南卫视,https://stream1.freetv.fun/hai-nan-wei-shi-67.m3u8,重复URL
 [BD]深圳卫视,https://stream1.freetv.fun/shen-zhen-wei-shi-70.ctv,重复URL
 [BD]深圳卫视[geo-blocked],https://stream1.freetv.fun/shen-zhen-wei-shi-102.ctv,重复URL
 [BD]深圳卫视,https://stream1.freetv.fun/shen-zhen-wei-shi-33.m3u8,重复URL
 [BD]深圳卫视,https://stream1.freetv.fun/shen-zhen-wei-shi-98.m3u8,重复URL
+[BD]深圳卫视,https://stream1.freetv.fun/shen-zhen-wei-shi-4.m3u8,重复URL
 [BD]深圳卫视[geo-blocked],https://stream1.freetv.fun/shen-zhen-wei-shi-97.ctv,重复URL
-[BD]深圳卫视,https://stream1.freetv.fun/shen-zhen-wei-shi-94.ctv,重复URL
 [HD]深圳卫视,https://stream1.freetv.fun/shen-zhen-wei-shi-11.m3u8,重复URL
 [BD]深圳卫视,https://stream1.freetv.fun/shen-zhen-wei-shi-36.m3u8,重复URL
 [BD]深圳卫视,https://stream1.freetv.fun/shen-zhen-wei-shi-6.m3u8,重复URL
 [HD]深圳卫视,https://stream1.freetv.fun/shen-zhen-wei-shi-85.m3u8,重复URL
 [BD]深圳卫视,https://stream1.freetv.fun/shen-zhen-wei-shi-46.m3u8,重复URL
 [BD]深圳卫视[geo-blocked],https://stream1.freetv.fun/shen-zhen-wei-shi-30.m3u8,重复URL
-[BD]深圳卫视,https://stream1.freetv.fun/shen-zhen-wei-shi-8.ctv,重复URL
+[BD]深圳卫视[geo-blocked],https://stream1.freetv.fun/shen-zhen-wei-shi-8.ctv,重复URL
 [BD]深圳卫视,https://stream1.freetv.fun/shen-zhen-wei-shi-58.m3u8,重复URL
+[BD]深圳卫视,https://stream1.freetv.fun/shen-zhen-wei-shi-13.ctv,重复URL
 [HD]平湖新闻综合,https://stream1.freetv.fun/ping-hu-xin-wen-zong-he-5.m3u8,重复URL
+[BD]湖北卫视[geo-blocked],https://stream1.freetv.fun/hu-bei-wei-shi-2.m3u8,重复URL
 [HD]湖北卫视,https://stream1.freetv.fun/hu-bei-wei-shi-84.m3u8,重复URL
-[BD]湖北卫视[geo-blocked],https://stream1.freetv.fun/hu-bei-wei-shi-99.ctv,重复URL
+[HD]湖北卫视,https://stream1.freetv.fun/hu-bei-wei-shi-99.ctv,重复URL
 [BD]湖北卫视,https://stream1.freetv.fun/hu-bei-wei-shi-38.m3u8,重复URL
 [HD]湖北卫视,https://stream1.freetv.fun/hu-bei-wei-shi-20.m3u8,重复URL
 [BD]湖北卫视,https://stream1.freetv.fun/hu-bei-wei-shi-65.m3u8,重复URL
 [BD]湖北卫视,https://stream1.freetv.fun/hu-bei-wei-shi-82.m3u8,重复URL
 [BD]湖北卫视,https://stream1.freetv.fun/hu-bei-wei-shi-72.m3u8,重复URL
+[BD]湖北卫视,https://stream1.freetv.fun/hu-bei-wei-shi-11.ctv,重复URL
 [BD]湖北卫视,https://stream1.freetv.fun/hu-bei-wei-shi-21.m3u8,重复URL
 [HD]湖南公共,https://stream1.freetv.fun/hu-nan-gong-gong-5.m3u8,重复URL
 [HD]湖南公共,https://stream1.freetv.fun/hu-nan-gong-gong-6.m3u8,重复URL
@@ -3521,7 +3515,7 @@ CNA,https://live1.mediadesk.al/cnatvlive.m3u8,重复URL
 [VGA]湖南娱乐,https://stream1.freetv.fun/hu-nan-yu-le-24.ctv,重复URL
 [HD]湖南娱乐,https://stream1.freetv.fun/hu-nan-yu-le-18.m3u8,重复URL
 [HD]湖南娱乐,https://stream1.freetv.fun/hu-nan-yu-le-17.m3u8,重复URL
-[HD]湖南教育[geo-blocked],https://stream1.freetv.fun/hu-nan-jiao-yu-1.m3u8,重复URL
+[HD]湖南教育,https://stream1.freetv.fun/hu-nan-jiao-yu-1.m3u8,重复URL
 [HD]湖南教育,https://stream1.freetv.fun/hu-nan-jiao-yu-2.m3u8,重复URL
 [HD]湖南经视,https://stream1.freetv.fun/hu-nan-jing-shi-1.m3u8,重复URL
 [VGA]湖南经视,https://stream1.freetv.fun/hu-nan-jing-shi-13.ctv,重复URL
@@ -3529,9 +3523,9 @@ CNA,https://live1.mediadesk.al/cnatvlive.m3u8,重复URL
 [VGA]湖南经视,https://stream1.freetv.fun/hu-nan-jing-shi-15.ctv,重复URL
 [BD]湖南卫视,https://stream1.freetv.fun/hu-nan-wei-shi-75.m3u8,重复URL
 [HD]湖南卫视,https://stream1.freetv.fun/hu-nan-wei-shi-10.m3u8,重复URL
-[BD]湖南卫视[geo-blocked],https://stream1.freetv.fun/hu-nan-wei-shi-92.ctv,重复URL
+[BD]湖南卫视,https://stream1.freetv.fun/hu-nan-wei-shi-92.ctv,重复URL
 [BD]湖南卫视,https://stream1.freetv.fun/hu-nan-wei-shi-84.m3u8,重复URL
-[BD]湖南卫视,https://stream1.freetv.fun/hu-nan-wei-shi-52.m3u8,重复URL
+[BD]湖南卫视[geo-blocked],https://stream1.freetv.fun/hu-nan-wei-shi-52.m3u8,重复URL
 [HD]湖南卫视,https://stream1.freetv.fun/hu-nan-wei-shi-73.ctv,重复URL
 [BD]湖南卫视,https://stream1.freetv.fun/hu-nan-wei-shi-66.m3u8,重复URL
 [BD]湖南卫视,https://stream1.freetv.fun/hu-nan-wei-shi-60.m3u8,重复URL
@@ -3541,12 +3535,12 @@ CNA,https://live1.mediadesk.al/cnatvlive.m3u8,重复URL
 [BD]湖南卫视,https://stream1.freetv.fun/hu-nan-wei-shi-41.m3u8,重复URL
 [BD]湖南卫视[geo-blocked],https://stream1.freetv.fun/hu-nan-wei-shi-1.ctv,重复URL
 [BD]湖南卫视,https://stream1.freetv.fun/hu-nan-wei-shi-87.m3u8,重复URL
-[SD]湖南卫视,https://stream1.freetv.fun/hu-nan-wei-shi-46.m3u8,重复URL
+[SD]湖南卫视[geo-blocked],https://stream1.freetv.fun/hu-nan-wei-shi-46.m3u8,重复URL
 [BD]湖南卫视,https://stream1.freetv.fun/hu-nan-wei-shi-31.ctv,重复URL
 [BD]湖南卫视,https://stream1.freetv.fun/hu-nan-wei-shi-70.ctv,重复URL
 [HD]湖南卫视,https://stream1.freetv.fun/hu-nan-wei-shi-18.m3u8,重复URL
 [BD]湖南卫视,https://stream1.freetv.fun/hu-nan-wei-shi-34.m3u8,重复URL
-[BD]湖南衛視[geo-blocked],https://stream1.freetv.fun/hu-nan-wei-shi-22.ctv,重复URL
+[BD]湖南衛視,https://stream1.freetv.fun/hu-nan-wei-shi-22.ctv,重复URL
 [VGA]湖南都市,https://stream1.freetv.fun/hu-nan-du-shi-8.ctv,重复URL
 [HD]湖南都市,https://stream1.freetv.fun/hu-nan-du-shi-5.m3u8,重复URL
 [HD]湖南都市,https://stream1.freetv.fun/hu-nan-du-shi-13.m3u8,重复URL
@@ -3578,6 +3572,7 @@ CNA,https://live1.mediadesk.al/cnatvlive.m3u8,重复URL
 [BD]甘肃卫视,https://stream1.freetv.fun/gan-su-wei-shi-8.m3u8,重复URL
 [BD]甘肃卫视,https://stream1.freetv.fun/gan-su-wei-shi-14.m3u8,重复URL
 [SD]甘肃卫视,https://stream1.freetv.fun/gan-su-wei-shi-4.m3u8,重复URL
+[SD]甘肃卫视,https://stream1.freetv.fun/gan-su-wei-shi-57.m3u8,重复URL
 [SD]甘肃卫视,https://stream1.freetv.fun/gan-su-wei-shi-18.m3u8,重复URL
 [SD]甘肃卫视,https://stream1.freetv.fun/gan-su-wei-shi-10.ctv,重复URL
 [BD]甘肃卫视,https://stream1.freetv.fun/gan-su-wei-shi-15.m3u8,重复URL
@@ -3619,45 +3614,42 @@ CNA,https://live1.mediadesk.al/cnatvlive.m3u8,重复URL
 [BD]泌阳新闻综合,https://stream1.freetv.fun/mi-yang-xin-wen-zong-he-2.m3u8,重复URL
 [BD]绵阳科技,https://stream1.freetv.fun/mian-yang-ke-ji-2.m3u8,重复URL
 [BD]绵阳科技,https://stream1.freetv.fun/mian-yang-ke-ji-1.m3u8,重复URL
-[BD]緯來戲劇,https://stream1.freetv.fun/wei-lai-xi-ju-2.ctv,重复URL
-[BD]緯來戲劇[geo-blocked],https://stream1.freetv.fun/wei-lai-xi-ju-4.ctv,重复URL
+[BD]緯來戲劇[geo-blocked],https://stream1.freetv.fun/wei-lai-xi-ju-2.ctv,重复URL
+[BD]緯來戲劇,https://stream1.freetv.fun/wei-lai-xi-ju-4.ctv,重复URL
 [BD]纬来日本[geo-blocked],https://stream1.freetv.fun/wei-lai-ri-ben-1.ctv,重复URL
 [HD]緯來日本[geo-blocked],rtmp://f13h.mine.nu/sat/tv771,无效URL（非 http/https/rtsp 开头）
-[BD]緯來日本,https://stream1.freetv.fun/wei-lai-ri-ben-3.ctv,重复URL
-[BD]緯來日本,https://stream1.freetv.fun/wei-lai-ri-ben-7.ctv,重复URL
-[BD]緯來日本,https://stream1.freetv.fun/wei-lai-ri-ben-6.ctv,重复URL
+[BD]緯來日本[geo-blocked],https://stream1.freetv.fun/wei-lai-ri-ben-3.ctv,重复URL
+[BD]緯來日本[geo-blocked],https://stream1.freetv.fun/wei-lai-ri-ben-7.ctv,重复URL
+[BD]緯來日本[geo-blocked],https://stream1.freetv.fun/wei-lai-ri-ben-6.ctv,重复URL
 [HD]纬来精彩[geo-blocked],https://stream1.freetv.fun/wei-lai-jing-cai-1.m3u8,重复URL
-[BD]緯來綜合[geo-blocked],https://stream1.freetv.fun/wei-lai-zong-he-3.ctv,重复URL
-[BD]緯來綜合[geo-blocked],https://stream1.freetv.fun/wei-lai-zong-he-2.ctv,重复URL
-[BD]纬来综合,https://stream1.freetv.fun/wei-lai-zong-he-5.ctv,重复URL
-[BD]緯來育樂[geo-blocked],https://stream1.freetv.fun/wei-lai-yu-le-7.ctv,重复URL
+[BD]緯來綜合,https://stream1.freetv.fun/wei-lai-zong-he-3.ctv,重复URL
+[BD]緯來綜合,https://stream1.freetv.fun/wei-lai-zong-he-2.ctv,重复URL
+[BD]纬来综合[geo-blocked],https://stream1.freetv.fun/wei-lai-zong-he-5.ctv,重复URL
+[BD]緯來育樂,https://stream1.freetv.fun/wei-lai-yu-le-7.ctv,重复URL
 [BD]緯來育樂[geo-blocked],https://stream1.freetv.fun/wei-lai-yu-le-5.ctv,重复URL
 [BD]緯來育樂[geo-blocked],https://stream1.freetv.fun/wei-lai-yu-le-4.ctv,重复URL
 [BD]纬来育乐[geo-blocked],https://stream1.freetv.fun/wei-lai-yu-le-2.ctv,重复URL
-[BD]緯來電影[geo-blocked],https://stream1.freetv.fun/wei-lai-dian-ying-3.ctv,重复URL
-[BD]緯來電影,https://stream1.freetv.fun/wei-lai-dian-ying-5.ctv,重复URL
-[BD]纬来电影[geo-blocked],https://stream1.freetv.fun/wei-lai-dian-ying-4.ctv,重复URL
+[BD]緯來電影,https://stream1.freetv.fun/wei-lai-dian-ying-3.ctv,重复URL
+[BD]緯來電影[geo-blocked],https://stream1.freetv.fun/wei-lai-dian-ying-5.ctv,重复URL
+[BD]纬来电影,https://stream1.freetv.fun/wei-lai-dian-ying-4.ctv,重复URL
 [BD]纬来体育[geo-blocked],https://stream1.freetv.fun/wei-lai-ti-yu-10.ctv,重复URL
 [BD]緯來體育[geo-blocked],https://stream1.freetv.fun/wei-lai-ti-yu-3.ctv,重复URL
 [HD]緯來體育[geo-blocked],rtmp://f13h.mine.nu:1935/sat/tv721,无效URL（非 http/https/rtsp 开头）
-[BD]緯來體育,https://stream1.freetv.fun/wei-lai-ti-yu-5.ctv,重复URL
+[BD]緯來體育[geo-blocked],https://stream1.freetv.fun/wei-lai-ti-yu-5.ctv,重复URL
 [HD]纬来体育[geo-blocked],rtmp://f13h.mine.nu/sat/tv721,无效URL（非 http/https/rtsp 开头）
 [BD]緯來體育,https://stream1.freetv.fun/wei-lai-ti-yu-8.ctv,重复URL
 [BD]台灣戲劇,https://stream1.freetv.fun/tai-wan-xi-ju-1.m3u8,重复URL
 [BD]台灣戲劇[geo-blocked],https://stream1.freetv.fun/tai-wan-xi-ju-2.m3u8,重复URL
 [BD]台灣戲劇,https://stream1.freetv.fun/tai-wan-xi-ju-5.m3u8,重复URL
 [BD]台灣戲劇[geo-blocked],https://stream1.freetv.fun/tai-wan-xi-ju-6.m3u8,重复URL
-[BD]台灣戲劇[geo-blocked],https://stream1.freetv.fun/tai-wan-xi-ju-7.m3u8,重复URL
-[BD]台視,https://stream1.freetv.fun/tai-shi-4.m3u8,重复URL
-[BD]台視[geo-blocked],https://stream1.freetv.fun/tai-shi-8.ctv,重复URL
+[BD]台視,https://stream1.freetv.fun/tai-shi-8.ctv,重复URL
 [BD]台視[geo-blocked],https://stream1.freetv.fun/tai-shi-9.ctv,重复URL
 [BD]台視[geo-blocked],https://stream1.freetv.fun/tai-shi-6.m3u8,重复URL
 [BD]台視,https://stream1.freetv.fun/tai-shi-7.m3u8,重复URL
 [BD]台視[geo-blocked],https://stream1.freetv.fun/tai-shi-10.m3u8,重复URL
-[BD]台視[geo-blocked],https://stream1.freetv.fun/tai-shi-11.m3u8,重复URL
 [BD]台視,https://stream1.freetv.fun/tai-shi-12.m3u8,重复URL
 [BD]台視新聞,https://stream1.freetv.fun/tai-shi-xin-wen-15.m3u8,重复URL
-[BD]台視新聞[geo-blocked],https://stream1.freetv.fun/tai-shi-xin-wen-16.m3u8,重复URL
+[BD]台視新聞,https://stream1.freetv.fun/tai-shi-xin-wen-16.m3u8,重复URL
 [BD]台視新聞[geo-blocked],https://stream1.freetv.fun/tai-shi-xin-wen-7.m3u8,重复URL
 [BD]台視新聞,https://stream1.freetv.fun/tai-shi-xin-wen-14.m3u8,重复URL
 [BD]台視新聞[geo-blocked],https://stream1.freetv.fun/tai-shi-xin-wen-2.m3u8,重复URL
@@ -3665,9 +3657,7 @@ CNA,https://live1.mediadesk.al/cnatvlive.m3u8,重复URL
 [BD]台視新聞,https://stream1.freetv.fun/tai-shi-xin-wen-12.m3u8,重复URL
 [BD]台視新聞,https://stream1.freetv.fun/tai-shi-xin-wen-4.m3u8,重复URL
 [BD]台视新聞,https://stream1.freetv.fun/tai-shi-xin-wen-21.m3u8,重复URL
-[BD]台视综合 *sm,https://stream1.freetv.fun/tai-shi-zong-he---sm-1.ctv,重复URL
 [BD]台视综合[geo-blocked],https://stream1.freetv.fun/tai-shi-zong-he-2.ctv,重复URL
-[BD]台視財經,https://stream1.freetv.fun/tai-shi-cai-jing-2.m3u8,重复URL
 [BD]台視財經,https://stream1.freetv.fun/tai-shi-cai-jing-4.m3u8,重复URL
 [BD]台視財經,https://stream1.freetv.fun/tai-shi-cai-jing-3.m3u8,重复URL
 [BD]黄山新闻综合,https://stream1.freetv.fun/huang-shan-xin-wen-zong-he-14.m3u8,重复URL
@@ -3676,27 +3666,26 @@ CNA,https://live1.mediadesk.al/cnatvlive.m3u8,重复URL
 [BD]荆门新闻综合,https://stream1.freetv.fun/jing-men-xin-wen-zong-he-3.m3u8,重复URL
 [BD]荆门新闻综合,https://stream1.freetv.fun/jing-men-xin-wen-zong-he-1.m3u8,重复URL
 [BD]荆门新闻综合,https://stream1.freetv.fun/jing-men-xin-wen-zong-he-2.m3u8,重复URL
-[BD]华视,https://stream1.freetv.fun/hua-shi-8.ctv,重复URL
+[BD]华视[geo-blocked],https://stream1.freetv.fun/hua-shi-8.ctv,重复URL
 [BD]華視 *4g,https://stream1.freetv.fun/hua-shi---4g-1.m3u8,重复URL
 [BD]華視 *4g,https://stream1.freetv.fun/hua-shi---4g-2.m3u8,重复URL
 [BD]華視 *4g[geo-blocked],https://stream1.freetv.fun/hua-shi---4g-3.m3u8,重复URL
 [HD]华视[geo-blocked],rtmp://f13h.mine.nu:1935/sat/tv111,无效URL（非 http/https/rtsp 开头）
 [HD]華視[geo-blocked],rtmp://f13h.mine.nu/sat/tv111,无效URL（非 http/https/rtsp 开头）
-[BD]華視[geo-blocked],https://stream1.freetv.fun/hua-shi-1.ctv,重复URL
-[BD]華視[geo-blocked],https://stream1.freetv.fun/hua-shi-4.ctv,重复URL
+[BD]華視,https://stream1.freetv.fun/hua-shi-1.ctv,重复URL
+[BD]華視,https://stream1.freetv.fun/hua-shi-4.ctv,重复URL
 [BD]華視,https://stream1.freetv.fun/hua-shi-12.m3u8,重复URL
 [BD]華視[geo-blocked],https://stream1.freetv.fun/hua-shi-13.m3u8,重复URL
 [BD]華視,https://stream1.freetv.fun/hua-shi-14.m3u8,重复URL
 [BD]華視,https://stream1.freetv.fun/hua-shi-15.m3u8,重复URL
 [BD]華視[geo-blocked],https://stream1.freetv.fun/hua-shi-16.m3u8,重复URL
-[BD]華視,https://stream1.freetv.fun/hua-shi-17.m3u8,重复URL
-[BD]華視[geo-blocked],https://stream1.freetv.fun/hua-shi-18.m3u8,重复URL
-[BD]华视 *sm,https://stream1.freetv.fun/hua-shi---sm-1.ctv,重复URL
+[BD]華視[geo-blocked],https://stream1.freetv.fun/hua-shi-17.m3u8,重复URL
 [BD]華視,https://stream1.freetv.fun/hua-shi-7.m3u8,重复URL
 [HD]華視,https://stream1.freetv.fun/hua-shi-5.ctv,重复URL
-[BD]華視新聞[geo-blocked],https://stream1.freetv.fun/hua-shi-xin-wen-5.m3u8,重复URL
+[BD]華視新聞,https://stream1.freetv.fun/hua-shi-xin-wen-5.m3u8,重复URL
 [BD]華視新聞,https://stream1.freetv.fun/hua-shi-xin-wen-4.m3u8,重复URL
-[BD]華視新聞,https://stream1.freetv.fun/hua-shi-xin-wen-3.m3u8,重复URL
+[BD]華視新聞[geo-blocked],https://stream1.freetv.fun/hua-shi-xin-wen-3.m3u8,重复URL
+[BD]華視新聞台 *4g,https://stream1.freetv.fun/hua-shi-xin-wen-tai---4g-1.m3u8,重复URL
 [HD]苏州文化生活,https://stream1.freetv.fun/su-zhou-wen-hua-sheng-huo-3.m3u8,重复URL
 [BD]苏州新闻综合,https://stream1.freetv.fun/su-zhou-xin-wen-zong-he-2.m3u8,重复URL
 [HD]苏州生活资讯,https://stream1.freetv.fun/su-zhou-sheng-huo-zi-xun-2.m3u8,重复URL
@@ -3713,27 +3702,27 @@ CNA,https://live1.mediadesk.al/cnatvlive.m3u8,重复URL
 [BD]西宁新闻综合[geo-blocked],rtmp://liveout.xntv.tv/a65jur/96iln2,无效URL（非 http/https/rtsp 开头）
 [BD]西宁新闻综合,https://stream1.freetv.fun/xi-zhu-xin-wen-zong-he-5.m3u8,重复URL
 [BD]西宁生活服务,https://stream1.freetv.fun/xi-zhu-sheng-huo-fu-wu-1.ctv,重复URL
-[SD]西藏卫视[geo-blocked],https://stream1.freetv.fun/xi-cang-wei-shi-27.m3u8,重复URL
+[SD]西藏卫视,https://stream1.freetv.fun/xi-cang-wei-shi-27.m3u8,重复URL
 [SD]西藏卫视,https://stream1.freetv.fun/xi-cang-wei-shi-50.m3u8,重复URL
 [BD]西藏卫视,https://stream1.freetv.fun/xi-cang-wei-shi-37.m3u8,重复URL
 [BD]西藏卫视,https://stream1.freetv.fun/xi-cang-wei-shi-38.ctv,重复URL
-[SD]西藏卫视[geo-blocked],https://stream1.freetv.fun/xi-cang-wei-shi-33.m3u8,重复URL
+[SD]西藏卫视,https://stream1.freetv.fun/xi-cang-wei-shi-33.m3u8,重复URL
 [BD]西藏卫视,https://stream1.freetv.fun/xi-cang-wei-shi-22.m3u8,重复URL
 [SD]西藏卫视,https://stream1.freetv.fun/xi-cang-wei-shi-53.m3u8,重复URL
 [BD]西藏卫视[geo-blocked],https://stream1.freetv.fun/xi-cang-wei-shi-6.ctv,重复URL
 [BD]西藏卫视,https://stream1.freetv.fun/xi-cang-wei-shi-41.m3u8,重复URL
+[BD]西藏卫视,https://stream1.freetv.fun/xi-cang-wei-shi-10.ctv,重复URL
 [BD]西藏卫视,https://stream1.freetv.fun/xi-cang-wei-shi-23.m3u8,重复URL
 [BD]西藏卫视,https://stream1.freetv.fun/xi-cang-wei-shi-28.m3u8,重复URL
 [SD]西藏卫视[geo-blocked],https://stream1.freetv.fun/xi-cang-wei-shi-7.m3u8,重复URL
 [BD]視納華仁紀實[geo-blocked],https://stream1.freetv.fun/shi-na-hua-ren-ji-shi-6.m3u8,重复URL
-[BD]視納華仁紀實,https://stream1.freetv.fun/shi-na-hua-ren-ji-shi-7.m3u8,重复URL
 [BD]視納華仁紀實,https://stream1.freetv.fun/shi-na-hua-ren-ji-shi-1.m3u8,重复URL
 [BD]視納華仁紀實,https://stream1.freetv.fun/shi-na-hua-ren-ji-shi-3.m3u8,重复URL
 [BD]視納華仁紀實,https://stream1.freetv.fun/shi-na-hua-ren-ji-shi-4.m3u8,重复URL
 [BD]視納華仁紀實,https://stream1.freetv.fun/shi-na-hua-ren-ji-shi-5.m3u8,重复URL
 [BD]視納華仁紀實  *4g,https://stream1.freetv.fun/shi-na-hua-ren-ji-shi---4g-2.m3u8,重复URL
 [BD]視納華仁紀實  *4g,https://stream1.freetv.fun/shi-na-hua-ren-ji-shi---4g-1.m3u8,重复URL
-[BD]豬哥亮歌廳秀,https://stream1.freetv.fun/zhu-ge-liang-ge-ting-xiu-3.m3u8,重复URL
+[BD]豬哥亮歌廳秀[geo-blocked],https://stream1.freetv.fun/zhu-ge-liang-ge-ting-xiu-3.m3u8,重复URL
 [BD]豬哥亮歌廳秀,https://stream1.freetv.fun/zhu-ge-liang-ge-ting-xiu-4.m3u8,重复URL
 [BD]豬哥亮歌廳秀,https://stream1.freetv.fun/zhu-ge-liang-ge-ting-xiu-5.m3u8,重复URL
 [BD]豬哥亮歌廳秀,https://stream1.freetv.fun/zhu-ge-liang-ge-ting-xiu-6.m3u8,重复URL
@@ -3744,11 +3733,12 @@ CNA,https://live1.mediadesk.al/cnatvlive.m3u8,重复URL
 [BD]贵州卫视,https://stream1.freetv.fun/gui-zhou-wei-shi-22.m3u8,重复URL
 [BD]贵州卫视,https://stream1.freetv.fun/gui-zhou-wei-shi-40.m3u8,重复URL
 [SD]贵州卫视,https://stream1.freetv.fun/gui-zhou-wei-shi-12.ctv,重复URL
-[BD]贵州卫视,https://stream1.freetv.fun/gui-zhou-wei-shi-66.m3u8,重复URL
-[BD]贵州卫视[geo-blocked],https://stream1.freetv.fun/gui-zhou-wei-shi-71.m3u8,重复URL
-[HD]贵州卫视[geo-blocked],https://stream1.freetv.fun/gui-zhou-wei-shi-89.m3u8,重复URL
+[BD]贵州卫视[geo-blocked],https://stream1.freetv.fun/gui-zhou-wei-shi-66.m3u8,重复URL
+[BD]贵州卫视,https://stream1.freetv.fun/gui-zhou-wei-shi-71.m3u8,重复URL
+[HD]贵州卫视,https://stream1.freetv.fun/gui-zhou-wei-shi-89.m3u8,重复URL
 [BD]贵州卫视,https://stream1.freetv.fun/gui-zhou-wei-shi-56.m3u8,重复URL
 [SD]农林卫视,https://stream1.freetv.fun/nong-lin-wei-shi-13.m3u8,重复URL
+[SD]农林卫视,https://stream1.freetv.fun/nong-lin-wei-shi-8.ctv,重复URL
 [SD]农林卫视,https://stream1.freetv.fun/nong-lin-wei-shi-9.m3u8,重复URL
 [BD]達文西[geo-blocked],https://stream1.freetv.fun/da-wen-xi-7.m3u8,重复URL
 [BD]達文西,https://stream1.freetv.fun/da-wen-xi-3.m3u8,重复URL
@@ -3758,8 +3748,9 @@ CNA,https://live1.mediadesk.al/cnatvlive.m3u8,重复URL
 [BD]達文西 *4g,https://stream1.freetv.fun/da-wen-xi---4g-1.m3u8,重复URL
 [BD]達文西 *4g,https://stream1.freetv.fun/da-wen-xi---4g-2.m3u8,重复URL
 [HD]辽宁卫视,https://stream1.freetv.fun/liao-zhu-wei-shi-54.m3u8,重复URL
-[BD]辽宁卫视[geo-blocked],https://stream1.freetv.fun/liao-zhu-wei-shi-66.m3u8,重复URL
+[BD]辽宁卫视,https://stream1.freetv.fun/liao-zhu-wei-shi-66.m3u8,重复URL
 [HD]辽宁卫视,https://stream1.freetv.fun/liao-zhu-wei-shi-47.m3u8,重复URL
+[BD]辽宁卫视,https://stream1.freetv.fun/liao-zhu-wei-shi-39.ctv,重复URL
 [BD]辽宁卫视,https://stream1.freetv.fun/liao-zhu-wei-shi-71.ctv,重复URL
 [BD]辽宁卫视,https://stream1.freetv.fun/liao-zhu-wei-shi-43.m3u8,重复URL
 [SD]辽宁卫视,https://stream1.freetv.fun/liao-zhu-wei-shi-61.m3u8,重复URL
@@ -3785,14 +3776,15 @@ CNA,https://live1.mediadesk.al/cnatvlive.m3u8,重复URL
 [BD]采昌影劇 *4g,https://stream1.freetv.fun/cai-chang-ying-ju---4g-1.m3u8,重复URL
 [BD]重庆卫视,https://stream1.freetv.fun/zhong-qing-wei-shi-37.m3u8,重复URL
 [BD]重庆卫视,https://stream1.freetv.fun/zhong-qing-wei-shi-72.m3u8,重复URL
-[BD]重庆卫视[geo-blocked],https://stream1.freetv.fun/zhong-qing-wei-shi-76.m3u8,重复URL
+[BD]重庆卫视,https://stream1.freetv.fun/zhong-qing-wei-shi-76.m3u8,重复URL
 [BD]重庆卫视,https://stream1.freetv.fun/zhong-qing-wei-shi-10.m3u8,重复URL
 [BD]重庆卫视[geo-blocked],https://stream1.freetv.fun/zhong-qing-wei-shi-62.m3u8,重复URL
+[BD]重庆卫视,https://stream1.freetv.fun/zhong-qing-wei-shi-47.ctv,重复URL
 [HD]重庆卫视,https://stream1.freetv.fun/zhong-qing-wei-shi-80.m3u8,重复URL
 [BD]重庆卫视,https://stream1.freetv.fun/zhong-qing-wei-shi-48.m3u8,重复URL
 [BD]重庆卫视,https://stream1.freetv.fun/zhong-qing-wei-shi-4.m3u8,重复URL
 [HD]重庆卫视,https://stream1.freetv.fun/zhong-qing-wei-shi-63.m3u8,重复URL
-[BD]重庆卫视,https://stream1.freetv.fun/zhong-qing-wei-shi-55.m3u8,重复URL
+[BD]重庆卫视[geo-blocked],https://stream1.freetv.fun/zhong-qing-wei-shi-55.m3u8,重复URL
 [HD]重庆卫视[geo-blocked],https://stream1.freetv.fun/zhong-qing-wei-shi-24.m3u8,重复URL
 [BD]重庆卫视[geo-blocked],https://stream1.freetv.fun/zhong-qing-wei-shi-92.m3u8,重复URL
 [BD]重庆卫视,https://stream1.freetv.fun/zhong-qing-wei-shi-57.m3u8,重复URL
@@ -3808,11 +3800,11 @@ CNA,https://live1.mediadesk.al/cnatvlive.m3u8,重复URL
 [HD]金鹰卡通,https://stream1.freetv.fun/jin-ying-qia-tong-24.m3u8,重复URL
 [SD]金鹰卡通[geo-blocked],https://stream1.freetv.fun/jin-ying-qia-tong-18.m3u8,重复URL
 [BD]金鹰卡通,https://stream1.freetv.fun/jin-ying-qia-tong-34.m3u8,重复URL
-[BD]金鹰纪实,https://stream1.freetv.fun/jin-ying-ji-shi-17.m3u8,重复URL
-[BD]金鹰纪实[geo-blocked],https://stream1.freetv.fun/jin-ying-ji-shi-43.m3u8,重复URL
+[BD]金鹰纪实,https://stream1.freetv.fun/jin-ying-ji-shi-43.m3u8,重复URL
 [HD]金鹰纪实,https://stream1.freetv.fun/jin-ying-ji-shi-38.m3u8,重复URL
-[HD]金鹰纪实,https://stream1.freetv.fun/jin-ying-ji-shi-18.m3u8,重复URL
+[HD]金鹰纪实[geo-blocked],https://stream1.freetv.fun/jin-ying-ji-shi-18.m3u8,重复URL
 [SD]金鹰纪实,https://stream1.freetv.fun/jin-ying-ji-shi-27.m3u8,重复URL
+[BD]金鹰纪实,https://stream1.freetv.fun/jin-ying-ji-shi-17.m3u8,重复URL
 [BD]鎮江新聞[geo-blocked],rtmp://zjtv-wshls.homecdn.com/live/2aa50,无效URL（非 http/https/rtsp 开头）
 [BD]镇江新闻[geo-blocked],rtmp://zjtv-wshls.homecdn.com/live/2aa50,无效URL（非 http/https/rtsp 开头）
 [SD]江夏新闻综合,https://stream1.freetv.fun/jiang-xia-xin-wen-zong-he-1.m3u8,重复URL
@@ -3822,6 +3814,7 @@ CNA,https://live1.mediadesk.al/cnatvlive.m3u8,重复URL
 [SD]陕西卫视,https://stream1.freetv.fun/shan-xi-wei-shi-136.m3u8,重复URL
 [SD]陕西卫视,https://stream1.freetv.fun/shan-xi-wei-shi-46.m3u8,重复URL
 [BD]陕西卫视,https://stream1.freetv.fun/shan-xi-wei-shi-110.m3u8,重复URL
+[BD]陕西卫视,https://stream1.freetv.fun/shan-xi-wei-shi-113.ctv,重复URL
 [BD]陕西卫视,https://stream1.freetv.fun/shan-xi-wei-shi-28.m3u8,重复URL
 [SD]陕西卫视,https://stream1.freetv.fun/shan-xi-wei-shi-4.m3u8,重复URL
 [BD]陕西卫视,https://stream1.freetv.fun/shan-xi-wei-shi-127.m3u8,重复URL
@@ -3833,41 +3826,42 @@ CNA,https://live1.mediadesk.al/cnatvlive.m3u8,重复URL
 [BD]陕西卫视,https://stream1.freetv.fun/shan-xi-wei-shi-13.m3u8,重复URL
 [BD]陕西卫视[geo-blocked],https://stream1.freetv.fun/shan-xi-wei-shi-63.m3u8,重复URL
 [BD]陕西都市青春[geo-blocked],https://stream1.freetv.fun/shan-xi-du-shi-qing-chun-9.ctv,重复URL
-[BD]云南卫视[geo-blocked],https://stream1.freetv.fun/yun-nan-wei-shi-52.ctv,重复URL
+[BD]云南卫视,https://stream1.freetv.fun/yun-nan-wei-shi-52.ctv,重复URL
 [HD]云南卫视,https://stream1.freetv.fun/yun-nan-wei-shi-67.m3u8,重复URL
 [BD]云南卫视,https://stream1.freetv.fun/yun-nan-wei-shi-20.ctv,重复URL
 [SD]云南卫视,https://stream1.freetv.fun/yun-nan-wei-shi-36.m3u8,重复URL
+[BD]云南卫视,https://stream1.freetv.fun/yun-nan-wei-shi-13.ctv,重复URL
 [HD]云南卫视,https://stream1.freetv.fun/yun-nan-wei-shi-10.m3u8,重复URL
-[BD]云南卫视[geo-blocked],https://stream1.freetv.fun/yun-nan-wei-shi-21.m3u8,重复URL
+[BD]云南卫视,https://stream1.freetv.fun/yun-nan-wei-shi-21.m3u8,重复URL
 [BD]云南卫视,https://stream1.freetv.fun/yun-nan-wei-shi-44.m3u8,重复URL
 [BD]云南卫视,https://stream1.freetv.fun/yun-nan-wei-shi-57.m3u8,重复URL
 [SD]云南卫视,https://stream1.freetv.fun/yun-nan-wei-shi-39.m3u8,重复URL
 [BD]云南卫视,https://stream1.freetv.fun/yun-nan-wei-shi-50.m3u8,重复URL
-[SD]青海卫视,https://stream1.freetv.fun/qing-hai-wei-shi-247.m3u8,重复URL
+[SD]青海卫视[geo-blocked],https://stream1.freetv.fun/qing-hai-wei-shi-247.m3u8,重复URL
 [HD]青海卫视,https://stream1.freetv.fun/qing-hai-wei-shi-237.m3u8,重复URL
 [SD]青海卫视,https://stream1.freetv.fun/qing-hai-wei-shi-157.ctv,重复URL
 [BD]青海卫视,https://stream1.freetv.fun/qing-hai-wei-shi-312.m3u8,重复URL
 [HD]青海卫视,https://stream1.freetv.fun/qing-hai-wei-shi-16.m3u8,重复URL
 [BD]靖天卡通[geo-blocked],https://stream1.freetv.fun/jing-tian-qia-tong-1.ctv,重复URL
 [BD]靖天卡通[geo-blocked],https://stream1.freetv.fun/jing-tian-qia-tong-7.m3u8,重复URL
-[BD]靖天卡通,https://stream1.freetv.fun/jing-tian-qia-tong-8.m3u8,重复URL
-[BD]靖天卡通[geo-blocked],https://stream1.freetv.fun/jing-tian-qia-tong-5.m3u8,重复URL
+[BD]靖天卡通,https://stream1.freetv.fun/jing-tian-qia-tong-5.m3u8,重复URL
 [BD]靖天卡通,https://stream1.freetv.fun/jing-tian-qia-tong-3.m3u8,重复URL
 [BD]靖天卡通,https://stream1.freetv.fun/jing-tian-qia-tong-4.m3u8,重复URL
 [BD]靖天卡通,https://stream1.freetv.fun/jing-tian-qia-tong-6.m3u8,重复URL
-[BD]靖天卡通 *sm,https://stream1.freetv.fun/jing-tian-qia-tong---sm-1.ctv,重复URL
+[HD]靖天卡通 *sm,https://stream1.freetv.fun/jing-tian-qia-tong---sm-1.ctv,重复URL
+[BD]靖天卡通台 *4g,https://stream1.freetv.fun/jing-tian-qia-tong-tai---4g-2.m3u8,重复URL
 [SD]靖天卡通台 *4g,https://stream1.freetv.fun/jing-tian-qia-tong-tai---4g-1.m3u8,重复URL
 [BD]靖天國際,https://stream1.freetv.fun/jing-tian-guo-ji-7.m3u8,重复URL
 [BD]靖天國際,https://stream1.freetv.fun/jing-tian-guo-ji-2.m3u8,重复URL
 [BD]靖天國際,https://stream1.freetv.fun/jing-tian-guo-ji-3.m3u8,重复URL
 [BD]靖天國際,https://stream1.freetv.fun/jing-tian-guo-ji-1.m3u8,重复URL
-[BD]靖天國際,https://stream1.freetv.fun/jing-tian-guo-ji-6.m3u8,重复URL
-[BD]靖天国际 *sm,https://stream1.freetv.fun/jing-tian-guo-ji---sm-1.ctv,重复URL
+[BD]靖天國際[geo-blocked],https://stream1.freetv.fun/jing-tian-guo-ji-6.m3u8,重复URL
+[HD]靖天国际 *sm[geo-blocked],https://stream1.freetv.fun/jing-tian-guo-ji---sm-1.ctv,重复URL
 [BD]靖天國際 *4g,https://stream1.freetv.fun/jing-tian-guo-ji---4g-1.m3u8,重复URL
 [BD]靖天國際 *4g,https://stream1.freetv.fun/jing-tian-guo-ji---4g-2.m3u8,重复URL
 [BD]靖天戲劇[geo-blocked],https://stream1.freetv.fun/jing-tian-xi-ju-7.m3u8,重复URL
 [BD]靖天戲劇,https://stream1.freetv.fun/jing-tian-xi-ju-4.m3u8,重复URL
-[BD]靖天戲劇,https://stream1.freetv.fun/jing-tian-xi-ju-1.m3u8,重复URL
+[BD]靖天戲劇[geo-blocked],https://stream1.freetv.fun/jing-tian-xi-ju-1.m3u8,重复URL
 [BD]靖天戲劇,https://stream1.freetv.fun/jing-tian-xi-ju-2.m3u8,重复URL
 [BD]靖天戲劇,https://stream1.freetv.fun/jing-tian-xi-ju-5.m3u8,重复URL
 [BD]靖天戲劇 *4g,https://stream1.freetv.fun/jing-tian-xi-ju---4g-1.m3u8,重复URL
@@ -3884,28 +3878,24 @@ CNA,https://live1.mediadesk.al/cnatvlive.m3u8,重复URL
 [BD]靖天映畫,https://stream1.freetv.fun/jing-tian-ying-hua-2.m3u8,重复URL
 [BD]靖天映畫 *4g,https://stream1.freetv.fun/jing-tian-ying-hua---4g-1.m3u8,重复URL
 [BD]靖天映畫 *4g,https://stream1.freetv.fun/jing-tian-ying-hua---4g-2.m3u8,重复URL
-[BD]靖天歡樂,https://stream1.freetv.fun/jing-tian-huan-le-2.m3u8,重复URL
-[BD]靖天歡樂,https://stream1.freetv.fun/jing-tian-huan-le-4.m3u8,重复URL
+[BD]靖天歡樂[geo-blocked],https://stream1.freetv.fun/jing-tian-huan-le-2.m3u8,重复URL
+[BD]靖天歡樂[geo-blocked],https://stream1.freetv.fun/jing-tian-huan-le-4.m3u8,重复URL
 [BD]靖天歡樂,https://stream1.freetv.fun/jing-tian-huan-le-5.m3u8,重复URL
 [BD]靖天歡樂,https://stream1.freetv.fun/jing-tian-huan-le-6.m3u8,重复URL
-[BD]靖天歡樂,https://stream1.freetv.fun/jing-tian-huan-le-7.m3u8,重复URL
 [BD]靖天歡樂 *4g,https://stream1.freetv.fun/jing-tian-huan-le---4g-2.m3u8,重复URL
-[BD]靖天綜合,https://stream1.freetv.fun/jing-tian-zong-he-4.m3u8,重复URL
+[BD]靖天綜合[geo-blocked],https://stream1.freetv.fun/jing-tian-zong-he-4.m3u8,重复URL
 [BD]靖天綜合,https://stream1.freetv.fun/jing-tian-zong-he-2.m3u8,重复URL
-[BD]靖天綜合,https://stream1.freetv.fun/jing-tian-zong-he-3.m3u8,重复URL
 [BD]靖天綜合 *4g,https://stream1.freetv.fun/jing-tian-zong-he---4g-1.m3u8,重复URL
 [BD]靖天育樂,https://stream1.freetv.fun/jing-tian-yu-le-3.m3u8,重复URL
 [BD]靖天育樂,https://stream1.freetv.fun/jing-tian-yu-le-4.m3u8,重复URL
 [BD]靖天育樂,https://stream1.freetv.fun/jing-tian-yu-le-1.m3u8,重复URL
 [BD]靖天育樂,https://stream1.freetv.fun/jing-tian-yu-le-6.m3u8,重复URL
-[BD]靖天育樂,https://stream1.freetv.fun/jing-tian-yu-le-7.m3u8,重复URL
 [BD]靖天育樂 *4g,https://stream1.freetv.fun/jing-tian-yu-le---4g-2.m3u8,重复URL
 [BD]靖天育樂 *4g,https://stream1.freetv.fun/jing-tian-yu-le---4g-1.m3u8,重复URL
 [BD]靖天資訊,https://stream1.freetv.fun/jing-tian-zi-xun-4.m3u8,重复URL
-[BD]靖天資訊,https://stream1.freetv.fun/jing-tian-zi-xun-2.m3u8,重复URL
+[BD]靖天資訊[geo-blocked],https://stream1.freetv.fun/jing-tian-zi-xun-2.m3u8,重复URL
 [BD]靖天資訊,https://stream1.freetv.fun/jing-tian-zi-xun-3.m3u8,重复URL
 [BD]靖天資訊,https://stream1.freetv.fun/jing-tian-zi-xun-6.m3u8,重复URL
-[BD]靖天資訊,https://stream1.freetv.fun/jing-tian-zi-xun-5.m3u8,重复URL
 [BD]靖天資訊 *4g,https://stream1.freetv.fun/jing-tian-zi-xun---4g-2.m3u8,重复URL
 [BD]靖天資訊 *4g,https://stream1.freetv.fun/jing-tian-zi-xun---4g-1.m3u8,重复URL
 [BD]靖天電影[geo-blocked],https://stream1.freetv.fun/jing-tian-dian-ying-7.m3u8,重复URL
@@ -3915,30 +3905,29 @@ CNA,https://live1.mediadesk.al/cnatvlive.m3u8,重复URL
 [BD]靖天電影,https://stream1.freetv.fun/jing-tian-dian-ying-6.m3u8,重复URL
 [BD]靖天電影 *4g,https://stream1.freetv.fun/jing-tian-dian-ying---4g-1.m3u8,重复URL
 [BD]靖天電影 *4g,https://stream1.freetv.fun/jing-tian-dian-ying---4g-2.m3u8,重复URL
-[BD]靖洋卡通[geo-blocked],https://stream1.freetv.fun/jing-yang-qia-tong-6.m3u8,重复URL
+[BD]靖洋卡通,https://stream1.freetv.fun/jing-yang-qia-tong-6.m3u8,重复URL
 [BD]靖洋卡通,https://stream1.freetv.fun/jing-yang-qia-tong-3.m3u8,重复URL
 [BD]靖洋卡通,https://stream1.freetv.fun/jing-yang-qia-tong-2.m3u8,重复URL
 [BD]靖洋卡通,https://stream1.freetv.fun/jing-yang-qia-tong-4.m3u8,重复URL
 [BD]靖洋卡通,https://stream1.freetv.fun/jing-yang-qia-tong-5.m3u8,重复URL
 [BD]靖洋卡通 *4g,https://stream1.freetv.fun/jing-yang-qia-tong---4g-1.m3u8,重复URL
 [BD]靖洋卡通 *4g,https://stream1.freetv.fun/jing-yang-qia-tong---4g-2.m3u8,重复URL
-[BD]靖洋戲劇[geo-blocked],https://stream1.freetv.fun/jing-yang-xi-ju-7.m3u8,重复URL
 [BD]靖洋戲劇,https://stream1.freetv.fun/jing-yang-xi-ju-4.m3u8,重复URL
 [BD]靖洋戲劇,https://stream1.freetv.fun/jing-yang-xi-ju-3.m3u8,重复URL
 [BD]靖洋戲劇,https://stream1.freetv.fun/jing-yang-xi-ju-5.m3u8,重复URL
 [BD]靖洋戲劇,https://stream1.freetv.fun/jing-yang-xi-ju-6.m3u8,重复URL
 [BD]靖洋戲劇 *4g,https://stream1.freetv.fun/jing-yang-xi-ju---4g-1.m3u8,重复URL
 [BD]靖洋戲劇 *4g,https://stream1.freetv.fun/jing-yang-xi-ju---4g-2.m3u8,重复URL
-[BD]非凡商業,https://stream1.freetv.fun/fei-fan-shang-ye-4.ctv,重复URL
-[BD]非凡商業,https://stream1.freetv.fun/fei-fan-shang-ye-2.ctv,重复URL
-[BD]非凡商業,https://stream1.freetv.fun/fei-fan-shang-ye-5.m3u8,重复URL
+[BD]非凡商業[geo-blocked],https://stream1.freetv.fun/fei-fan-shang-ye-4.ctv,重复URL
+[BD]非凡商業[geo-blocked],https://stream1.freetv.fun/fei-fan-shang-ye-2.ctv,重复URL
+[BD]非凡商業[geo-blocked],https://stream1.freetv.fun/fei-fan-shang-ye-5.m3u8,重复URL
 [BD]非凡商業,https://stream1.freetv.fun/fei-fan-shang-ye-3.m3u8,重复URL
 [BD]非凡商業 *4g,https://stream1.freetv.fun/fei-fan-shang-ye---4g-1.m3u8,重复URL
-[BD]非凡新聞,https://stream1.freetv.fun/fei-fan-xin-wen-3.ctv,重复URL
-[BD]非凡新聞[geo-blocked],https://stream1.freetv.fun/fei-fan-xin-wen-1.ctv,重复URL
-[BD]非凡新聞[geo-blocked],https://stream1.freetv.fun/fei-fan-xin-wen-7.m3u8,重复URL
+[BD]非凡新聞[geo-blocked],https://stream1.freetv.fun/fei-fan-xin-wen-3.ctv,重复URL
+[BD]非凡新聞,https://stream1.freetv.fun/fei-fan-xin-wen-1.ctv,重复URL
+[BD]非凡新聞,https://stream1.freetv.fun/fei-fan-xin-wen-7.m3u8,重复URL
 [BD]非凡新聞,https://stream1.freetv.fun/fei-fan-xin-wen-2.m3u8,重复URL
-[BD]非凡新闻 *sm,https://stream1.freetv.fun/fei-fan-xin-wen---sm-1.ctv,重复URL
+[HD]非凡新闻 *sm,https://stream1.freetv.fun/fei-fan-xin-wen---sm-1.ctv,重复URL
 [BD]非凡新聞 *4g,https://stream1.freetv.fun/fei-fan-xin-wen---4g-1.m3u8,重复URL
 [BD]非凡新聞,https://stream1.freetv.fun/fei-fan-xin-wen-4.ctv,重复URL
 [HD]非凡新闻[geo-blocked],https://stream1.freetv.fun/fei-fan-xin-wen-5.ctv,重复URL
@@ -3967,9 +3956,10 @@ CNA,https://live1.mediadesk.al/cnatvlive.m3u8,重复URL
 [BD]黑龙江卫视,https://stream1.freetv.fun/hei-long-jiang-wei-shi-53.m3u8,重复URL
 [BD]黑龙江卫视,https://stream1.freetv.fun/hei-long-jiang-wei-shi-77.ctv,重复URL
 [HD]黑龙江卫视,https://stream1.freetv.fun/hei-long-jiang-wei-shi-7.m3u8,重复URL
-[BD]黑龙江卫视,https://stream1.freetv.fun/hei-long-jiang-wei-shi-11.m3u8,重复URL
+[BD]黑龙江卫视[geo-blocked],https://stream1.freetv.fun/hei-long-jiang-wei-shi-11.m3u8,重复URL
 [SD]黑龙江卫视[geo-blocked],https://stream1.freetv.fun/hei-long-jiang-wei-shi-30.m3u8,重复URL
 [BD]黑龙江卫视,https://stream1.freetv.fun/hei-long-jiang-wei-shi-87.m3u8,重复URL
+[BD]黑龙江卫视,https://stream1.freetv.fun/hei-long-jiang-wei-shi-26.ctv,重复URL
 [HD]黑龙江卫视,https://stream1.freetv.fun/hei-long-jiang-wei-shi-3.m3u8,重复URL
 [BD]黑龙江卫视,https://stream1.freetv.fun/hei-long-jiang-wei-shi-82.m3u8,重复URL
 [BD]黑龙江卫视,https://stream1.freetv.fun/hei-long-jiang-wei-shi-56.m3u8,重复URL
@@ -3977,94 +3967,85 @@ CNA,https://live1.mediadesk.al/cnatvlive.m3u8,重复URL
 [BD]龍華偶像[geo-blocked],https://stream1.freetv.fun/long-hua-ou-xiang-3.m3u8,重复URL
 [BD]龍華偶像,https://stream1.freetv.fun/long-hua-ou-xiang-5.m3u8,重复URL
 [BD]龍華偶像[geo-blocked],https://stream1.freetv.fun/long-hua-ou-xiang-6.m3u8,重复URL
-[BD]龍華偶像[geo-blocked],https://stream1.freetv.fun/long-hua-ou-xiang-7.m3u8,重复URL
 [BD]龍華偶像 *4g,https://stream1.freetv.fun/long-hua-ou-xiang---4g-1.m3u8,重复URL
 [BD]龍華偶像 *4g[geo-blocked],https://stream1.freetv.fun/long-hua-ou-xiang---4g-2.m3u8,重复URL
 [HD]龙华偶像[geo-blocked],https://stream1.freetv.fun/long-hua-ou-xiang-4.ctv,重复URL
-[BD]龙华偶像 *sm,https://stream1.freetv.fun/long-hua-ou-xiang---sm-1.ctv,重复URL
+[HD]龙华偶像 *sm[geo-blocked],https://stream1.freetv.fun/long-hua-ou-xiang---sm-1.ctv,重复URL
 [HD]龍華卡通,https://stream1.freetv.fun/long-hua-qia-tong-1.m3u8,重复URL
 [HD]龍華卡通[geo-blocked],https://stream1.freetv.fun/long-hua-qia-tong-5.m3u8,重复URL
 [HD]龍華卡通,https://stream1.freetv.fun/long-hua-qia-tong-6.m3u8,重复URL
 [HD]龍華卡通[geo-blocked],https://stream1.freetv.fun/long-hua-qia-tong-7.m3u8,重复URL
-[HD]龍華卡通[geo-blocked],https://stream1.freetv.fun/long-hua-qia-tong-8.m3u8,重复URL
 [BD]龍華卡通 *4g,https://stream1.freetv.fun/long-hua-qia-tong---4g-2.m3u8,重复URL
 [BD]龍華卡通 *4g[geo-blocked],https://stream1.freetv.fun/long-hua-qia-tong---4g-1.m3u8,重复URL
-[BD]龙华戏剧[geo-blocked],https://stream1.freetv.fun/long-hua-xi-ju-4.ctv,重复URL
-[BD]龍華戲劇[geo-blocked],https://stream1.freetv.fun/long-hua-xi-ju-1.ctv,重复URL
+[VGA]龙华戏剧,https://stream1.freetv.fun/long-hua-xi-ju-4.ctv,重复URL
+[BD]龍華戲劇,https://stream1.freetv.fun/long-hua-xi-ju-1.ctv,重复URL
 [BD]龍華戲劇[geo-blocked],https://stream1.freetv.fun/long-hua-xi-ju-3.m3u8,重复URL
 [BD]龍華戲劇[geo-blocked],https://stream1.freetv.fun/long-hua-xi-ju-6.m3u8,重复URL
-[BD]龍華戲劇,https://stream1.freetv.fun/long-hua-xi-ju-7.m3u8,重复URL
+[BD]龍華戲劇[geo-blocked],https://stream1.freetv.fun/long-hua-xi-ju-7.m3u8,重复URL
 [BD]龍華戲劇[geo-blocked],https://stream1.freetv.fun/long-hua-xi-ju-8.m3u8,重复URL
-[BD]龍華戲劇[geo-blocked],https://stream1.freetv.fun/long-hua-xi-ju-9.m3u8,重复URL
-[HD]龙华戏剧 *sm,https://stream1.freetv.fun/long-hua-xi-ju---sm-1.ctv,重复URL
-[BD]龍華戲劇 *4g,https://stream1.freetv.fun/long-hua-xi-ju---4g-1.m3u8,重复URL
+[VGA]龙华戏剧 *sm,https://stream1.freetv.fun/long-hua-xi-ju---sm-1.ctv,重复URL
+[BD]龍華戲劇 *4g[geo-blocked],https://stream1.freetv.fun/long-hua-xi-ju---4g-1.m3u8,重复URL
 [BD]龍華戲劇 *4g[geo-blocked],https://stream1.freetv.fun/long-hua-xi-ju---4g-2.m3u8,重复URL
-[BD]龍華日韓,https://stream1.freetv.fun/long-hua-ri-han-6.m3u8,重复URL
-[BD]龍華日韓[geo-blocked],https://stream1.freetv.fun/long-hua-ri-han-7.m3u8,重复URL
 [BD]龍華日韓,https://stream1.freetv.fun/long-hua-ri-han-3.m3u8,重复URL
 [BD]龍華日韓[geo-blocked],https://stream1.freetv.fun/long-hua-ri-han-4.m3u8,重复URL
 [BD]龍華日韓,https://stream1.freetv.fun/long-hua-ri-han-1.m3u8,重复URL
 [BD]龍華日韓[geo-blocked],https://stream1.freetv.fun/long-hua-ri-han-2.m3u8,重复URL
-[BD]龍華日韓[geo-blocked],https://stream1.freetv.fun/long-hua-ri-han-5.m3u8,重复URL
 [BD]龍華日韓 *4g,https://stream1.freetv.fun/long-hua-ri-han---4g-1.m3u8,重复URL
 [BD]龍華日韓 *4g[geo-blocked],https://stream1.freetv.fun/long-hua-ri-han---4g-2.m3u8,重复URL
 [BD]龍華洋片 *4g,https://stream1.freetv.fun/long-hua-yang-pian---4g-2.m3u8,重复URL
 [BD]龍華洋片 *4g[geo-blocked],https://stream1.freetv.fun/long-hua-yang-pian---4g-1.m3u8,重复URL
-[BD]龍華洋片,https://stream1.freetv.fun/long-hua-yang-pian-1.m3u8,重复URL
+[BD]龍華洋片[geo-blocked],https://stream1.freetv.fun/long-hua-yang-pian-1.m3u8,重复URL
 [BD]龍華洋片[geo-blocked],https://stream1.freetv.fun/long-hua-yang-pian-4.m3u8,重复URL
 [BD]龍華洋片,https://stream1.freetv.fun/long-hua-yang-pian-5.m3u8,重复URL
 [BD]龍華洋片[geo-blocked],https://stream1.freetv.fun/long-hua-yang-pian-6.m3u8,重复URL
-[BD]龍華洋片[geo-blocked],https://stream1.freetv.fun/long-hua-yang-pian-7.m3u8,重复URL
 [BD]龙华经典[geo-blocked],https://stream1.freetv.fun/long-hua-jing-dian-1.ctv,重复URL
-[BD]龍華經典,https://stream1.freetv.fun/long-hua-jing-dian-5.m3u8,重复URL
+[BD]龍華經典[geo-blocked],https://stream1.freetv.fun/long-hua-jing-dian-5.m3u8,重复URL
 [BD]龍華經典[geo-blocked],https://stream1.freetv.fun/long-hua-jing-dian-2.m3u8,重复URL
 [BD]龍華經典,https://stream1.freetv.fun/long-hua-jing-dian-6.m3u8,重复URL
 [BD]龍華經典[geo-blocked],https://stream1.freetv.fun/long-hua-jing-dian-7.m3u8,重复URL
-[BD]龍華經典[geo-blocked],https://stream1.freetv.fun/long-hua-jing-dian-8.m3u8,重复URL
 [BD]龍華經典 *4g,https://stream1.freetv.fun/long-hua-jing-dian---4g-1.m3u8,重复URL
 [BD]龍華經典 *4g[geo-blocked],https://stream1.freetv.fun/long-hua-jing-dian---4g-2.m3u8,重复URL
-[BD]龍華電影,https://stream1.freetv.fun/long-hua-dian-ying-5.m3u8,重复URL
+[BD]龍華電影[geo-blocked],https://stream1.freetv.fun/long-hua-dian-ying-5.m3u8,重复URL
 [BD]龍華電影[geo-blocked],https://stream1.freetv.fun/long-hua-dian-ying-3.m3u8,重复URL
 [BD]龍華電影,https://stream1.freetv.fun/long-hua-dian-ying-4.m3u8,重复URL
 [BD]龍華電影[geo-blocked],https://stream1.freetv.fun/long-hua-dian-ying-1.m3u8,重复URL
-[BD]龍華電影[geo-blocked],https://stream1.freetv.fun/long-hua-dian-ying-2.m3u8,重复URL
 [BD]龍華電影 *4g,https://stream1.freetv.fun/long-hua-dian-ying---4g-1.m3u8,重复URL
 [BD]龍華電影 *4g[geo-blocked],https://stream1.freetv.fun/long-hua-dian-ying---4g-2.m3u8,重复URL
 2024年春晚,https://p2.bdstatic.com/rtmp.liveshow.lss-user.baidubce.com/live/stream_bduid_6488563992_8982723413/merged_1707497046297_88536_25144_41936.m3u8,重复URL
-2025-12-06 18:30:04,https://vd3.bdstatic.com/mda-rkaittm5s06vzzyq/sc/cae_h264/1762869883709304452/mda-rkaittm5s06vzzyq.mp4,重复URL
+2025-12-07 18:32:25,https://vd3.bdstatic.com/mda-rkaittm5s06vzzyq/sc/cae_h264/1762869883709304452/mda-rkaittm5s06vzzyq.mp4,重复URL
 AMC电影,http://61.221.215.25:8800/hls/43/index.m3u8,重复URL
-CCTV1,http://58.57.40.22:9901/tsfile/live/0001_1.m3u8,重复URL
 CCTV1,http://play.kankanlive.com/live/1661761962676984.m3u8,重复URL
 CCTV1,http://112.123.206.32:808/hls/1/index.m3u8,重复URL
 CCTV1,http://183.11.239.36:808/hls/19/index.m3u8,重复URL
-CCTV10,http://39.164.160.249:9901/tsfile/live/0010_1.m3u8,重复URL
+CCTV1,http://120.76.248.139/live/bfgd/4200000484.m3u8,重复URL
 CCTV10,http://58.57.40.22:9901/tsfile/live/1010_1.m3u8,重复URL
 CCTV10,http://183.11.239.36:808/hls/28/index.m3u8,重复URL
 CCTV10,http://120.76.248.139/live/bfgd/4200000129.m3u8,重复URL
 CCTV10,https://piccpndali.v.myalicdn.com/audio/cctv10_2.m3u8,重复URL
+CCTV10,http://182.150.23.74:808/hls/10/index.m3u8,重复URL
 CCTV11,http://58.57.40.22:9901/tsfile/live/1011_1.m3u8,重复URL
+CCTV11,http://183.11.239.36:808/hls/29/index.m3u8,重复URL
 CCTV11,http://120.76.248.139/live/bfgd/4200000130.m3u8,重复URL
 CCTV11,https://piccpndali.v.myalicdn.com/audio/cctv11_2.m3u8,重复URL
 CCTV11,http://182.150.23.74:808/hls/11/index.m3u8,重复URL
-CCTV11,http://223.241.247.214:9901/tsfile/live/0011_1.m3u8,重复URL
 CCTV12,http://58.57.40.22:9901/tsfile/live/1012_1.m3u8,重复URL
 CCTV12,http://183.11.239.36:808/hls/30/index.m3u8,重复URL
 CCTV12,http://120.76.248.139/live/bfgd/4200000131.m3u8,重复URL
 CCTV12,http://112.46.85.60:8009/hls/507/index.m3u8,重复URL
 CCTV12,https://piccpndali.v.myalicdn.com/audio/cctv12_2.m3u8,重复URL
-CCTV13,http://39.164.160.249:9901/tsfile/live/0013_1.m3u8,重复URL
 CCTV13,http://58.57.40.22:9901/tsfile/live/1013_1.m3u8,重复URL
 CCTV13,https://event.pull.hebtv.com/jishi/cp1.m3u8,重复URL
 CCTV13,http://ali-m-l.cztv.com/channels/lantian/channel21/1080p.m3u8,重复URL
 CCTV13,http://jwplay.hebyun.com.cn/live/cctv13/1500k/tzwj_video.m3u8,重复URL
-CCTV14,http://39.164.160.249:9901/tsfile/live/0014_1.m3u8,重复URL
+CCTV13,https://ldncctvwbcdcnc.v.wscdns.com/ldncctvwbcd/cdrmldcctv13_1/index.m3u8,重复URL
 CCTV14,http://58.57.40.22:9901/tsfile/live/1014_1.m3u8,重复URL
 CCTV14,https://event.pull.hebtv.com/jishi/cp2.m3u8,重复URL
 CCTV14,http://120.76.248.139/live/bfgd/4200000132.m3u8,重复URL
 CCTV14,https://piccpndali.v.myalicdn.com/audio/cctv14_2.m3u8,重复URL
-CCTV15,http://39.164.160.249:9901/tsfile/live/0015_1.m3u8,重复URL
+CCTV14,http://182.150.23.74:808/hls/14/index.m3u8,重复URL
 CCTV15,http://58.57.40.22:9901/tsfile/live/1015_1.m3u8,重复URL
 CCTV15,http://gmxw.7766.org:808/hls/102/index.m3u8,重复URL
+CCTV15,http://222.134.245.16:9901/tsfile/live/0015_1.m3u8,重复URL
 CCTV15,http://183.11.239.36:808/hls/102/index.m3u8,重复URL
 CCTV15,http://120.76.248.139/live/bfgd/4200000133.m3u8,重复URL
 CCTV16,http://livetv.wqwqwq.sbs/gaoma/cctv4k16.m3u8,重复URL
@@ -4083,10 +4064,10 @@ CCTV2,http://183.11.239.36:808/hls/20/index.m3u8,重复URL
 CCTV2,http://120.76.248.139/live/bfgd/4200000061.m3u8,重复URL
 CCTV2,http://112.46.85.60:8009/hls/502/index.m3u8,重复URL
 CCTV3,http://58.57.40.22:9901/tsfile/live/1002_1.m3u8,重复URL
+CCTV3,http://gmxw.7766.org:808/hls/91/index.m3u8,重复URL
 CCTV3,http://183.11.239.36:808/hls/91/index.m3u8,重复URL
 CCTV3,http://120.76.248.139/live/bfgd/4200000062.m3u8,重复URL
 CCTV3,http://112.46.85.60:8009/hls/3/index.m3u8,重复URL
-CCTV3,https://piccpndali.v.myalicdn.com/audio/cctv3_2.m3u8,重复URL
 CCTV4,http://58.57.40.22:9901/tsfile/live/1003_1.m3u8,重复URL
 CCTV4,http://183.11.239.36:808/hls/22/index.m3u8,重复URL
 CCTV4,http://183.11.239.36:808/hls/77/index.m3u8,重复URL
@@ -4112,15 +4093,15 @@ CCTV7,http://183.11.239.36:808/hls/25/index.m3u8,重复URL
 CCTV7,http://120.76.248.139/live/bfgd/4200000127.m3u8,重复URL
 CCTV7,http://112.46.85.60:8009/hls/504/index.m3u8,重复URL
 CCTV8,http://58.57.40.22:9901/tsfile/live/1008_1.m3u8,重复URL
-CCTV8,http://iptv77.iptv66.eu.org:35455/gaoma/cctv8.m3u8,重复URL
 CCTV8,http://gmxw.7766.org:808/hls/96/index.m3u8,重复URL
 CCTV8,http://183.11.239.36:808/hls/96/index.m3u8,重复URL
 CCTV8,http://120.76.248.139/live/bfgd/4200000066.m3u8,重复URL
-CCTV9,http://39.164.160.249:9901/tsfile/live/0009_1.m3u8,重复URL
+CCTV8,http://112.46.85.60:8009/hls/8/index.m3u8,重复URL
 CCTV9,http://58.57.40.22:9901/tsfile/live/1009_1.m3u8,重复URL
 CCTV9,http://183.11.239.36:808/hls/27/index.m3u8,重复URL
 CCTV9,http://120.76.248.139/live/bfgd/4200000128.m3u8,重复URL
 CCTV9,http://112.46.85.60:8009/hls/509/index.m3u8,重复URL
+CCTV9,https://piccpndali.v.myalicdn.com/audio/cctv9_2.m3u8,重复URL
 CCTV央视台球,https://epg.pw/stream/25677ac2e8c1f7c3dd6359c43eb5f0f54efb3f5c11f9dda18d01b3e0308ed017.m3u8,重复URL
 CCTV央视台球,https://epg.pw/stream/ca9c1cd4b97fb824cedd7fedfd0c7a950afdd7f00751cfbb7c2d89831d7746a5.m3u8,重复URL
 CCTV第一剧场,https://epg.pw/stream/6d7bf281e3d739806a73f5373acaa6e01988ec9739f5ac1355ce54b47a928472.m3u8,重复URL
@@ -4130,7 +4111,6 @@ CETV4,http://gslbmgsplive.miguvideo.com/migu/kailu/cetv4/50/20240709/index.m3u8?
 CHC动作电影,http://113.195.172.192:808/hls/114/index.m3u8,重复URL
 CHC家庭影院,http://113.195.172.192:808/hls/113/index.m3u8,重复URL
 CHC家庭影院,http://61.162.52.6:8088/newlive/live/hls/60/live.m3u8,重复URL
-CHC电影,http://218.15.183.23:9901/tsfile/live/23044_1.m3u8,重复URL
 CHC电影,http://183.237.95.108:9901/tsfile/live/1008_1.m3u8?key=txiptv&playlive=0&authid=0,重复URL
 CHC电影,http://120.198.101.106:9901/tsfile/live/1053_1.m3u8?key=txiptv,重复URL
 JJ斗地主,https://live.iill.top/douyin/685317364746,重复URL
@@ -4138,8 +4118,11 @@ www.izbds.com,https://vd3.bdstatic.com/mda-rkaittm5s06vzzyq/sc/cae_h264/17628698
 七台河新闻综合,http://live.qthnews.org.cn:1935/live/live1/800k/tzwj_video.m3u8,重复URL
 七台河民生社教,http://live.qthnews.org.cn:1935/live/live2/800k/tzwj_video.m3u8,重复URL
 万州三峡移民,http://123.146.162.24:8017/c2F0hmi/1000/live.m3u8,重复URL
-万州三峡移民,http://123.146.162.24:8017/c2F0hmi/1000/live.m3u8?zzhongqd,重复URL
 万州三峡移民,http://123.146.162.24:8013/tslslive/PU2vzMI/hls/live_sd.m3u8?zzhongqd,重复URL
+万州三峡移民,http://123.146.162.24:8017/c2F0hmi/1000/live.m3u8?zzhongqd,重复URL
+万州综合,http://123.146.162.24:8013/tslslive/noEX9SG/hls/live_sd.m3u8,重复URL
+万州综合,http://123.146.162.24:8017/iTXwrGs/800/live.m3u8,重复URL
+万州综合,http://123.146.162.24:8017/iTXwrGs/800/live.m3u8?zzhongqd,重复URL
 万荣综合,http://60.222.246.220:19433/hls1.m3u8,重复URL
 三明新闻综合,http://ls.qingting.fm/live/4885.m3u8,重复URL
 三明新闻综合,https://ls.qingting.fm/live/5022100/64k.m3u8,重复URL
@@ -4164,11 +4147,11 @@ www.izbds.com,https://vd3.bdstatic.com/mda-rkaittm5s06vzzyq/sc/cae_h264/17628698
 东南卫视,http://36.32.174.67:60080/newlive/live/hls/33/live.m3u8,重复URL
 东南卫视,http://120.76.248.139/live/bfgd/4200000483.m3u8,重复URL
 东南卫视,http://61.136.172.236:9901/tsfile/live/0137_1.m3u8,重复URL
+东方卫视,http://39.164.160.249:9901/tsfile/live/0107_1.m3u8,重复URL
 东方卫视,http://58.57.40.22:9901/tsfile/live/1030_1.m3u8,重复URL
 东方卫视,http://36.32.174.67:60080/newlive/live/hls/24/live.m3u8,重复URL
 东方卫视,http://124.116.183.146:9901/tsfile/live/0107_1.m3u8,重复URL
 东方卫视,http://183.11.239.36:808/hls/114/index.m3u8,重复URL
-东方卫视,http://120.76.248.139/live/bfgd/4200000093.m3u8,重复URL
 东阳影视生活,http://l.cztvcloud.com/channels/lantian/SXdongyang1/720p.m3u8,重复URL
 中华小当家,https://live.metshop.top/huya/11342413,重复URL
 中国交通,http://drive.mxmy.net:8888/udp/239.3.1.188:8001,重复URL
@@ -4194,8 +4177,8 @@ www.izbds.com,https://vd3.bdstatic.com/mda-rkaittm5s06vzzyq/sc/cae_h264/17628698
 乐至综合,http://175.155.106.72:89/live1/live1.m3u8,重复URL
 乐至综合,http://175.155.106.72:89/live1/live1.m3u8?zsicd,重复URL
 九台综合,http://stream10.jlntv.cn/jiutaitv/sd/live.m3u8,重复URL
-九台综合,http://stream10.jlntv.cn/jiutaitv/sd/live.m3u8?%E5%85%B3%E6%B3%A8%E5%BE%AE%E4%BF%A1%E5%85%AC%E4%BC%97%E5%8F%B7[%E6%99%B4%E5%9B%AD],重复URL
 九台综合,http://stream10.jlntv.cn/jiutaitv/sd/live.m3u8?zjild,重复URL
+九台综合,http://stream10.jlntv.cn/jiutaitv/sd/live.m3u8?%E5%85%B3%E6%B3%A8%E5%BE%AE%E4%BF%A1%E5%85%AC%E4%BC%97%E5%8F%B7[%E6%99%B4%E5%9B%AD],重复URL
 云南丽江冰川,https://gcalic.v.myalicdn.com/gc/hkylxs05_1/index.m3u8,重复URL
 云南丽江印象实景,https://gcalic.v.myalicdn.com/gc/hkylxs01_1/index.m3u8,重复URL
 云南丽江玉龙雪山,https://gcalic.v.myalicdn.com/gc/ylxs11_1/index.m3u8,重复URL
@@ -4214,7 +4197,6 @@ www.izbds.com,https://vd3.bdstatic.com/mda-rkaittm5s06vzzyq/sc/cae_h264/17628698
 云霄综合,http://live.zzyxxw.com:85/live/xwzh.m3u8,重复URL
 云霄综合,http://live.zzyxxw.com:85/live/xwzh.m3u8?fujian,,重复URL
 云霄综合,http://live.zzyxxw.com:85/live/xwzh.m3u8?fujian,重复URL
-五台综合,https://568slnjf.live.sxmty.com/live/hls/90c8b2efeb164cc0a6c2409eed668d6b/f77cbb89ec57435b9ba4c47589c16e4f-1.m3u8,重复URL
 五彩池,https://gcalic.v.myalicdn.com/gc/hlwcc_1/index.m3u8,重复URL
 井研综合,http://tvfile.jyrmt.cn/nmip-media/channellive/channel104452/playlist.m3u8,重复URL
 亳州农村,http://zbbf2.ahbztv.com/live/418.m3u8,重复URL
@@ -4234,11 +4216,9 @@ www.izbds.com,https://vd3.bdstatic.com/mda-rkaittm5s06vzzyq/sc/cae_h264/17628698
 余杭未来E频道,http://l.cztvcloud.com/channels/lantian/SXyuhang3/720p.m3u8?zzhed,重复URL
 余杭综合,http://l.cztvcloud.com/channels/lantian/SXyuhang1/720p.m3u8,重复URL
 余杭综合频道,http://l.cztvcloud.com/channels/lantian/SXyuhang1/720p.m3u8?zzhed,重复URL
-倚天屠龙记,http://www.douzhicloud.site:35455/huya/23734246,重复URL
 偃师新闻,http://tvpull.dxhmt.cn:9081/tv/10381-1.m3u8?wsSecret=df15530a0abec41b14bca00fc96270d1&wsTime=1654956569,重复URL
 光山综合,http://tvpull.dxhmt.cn:9081/tv/11522-1.m3u8,重复URL
 光山综合,http://tvpull.dxhmt.cn:9081/tv/11522-1.m3u8?%E5%85%B3%E6%B3%A8%E5%BE%AE%E4%BF%A1%E5%85%AC%E4%BC%97%E5%8F%B7[%E6%99%B4%E5%9B%AD],重复URL
-全纪实,http://183.215.134.239:19901/tsfile/live/1003_1.m3u8?key=txiptv&playlive=1&authid=0,重复URL
 八里沟风景区天界山玻璃栈道,https://gcalic.v.myalicdn.com/gc/blg03_1/index.m3u8,重复URL
 八里沟风景区桃花湾瀑布,https://gcalic.v.myalicdn.com/gc/blg05_1/index.m3u8,重复URL
 六安公共,http://ls.qingting.fm/live/1794199.m3u8,重复URL
@@ -4253,13 +4233,14 @@ www.izbds.com,https://vd3.bdstatic.com/mda-rkaittm5s06vzzyq/sc/cae_h264/17628698
 兵团五师双河新闻综合,https://liveout.btzx.com.cn/62ds9e/4nxdih.m3u8?zxinjd,重复URL
 兵团卫视,http://183.11.239.36:808/hls/7/index.m3u8,重复URL
 兵团卫视,http://120.76.248.139/live/bfgd/4200000124.m3u8,重复URL
+兵团卫视,http://218.13.170.98:9901/tsfile/live/0115_1.m3u8,重复URL
 内乡综合,http://tvpull.dxhmt.cn:9081/tv/11325-1.m3u8?%E5%85%B3%E6%B3%A8%E5%BE%AE%E4%BF%A1%E5%85%AC%E4%BC%97%E5%8F%B7[%E6%99%B4%E5%9B%AD],重复URL
 内蒙农牧,http://play1-qk.nmtv.cn:80/live/1686561299036179.m3u8,重复URL
 内蒙古卫视,http://120.76.248.139/live/bfgd/4200000110.m3u8,重复URL
 内蒙古卫视,http://111.61.236.247:9081/hls/48/index.m3u8,重复URL
+内蒙古卫视,http://222.134.245.16:9901/tsfile/live/0109_1.m3u8,重复URL
 内蒙古卫视,http://183.11.239.36:808/hls/60/index.m3u8,重复URL
 内蒙古卫视,http://cssbyd.imwork.net:8082/hls/44/index.m3u8,重复URL
-内蒙古卫视,http://182.150.23.74:808/hls/37/index.m3u8,重复URL
 内蒙古文体娱乐,http://play1-qk.nmtv.cn/live/1686561195713372.m3u8,重复URL
 内蒙古经济生活,http://play1-qk.nmtv.cn/live/1686562470947181.m3u8,重复URL
 内蒙古蒙语卫视,http://play1-qk.nmtv.cn/live/1686560387346365.m3u8,重复URL
@@ -4275,6 +4256,7 @@ www.izbds.com,https://vd3.bdstatic.com/mda-rkaittm5s06vzzyq/sc/cae_h264/17628698
 凉山新闻综合,http://tvfile.lzgbdst.com/nmip-media/channellive/channel106876/playlist.m3u8?zsicdhttp://tv.drs.lzgbdst.com:8100/channellive/lztv2.flv?zsicd,重复URL
 利州综合,http://tvfile.lzgbdst.com/nmip-media/channellive/channel106876/playlist.m3u8?zsicd,重复URL
 剑阁综合,https://m3u8.channel.dzsm.com/nmip-media/channellive/channel105549/playlist.m3u8,重复URL
+北京卫视,http://39.164.160.249:9901/tsfile/live/0122_1.m3u8,重复URL
 北京卫视,http://58.57.40.22:9901/tsfile/live/1032_1.m3u8,重复URL
 北京卫视,http://satellitepull.cnr.cn/live/wxbtv/playlist.m3u8,重复URL
 北京卫视,http://183.11.239.36:808/hls/41/index.m3u8,重复URL
@@ -4303,13 +4285,12 @@ www.izbds.com,https://vd3.bdstatic.com/mda-rkaittm5s06vzzyq/sc/cae_h264/17628698
 南通新闻综合,http://gslbmgsplive.miguvideo.com/migu/kailu/ntxwzh/51/20250604/index.m3u8?msisdn=202510240800592b66efbec2f342349068cf9b89987f0e&mdspid=&spid=699067&netType=0&sid=5910022178&pid=2028597139&timestamp=20251024080059&Channel_ID=0116_2600000900-99000-201600010010027&ProgramID=955227985&ParentNodeID=-99&assertID=5910022178&client_ip=106.13.250.88&SecurityKey=20251024080059&promotionId=&mvid=5900006706&mcid=500020&playurlVersion=WX-A1-8.9.2-RELEASE&userid=&jmhm=&videocodec=h264&bean=mgspad&tid=android&conFee=0&puData=c30e235addfb289fd6b4a087caa89b23&ddCalcu=3c23eb029e5820a3a5ca7d8d0fab42b869df,重复URL
 南通新闻综合,http://gslbmgsplive.miguvideo.com/migu/kailu/ntxwzh/51/20250604/index.m3u8?msisdn=20251025080102df5bfd8079f1495a93b5db8970ebcd80&mdspid=&spid=699067&netType=0&sid=5910022178&pid=2028597139&timestamp=20251025080102&Channel_ID=0116_2600000900-99000-201600010010027&ProgramID=955227985&ParentNodeID=-99&assertID=5910022178&client_ip=106.13.250.90&SecurityKey=20251025080102&promotionId=&mvid=5900006706&mcid=500020&playurlVersion=WX-A1-8.9.2-RELEASE&userid=&jmhm=&videocodec=h264&bean=mgspad&tid=android&conFee=0&puData=bce85213974cffcdcc52779b9d090656&ddCalcu=6b5ce6e208595002d193b997747c2f5fcccd,重复URL
 卡酷少儿,http://58.57.40.22:9901/tsfile/live/1060_1.m3u8,重复URL
+卡酷少儿,http://218.13.170.98:9901/tsfile/live/1021_1.m3u8,重复URL
 卫辉综合,http://tvpull.dxhmt.cn:9081/tv/10781-1.m3u8,重复URL
 卫辉综合,http://tvpull.dxhmt.cn:9081/tv/10781-1.m3u8?%E5%85%B3%E6%B3%A8%E5%BE%AE%E4%BF%A1%E5%85%AC%E4%BC%97%E5%8F%B7[%E6%99%B4%E5%9B%AD],重复URL
 卫辉综合,http://tvpull.dxhmt.cn:9081/tv/10781-1.m3u8?zhend,重复URL
 厦门卫视,http://183.11.239.36:808/hls/17/index.m3u8,重复URL
 厦门卫视,http://125.42.151.128:9901/tsfile/live/0125_1.m3u8?key=txiptv&playlive=1&authid=0,重复URL
-厦门卫视,http://125.42.148.217:9901/tsfile/live/0125_1.m3u8?key=txiptv&playlive=1&authid=0,重复URL
-厦门卫视,http://125.42.151.241:9901/tsfile/live/0125_1.m3u8?key=txiptv&playlive=1&authid=0,重复URL
 厦门鼓浪屿,https://gcalic.v.myalicdn.com/gc/gly01_1/index.m3u8,重复URL
 双辽,http://stream5.jlntv.cn/sl/sd/live.m3u8?zjild,重复URL
 双辽综合,http://stream3.jlntv.cn:80/aac_slgb/playlist.m3u8,重复URL
@@ -4327,9 +4308,10 @@ www.izbds.com,https://vd3.bdstatic.com/mda-rkaittm5s06vzzyq/sc/cae_h264/17628698
 吉林乡村,https://satellitepull.cnr.cn/live/wxjlxcgb/playlist.m3u8,重复URL
 吉林卫视,http://58.57.40.22:9901/tsfile/live/1050_1.m3u8,重复URL
 吉林卫视,http://111.61.236.247:9081/hls/45/index.m3u8,重复URL
+吉林卫视,http://cssbyd.imwork.net:8082/hls/41/index.m3u8,重复URL
 吉林卫视,http://183.11.239.36:808/hls/10/index.m3u8,重复URL
 吉林卫视,http://120.76.248.139/live/bfgd/4200000097.m3u8,重复URL
-吉林卫视,http://182.150.23.74:808/hls/35/index.m3u8,重复URL
+名侦探柯南,http://www.douzhicloud.site:35455/huya/30080236,重复URL
 名山综合,https://m3u8channel-bx.yunxya.com/nmip-media/channellive/channel104666/playlist.m3u8,重复URL
 吴忠公共,http://live.kanwz.net/ggpd/sd/live.m3u8,重复URL
 吴忠公共,http://live.kanwz.net/ggpd/sd/live.m3u8?zningxd,重复URL
@@ -4341,8 +4323,8 @@ www.izbds.com,https://vd3.bdstatic.com/mda-rkaittm5s06vzzyq/sc/cae_h264/17628698
 哈密一套,https://tvpull.hmgbtv.com/hmtv/channel9cd66b3d5d258b2b.flv,重复URL
 哈密三套,https://tvpull.hmgbtv.com/hmtv/channelfb0e5c505477aa44/playlist.m3u8,重复URL
 哈密二套,https://tvpull.hmgbtv.com/hmtv/channel108259412c6a6711/playlist.m3u8,重复URL
-哈尔滨娱乐,http://stream.hrbtv.net/ylpd/sd/live.m3u8,重复URL
 哈尔滨娱乐,https://stream.hrbtv.net/ylpd/sd/live.m3u8,重复URL
+哈尔滨娱乐,http://stream.hrbtv.net/ylpd/sd/live.m3u8?zheild#http://stream.hrbtv.net/ylpd/sd/live.m3u8#https://stream.hrbtv.net/ylpd/sd/live.m3u8,重复URL
 哈尔滨娱乐,http://stream.hrbtv.net/ylpd/sd/live.m3u8?zheild,重复URL
 哈尔滨影视,https://stream.hrbtv.net/yspd/playlist.m3u8,重复URL
 哈尔滨影视,https://stream.hrbtv.net/yspd/sd/live.m3u8,重复URL
@@ -4377,7 +4359,6 @@ www.izbds.com,https://vd3.bdstatic.com/mda-rkaittm5s06vzzyq/sc/cae_h264/17628698
 固始综合,http://tvpull.dxhmt.cn:9081/tv/11525-1.m3u8?%E5%85%B3%E6%B3%A8%E5%BE%AE%E4%BF%A1%E5%85%AC%E4%BC%97%E5%8F%B7[%E6%99%B4%E5%9B%AD],重复URL
 固镇新闻,http://www.guzhenm.com:7001/hls/hd-live.m3u8,重复URL
 固镇新闻,http://www.guzhenm.com:7001/hls/hd-live.m3u8?%E5%85%B3%E6%B3%A8%E5%BE%AE%E4%BF%A1%E5%85%AC%E4%BC%97%E5%8F%B7[%E6%99%B4%E5%9B%AD],重复URL
-垫江综合,http://123.146.162.24:8013/tslslive/noEX9SG/hls/live_sd.m3u8?zzhongqd,重复URL
 夏河,http://pili-live-hls.hfmt.net/gntv/xhtv.m3u8?zgand,重复URL
 大宁综合,http://live.daningtv.com/aac_dngb/playlist.m3u8,重复URL
 大时代,http://www.douzhicloud.site:35455/huya/23865161,重复URL
@@ -4405,11 +4386,11 @@ www.izbds.com,https://vd3.bdstatic.com/mda-rkaittm5s06vzzyq/sc/cae_h264/17628698
 宁夏经济,https://ls.qingting.fm/live/1841/64k.m3u8,重复URL
 安多卫视,https://liveout.xntv.tv/a65jur/96iln2.m3u8,重复URL
 安多卫视,https://liveout.xntv.tv/a65jur/90p2i1.m3u8?zqinghd,重复URL
+安徽卫视,http://39.164.160.249:9901/tsfile/live/0130_1.m3u8,重复URL
 安徽卫视,http://58.57.40.22:9901/tsfile/live/1033_1.m3u8,重复URL
 安徽卫视,http://124.116.183.146:9901/tsfile/live/0130_1.m3u8,重复URL
 安徽卫视,http://183.11.239.36:808/hls/40/index.m3u8,重复URL
 安徽卫视,http://120.76.248.139/live/bfgd/4200000096.m3u8,重复URL
-安徽卫视,http://182.150.23.74:808/hls/25/index.m3u8,重复URL
 安徽池州九华山风景区九华山,https://gcalic.v.myalicdn.com/gc/jhs05_1/index.m3u8,重复URL
 安徽综艺体育,http://112.27.235.94:8000/hls/25/index.m3u8,重复URL
 安徽黟县芦村远眺,https://gcalic.v.myalicdn.com/gc/yxlcyt_1/index.m3u8,重复URL
@@ -4424,11 +4405,12 @@ www.izbds.com,https://vd3.bdstatic.com/mda-rkaittm5s06vzzyq/sc/cae_h264/17628698
 宝丰综合,http://tvpull.dxhmt.cn:9081/tv/10421-1.m3u8?%E5%85%B3%E6%B3%A8%E5%BE%AE%E4%BF%A1%E5%85%AC%E4%BC%97%E5%8F%B7[%E6%99%B4%E5%9B%AD],重复URL
 宝丰综合,http://tvpull.dxhmt.cn:9081/tv/10421-1.m3u8?zhend,重复URL
 宾阳综合,http://pulls.myun.tv/live/0dkp33j5.m3u8,重复URL
-射雕英雄传,http://www.douzhicloud.site:35455/huya/23824164,重复URL
+宿松新闻综合,http://live.ahsz.tv/video/s10001-szzh/index.m3u8,重复URL
+寻秦记,http://www.douzhicloud.site:35455/huya/29465848,重复URL
 屏边综合,http://live.ynurl.com/video/s10040-pbzh/index.m3u8?zyund,重复URL
 山东卫视,http://183.11.239.36:808/hls/43/index.m3u8,重复URL
 山东卫视,http://120.76.248.139/live/bfgd/4200000099.m3u8,重复URL
-山东卫视,http://182.150.23.74:808/hls/23/index.m3u8,重复URL
+山东卫视,http://61.156.228.12:8154/tsfile/live/0131_1.m3u8,重复URL
 山东卫视,http://61.136.172.236:9901/tsfile/live/0131_1.m3u8,重复URL
 山东卫视,http://111.61.236.247:9081/hls/31/index.m3u8,重复URL
 山东教育,https://test1.live.sdetv.com.cn/live/dianshizhibo/playlist.m3u8,重复URL
@@ -4464,8 +4446,8 @@ www.izbds.com,https://vd3.bdstatic.com/mda-rkaittm5s06vzzyq/sc/cae_h264/17628698
 广东卫视,http://58.57.40.22:9901/tsfile/live/1039_1.m3u8,重复URL
 广东卫视,http://120.238.94.10:9901/tsfile/live/1008_1.m3u8,重复URL
 广东卫视,http://124.116.183.146:9901/tsfile/live/0125_1.m3u8,重复URL
-广东卫视,http://183.11.239.36:808/hls/80/index.m3u8,重复URL
 广东卫视,http://120.76.248.139/live/bfgd/4200000092.m3u8,重复URL
+广东卫视,http://61.136.172.236:9901/tsfile/live/0125_1.m3u8,重复URL
 广东民生,http://183.11.239.36:808/hls/18/index.m3u8,重复URL
 广东珠江,http://120.238.94.10:9901/tsfile/live/1009_1.m3u8,重复URL
 广东珠江,http://gmxw.7766.org:808/hls/83/index.m3u8,重复URL
@@ -4540,7 +4522,7 @@ www.izbds.com,https://vd3.bdstatic.com/mda-rkaittm5s06vzzyq/sc/cae_h264/17628698
 新疆卫视,http://36.32.174.67:60080/newlive/live/hls/47/live.m3u8,重复URL
 新疆卫视,http://183.11.239.36:808/hls/65/index.m3u8,重复URL
 新疆卫视,http://120.76.248.139/live/bfgd/4200000150.m3u8,重复URL
-新疆卫视,http://218.84.12.186:8001/hls/main/playlist.m3u8?zxinjd;http://218.84.12.186:8001/hls/main/playlist.m3u8zxinjd,重复URL
+新疆卫视,http://61.156.228.12:8154/tsfile/live/0110_1.m3u8,重复URL
 新疆天山,http://gctxyc.liveplay.myqcloud.com/gc/xjtcdhsz_1/index.m3u8,重复URL
 新蔡综合,http://tvpull.dxhmt.cn:9081/tv/11729-1.m3u8,重复URL
 新蔡综合,http://tvpull.dxhmt.cn:9081/tv/11729-1.m3u8?%E5%85%B3%E6%B3%A8%E5%BE%AE%E4%BF%A1%E5%85%AC%E4%BC%97%E5%8F%B7[%E6%99%B4%E5%9B%AD],重复URL
@@ -4562,8 +4544,8 @@ www.izbds.com,https://vd3.bdstatic.com/mda-rkaittm5s06vzzyq/sc/cae_h264/17628698
 无锡新闻综合,http://stream.thmz.com/wxtv1/playlist.m3u8,重复URL
 无锡新闻综合,http://stream.thmz.com/wxtv1/sd/live.m3u8,重复URL
 无锡新闻综合,http://stream.thmz.com/wxtv1/sd/live.m3u8?zjiangsd#http://stream.thmz.com/wxtv1/playlist.m3u8?_upt=156143371706166361#http://stream.thmz.com/wxtv1/sd/live.m3u8?_upt=4ba3ab191698644028#http://stream.thmz.com/wxtv1/playlist.m3u8,重复URL
+无锡新闻综合,http://m.m3u8.wifiwx.com/live/wifiwx-239.m3u8?zjiangsd,重复URL
 无锡新闻综合,http://stream.thmz.com/wxtv1/playlist.m3u8?_upt=156143371706166361,重复URL
-无锡新闻综合,http://stream.thmz.com/wxtv1/sd/live.m3u8?_upt=4ba3ab191698644028,重复URL
 无锡生活,https://stream.thmz.com/wxtv4/playlist.m3u8,重复URL
 无锡生活,http://stream.thmz.com/wxtv4/sd/live.m3u8,重复URL
 无锡生活,http://stream.thmz.com/wxtv4/playlist.m3u8?_upt=8c51357c1707362770,重复URL
@@ -4593,14 +4575,15 @@ www.izbds.com,https://vd3.bdstatic.com/mda-rkaittm5s06vzzyq/sc/cae_h264/17628698
 朝天综合,https://m3u8.channel.dzsm.com/nmip-media/channellive/channel104601/playlist.m3u8,重复URL
 朝阳新闻综合,http://120.76.248.139/live/bfgd/4200000282.m3u8,重复URL
 来宾综合,http://zb.gxlbamc.com:1935/live/lbzh.stream/playlist.m3u8,重复URL
+松潘新闻综合,http://live.spccmc.com:90/live/spxwzh.m3u8,重复URL
 松潘新闻综合,http://live.spccmc.com:90/live/spxwzh.m3u8?zsicd,重复URL
 松阳综合,http://l.cztvcloud.com/channels/lantian/SXsongyang1/720p.m3u8,重复URL
 松阳综合,http://l.cztvcloud.com/channels/lantian/SXsongyang1/720p.m3u8?fbl=,重复URL
 林正英经典玄幻电影,https://yylunbo.ottiptv.cc/yy/1462895099,重复URL
 柳河,http://stream5.jlntv.cn/lh/sd/live.m3u8?zjild,重复URL
 柳河综合,http://stream3.jlntv.cn:80/aac_lhgb/sd/live.m3u8,重复URL
-桂林新闻,https://pull.gltvs.com:443/live/glxw/playlist.m3u8?v=b0528684bf934e120e1c30fc808e6576&t=1796868188,重复URL
 桂林新闻,https://pull.gltvs.com/live/glxw/playlist.m3u8?v=b0528684bf934e120e1c30fc808e6576&t=1796868188,重复URL
+桂林新闻,https://pull.gltvs.com:443/live/glxw/playlist.m3u8?v=b0528684bf934e120e1c30fc808e6576&t=1796868188,重复URL
 桦甸,http://stream10.jlntv.cn/huadian/sd/live.m3u8?zjild,重复URL
 桦甸综合,http://stream9.jlntv.cn:80/aac_huadiangb/playlist.m3u8,重复URL
 梁河综合,http://live.ynurl.com/video/s10032-lhtv/index.m3u8?zyund,重复URL
@@ -4621,17 +4604,16 @@ www.izbds.com,https://vd3.bdstatic.com/mda-rkaittm5s06vzzyq/sc/cae_h264/17628698
 武进生活,https://live.wjyanghu.com/live/CH2.m3u8?%E5%85%B3%E6%B3%A8%E5%BE%AE%E4%BF%A1%E5%85%AC%E4%BC%97%E5%8F%B7[%E6%99%B4%E5%9B%AD],重复URL
 永嘉新闻综合,http://l.cztvcloud.com/channels/lantian/SXyongjia1/720p.m3u8,重复URL
 永嘉新闻综合,http://l.cztvcloud.com/channels/lantian/SXyongjia1/720p.m3u8?zzhed,重复URL
-永城综合,http://tvpull.dxhmt.cn:9081/tv/11481-1.m3u8,重复URL
 永昌综合,https://play.kankanlive.com/live/1652755738635915.m3u8,重复URL
 江夏新闻综合,http://59.175.226.142:280/gb28181/xwzh.m3u8?zhubd,重复URL
 江川综合,http://live.ynurl.com/video/s10037-JCTV/index.m3u8,重复URL
 江川综合,http://live.ynurl.com/video/s10037-JCTV/index.m3u8?zyund,重复URL
 江苏南京牛首山,https://gcalic.v.myalicdn.com/gc/nss01_1/index.m3u8,重复URL
+江苏卫视,http://39.164.160.249:9901/tsfile/live/0127_1.m3u8,重复URL
 江苏卫视,http://58.57.40.22:9901/tsfile/live/1031_1.m3u8,重复URL
 江苏卫视,http://183.11.239.36:808/hls/38/index.m3u8,重复URL
 江苏卫视,http://120.76.248.139/live/bfgd/4200000085.m3u8,重复URL
 江苏卫视,http://112.46.85.60:8009/hls/33/index.m3u8,重复URL
-江苏卫视,http://182.150.23.74:808/hls/18/index.m3u8,重复URL
 江苏城市,http://gslbmgsplive.miguvideo.com/wd_r2/jstv/jschengshi/600/index.m3u8?msisdn=202509030900312c5ad926e30449e5b9405f27a3fde9a6&mdspid=&spid=699067&netType=0&sid=5500260508&pid=2028597139&timestamp=20250903090031&Channel_ID=0116_2600037000-99000-200300220100002&ProgramID=626064714&ParentNodeID=-99&assertID=5500260508&client_ip=106.13.250.83&SecurityKey=20250903090031&promotionId=&mvid=5100186409&mcid=500020&playurlVersion=WX-A1-8.8.1-RELEASE&userid=&jmhm=&videocodec=h264&bean=mgspad&tid=android&conFee=0&puData=3712225a575d903704881b6443f50a06&ddCalcu=6307va1a02x52af2354a4567b51d89804307&sv=10004&ct=android,重复URL
 江苏城市,https://mgtv.ottiptv.cc/migu/626064714.m3u8?migutoken=02cafbc9d94c9e5e26c383c50287313c55f7e68abea08e811428e9b13cd8e46f93919d1a0859b1c76d8e4e78e1f7b8a6f89d71daf38a8275ac7633b59bcdb7cbf189e3152afb4fa80fadf4b134,重复URL
 江苏城市,http://gslbmgsplive.miguvideo.com/wd_r2/jstv/jschengshi/600/index.m3u8?msisdn=2025102308014130dd0a5e627f42499c11a2ab2361d34e&mdspid=&spid=699067&netType=0&sid=5500260508&pid=2028597139&timestamp=20251023080141&Channel_ID=0116_2600000900-99000-201600010010027&ProgramID=626064714&ParentNodeID=-99&assertID=5500260508&client_ip=106.13.250.83&SecurityKey=20251023080141&promotionId=&mvid=5100186409&mcid=500020&playurlVersion=WX-A1-8.9.2-RELEASE&userid=&jmhm=&videocodec=h264&bean=mgspad&tid=android&conFee=0&puData=5d7ae839a5e5f0b92b0a6b3471204437&ddCalcu=753de4724a60e02813794a35be65af00bb29,重复URL
@@ -4650,8 +4632,8 @@ www.izbds.com,https://vd3.bdstatic.com/mda-rkaittm5s06vzzyq/sc/cae_h264/17628698
 江西卫视,http://183.11.239.36:808/hls/44/index.m3u8,重复URL
 江西卫视,http://36.32.174.67:60080/newlive/live/hls/31/live.m3u8,重复URL
 汪清综合,http://stream5.jlntv.cn/wq/sd/live.m3u8,重复URL
-汪清综合,http://stream5.jlntv.cn/wq/sd/live.m3u8?_upt=eb80947d1699080781,重复URL
 汪清综合,http://stream5.jlntv.cn/wq/sd/live.m3u8?zjild,重复URL
+汪清综合,http://stream5.jlntv.cn/wq/sd/live.m3u8?_upt=eb80947d1699080781,重复URL
 汶川新闻综合,http://live.iwcmt.cn:90/live/zhxw.m3u8,重复URL
 汶川新闻综合,http://live.iwcmt.cn:90/live/zhxw.m3u8?zsicd,重复URL
 汶川新闻综合,http://file.ysxtv.cn/cms/videos/nmip-media/channellive/channel4/playlist.m3u8?zsicd#rtmp://tv.mcrm.org.cn:1935/channellive/tv01,重复URL
@@ -4670,8 +4652,8 @@ www.izbds.com,https://vd3.bdstatic.com/mda-rkaittm5s06vzzyq/sc/cae_h264/17628698
 河南卫视,http://58.57.40.22:9901/tsfile/live/1048_1.m3u8,重复URL
 河南卫视,http://tvpull.dxhmt.cn:9081/tv/11425-1.m3u8,重复URL
 河南卫视,http://120.238.94.10:9901/tsfile/live/1068_1.m3u8,重复URL
+河南卫视,http://cssbyd.imwork.net:8082/hls/37/index.m3u8,重复URL
 河南卫视,http://183.11.239.36:808/hls/51/index.m3u8,重复URL
-河南卫视,http://120.76.248.139/live/bfgd/4200000339.m3u8,重复URL
 泌阳新闻综合,http://tvpull.dxhmt.cn:9081/tv/11726-1.m3u8,重复URL
 泌阳新闻综合,http://tvpull.dxhmt.cn:9081/tv/11726-1.m3u8?%E5%85%B3%E6%B3%A8%E5%BE%AE%E4%BF%A1%E5%85%AC%E4%BC%97%E5%8F%B7[%E6%99%B4%E5%9B%AD],重复URL
 泗洪新闻综合,http://live1.habctv.com/ggpdsl/sd/live.m3u8?zjiangsd#http://live1.habctv.com/ggpdsl/sd/live.m3u8,重复URL
@@ -4719,7 +4701,6 @@ www.izbds.com,https://vd3.bdstatic.com/mda-rkaittm5s06vzzyq/sc/cae_h264/17628698
 浙江教育,http://ali-vl.cztv.com/channels/lantian/channel004/360p.m3u8,重复URL
 浙江数码时代,http://ali-m-l.cztv.com/channels/lantian/channel12/720p.m3u8,重复URL
 浙江数码时代,https://ali-m-l.cztv.com/channels/lantian/channel012/1080p.m3u8\r\n,重复URL
-浙江新闻,http://ali-m-l.cztv.com/channels/lantian/channel007/1080p.m3u8,重复URL
 浙江新闻,http://ali-vl.cztv.com/channels/lantian/channel007/360p.m3u8,重复URL
 浙江新闻,http://ali-m-l.cztv.com/channels/lantian/channel07/720p.m3u8,重复URL
 浙江新闻,http://ali-m-l.cztv.com/channels/lantian/channel007/720p.m3u8,重复URL
@@ -4788,9 +4769,9 @@ www.izbds.com,https://vd3.bdstatic.com/mda-rkaittm5s06vzzyq/sc/cae_h264/17628698
 渭源新闻,http://play.kankanlive.com/live/1720408280309109.m3u8,重复URL
 湖北卫视,http://58.57.40.22:9901/tsfile/live/1038_1.m3u8,重复URL
 湖北卫视,http://120.238.94.10:9901/tsfile/live/1055_1.m3u8,重复URL
-湖北卫视,http://124.116.183.146:9901/tsfile/live/0132_1.m3u8,重复URL
 湖北卫视,http://183.11.239.36:808/hls/46/index.m3u8,重复URL
 湖北卫视,http://120.76.248.139/live/bfgd/4200000102.m3u8,重复URL
+湖北卫视,http://182.150.23.74:808/hls/28/index.m3u8,重复URL
 湖南卫视,http://39.164.160.249:9901/tsfile/live/0128_1.m3u8,重复URL
 湖南卫视,http://58.57.40.22:9901/tsfile/live/1028_1.m3u8,重复URL
 湖南卫视,http://satellitepull.cnr.cn/live/wx32hunws/playlist.m3u8,重复URL
@@ -4805,9 +4786,9 @@ www.izbds.com,https://vd3.bdstatic.com/mda-rkaittm5s06vzzyq/sc/cae_h264/17628698
 湖州文化娱乐,http://hzcm-live.media.hugd.com/613c47f0ab0d4eaa98b21378d0db6ded/0051d31c9dd543a7825eea4e49675b2a.m3u8?auth_key=2277598059-0a5ebfa1c0dc4671b42a60810fc37039-0-fa625b7d1feab612062453c12e3c8887&fbl=,重复URL
 湖州文化娱乐,https://hzcm-live.media.hugd.com/613c47f0ab0d4eaa98b21378d0db6ded/0051d31c9dd543a7825eea4e49675b2a.m3u8?auth_key=2277598059-0a5ebfa1c0dc4671b42a60810fc37039-0-fa625b7d1feab612062453c12e3c8887,重复URL
 湖州新闻综合,http://hzcm-live.media.hugd.com/3f5fa7d64c7c46a38c6bd8ad35e836cc/65128273761b4731ae53729ea6dcf932.m3u8?auth_key=2277598215-9d21c15111244bea8d298c361d31a72e-0-d031198f58d44b0e91ba2e3f3b188865&amp;fbl=,重复URL
-湖州新闻综合,https://hzcm-live.media.hugd.com/3f5fa7d64c7c46a38c6bd8ad35e836cc/65128273761b4731ae53729ea6dcf932.m3u8?auth_key=2277598215-9d21c15111244bea8d298c361d31a72e-0-d031198f58d44b0e91ba2e3f3b188865,重复URL
-湖州新闻综合,http://hzcm-live.media.hugd.com/3f5fa7d64c7c46a38c6bd8ad35e836cc/65128273761b4731ae53729ea6dcf932.m3u8?auth_key=2277598215-9d21c15111244bea8d298c361d31a72e-0-d031198f58d44b0e91ba2e3f3b188865&fbl=,重复URL
 湖州新闻综合,http://hzcm-live.media.hugd.com/3f5fa7d64c7c46a38c6bd8ad35e836cc/65128273761b4731ae53729ea6dcf932.m3u8?auth_key=2277598215-9d21c15111244bea8d298c361d31a72e-0-d031198f58d44b0e91ba2e3f3b188865,重复URL
+湖州新闻综合,http://hzcm-live.media.hugd.com/3f5fa7d64c7c46a38c6bd8ad35e836cc/65128273761b4731ae53729ea6dcf932.m3u8?auth_key=2277598215-9d21c15111244bea8d298c361d31a72e-0-d031198f58d44b0e91ba2e3f3b188865&fbl=,重复URL
+湖州新闻综合,https://hzcm-live.media.hugd.com/3f5fa7d64c7c46a38c6bd8ad35e836cc/65128273761b4731ae53729ea6dcf932.m3u8?auth_key=2277598215-9d21c15111244bea8d298c361d31a72e-0-d031198f58d44b0e91ba2e3f3b188865,重复URL
 溧水新闻综合,https://mgtv.ottiptv.cc/migu/639737327.m3u8?migutoken=4c07b7afe94ad06d114a6bccae5747804d493ab7b1100069e485b78d3cb91c0fb0dbd92aa90a6157d7066e5b90780fabf5e150e17ebb9bc72b8bb18f43c5acddd1c0fd4d1904a99210aa962135,重复URL
 溧水新闻综合,http://gslbmgsplive.miguvideo.com/migu/kailu/wxxwzh/51/20250604/index.m3u8?msisdn=202509190801368edab7fc3daa499fa4e273d73d8b9f2d&mdspid=&spid=699067&netType=0&sid=5500469349&pid=2028597139&timestamp=20250919080136&Channel_ID=0116_2600000900-99000-201600010010027&ProgramID=639737327&ParentNodeID=-99&assertID=5500469349&client_ip=106.13.250.88&SecurityKey=20250919080136&promotionId=&mvid=5102012612&mcid=500020&playurlVersion=WX-A1-8.9.1-RELEASE&userid=&jmhm=&videocodec=h264&bean=mgspad&tid=android&conFee=0&puData=c3e71707790a9a58ff5c4df8b135c614&ddCalcu=4c13e6e1c795103710b787f9d04ac95af5f8,重复URL
 溧水新闻综合,http://gslbmgsplive.miguvideo.com/migu/kailu/wxxwzh/51/20250604/index.m3u8?msisdn=20251023080144558f016a4098437fa4b5f82b16dbaeb4&mdspid=&spid=699067&netType=0&sid=5500469349&pid=2028597139&timestamp=20251023080144&Channel_ID=0116_2600000900-99000-201600010010027&ProgramID=639737327&ParentNodeID=-99&assertID=5500469349&client_ip=106.13.250.83&SecurityKey=20251023080144&promotionId=&mvid=5102012612&mcid=500020&playurlVersion=WX-A1-8.9.2-RELEASE&userid=&jmhm=&videocodec=h264&bean=mgspad&tid=android&conFee=0&puData=d70adf995324060624c3825a44083d19&ddCalcu=9d17ed023a98d00f4949a553228430c64026,重复URL
@@ -4815,6 +4796,7 @@ www.izbds.com,https://vd3.bdstatic.com/mda-rkaittm5s06vzzyq/sc/cae_h264/17628698
 溧水新闻综合,http://gslbmgsplive.miguvideo.com/migu/kailu/wxxwzh/51/20250604/index.m3u8?msisdn=20251025080102f85a6abac0d64c679ab538b375a256e3&mdspid=&spid=699067&netType=0&sid=5500469349&pid=2028597139&timestamp=20251025080102&Channel_ID=0116_2600000900-99000-201600010010027&ProgramID=639737327&ParentNodeID=-99&assertID=5500469349&client_ip=106.13.250.90&SecurityKey=20251025080102&promotionId=&mvid=5102012612&mcid=500020&playurlVersion=WX-A1-8.9.2-RELEASE&userid=&jmhm=&videocodec=h264&bean=mgspad&tid=android&conFee=0&puData=c4c759517172dc16ebdc0de9d4416c8c&ddCalcu=cc84ecc26791504945d197e1d702cddcb1e6,重复URL
 滑县新闻,http://tvpull.dxhmt.cn:9081/tv/10526-1.m3u8?%E5%85%B3%E6%B3%A8%E5%BE%AE%E4%BF%A1%E5%85%AC%E4%BC%97%E5%8F%B7[%E6%99%B4%E5%9B%AD],重复URL
 滦平新闻,http://jwplay.hebyun.com.cn/live/LPTV001/1500k/tzwj_video.m3u8,重复URL
+滨海新闻综合,http://traffic.jbh.tjbh.com/live/bhtv10/playlist.m3u8,重复URL
 漫画解说,https://yylunbo.ottiptv.cc/yy/1382735568,重复URL
 漫画解说,https://www.goodiptv.club/douyu/5907076,重复URL
 潢川综合,http://tvpull.dxhmt.cn:9081/tv/11526-1.m3u8,重复URL
@@ -4826,9 +4808,9 @@ www.izbds.com,https://vd3.bdstatic.com/mda-rkaittm5s06vzzyq/sc/cae_h264/17628698
 灵璧综合,http://live.cms.anhuinews.com/video/s10003-lbtv/index.m3u8,重复URL
 灵璧综合,http://live.cms.anhuinews.com/video/s10003-lbtv/index.m3u8?zanhd#http://live.cms.anhuinews.com/video/s10003-lbtv/index.m3u8,重复URL
 狮子山鸟瞰丽江古城,https://gcalic.v.myalicdn.com/gc/ljgcszsnkgc_1/index.m3u8,重复URL
-猫和老鼠,https://live.iill.top/huya/11352879,重复URL
 玛纳斯,http://218.84.127.245:1026/hls/main1/playlist.m3u8?zxinjd,重复URL
 玛纳斯综合,http://218.84.127.245:1026/hls/main1/playlist.m3u8,重复URL
+玛纳斯综合,http://218.84.127.245:1026/hls/main1/playlist.m3u8?zxinjd,,重复URL
 珲春新闻,http://stream8.jlntv.cn/hctv/sd/live.m3u8?zjild,重复URL
 瑞丽综合,http://live.ynurl.com/video/s10021-rltv/index.m3u8?zyund,重复URL
 璧山综合,http://222.179.42.129:8181/hls1.m3u8,重复URL
@@ -4838,8 +4820,8 @@ www.izbds.com,https://vd3.bdstatic.com/mda-rkaittm5s06vzzyq/sc/cae_h264/17628698
 甘肃卫视,http://58.57.40.22:9901/tsfile/live/1056_1.m3u8,重复URL
 甘肃卫视,http://120.238.94.10:9901/tsfile/live/1079_1.m3u8,重复URL
 甘肃卫视,http://111.61.236.247:9081/hls/54/index.m3u8,重复URL
-甘肃卫视,http://cssbyd.imwork.net:8082/hls/48/index.m3u8,重复URL
 甘肃卫视,http://183.11.239.36:808/hls/119/index.m3u8,重复URL
+甘肃卫视,http://120.76.248.139/live/bfgd/4200000119.m3u8,重复URL
 甘肃经济,https://satellitepull.cnr.cn/live/wxgshhzs/playlist.m3u8,重复URL
 甘肃都市,https://satellitepull.cnr.cn/live/wxgsdstb/playlist.m3u8,重复URL
 登封综合,http://tvpull.dxhmt.cn:9081/tv/10185-1.m3u8,重复URL
@@ -4848,7 +4830,6 @@ www.izbds.com,https://vd3.bdstatic.com/mda-rkaittm5s06vzzyq/sc/cae_h264/17628698
 白银综合,https://play.kankanlive.com/live/1720408089419110.m3u8,重复URL
 盈江综合,http://live.ynurl.com/video/s10016-YJTV-2/index.m3u8?zyund,重复URL
 直播中国,https://gcalic.v.myalicdn.com/gc/wgw05_1/index.m3u8?contentid=2820180516001,重复URL
-睛彩广场舞,http://13937899.xyz:35455/itv/3000000020000011523.m3u8?cdn=FifastbLive,重复URL
 睛彩广场舞,http://zjzcf.synology.me:35455/itv/3000000020000011523.m3u8?cdn=FifastbLive,重复URL
 石屏综合,http://live.ynurl.com/video/s10059-SPTV/index.m3u8?zyund,重复URL
 砚山电视台,http://live.ynurl.com/video/s10020-ystv/index.m3u8?zyund,重复URL
@@ -4857,6 +4838,7 @@ www.izbds.com,https://vd3.bdstatic.com/mda-rkaittm5s06vzzyq/sc/cae_h264/17628698
 磐石综合,http://stream3.jlntv.cn:80/aac_psgb/sd/live.m3u8,重复URL
 祁县新闻综合,http://ggpagerl.live.sxmty.com/live/hls/b350dc1ac5da45c2b2233f6eb122ddf4/49d3766c7f204685a2a8f027b234c33d.m3u8?zshanxd,重复URL
 祁门综合,http://zbbf2.ahbztv.com/live/416.m3u8?zanhd,重复URL
+神雕侠侣,http://www.douzhicloud.site:35455/huya/23865171,重复URL
 福州少儿,http://live.zohi.tv/video/s10001-fztv-4/index.m3u8,重复URL
 福建新闻,http://satellitepull.cnr.cn/live/wx32fjxwgb/playlist.m3u8,重复URL
 福建武夷山玉女峰,https://gcalic.v.myalicdn.com/gc/wysynf_1/index.m3u8,重复URL
@@ -4879,8 +4861,8 @@ www.izbds.com,https://vd3.bdstatic.com/mda-rkaittm5s06vzzyq/sc/cae_h264/17628698
 缙云新闻综合,http://l.cztvcloud.com/channels/lantian/SXjinyun1/720p.m3u8,重复URL
 缙云综合,http://l.cztvcloud.com/channels/lantian/SXjinyun1/720p.m3u8?zzhed,重复URL
 腾冲综合,http://live.ynurl.com/video/s10012-TCTV/index.m3u8?zyund,重复URL
-舒兰新闻综合,http://stream8.jlntv.cn/shulan/sd/live.m3u8?_upt=332db6421699196585,重复URL
 舒兰新闻综合,http://stream8.jlntv.cn/shulan/sd/live.m3u8?zjild,重复URL
+舒兰新闻综合,http://stream8.jlntv.cn/shulan/sd/live.m3u8?_upt=332db6421699196585,重复URL
 舟曲新闻,http://pili-live-hls.hfmt.net/gntv/zqtv.m3u8?zgand,重复URL
 航拍中国第二季,http://newcntv.qcloudcdn.com/asp/hls/4000/0303000a/3/default/2bdfdad540b342f592f9817cb7f3b79a/4000.m3u8,重复URL
 芒市综合,http://live.ynurl.com/video/s10001-mstv1/index.m3u8,重复URL
@@ -4934,7 +4916,7 @@ www.izbds.com,https://vd3.bdstatic.com/mda-rkaittm5s06vzzyq/sc/cae_h264/17628698
 贵州卫视,http://cssbyd.imwork.net:8082/hls/39/index.m3u8,重复URL
 贵州卫视,http://183.11.239.36:808/hls/49/index.m3u8,重复URL
 贵州卫视,http://120.76.248.139/live/bfgd/4200000101.m3u8,重复URL
-贵州卫视,http://182.150.23.74:808/hls/26/index.m3u8,重复URL
+贵州卫视,http://222.169.85.8:9901/tsfile/live/0120_1.m3u8,重复URL
 贵州省兴义市万峰林,https://gcalic.v.myalicdn.com/gc/xywfl_1/index.m3u8,重复URL
 赣州公共,https://pili-live-hls-sjxgz2024.sobeylive.com/jxgz2024/396_q_live172526334096251.m3u8,重复URL
 赣州教育,https://pili-live-hls-sjxgz2024.sobeylive.com/jxgz2024/396_q_live172526335287668.m3u8,重复URL
@@ -4966,6 +4948,7 @@ www.izbds.com,https://vd3.bdstatic.com/mda-rkaittm5s06vzzyq/sc/cae_h264/17628698
 通化县,http://stream5.jlntv.cn/thx/sd/live.m3u8?zjild,重复URL
 通化县综合,http://stream3.jlntv.cn:80/aac_thxgb/playlist.m3u8,重复URL
 通海电视台,https://zb-live.ynurl.com/tonghai/3bfe3a9e-48e6-4c1e-8770-1df66447cc6c.m3u8,重复URL
+通海电视台,http://live.ynurl.com/video/s10038-thtv/index.m3u8?zyund,重复URL
 通渭综合,https://play.kankanlive.com/live/1725005047185027.m3u8,重复URL
 遂昌综合,http://l.cztvcloud.com/channels/lantian/SXsuichang1/720p.m3u8?zzhed,重复URL
 邓州新闻,http://tvpull.dxhmt.cn:9081/tv/11381-1.m3u8?%E5%85%B3%E6%B3%A8%E5%BE%AE%E4%BF%A1%E5%85%AC%E4%BC%97%E5%8F%B7[%E6%99%B4%E5%9B%AD],重复URL
@@ -4993,10 +4976,10 @@ www.izbds.com,https://vd3.bdstatic.com/mda-rkaittm5s06vzzyq/sc/cae_h264/17628698
 重庆卫视,http://124.116.183.146:9901/tsfile/live/0142_1.m3u8,重复URL
 重庆卫视,http://183.11.239.36:808/hls/53/index.m3u8,重复URL
 重庆卫视,http://120.76.248.139/live/bfgd/4200000107.m3u8,重复URL
-重庆卫视,http://223.241.247.214:9901/tsfile/live/1007_1.m3u8,重复URL
+重庆卫视,http://61.136.172.236:9901/tsfile/live/0142_1.m3u8,重复URL
+重庆汽摩,http://120.76.248.139/live/bfgd/4200000168.m3u8,重复URL
 重庆汽摩,http://123.146.162.24:8013/tslslive/PU2vzMI/hls/live_sd.m3u8,重复URL
 重庆汽摩,http://222.179.155.21:1935/ch1.m3u8,重复URL
-重庆汽摩,http://120.76.248.139/live/bfgd/4200000168.m3u8,重复URL
 重庆汽摩,http://222.179.155.21:1935/ch1.m3u8?zzhongqd,重复URL
 重庆汽摩,http://222.179.155.21:1935/ch1.m3u8?%E5%85%B3%E6%B3%A8%E5%BE%AE%E4%BF%A1%E5%85%AC%E4%BC%97%E5%8F%B7[%E6%99%B4%E5%9B%AD],重复URL
 金川乡村,http://live.jinchuanrmt.com:90/live/jcxc.m3u8?zsicd,重复URL
@@ -5005,13 +4988,14 @@ www.izbds.com,https://vd3.bdstatic.com/mda-rkaittm5s06vzzyq/sc/cae_h264/17628698
 金平综合,http://live.ynurl.com/video/s10041-JPTV/index.m3u8?zyund,重复URL
 金鹰卡通,http://58.57.40.22:9901/tsfile/live/1059_1.m3u8,重复URL
 金鹰卡通,http://113.57.93.165:9900/tsfile/live/1000_1.m3u8?key=txiptv&playlive=1&authid=0,重复URL
-金鹰卡通,http://125.42.148.217:9901/tsfile/live/0107_1.m3u8?key=txiptv&playlive=1&authid=0,重复URL
+金鹰卡通,http://221.13.235.49:9901/tsfile/live/1010_1.m3u8?key=txiptv&playlive=1&authid=0,重复URL
 钟馗传说,https://yylunbo.ottiptv.cc/yy/1382736839,重复URL
 铜陵新闻综合,https://ls.qingting.fm/live/21303/64k.m3u8,重复URL
 镇江二套社会民生,http://zjtv-wshls.homecdn.com/live/2aa16.m3u8,重复URL
 镇江新闻综合,http://cm-wshls.homecdn.com/live/2aa50.m3u8,重复URL
-镇江新闻综合,http://zjtv-wshls.homecdn.com/live/2aa50.m3u8?wsSession=a263bdc5a26cd01b57a80359-170493712215358&wsIPSercert=f56bd6194d219a5172dbed60eca6e9b0,重复URL
 镇江新闻综合,http://zjtv-wshls.homecdn.com/live/2aa50.m3u8?wsSession=a263bdc5a26cd01b57a80359-170493712215358&amp;wsIPSercert=f56bd6194d219a5172dbed60eca6e9b0,重复URL
+镇江新闻综合,http://zjtv-wshls.homecdn.com/live/2aa50.m3u8?wsSession=a263bdc5a26cd01b57a80359-170493712215358&wsIPSercert=f56bd6194d219a5172dbed60eca6e9b0,重复URL
+镇江新闻综合,http://gslbmgsplive.miguvideo.com/migu/kailu/zjxwzh/50/20251127/index.m3u8?msisdn=20251206080345c6b198548f7a4137bc34f4fc1877f2c2&mdspid=&spid=699067&netType=0&sid=5500469365&pid=2028597139&timestamp=20251206080345&Channel_ID=0116_2600037000-99000-200300220100002&ProgramID=639731783&ParentNodeID=-99&assertID=5500469365&client_ip=218.28.233.106&SecurityKey=20251206080345&promotionId=&mvid=5102012619&mcid=500020&playurlVersion=WX-A1-8.11.2-RELEASE&userid=&jmhm=&videocodec=h264&appCode=miguvideo_android&bean=mgspad&tid=android&conFee=0&puData=5d35d17d8948be41fe9df1c12a69cc94&ddCalcu=459dvc3ac5x9da61a72d18c914f8db9ee4f1&sv=10004&ct=android,重复URL
 长子综合,https://www.wxhcgbds.com:8081/channelTv/WXTV_1.m3u8?zshanxd,重复URL
 长子综合,https://83awgyp5.live.sxmty.com/live/hls/6f6f4b36f9bd42628b718b595ba507ed/724b7e8907a8414d873eb2a2f69bfa18.m3u8?zshanxd,重复URL
 长宁综合,http://cnpull.sccnfb.com:80/live/123456.m3u8,重复URL
