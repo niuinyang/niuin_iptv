@@ -5,6 +5,12 @@
       "ahash": null,
       "dhash": null,
       "error": "[tcp @ 0x5651c0d8e540] Connection to tcp://110.19.181.138:10080 failed: Connection timed out\n[in#0 @ 0x5651c0dcce00] Error opening input: Connection timed out\nError opening input file http://110.19.181.138:10080/hls/F509Rh7GR/F509Rh7GR_live.m3u8?zneimd.\nError opening input files: Connection timed out\n"
+    },
+    "1612": {
+      "phash": null,
+      "ahash": null,
+      "dhash": null,
+      "error": "[tcp @ 0x5617036b6540] Connection to tcp://110.19.181.138:10080 failed: Connection timed out\n[in#0 @ 0x5617036f4e00] Error opening input: Connection timed out\nError opening input file http://110.19.181.138:10080/hls/F509Rh7GR/F509Rh7GR_live.m3u8?zneimd.\nError opening input files: Connection timed out\n"
     }
   },
   "http://111.31.106.140/downflv.brtvcloud.com/8klive/8kliveok.m3u8": {
@@ -13,6 +19,12 @@
       "ahash": null,
       "dhash": null,
       "error": "[in#0 @ 0x5555c87e9e00] Error opening input: Server returned 4XX Client Error, but not one of 40{0,1,3,4}\nError opening input file http://111.31.106.140/downflv.brtvcloud.com/8klive/8kliveok.m3u8.\nError opening input files: Server returned 4XX Client Error, but not one of 40{0,1,3,4}\n"
+    },
+    "1612": {
+      "phash": null,
+      "ahash": null,
+      "dhash": null,
+      "error": "[in#0 @ 0x55ea3f84fe00] Error opening input: Server returned 4XX Client Error, but not one of 40{0,1,3,4}\nError opening input file http://111.31.106.140/downflv.brtvcloud.com/8klive/8kliveok.m3u8.\nError opening input files: Server returned 4XX Client Error, but not one of 40{0,1,3,4}\n"
     }
   },
   "http://112.46.105.20:8009/hls/18/index.m3u8": {
@@ -20,6 +32,12 @@
       "phash": "b8c6a7936c499365",
       "ahash": "f7d7c9d1c64f41c1",
       "dhash": "04a6abb3b4989737",
+      "error": null
+    },
+    "1612": {
+      "phash": "c378f043f83c079b",
+      "ahash": "c0c000042c2c2eff",
+      "dhash": "83b3eb884848c8c8",
       "error": null
     }
   },
@@ -29,6 +47,12 @@
       "ahash": "5f6e3c0c2701bdff",
       "dhash": "b88c61f9ce494ba6",
       "error": null
+    },
+    "1612": {
+      "phash": "9cc5d2669b182f63",
+      "ahash": "7cfe001f63d1809f",
+      "dhash": "a8aab6b2caa7b37c",
+      "error": null
     }
   },
   "http://112.46.105.20:8009/hls/20/index.m3u8": {
@@ -37,6 +61,12 @@
       "ahash": null,
       "dhash": null,
       "error": ""
+    },
+    "1612": {
+      "phash": "d0d6ef9b31c23429",
+      "ahash": "fefe76764edef800",
+      "dhash": "68e484c49cbcb1a2",
+      "error": null
     }
   },
   "http://112.46.105.20:8009/hls/22/index.m3u8": {
@@ -45,6 +75,12 @@
       "ahash": null,
       "dhash": null,
       "error": ""
+    },
+    "1612": {
+      "phash": "806e7bb2d2655b86",
+      "ahash": "4711787a7f7f7b78",
+      "dhash": "87d7d2d6f5d5d2d0",
+      "error": null
     }
   },
   "http://112.46.105.20:8009/hls/23/index.m3u8": {
@@ -53,6 +89,12 @@
       "ahash": null,
       "dhash": null,
       "error": ""
+    },
+    "1612": {
+      "phash": "85979aa47e9a49b8",
+      "ahash": "3e7e7e2262637f00",
+      "dhash": "7cccc44686c69e13",
+      "error": null
     }
   },
   "http://112.46.105.20:8009/hls/28/index.m3u8": {
@@ -61,6 +103,12 @@
       "ahash": null,
       "dhash": null,
       "error": ""
+    },
+    "1612": {
+      "phash": "dfc4784ac487854f",
+      "ahash": "fc80bf3f3f3f0086",
+      "dhash": "e12574464878051c",
+      "error": null
     }
   },
   "http://112.46.105.20:8009/hls/29/index.m3u8": {
@@ -69,10 +117,22 @@
       "ahash": "df41c7c3c3c3c3c3",
       "dhash": "14870f171717161f",
       "error": null
+    },
+    "1612": {
+      "phash": "e00a4ee5e3c72d59",
+      "ahash": "00001bffefc3e280",
+      "dhash": "c4b555cd57d61405",
+      "error": null
     }
   },
   "http://123.130.84.106:8154/tsfile/live/0140_1.m3u8?key=txiptv&playlive=1&authid=0": {
     "0811": {
+      "phash": null,
+      "ahash": null,
+      "dhash": null,
+      "error": ""
+    },
+    "1612": {
       "phash": null,
       "ahash": null,
       "dhash": null,
@@ -85,6 +145,12 @@
       "ahash": null,
       "dhash": null,
       "error": "[in#0 @ 0x55853554ce00] Error opening input: Server returned 5XX Server Error reply\nError opening input file http://12371ksc.v.kcdnvip.com/12371/dangyuanwang_1/index.m3u8.\nError opening input files: Server returned 5XX Server Error reply\n"
+    },
+    "1612": {
+      "phash": null,
+      "ahash": null,
+      "dhash": null,
+      "error": "[in#0 @ 0x55f9d4b6ee00] Error opening input: Server returned 5XX Server Error reply\nError opening input file http://12371ksc.v.kcdnvip.com/12371/dangyuanwang_1/index.m3u8.\nError opening input files: Server returned 5XX Server Error reply\n"
     }
   },
   "http://124.88.144.73:1935/live/xwzh/playlist.m3u8?zxinjd": {
@@ -93,10 +159,22 @@
       "ahash": null,
       "dhash": null,
       "error": "[tcp @ 0x55c946f6a540] Connection to tcp://124.88.144.73:1935 failed: Connection timed out\n[in#0 @ 0x55c946fa8e00] Error opening input: Connection timed out\nError opening input file http://124.88.144.73:1935/live/xwzh/playlist.m3u8?zxinjd.\nError opening input files: Connection timed out\n"
+    },
+    "1612": {
+      "phash": null,
+      "ahash": null,
+      "dhash": null,
+      "error": "[tcp @ 0x556e20f0e540] Connection to tcp://124.88.144.73:1935 failed: Connection timed out\n[in#0 @ 0x556e20f4ce00] Error opening input: Connection timed out\nError opening input file http://124.88.144.73:1935/live/xwzh/playlist.m3u8?zxinjd.\nError opening input files: Connection timed out\n"
     }
   },
   "http://182.150.23.74:808/hls/18/index.m3u8": {
     "0811": {
+      "phash": null,
+      "ahash": null,
+      "dhash": null,
+      "error": ""
+    },
+    "1612": {
       "phash": null,
       "ahash": null,
       "dhash": null,
@@ -109,6 +187,12 @@
       "ahash": null,
       "dhash": null,
       "error": ""
+    },
+    "1612": {
+      "phash": null,
+      "ahash": null,
+      "dhash": null,
+      "error": ""
     }
   },
   "http://182.150.23.74:808/hls/25/index.m3u8": {
@@ -117,10 +201,22 @@
       "ahash": null,
       "dhash": null,
       "error": ""
+    },
+    "1612": {
+      "phash": "85d1632ad423cdcf",
+      "ahash": "686e3e3e1c1101fe",
+      "dhash": "c8c8e2f270f1cb68",
+      "error": null
     }
   },
   "http://183.11.239.36:808/hls/119/index.m3u8": {
     "0811": {
+      "phash": null,
+      "ahash": null,
+      "dhash": null,
+      "error": ""
+    },
+    "1612": {
       "phash": null,
       "ahash": null,
       "dhash": null,
@@ -133,6 +229,12 @@
       "ahash": null,
       "dhash": null,
       "error": "[tcp @ 0x5592f8e94040] Connection to tcp://183.11.239.36:808 failed: Connection timed out\n[in#0 @ 0x5592f8e90e00] Error opening input: Connection timed out\nError opening input file http://183.11.239.36:808/hls/36/index.m3u8.\nError opening input files: Connection timed out\n"
+    },
+    "1612": {
+      "phash": null,
+      "ahash": null,
+      "dhash": null,
+      "error": ""
     }
   },
   "http://218.84.12.186:8001/hls/main/playlist.m3u8?zxinjd": {
@@ -140,6 +242,12 @@
       "phash": "95697a4e9359cc86",
       "ahash": "8102222f3f1e0e0e",
       "dhash": "2d4e4a5a6c741c1c",
+      "error": null
+    },
+    "1612": {
+      "phash": "c1b4304bc47c5bd7",
+      "ahash": "083c7eff7e00003c",
+      "dhash": "b0f0f0f0f0f1e0f0",
       "error": null
     }
   },
@@ -149,6 +257,12 @@
       "ahash": "fffff7900ccccc1d",
       "dhash": "53576d36b8999939",
       "error": null
+    },
+    "1612": {
+      "phash": "d32c71f893e5f011",
+      "ahash": "0000003c3cfc3c3c",
+      "dhash": "982fe96869494869",
+      "error": null
     }
   },
   "http://38.64.72.148:80/hls/modn/list/4009/playlist.m3u8": {
@@ -156,6 +270,12 @@
       "phash": "99b611e3b31a3734",
       "ahash": "df9f879ffb791818",
       "dhash": "38323c3333d3f1b1",
+      "error": null
+    },
+    "1612": {
+      "phash": "d26c63b8d3ecc381",
+      "ahash": "0000203c3cfd1c2c",
+      "dhash": "981fcde8f8b9a9e9",
       "error": null
     }
   },
@@ -165,6 +285,12 @@
       "ahash": null,
       "dhash": null,
       "error": "[tcp @ 0x55d35c398540] Connection to tcp://3gvod.zjgonline.com.cn:1935 failed: Connection timed out\n[in#0 @ 0x55d35c3d6e00] Error opening input: Connection timed out\nError opening input file http://3gvod.zjgonline.com.cn:1935/live/_definst_/shehuishenghuo_app/chunklist.m3u8.\nError opening input files: Connection timed out\n"
+    },
+    "1612": {
+      "phash": null,
+      "ahash": null,
+      "dhash": null,
+      "error": "[tcp @ 0x55c88ad6b540] Connection to tcp://3gvod.zjgonline.com.cn:1935 failed: Connection timed out\n[in#0 @ 0x55c88ada9e00] Error opening input: Connection timed out\nError opening input file http://3gvod.zjgonline.com.cn:1935/live/_definst_/shehuishenghuo_app/chunklist.m3u8.\nError opening input files: Connection timed out\n"
     }
   },
   "http://3gvod.zjgonline.com.cn:1935/live/_definst_/xinwenzonghe_app/chunklist.m3u8": {
@@ -173,6 +299,12 @@
       "ahash": null,
       "dhash": null,
       "error": "[tcp @ 0x55e805f1b540] Connection to tcp://3gvod.zjgonline.com.cn:1935 failed: Connection timed out\n[in#0 @ 0x55e805f59e00] Error opening input: Connection timed out\nError opening input file http://3gvod.zjgonline.com.cn:1935/live/_definst_/xinwenzonghe_app/chunklist.m3u8.\nError opening input files: Connection timed out\n"
+    },
+    "1612": {
+      "phash": null,
+      "ahash": null,
+      "dhash": null,
+      "error": "[tcp @ 0x56010b967540] Connection to tcp://3gvod.zjgonline.com.cn:1935 failed: Connection timed out\n[in#0 @ 0x56010b9a5e00] Error opening input: Connection timed out\nError opening input file http://3gvod.zjgonline.com.cn:1935/live/_definst_/xinwenzonghe_app/chunklist.m3u8.\nError opening input files: Connection timed out\n"
     }
   },
   "http://8.138.7.223/tv/hxws.m3u8": {
@@ -180,6 +312,12 @@
       "phash": "b986cea371a82f1a",
       "ahash": "5f3f1f4303c3c989",
       "dhash": "bf75b59e5b5b1313",
+      "error": null
+    },
+    "1612": {
+      "phash": "c73c1deea31a3087",
+      "ahash": "8294446c76743424",
+      "dhash": "3e348cc9cdccc8cc",
       "error": null
     }
   },
@@ -189,6 +327,12 @@
       "ahash": null,
       "dhash": null,
       "error": "[tcp @ 0x55ccf7b7b540] Connection to tcp://gxlive.snrtv.com:80 failed: Connection timed out\n[in#0 @ 0x55ccf7bb9e00] Error opening input: Connection timed out\nError opening input file http://8.138.7.223/【公众号：榴芒电视】/农林卫视.m3u8.\nError opening input files: Connection timed out\n"
+    },
+    "1612": {
+      "phash": null,
+      "ahash": null,
+      "dhash": null,
+      "error": "[tcp @ 0x55cd0b686540] Connection to tcp://gxlive.snrtv.com:80 failed: Connection timed out\n[in#0 @ 0x55cd0b6c4e00] Error opening input: Connection timed out\nError opening input file http://8.138.7.223/【公众号：榴芒电视】/农林卫视.m3u8.\nError opening input files: Connection timed out\n"
     }
   },
   "http://drive.mxmy.net:8888/udp/239.3.1.164:8001": {
@@ -197,6 +341,12 @@
       "ahash": "800018183c3c3c3c",
       "dhash": "20203231e97160f0",
       "error": null
+    },
+    "1612": {
+      "phash": null,
+      "ahash": null,
+      "dhash": null,
+      "error": ""
     }
   },
   "http://drive.mxmy.net:8888/udp/239.3.1.165:8001": {
@@ -205,6 +355,12 @@
       "ahash": "0634302070f87878",
       "dhash": "6c6c6d4dc584c1c0",
       "error": null
+    },
+    "1612": {
+      "phash": null,
+      "ahash": null,
+      "dhash": null,
+      "error": ""
     }
   },
   "http://dspdhls.appcoo.com:8888/live/dspd/index.m3u8": {
@@ -212,6 +368,12 @@
       "phash": "a56758986ba9079b",
       "ahash": "00c22323ffffdf00",
       "dhash": "84244647662a3429",
+      "error": null
+    },
+    "1612": {
+      "phash": "978c85b56963634e",
+      "ahash": "3f3f1d0000070703",
+      "dhash": "feece929298d4fce",
       "error": null
     }
   },
@@ -221,6 +383,12 @@
       "ahash": "003b783b78787979",
       "dhash": "a3e3a1e3e1c1e3d1",
       "error": null
+    },
+    "1612": {
+      "phash": "d36b86330b856cc7",
+      "ahash": "008ccccc0c4c7e3e",
+      "dhash": "091918981898d4e4",
+      "error": null
     }
   },
   "http://genglei.8866.org:9901/tsfile/live/1011_1.m3u8?key=txiptv&playlive=1&authid=0": {
@@ -229,10 +397,22 @@
       "ahash": null,
       "dhash": null,
       "error": "[tcp @ 0x555bd349e540] Connection to tcp://genglei.8866.org:9901 failed: Connection timed out\n[in#0 @ 0x555bd34dce00] Error opening input: Connection timed out\nError opening input file http://genglei.8866.org:9901/tsfile/live/1011_1.m3u8?key=txiptv&playlive=1&authid=0.\nError opening input files: Connection timed out\n"
+    },
+    "1612": {
+      "phash": null,
+      "ahash": null,
+      "dhash": null,
+      "error": "[tcp @ 0x55750037c540] Connection to tcp://genglei.8866.org:9901 failed: Connection timed out\n[in#0 @ 0x5575003bae00] Error opening input: Connection timed out\nError opening input file http://genglei.8866.org:9901/tsfile/live/1011_1.m3u8?key=txiptv&playlive=1&authid=0.\nError opening input files: Connection timed out\n"
     }
   },
   "http://gmxw.7766.org:808/hls/175/index.m3u8": {
     "0811": {
+      "phash": null,
+      "ahash": null,
+      "dhash": null,
+      "error": ""
+    },
+    "1612": {
       "phash": null,
       "ahash": null,
       "dhash": null,
@@ -245,10 +425,22 @@
       "ahash": "00c0dede9e8c0000",
       "dhash": "86b4303038383331",
       "error": null
+    },
+    "1612": {
+      "phash": "d8d0723c2787872f",
+      "ahash": "42d87e7e183c1800",
+      "dhash": "86b2f0f030703001",
+      "error": null
     }
   },
   "http://jsmov2.a.yximgs.com/bs3/video-hls/5203346449046555193_hlsb.m3u8": {
     "0811": {
+      "phash": "c111beeec45879a9",
+      "ahash": "ff6f084860e0ffff",
+      "dhash": "c08a9aaaeaa240c4",
+      "error": null
+    },
+    "1612": {
       "phash": "c111beeec45879a9",
       "ahash": "ff6f084860e0ffff",
       "dhash": "c08a9aaaeaa240c4",
@@ -261,10 +453,22 @@
       "ahash": "0030fefefefc3000",
       "dhash": "6060606040606060",
       "error": null
+    },
+    "1612": {
+      "phash": "d74e286b2cb03c6b",
+      "ahash": "0030fefefefc3000",
+      "dhash": "6060606040606060",
+      "error": null
     }
   },
   "http://jsmov2.a.yximgs.com/bs3/video-hls/5232901391302199073_hlsb.m3u8": {
     "0811": {
+      "phash": "0000000000000000",
+      "ahash": "0000000000000000",
+      "dhash": "0000000000000000",
+      "error": null
+    },
+    "1612": {
       "phash": "0000000000000000",
       "ahash": "0000000000000000",
       "dhash": "0000000000000000",
@@ -277,6 +481,12 @@
       "ahash": "0010fefefefc3800",
       "dhash": "6060606060406040",
       "error": null
+    },
+    "1612": {
+      "phash": "d7682a6e27d1256a",
+      "ahash": "0010fefefefc3800",
+      "dhash": "6060606060406040",
+      "error": null
     }
   },
   "http://live.dxhmt.cn:9081/tv/10185-1.m3u8": {
@@ -284,6 +494,12 @@
       "phash": "eafc7c3450da1307",
       "ahash": "80f3ffff67030100",
       "dhash": "252f2b2bcb4f6701",
+      "error": null
+    },
+    "1612": {
+      "phash": "932e7cd167d0059b",
+      "ahash": "008d3f2f6f7f5d00",
+      "dhash": "243bd9cdd9d89941",
       "error": null
     }
   },
@@ -293,6 +509,12 @@
       "ahash": "8e9ede484c1c9c98",
       "dhash": "3c3cb8b8b9b13931",
       "error": null
+    },
+    "1612": {
+      "phash": "e0d71f285f2fe081",
+      "ahash": "0048efefefc30100",
+      "dhash": "2490da599f938342",
+      "error": null
     }
   },
   "http://live.dxhmt.cn:9081/tv/10327-1.m3u8": {
@@ -301,6 +523,12 @@
       "ahash": null,
       "dhash": null,
       "error": ""
+    },
+    "1612": {
+      "phash": "c4c41bf740bf7388",
+      "ahash": "7373737270e00000",
+      "dhash": "e6e6e6e6c6ce2bc9",
+      "error": null
     }
   },
   "http://live.dxhmt.cn:9081/tv/10421-1.m3u8": {
@@ -308,6 +536,12 @@
       "phash": "b183671eccce1c3c",
       "ahash": "6767cfefc6474742",
       "dhash": "cddc97d6b49ccc94",
+      "error": null
+    },
+    "1612": {
+      "phash": "b3cf2cbe14205979",
+      "ahash": "03f7606e2e0f0702",
+      "dhash": "0d45d2cc5c9e9f9e",
       "error": null
     }
   },
@@ -317,6 +551,12 @@
       "ahash": "3cbce060fbf96070",
       "dhash": "fa6949c392c3c1c1",
       "error": null
+    },
+    "1612": {
+      "phash": null,
+      "ahash": null,
+      "dhash": null,
+      "error": ""
     }
   },
   "http://live.dxhmt.cn:9081/tv/10781-1.m3u8": {
@@ -324,6 +564,12 @@
       "phash": "80e45c883f7b2f0f",
       "ahash": "00ffe7c27f7fff00",
       "dhash": "10accc9cfac1b933",
+      "error": null
+    },
+    "1612": {
+      "phash": "83c761b4cc6bb299",
+      "ahash": "e2663e7d3e0e0000",
+      "dhash": "ceccc8e9f47cdbd9",
       "error": null
     }
   },
@@ -333,6 +579,12 @@
       "ahash": "d0d010008080033f",
       "dhash": "94a2f6d632086e7e",
       "error": null
+    },
+    "1612": {
+      "phash": null,
+      "ahash": null,
+      "dhash": null,
+      "error": ""
     }
   },
   "http://live.dxhmt.cn:9081/tv/11024-1.m3u8": {
@@ -341,10 +593,22 @@
       "ahash": "c0f0fefe80828200",
       "dhash": "0689e06c06064e58",
       "error": null
+    },
+    "1612": {
+      "phash": "b57a1cc38a87cb94",
+      "ahash": "00c2c2ffff82021e",
+      "dhash": "ba8626d88c067672",
+      "error": null
     }
   },
   "http://live.dxhmt.cn:9081/tv/11122-1.m3u8": {
     "0811": {
+      "phash": null,
+      "ahash": null,
+      "dhash": null,
+      "error": ""
+    },
+    "1612": {
       "phash": null,
       "ahash": null,
       "dhash": null,
@@ -357,10 +621,22 @@
       "ahash": null,
       "dhash": null,
       "error": ""
+    },
+    "1612": {
+      "phash": null,
+      "ahash": null,
+      "dhash": null,
+      "error": ""
     }
   },
   "http://live.dxhmt.cn:9081/tv/11326-1.m3u8": {
     "0811": {
+      "phash": null,
+      "ahash": null,
+      "dhash": null,
+      "error": ""
+    },
+    "1612": {
       "phash": null,
       "ahash": null,
       "dhash": null,
@@ -373,6 +649,12 @@
       "ahash": "00f0f0fcfcfe1f00",
       "dhash": "a2a6e2e2a2a63a6b",
       "error": null
+    },
+    "1612": {
+      "phash": "cc2e33b32fc9070e",
+      "ahash": "00c0f8fefefefc00",
+      "dhash": "9828a4a424cc9060",
+      "error": null
     }
   },
   "http://live.dxhmt.cn:9081/tv/11523-1.m3u8": {
@@ -380,6 +662,12 @@
       "phash": "94b4f96969b52169",
       "ahash": "0706061600000000",
       "dhash": "ac4cec6c23a26850",
+      "error": null
+    },
+    "1612": {
+      "phash": "c73cda38a1f13698",
+      "ahash": "c030306173407c3c",
+      "dhash": "b2a064c2d294d169",
       "error": null
     }
   },
@@ -389,6 +677,12 @@
       "ahash": "90d00a5c1a0e0424",
       "dhash": "24a4d890323caccc",
       "error": null
+    },
+    "1612": {
+      "phash": null,
+      "ahash": null,
+      "dhash": null,
+      "error": ""
     }
   },
   "http://live.dxhmt.cn:9081/tv/11526-1.m3u8": {
@@ -397,6 +691,12 @@
       "ahash": null,
       "dhash": null,
       "error": ""
+    },
+    "1612": {
+      "phash": "fed6116969948696",
+      "ahash": "0094bff7c1f11f00",
+      "dhash": "92296c640b853000",
+      "error": null
     }
   },
   "http://live.dxhmt.cn:9081/tv/11622-1.m3u8": {
@@ -405,10 +705,22 @@
       "ahash": "0028467e547ede3e",
       "dhash": "c8d89494949c90f8",
       "error": null
+    },
+    "1612": {
+      "phash": "94f8783c2a0f4f0f",
+      "ahash": "80fe7e7f3f3e0e00",
+      "dhash": "a6bcd0d5f4fcfc04",
+      "error": null
     }
   },
   "http://live.dxhmt.cn:9081/tv/11729-1.m3u8": {
     "0811": {
+      "phash": "bc9943664f466873",
+      "ahash": "00cfcfdfdfc7a700",
+      "dhash": "1696be363e2c6ccc",
+      "error": null
+    },
+    "1612": {
       "phash": "bc9943664f466873",
       "ahash": "00cfcfdfdfc7a700",
       "dhash": "1696be363e2c6ccc",
@@ -421,6 +733,12 @@
       "ahash": "f7f7770703000013",
       "dhash": "24a4ecee9e1b1b77",
       "error": null
+    },
+    "1612": {
+      "phash": "ac5a31a58f72b14e",
+      "ahash": "1819100333070707",
+      "dhash": "d3736377e7c68ece",
+      "error": null
     }
   },
   "http://live.metshop.top/huya/11342429?cdn=alicdn": {
@@ -428,6 +746,12 @@
       "phash": "8ea2397c755d485a",
       "ahash": "003f7fff14181800",
       "dhash": "b6ede96464b43090",
+      "error": null
+    },
+    "1612": {
+      "phash": "af954a685738072f",
+      "ahash": "00ff3f0f0081c100",
+      "dhash": "4c7c7e7e6e071b69",
       "error": null
     }
   },
@@ -437,6 +761,12 @@
       "ahash": null,
       "dhash": null,
       "error": "[in#0 @ 0x55727bda3e00] Error opening input: Server returned 403 Forbidden (access denied)\nError opening input file http://live.metshop.top/huya/11352941?cdn=alicdn.\nError opening input files: Server returned 403 Forbidden (access denied)\n"
+    },
+    "1612": {
+      "phash": "ce4c108771f36733",
+      "ahash": "0018f8f8b8bbff00",
+      "dhash": "357123336263498c",
+      "error": null
     }
   },
   "http://live.metshop.top/huya/11601971?cdn=alicdn": {
@@ -444,6 +774,12 @@
       "phash": "8d3e70a597969392",
       "ahash": "9b11193d397b7878",
       "dhash": "3233717573e2c2ca",
+      "error": null
+    },
+    "1612": {
+      "phash": "f21835a3e34aaeb4",
+      "ahash": "c7c7d5f5e5e5e6e6",
+      "dhash": "1da829494d4d0c4c",
       "error": null
     }
   },
@@ -453,6 +789,12 @@
       "ahash": null,
       "dhash": null,
       "error": "[h264 @ 0x5634dc0cd500] co located POCs unavailable\n[h264 @ 0x5634dbf62280] co located POCs unavailable\n[http @ 0x5634dbbc4500] Stream ends prematurely at 201160, should be 18446744073709551615\n    Last message repeated 1 times\n[in#0/flv @ 0x5634dbbc3e00] Error during demuxing: Input/output error\n[in#0/flv @ 0x5634dbbc3e00] Error retrieving a packet from demuxer: Input/output error\n"
+    },
+    "1612": {
+      "phash": null,
+      "ahash": null,
+      "dhash": null,
+      "error": "[http @ 0x5603ffb8d500] Stream ends prematurely at 88885, should be 18446744073709551615\n    Last message repeated 1 times\n[in#0/flv @ 0x5603ffb8ce00] Error during demuxing: Input/output error\n[in#0/flv @ 0x5603ffb8ce00] Error retrieving a packet from demuxer: Input/output error\n"
     }
   },
   "http://live.metshop.top/huya/11602077?cdn=alicdn": {
@@ -460,6 +802,12 @@
       "phash": "bbf000136fb2cdb4",
       "ahash": "070f8f8f8f0f0707",
       "dhash": "9c3c3d3f7d7aed6b",
+      "error": null
+    },
+    "1612": {
+      "phash": "ea929ee1988bd19c",
+      "ahash": "ff078381c1e1e190",
+      "dhash": "5555353b9bdb4331",
       "error": null
     }
   },
@@ -469,6 +817,12 @@
       "ahash": "00f0f0f0f0f7f600",
       "dhash": "800a62e2c3062464",
       "error": null
+    },
+    "1612": {
+      "phash": "e7591df618a149a6",
+      "ahash": "008060f8f7f7e708",
+      "dhash": "3040c2130c0c4c71",
+      "error": null
     }
   },
   "http://live.metshop.top/huya/21059599?cdn=alicdn": {
@@ -477,6 +831,12 @@
       "ahash": null,
       "dhash": null,
       "error": ""
+    },
+    "1612": {
+      "phash": "d2273df0409f4fb0",
+      "ahash": "0001016c6cfcddf8",
+      "dhash": "3edf6d9989891920",
+      "error": null
     }
   },
   "http://live.metshop.top/huya/880261?cdn=alicdn": {
@@ -485,10 +845,22 @@
       "ahash": null,
       "dhash": null,
       "error": "[in#0 @ 0x557ac58b1e00] Error opening input: Server returned 403 Forbidden (access denied)\nError opening input file http://live.metshop.top/huya/880261?cdn=alicdn.\nError opening input files: Server returned 403 Forbidden (access denied)\n"
+    },
+    "1612": {
+      "phash": "873968cc394379e6",
+      "ahash": "003f2f3f3e3c7400",
+      "dhash": "89744c5c74e8eccd",
+      "error": null
     }
   },
   "http://live.yantaitv.cn/live/27f84144e95a4652ae9e5c211b2a6b55/405f3e33ba384aa0a16014d0becd1261-1.m3u8": {
     "0811": {
+      "phash": null,
+      "ahash": null,
+      "dhash": null,
+      "error": ""
+    },
+    "1612": {
       "phash": null,
       "ahash": null,
       "dhash": null,
@@ -501,10 +873,22 @@
       "ahash": null,
       "dhash": null,
       "error": ""
+    },
+    "1612": {
+      "phash": null,
+      "ahash": null,
+      "dhash": null,
+      "error": ""
     }
   },
   "http://live.yantaitv.cn/live/e50f104a4ffe4a41b2217cbda534146f/d86092e69df94668b33390278b061700-1.m3u8": {
     "0811": {
+      "phash": null,
+      "ahash": null,
+      "dhash": null,
+      "error": ""
+    },
+    "1612": {
       "phash": null,
       "ahash": null,
       "dhash": null,
@@ -517,6 +901,12 @@
       "ahash": null,
       "dhash": null,
       "error": "[in#0 @ 0x55cdd4a19e00] Error opening input: Invalid data found when processing input\nError opening input file http://live.ynurl.com/video/s10016-YJTV-2/index.m3u8?zyund.\nError opening input files: Invalid data found when processing input\n"
+    },
+    "1612": {
+      "phash": null,
+      "ahash": null,
+      "dhash": null,
+      "error": "[in#0 @ 0x55fcf409be00] Error opening input: Invalid data found when processing input\nError opening input file http://live.ynurl.com/video/s10016-YJTV-2/index.m3u8?zyund.\nError opening input files: Invalid data found when processing input\n"
     }
   },
   "http://live1.gatv.com.cn:85/live/GGPD_ggpdzm.m3u8": {
@@ -524,6 +914,12 @@
       "phash": "be6144b5121f3d1b",
       "ahash": "00f191959f9f9f1e",
       "dhash": "27a32b29296b6565",
+      "error": null
+    },
+    "1612": {
+      "phash": "e983d9b269c5e1c1",
+      "ahash": "fd2de800c1c5c8c0",
+      "dhash": "5b59da420f2d9b93",
       "error": null
     }
   },
@@ -533,6 +929,12 @@
       "ahash": null,
       "dhash": null,
       "error": "[in#0 @ 0x55cdcb66be00] Error opening input: Server returned 5XX Server Error reply\nError opening input file http://lu.wqwqwq.sbs/itv/1000000002000013359.m3u8?cdn=ystenlive.\nError opening input files: Server returned 5XX Server Error reply\n"
+    },
+    "1612": {
+      "phash": null,
+      "ahash": null,
+      "dhash": null,
+      "error": "[in#0 @ 0x560d75424e00] Error opening input: Server returned 5XX Server Error reply\nError opening input file http://lu.wqwqwq.sbs/itv/1000000002000013359.m3u8?cdn=ystenlive.\nError opening input files: Server returned 5XX Server Error reply\n"
     }
   },
   "http://lu.wqwqwq.sbs/itv/2000000003000000033.m3u8?cdn=hnbblive": {
@@ -541,10 +943,22 @@
       "ahash": null,
       "dhash": null,
       "error": "[in#0 @ 0x55cb24a57e00] Error opening input: Server returned 5XX Server Error reply\nError opening input file http://lu.wqwqwq.sbs/itv/2000000003000000033.m3u8?cdn=hnbblive.\nError opening input files: Server returned 5XX Server Error reply\n"
+    },
+    "1612": {
+      "phash": null,
+      "ahash": null,
+      "dhash": null,
+      "error": "[in#0 @ 0x56461e5cbe00] Error opening input: Server returned 5XX Server Error reply\nError opening input file http://lu.wqwqwq.sbs/itv/2000000003000000033.m3u8?cdn=hnbblive.\nError opening input files: Server returned 5XX Server Error reply\n"
     }
   },
   "http://newcntv.qcloudcdn.com/asp/hls/1200/0303000a/3/default/81a1ad3a661748bfb8560c92d38204ca/1200.m3u8": {
     "0811": {
+      "phash": "88ed163ce95e3227",
+      "ahash": "fffffbfb7b0f0000",
+      "dhash": "b2baf7f3f2b4f1e1",
+      "error": null
+    },
+    "1612": {
       "phash": "88ed163ce95e3227",
       "ahash": "fffffbfb7b0f0000",
       "dhash": "b2baf7f3f2b4f1e1",
@@ -557,10 +971,22 @@
       "ahash": null,
       "dhash": null,
       "error": ""
+    },
+    "1612": {
+      "phash": null,
+      "ahash": null,
+      "dhash": null,
+      "error": ""
     }
   },
   "http://newcntv.qcloudcdn.com/asp/hls/4000/0303000a/3/default/93fc12dbf14241c18c23da104fbade23/4000.m3u8": {
     "0811": {
+      "phash": "817a74658bb05bcd",
+      "ahash": "0000086d7d60fe7f",
+      "dhash": "a2b2dbcbc1dc96fc",
+      "error": null
+    },
+    "1612": {
       "phash": "817a74658bb05bcd",
       "ahash": "0000086d7d60fe7f",
       "dhash": "a2b2dbcbc1dc96fc",
@@ -573,6 +999,12 @@
       "ahash": null,
       "dhash": null,
       "error": "[in#0 @ 0x558417b76e00] Error opening input: Server returned 404 Not Found\nError opening input file http://play-flive.ifeng.com/live/06OLEEWQKN4.m3u8.\nError opening input files: Server returned 404 Not Found\n"
+    },
+    "1612": {
+      "phash": null,
+      "ahash": null,
+      "dhash": null,
+      "error": "[in#0 @ 0x555670c13e00] Error opening input: Server returned 404 Not Found\nError opening input file http://play-flive.ifeng.com/live/06OLEEWQKN4.m3u8.\nError opening input files: Server returned 404 Not Found\n"
     }
   },
   "http://play-flive.ifeng.com/live/06OLEGEGM4G.m3u8": {
@@ -581,10 +1013,22 @@
       "ahash": null,
       "dhash": null,
       "error": "[in#0 @ 0x556dae904e00] Error opening input: Server returned 404 Not Found\nError opening input file http://play-flive.ifeng.com/live/06OLEGEGM4G.m3u8.\nError opening input files: Server returned 404 Not Found\n"
+    },
+    "1612": {
+      "phash": null,
+      "ahash": null,
+      "dhash": null,
+      "error": "[in#0 @ 0x562bd3deee00] Error opening input: Server returned 404 Not Found\nError opening input file http://play-flive.ifeng.com/live/06OLEGEGM4G.m3u8.\nError opening input files: Server returned 404 Not Found\n"
     }
   },
   "http://stream.hrbtv.net/zxpd/sd/live.m3u8?zheild": {
     "0811": {
+      "phash": "808080808080802a",
+      "ahash": "ffff000000000000",
+      "dhash": "8000000000000000",
+      "error": null
+    },
+    "1612": {
       "phash": "808080808080802a",
       "ahash": "ffff000000000000",
       "dhash": "8000000000000000",
@@ -597,6 +1041,12 @@
       "ahash": "fffbfafce0604050",
       "dhash": "d2d29690c08595b4",
       "error": null
+    },
+    "1612": {
+      "phash": "de21e5e8163ac38d",
+      "ahash": "01ff0c0498f8fcfe",
+      "dhash": "3f967c3d35213164",
+      "error": null
     }
   },
   "http://tmpstream.hyrtv.cn/hygg/sd/live.m3u8": {
@@ -604,6 +1054,12 @@
       "phash": "9d7273994b4c64a5",
       "ahash": "0e0e061e1f1f1f0e",
       "dhash": "183834303a3230d0",
+      "error": null
+    },
+    "1612": {
+      "phash": "fb6a91c0e183c57c",
+      "ahash": "e18080e0c08f8f8f",
+      "dhash": "0d351555153b585b",
       "error": null
     }
   },
@@ -613,10 +1069,22 @@
       "ahash": "c8d818381919191d",
       "dhash": "b8b171f173b1b571",
       "error": null
+    },
+    "1612": {
+      "phash": "9962c6699669916f",
+      "ahash": "43c1181a1a1a183c",
+      "dhash": "9293d2d2b292d371",
+      "error": null
     }
   },
   "http://tpc.x3322.net:9901/tsfile/live/1010_1.m3u8": {
     "0811": {
+      "phash": null,
+      "ahash": null,
+      "dhash": null,
+      "error": ""
+    },
+    "1612": {
       "phash": null,
       "ahash": null,
       "dhash": null,
@@ -629,6 +1097,12 @@
       "ahash": null,
       "dhash": null,
       "error": "[tcp @ 0x5597885fc540] Connection to tcp://tv.drs.ganzitv.com:8100 failed: Connection timed out\n[in#0 @ 0x55978863ae00] Error opening input: Connection timed out\nError opening input file http://tv.drs.ganzitv.com:8100/channellive/gztv.flv.\nError opening input files: Connection timed out\n"
+    },
+    "1612": {
+      "phash": null,
+      "ahash": null,
+      "dhash": null,
+      "error": "[tcp @ 0x558e78f4f540] Connection to tcp://tv.drs.ganzitv.com:8100 failed: Connection timed out\n[in#0 @ 0x558e78f8de00] Error opening input: Connection timed out\nError opening input file http://tv.drs.ganzitv.com:8100/channellive/gztv.flv.\nError opening input files: Connection timed out\n"
     }
   },
   "http://tvfile.jjrm.org.cn/nmip-media/channellive/channel106282/playlist.m3u8?zsicd": {
@@ -637,6 +1111,12 @@
       "ahash": null,
       "dhash": null,
       "error": "[tcp @ 0x5643bfed7540] Connection to tcp://tvfile.jjrm.org.cn:80 failed: Connection timed out\n[in#0 @ 0x5643bff15e00] Error opening input: Connection timed out\nError opening input file http://tvfile.jjrm.org.cn/nmip-media/channellive/channel106282/playlist.m3u8?zsicd.\nError opening input files: Connection timed out\n"
+    },
+    "1612": {
+      "phash": null,
+      "ahash": null,
+      "dhash": null,
+      "error": "[tcp @ 0x5571dd5b2540] Connection to tcp://tvfile.jjrm.org.cn:80 failed: Connection timed out\n[in#0 @ 0x5571dd5f0e00] Error opening input: Connection timed out\nError opening input file http://tvfile.jjrm.org.cn/nmip-media/channellive/channel106282/playlist.m3u8?zsicd.\nError opening input files: Connection timed out\n"
     }
   },
   "http://video.epaper.pybtv.cn:8080/live/rtmp_live_demo.flv": {
@@ -644,6 +1124,12 @@
       "phash": "82f83ede956a9232",
       "ahash": "c7c7657d3f3f250f",
       "dhash": "0d9fcbc3cded457c",
+      "error": null
+    },
+    "1612": {
+      "phash": "d89d6868089ed6ed",
+      "ahash": "1819be3e10c04078",
+      "dhash": "b1537070b0808080",
       "error": null
     }
   },
@@ -653,6 +1139,12 @@
       "ahash": null,
       "dhash": null,
       "error": "[in#0 @ 0x556a8373be00] Error opening input: Server returned 404 Not Found\nError opening input file http://www.cdnstv.com:6398/hls/1112/index.m3u8.\nError opening input files: Server returned 404 Not Found\n"
+    },
+    "1612": {
+      "phash": null,
+      "ahash": null,
+      "dhash": null,
+      "error": "[in#0 @ 0x55ca16b72e00] Error opening input: Server returned 404 Not Found\nError opening input file http://www.cdnstv.com:6398/hls/1112/index.m3u8.\nError opening input files: Server returned 404 Not Found\n"
     }
   },
   "http://www.cdnstv.com:6398/hls/1113/index.m3u8": {
@@ -661,6 +1153,12 @@
       "ahash": null,
       "dhash": null,
       "error": "[in#0 @ 0x55d3b9b28e00] Error opening input: Server returned 404 Not Found\nError opening input file http://www.cdnstv.com:6398/hls/1113/index.m3u8.\nError opening input files: Server returned 404 Not Found\n"
+    },
+    "1612": {
+      "phash": null,
+      "ahash": null,
+      "dhash": null,
+      "error": "[in#0 @ 0x556ea5503e00] Error opening input: Server returned 404 Not Found\nError opening input file http://www.cdnstv.com:6398/hls/1113/index.m3u8.\nError opening input files: Server returned 404 Not Found\n"
     }
   },
   "http://www.cdnstv.com:6398/hls/1114/index.m3u8": {
@@ -669,6 +1167,12 @@
       "ahash": null,
       "dhash": null,
       "error": "[in#0 @ 0x56195eecae00] Error opening input: Server returned 404 Not Found\nError opening input file http://www.cdnstv.com:6398/hls/1114/index.m3u8.\nError opening input files: Server returned 404 Not Found\n"
+    },
+    "1612": {
+      "phash": null,
+      "ahash": null,
+      "dhash": null,
+      "error": "[in#0 @ 0x55b43ae0fe00] Error opening input: Server returned 404 Not Found\nError opening input file http://www.cdnstv.com:6398/hls/1114/index.m3u8.\nError opening input files: Server returned 404 Not Found\n"
     }
   },
   "http://www.cdnstv.com:6398/hls/1116/index.m3u8": {
@@ -677,6 +1181,12 @@
       "ahash": null,
       "dhash": null,
       "error": "[in#0 @ 0x55e9545b9e00] Error opening input: Server returned 404 Not Found\nError opening input file http://www.cdnstv.com:6398/hls/1116/index.m3u8.\nError opening input files: Server returned 404 Not Found\n"
+    },
+    "1612": {
+      "phash": null,
+      "ahash": null,
+      "dhash": null,
+      "error": "[in#0 @ 0x560906c66e00] Error opening input: Server returned 404 Not Found\nError opening input file http://www.cdnstv.com:6398/hls/1116/index.m3u8.\nError opening input files: Server returned 404 Not Found\n"
     }
   },
   "http://www.cdnstv.com:6398/hls/1118/index.m3u8": {
@@ -685,6 +1195,12 @@
       "ahash": null,
       "dhash": null,
       "error": "[in#0 @ 0x55acce37fe00] Error opening input: Server returned 404 Not Found\nError opening input file http://www.cdnstv.com:6398/hls/1118/index.m3u8.\nError opening input files: Server returned 404 Not Found\n"
+    },
+    "1612": {
+      "phash": null,
+      "ahash": null,
+      "dhash": null,
+      "error": "[in#0 @ 0x55ff10bb8e00] Error opening input: Server returned 404 Not Found\nError opening input file http://www.cdnstv.com:6398/hls/1118/index.m3u8.\nError opening input files: Server returned 404 Not Found\n"
     }
   },
   "http://www.cdnstv.com:6398/hls/1119/index.m3u8": {
@@ -693,6 +1209,12 @@
       "ahash": null,
       "dhash": null,
       "error": "[in#0 @ 0x55aecfd13e00] Error opening input: Server returned 404 Not Found\nError opening input file http://www.cdnstv.com:6398/hls/1119/index.m3u8.\nError opening input files: Server returned 404 Not Found\n"
+    },
+    "1612": {
+      "phash": null,
+      "ahash": null,
+      "dhash": null,
+      "error": "[in#0 @ 0x55d1d7951e00] Error opening input: Server returned 404 Not Found\nError opening input file http://www.cdnstv.com:6398/hls/1119/index.m3u8.\nError opening input files: Server returned 404 Not Found\n"
     }
   },
   "http://www.douzhicloud.site:35455/douyu/2793084": {
@@ -700,6 +1222,12 @@
       "phash": "c56ef0803fb269b4",
       "ahash": "707c383c3e7c7e7e",
       "dhash": "e4e4e068f4d0ccd4",
+      "error": null
+    },
+    "1612": {
+      "phash": "95dacf81ee4ace40",
+      "ahash": "3e3e1e1e1e0e0a06",
+      "dhash": "7078787cf4dafa76",
       "error": null
     }
   },
@@ -709,6 +1237,12 @@
       "ahash": "00101818187e7e7e",
       "dhash": "c0d0f0b0b0d4c4d4",
       "error": null
+    },
+    "1612": {
+      "phash": "cdcf7ed5aa04a811",
+      "ahash": "3838383838383838",
+      "dhash": "6260707070707073",
+      "error": null
     }
   },
   "http://www.douzhicloud.site:35455/douyu/4246519": {
@@ -716,6 +1250,12 @@
       "phash": "c6b73d6d3cb022c1",
       "ahash": "83e2664638347e00",
       "dhash": "164acc9ce2e988eb",
+      "error": null
+    },
+    "1612": {
+      "phash": "953f6b6bb8e10a12",
+      "ahash": "8386067e0e78707c",
+      "dhash": "1664ecd4d4d0c0b0",
       "error": null
     }
   },
@@ -725,6 +1265,12 @@
       "ahash": "3f1f1f1f1f0f0700",
       "dhash": "e0f4fefefe9c3fcf",
       "error": null
+    },
+    "1612": {
+      "phash": "a1e6c0fac66f700d",
+      "ahash": "ffff070000000000",
+      "dhash": "8bfffe665d195ad4",
+      "error": null
     }
   },
   "http://www.douzhicloud.site:35455/douyu/4549169": {
@@ -732,6 +1278,12 @@
       "phash": "91cb69d83a723b94",
       "ahash": "787c2e3e3e5e4e46",
       "dhash": "c8cae8ecdcbc9c9c",
+      "error": null
+    },
+    "1612": {
+      "phash": "c0d59b6a5a6aa175",
+      "ahash": "6c6e6e7060616163",
+      "dhash": "989a9e9484939392",
       "error": null
     }
   },
@@ -741,6 +1293,12 @@
       "ahash": "0303000874707ef8",
       "dhash": "2eeed8f0ccc4c0c0",
       "error": null
+    },
+    "1612": {
+      "phash": "c13cac87e8d347f0",
+      "ahash": "7e5a6e6c6e6e6e6e",
+      "dhash": "96b688d8cccccccc",
+      "error": null
     }
   },
   "http://www.douzhicloud.site:35455/douyu/5522351": {
@@ -749,10 +1307,22 @@
       "ahash": "4f1e5c7c3e6a6868",
       "dhash": "bab2b4c0cacadad8",
       "error": null
+    },
+    "1612": {
+      "phash": "85a73e35b5906a4e",
+      "ahash": "8332387e7a1a1838",
+      "dhash": "66e6e0eaeabab2b2",
+      "error": null
     }
   },
   "http://www.douzhicloud.site:35455/douyu/6863367": {
     "0811": {
+      "phash": "c1c1c19d7e666363",
+      "ahash": "787a6070607c3c00",
+      "dhash": "d6d2c3c3c1c8d8c3",
+      "error": null
+    },
+    "1612": {
       "phash": "c1c1c19d7e666363",
       "ahash": "787a6070607c3c00",
       "dhash": "d6d2c3c3c1c8d8c3",
@@ -765,6 +1335,12 @@
       "ahash": "7e7e7c7c7e7f7f7e",
       "dhash": "ccccc4d4d0d4dbda",
       "error": null
+    },
+    "1612": {
+      "phash": "f255ada0548b595d",
+      "ahash": "f7e288040445bbef",
+      "dhash": "a60e0b298c894b4c",
+      "error": null
     }
   },
   "http://www.douzhicloud.site:35455/douyu/747764": {
@@ -772,6 +1348,12 @@
       "phash": "c036fb81bd0e4e4b",
       "ahash": "7e7e7e7e7e7e7c7c",
       "dhash": "d8dce4f4d4d4e0f0",
+      "error": null
+    },
+    "1612": {
+      "phash": "c1c1e4e1f3c970d9",
+      "ahash": "7a7c787c6c606064",
+      "dhash": "c2c0d0c8c888c88c",
       "error": null
     }
   },
@@ -781,6 +1363,12 @@
       "ahash": "fec6460e1f393838",
       "dhash": "a00c9cdc74f3d3f1",
       "error": null
+    },
+    "1612": {
+      "phash": "a7913cf2eeb0c2c1",
+      "ahash": "ff032237f7a50311",
+      "dhash": "a44aea6d6b6d2727",
+      "error": null
     }
   },
   "http://www.douzhicloud.site:35455/huya/11342414": {
@@ -789,6 +1377,12 @@
       "ahash": null,
       "dhash": null,
       "error": "[in#0 @ 0x557fd1a6fe00] Error opening input: End of file\nError opening input file http://www.douzhicloud.site:35455/huya/11342414.\nError opening input files: End of file\n"
+    },
+    "1612": {
+      "phash": null,
+      "ahash": null,
+      "dhash": null,
+      "error": "[http @ 0x55a2f1b0d500] Stream ends prematurely at 122129, should be 18446744073709551615\n    Last message repeated 1 times\n[http @ 0x55a2f1b0d500] Stream ends prematurely at 13, should be 18446744073709551615\n[in#0/flv @ 0x55a2f1b0ce00] Error during demuxing: Input/output error\n[in#0/flv @ 0x55a2f1b0ce00] Error retrieving a packet from demuxer: Input/output error\n"
     }
   },
   "http://www.douzhicloud.site:35455/huya/11342421": {
@@ -797,6 +1391,12 @@
       "ahash": null,
       "dhash": null,
       "error": "[in#0 @ 0x55f8a79b0e00] Error opening input: Server returned 403 Forbidden (access denied)\nError opening input file http://www.douzhicloud.site:35455/huya/11342421.\nError opening input files: Server returned 403 Forbidden (access denied)\n"
+    },
+    "1612": {
+      "phash": "9beb69745265c912",
+      "ahash": "218f0f3f0e0f061c",
+      "dhash": "4b5b7b6d3c3f1e39",
+      "error": null
     }
   },
   "http://www.douzhicloud.site:35455/huya/11342424": {
@@ -805,6 +1405,12 @@
       "ahash": null,
       "dhash": null,
       "error": "[http @ 0x557c475bb500] Stream ends prematurely at 2171, should be 18446744073709551615\n    Last message repeated 1 times\n[in#0/flv @ 0x557c475bae00] Error during demuxing: Input/output error\n[in#0/flv @ 0x557c475bae00] Error retrieving a packet from demuxer: Input/output error\n[h264 @ 0x557c47b0ac40] co located POCs unavailable\n"
+    },
+    "1612": {
+      "phash": "ba9285ec544da8ed",
+      "ahash": "df0f0f0485852120",
+      "dhash": "adad3d2d2d2d6b69",
+      "error": null
     }
   },
   "http://www.douzhicloud.site:35455/huya/11342427": {
@@ -812,6 +1418,12 @@
       "phash": "8f760c6817e8963e",
       "ahash": "0020a7e3277d193f",
       "dhash": "626b6d4a4babb360",
+      "error": null
+    },
+    "1612": {
+      "phash": "ab5a76708471d1c7",
+      "ahash": "81993f1f3bcb0123",
+      "dhash": "2d3373f3d75b4b4e",
       "error": null
     }
   },
@@ -821,6 +1433,12 @@
       "ahash": null,
       "dhash": null,
       "error": "[in#0 @ 0x56388a335e00] Error opening input: End of file\nError opening input file http://www.douzhicloud.site:35455/huya/11342428.\nError opening input files: End of file\n"
+    },
+    "1612": {
+      "phash": null,
+      "ahash": null,
+      "dhash": null,
+      "error": "[http @ 0x562c84125500] Stream ends prematurely at 191160, should be 18446744073709551615\n    Last message repeated 1 times\n[http @ 0x562c84125500] Stream ends prematurely at 13, should be 18446744073709551615\n[in#0/flv @ 0x562c84124e00] Error during demuxing: Input/output error\n[in#0/flv @ 0x562c84124e00] Error retrieving a packet from demuxer: Input/output error\n"
     }
   },
   "http://www.douzhicloud.site:35455/huya/11352962": {
@@ -828,6 +1446,12 @@
       "phash": "966939b44ab6691e",
       "ahash": "0078387676363600",
       "dhash": "90886accacec6c69",
+      "error": null
+    },
+    "1612": {
+      "phash": "fde8071f0b340b72",
+      "ahash": "00f2f0f0c0828600",
+      "dhash": "6206851615161414",
       "error": null
     }
   },
@@ -837,6 +1461,12 @@
       "ahash": null,
       "dhash": null,
       "error": "[http @ 0x560b0966f500] Stream ends prematurely at 57974, should be 18446744073709551615\n    Last message repeated 1 times\n[http @ 0x560b0966f500] Stream ends prematurely at 13, should be 18446744073709551615\n[in#0/flv @ 0x560b0966ee00] Error during demuxing: Input/output error\n[in#0/flv @ 0x560b0966ee00] Error retrieving a packet from demuxer: Input/output error\n"
+    },
+    "1612": {
+      "phash": "e36696934c98d9cc",
+      "ahash": "e7e3e3c3e3efffff",
+      "dhash": "cccece8e8e9a90e0",
+      "error": null
     }
   },
   "http://www.douzhicloud.site:35455/huya/11601968": {
@@ -844,6 +1474,12 @@
       "phash": "8bf0740f7a176217",
       "ahash": "007fffffff3f3f00",
       "dhash": "f2f2eae969ebe878",
+      "error": null
+    },
+    "1612": {
+      "phash": "b9e8cfd097606ca4",
+      "ahash": "ff1f03030f4f0f0f",
+      "dhash": "f979571f9c98d878",
       "error": null
     }
   },
@@ -853,6 +1489,12 @@
       "ahash": null,
       "dhash": null,
       "error": "[in#0 @ 0x5642e5713e00] Error opening input: End of file\nError opening input file http://www.douzhicloud.site:35455/huya/11602058.\nError opening input files: End of file\n"
+    },
+    "1612": {
+      "phash": "b4b51a4a6b858d6b",
+      "ahash": "17c7cfc781100000",
+      "dhash": "2436161e2ba9ccca",
+      "error": null
     }
   },
   "http://www.douzhicloud.site:35455/huya/21059574": {
@@ -861,6 +1503,12 @@
       "ahash": "0080c0f0f8f8f800",
       "dhash": "08282020b2f2f090",
       "error": null
+    },
+    "1612": {
+      "phash": null,
+      "ahash": null,
+      "dhash": null,
+      "error": "[in#0 @ 0x55dcfc60ce00] Error opening input: Server returned 403 Forbidden (access denied)\nError opening input file http://www.douzhicloud.site:35455/huya/21059574.\nError opening input files: Server returned 403 Forbidden (access denied)\n"
     }
   },
   "http://www.douzhicloud.site:35455/huya/21059577": {
@@ -868,6 +1516,12 @@
       "phash": "ad77149d4a524a9b",
       "ahash": "000220e0ffff1f00",
       "dhash": "025646595b365404",
+      "error": null
+    },
+    "1612": {
+      "phash": "c8cbe67bda0184ea",
+      "ahash": "f878391d9c184070",
+      "dhash": "a9d1733339b3b2a4",
       "error": null
     }
   },
@@ -877,6 +1531,12 @@
       "ahash": "00a08038f0f0f87e",
       "dhash": "42682460606460f0",
       "error": null
+    },
+    "1612": {
+      "phash": "c0b21f254e6b4bcb",
+      "ahash": "007fff5b53535910",
+      "dhash": "9696b3b7b797b3f2",
+      "error": null
     }
   },
   "http://www.douzhicloud.site:35455/huya/21059585": {
@@ -884,6 +1544,12 @@
       "phash": "93f84c2758761b63",
       "ahash": "00ffffdf2f0f0018",
       "dhash": "48383838584c6cf0",
+      "error": null
+    },
+    "1612": {
+      "phash": "a5fe5b735a614803",
+      "ahash": "0093373333332300",
+      "dhash": "6e66e6e666e6d6d2",
       "error": null
     }
   },
@@ -893,6 +1559,12 @@
       "ahash": "0f17bffbbf3e0e0e",
       "dhash": "bfae2f6362ec7c7c",
       "error": null
+    },
+    "1612": {
+      "phash": "9967c64c958a59d6",
+      "ahash": "f0c089091b191d1f",
+      "dhash": "6609191332337171",
+      "error": null
     }
   },
   "http://www.douzhicloud.site:35455/huya/23865171": {
@@ -901,6 +1573,12 @@
       "ahash": null,
       "dhash": null,
       "error": "[in#0 @ 0x55e470242e00] Error opening input: Server returned 403 Forbidden (access denied)\nError opening input file http://www.douzhicloud.site:35455/huya/23865171.\nError opening input files: Server returned 403 Forbidden (access denied)\n"
+    },
+    "1612": {
+      "phash": "c4e82f073c313d3d",
+      "ahash": "60f0f0f4f0707030",
+      "dhash": "c6c7a6a4a4c4c444",
+      "error": null
     }
   },
   "http://www.douzhicloud.site:35455/huya/23903183": {
@@ -909,6 +1587,12 @@
       "ahash": null,
       "dhash": null,
       "error": "[in#0 @ 0x55c92dd3ae00] Error opening input: End of file\nError opening input file http://www.douzhicloud.site:35455/huya/23903183.\nError opening input files: End of file\n"
+    },
+    "1612": {
+      "phash": "bcf9631646665722",
+      "ahash": "00dbdbdb9f0f8701",
+      "dhash": "3313333337361f1f",
+      "error": null
     }
   },
   "http://www.douzhicloud.site:35455/huya/29465847": {
@@ -917,6 +1601,12 @@
       "ahash": null,
       "dhash": null,
       "error": "[in#0 @ 0x5642e431ae00] Error opening input: Server returned 403 Forbidden (access denied)\nError opening input file http://www.douzhicloud.site:35455/huya/29465847.\nError opening input files: Server returned 403 Forbidden (access denied)\n"
+    },
+    "1612": {
+      "phash": null,
+      "ahash": null,
+      "dhash": null,
+      "error": "[http @ 0x560db5890500] Stream ends prematurely at 271482, should be 18446744073709551615\n    Last message repeated 1 times\n[http @ 0x560db5890500] Stream ends prematurely at 13, should be 18446744073709551615\n[in#0/flv @ 0x560db588fe00] Error during demuxing: Input/output error\n[in#0/flv @ 0x560db588fe00] Error retrieving a packet from demuxer: Input/output error\n"
     }
   },
   "http://www.douzhicloud.site:35455/huya/29465850": {
@@ -925,6 +1615,12 @@
       "ahash": null,
       "dhash": null,
       "error": "[in#0 @ 0x561180178e00] Error opening input: Server returned 403 Forbidden (access denied)\nError opening input file http://www.douzhicloud.site:35455/huya/29465850.\nError opening input files: Server returned 403 Forbidden (access denied)\n"
+    },
+    "1612": {
+      "phash": "c59492d29f38c38f",
+      "ahash": "7e7e7a7a7a606060",
+      "dhash": "f4f6c6d6c2cac0cc",
+      "error": null
     }
   },
   "http://www.douzhicloud.site:35455/huya/29465851": {
@@ -933,6 +1629,12 @@
       "ahash": null,
       "dhash": null,
       "error": "[in#0 @ 0x561ad9843e00] Error opening input: Server returned 403 Forbidden (access denied)\nError opening input file http://www.douzhicloud.site:35455/huya/29465851.\nError opening input files: Server returned 403 Forbidden (access denied)\n"
+    },
+    "1612": {
+      "phash": null,
+      "ahash": null,
+      "dhash": null,
+      "error": "[http @ 0x55c49b9ce500] Stream ends prematurely at 273707, should be 18446744073709551615\n    Last message repeated 1 times\n[in#0/flv @ 0x55c49b9cde00] Error during demuxing: Input/output error\n[in#0/flv @ 0x55c49b9cde00] Error retrieving a packet from demuxer: Input/output error\n"
     }
   },
   "http://www.douzhicloud.site:35455/huya/29465852": {
@@ -941,6 +1643,12 @@
       "ahash": null,
       "dhash": null,
       "error": "[in#0 @ 0x55be4b7dfe00] Error opening input: Server returned 403 Forbidden (access denied)\nError opening input file http://www.douzhicloud.site:35455/huya/29465852.\nError opening input files: Server returned 403 Forbidden (access denied)\n"
+    },
+    "1612": {
+      "phash": null,
+      "ahash": null,
+      "dhash": null,
+      "error": "[in#0 @ 0x55ad70209e00] Error opening input: Server returned 403 Forbidden (access denied)\nError opening input file http://www.douzhicloud.site:35455/huya/29465852.\nError opening input files: Server returned 403 Forbidden (access denied)\n"
     }
   },
   "http://www.douzhicloud.site:35455/huya/29465857": {
@@ -949,6 +1657,12 @@
       "ahash": null,
       "dhash": null,
       "error": "[h264 @ 0x5617b4affb00] mmco: unref short failure\n[http @ 0x5617b4587500] Stream ends prematurely at 433321, should be 18446744073709551615\n    Last message repeated 1 times\n[in#0/flv @ 0x5617b4586e00] Error during demuxing: Input/output error\n[in#0/flv @ 0x5617b4586e00] Error retrieving a packet from demuxer: Input/output error\n"
+    },
+    "1612": {
+      "phash": null,
+      "ahash": null,
+      "dhash": null,
+      "error": "[in#0 @ 0x55f33ff61e00] Error opening input: End of file\nError opening input file http://www.douzhicloud.site:35455/huya/29465857.\nError opening input files: End of file\n"
     }
   },
   "http://www.douzhicloud.site:35455/huya/29465858": {
@@ -957,6 +1671,12 @@
       "ahash": null,
       "dhash": null,
       "error": "[in#0 @ 0x559774a1fe00] Error opening input: Server returned 403 Forbidden (access denied)\nError opening input file http://www.douzhicloud.site:35455/huya/29465858.\nError opening input files: Server returned 403 Forbidden (access denied)\n"
+    },
+    "1612": {
+      "phash": null,
+      "ahash": null,
+      "dhash": null,
+      "error": "[in#0 @ 0x55564a200e00] Error opening input: Server returned 403 Forbidden (access denied)\nError opening input file http://www.douzhicloud.site:35455/huya/29465858.\nError opening input files: Server returned 403 Forbidden (access denied)\n"
     }
   },
   "http://www.douzhicloud.site:35455/huya/29465859": {
@@ -964,6 +1684,12 @@
       "phash": "94d096cf93b42ccb",
       "ahash": "7e7e5a5e3a181e1e",
       "dhash": "f4b4b494f2f0b4b4",
+      "error": null
+    },
+    "1612": {
+      "phash": "c09796d187967137",
+      "ahash": "7e7e787878585060",
+      "dhash": "c4b092e8d0909082",
       "error": null
     }
   },
@@ -973,6 +1699,12 @@
       "ahash": null,
       "dhash": null,
       "error": "[h264 @ 0x55b8c7de48c0] co located POCs unavailable\n[h264 @ 0x55b8c7f99340] mmco: unref short failure\n[http @ 0x55b8c7a25500] Stream ends prematurely at 397953, should be 18446744073709551615\n    Last message repeated 1 times\n[in#0/flv @ 0x55b8c7a24e00] Error during demuxing: Input/output error\n[in#0/flv @ 0x55b8c7a24e00] Error retrieving a packet from demuxer: Input/output error\n"
+    },
+    "1612": {
+      "phash": "a2f61f61700f3cf0",
+      "ahash": "00751f7f7d592d00",
+      "dhash": "42e9a5cd9d9359d8",
+      "error": null
     }
   },
   "http://www.douzhicloud.site:35455/huya/30080229": {
@@ -981,6 +1713,12 @@
       "ahash": null,
       "dhash": null,
       "error": "[in#0 @ 0x55970463ae00] Error opening input: Server returned 403 Forbidden (access denied)\nError opening input file http://www.douzhicloud.site:35455/huya/30080229.\nError opening input files: Server returned 403 Forbidden (access denied)\n"
+    },
+    "1612": {
+      "phash": null,
+      "ahash": null,
+      "dhash": null,
+      "error": "[in#0 @ 0x55f08c85de00] Error opening input: Server returned 403 Forbidden (access denied)\nError opening input file http://www.douzhicloud.site:35455/huya/30080229.\nError opening input files: Server returned 403 Forbidden (access denied)\n"
     }
   },
   "http://www.douzhicloud.site:35455/huya/30080233": {
@@ -989,6 +1727,12 @@
       "ahash": null,
       "dhash": null,
       "error": "[in#0 @ 0x5566a4fffe00] Error opening input: Server returned 403 Forbidden (access denied)\nError opening input file http://www.douzhicloud.site:35455/huya/30080233.\nError opening input files: Server returned 403 Forbidden (access denied)\n"
+    },
+    "1612": {
+      "phash": null,
+      "ahash": null,
+      "dhash": null,
+      "error": "[in#0 @ 0x55b33d650e00] Error opening input: Server returned 403 Forbidden (access denied)\nError opening input file http://www.douzhicloud.site:35455/huya/30080233.\nError opening input files: Server returned 403 Forbidden (access denied)\n"
     }
   },
   "http://www.douzhicloud.site:35455/yy/1354889019": {
@@ -996,6 +1740,12 @@
       "phash": "b2fb5b244d0d0d0f",
       "ahash": "00ef6f0f07072708",
       "dhash": "4999d9bddf3edff2",
+      "error": null
+    },
+    "1612": {
+      "phash": "c1669c731c3669c7",
+      "ahash": "0060602060607c3c",
+      "dhash": "00cacac8c0d6e9f0",
       "error": null
     }
   },
@@ -1005,6 +1755,12 @@
       "ahash": "003f3f7f3e3f3c00",
       "dhash": "7272e2d2d2e8e8b5",
       "error": null
+    },
+    "1612": {
+      "phash": "85256bda5c535555",
+      "ahash": "0003277f7f3f3f00",
+      "dhash": "01d7d6d4f4f8e980",
+      "error": null
     }
   },
   "http://yixing-tv-ori-hls.jstv.com/yixing-tv-ori/yixing_xw.m3u8": {
@@ -1012,6 +1768,12 @@
       "phash": "f6e3809773483bc4",
       "ahash": "fffff380a0001080",
       "dhash": "4c4d0b0d4c443425",
+      "error": null
+    },
+    "1612": {
+      "phash": "91e161e7c583e3c9",
+      "ahash": "6f8f4f1e9e060400",
+      "dhash": "dc1a98bc341cbcf3",
       "error": null
     }
   },
@@ -1021,6 +1783,12 @@
       "ahash": "00006746e7e7e7e3",
       "dhash": "196ece884ccf6e46",
       "error": null
+    },
+    "1612": {
+      "phash": "e472c8dd2a31ce8b",
+      "ahash": "c0c00080e3fbffff",
+      "dhash": "a5880a2e52e682a3",
+      "error": null
     }
   },
   "https://hdl-vip-ws.qf.56.com/live/lc_11730.flv": {
@@ -1029,10 +1797,22 @@
       "ahash": "0038383c3c3c3c18",
       "dhash": "f1e0f0e0e0e0f0f0",
       "error": null
+    },
+    "1612": {
+      "phash": "bd487bb6408a36cb",
+      "ahash": "0f1b1b3b17879f03",
+      "dhash": "397273f66e7c776b",
+      "error": null
     }
   },
   "https://hls.cntv.lxdns.com/asp/hls/2000/0303000a/3/default/f0a47e155d32450daa1d36a04fd7d262/2000.m3u8": {
     "0811": {
+      "phash": "81c73e609f37601f",
+      "ahash": "ff7f7e7e7e400000",
+      "dhash": "f0d2d0f0d08edef0",
+      "error": null
+    },
+    "1612": {
       "phash": "81c73e609f37601f",
       "ahash": "ff7f7e7e7e400000",
       "dhash": "f0d2d0f0d08edef0",
@@ -1045,6 +1825,12 @@
       "ahash": "00be3f3f37360600",
       "dhash": "2c6cec6c6ceccc03",
       "error": null
+    },
+    "1612": {
+      "phash": "daf28298497471f6",
+      "ahash": "fdffe498180e1e18",
+      "dhash": "9d5d08537374f4e0",
+      "error": null
     }
   },
   "https://jwcdnqx.hebyun.com.cn/live/xtcsshpd/1500k/tzwj_video.m3u8": {
@@ -1053,10 +1839,22 @@
       "ahash": "0014373753e34303",
       "dhash": "182c6466a6868eb3",
       "error": null
+    },
+    "1612": {
+      "phash": "bce19966de845aa4",
+      "ahash": "ffcbc3108381031f",
+      "dhash": "ce9696a42726a639",
+      "error": null
     }
   },
   "https://liveout.btzx.com.cn/62ds9e/6o77s4.m3u8?zxinjd": {
     "0811": {
+      "phash": "e2ec92326de7982c",
+      "ahash": "ffdff3e383cfe73d",
+      "dhash": "69b2c646b2994d61",
+      "error": null
+    },
+    "1612": {
       "phash": "e2ec92326de7982c",
       "ahash": "ffdff3e383cfe73d",
       "dhash": "69b2c646b2994d61",
@@ -1069,6 +1867,12 @@
       "ahash": "ffff7f3f3f200000",
       "dhash": "e890d06060cdaaf8",
       "error": null
+    },
+    "1612": {
+      "phash": "87d478639f3f4218",
+      "ahash": "ffff7f3f3f200000",
+      "dhash": "e890d06060cdaaf8",
+      "error": null
     }
   },
   "https://other.ottiptv.cc/cwjd.m3u8": {
@@ -1076,6 +1880,12 @@
       "phash": "c4943d7d01fd1b19",
       "ahash": "3e767e767260c000",
       "dhash": "f4e4c4e6cac226c6",
+      "error": null
+    },
+    "1612": {
+      "phash": "c134e69d99db64c2",
+      "ahash": "3672603c18387c7c",
+      "dhash": "eee6c8faf2f2c8c8",
       "error": null
     }
   },
@@ -1085,6 +1895,12 @@
       "ahash": "0014f7ffffbfbb00",
       "dhash": "59644c92b2727633",
       "error": null
+    },
+    "1612": {
+      "phash": "a16f6e361e991744",
+      "ahash": "00616b7f6f6f6900",
+      "dhash": "8b8fdb9a8a9b9390",
+      "error": null
     }
   },
   "https://stream.sun0769.com/dgrtv1/mp4tv1_800/index.m3u8": {
@@ -1092,6 +1908,12 @@
       "phash": "d42afa5cab5ca311",
       "ahash": "00000010183cfeff",
       "dhash": "3ba0f0f0f0f0f0d8",
+      "error": null
+    },
+    "1612": {
+      "phash": "e4046d591b7a1a7b",
+      "ahash": "00f2f6766cece0ff",
+      "dhash": "b6a6a484c8991551",
       "error": null
     }
   },
@@ -1101,6 +1923,12 @@
       "ahash": "7efefe7e7c380000",
       "dhash": "e4e4f0dcc860d384",
       "error": null
+    },
+    "1612": {
+      "phash": "e44ceb12ee388d71",
+      "ahash": "d0f0d0c0f03ac6ff",
+      "dhash": "b180862684f69c86",
+      "error": null
     }
   },
   "https://test1.live.sdetv.com.cn/live/dianshizhibo/playlist.m3u8": {
@@ -1108,6 +1936,12 @@
       "phash": "c2353dc2543fc2d6",
       "ahash": "000000007c7dfdff",
       "dhash": "b0888d71e9d9d9f1",
+      "error": null
+    },
+    "1612": {
+      "phash": "e0620ee19dcd8eae",
+      "ahash": "e0e0e6e4e7e3c11f",
+      "dhash": "c78c849c9d8f9326",
       "error": null
     }
   },
@@ -1117,6 +1951,12 @@
       "ahash": "c0c0e0fcfcfe1e1c",
       "dhash": "9d958989989c7874",
       "error": null
+    },
+    "1612": {
+      "phash": "98377526ba8c546e",
+      "ahash": "060c1c1d1d1d5ddc",
+      "dhash": "9c1870b1b9f1b1b9",
+      "error": null
     }
   },
   "https://vip.ffzy-online.com/20221015/719_80ff87c2/index.m3u8": {
@@ -1125,6 +1965,12 @@
       "ahash": null,
       "dhash": null,
       "error": "[in#0 @ 0x559b21b4ce00] Error opening input: Server returned 403 Forbidden (access denied)\nError opening input file https://vip.ffzy-online.com/20221015/719_80ff87c2/index.m3u8.\nError opening input files: Server returned 403 Forbidden (access denied)\n"
+    },
+    "1612": {
+      "phash": null,
+      "ahash": null,
+      "dhash": null,
+      "error": "[in#0 @ 0x55ab24bf4e00] Error opening input: Server returned 403 Forbidden (access denied)\nError opening input file https://vip.ffzy-online.com/20221015/719_80ff87c2/index.m3u8.\nError opening input files: Server returned 403 Forbidden (access denied)\n"
     }
   },
   "https://vip.ffzy-online.com/20221015/722_e32c42bc/index.m3u8": {
@@ -1133,6 +1979,12 @@
       "ahash": null,
       "dhash": null,
       "error": "[in#0 @ 0x56396eaf6e00] Error opening input: Server returned 403 Forbidden (access denied)\nError opening input file https://vip.ffzy-online.com/20221015/722_e32c42bc/index.m3u8.\nError opening input files: Server returned 403 Forbidden (access denied)\n"
+    },
+    "1612": {
+      "phash": null,
+      "ahash": null,
+      "dhash": null,
+      "error": "[in#0 @ 0x55b3192bee00] Error opening input: Server returned 403 Forbidden (access denied)\nError opening input file https://vip.ffzy-online.com/20221015/722_e32c42bc/index.m3u8.\nError opening input files: Server returned 403 Forbidden (access denied)\n"
     }
   },
   "https://vip.ffzy-play.com/20221018/1951_47e1adc8/index.m3u8": {
@@ -1141,6 +1993,12 @@
       "ahash": null,
       "dhash": null,
       "error": "[in#0 @ 0x55ee4f069e00] Error opening input: Server returned 403 Forbidden (access denied)\nError opening input file https://vip.ffzy-play.com/20221018/1951_47e1adc8/index.m3u8.\nError opening input files: Server returned 403 Forbidden (access denied)\n"
+    },
+    "1612": {
+      "phash": null,
+      "ahash": null,
+      "dhash": null,
+      "error": "[in#0 @ 0x5646e364be00] Error opening input: Server returned 403 Forbidden (access denied)\nError opening input file https://vip.ffzy-play.com/20221018/1951_47e1adc8/index.m3u8.\nError opening input files: Server returned 403 Forbidden (access denied)\n"
     }
   },
   "https://vip.ffzy-play.com/20221018/1953_2d6ba500/index.m3u8": {
@@ -1149,6 +2007,12 @@
       "ahash": null,
       "dhash": null,
       "error": "[in#0 @ 0x55da08a59e00] Error opening input: Server returned 403 Forbidden (access denied)\nError opening input file https://vip.ffzy-play.com/20221018/1953_2d6ba500/index.m3u8.\nError opening input files: Server returned 403 Forbidden (access denied)\n"
+    },
+    "1612": {
+      "phash": null,
+      "ahash": null,
+      "dhash": null,
+      "error": "[in#0 @ 0x56243907fe00] Error opening input: Server returned 403 Forbidden (access denied)\nError opening input file https://vip.ffzy-play.com/20221018/1953_2d6ba500/index.m3u8.\nError opening input files: Server returned 403 Forbidden (access denied)\n"
     }
   },
   "https://vip.ffzy-play1.com/20221018/478_c3afed66/index.m3u8": {
@@ -1157,6 +2021,12 @@
       "ahash": null,
       "dhash": null,
       "error": "[in#0 @ 0x55da92413e00] Error opening input: Server returned 403 Forbidden (access denied)\nError opening input file https://vip.ffzy-play1.com/20221018/478_c3afed66/index.m3u8.\nError opening input files: Server returned 403 Forbidden (access denied)\n"
+    },
+    "1612": {
+      "phash": null,
+      "ahash": null,
+      "dhash": null,
+      "error": "[in#0 @ 0x55c12e4eee00] Error opening input: Server returned 403 Forbidden (access denied)\nError opening input file https://vip.ffzy-play1.com/20221018/478_c3afed66/index.m3u8.\nError opening input files: Server returned 403 Forbidden (access denied)\n"
     }
   },
   "https://vip.ffzy-play6.com/20221019/157_bf0740ee/index.m3u8": {
@@ -1165,6 +2035,12 @@
       "ahash": null,
       "dhash": null,
       "error": "[in#0 @ 0x5634200c3e00] Error opening input: Server returned 403 Forbidden (access denied)\nError opening input file https://vip.ffzy-play6.com/20221019/157_bf0740ee/index.m3u8.\nError opening input files: Server returned 403 Forbidden (access denied)\n"
+    },
+    "1612": {
+      "phash": null,
+      "ahash": null,
+      "dhash": null,
+      "error": "[in#0 @ 0x56482c5e7e00] Error opening input: Server returned 403 Forbidden (access denied)\nError opening input file https://vip.ffzy-play6.com/20221019/157_bf0740ee/index.m3u8.\nError opening input files: Server returned 403 Forbidden (access denied)\n"
     }
   },
   "https://vip.ffzy-play7.com/20230112/11082_fde1a94d/index.m3u8": {
@@ -1173,6 +2049,12 @@
       "ahash": null,
       "dhash": null,
       "error": "[in#0 @ 0x5590669bbe00] Error opening input: Server returned 403 Forbidden (access denied)\nError opening input file https://vip.ffzy-play7.com/20230112/11082_fde1a94d/index.m3u8.\nError opening input files: Server returned 403 Forbidden (access denied)\n"
+    },
+    "1612": {
+      "phash": null,
+      "ahash": null,
+      "dhash": null,
+      "error": "[in#0 @ 0x55c0c574ae00] Error opening input: Server returned 403 Forbidden (access denied)\nError opening input file https://vip.ffzy-play7.com/20230112/11082_fde1a94d/index.m3u8.\nError opening input files: Server returned 403 Forbidden (access denied)\n"
     }
   },
   "https://vip.ffzy-play7.com/20230116/11563_b9f44814/index.m3u8": {
@@ -1181,10 +2063,22 @@
       "ahash": null,
       "dhash": null,
       "error": "[in#0 @ 0x56385e7dae00] Error opening input: Server returned 403 Forbidden (access denied)\nError opening input file https://vip.ffzy-play7.com/20230116/11563_b9f44814/index.m3u8.\nError opening input files: Server returned 403 Forbidden (access denied)\n"
+    },
+    "1612": {
+      "phash": null,
+      "ahash": null,
+      "dhash": null,
+      "error": "[in#0 @ 0x5555e07dde00] Error opening input: Server returned 403 Forbidden (access denied)\nError opening input file https://vip.ffzy-play7.com/20230116/11563_b9f44814/index.m3u8.\nError opening input files: Server returned 403 Forbidden (access denied)\n"
     }
   },
   "https://yylunbo.ottiptv.cc/yy/1351496216": {
     "0811": {
+      "phash": "c1c1c19d7e666363",
+      "ahash": "787a6070607c3c00",
+      "dhash": "d6d2c3c3c1c8d8c3",
+      "error": null
+    },
+    "1612": {
       "phash": "c1c1c19d7e666363",
       "ahash": "787a6070607c3c00",
       "dhash": "d6d2c3c3c1c8d8c3",
@@ -1197,6 +2091,12 @@
       "ahash": "931330340e1e3f3b",
       "dhash": "326761e4fc3862f3",
       "error": null
+    },
+    "1612": {
+      "phash": "83b3fc4c8c98dc69",
+      "ahash": "ffefef2f20100000",
+      "dhash": "f1cbd8dfd3f0d3c6",
+      "error": null
     }
   },
   "https://yylunbo.ottiptv.cc/yy/1353518742": {
@@ -1204,6 +2104,12 @@
       "phash": "87967869c71638b9",
       "ahash": "00005f37ff000000",
       "dhash": "0092b46cee970000",
+      "error": null
+    },
+    "1612": {
+      "phash": "d3c22c3ddb0025bf",
+      "ahash": "0000ffffff000000",
+      "dhash": "004cece958480008",
       "error": null
     }
   },
@@ -1213,6 +2119,12 @@
       "ahash": "00d0ccefefcf9f00",
       "dhash": "8995909e96166b09",
       "error": null
+    },
+    "1612": {
+      "phash": "daa12ded621b3664",
+      "ahash": "00090ffffdfd1800",
+      "dhash": "92939d5955117100",
+      "error": null
     }
   },
   "https://yylunbo.ottiptv.cc/yy/1354693629": {
@@ -1220,6 +2132,12 @@
       "phash": "c1946f6996664b96",
       "ahash": "7e7e7e7e7e787878",
       "dhash": "d4d4c4c4c8d2d0d0",
+      "error": null
+    },
+    "1612": {
+      "phash": "c4b69993969c6333",
+      "ahash": "7e767676767e7e7c",
+      "dhash": "ecccc4e4ccc4b0d4",
       "error": null
     }
   },
@@ -1229,6 +2147,12 @@
       "ahash": "00ffff4c0c0c0700",
       "dhash": "44a4ec9d9d5d6c4e",
       "error": null
+    },
+    "1612": {
+      "phash": "ce2eb83631e033b9",
+      "ahash": "103030703838fcfc",
+      "dhash": "276766e662e1b1b0",
+      "error": null
     }
   },
   "https://yylunbo.ottiptv.cc/yy/1354889019": {
@@ -1236,6 +2160,12 @@
       "phash": "993252da4e656d65",
       "ahash": "000f0f0f1fdfdf18",
       "dhash": "185c567b79101870",
+      "error": null
+    },
+    "1612": {
+      "phash": "cc36997319631cce",
+      "ahash": "00303030b0e07818",
+      "dhash": "40a464626244d2f2",
       "error": null
     }
   },
@@ -1245,6 +2175,12 @@
       "ahash": "e1d3536363614901",
       "dhash": "87b797cfcbdbd3f3",
       "error": null
+    },
+    "1612": {
+      "phash": "a9ca95b34c175a2d",
+      "ahash": "ffff490101070303",
+      "dhash": "959393b3278b7e36",
+      "error": null
     }
   },
   "https://yylunbo.ottiptv.cc/yy/1354926542": {
@@ -1253,6 +2189,12 @@
       "ahash": null,
       "dhash": null,
       "error": "[in#0 @ 0x55eb39f1de00] Error opening input: Server returned 5XX Server Error reply\nError opening input file https://yylunbo.ottiptv.cc/yy/1354926542.\nError opening input files: Server returned 5XX Server Error reply\n"
+    },
+    "1612": {
+      "phash": "e4961f696906b4f2",
+      "ahash": "0066f7f7e3f30000",
+      "dhash": "008c8c868a026100",
+      "error": null
     }
   },
   "https://yylunbo.ottiptv.cc/yy/1354926612": {
@@ -1260,6 +2202,12 @@
       "phash": "d3cace3931239bc4",
       "ahash": "fcfcfcc4464c663e",
       "dhash": "99b188989cd8cce8",
+      "error": null
+    },
+    "1612": {
+      "phash": "e7433c4dac63b852",
+      "ahash": "d0e8e0e0f0e080df",
+      "dhash": "220848c444420434",
       "error": null
     }
   },
@@ -1269,6 +2217,12 @@
       "ahash": "0f1b1131f1717727",
       "dhash": "dbf3a76333f3d6c6",
       "error": null
+    },
+    "1612": {
+      "phash": "b44ade668a6b0b59",
+      "ahash": "251608010603ceff",
+      "dhash": "6d3492cda48e1efc",
+      "error": null
     }
   },
   "https://yylunbo.ottiptv.cc/yy/1354926671": {
@@ -1276,6 +2230,12 @@
       "phash": "abaa6875551c46e3",
       "ahash": "00ff7f3faf8f0d00",
       "dhash": "d44be9695d59fb15",
+      "error": null
+    },
+    "1612": {
+      "phash": "e2ac1be3641a558f",
+      "ahash": "00ff7ff7f6f4ef00",
+      "dhash": "07cbcaa5c4c4593b",
       "error": null
     }
   },
@@ -1285,6 +2245,12 @@
       "ahash": "00fedbdbc3181800",
       "dhash": "b0bcb2b28eb23244",
       "error": null
+    },
+    "1612": {
+      "phash": "87c6393978a166da",
+      "ahash": "00347c7e7e2f2f00",
+      "dhash": "1068e8ccccdcda12",
+      "error": null
     }
   },
   "https://yylunbo.ottiptv.cc/yy/1354930897": {
@@ -1292,6 +2258,12 @@
       "phash": "8e3a51d766a9928d",
       "ahash": "000001d1b63f7b7b",
       "dhash": "6369b9276c68f292",
+      "error": null
+    },
+    "1612": {
+      "phash": "cf7f2101387557c2",
+      "ahash": "03b1f0bc3c3c38e1",
+      "dhash": "366360606868e283",
       "error": null
     }
   },
@@ -1301,6 +2273,12 @@
       "ahash": "f7e76660e0400000",
       "dhash": "051dd49d8d849dcd",
       "error": null
+    },
+    "1612": {
+      "phash": "b938eed047a89dc8",
+      "ahash": "cb8f0f0b48cedfb0",
+      "dhash": "3a1b3b9b9a9a9545",
+      "error": null
     }
   },
   "https://yylunbo.ottiptv.cc/yy/1354930926": {
@@ -1308,6 +2286,12 @@
       "phash": "a3af5cba42c6505d",
       "ahash": "008373ffffff2700",
       "dhash": "5b5fc7cbcbcbcf00",
+      "error": null
+    },
+    "1612": {
+      "phash": "e9115eee330926e9",
+      "ahash": "0080db6bfffff900",
+      "dhash": "4db292dacb6ba3a3",
       "error": null
     }
   },
@@ -1317,6 +2301,12 @@
       "ahash": "fffeffd380800000",
       "dhash": "a0a49417343d6373",
       "error": null
+    },
+    "1612": {
+      "phash": "c0d3d8e2cdd28fa1",
+      "ahash": "fc4000206341c0f8",
+      "dhash": "a994d4d4d6958c12",
+      "error": null
     }
   },
   "https://yylunbo.ottiptv.cc/yy/1354931503": {
@@ -1324,6 +2314,12 @@
       "phash": "94ed4b3a58d864d3",
       "ahash": "00a7fedecf070f00",
       "dhash": "3d4c66b03aaed8da",
+      "error": null
+    },
+    "1612": {
+      "phash": "99ec673b2a1265c9",
+      "ahash": "00fbff9fdf8e0c00",
+      "dhash": "ec92323831385965",
       "error": null
     }
   },
@@ -1333,6 +2329,12 @@
       "ahash": "0087c787c7c7c700",
       "dhash": "002e2e2e2e2e2e36",
       "error": null
+    },
+    "1612": {
+      "phash": "b6cd4b305cab5954",
+      "ahash": "00ffffdfc6cfe700",
+      "dhash": "888e0a2c2c9a0f20",
+      "error": null
     }
   },
   "https://yylunbo.ottiptv.cc/yy/1354932359": {
@@ -1340,6 +2342,12 @@
       "phash": "936cc370ccc366ce",
       "ahash": "70283c7c1c0c3c3e",
       "dhash": "c0d0e0f8f8dcd8d8",
+      "error": null
+    },
+    "1612": {
+      "phash": "90916bcccf8cd99c",
+      "ahash": "7e664e7e7e7e5600",
+      "dhash": "cc8c9cacaca4a4cc",
       "error": null
     }
   },
@@ -1349,6 +2357,12 @@
       "ahash": "f010707c74467e7b",
       "dhash": "a7a6a2a0a88cd292",
       "error": null
+    },
+    "1612": {
+      "phash": "9937e436ccb316e0",
+      "ahash": "040818181818d9d9",
+      "dhash": "6951515151713333",
+      "error": null
     }
   },
   "https://yylunbo.ottiptv.cc/yy/1354932395": {
@@ -1356,6 +2370,12 @@
       "phash": "8c67b32fc48b7483",
       "ahash": "0101113939113f7c",
       "dhash": "e36333737323f3b9",
+      "error": null
+    },
+    "1612": {
+      "phash": "eedd2265d1f3220c",
+      "ahash": "ffdbbbff9b200101",
+      "dhash": "9b33232b3245e5a5",
       "error": null
     }
   },
@@ -1365,6 +2385,12 @@
       "ahash": "0000000c3c2fffff",
       "dhash": "00041299554ffff9",
       "error": null
+    },
+    "1612": {
+      "phash": "c619f988e6e019bb",
+      "ahash": "5e0e0f733370f0f0",
+      "dhash": "90b8ade6e7e18080",
+      "error": null
     }
   },
   "https://yylunbo.ottiptv.cc/yy/1354932444": {
@@ -1372,6 +2398,12 @@
       "phash": "c04ecb70ec87ca97",
       "ahash": "703c3c36464066fd",
       "dhash": "e4f8e9ec8e8eccc1",
+      "error": null
+    },
+    "1612": {
+      "phash": "f81a56b92eac6c16",
+      "ahash": "004850c9cbdbfae2",
+      "dhash": "b490a83313929686",
       "error": null
     }
   },
@@ -1381,6 +2413,12 @@
       "ahash": "6e3e1c1c38343c78",
       "dhash": "ccdcf0f0d4ccc8d4",
       "error": null
+    },
+    "1612": {
+      "phash": "9c966363cb393358",
+      "ahash": "663e1e1a1818183c",
+      "dhash": "ccd4b4f4f4f4f0f0",
+      "error": null
     }
   },
   "https://yylunbo.ottiptv.cc/yy/1354936154": {
@@ -1388,6 +2426,12 @@
       "phash": "ef87444fb3321293",
       "ahash": "373b2fcf89c1c0d0",
       "dhash": "6e63cb0b5b133627",
+      "error": null
+    },
+    "1612": {
+      "phash": "a7eea612c92b154b",
+      "ahash": "67e7832f0e07072f",
+      "dhash": "cf4e6edaeaec6fea",
       "error": null
     }
   },
@@ -1397,6 +2441,12 @@
       "ahash": "007079fcfcee8618",
       "dhash": "2ad35379f04c0cb0",
       "error": null
+    },
+    "1612": {
+      "phash": "fb7e04411f2fda08",
+      "ahash": "00c4cccccce8c33c",
+      "dhash": "888c281818909669",
+      "error": null
     }
   },
   "https://yylunbo.ottiptv.cc/yy/1354936201": {
@@ -1404,6 +2454,12 @@
       "phash": "fb7f0684600b15fa",
       "ahash": "00c0ccccccde1c00",
       "dhash": "453b383918103969",
+      "error": null
+    },
+    "1612": {
+      "phash": "d66639930e0d7ce2",
+      "ahash": "00e0f03cffff3e00",
+      "dhash": "02c8e460edb8f0f2",
       "error": null
     }
   },
@@ -1413,6 +2469,12 @@
       "ahash": "00fd78f8f3e3e100",
       "dhash": "49d15141820b4f97",
       "error": null
+    },
+    "1612": {
+      "phash": "87b56a681c26e3d9",
+      "ahash": "009efe3e3e390018",
+      "dhash": "a43a4aecf0dbc570",
+      "error": null
     }
   },
   "https://yylunbo.ottiptv.cc/yy/1355065896": {
@@ -1420,6 +2482,12 @@
       "phash": "ca2a350bfb24e2cb",
       "ahash": "0100f4fcfc7811f0",
       "dhash": "892925a1d9e16701",
+      "error": null
+    },
+    "1612": {
+      "phash": "d9210e7e269966cd",
+      "ahash": "0018fbcfc2c0d83c",
+      "dhash": "a052929a261c3360",
       "error": null
     }
   },
@@ -1429,6 +2497,12 @@
       "ahash": "00e7efefefeece00",
       "dhash": "28ccded8189a9a32",
       "error": null
+    },
+    "1612": {
+      "phash": "eeb13b4e2c34154e",
+      "ahash": "00edeffff0f0b000",
+      "dhash": "c98998ae65646525",
+      "error": null
     }
   },
   "https://yylunbo.ottiptv.cc/yy/1382735556": {
@@ -1436,6 +2510,12 @@
       "phash": "8c2c72b32dd8631f",
       "ahash": "0010383b3f7cfc00",
       "dhash": "48a6e2f2f1d93961",
+      "error": null
+    },
+    "1612": {
+      "phash": "c2272df21dee016d",
+      "ahash": "00207b7e7cfcf000",
+      "dhash": "2447c6e0cc8985b3",
       "error": null
     }
   },
@@ -1445,6 +2525,12 @@
       "ahash": "581c3c3c0c04c0c0",
       "dhash": "92d871495cbc0e2e",
       "error": null
+    },
+    "1612": {
+      "phash": "8ebd10277ef2c10d",
+      "ahash": "071ffff9b120342c",
+      "dhash": "fef6622167c5edcd",
+      "error": null
     }
   },
   "https://yylunbo.ottiptv.cc/yy/1382735627": {
@@ -1452,6 +2538,12 @@
       "phash": "c02f3e70cda33c33",
       "ahash": "00000478fce4647c",
       "dhash": "4fc9ccd2988ccca8",
+      "error": null
+    },
+    "1612": {
+      "phash": "a5add3525a80b4b7",
+      "ahash": "1f1f171380e060c0",
+      "dhash": "7e66f6a6064ec613",
       "error": null
     }
   },
@@ -1461,6 +2553,12 @@
       "ahash": "0039dfdfb3fb9f00",
       "dhash": "0043b3bf27367600",
       "error": null
+    },
+    "1612": {
+      "phash": "a64b59b44ea7b149",
+      "ahash": "0000273737370700",
+      "dhash": "00c5efece4eece00",
+      "error": null
     }
   },
   "https://yylunbo.ottiptv.cc/yy/1382736804": {
@@ -1468,6 +2566,12 @@
       "phash": "ffcf0130305a1f0f",
       "ahash": "00fefddcc4dea000",
       "dhash": "8400633434284840",
+      "error": null
+    },
+    "1612": {
+      "phash": "92a76d43710c769e",
+      "ahash": "00fffffffe7c1800",
+      "dhash": "d3cd24b8dcddb436",
       "error": null
     }
   },
@@ -1477,6 +2581,12 @@
       "ahash": "0098ffffe3e3c100",
       "dhash": "00310dcdcf4f0b00",
       "error": null
+    },
+    "1612": {
+      "phash": "f4d40a8b3552abb5",
+      "ahash": "00f2f6f6ffffe000",
+      "dhash": "0024060412138100",
+      "error": null
     }
   },
   "https://yylunbo.ottiptv.cc/yy/1382736809": {
@@ -1484,6 +2594,12 @@
       "phash": "939b6ae5256c642e",
       "ahash": "000c0e7f7f670e00",
       "dhash": "187878d8ce969c24",
+      "error": null
+    },
+    "1612": {
+      "phash": "85923a6f63657c0e",
+      "ahash": "003e7e7f73f30300",
+      "dhash": "baf0a4cac3062272",
       "error": null
     }
   },
@@ -1493,6 +2609,12 @@
       "ahash": "001f0f26b6470f00",
       "dhash": "23769c5c6c8d9d3a",
       "error": null
+    },
+    "1612": {
+      "phash": "91a52a7c56527e78",
+      "ahash": "001f6feece9f0c00",
+      "dhash": "f6fadadc1631b958",
+      "error": null
     }
   },
   "https://yylunbo.ottiptv.cc/yy/1382736820": {
@@ -1500,6 +2622,12 @@
       "phash": "8c9b396473643eaa",
       "ahash": "001f3f7474777700",
       "dhash": "daf1a1e8ede5e4c6",
+      "error": null
+    },
+    "1612": {
+      "phash": "983c67e3064c67b3",
+      "ahash": "00cfdfdffffcd800",
+      "dhash": "a4b0b0b09889b199",
       "error": null
     }
   },
@@ -1509,6 +2637,12 @@
       "ahash": "0010181818181800",
       "dhash": "6034343232121208",
       "error": null
+    },
+    "1612": {
+      "phash": "b0d9471e6f265926",
+      "ahash": "00dfdfcf8fdf0700",
+      "dhash": "d494ba2a2cbcac64",
+      "error": null
     }
   },
   "https://yylunbo.ottiptv.cc/yy/1382736857": {
@@ -1516,6 +2650,12 @@
       "phash": "d0912f6e666f1391",
       "ahash": "00ffff00fefed800",
       "dhash": "00d4d4a994b03108",
+      "error": null
+    },
+    "1612": {
+      "phash": "cde938966619761a",
+      "ahash": "00fbf97878fe1e00",
+      "dhash": "82c253e26242fa31",
       "error": null
     }
   },
@@ -1525,6 +2665,12 @@
       "ahash": "00cfdfd7dfdfdb00",
       "dhash": "1a9a9696b7333333",
       "error": null
+    },
+    "1612": {
+      "phash": "934964a9d2e6cd55",
+      "ahash": "3808181c0c1be666",
+      "dhash": "d1d2f0e9d85254dc",
+      "error": null
     }
   },
   "https://yylunbo.ottiptv.cc/yy/1382736871": {
@@ -1532,6 +2678,12 @@
       "phash": "ccce78b93d23230b",
       "ahash": "dbfc3d3e1c080800",
       "dhash": "3221e16470b0b2b0",
+      "error": null
+    },
+    "1612": {
+      "phash": "b0b8c25bcb6b0736",
+      "ahash": "0f0f070707072777",
+      "dhash": "bdbcbebbbefecdcc",
       "error": null
     }
   },
@@ -1541,6 +2693,12 @@
       "ahash": "0080101111363f1f",
       "dhash": "382835b1e5e67636",
       "error": null
+    },
+    "1612": {
+      "phash": "9cb2730b8d36b6c8",
+      "ahash": "0f0e1f1f1b1a0018",
+      "dhash": "bdf8b4b6b2b67032",
+      "error": null
     }
   },
   "https://yylunbo.ottiptv.cc/yy/1382741639": {
@@ -1548,6 +2706,12 @@
       "phash": "863bb0c96e8679c6",
       "ahash": "000c0434303e7e76",
       "dhash": "ecc8ec64e4f0f4e4",
+      "error": null
+    },
+    "1612": {
+      "phash": "977ab06d643c931a",
+      "ahash": "000c0c34383e3e7e",
+      "dhash": "b868686ce2d4f4cc",
       "error": null
     }
   },
@@ -1557,6 +2721,12 @@
       "ahash": "003f374707273300",
       "dhash": "a6e6e6d6b6c6e69b",
       "error": null
+    },
+    "1612": {
+      "phash": "b6a80d5749574b33",
+      "ahash": "00d7f7f7c6c6c600",
+      "dhash": "2d2d0c0c1c0c0c8c",
+      "error": null
     }
   },
   "https://yylunbo.ottiptv.cc/yy/1382745096": {
@@ -1565,10 +2735,22 @@
       "ahash": "009cffff5bd0d000",
       "dhash": "1a3033f3b3a7a3e1",
       "error": null
+    },
+    "1612": {
+      "phash": "de9f002365e41e79",
+      "ahash": "009cbcb080e7f200",
+      "dhash": "29393922090cc68d",
+      "error": null
     }
   },
   "https://yylunbo.ottiptv.cc/yy/1382745114": {
     "0811": {
+      "phash": "c1c1c19d7e666363",
+      "ahash": "787a6070607c3c00",
+      "dhash": "d6d2c3c3c1c8d8c3",
+      "error": null
+    },
+    "1612": {
       "phash": "c1c1c19d7e666363",
       "ahash": "787a6070607c3c00",
       "dhash": "d6d2c3c3c1c8d8c3",
@@ -1581,6 +2763,12 @@
       "ahash": "5010303056d6f6fe",
       "dhash": "a0e0e3e4acae8ec4",
       "error": null
+    },
+    "1612": {
+      "phash": "f29e923cf941a1e1",
+      "ahash": "fcfcf4c0c0c2e0e4",
+      "dhash": "69edc911129e8c8c",
+      "error": null
     }
   },
   "https://yylunbo.ottiptv.cc/yy/1382749887": {
@@ -1588,6 +2776,12 @@
       "phash": "f718cab7f45e4202",
       "ahash": "dc5c0084e6e6e7f7",
       "dhash": "b9d9941c0c4c4ccd",
+      "error": null
+    },
+    "1612": {
+      "phash": "e969da5ace1ab150",
+      "ahash": "f8f1e3a3c3c284fe",
+      "dhash": "0993d302020e0c24",
       "error": null
     }
   },
@@ -1597,6 +2791,12 @@
       "ahash": "0091998fcfff6f00",
       "dhash": "3367293a1e9eca49",
       "error": null
+    },
+    "1612": {
+      "phash": "cd3962e631cc3366",
+      "ahash": "0018989a01bdf900",
+      "dhash": "f0ba32323361e3a7",
+      "error": null
     }
   },
   "https://yylunbo.ottiptv.cc/yy/1382749940": {
@@ -1604,6 +2804,12 @@
       "phash": "972c6ad7384325f4",
       "ahash": "0003878efefffc00",
       "dhash": "aaf70e287858c989",
+      "error": null
+    },
+    "1612": {
+      "phash": "c6c333b46c785959",
+      "ahash": "007ffcf030ffdf00",
+      "dhash": "cfccd8a3e4aca839",
       "error": null
     }
   },
@@ -1613,6 +2819,12 @@
       "ahash": "003e3a3a3b7f3f00",
       "dhash": "c8626662f2f26638",
       "error": null
+    },
+    "1612": {
+      "phash": "8e35718a1a635dea",
+      "ahash": "007ff73fffff7100",
+      "dhash": "6ccee6a5a5e3e305",
+      "error": null
     }
   },
   "https://yylunbo.ottiptv.cc/yy/1382851522": {
@@ -1620,6 +2832,12 @@
       "phash": "a7d4ecc90e06394f",
       "ahash": "ffffef2721410101",
       "dhash": "66141c6d4d9bc177",
+      "error": null
+    },
+    "1612": {
+      "phash": "e52d42da4ba4c51f",
+      "ahash": "000003c3a7f6f676",
+      "dhash": "612626264eacacc4",
       "error": null
     }
   },
@@ -1629,6 +2847,12 @@
       "ahash": "00fcfefefcf8b000",
       "dhash": "a8a82c2c3872641c",
       "error": null
+    },
+    "1612": {
+      "phash": "b3aa4c57768147a5",
+      "ahash": "000f6fefcf0f4f00",
+      "dhash": "10b9df9d18589acb",
+      "error": null
     }
   },
   "https://yylunbo.ottiptv.cc/yy/1382851586": {
@@ -1637,10 +2861,22 @@
       "ahash": "0304018400606c7d",
       "dhash": "5f190b0863c0d9f9",
       "error": null
+    },
+    "1612": {
+      "phash": "e8883edec0bbc51c",
+      "ahash": "b393cbe9f0f0c0e0",
+      "dhash": "2737979391112d02",
+      "error": null
     }
   },
   "https://yylunbo.ottiptv.cc/yy/1383559729": {
     "0811": {
+      "phash": "c1c1c19d7e666363",
+      "ahash": "787a6070607c3c00",
+      "dhash": "d6d2c3c3c1c8d8c3",
+      "error": null
+    },
+    "1612": {
       "phash": "c1c1c19d7e666363",
       "ahash": "787a6070607c3c00",
       "dhash": "d6d2c3c3c1c8d8c3",
@@ -1653,10 +2889,22 @@
       "ahash": "787a6070607c3c00",
       "dhash": "d6d2c3c3c1c8d8c3",
       "error": null
+    },
+    "1612": {
+      "phash": "c1c1c19d7e666363",
+      "ahash": "787a6070607c3c00",
+      "dhash": "d6d2c3c3c1c8d8c3",
+      "error": null
     }
   },
   "https://yylunbo.ottiptv.cc/yy/1461889059": {
     "0811": {
+      "phash": "c1c1c19d7e666363",
+      "ahash": "787a6070607c3c00",
+      "dhash": "d6d2c3c3c1c8d8c3",
+      "error": null
+    },
+    "1612": {
       "phash": "c1c1c19d7e666363",
       "ahash": "787a6070607c3c00",
       "dhash": "d6d2c3c3c1c8d8c3",
@@ -1669,6 +2917,12 @@
       "ahash": "0043ffff05b13100",
       "dhash": "8097d755d94341a0",
       "error": null
+    },
+    "1612": {
+      "phash": "c43e71c33ef0430f",
+      "ahash": "0018181f3f7e7e00",
+      "dhash": "d4f2b1b766c48400",
+      "error": null
     }
   },
   "https://yylunbo.ottiptv.cc/yy/34229877": {
@@ -1676,6 +2930,12 @@
       "phash": "988d636368de9666",
       "ahash": "001f3f1f1b0e0000",
       "dhash": "08daf4f0b2b89900",
+      "error": null
+    },
+    "1612": {
+      "phash": "a3835c7c1e59271b",
+      "ahash": "00ff6f6d8dc59800",
+      "dhash": "24cbdbdb19ad3131",
       "error": null
     }
   }
