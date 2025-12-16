@@ -5,8 +5,8 @@ import os
 import re
 import csv
 
-INPUT_DIR = "input/download/net/原始"
-OUTPUT_DIR = "input/download/net/txt"
+INPUT_DIR = "input/download/network"
+OUTPUT_DIR = "input/download/network"
 
 OUTPUT_FIELDS = [
     "display_name",
