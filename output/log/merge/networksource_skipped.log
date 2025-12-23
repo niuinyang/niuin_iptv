@@ -61,7 +61,6 @@ El 9 TV (1080p),#EXTVLCOPT:http-user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; 
 El Nuevo Diario TV (480p),#EXTVLCOPT:http-referrer=https://nuevodiario01.streamprolive.com/i/cp/hls/player.html,无效URL（非 http/https/rtsp 开头）
 EsTuTele (720p),#EXTVLCOPT:http-referrer=https://player.streamingconnect.com/,无效URL（非 http/https/rtsp 开头）
 ETV Terramar (1080p),#EXTVLCOPT:http-user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/83.0.4103.97 Safari/537.36 CrKey/1.44.191160,无效URL（非 http/https/rtsp 开头）
-FETV,#EXTVLCOPT:http-referrer=https://www.ustvnow.com,无效URL（非 http/https/rtsp 开头）
 First Business (720p),#EXTVLCOPT:http-user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:97.0) Gecko/20100101 Firefox/97.0,无效URL（非 http/https/rtsp 开头）
 FNX [Geo-blocked],#EXTVLCOPT:http-referrer=https://fnx.org/,无效URL（非 http/https/rtsp 开头）
 Galaxy TV (720p) [Not 24/7],#EXTVLCOPT:http-referrer=https://player.castr.com/live_43351ad0f3b411ed81c78fcc31887c54,无效URL（非 http/https/rtsp 开头）
@@ -81,7 +80,6 @@ Korean Central Television (KCTV) (576p),#EXTVLCOPT:http-referrer=https://kcnawat
 LBC (1080p) [Geo-blocked],#EXTVLCOPT:http-referrer=https://rotana.net/,无效URL（非 http/https/rtsp 开头）
 Libya Al Ahrar TV (1080p),#EXTVLCOPT:http-referrer=https://player.castr.com/live_8c1539b0eb6c11eda9f0c7bd90506d4f,无效URL（非 http/https/rtsp 开头）
 Lleida Televisió (1080p),#EXTVLCOPT:http-user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/83.0.4103.97 Safari/537.36 CrKey/1.44.191160,无效URL（非 http/https/rtsp 开头）
-Lok Sabha TV (1080p),#EXTVLCOPT:http-referrer=https://webcast.gov.in/,无效URL（非 http/https/rtsp 开头）
 MakroDigital Television (1080p),#EXTVLCOPT:http-referrer=https://makrodigitaltelevision.com,无效URL（非 http/https/rtsp 开头）
 Mataró Televisió (1080p),#EXTVLCOPT:http-user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/83.0.4103.97 Safari/537.36 CrKey/1.44.191160,无效URL（非 http/https/rtsp 开头）
 MCN TV (720p),#EXTVLCOPT:http-referrer=https://mcn24.tv/hls/,无效URL（非 http/https/rtsp 开头）
@@ -143,8 +141,8 @@ RTV 2 (576p) [Not 24/7],mmsh://212.200.255.151/rtv2,无效URL（非 http/https/r
 RTV El Vendrell (1080p),#EXTVLCOPT:http-user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/83.0.4103.97 Safari/537.36 CrKey/1.44.191160,无效URL（非 http/https/rtsp 开头）
 RTV Manilva (1080p) [Not 24/7],#EXTVLCOPT:http-referrer=https://player.castr.com/live_e2ae1780dc2a11eca660b7b17b7952a5,无效URL（非 http/https/rtsp 开头）
 RTVC Cardedeu (1080p),#EXTVLCOPT:http-user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/83.0.4103.97 Safari/537.36 CrKey/1.44.191160,无效URL（非 http/https/rtsp 开头）
+Sansad TV 1 (1080p) [Not 24/7],#EXTVLCOPT:http-referrer=https://webcast.gov.in/,无效URL（非 http/https/rtsp 开头）
 SIL TV (1080p),#EXTVLCOPT:http-referrer=https://www.facebook.com/Siltv32,无效URL（非 http/https/rtsp 开头）
-Sony Marathi (1080p),#EXTVLCOPT:http-referrer=https://nxtlive.net/,无效URL（非 http/https/rtsp 开头）
 Sony Sports Ten 5 (1080p),#EXTVLCOPT:http-user-agent=stream,无效URL（非 http/https/rtsp 开头）
 Star Kentrikis Elladas (720p) [Not 24/7],#EXTVLCOPT:http-referrer=https://player.castr.com,无效URL（非 http/https/rtsp 开头）
 Stara TV (720p),#EXTVLCOPT:http-referrer=https://stream.staratv.id/,无效URL（非 http/https/rtsp 开头）
@@ -326,8 +324,6 @@ CCTV-1,http://yp.qqqtv.top/1/api.php?id=CCTV-1HD&auth=666858,重复URL
 æ·±åœ³å«è§†,http://z.b.bkpcp.top/m.php?id=szws,重复URL
 æ·±åœ³å«è§†,http://[2409:8087:1a0a:df::404b]/ottrrs.hl.chinamobile.com/TVOD/88888888/224/3221226313/index.m3u8,重复URL
 æ·±åœ³å«è§†,http://[2409:8087:1a01:df::4077]/ottrrs.hl.chinamobile.com/PLTV/88888888/8/3221226313/index.m3u8,重复URL
-æ·±åœ³å«è§†,http://[2409:8087:8:21::18]:6610/otttv.bj.chinamobile.com/PLTV/88888888/224/3221226245/1.m3u8,重复URL
-æ·±åœ³å«è§†,http://[2409:8087:8:21::18]:6610/otttv.bj.chinamobile.com/PLTV/88888888/224/3221226495/1.m3u8,重复URL
 æµ™æ±Ÿé’±æ±Ÿ,https://ali-m-l.cztv.com/channels/lantian/channel002/1080p.m3u8,重复URL
 æµ™æ±Ÿé’±æ±Ÿéƒ½å¸‚,http://zwebl02.cztv.com/live/channel021080P.m3u8?auth_key=2524708799-0-0-43f14b8147c890428975655007afb4cc,重复URL
 æµ™æ±Ÿé’±æ±Ÿéƒ½å¸‚,http://zhfivel02.cztv.com/channel02/1080p.m3u8?auth_key=2524708799-0-0-2f7bb420bfd1d218b9c7b07c0ac1ba2f,重复URL
@@ -361,6 +357,7 @@ CCTV-1,http://yp.qqqtv.top/1/api.php?id=CCTV-1HD&auth=666858,重复URL
 æµ™æ±Ÿæ•™ç§‘å½±è§†,http://zwebl02.cztv.com/live/channel041080P.m3u8?auth_key=2524708799-0-0-f195b808217db133bfd648edc01e91fa,重复URL
 æµ™æ±Ÿæ•™ç§‘å½±è§†,https://ali-m-l.cztv.com/channels/lantian/channel004/1080p.m3u8,重复URL
 æµ™æ±Ÿæ•™ç§‘å½±è§†,http://ali-vl.cztv.com/channels/lantian/channel004/360p.m3u8,重复URL
+é’ç”°ç”µè§†å°,http://l.cztvcloud.com/channels/lantian/SXqingtian1/720p.m3u8,重复URL
 é‚æ˜Œæ–°é—»ç»¼åˆ,http://l.cztvcloud.com/channels/lantian/SXsuichang1/720p.m3u8,重复URL
 è§å±±ç”Ÿæ´»,https://l.cztvcloud.com/channels/lantian/SXxiaoshan2/720p.m3u8,重复URL
 è§å±±æ–°é—»ç»¼åˆ,https://l.cztvcloud.com/channels/lantian/SXxiaoshan1/720p.m3u8,重复URL
@@ -414,10 +411,6 @@ CCTV-1,http://yp.qqqtv.top/1/api.php?id=CCTV-1HD&auth=666858,重复URL
 å¤©æ´¥å«è§†,http://[2409:8087:1a0a:df::404b]/ottrrs.hl.chinamobile.com/TVOD/88888888/224/3221226459/index.m3u8,重复URL
 å¤©æ´¥å«è§†,http://[2409:8087:1a01:df::4077]/ottrrs.hl.chinamobile.com/PLTV/88888888/8/3221226459/index.m3u8,重复URL
 å¤©æ´¥å«è§†,http://[2409:8087:8:21::18]:6610/otttv.bj.chinamobile.com/PLTV/88888888/224/3221226246/1.m3u8,重复URL
-å¤©æ´¥å«è§†,http://[2409:8087:8:21::18]:6610/otttv.bj.chinamobile.com/PLTV/88888888/224/3221226489/1.m3u8,重复URL
-å¤©æ´¥å«è§†,http://[2409:8087:8:21::18]:6610/otttv.bj.chinamobile.com/PLTV/88888888/224/3221226502/1.m3u8,重复URL
-å‡‰å±±æ–°é—»ç»¼åˆ,rtmp://tv.drs.i0834.cn/channellive/ch1?zsicd,无效URL（非 http/https/rtsp 开头）
-å‡‰å±±æ–°é—»ç»¼åˆ,rtmp://tv.drs.yizu.tv/channellive/ch1?zsicd,无效URL（非 http/https/rtsp 开头）
 å‡‰å±±è¯­,rtmp://tv.drs.i0834.cn/channellive/ch2?zsicd,无效URL（非 http/https/rtsp 开头）
 å‡‰å±±è¯­,rtmp://tv.drs.yizu.tv/channellive/ch2?zsicd,无效URL（非 http/https/rtsp 开头）
 å™æ°¸ç»¼åˆ,rtmp://luzhi.xuyongrongmei.com:1935/live/xyxw?zsicd,无效URL（非 http/https/rtsp 开头）
@@ -545,7 +538,6 @@ CCTV-5,https://smart.pendy.dpdns.org/Smart.php?id=cctv5,重复URL
 CCTV-5,http://[2409:8087:1a01:df::4077]:80/ottrrs.hl.chinamobile.com/TVOD/88888888/224/3221226019/index.m3u8,重复URL
 CCTV-5,https://ldcctvwbcdks.v.kcdnvip.com/ldcctvwbcd/cdrmldcctv5plus_1/index.m3u8?b=200-2100,重复URL
 CCTV-5,http://[2409:8087:1a01:df::4077]:80/ottrrs.hl.chinamobile.com/yinhe/88888888/224/3221226019/index.m3u8,重复URL
-CCTV-5,http://[2409:8087:1a01:df::4077]:80/ottrrs.hl.chinamobile.com/PLTV/88888888/224/3221226019/index.m3u8,重复URL
 CCTV-5+,http://php.jdshipin.com/TVOD/hljyd.php?id=3221225603,重复URL
 CCTV-5+,https://www.freetv.top/migu/641886773.m3u8?migutoken=03a1b82e35e58cd89a95034ecb29e77e50493397000ec2b1e4d1ce59af01e6420d6dbc068c8230ec03be3a35a20eed8714e0959e3570a08713a7a2e8d86085eabf8f1aa85744c80c38343988b2,重复URL
 CCTV-5+,http://[2409:8087:1a01:df::4077]/ottrrs.hl.chinamobile.com/PLTV/88888888/8/3221225603/index.m3u8,重复URL
@@ -555,7 +547,6 @@ CCTV-5+,http://[2409:8087:1a0a:df::404b]/ottrrs.hl.chinamobile.com/TVOD/88888888
 CCTV-5+,http://[2409:8087:8:21::18]:6610/otttv.bj.chinamobile.com/PLTV/88888888/224/3221226349/1.m3u8,重复URL
 CCTV-5+,http://iptv.cdn.ha.chinamobile.com/PLTV/88888888/224/3221227348/index.m3u8,重复URL
 CCTV-5+,https://www.freetv.top/migu/641886773.m3u8?migutoken=d7396c05a877872a7519b5df4582a7a4bdf13c82d09889e561f50d0035f006d199741b00d465e4e41b0f706bccfe3420f5d427961e7698ad2a8b8d82d9d320a827310f6c8a7d1c8f203c91b392,重复URL
-CCTV-5+,https://www.freetv.top/migu/641886773.m3u8?migutoken=408252ae4ee84d4533a52e87dc35e108f3557992d0837a3c98af9093fccdb78373328e743136467868d2125b1fa35c3f4d576327db5e3ec96ec3108e28e950fb462f2dc81da44be8ae43ebe0ce,重复URL
 å¹¿ä¸œä½“è‚²,https://epg.pw/stream/7b470f9fc5c305db0c8622117b7b25ca00eb35ba3e93e865cf0ff9df5c736681.m3u8,重复URL
 å¹¿ä¸œä½“è‚²,http://cdn2.163189.xyz/live/gdty/stream.m3u8,重复URL
 å¹¿ä¸œä½“è‚²,http://php.jdshipin.com/PLTV/iptv.php?id=gdty,重复URL
@@ -666,8 +657,6 @@ CCTV-15,http://[2409:8087:1a01:df::4033]:80/TVOD/88888888/224/3221226127/main.m3
 CCTV-15,http://[2409:8087:1a0a:df::404b]/ottrrs.hl.chinamobile.com/TVOD/88888888/224/3221225601/index.m3u8,重复URL
 CCTV-15,http://[2409:8087:1a01:df::4077]/ottrrs.hl.chinamobile.com/PLTV/88888888/8/3221225601/index.m3u8,重复URL
 CCTV-15,http://[2409:8087:8:21::18]:6610/otttv.bj.chinamobile.com/PLTV/88888888/224/3221226333/1.m3u8,重复URL
-CCTV-15,http://[2409:8087:8:21::18]:6610/otttv.bj.chinamobile.com/PLTV/88888888/224/3221226444/1.m3u8,重复URL
-CCTV-15,http://iptv.cdn.ha.chinamobile.com/PLTV/88888888/224/3221227175/index.m3u8,重复URL
 é£äº‘éŸ³ä¹,https://hls-gateway.vpstv.net/streams/708858.m3u8,重复URL
 é£äº‘éŸ³ä¹,http://iptv.666230.xyz/iptv/jsyd.php/G_FENGYUNYY-CQ,重复URL
 [HD]dazn1[geo-blocked],rtmp://f13h.mine.nu/sat/tv731,无效URL（非 http/https/rtsp 开头）
@@ -752,15 +741,12 @@ CETV4,http://ottrrs.hl.chinamobile.com/PLTV/88888888/224/3221225783/index.m3u8,�
 CETV4,https://migu.188766.xyz/?migutoken=d5d19d868e1df41e984866fc7ca15071&id=CETV4&type=yy,重复URL
 CETV4,http://116.237.37.244:8888/rtp/239.45.1.243:5140,重复URL
 CETV4,http://112.254.55.106:22222/rtp/239.253.254.116:8000,重复URL
-CETV4,http://171.83.103.119:9999/rtp/239.69.2.29:11328,重复URL
 æ¹–å—å«è§†,http://171.83.103.119:9999/rtp/239.69.1.27:9802,重复URL
 æ¹–å—å«è§†,http://171.83.103.119:9999/rtp/239.69.1.13:9718,重复URL
 æ¹–å—å«è§†,http://zqh2333.top:2222/rtp/239.94.0.116:5140,重复URL
 æ¹–å—å«è§†,http://116.237.37.244:8888/rtp/233.18.204.227:5140,重复URL
 æ¹–å—å«è§†,http://yp.qqqtv.top/1/api.php?id=%E6%B9%96%E5%8D%97%E5%8D%AB%E8%A7%86HD&auth=666858,重复URL
 æ¹–å—å«è§†,http://171.83.103.119:9999/rtp/239.69.2.34:11358,重复URL
-æ¹–å—å«è§†,http://z.b.bkpcp.top/m.php?id=hunws,重复URL
-æ¹–å—å«è§†,http://j.x.bkpcp.top/jx/HUNANHD,重复URL
 æµ™æ±Ÿå«è§†,http://ali-vl.cztv.com/channels/lantian/channel001/360p.m3u8,重复URL
 æµ™æ±Ÿå«è§†,http://l.cztvcloud.com/channels/lantian/SXpinghu3/720p.m3u8,重复URL
 æµ™æ±Ÿå«è§†,https://ali-m-l.cztv.com/channels/lantian/channel001/1080p.m3u8,重复URL
@@ -769,7 +755,6 @@ CETV4,http://171.83.103.119:9999/rtp/239.69.2.29:11328,重复URL
 ä¸œæ–¹å«è§†,https://www.freetv.top/migu/651632648.m3u8?migutoken=67b4219a3e6acdcf288118ed6bf84d3197052966f0bc854079b6038b3fca6437744ca78bb0ea1fad6f61b4c73d0df57bd8b539ec247fd28ce16d1375716bbf774ea19c99e4585bb828fa3851c0,重复URL
 ä¸œæ–¹å«è§†,http://yp.qqqtv.top/1/api.php?id=%E4%B8%9C%E6%96%B9%E5%8D%AB%E8%A7%86HD&auth=666858,重复URL
 ä¸œæ–¹å«è§†,http://goo.bkpcp.top/mg/dfws,重复URL
-æ±Ÿè‹å«è§†,http://yp.qqqtv.top/1/api.php?id=%E6%B1%9F%E8%8B%8F%E5%8D%AB%E8%A7%86&auth=666858,重复URL
 æ±Ÿè‹å«è§†,http://z.b.bkpcp.top/m.php?id=jsws,重复URL
 æ±Ÿè‹å«è§†,http://goo.bkpcp.top/mg/jsws,重复URL
 å®‰å¾½å«è§†,http://j.x.bkpcp.top/jx/ANHUIHD,重复URL
@@ -779,7 +764,6 @@ CETV4,http://171.83.103.119:9999/rtp/239.69.2.29:11328,重复URL
 åŒ—äº¬å«è§†,http://116.237.37.244:8888/rtp/233.18.204.209:5140,重复URL
 åŒ—äº¬å«è§†,http://116.237.37.244:8888/rtp/239.45.3.123:5140,重复URL
 åŒ—äº¬å«è§†,http://j.x.bkpcp.top/jx/BEIJHD,重复URL
-åŒ—äº¬å«è§†,https://smart.pendy.dpdns.org/Smart.php?id=beijing,重复URL
 åŒ—äº¬å«è§†,http://satellitepull.cnr.cn/live/wxbtv/playlist.m3u8,重复URL
 åŒ—äº¬å«è§†,http://yp.qqqtv.top/1/api.php?id=%E5%8C%97%E4%BA%AC%E5%8D%AB%E8%A7%86HD&auth=666858,重复URL
 åŒ—äº¬å«è§†,http://z.b.bkpcp.top/m.php?id=bjws,重复URL
@@ -790,6 +774,7 @@ CETV4,http://171.83.103.119:9999/rtp/239.69.2.29:11328,重复URL
 æ·±åœ³å«è§†,https://smart.pendy.dpdns.org/Smart.php?id=shenzhen,重复URL
 æ·±åœ³å«è§†,http://z.b.bkpcp.top/m.php?id=szws,重复URL
 æ·±åœ³å«è§†,http://yp.qqqtv.top/1/api.php?id=%E6%B7%B1%E5%9C%B3%E5%8D%AB%E8%A7%86HD&auth=666858,重复URL
+å¦é—¨å«è§†,https://stream1.freetv.fun/cc2a1fdd054d0069e308a8c5358596fe1ba08562b102d8223a3b02e620082f96.m3u8,重复URL
 å‰æ—å«è§†,http://j.x.bkpcp.top/jx/JILHD,重复URL
 å››å·å«è§†,http://j.x.bkpcp.top/jx/SICHD,重复URL
 å››å·å«è§†,http://116.237.37.244:8888/rtp/233.18.204.225:5140,重复URL
@@ -809,7 +794,6 @@ CETV4,http://171.83.103.119:9999/rtp/239.69.2.29:11328,重复URL
 å¹¿ä¸œå«è§†,http://goo.bkpcp.top/mg/gdws,重复URL
 å¹¿è¥¿å«è§†,https://hlscdn.liangtv.cn/live/0c4ef3a44b934cacb8b47121dfada66c/d7e04258157b480dae53883cc6f8123b.m3u8,重复URL
 å¹¿è¥¿å«è§†,https://hlscdn.liangtv.cn/live/de0f97348eb84f62aa6b7d8cf0430770/dd505d87880c478f901f38560ca4d4e6.m3u8,重复URL
-å¹¿è¥¿å«è§†,https://smart.pendy.dpdns.org/Smart.php?id=guangxi,重复URL
 å¹¿è¥¿å«è§†,http://yp.qqqtv.top/1/api.php?id=%E5%B9%BF%E8%A5%BF%E5%8D%AB%E8%A7%86HD&auth=666858,重复URL
 å»¶è¾¹å«è§†,https://stream1.freetv.fun/yan-bian-wei-shi-16.m3u8,重复URL
 å»¶è¾¹å«è§†,https://stream1.freetv.fun/yan-bian-wei-shi-15.m3u8,重复URL
@@ -1100,7 +1084,6 @@ NewTVé»‘è“ç”µå½±,https://epg.pw/stream/ffcb6572863f0745a7369fbd9d9
 é­…åŠ›è¶³çƒ,http://z.b.bkpcp.top/m.php?id=mlzq,重复URL
 é­…åŠ›è¶³çƒ,http://gat.bkpcp.top/ymg.php?id=mlzq,重复URL
 é­…åŠ›è¶³çƒ,http://goo.bkpcp.top/mg/mlzq,重复URL
-åŸ‹å †å †14,http://cfss.cc/cdn/hy/23863804.flv,重复URL
 æ²»æ„ˆâ€¢æ”¾æ¾ã€ŒéŸ³ä¹ã€,https://live.iill.top/huya/21241811,重复URL
 é˜…è¯»â€¢å­¦ä¹ ã€ŒéŸ³ä¹ã€,https://live.iill.top/huya/21241813,重复URL
 éŸ³ä¹çŸ³æ¦´ã€ŒéŸ³ä¹ã€,https://live.iill.top/huya/17091681,重复URL
@@ -1504,7 +1487,6 @@ CNA,https://live1.mediadesk.al/cnatvlive.m3u8,重复URL
 æµ™æ±Ÿæ–°é—»,https://stream1.freetv.fun/zhe-jiang-xin-wen-1.m3u8,重复URL
 æµ™æ±Ÿæ–°é—»,https://stream1.freetv.fun/zhe-jiang-xin-wen-11.m3u8,重复URL
 æµ™æ±Ÿæ–°é—»,https://stream1.freetv.fun/zhe-jiang-xin-wen-8.m3u8,重复URL
-æµ™æ±Ÿæ–°é—»,https://stream1.freetv.fun/zhe-jiang-xin-wen-5.m3u8,重复URL
 æµ™æ±Ÿæ–°é—»,http://ali-m-l.cztv.com/channels/lantian/channel07/720p.m3u8,重复URL
 æµ™æ±Ÿæ–°é—»,http://ali-vl.cztv.com/channels/lantian/channel007/360p.m3u8,重复URL
 æµ™æ±Ÿæ–°é—»,https://stream1.freetv.fun/zhe-jiang-xin-wen-2.ctv,重复URL
@@ -1714,7 +1696,7 @@ CNA,https://live1.mediadesk.al/cnatvlive.m3u8,重复URL
 å±±ä¸œä½“è‚²,https://stream1.freetv.fun/shan-dong-ti-yu-2.m3u8,重复URL
 å±±ä¸œä½“è‚²,https://stream1.freetv.fun/shan-dong-ti-yu-7.m3u8,重复URL
 å±±ä¸œä½“è‚²,https://stream1.freetv.fun/shan-dong-ti-yu-19.m3u8,重复URL
-å±±ä¸œæ–‡æ—…,http://58.57.40.22:9901/tsfile/live/1023_1.m3u8,重复URL
+å±±ä¸œæ–‡æ—…,http://221.2.148.205:8154/tsfile/live/1004_1.m3u8?key=txiptv&playlive=1&authid=0,重复URL
 æµå—ç»¼åˆ,https://stream1.freetv.fun/ji-nan-zong-he-1.m3u8,重复URL
 æµå—ç»¼åˆ,https://stream1.freetv.fun/ji-nan-zong-he-3.m3u8,重复URL
 æµå—æ–°é—»ç»¼åˆ,https://stream1.freetv.fun/ji-nan-xin-wen-zong-he-7.m3u8,重复URL
@@ -1842,7 +1824,6 @@ CNA,https://live1.mediadesk.al/cnatvlive.m3u8,重复URL
 é™•è¥¿éƒ½å¸‚é’æ˜¥,https://migu.188766.xyz/?migutoken=a24ec2ab19e8d85e62a6a82d730c0176&id=%E9%99%95%E8%A5%BF%E9%83%BD%E5%B8%82%E9%9D%92%E6%98%A5%E9%A2%91%E9%81%93&type=yy,重复URL
 é™•è¥¿éƒ½å¸‚é’æ˜¥,https://migu.188766.xyz/?migutoken=dd36ac4b87cda2b5b23fe0acb00defda&id=%E9%99%95%E8%A5%BF%E9%83%BD%E5%B8%82%E9%9D%92%E6%98%A5%E9%A2%91%E9%81%93&type=yy,重复URL
 é™•è¥¿éƒ½å¸‚é’æ˜¥,https://migu.188766.xyz/?migutoken=ddc31a7cea8582f4a16cd5a1b3d35af9&id=%E9%99%95%E8%A5%BF%E9%83%BD%E5%B8%82%E9%9D%92%E6%98%A5%E9%A2%91%E9%81%93&type=yy,重复URL
-ä¸‡è£ç»¼åˆ,http://60.222.246.220:19433/hls1.m3u8,重复URL
 å¤å¿ç»¼åˆ,https://l2fpdktp.live.sxmty.com/live/hls/e4c3b363cc4549788e2d983f403e07db/d99ce1eb686e41b9afc888110bd95aa7.m3u8?zshanxd,重复URL
 å¤ªè°·æ–°é—»ç»¼åˆ,https://p2.vzan.com/slowlive/596867413819827251/live.m3u8?zbid=1725814272&amp;tpid=1516989100&amp;type=0,重复URL
 å¤ªè°·æ–°é—»ç»¼åˆ,https://p2.vzan.com/slowlive/596867413819827251/live.m3u8?zbid=1725814272&tpid=1516989100&type=0,重复URL
@@ -1860,13 +1841,11 @@ CNA,https://live1.mediadesk.al/cnatvlive.m3u8,重复URL
 é•¿å­ç»¼åˆ,https://www.wxhcgbds.com:8081/channelTv/WXTV_1.m3u8?zshanxd,重复URL
 é»åŸç»¼åˆ,http://111.53.96.67:8081/live/1/index.m3u8?%E5%85%B3%E6%B3%A8%E5%BE%AE%E4%BF%A1%E5%85%AC%E4%BC%97%E5%8F%B7[%E6%99%B4%E5%9B%AD],重复URL
 å³¨å±±ç”µè§†,http://live.ynurl.com/video/s10034-ESTV/index.m3u8,重复URL
-å¼€è¿œç»¼åˆ,http://live.ynurl.com/video/s10044-KYTV/index.m3u8?zyund,重复URL
+å³¨å±±ç”µè§†,http://live.ynurl.com/video/s10034-ESTV/index.m3u8?zyund,重复URL
 æ–‡å±±å·å…¬å…±,http://m3u8.channel.wsrtv.com.cn/cms/videos/nmip-media/channellive/channel8/playlist.m3u8,重复URL
 æ–‡å±±å·å…¬å…±,http://m3u8.channel.wsrtv.com.cn/cms/videos/nmip-media/channellive/channel8/playlist.m3u8?zyund,重复URL
 æ–‡å±±å·æ–°é—»ç»¼åˆ,http://m3u8.channel.wsrtv.com.cn/cms/videos/nmip-media/channellive/channel7/playlist.m3u8?zyund,重复URL
-æ¢æ²³ç»¼åˆ,http://live.ynurl.com/video/s10032-lhtv/index.m3u8?zyund,重复URL
-ç šå±±ç”µè§†å°,http://live.ynurl.com/video/s10020-ystv/index.m3u8?zyund,重复URL
-è’™è‡ªç»¼åˆ,http://live.ynurl.com/video/s10019-mzdst/index.m3u8,重复URL
+ç›ˆæ±Ÿç»¼åˆ,http://live.ynurl.com/video/s10016-YJTV-2/index.m3u8?zyund,重复URL
 é€šæµ·ç”µè§†å°,https://zb-live.ynurl.com/tonghai/3bfe3a9e-48e6-4c1e-8770-1df66447cc6c.m3u8,重复URL
 é™‡å·ç»¼åˆ,https://zb-live.ynurl.com/longchuan/58f88df3-605e-4c57-865c-8e8f85241ca1.m3u8,重复URL
 éº»æ —å¡ç”µè§†å°,http://tvdrs.wsrtv.com.cn:8100/channellive/mlptv.flv?zyund,重复URL
@@ -1899,7 +1878,6 @@ CNA,https://live1.mediadesk.al/cnatvlive.m3u8,重复URL
 ç’§å±±ç»¼åˆ,http://222.179.42.129:8181/hls1.m3u8,重复URL
 è£æ˜Œç»¼åˆ,http://183.64.181.25:40023/rongchang01.m3u8,重复URL
 é‡åº†æ±½æ‘©,http://183.230.184.51:65500/tntv1.m3u8?zzhongqd,重复URL
-é‡åº†æ±½æ‘©,http://183.64.181.25:40023/rongchang01.m3u8?%E5%85%B3%E6%B3%A8%E5%BE%AE%E4%BF%A1%E5%85%AC%E4%BC%97%E5%8F%B7[%E6%99%B4%E5%9B%AD],重复URL
 é“œæ¢ç»¼åˆ,http://183.64.174.171:40123/ch1.m3u8,重复URL
 é“œæ¢ç»¼åˆ,http://183.64.174.171:40123/ch1.m3u8?zzhongqd,重复URL
 ä¸‰æ˜æ–°é—»ç»¼åˆ,http://ls.qingting.fm/live/4885.m3u8,重复URL
@@ -1967,6 +1945,7 @@ CNA,https://live1.mediadesk.al/cnatvlive.m3u8,重复URL
 å—å®éƒ½å¸‚ç”Ÿæ´»,https://stream1.freetv.fun/nan-zhu-du-shi-sheng-huo-1.m3u8,重复URL
 å—å®éƒ½å¸‚ç”Ÿæ´»,https://stream1.freetv.fun/nan-zhu-du-shi-sheng-huo-3.m3u8,重复URL
 å—å®éƒ½å¸‚ç”Ÿæ´»é¢‘é“,https://stream1.freetv.fun/nan-zhu-du-shi-sheng-huo-2.m3u8,重复URL
+æ¥å®¾ç»¼åˆ,http://zb.gxlbamc.com:1935/live/lbzh.stream/playlist.m3u8,重复URL
 ç”°ä¸œç»¼åˆ,http://pulls.myun.tv/live/0dkp33j5.m3u8,重复URL
 å®‰é¡ºæ–°é—»,http://hplayer1.juyun.tv/camera/154379194.m3u8,重复URL
 æ²³åŒ—å†œæ°‘,http://ls.qingting.fm/live/1650.m3u8,重复URL
@@ -2022,7 +2001,10 @@ CNA,https://live1.mediadesk.al/cnatvlive.m3u8,重复URL
 æ²³å—éƒ½å¸‚,https://migu.188766.xyz/?migutoken=d8baa9c6f8f07f20ac65a02d15b59731&id=%E9%83%BD%E5%B8%82%E9%A2%91%E9%81%93&type=yy,重复URL
 æ²³å—éƒ½å¸‚,https://stream1.freetv.fun/he-nan-du-shi-1.ctv,重复URL
 ä¸ƒå°æ²³æ–°é—»ç»¼åˆ,http://live.qthnews.org.cn:1935/live/live1/800k/tzwj_video.m3u8,重复URL
+å“ˆå°”æ»¨å¨±ä¹,http://stream.hrbtv.net/ylpd/sd/live.m3u8,重复URL
+å“ˆå°”æ»¨å¨±ä¹,http://stream.hrbtv.net/ylpd/sd/live.m3u8?zheild,重复URL
 å“ˆå°”æ»¨å¨±ä¹,http://stream.hrbtv.net/ylpd/sd/live.m3u8?zheild#http://stream.hrbtv.net/ylpd/sd/live.m3u8#https://stream.hrbtv.net/ylpd/sd/live.m3u8,重复URL
+å“ˆå°”æ»¨å¨±ä¹,https://stream.hrbtv.net/ylpd/sd/live.m3u8,重复URL
 å“ˆå°”æ»¨å½±è§†,http://111.43.126.240:9003/hls/5/index.m3u8,重复URL
 å“ˆå°”æ»¨å½±è§†,http://stream.hrbtv.net/yspd/sd/live.m3u8,重复URL
 å“ˆå°”æ»¨å½±è§†,http://stream.hrbtv.net/yspd/sd/live.m3u8?zheild,重复URL
@@ -2115,7 +2097,6 @@ CNA,https://live1.mediadesk.al/cnatvlive.m3u8,重复URL
 å™å·æ–°é—»ç»¼åˆ,https://stream1.freetv.fun/xu-zhou-xin-wen-zong-he-3.m3u8,重复URL
 å™å·æ–°é—»ç»¼åˆ,https://stream1.freetv.fun/xu-zhou-xin-wen-zong-he-6.m3u8,重复URL
 å™å·æ–°é—»ç»¼åˆ,https://stream1.freetv.fun/xu-zhou-xin-wen-zong-he-7.m3u8,重复URL
-åå±±ç»¼åˆ,https://m3u8channel-bx.yunxya.com/nmip-media/channellive/channel104666/playlist.m3u8,重复URL
 å››å·ç§‘æ•™,https://stream1.freetv.fun/si-chuan-ke-jiao-1.m3u8,重复URL
 å››å·ç§‘æ•™,https://stream1.freetv.fun/si-chuan-ke-jiao-3.ctv,重复URL
 å››å·ç§‘æ•™,https://stream1.freetv.fun/si-chuan-ke-jiao-4.ctv,重复URL
@@ -2172,6 +2153,7 @@ CNA,https://live1.mediadesk.al/cnatvlive.m3u8,重复URL
 [BD]上海新闻综合[geo-blocked],https://stream1.freetv.fun/shang-hai-xin-wen-zong-he-9.ctv,重复URL
 [BD]上海新闻综合[geo-blocked],https://stream1.freetv.fun/shang-hai-xin-wen-zong-he-8.ctv,重复URL
 [BD]上海新闻综合,https://stream1.freetv.fun/shang-hai-xin-wen-zong-he-10.m3u8,重复URL
+[SD]上海卫视,https://stream1.freetv.fun/shang-hai-wei-shi-3.m3u8,重复URL
 [BD]上海都市[geo-blocked],https://stream1.freetv.fun/shang-hai-du-shi-7.ctv,重复URL
 [BD]上海都市[geo-blocked],https://stream1.freetv.fun/shang-hai-du-shi-10.ctv,重复URL
 [BD]上海都市,https://stream1.freetv.fun/shang-hai-du-shi-6.m3u8,重复URL
@@ -2313,8 +2295,8 @@ CNA,https://live1.mediadesk.al/cnatvlive.m3u8,重复URL
 [BD]北京卫视[geo-blocked],https://stream1.freetv.fun/bei-jing-wei-shi-63.ctv,重复URL
 [HD]北京卫视,https://stream1.freetv.fun/bei-jing-wei-shi-75.ctv,重复URL
 [VGA]北京卫视[geo-blocked],https://stream1.freetv.fun/bei-jing-wei-shi-15.ctv,重复URL
-[BD]北京卫视,https://stream1.freetv.fun/bei-jing-wei-shi-56.m3u8,重复URL
-[BD]北京卫视,https://stream1.freetv.fun/bei-jing-wei-shi-21.m3u8,重复URL
+[BD]北京卫视[geo-blocked],https://stream1.freetv.fun/bei-jing-wei-shi-56.m3u8,重复URL
+[BD]北京卫视[geo-blocked],https://stream1.freetv.fun/bei-jing-wei-shi-21.m3u8,重复URL
 [BD]北京卫视,https://stream1.freetv.fun/bei-jing-wei-shi-28.ctv,重复URL
 [BD]北京卫视,https://stream1.freetv.fun/bei-jing-wei-shi-68.m3u8,重复URL
 [HD]南京少儿,https://stream1.freetv.fun/nan-jing-shao-er-1.m3u8,重复URL
@@ -2347,7 +2329,7 @@ CNA,https://live1.mediadesk.al/cnatvlive.m3u8,重复URL
 [SD]吉林卫视,https://stream1.freetv.fun/ji-lin-wei-shi-38.m3u8,重复URL
 [BD]吉林卫视,https://stream1.freetv.fun/ji-lin-wei-shi-74.m3u8,重复URL
 [BD]吉林卫视,https://stream1.freetv.fun/ji-lin-wei-shi-79.m3u8,重复URL
-[BD]吉林卫视[geo-blocked],https://stream1.freetv.fun/ji-lin-wei-shi-66.ctv,重复URL
+[BD]吉林卫视,https://stream1.freetv.fun/ji-lin-wei-shi-66.ctv,重复URL
 [VGA]哈尔滨娱乐,https://stream1.freetv.fun/ha-er-bin-yu-le-1.m3u8,重复URL
 [VGA]哈尔滨娱乐,https://stream1.freetv.fun/ha-er-bin-yu-le-2.m3u8,重复URL
 [VGA]哈尔滨娱乐,https://stream1.freetv.fun/ha-er-bin-yu-le-3.m3u8,重复URL
@@ -2379,9 +2361,9 @@ CNA,https://live1.mediadesk.al/cnatvlive.m3u8,重复URL
 [BD]四川卫视[geo-blocked],https://stream1.freetv.fun/si-chuan-wei-shi-22.ctv,重复URL
 [BD]四川卫视,https://stream1.freetv.fun/si-chuan-wei-shi-47.ctv,重复URL
 [BD]四川卫视,https://stream1.freetv.fun/si-chuan-wei-shi-56.m3u8,重复URL
-[BD]四川卫视,https://stream1.freetv.fun/si-chuan-wei-shi-35.ctv,重复URL
 [BD]四川卫视,https://stream1.freetv.fun/si-chuan-wei-shi-32.m3u8,重复URL
 [BD]四川卫视[geo-blocked],https://stream1.freetv.fun/si-chuan-wei-shi-76.ctv,重复URL
+[SD]四川卫视[geo-blocked],https://stream1.freetv.fun/si-chuan-wei-shi-17.m3u8,重复URL
 [BD]四川卫视,https://stream1.freetv.fun/si-chuan-wei-shi-9.ctv,重复URL
 [BD]大愛電視,https://stream1.freetv.fun/da-ai-dian-shi-1.m3u8,重复URL
 [BD]大愛電視,https://stream1.freetv.fun/da-ai-dian-shi-7.m3u8,重复URL
@@ -2406,7 +2388,7 @@ CNA,https://live1.mediadesk.al/cnatvlive.m3u8,重复URL
 [BD]大湾区卫视,https://stream1.freetv.fun/da-wan-qu-wei-shi-14.ctv,重复URL
 [BD]大湾区卫视[geo-blocked],https://stream1.freetv.fun/da-wan-qu-wei-shi-8.m3u8,重复URL
 [BD]大湾区卫视[geo-blocked],https://stream1.freetv.fun/da-wan-qu-wei-shi-25.m3u8,重复URL
-[BD]大湾区卫视,https://stream1.freetv.fun/da-wan-qu-wei-shi-3.m3u8,重复URL
+[BD]大湾区卫视[geo-blocked],https://stream1.freetv.fun/da-wan-qu-wei-shi-3.m3u8,重复URL
 [BD]天津卫视[geo-blocked],https://stream1.freetv.fun/tian-jin-wei-shi-60.m3u8,重复URL
 [SD]天津卫视,https://stream1.freetv.fun/tian-jin-wei-shi-48.m3u8,重复URL
 [BD]天津卫视,https://stream1.freetv.fun/tian-jin-wei-shi-94.ctv,重复URL
@@ -2425,6 +2407,7 @@ CNA,https://live1.mediadesk.al/cnatvlive.m3u8,重复URL
 [SD]安徽卫视,https://stream1.freetv.fun/an-hui-wei-shi-61.m3u8,重复URL
 [BD]安徽卫视,https://stream1.freetv.fun/an-hui-wei-shi-76.ctv,重复URL
 [BD]安徽卫视,https://stream1.freetv.fun/an-hui-wei-shi-45.ctv,重复URL
+[SD]安徽卫视[geo-blocked],https://stream1.freetv.fun/an-hui-wei-shi-13.m3u8,重复URL
 [BD]安徽卫视,https://stream1.freetv.fun/an-hui-wei-shi-10.ctv,重复URL
 [BD]安徽卫视[geo-blocked],https://stream1.freetv.fun/an-hui-wei-shi-93.m3u8,重复URL
 [BD]雅安新闻综合,https://stream1.freetv.fun/ya-an-xin-wen-zong-he-1.m3u8,重复URL
@@ -2464,7 +2447,7 @@ CNA,https://live1.mediadesk.al/cnatvlive.m3u8,重复URL
 [BD]山东卫视,https://stream1.freetv.fun/shan-dong-wei-shi-12.ctv,重复URL
 [BD]山东卫视[geo-blocked],https://stream1.freetv.fun/shan-dong-wei-shi-53.m3u8,重复URL
 [BD]山东卫视,https://stream1.freetv.fun/shan-dong-wei-shi-84.ctv,重复URL
-[BD]山东卫视,https://stream1.freetv.fun/shan-dong-wei-shi-79.ctv,重复URL
+[SD]山东卫视[geo-blocked],https://stream1.freetv.fun/shan-dong-wei-shi-74.m3u8,重复URL
 [HD]山东卫视,https://stream1.freetv.fun/shan-dong-wei-shi-52.m3u8,重复URL
 [BD]山东卫视,https://stream1.freetv.fun/shan-dong-wei-shi-89.m3u8,重复URL
 [BD]山西卫视,https://stream1.freetv.fun/shan-xi-wei-shi-104.m3u8,重复URL
@@ -2561,7 +2544,7 @@ CNA,https://live1.mediadesk.al/cnatvlive.m3u8,重复URL
 [BD]广东珠江,https://stream1.freetv.fun/yan-dong-zhu-jiang-1.m3u8,重复URL
 [BD]广东珠江,https://stream1.freetv.fun/yan-dong-zhu-jiang-12.ctv,重复URL
 [BD]广东珠江[geo-blocked],https://stream1.freetv.fun/yan-dong-zhu-jiang-8.m3u8,重复URL
-[BD]广东珠江,https://stream1.freetv.fun/yan-dong-zhu-jiang-20.m3u8,重复URL
+[BD]广东珠江[geo-blocked],https://stream1.freetv.fun/yan-dong-zhu-jiang-20.m3u8,重复URL
 [BD]广东珠江高清[geo-blocked],https://stream1.freetv.fun/yan-dong-zhu-jiang-gao-qing-9.m3u8,重复URL
 [BD]广东珠江高清,https://stream1.freetv.fun/yan-dong-zhu-jiang-gao-qing-2.ctv,重复URL
 [BD]广东珠江高清,https://stream1.freetv.fun/yan-dong-zhu-jiang-gao-qing-13.ctv,重复URL
@@ -2642,6 +2625,7 @@ CNA,https://live1.mediadesk.al/cnatvlive.m3u8,重复URL
 [BD]新疆卫视[geo-blocked],https://stream1.freetv.fun/xin-jiang-wei-shi-34.m3u8,重复URL
 [SD]新疆卫视,https://stream1.freetv.fun/xin-jiang-wei-shi-15.m3u8,重复URL
 [SD]新疆卫视,https://stream1.freetv.fun/xin-jiang-wei-shi-1.ctv,重复URL
+[SD]星空卫视,https://stream1.freetv.fun/xing-kong-wei-shi-1.m3u8,重复URL
 [SD]星空卫视,https://stream1.freetv.fun/xing-kong-wei-shi-13.m3u8,重复URL
 [BD]郸城新闻综合,https://stream1.freetv.fun/dan-cheng-xin-wen-zong-he-4.m3u8,重复URL
 [BD]郸城新闻综合,https://stream1.freetv.fun/dan-cheng-xin-wen-zong-he-1.m3u8,重复URL
@@ -2652,6 +2636,7 @@ CNA,https://live1.mediadesk.al/cnatvlive.m3u8,重复URL
 [BD]东南卫视,https://stream1.freetv.fun/dong-nan-wei-shi-40.ctv,重复URL
 [BD]东南卫视[geo-blocked],https://stream1.freetv.fun/dong-nan-wei-shi-16.m3u8,重复URL
 [BD]东南卫视,https://stream1.freetv.fun/dong-nan-wei-shi-77.ctv,重复URL
+[SD]东南卫视,https://stream1.freetv.fun/dong-nan-wei-shi-82.m3u8,重复URL
 [VGA]东南卫视[geo-blocked],https://stream1.freetv.fun/dong-nan-wei-shi-53.ctv,重复URL
 [BD]东方影视[geo-blocked],https://stream1.freetv.fun/dong-fang-ying-shi-4.ctv,重复URL
 [HD]东方卫视,https://stream1.freetv.fun/dong-fang-wei-shi-85.ctv,重复URL
@@ -2663,7 +2648,7 @@ CNA,https://live1.mediadesk.al/cnatvlive.m3u8,重复URL
 [BD]东方卫视,https://stream1.freetv.fun/dong-fang-wei-shi-89.ctv,重复URL
 [BD]东方卫视[geo-blocked],https://stream1.freetv.fun/dong-fang-wei-shi-36.m3u8,重复URL
 [BD]东方卫视,https://stream1.freetv.fun/dong-fang-wei-shi-39.m3u8,重复URL
-[BD]东方卫视高清,https://stream1.freetv.fun/dong-fang-wei-shi-gao-qing-2.m3u8,重复URL
+[BD]东方卫视高清[geo-blocked],https://stream1.freetv.fun/dong-fang-wei-shi-gao-qing-2.m3u8,重复URL
 [BD]東森新聞,https://stream1.freetv.fun/dong-sen-xin-wen-11.m3u8,重复URL
 [BD]東森新聞,https://stream1.freetv.fun/dong-sen-xin-wen-6.m3u8,重复URL
 [BD]東森新聞,https://stream1.freetv.fun/dong-sen-xin-wen-8.m3u8,重复URL
@@ -2827,7 +2812,6 @@ CNA,https://live1.mediadesk.al/cnatvlive.m3u8,重复URL
 [SD]河北卫视[geo-blocked],https://stream1.freetv.fun/he-bei-wei-shi-2.m3u8,重复URL
 [BD]河北卫视[geo-blocked],https://stream1.freetv.fun/he-bei-wei-shi-13.m3u8,重复URL
 [BD]河北卫视,https://stream1.freetv.fun/he-bei-wei-shi-56.ctv,重复URL
-[BD]河北卫视,https://stream1.freetv.fun/he-bei-wei-shi-38.ctv,重复URL
 [BD]河北卫视,https://stream1.freetv.fun/he-bei-wei-shi-7.m3u8,重复URL
 [HD]河北农民,https://stream1.freetv.fun/he-bei-nong-min-17.m3u8,重复URL
 [BD]河南民生[geo-blocked],https://stream1.freetv.fun/he-nan-min-sheng-5.ctv,重复URL
@@ -2841,7 +2825,7 @@ CNA,https://live1.mediadesk.al/cnatvlive.m3u8,重复URL
 [BD]河南卫视,https://stream1.freetv.fun/he-nan-wei-shi-79.ctv,重复URL
 [BD]河南卫视,https://stream1.freetv.fun/he-nan-wei-shi-60.m3u8,重复URL
 [BD]河南卫视[geo-blocked],https://stream1.freetv.fun/he-nan-wei-shi-30.m3u8,重复URL
-[BD]河南卫视,https://stream1.freetv.fun/he-nan-wei-shi-53.m3u8,重复URL
+[BD]河南卫视[geo-blocked],https://stream1.freetv.fun/he-nan-wei-shi-53.m3u8,重复URL
 [SD]河南卫视,https://stream1.freetv.fun/he-nan-wei-shi-68.m3u8,重复URL
 [BD]河南卫视,https://stream1.freetv.fun/he-nan-wei-shi-92.ctv,重复URL
 [BD]河南都市[geo-blocked],https://stream1.freetv.fun/he-nan-du-shi-1.ctv,重复URL
@@ -2909,7 +2893,7 @@ CNA,https://live1.mediadesk.al/cnatvlive.m3u8,重复URL
 [BD]浙江卫视,https://stream1.freetv.fun/zhe-jiang-wei-shi-103.m3u8,重复URL
 [BD]浙江卫视,https://stream1.freetv.fun/zhe-jiang-wei-shi-50.ctv,重复URL
 [SD]浙江卫视[geo-blocked],https://stream1.freetv.fun/zhe-jiang-wei-shi-6.m3u8,重复URL
-[BD]浙江卫视高清,https://stream1.freetv.fun/zhe-jiang-wei-shi-gao-qing-9.m3u8,重复URL
+[BD]浙江卫视高清[geo-blocked],https://stream1.freetv.fun/zhe-jiang-wei-shi-gao-qing-9.m3u8,重复URL
 [BD]浙江钱江,https://stream1.freetv.fun/zhe-jiang-qian-jiang-4.m3u8,重复URL
 [BD]浙江钱江,https://stream1.freetv.fun/zhe-jiang-qian-jiang-1.m3u8,重复URL
 [HD]浙江钱江,https://stream1.freetv.fun/zhe-jiang-qian-jiang-3.m3u8,重复URL
@@ -2930,7 +2914,6 @@ CNA,https://live1.mediadesk.al/cnatvlive.m3u8,重复URL
 [BD]深圳卫视,https://stream1.freetv.fun/shen-zhen-wei-shi-48.ctv,重复URL
 [BD]深圳卫视[geo-blocked],https://stream1.freetv.fun/shen-zhen-wei-shi-9.m3u8,重复URL
 [SD]深圳卫视,https://stream1.freetv.fun/shen-zhen-wei-shi-12.m3u8,重复URL
-[BD]深圳卫视,https://stream1.freetv.fun/shen-zhen-wei-shi-34.ctv,重复URL
 [BD]深圳卫视,https://stream1.freetv.fun/shen-zhen-wei-shi-82.ctv,重复URL
 [BD]深圳卫视,https://stream1.freetv.fun/shen-zhen-wei-shi-13.ctv,重复URL
 [HD]平湖新闻综合,https://stream1.freetv.fun/ping-hu-xin-wen-zong-he-5.m3u8,重复URL
@@ -2958,7 +2941,7 @@ CNA,https://live1.mediadesk.al/cnatvlive.m3u8,重复URL
 [BD]湖南卫视,https://stream1.freetv.fun/hu-nan-wei-shi-87.m3u8,重复URL
 [BD]湖南卫视[geo-blocked],https://stream1.freetv.fun/hu-nan-wei-shi-88.m3u8,重复URL
 [BD]湖南卫视,https://stream1.freetv.fun/hu-nan-wei-shi-54.ctv,重复URL
-[BD]湖南卫视高清,https://stream1.freetv.fun/hu-nan-wei-shi-gao-qing-4.m3u8,重复URL
+[BD]湖南卫视高清[geo-blocked],https://stream1.freetv.fun/hu-nan-wei-shi-gao-qing-4.m3u8,重复URL
 [HD]湖州公共,https://stream1.freetv.fun/hu-zhou-gong-gong-1.m3u8,重复URL
 [HD]湖州公共,https://stream1.freetv.fun/hu-zhou-gong-gong-9.m3u8,重复URL
 [HD]湖州公共,https://stream1.freetv.fun/hu-zhou-gong-gong-10.m3u8,重复URL
@@ -2972,7 +2955,7 @@ CNA,https://live1.mediadesk.al/cnatvlive.m3u8,重复URL
 [HD]湖州新闻综合,https://stream1.freetv.fun/hu-zhou-xin-wen-zong-he-5.m3u8,重复URL
 [BD]衢江新闻综合,https://stream1.freetv.fun/qu-jiang-xin-wen-zong-he-3.m3u8,重复URL
 [BD]澳门莲花,https://stream1.freetv.fun/ao-men-lian-hua-3.m3u8,重复URL
-[BD]无线新闻,https://stream1.freetv.fun/wu-xian-xin-wen-1.ctv,重复URL
+[BD]无线新闻[geo-blocked],https://stream1.freetv.fun/wu-xian-xin-wen-1.ctv,重复URL
 [BD]无线新闻[geo-blocked],rtmp://nowast.net/live/yifatv-wxxw01,无效URL（非 http/https/rtsp 开头）
 [BD]无线新闻,https://stream1.freetv.fun/wu-xian-xin-wen-12.m3u8,重复URL
 [BD]无线新闻,https://stream1.freetv.fun/wu-xian-xin-wen-14.ctv,重复URL
@@ -3093,9 +3076,8 @@ CNA,https://live1.mediadesk.al/cnatvlive.m3u8,重复URL
 [BD]重庆卫视[geo-blocked],https://stream1.freetv.fun/zhong-qing-wei-shi-62.m3u8,重复URL
 [BD]重庆卫视,https://stream1.freetv.fun/zhong-qing-wei-shi-47.ctv,重复URL
 [BD]重庆卫视[geo-blocked],https://stream1.freetv.fun/zhong-qing-wei-shi-12.m3u8,重复URL
-[BD]重庆卫视[geo-blocked],https://stream1.freetv.fun/zhong-qing-wei-shi-4.m3u8,重复URL
+[BD]重庆卫视,https://stream1.freetv.fun/zhong-qing-wei-shi-4.m3u8,重复URL
 [BD]重庆卫视,https://stream1.freetv.fun/zhong-qing-wei-shi-55.m3u8,重复URL
-[BD]重庆卫视,https://stream1.freetv.fun/zhong-qing-wei-shi-79.ctv,重复URL
 [BD]重庆卫视[geo-blocked],https://stream1.freetv.fun/zhong-qing-wei-shi-57.m3u8,重复URL
 [BD]金川新闻综合,https://stream1.freetv.fun/jin-chuan-xin-wen-zong-he-1.m3u8,重复URL
 [BD]金川新闻综合,https://stream1.freetv.fun/jin-chuan-xin-wen-zong-he-4.m3u8,重复URL
@@ -3193,7 +3175,8 @@ CNA,https://live1.mediadesk.al/cnatvlive.m3u8,重复URL
 [HD]凤凰资讯,https://stream1.freetv.fun/feng-huang-zi-xun-12.ctv,重复URL
 [BD]凤凰香港[geo-blocked],https://stream1.freetv.fun/feng-huang-xiang-gang-13.ctv,重复URL
 [HD]凤凰香港,https://stream1.freetv.fun/feng-huang-xiang-gang-8.ctv,重复URL
-[HD]凤凰香港,https://stream1.freetv.fun/feng-huang-xiang-gang-14.m3u8,重复URL
+[HD]凤凰香港[geo-blocked],https://stream1.freetv.fun/feng-huang-xiang-gang-14.m3u8,重复URL
+[BD]凤凰香港,https://stream1.freetv.fun/feng-huang-xiang-gang-6.m3u8,重复URL
 [BD]凤凰香港[geo-blocked],https://stream1.freetv.fun/feng-huang-xiang-gang-3.ctv,重复URL
 [SD]黑龙江影视,https://stream1.freetv.fun/hei-long-jiang-ying-shi-12.m3u8,重复URL
 [SD]黑龙江新闻法治,https://stream1.freetv.fun/hei-long-jiang-xin-wen-fa-zhi-10.m3u8,重复URL
@@ -3202,6 +3185,7 @@ CNA,https://live1.mediadesk.al/cnatvlive.m3u8,重复URL
 [SD]黑龙江卫视[geo-blocked],https://stream1.freetv.fun/hei-long-jiang-wei-shi-30.m3u8,重复URL
 [BD]黑龙江卫视,https://stream1.freetv.fun/hei-long-jiang-wei-shi-53.ctv,重复URL
 [BD]黑龙江卫视[geo-blocked],https://stream1.freetv.fun/hei-long-jiang-wei-shi-87.m3u8,重复URL
+[SD]黑龙江卫视[geo-blocked],https://stream1.freetv.fun/hei-long-jiang-wei-shi-51.m3u8,重复URL
 [BD]黑龙江卫视,https://stream1.freetv.fun/hei-long-jiang-wei-shi-18.ctv,重复URL
 [BD]黑龙江卫视,https://stream1.freetv.fun/hei-long-jiang-wei-shi-68.m3u8,重复URL
 [HD]龍華卡通,https://stream1.freetv.fun/long-hua-qia-tong-11.m3u8,重复URL
@@ -3223,7 +3207,6 @@ CNA,https://live1.mediadesk.al/cnatvlive.m3u8,重复URL
 [BD]龍華電影,https://stream1.freetv.fun/long-hua-dian-ying-16.m3u8,重复URL
 [BD]龍華電影,https://stream1.freetv.fun/long-hua-dian-ying-7.m3u8,重复URL
 2024年春晚,https://p2.bdstatic.com/rtmp.liveshow.lss-user.baidubce.com/live/stream_bduid_6488563992_8982723413/merged_1707497046297_88536_25144_41936.m3u8,重复URL
-2025-12-21 18:30:26,https://vd3.bdstatic.com/mda-rkaittm5s06vzzyq/sc/cae_h264/1762869883709304452/mda-rkaittm5s06vzzyq.mp4,重复URL
 AMC电影,http://61.221.215.25:8800/hls/43/index.m3u8,重复URL
 CCTV1,http://58.57.40.22:9901/tsfile/live/0001_1.m3u8,重复URL
 CCTV1,http://play.kankanlive.com/live/1698234869325962.m3u8,重复URL
@@ -3257,7 +3240,7 @@ CCTV15,http://58.57.40.22:9901/tsfile/live/1015_1.m3u8,重复URL
 CCTV15,https://play.kankanlive.com/live/1698423607826914.m3u8,重复URL
 CCTV15,http://gmxw.7766.org:808/hls/102/index.m3u8,重复URL
 CCTV15,http://183.11.239.36:808/hls/102/index.m3u8,重复URL
-CCTV15,https://piccpndali.v.myalicdn.com/audio/cctv15_2.m3u8,重复URL
+CCTV15,http://222.169.85.8:9901/tsfile/live/0015_1.m3u8,重复URL
 CCTV16,http://livetv.wqwqwq.sbs/gaoma/cctv4k16.m3u8,重复URL
 CCTV16,http://gmxw.7766.org:808/hls/169/index.m3u8,重复URL
 CCTV16,http://183.11.239.36:808/hls/169/index.m3u8,重复URL
@@ -3266,7 +3249,7 @@ CCTV17,http://58.57.40.22:9901/tsfile/live/0019_1.m3u8,重复URL
 CCTV17,https://play.kankanlive.com/live/1698423272597921.m3u8,重复URL
 CCTV17,http://120.238.94.10:9901/tsfile/live/1048_1.m3u8,重复URL
 CCTV17,http://183.11.239.36:808/hls/35/index.m3u8,重复URL
-CCTV17,https://piccpndali.v.myalicdn.com/audio/cctv17_2.m3u8,重复URL
+CCTV17,http://222.169.85.8:9901/tsfile/live/0007_1.m3u8,重复URL
 CCTV2,http://58.57.40.22:9901/tsfile/live/1001_1.m3u8,重复URL
 CCTV2,https://play.kankanlive.com/live/1698234898628961.m3u8,重复URL
 CCTV2,http://112.123.206.32:808/hls/2/index.m3u8,重复URL
@@ -3276,6 +3259,7 @@ CCTV3,http://58.57.40.22:9901/tsfile/live/1002_1.m3u8,重复URL
 CCTV3,http://gmxw.7766.org:808/hls/91/index.m3u8,重复URL
 CCTV3,http://183.11.239.36:808/hls/91/index.m3u8,重复URL
 CCTV3,http://112.46.85.60:8009/hls/3/index.m3u8,重复URL
+CCTV3,https://piccpndali.v.myalicdn.com/audio/cctv3_2.m3u8,重复URL
 CCTV4,http://58.57.40.22:9901/tsfile/live/1003_1.m3u8,重复URL
 CCTV4,https://play.kankanlive.com/live/1698234936258960.m3u8,重复URL
 CCTV4,http://183.11.239.36:808/hls/22/index.m3u8,重复URL
@@ -3285,15 +3269,16 @@ CCTV5,http://58.57.40.22:9901/tsfile/live/1004_1.m3u8,重复URL
 CCTV5,http://gmxw.7766.org:808/hls/93/index.m3u8,重复URL
 CCTV5,http://183.11.239.36:808/hls/93/index.m3u8,重复URL
 CCTV5,http://112.46.85.60:8009/hls/503/index.m3u8,重复URL
+CCTV5,https://piccpndali.v.myalicdn.com/audio/cctv5_2.m3u8,重复URL
 CCTV5+,http://58.57.40.22:9901/tsfile/live/1005_1.m3u8,重复URL
 CCTV5+,http://www.douzhicloud.site:35455/gaoma/cctv5p.m3u8,重复URL
-CCTV5+,http://222.169.85.8:9901/tsfile/live/0116_1.m3u8,重复URL
+CCTV5+,http://cssbyd.imwork.net:8082/hls/6/index.m3u8,重复URL
+CCTV5+,https://piccpndali.v.myalicdn.com/audio/cctv5plus_2.m3u8,重复URL
 CCTV5+,http://182.150.23.74:808/hls/16/index.m3u8,重复URL
-CCTV5+,http://120.238.94.10:9901/tsfile/live/1023_1.m3u8,重复URL
 CCTV6,http://58.57.40.22:9901/tsfile/live/1006_1.m3u8,重复URL
 CCTV6,http://183.11.239.36:808/hls/94/index.m3u8,重复URL
-CCTV6,http://222.169.85.8:9901/tsfile/live/0006_1.m3u8,重复URL
-CCTV6,http://61.136.172.236:9901/tsfile/live/0006_1.m3u8,重复URL
+CCTV6,https://piccpndali.v.myalicdn.com/audio/cctv6_2.m3u8,重复URL
+CCTV6,http://61.156.228.12:8154/tsfile/live/0006_1.m3u8,重复URL
 CCTV7,http://58.57.40.22:9901/tsfile/live/1007_1.m3u8,重复URL
 CCTV7,http://8.138.7.223/tv/cctv7.m3u8,重复URL
 CCTV7,http://183.11.239.36:808/hls/25/index.m3u8,重复URL
@@ -3333,12 +3318,13 @@ www.izbds.com,https://vd3.bdstatic.com/mda-rkaittm5s06vzzyq/sc/cae_h264/17628698
 三明新闻综合,http://ls.qingting.fm/live/4885.m3u8,重复URL
 三明新闻综合,https://ls.qingting.fm/live/5022100/64k.m3u8,重复URL
 上海新闻综合,http://bp-livetytv.bestv.cn/ch/bestvxwzh.m3u8,重复URL
+上海新闻综合,https://mgtv.ottiptv.cc/migu/651632657.m3u8?migutoken=348c9164063c2b1df215dd2fa7cd92cb119d8a335ae0edfb5d615a6c714e71b669eee2f5ff1730afa92af7ca41d0aa96e3a280d7e5f2069eb8a3b852f3ebc270147489d7c8bfb08a7c4b9c4d80,重复URL
 上海新闻综合,http://gslbmgsplive.miguvideo.com/wd_r4/dfl/xinwenzonghehd/1200/index.m3u8?msisdn=20250919080134d0a4f61e680b4d1b8d2460b858ff1fec&mdspid=&spid=699212&netType=0&sid=5500002275&pid=2028597139&timestamp=20250919080134&Channel_ID=0116_2600000900-99000-201600010010027&ProgramID=651632657&ParentNodeID=-99&assertID=5500002275&client_ip=106.13.250.88&SecurityKey=20250919080134&promotionId=&mvid=5100001716&mcid=500020&playurlVersion=WX-A1-8.9.1-RELEASE&userid=&jmhm=&videocodec=h264&bean=mgspad&tid=android&conFee=0&puData=c6e37e6787e81aeb250c874ff8533137&ddCalcu=7c36e1e13313705e86f7f8477e88c10a5e2b,重复URL
 上海新闻综合,http://gslbmgsplive.miguvideo.com/wd_r4/dfl/xinwenzonghehd/1200/index.m3u8?msisdn=20251023080141ea171d5993054ddd94612bf653be3cfa&mdspid=&spid=699212&netType=0&sid=5500002275&pid=2028597139&timestamp=20251023080141&Channel_ID=0116_2600000900-99000-201600010010027&ProgramID=651632657&ParentNodeID=-99&assertID=5500002275&client_ip=106.13.250.83&SecurityKey=20251023080141&promotionId=&mvid=5100001716&mcid=500020&playurlVersion=WX-A1-8.9.2-RELEASE&userid=&jmhm=&videocodec=h264&bean=mgspad&tid=android&conFee=0&puData=4757c0d2f0cd0feb69bcfc7ea14ddd49&ddCalcu=9447ed52d71dc0401da2ef70ccfdc0bf9e6b,重复URL
 上海新闻综合,http://gslbmgsplive.miguvideo.com/wd_r4/dfl/xinwenzonghehd/1200/index.m3u8?msisdn=202510240800572be58ced346548aab92c7ebfbc90d088&mdspid=&spid=699212&netType=0&sid=5500002275&pid=2028597139&timestamp=20251024080057&Channel_ID=0116_2600000900-99000-201600010010027&ProgramID=651632657&ParentNodeID=-99&assertID=5500002275&client_ip=106.13.250.88&SecurityKey=20251024080057&promotionId=&mvid=5100001716&mcid=500020&playurlVersion=WX-A1-8.9.2-RELEASE&userid=&jmhm=&videocodec=h264&bean=mgspad&tid=android&conFee=0&puData=05479a300e9aa0cbfb7bbc5ca9733a84&ddCalcu=4085ea423713907a93a0c05ec9baba70bcfb,重复URL
 上海新闻综合,http://gslbmgsplive.miguvideo.com/wd_r4/dfl/xinwenzonghehd/1200/index.m3u8?msisdn=20251025080100b35a6c3882a949ae802da68a5f06fef8&mdspid=&spid=699212&netType=0&sid=5500002275&pid=2028597139&timestamp=20251025080100&Channel_ID=0116_2600000900-99000-201600010010027&ProgramID=651632657&ParentNodeID=-99&assertID=5500002275&client_ip=106.13.250.90&SecurityKey=20251025080100&promotionId=&mvid=5100001716&mcid=500020&playurlVersion=WX-A1-8.9.2-RELEASE&userid=&jmhm=&videocodec=h264&bean=mgspad&tid=android&conFee=0&puData=6f8be77ecb1155de0e5d3baaed9f8e01&ddCalcu=160fee828b1fe097d7eeacabb131d555ed0e,重复URL
-上海新闻综合,http://gslbmgsplive.miguvideo.com/wd_r4/dfl/xinwenzonghehd/1200/index.m3u8?msisdn=202510260800571a80ecc296e048748f25ce64f259efe6&mdspid=&spid=699212&netType=0&sid=5500002275&pid=2028597139&timestamp=20251026080057&Channel_ID=0116_2600000900-99000-201600010010027&ProgramID=651632657&ParentNodeID=-99&assertID=5500002275&client_ip=106.13.250.83&SecurityKey=20251026080057&promotionId=&mvid=5100001716&mcid=500020&playurlVersion=WX-A1-8.9.2-RELEASE&userid=&jmhm=&videocodec=h264&bean=mgspad&tid=android&conFee=0&puData=9434bf593d72839a9157b57bc07f3a86&ddCalcu=6984ea32341fb07f05c9b37d57b27853199a,重复URL
 上海第一财经,http://bp-livetytv.bestv.cn/ch/bestvdycj.m3u8,重复URL
+上海第一财经,https://mgtv.ottiptv.cc/migu/608780988.m3u8?migutoken=0c7df30d952e5d120406d3eb259cd5e26ec6aa86037008719de147cc6fbc34e877c3e3d7b9617267f35521bdddc4c5995e6fc0583816a5df1bfe19814868525e736733676761a4b2d4db618e84,重复URL
 上海第一财经,http://gslbmgsplive.miguvideo.com/wd_r1/2018/bestv/dycj/1000/index.m3u8?msisdn=2025091908013429b62173a5e24f8ea1f310d5ed32e792&mdspid=&spid=699212&netType=0&sid=2201008312&pid=2028597139&timestamp=20250919080134&Channel_ID=0116_2600000900-99000-201600010010027&ProgramID=608780988&ParentNodeID=-99&assertID=2201008312&client_ip=106.13.250.88&SecurityKey=20250919080134&promotionId=&mvid=2201008312&mcid=500020&playurlVersion=WX-A1-8.9.1-RELEASE&userid=&jmhm=&videocodec=h264&bean=mgspad&tid=android&conFee=0&puData=6c828d22c926cc843970f3f1c7455bea&ddCalcu=a6eceb815285804d72c21cf932f60c7c9834,重复URL
 上海都市,http://bp-livetytv.bestv.cn/ch/bestvdspd.m3u8,重复URL
 上虞文化影院,http://l.cztvcloud.com/channels/lantian/SXshangyu2/720p.m3u8?zzhed,重复URL
@@ -3359,8 +3345,6 @@ www.izbds.com,https://vd3.bdstatic.com/mda-rkaittm5s06vzzyq/sc/cae_h264/17628698
 东方卫视,http://124.116.183.146:9901/tsfile/live/0107_1.m3u8,重复URL
 东方卫视,http://183.11.239.36:808/hls/114/index.m3u8,重复URL
 东阳影视生活,http://l.cztvcloud.com/channels/lantian/SXdongyang1/720p.m3u8,重复URL
-中华小当家,https://live.metshop.top/huya/11342413,重复URL
-中华小当家,http://www.douzhicloud.site:35455/huya/11342413,重复URL
 中国交通,http://drive.mxmy.net:8888/udp/239.3.1.188:8001,重复URL
 中国蓝新闻,http://ali-m-l.cztv.com/channels/lantian/channel009/1080p.m3u8,重复URL
 中央电视塔东,https://gcalic.v.myalicdn.com/gc/ztd_1/index.m3u8,重复URL
@@ -3384,8 +3368,8 @@ www.izbds.com,https://vd3.bdstatic.com/mda-rkaittm5s06vzzyq/sc/cae_h264/17628698
 乐至综合,http://175.155.106.72:89/live1/live1.m3u8?zsicd,重复URL
 乐至综合,http://175.155.106.72:89/live1/live1.m3u8?zsicd;http://rmlive.lzxrmtzx.com/live1/live1.m3u8?zsicd,重复URL
 九台综合,http://stream10.jlntv.cn/jiutaitv/sd/live.m3u8,重复URL
-九台综合,http://stream10.jlntv.cn/jiutaitv/sd/live.m3u8?zjild,重复URL
 九台综合,http://stream10.jlntv.cn/jiutaitv/sd/live.m3u8?%E5%85%B3%E6%B3%A8%E5%BE%AE%E4%BF%A1%E5%85%AC%E4%BC%97%E5%8F%B7[%E6%99%B4%E5%9B%AD],重复URL
+九台综合,http://stream10.jlntv.cn/jiutaitv/sd/live.m3u8?zjild,重复URL
 云南丽江冰川,https://gcalic.v.myalicdn.com/gc/hkylxs05_1/index.m3u8,重复URL
 云南丽江印象实景,https://gcalic.v.myalicdn.com/gc/hkylxs01_1/index.m3u8,重复URL
 云南丽江玉龙雪山,https://gcalic.v.myalicdn.com/gc/ylxs11_1/index.m3u8,重复URL
@@ -3425,10 +3409,12 @@ www.izbds.com,https://vd3.bdstatic.com/mda-rkaittm5s06vzzyq/sc/cae_h264/17628698
 余杭未来E频道,http://l.cztvcloud.com/channels/lantian/SXyuhang3/720p.m3u8?zzhed,重复URL
 余杭综合,http://l.cztvcloud.com/channels/lantian/SXyuhang1/720p.m3u8,重复URL
 余杭综合频道,http://l.cztvcloud.com/channels/lantian/SXyuhang1/720p.m3u8?zzhed,重复URL
+倚天屠龙记,http://www.douzhicloud.site:35455/huya/23734246,重复URL
 偃师新闻,http://tvpull.dxhmt.cn:9081/tv/10381-1.m3u8,重复URL
 偃师新闻,http://tvpull.dxhmt.cn:9081/tv/10381-1.m3u8?wsSecret=df15530a0abec41b14bca00fc96270d1&wsTime=1654956569,重复URL
 光山综合,http://tvpull.dxhmt.cn:9081/tv/11522-1.m3u8,重复URL
 光山综合,http://tvpull.dxhmt.cn:9081/tv/11522-1.m3u8?%E5%85%B3%E6%B3%A8%E5%BE%AE%E4%BF%A1%E5%85%AC%E4%BC%97%E5%8F%B7[%E6%99%B4%E5%9B%AD],重复URL
+全纪实,http://183.215.134.239:19901/tsfile/live/1003_1.m3u8?key=txiptv&playlive=1&authid=0,重复URL
 八里沟风景区天界山玻璃栈道,https://gcalic.v.myalicdn.com/gc/blg03_1/index.m3u8,重复URL
 八里沟风景区桃花湾瀑布,https://gcalic.v.myalicdn.com/gc/blg05_1/index.m3u8,重复URL
 六安公共,http://ls.qingting.fm/live/1794199.m3u8,重复URL
@@ -3473,16 +3459,20 @@ www.izbds.com,https://vd3.bdstatic.com/mda-rkaittm5s06vzzyq/sc/cae_h264/17628698
 北京生活,https://wstvcpudali.v.myalicdn.com/wstvcpud/udrmbtv7_1/index.m3u8?adapt=0&BR=audio,重复URL
 北京科教,http://player.cntv.cn/standard/live_HLSDRM20180606.swf?ChannelID=btv3&P2PChannelID=pd://cctv_p2p_hdbtv3,重复URL
 北京青年,http://player.cntv.cn/standard/live_HLSDRM20180919.swf?v=180.171.5.8.9.6.3.9&ChannelID=btv8&videoTVChannel=btv8&P2PChannelID=pd://cctv_p2p_hdbtv8&tai=btv8&VideoName=btv8&channelID=btv8,重复URL
+南京十八,https://mgtv.ottiptv.cc/migu/838151753.m3u8?migutoken=e1c3c9e2e67541d90ea94c4c917f96ecf43c6c0ae7c616929d8676e7c14bc5587ba870ce22575333640bfff61b05d4d468f6564c6251023f1ad20957cfe3b2c12e71b4662f83dce5d920a86c29,重复URL
 南京十八,http://gslbmgsplive.miguvideo.com/migu/kailu/nanjingsb/50/20230719/index.m3u8?msisdn=202509190801349730ff2fd0254ae4ad096d68d3fc7f35&mdspid=&spid=699067&netType=0&sid=5910021864&pid=2028597139&timestamp=20250919080134&Channel_ID=0116_2600000900-99000-201600010010027&ProgramID=838151753&ParentNodeID=-99&assertID=5910021864&client_ip=106.13.250.88&SecurityKey=20250919080134&promotionId=&mvid=5900006207&mcid=500020&playurlVersion=WX-A1-8.9.1-RELEASE&userid=&jmhm=&videocodec=h264&bean=mgspad&tid=android&conFee=0&puData=b0d57eedc76b6ea1b6b460ea0a8ac2d3&ddCalcu=3bd0e2d1c58a708eae0dace7066b46be6ab1,重复URL
 南京十八,http://gslbmgsplive.miguvideo.com/migu/kailu/nanjingsb/50/20230719/index.m3u8?msisdn=2025102308014162d44288f10c4a84b8b27a5f80ee99fd&mdspid=&spid=699067&netType=0&sid=5910021864&pid=2028597139&timestamp=20251023080141&Channel_ID=0116_2600000900-99000-201600010010027&ProgramID=838151753&ParentNodeID=-99&assertID=5910021864&client_ip=106.13.250.83&SecurityKey=20251023080141&promotionId=&mvid=5900006207&mcid=500020&playurlVersion=WX-A1-8.9.2-RELEASE&userid=&jmhm=&videocodec=h264&bean=mgspad&tid=android&conFee=0&puData=5a6e4ed4765e04fdb8e8bd37c3607a6c&ddCalcu=c56aea627e80406e3dc47736d5be80e48fbd,重复URL
+南京教科,https://mgtv.ottiptv.cc/migu/838153729.m3u8?migutoken=0427a8c0867765b66984ce8ef774d494eeb52a2d6a7eefe17c4b03fa30923700917323b8951caa30617f3eecc1db2844cdff2f7470556533fbc072ad7a7cb0c6284344cc57983294a2b26f4303,重复URL
 南京教科,http://gslbmgsplive.miguvideo.com/migu/kailu/nanjingkj/50/20230719/index.m3u8?msisdn=2025091908013422d2a0f4ed5e4511b896d3d3645248f2&mdspid=&spid=699067&netType=0&sid=5910021865&pid=2028597139&timestamp=20250919080134&Channel_ID=0116_2600000900-99000-201600010010027&ProgramID=838153729&ParentNodeID=-99&assertID=5910021865&client_ip=106.13.250.88&SecurityKey=20250919080134&promotionId=&mvid=5900006205&mcid=500020&playurlVersion=WX-A1-8.9.1-RELEASE&userid=&jmhm=&videocodec=h264&bean=mgspad&tid=android&conFee=0&puData=52692ec9c72414583509ce0cd575172e&ddCalcu=e522e7611985207e5cd9cc07e2c491045538,重复URL
 南京教科,http://gslbmgsplive.miguvideo.com/migu/kailu/nanjingkj/50/20230719/index.m3u8?msisdn=20251023080141d50925a1117343ecb53b23bb6266f888&mdspid=&spid=699067&netType=0&sid=5910021865&pid=2028597139&timestamp=20251023080141&Channel_ID=0116_2600000900-99000-201600010010027&ProgramID=838153729&ParentNodeID=-99&assertID=5910021865&client_ip=106.13.250.83&SecurityKey=20251023080141&promotionId=&mvid=5900006205&mcid=500020&playurlVersion=WX-A1-8.9.2-RELEASE&userid=&jmhm=&videocodec=h264&bean=mgspad&tid=android&conFee=0&puData=b2b216d53c7175e66065d308271343c9&ddCalcu=9bc2e3b2428310167d25830c37d157650e66,重复URL
+南京新闻综合,https://mgtv.ottiptv.cc/migu/838109047.m3u8?migutoken=d3d943815e6d6e9e9493a9b4b1d5a1d360bb5f3c04230f6d4d71f7f7c9f30771d321f1c262008c92ffde17fef4a62d1e1c58d5a9454573fb1489994d9be29f4e1cc7786813b671581eda4b9439,重复URL
 南京新闻综合,http://gslbmgsplive.miguvideo.com/migu/kailu/nanjingxwzh/50/20230719/index.m3u8?msisdn=202509190801346040f34e796a43e3821e1db9273c556a&mdspid=&spid=699067&netType=0&sid=5910021863&pid=2028597139&timestamp=20250919080134&Channel_ID=0116_2600000900-99000-201600010010027&ProgramID=838109047&ParentNodeID=-99&assertID=5910021863&client_ip=106.13.250.88&SecurityKey=20250919080134&promotionId=&mvid=5900006203&mcid=500020&playurlVersion=WX-A1-8.9.1-RELEASE&userid=&jmhm=&videocodec=h264&bean=mgspad&tid=android&conFee=0&puData=de89fe41d47757280f2c68af5d15033a&ddCalcu=ad3ee3810985f01ed451fda48767c527f208,重复URL
 南京新闻综合,http://gslbmgsplive.miguvideo.com/migu/kailu/nanjingxwzh/50/20230719/index.m3u8?msisdn=20251023080141b90781bc871243ca9ccefdd19990364a&mdspid=&spid=699067&netType=0&sid=5910021863&pid=2028597139&timestamp=20251023080141&Channel_ID=0116_2600000900-99000-201600010010027&ProgramID=838109047&ParentNodeID=-99&assertID=5910021863&client_ip=106.13.250.83&SecurityKey=20251023080141&promotionId=&mvid=5900006203&mcid=500020&playurlVersion=WX-A1-8.9.2-RELEASE&userid=&jmhm=&videocodec=h264&bean=mgspad&tid=android&conFee=0&puData=147e2c56380633b791b7bb2fc8bdccc9&ddCalcu=91c4ec72ce8d20bc85c6f328b0b673b31b97,重复URL
 南京玄武湖公园,https://gcalic.v.myalicdn.com/gc/xwh01_1/index.m3u8,重复URL
 南国都市,https://tencentplay.gztv.com/live/nanguodushi.m3u8?txSecret=550af55c0ea34ce492748481415b6dfa&txTime=1903e7b17de,重复URL
 南国都市,http://tencentplay.gztv.com/live/nanguodushi.m3u8?txSecret=140110ae3d6c936a77f94c4f4d85b0d3&txTime=18d57929bd4,重复URL
 南宁都市生活,http://615bbf179ba53515dccad7b1da5d1ad9.livehwc3.cn/hls.nntv.cn/nnlive/WLSH_24.m3u8?sub_m3u8=true&edge_slice=true&user_session_id=2598844eaee8a4265e706fc14b3fc11d,重复URL
+南通新闻综合,https://mgtv.ottiptv.cc/migu/955227985.m3u8?migutoken=03e9c85f19b5ac291f5863436507873a8f47ec3c677c7857c89bda5778edc8e38fc38b4270aa374c49eee39b39ffaf80a20b750130c27760df766c0cf7b5d437be8dc60c1ced9117d98f6c9b3e,重复URL
 南通新闻综合,http://gslbmgsplive.miguvideo.com/migu/kailu/ntxwzh/51/20250604/index.m3u8?msisdn=202509190801352ef9ff3bad3f4a65b064683f87e439c3&mdspid=&spid=699067&netType=0&sid=5910022178&pid=2028597139&timestamp=20250919080135&Channel_ID=0116_2600000900-99000-201600010010027&ProgramID=955227985&ParentNodeID=-99&assertID=5910022178&client_ip=106.13.250.88&SecurityKey=20250919080135&promotionId=&mvid=5900006706&mcid=500020&playurlVersion=WX-A1-8.9.1-RELEASE&userid=&jmhm=&videocodec=h264&bean=mgspad&tid=android&conFee=0&puData=98aea868da861defcb53a7c9f1ba5a81&ddCalcu=1988eaa15e5aa0b816f89dca78a6315dbecf,重复URL
 南通新闻综合,http://gslbmgsplive.miguvideo.com/migu/kailu/ntxwzh/51/20250604/index.m3u8?msisdn=202510230801432bba200bfb354535b9886f031208cce3&mdspid=&spid=699067&netType=0&sid=5910022178&pid=2028597139&timestamp=20251023080143&Channel_ID=0116_2600000900-99000-201600010010027&ProgramID=955227985&ParentNodeID=-99&assertID=5910022178&client_ip=106.13.250.83&SecurityKey=20251023080143&promotionId=&mvid=5900006706&mcid=500020&playurlVersion=WX-A1-8.9.2-RELEASE&userid=&jmhm=&videocodec=h264&bean=mgspad&tid=android&conFee=0&puData=2e507c0ae7d1d63de0a405794c6b1217&ddCalcu=721ee252105b706cc04a9e775d014da603ed,重复URL
 南通新闻综合,http://gslbmgsplive.miguvideo.com/migu/kailu/ntxwzh/51/20250604/index.m3u8?msisdn=202510240800592b66efbec2f342349068cf9b89987f0e&mdspid=&spid=699067&netType=0&sid=5910022178&pid=2028597139&timestamp=20251024080059&Channel_ID=0116_2600000900-99000-201600010010027&ProgramID=955227985&ParentNodeID=-99&assertID=5910022178&client_ip=106.13.250.88&SecurityKey=20251024080059&promotionId=&mvid=5900006706&mcid=500020&playurlVersion=WX-A1-8.9.2-RELEASE&userid=&jmhm=&videocodec=h264&bean=mgspad&tid=android&conFee=0&puData=c30e235addfb289fd6b4a087caa89b23&ddCalcu=3c23eb029e5820a3a5ca7d8d0fab42b869df,重复URL
@@ -3526,7 +3516,6 @@ www.izbds.com,https://vd3.bdstatic.com/mda-rkaittm5s06vzzyq/sc/cae_h264/17628698
 哈密三套,https://tvpull.hmgbtv.com/hmtv/channelfb0e5c505477aa44/playlist.m3u8,重复URL
 哈密二套,https://tvpull.hmgbtv.com/hmtv/channel108259412c6a6711/playlist.m3u8,重复URL
 哈尔滨娱乐,https://stream.hrbtv.net/ylpd/sd/live.m3u8,重复URL
-哈尔滨娱乐,http://stream.hrbtv.net/ylpd/sd/live.m3u8,重复URL
 哈尔滨娱乐,http://stream.hrbtv.net/ylpd/sd/live.m3u8?zheild#http://stream.hrbtv.net/ylpd/sd/live.m3u8#https://stream.hrbtv.net/ylpd/sd/live.m3u8,重复URL
 哈尔滨娱乐,http://stream.hrbtv.net/ylpd/sd/live.m3u8?zheild,重复URL
 哈尔滨影视,https://stream.hrbtv.net/yspd/sd/live.m3u8,重复URL
@@ -3535,8 +3524,6 @@ www.izbds.com,https://vd3.bdstatic.com/mda-rkaittm5s06vzzyq/sc/cae_h264/17628698
 哈尔滨影视,http://111.43.126.240:9003/hls/5/index.m3u8,重复URL
 哈尔滨影视,http://stream.hrbtv.net/yspd/sd/live.m3u8?zheild#http://stream.hrbtv.net/yspd/sd/live.m3u8,重复URL
 哈尔滨新闻综合,http://stream.hrbtv.net/xwzh/sd/live.m3u8?zheild,重复URL
-哈尔滨生活,https://stream.hrbtv.net/shpd/sd/live.m3u8,重复URL
-哈尔滨生活,https://stream.hrbtv.net/shpd/playlist.m3u8,重复URL
 哈尔滨生活,http://stream.hrbtv.net/shpd/sd/live.m3u8,重复URL
 哈尔滨生活,http://111.43.126.240:9003/hls/3/index.m3u8,重复URL
 哈尔滨生活,http://stream.hrbtv.net/shpd/sd/live.m3u8?zheild,重复URL
@@ -3544,13 +3531,14 @@ www.izbds.com,https://vd3.bdstatic.com/mda-rkaittm5s06vzzyq/sc/cae_h264/17628698
 唐河一套,http://tvpull.dxhmt.cn:9081/tv/11328-1.m3u8,重复URL
 唐河一套,http://tvpull.dxhmt.cn:9081/tv/11328-1.m3u8?zhend#http://tvpull.dxhmt.cn:9081/tv/11328-1.m3u8,重复URL
 唐河一套,http://tvpull.dxhmt.cn:9081/tv/11328-1.m3u8?zhend,重复URL
+嘉兴新闻综合,http://live.zohi.tv/video/s10001-fztv-1/index.m3u8,重复URL
 嘉兴新闻综合,http://tvfile.jyrmt.cn:80/nmip-media/channellive/channel104452/playlist.m3u8,重复URL
 嘉峪关综合,http://play.kankanlive.com/live/1720583434627241.m3u8,重复URL
 四川卫视,http://58.57.40.22:9901/tsfile/live/1046_1.m3u8,重复URL
 四川卫视,http://120.238.94.10:9901/tsfile/live/1058_1.m3u8,重复URL
 四川卫视,http://124.116.183.146:9901/tsfile/live/0123_1.m3u8,重复URL
 四川卫视,http://183.11.239.36:808/hls/50/index.m3u8,重复URL
-四川卫视,http://222.169.85.8:9901/tsfile/live/0123_1.m3u8,重复URL
+四川卫视,http://182.150.23.74:808/hls/38/index.m3u8,重复URL
 四川四姑娘山隆珠措,https://gcalic.v.myalicdn.com/gc/sgns02_1/index.m3u8,重复URL
 四川峨眉山云海日出,https://gcalic.v.myalicdn.com/gc/emsarm_1/index.m3u8,重复URL
 四川峨眉山普贤菩萨铜像,https://gcalic.v.myalicdn.com/gc/emspxps_1/index.m3u8,重复URL
@@ -3564,8 +3552,10 @@ www.izbds.com,https://vd3.bdstatic.com/mda-rkaittm5s06vzzyq/sc/cae_h264/17628698
 垫江综合,http://123.146.162.24:8013/tslslive/noEX9SG/hls/live_sd.m3u8?zzhongqd,重复URL
 夏河,http://pili-live-hls.hfmt.net/gntv/xhtv.m3u8?zgand,重复URL
 大宁综合,http://live.daningtv.com/aac_dngb/playlist.m3u8,重复URL
+大湾区卫视,http://222.128.55.152:9080/live/dwq.m3u8,重复URL
 大湾区卫视,http://183.11.239.36:808/hls/132/index.m3u8,重复URL
 大湾区卫视,http://gmxw.7766.org:808/hls/132/index.m3u8,重复URL
+天映经典,https://epg.pw/stream/cb817875cf26eb683af274dd8cdf7f559a71353d9565c32447c8d98894bc8095.ctv,重复URL
 天津卫视,http://58.57.40.22:9901/tsfile/live/1034_1.m3u8,重复URL
 天津卫视,http://124.116.183.146:9901/tsfile/live/0135_1.m3u8,重复URL
 天津卫视,http://183.11.239.36:808/hls/42/index.m3u8,重复URL
@@ -3574,8 +3564,8 @@ www.izbds.com,https://vd3.bdstatic.com/mda-rkaittm5s06vzzyq/sc/cae_h264/17628698
 天涯石,https://gcalic.v.myalicdn.com/gc/tyhjtys_1/index.m3u8,重复URL
 天祝综合,https://play.kankanlive.com/live/1656487214793905.m3u8,重复URL
 天龙八部,http://www.douzhicloud.site:35455/yy/1351814644,重复URL
-太谷新闻综合,https://p2.vzan.com/slowlive/596867413819827251/live.m3u8?zbid=1725814272&tpid=1516989100&type=0,重复URL
 太谷新闻综合,https://p2.vzan.com/slowlive/596867413819827251/live.m3u8?zbid=1725814272&amp;tpid=1516989100&amp;type=0,重复URL
+太谷新闻综合,https://p2.vzan.com/slowlive/596867413819827251/live.m3u8?zbid=1725814272&tpid=1516989100&type=0,重复URL
 太谷新闻综合,https://p2.vzan.com/slowlive/596867413819827251/live.m3u8?zbid=1725814272&amp;amp;tpid=1516989100&amp;amp;type=0,重复URL
 奎屯哈萨克语,http://218.84.12.186:8002/hls/main/playlist.m3u8,重复URL
 奎屯哈萨克语,http://218.84.12.186:8002/hls/main/playlist.m3u8?zxinjd,重复URL
@@ -3588,8 +3578,8 @@ www.izbds.com,https://vd3.bdstatic.com/mda-rkaittm5s06vzzyq/sc/cae_h264/17628698
 安多卫视,https://liveout.xntv.tv/a65jur/96iln2.m3u8,重复URL
 安多卫视,https://liveout.xntv.tv/a65jur/90p2i1.m3u8?zqinghd,重复URL
 安徽卫视,http://58.57.40.22:9901/tsfile/live/1033_1.m3u8,重复URL
+安徽卫视,http://124.116.183.146:9901/tsfile/live/0130_1.m3u8,重复URL
 安徽卫视,http://183.11.239.36:808/hls/40/index.m3u8,重复URL
-安徽卫视,http://222.169.85.8:9901/tsfile/live/0130_1.m3u8,重复URL
 安徽卫视,http://61.136.172.236:9901/tsfile/live/0130_1.m3u8,重复URL
 安徽池州九华山风景区九华山,https://gcalic.v.myalicdn.com/gc/jhs05_1/index.m3u8,重复URL
 安徽综艺体育,http://112.27.235.94:8000/hls/25/index.m3u8,重复URL
@@ -3605,8 +3595,7 @@ www.izbds.com,https://vd3.bdstatic.com/mda-rkaittm5s06vzzyq/sc/cae_h264/17628698
 宝丰综合,http://tvpull.dxhmt.cn:9081/tv/10421-1.m3u8?%E5%85%B3%E6%B3%A8%E5%BE%AE%E4%BF%A1%E5%85%AC%E4%BC%97%E5%8F%B7[%E6%99%B4%E5%9B%AD],重复URL
 宝丰综合,http://tvpull.dxhmt.cn:9081/tv/10421-1.m3u8?zhend,重复URL
 宾阳综合,http://pulls.myun.tv/live/0dkp33j5.m3u8,重复URL
-寻秦记,http://www.douzhicloud.site:35455/huya/29465848,重复URL
-射雕英雄传,http://www.douzhicloud.site:35455/huya/23824164,重复URL
+宿州公共,http://live.ahsz.tv/video/s10001-ggpd/index.m3u8,重复URL
 屏边综合,http://live.ynurl.com/video/s10040-pbzh/index.m3u8?zyund,重复URL
 山东卫视,http://183.11.239.36:808/hls/43/index.m3u8,重复URL
 山东卫视,http://182.150.23.74:808/hls/23/index.m3u8,重复URL
@@ -3620,6 +3609,7 @@ www.izbds.com,https://vd3.bdstatic.com/mda-rkaittm5s06vzzyq/sc/cae_h264/17628698
 山东教育,http://gslbmgsplive.miguvideo.com/migu/kailu/sdjyws/51/20250915/index.m3u8?msisdn=202510250801048fff0e4b106b4345af1deefefd8d0de7&mdspid=&spid=600697&netType=0&sid=5910022199&pid=2028597139&timestamp=20251025080104&Channel_ID=0116_2600000900-99000-201600010010027&ProgramID=609154353&ParentNodeID=-99&assertID=5910022199&client_ip=106.13.250.90&SecurityKey=20251025080104&promotionId=&mvid=2200208305&mcid=500020&playurlVersion=WX-A1-8.9.2-RELEASE&userid=&jmhm=&videocodec=h264&bean=mgspad&tid=android&conFee=0&puData=5ed99a35aabe1c5a975b3c9f32ac70d9&ddCalcu=95dee0d2799c90aa2335fa9acb3eb15c759a,重复URL
 山东教育,http://gslbmgsplive.miguvideo.com/migu/kailu/sdjyws/51/20250915/index.m3u8?msisdn=202510260801019bd2e5ad2269402db1f8eed1067a0adc&mdspid=&spid=600697&netType=0&sid=5910022199&pid=2028597139&timestamp=20251026080101&Channel_ID=0116_2600000900-99000-201600010010027&ProgramID=609154353&ParentNodeID=-99&assertID=5910022199&client_ip=106.13.250.83&SecurityKey=20251026080101&promotionId=&mvid=2200208305&mcid=500020&playurlVersion=WX-A1-8.9.2-RELEASE&userid=&jmhm=&videocodec=h264&bean=mgspad&tid=android&conFee=0&puData=e3cb945f8f4a023db7f9184295501750&ddCalcu=0e53e7c21b909054559f284f841a90f273bd,重复URL
 山东文旅,http://58.57.40.22:9901/tsfile/live/1023_1.m3u8,重复URL
+山东文旅,http://221.2.148.205:8154/tsfile/live/1004_1.m3u8?key=txiptv&playlive=1&authid=0,重复URL
 山东新闻,http://ls.qingting.fm/live/60180.m3u8,重复URL
 山东生活,http://ls.qingting.fm/live/60260.m3u8,重复URL
 山西卫视,http://liveflash.sxrtv.com/live/sxwshd.m3u8?sub_m3u8=true&edge_slice=true,重复URL
@@ -3647,8 +3637,8 @@ www.izbds.com,https://vd3.bdstatic.com/mda-rkaittm5s06vzzyq/sc/cae_h264/17628698
 广东卫视,http://61.156.228.12:8154/tsfile/live/0125_1.m3u8,重复URL
 广东民生,http://183.11.239.36:808/hls/18/index.m3u8,重复URL
 广东珠江,http://120.238.94.10:9901/tsfile/live/1009_1.m3u8,重复URL
+广东珠江,http://gmxw.7766.org:808/hls/83/index.m3u8,重复URL
 广东珠江,http://183.11.239.36:808/hls/83/index.m3u8,重复URL
-广安公共,http://live1.gatv.com.cn:85/live/GGPD_ggpdzm.m3u8,重复URL
 广安公共,http://live1.gatv.com.cn:85/live/GGPD.m3u8,重复URL
 广安公共,http://live1.gatv.com.cn:85/live/GGPD_ggpdzm.m3u8?zsicd,重复URL
 广州新闻,http://tencentplay.gztv.com/live/xinwen.m3u8?txSecret=d2c2db0b598c02ec1b5623728434d367&txTime=18d57929bd3,重复URL
@@ -3659,7 +3649,7 @@ www.izbds.com,https://vd3.bdstatic.com/mda-rkaittm5s06vzzyq/sc/cae_h264/17628698
 广西卫视,https://hlscdn.liangtv.cn/live/de0f97348eb84f62aa6b7d8cf0430770/dd505d87880c478f901f38560ca4d4e6.m3u8,重复URL
 广西卫视,https://hlscdn.liangtv.cn/live/0c4ef3a44b934cacb8b47121dfada66c/d7e04258157b480dae53883cc6f8123b.m3u8,重复URL
 广西卫视,http://36.32.174.67:60080/newlive/live/hls/38/live.m3u8,重复URL
-广西卫视,http://183.11.239.36:808/hls/56/index.m3u8,重复URL
+广西卫视,http://cssbyd.imwork.net:8082/hls/33/index.m3u8,重复URL
 广西国际,https://hlscdn.liangtv.cn/live/0234c48e0bc24fe1b41b9999a253e581/1075ee38e04f490690f6a36a16e09c79.m3u8,重复URL
 广西国际,http://hlscdn.liangtv.cn/live/0234c48e0bc24fe1b41b9999a253e581/1075ee38e04f490690f6a36a16e09c79.m3u8?fbl=,重复URL
 广西桂林漓江景区,https://gcalic.v.myalicdn.com/gc/gllj01_1/index.m3u8,重复URL
@@ -3708,7 +3698,7 @@ www.izbds.com,https://vd3.bdstatic.com/mda-rkaittm5s06vzzyq/sc/cae_h264/17628698
 新昌新闻综合,https://l.cztvcloud.com/channels/lantian/SXxinchang1/720p.m3u8,重复URL
 新昌新闻综合,http://l.cztvcloud.com/channels/lantian/SXxinchang1/720p.m3u8,重复URL
 新昌生活,http://l.cztvcloud.com/channels/lantian/SXxinchang2/720p.m3u8,重复URL
-新沂生活,http://live.xysrmt.cn/shpd/sd/live.m3u8?zjiangsd,重复URL
+新沂新闻,http://live.xysrmt.cn/xwzh/sd/live.m3u8?zjiangsd",重复URL
 新疆卫视,http://58.57.40.22:9901/tsfile/live/1055_1.m3u8,重复URL
 新疆卫视,http://36.32.174.67:60080/newlive/live/hls/47/live.m3u8,重复URL
 新疆卫视,http://183.11.239.36:808/hls/65/index.m3u8,重复URL
@@ -3762,6 +3752,7 @@ www.izbds.com,https://vd3.bdstatic.com/mda-rkaittm5s06vzzyq/sc/cae_h264/17628698
 景泰综合,https://play.kankanlive.com/live/1624439143745981.m3u8?zgand,重复URL
 月牙泉,https://gcalic.v.myalicdn.com/gc/dhyyqsm_1/index.m3u8,重复URL
 望乡台,https://gcalic.v.myalicdn.com/gc/hlwxt_1/index.m3u8,重复URL
+来宾综合,http://zb.gxlbamc.com:1935/live/lbzh.stream/playlist.m3u8,重复URL
 松潘新闻综合,http://live.spccmc.com:90/live/spxwzh.m3u8,重复URL
 松潘新闻综合,http://live.spccmc.com:90/live/spxwzh.m3u8?zsicd,重复URL
 松阳综合,http://l.cztvcloud.com/channels/lantian/SXsongyang1/720p.m3u8,重复URL
@@ -3775,6 +3766,7 @@ www.izbds.com,https://vd3.bdstatic.com/mda-rkaittm5s06vzzyq/sc/cae_h264/17628698
 梅河口综合,http://stream3.jlntv.cn:80/aac_mhkgb/playlist.m3u8,重复URL
 欢笑剧场,https://shyd.695847.xyz/cms001/ch00000090990000001490/index.m3u8?IASHttpSessionId=RR4967720251014100028031761&ispcode=12,重复URL
 欢笑剧场,https://shyd.695847.xyz/cms001/ch00000090990000001193/index.m3u8?IASHttpSessionId=RR4967720251014100028031761&ispcode=12,重复URL
+武义新闻综合,http://l.cztvcloud.com/channels/lantian/SXwuyi1/720p.m3u8?zzhed,重复URL
 武义新闻综合,http://l.cztvcloud.com/channels/lantian/SXwuyi1/720p.m3u8,重复URL
 武乡新闻综合,http://uzoiczhh.live.sxmty.com/live/hls/0d41f1480c4042d49927858f01fde707/53130407737b417b9a6259b57246bae3.m3u8?zshanxd,重复URL
 武威新闻,https://play.kankanlive.com/live/1693539781636986.m3u8,重复URL
@@ -3796,26 +3788,28 @@ www.izbds.com,https://vd3.bdstatic.com/mda-rkaittm5s06vzzyq/sc/cae_h264/17628698
 江苏卫视,http://58.57.40.22:9901/tsfile/live/1031_1.m3u8,重复URL
 江苏卫视,http://183.11.239.36:808/hls/38/index.m3u8,重复URL
 江苏卫视,http://112.46.85.60:8009/hls/33/index.m3u8,重复URL
+江苏卫视,http://182.150.23.74:808/hls/18/index.m3u8,重复URL
 江苏卫视,http://61.156.228.12:8154/tsfile/live/0127_1.m3u8,重复URL
-江苏卫视,http://218.13.170.98:9901/tsfile/live/1003_1.m3u8,重复URL
 江苏城市,http://gslbmgsplive.miguvideo.com/wd_r2/jstv/jschengshi/600/index.m3u8?msisdn=202509030900312c5ad926e30449e5b9405f27a3fde9a6&mdspid=&spid=699067&netType=0&sid=5500260508&pid=2028597139&timestamp=20250903090031&Channel_ID=0116_2600037000-99000-200300220100002&ProgramID=626064714&ParentNodeID=-99&assertID=5500260508&client_ip=106.13.250.83&SecurityKey=20250903090031&promotionId=&mvid=5100186409&mcid=500020&playurlVersion=WX-A1-8.8.1-RELEASE&userid=&jmhm=&videocodec=h264&bean=mgspad&tid=android&conFee=0&puData=3712225a575d903704881b6443f50a06&ddCalcu=6307va1a02x52af2354a4567b51d89804307&sv=10004&ct=android,重复URL
+江苏城市,https://mgtv.ottiptv.cc/migu/626064714.m3u8?migutoken=02cafbc9d94c9e5e26c383c50287313c55f7e68abea08e811428e9b13cd8e46f93919d1a0859b1c76d8e4e78e1f7b8a6f89d71daf38a8275ac7633b59bcdb7cbf189e3152afb4fa80fadf4b134,重复URL
 江苏城市,http://gslbmgsplive.miguvideo.com/wd_r2/jstv/jschengshi/600/index.m3u8?msisdn=2025102308014130dd0a5e627f42499c11a2ab2361d34e&mdspid=&spid=699067&netType=0&sid=5500260508&pid=2028597139&timestamp=20251023080141&Channel_ID=0116_2600000900-99000-201600010010027&ProgramID=626064714&ParentNodeID=-99&assertID=5500260508&client_ip=106.13.250.83&SecurityKey=20251023080141&promotionId=&mvid=5100186409&mcid=500020&playurlVersion=WX-A1-8.9.2-RELEASE&userid=&jmhm=&videocodec=h264&bean=mgspad&tid=android&conFee=0&puData=5d7ae839a5e5f0b92b0a6b3471204437&ddCalcu=753de4724a60e02813794a35be65af00bb29,重复URL
 江苏城市,http://gslbmgsplive.miguvideo.com/wd_r2/jstv/jschengshi/600/index.m3u8?msisdn=202510240800588fc3b82544a14452832128fa5d5a06e0&mdspid=&spid=699067&netType=0&sid=5500260508&pid=2028597139&timestamp=20251024080058&Channel_ID=0116_2600000900-99000-201600010010027&ProgramID=626064714&ParentNodeID=-99&assertID=5500260508&client_ip=106.13.250.88&SecurityKey=20251024080058&promotionId=&mvid=5100186409&mcid=500020&playurlVersion=WX-A1-8.9.2-RELEASE&userid=&jmhm=&videocodec=h264&bean=mgspad&tid=android&conFee=0&puData=8926243c6d96bc2b45ee86fbcb2451f1&ddCalcu=18f9e12256642024b3ccb6fd6986ebec524b,重复URL
 江苏城市,http://gslbmgsplive.miguvideo.com/wd_r2/jstv/jschengshi/600/index.m3u8?msisdn=20251025080101ab69bd3b555244cebecc8604efb5a5a2&mdspid=&spid=699067&netType=0&sid=5500260508&pid=2028597139&timestamp=20251025080101&Channel_ID=0116_2600000900-99000-201600010010027&ProgramID=626064714&ParentNodeID=-99&assertID=5500260508&client_ip=106.13.250.90&SecurityKey=20251025080101&promotionId=&mvid=5100186409&mcid=500020&playurlVersion=WX-A1-8.9.2-RELEASE&userid=&jmhm=&videocodec=h264&bean=mgspad&tid=android&conFee=0&puData=683e0ed68a2d415532c228c24c8c2767&ddCalcu=7668e7322e6c008ecd4628ca822d24c12535,重复URL
-江苏城市,http://gslbmgsplive.miguvideo.com/wd_r2/jstv/jschengshi/600/index.m3u8?msisdn=202510260800570341656ce9a34a0299391875145072ee&mdspid=&spid=699067&netType=0&sid=5500260508&pid=2028597139&timestamp=20251026080057&Channel_ID=0116_2600000900-99000-201600010010027&ProgramID=626064714&ParentNodeID=-99&assertID=5500260508&client_ip=106.13.250.83&SecurityKey=20251026080057&promotionId=&mvid=5100186409&mcid=500020&playurlVersion=WX-A1-8.9.2-RELEASE&userid=&jmhm=&videocodec=h264&bean=mgspad&tid=android&conFee=0&puData=9dcd3c19797e0c00a88aca0c9a5b4642&ddCalcu=294de6c24d6b305ca199c709a7cea08c80a0,重复URL
 江苏影视,http://gslbmgsplive.miguvideo.com/wd_r2/jstv/jsyingshi/600/index.m3u8?msisdn=2025090309003105f41cc73cf04c92833c2265c0140111&mdspid=&spid=699067&netType=0&sid=5500260517&pid=2028597139&timestamp=20250903090031&Channel_ID=0116_2600037000-99000-200300220100002&ProgramID=626064697&ParentNodeID=-99&assertID=5500260517&client_ip=106.13.250.83&SecurityKey=20250903090031&promotionId=&mvid=5100186424&mcid=500020&playurlVersion=WX-A1-8.8.1-RELEASE&userid=&jmhm=&videocodec=h264&bean=mgspad&tid=android&conFee=0&puData=6814112e9248d0d7b2bc482bd82b9897&ddCalcu=7698v81a94wb1a2182deb9228448cdb02db7&sv=10004&ct=android,重复URL
+江苏影视,https://mgtv.ottiptv.cc/migu/626064697.m3u8?migutoken=6508bc5fae9f621ed6ec72d39eb7f60ab52c4b412a5ee7f5b612640ecccbde1f9584f0a97aebc090cb58f73e9e079ced87b059526a6614b5a9ad5a23ff4863d36adcc1ed699583e058fac3330e,重复URL
 江苏影视,http://gslbmgsplive.miguvideo.com/wd_r2/jstv/jsyingshi/600/index.m3u8?msisdn=20251023080142772bf60e882f42cebdb0f8be760fd6b7&mdspid=&spid=699067&netType=0&sid=5500260517&pid=2028597139&timestamp=20251023080142&Channel_ID=0116_2600000900-99000-201600010010027&ProgramID=626064697&ParentNodeID=-99&assertID=5500260517&client_ip=106.13.250.83&SecurityKey=20251023080142&promotionId=&mvid=5100186424&mcid=500020&playurlVersion=WX-A1-8.9.2-RELEASE&userid=&jmhm=&videocodec=h264&bean=mgspad&tid=android&conFee=0&puData=08704ae8cfefd451664dee9c23c79ed1&ddCalcu=10d8ee72906740ca3e28cc9feeefdd446561,重复URL
 江苏影视,http://gslbmgsplive.miguvideo.com/wd_r2/jstv/jsyingshi/600/index.m3u8?msisdn=202510240800581f7cec0b4b0d4f85a55224d468cbc56d&mdspid=&spid=699067&netType=0&sid=5500260517&pid=2028597139&timestamp=20251024080058&Channel_ID=0116_2600000900-99000-201600010010027&ProgramID=626064697&ParentNodeID=-99&assertID=5500260517&client_ip=106.13.250.88&SecurityKey=20251024080058&promotionId=&mvid=5100186424&mcid=500020&playurlVersion=WX-A1-8.9.2-RELEASE&userid=&jmhm=&videocodec=h264&bean=mgspad&tid=android&conFee=0&puData=8a89abe289ca2d05b7f942cd6dbe231d&ddCalcu=d81ae382296ea0bbde62d8c92c4a92fd70b5,重复URL
 江苏徐州云龙湖风景区云龙山观景台西,https://gcalic.v.myalicdn.com/gc/ylh04_1/index.m3u8,重复URL
 江苏教育,http://gslbmgsplive.miguvideo.com/wd_r2/jstv/jsjiaoyu/600/index.m3u8?msisdn=20250903090031d7e536b9e78c4a42b0841922e44a4a36&mdspid=&spid=699067&netType=0&sid=5500287493&pid=2028597139&timestamp=20250903090031&Channel_ID=0116_2600037000-99000-200300220100002&ProgramID=628008321&ParentNodeID=-99&assertID=5500287493&client_ip=106.13.250.83&SecurityKey=20250903090031&promotionId=&mvid=5101012819&mcid=500020&playurlVersion=WX-A1-8.8.1-RELEASE&userid=&jmhm=&videocodec=h264&bean=mgspad&tid=android&conFee=0&puData=d3e3bd992ebf554d360ba9b83b9b179d&ddCalcu=dd93v7ea13bbba9db93982be9bafb505643d&sv=10004&ct=android,重复URL
+江苏教育,https://mgtv.ottiptv.cc/migu/628008321.m3u8?migutoken=2a14b3aabc488208548ee93104e880b74d4a395bfa44d7066aecd401da116ee25176f823087e3b4982d4720bd660d81bfff58ed9193c1df26c94a3e4f7a6c10952e5d975a5e4f6244fd9dcc62d,重复URL
 江苏教育,http://gslbmgsplive.miguvideo.com/wd_r2/jstv/jsjiaoyu/600/index.m3u8?msisdn=202510230801429e18fd6e59b3463fbb4cb21323871fcd&mdspid=&spid=699067&netType=0&sid=5500287493&pid=2028597139&timestamp=20251023080142&Channel_ID=0116_2600000900-99000-201600010010027&ProgramID=628008321&ParentNodeID=-99&assertID=5500287493&client_ip=106.13.250.83&SecurityKey=20251023080142&promotionId=&mvid=5101012819&mcid=500020&playurlVersion=WX-A1-8.9.2-RELEASE&userid=&jmhm=&videocodec=h264&bean=mgspad&tid=android&conFee=0&puData=34594832361df23b864151102172f277&ddCalcu=7374e252f982407813220316115d1f42638b,重复URL
 江西卫视,http://58.57.40.22:9901/tsfile/live/1043_1.m3u8,重复URL
 江西卫视,http://36.32.174.67:60080/newlive/live/hls/22/live.m3u8,重复URL
 江西卫视,http://183.11.239.36:808/hls/44/index.m3u8,重复URL
 江西卫视,http://36.32.174.67:60080/newlive/live/hls/31/live.m3u8,重复URL
 汪清综合,http://stream5.jlntv.cn/wq/sd/live.m3u8,重复URL
-汪清综合,http://stream5.jlntv.cn/wq/sd/live.m3u8?_upt=eb80947d1699080781,重复URL
 汪清综合,http://stream5.jlntv.cn/wq/sd/live.m3u8?zjild,重复URL
+汪清综合,http://stream5.jlntv.cn/wq/sd/live.m3u8?_upt=eb80947d1699080781,重复URL
 汶川新闻综合,http://live.iwcmt.cn:90/live/zhxw.m3u8,重复URL
 汶川新闻综合,http://live.iwcmt.cn:90/live/zhxw.m3u8?zsicd,重复URL
 汶川新闻综合,http://file.ysxtv.cn/cms/videos/nmip-media/channellive/channel4/playlist.m3u8?zsicd#rtmp://tv.mcrm.org.cn:1935/channellive/tv01,重复URL
@@ -3839,7 +3833,6 @@ www.izbds.com,https://vd3.bdstatic.com/mda-rkaittm5s06vzzyq/sc/cae_h264/17628698
 河南卫视,http://183.11.239.36:808/hls/51/index.m3u8,重复URL
 泌阳新闻综合,http://tvpull.dxhmt.cn:9081/tv/11726-1.m3u8,重复URL
 泌阳新闻综合,http://tvpull.dxhmt.cn:9081/tv/11726-1.m3u8?%E5%85%B3%E6%B3%A8%E5%BE%AE%E4%BF%A1%E5%85%AC%E4%BC%97%E5%8F%B7[%E6%99%B4%E5%9B%AD],重复URL
-泗洪新闻综合,http://live1.habctv.com/ggpdsl/sd/live.m3u8?zjiangsd#http://live1.habctv.com/ggpdsl/sd/live.m3u8,重复URL
 泗阳综合,http://3739115337.cloudvdn.com/a.m3u8?domain=siyang-tv-hls.cm.jstv.com&player=nwEAAKHdjSKP_58X&secondToken=secondToken%3A5FUijZmDyNMxtCDdne0YzSAwjuw&streamid=siyang-tv%3Asiyang-tv%2Fsiyangzh&v3=1,重复URL
 泰山主峰,https://gcalic.v.myalicdn.com/gc/taishan01_1/index.m3u8,重复URL
 泰山十八盘,https://gcalic.v.myalicdn.com/gc/taishan05_1/index.m3u8,重复URL
@@ -3888,6 +3881,7 @@ www.izbds.com,https://vd3.bdstatic.com/mda-rkaittm5s06vzzyq/sc/cae_h264/17628698
 浙江新闻,http://ali-vl.cztv.com/channels/lantian/channel007/360p.m3u8,重复URL
 浙江新闻,http://ali-m-l.cztv.com/channels/lantian/channel07/720p.m3u8,重复URL
 浙江新闻,http://ali-m-l.cztv.com/channels/lantian/channel007/720p.m3u8,重复URL
+浙江新闻,http://101.66.198.198:9901/tsfile/live/1005_1.m3u8?key=txiptv&playlive=0&authid=0,重复URL
 浙江新闻,https://ali-m-l.cztv.com/channels/lantian/channel007/1080p.m3u8?,重复URL
 浙江民生,http://ali-m-l.cztv.com/channels/lantian/channel006/1080p.m3u8,重复URL
 浙江民生,http://ali-m-l.cztv.com/channels/lantian/channel06/720p.m3u8,重复URL
@@ -3920,7 +3914,6 @@ www.izbds.com,https://vd3.bdstatic.com/mda-rkaittm5s06vzzyq/sc/cae_h264/17628698
 海南卫视,http://36.32.174.67:60080/newlive/live/hls/46/live.m3u8,重复URL
 海南卫视,http://183.11.239.36:808/hls/124/index.m3u8,重复URL
 海南卫视,http://cssbyd.imwork.net:8082/hls/31/index.m3u8,重复URL
-海南卫视,https://www.yangshipin.cn/tv/home?pid=600002506,重复URL
 海南新闻,http://ls.qingting.fm/live/1861.m3u8,重复URL
 海宁新闻综合,https://p2hs.vzan.com/slowlive/317913155078575177/live.m3u8,重复URL
 海宁新闻综合,http://p2hs.vzan.com/slowlive/317913155078575177/live.m3u8,重复URL
@@ -3935,6 +3928,7 @@ www.izbds.com,https://vd3.bdstatic.com/mda-rkaittm5s06vzzyq/sc/cae_h264/17628698
 淘娱乐,http://zjzcf.synology.me:35455/bptv/10000100000000050000000003887499.m3u8,重复URL
 淮安影院娱乐,http://live1.habctv.com/ysylsl/sd/live.m3u8,重复URL
 淮安影院娱乐,http://live1.habctv.com/ysylsl/sd/live.m3u8?zjiangsd,重复URL
+淮安新闻综合,https://mgtv.ottiptv.cc/migu/639731826.m3u8?migutoken=383a4690d772fe16ccec98f2da2e7e0c3b362ae2d9a0fa219e9a7bb76bb96d4ca6392f861efb0a61154552c563897f4660867745735f85e310ec9fb52d7fc55cd30da8d55169f8c415c5a69a15,重复URL
 淮安新闻综合,http://gslbmgsplive.miguvideo.com/wd_r2/jstv/haxinwenzonghe/600/index.m3u8?msisdn=2025091908013583ce7f12af754a16ba29f7c2626810f0&mdspid=&spid=699067&netType=0&sid=5500469363&pid=2028597139&timestamp=20250919080135&Channel_ID=0116_2600000900-99000-201600010010027&ProgramID=639731826&ParentNodeID=-99&assertID=5500469363&client_ip=106.13.250.88&SecurityKey=20250919080135&promotionId=&mvid=5102012618&mcid=500020&playurlVersion=WX-A1-8.9.1-RELEASE&userid=&jmhm=&videocodec=h264&bean=mgspad&tid=android&conFee=0&puData=8f83667dfa073a4952557e51d015d22c&ddCalcu=c82fe281d395601607dd1f5ae077535a2459,重复URL
 淮安新闻综合,http://gslbmgsplive.miguvideo.com/wd_r2/jstv/haxinwenzonghe/600/index.m3u8?msisdn=20251023080142941c175264e346bdb28fc24a4c0fff92&mdspid=&spid=699067&netType=0&sid=5500469363&pid=2028597139&timestamp=20251023080142&Channel_ID=0116_2600000900-99000-201600010010027&ProgramID=639731826&ParentNodeID=-99&assertID=5500469363&client_ip=106.13.250.83&SecurityKey=20251023080142&promotionId=&mvid=5102012618&mcid=500020&playurlVersion=WX-A1-8.9.2-RELEASE&userid=&jmhm=&videocodec=h264&bean=mgspad&tid=android&conFee=0&puData=228f78becdd3f1c2f4ea311cb51557e2&ddCalcu=22e2e7825f9570185bbecc1d1d33afe14cf2,重复URL
 淮安新闻综合,http://gslbmgsplive.miguvideo.com/wd_r2/jstv/haxinwenzonghe/600/index.m3u8?msisdn=2025102408005841cc8f9eb2074fbabaeaef4617e0ca47&mdspid=&spid=699067&netType=0&sid=5500469363&pid=2028597139&timestamp=20251024080058&Channel_ID=0116_2600000900-99000-201600010010027&ProgramID=639731826&ParentNodeID=-99&assertID=5500469363&client_ip=106.13.250.88&SecurityKey=20251024080058&promotionId=&mvid=5102012618&mcid=500020&playurlVersion=WX-A1-8.9.2-RELEASE&userid=&jmhm=&videocodec=h264&bean=mgspad&tid=android&conFee=0&puData=d70ba06f67ad26900d75c4f6652b7fa4&ddCalcu=4da7ef027b9ba020566f66f74acd5276d900,重复URL
@@ -3966,13 +3960,14 @@ www.izbds.com,https://vd3.bdstatic.com/mda-rkaittm5s06vzzyq/sc/cae_h264/17628698
 湖南张家界御笔峰,https://gcalic.v.myalicdn.com/gc/zjjybf_1/index.m3u8,重复URL
 湖南张家界水绕四门,https://gcalic.v.myalicdn.com/gc/zjjsrsm_1/index.m3u8,重复URL
 湖州公共民生,http://hzcm-live.media.hugd.com/1e6b554b9ab74513958c0e1ffe664d22/9acaa7634309494cb29a85eb12136607.m3u8?auth_key=2272900830-9a2389b8bf4e49d580d4ad807423d326-0-ea78a5c7a678c436263582d368f5009e,重复URL
-湖州文化娱乐,https://hzcm-live.media.hugd.com/613c47f0ab0d4eaa98b21378d0db6ded/0051d31c9dd543a7825eea4e49675b2a.m3u8?auth_key=2277598059-0a5ebfa1c0dc4671b42a60810fc37039-0-fa625b7d1feab612062453c12e3c8887,重复URL
-湖州文化娱乐,http://hzcm-live.media.hugd.com/613c47f0ab0d4eaa98b21378d0db6ded/0051d31c9dd543a7825eea4e49675b2a.m3u8?auth_key=2277598059-0a5ebfa1c0dc4671b42a60810fc37039-0-fa625b7d1feab612062453c12e3c8887,重复URL
 湖州文化娱乐,http://hzcm-live.media.hugd.com/613c47f0ab0d4eaa98b21378d0db6ded/0051d31c9dd543a7825eea4e49675b2a.m3u8?auth_key=2277598059-0a5ebfa1c0dc4671b42a60810fc37039-0-fa625b7d1feab612062453c12e3c8887&fbl=,重复URL
-湖州新闻综合,http://hzcm-live.media.hugd.com/3f5fa7d64c7c46a38c6bd8ad35e836cc/65128273761b4731ae53729ea6dcf932.m3u8?auth_key=2277598215-9d21c15111244bea8d298c361d31a72e-0-d031198f58d44b0e91ba2e3f3b188865&fbl=,重复URL
-湖州新闻综合,http://hzcm-live.media.hugd.com/3f5fa7d64c7c46a38c6bd8ad35e836cc/65128273761b4731ae53729ea6dcf932.m3u8?auth_key=2277598215-9d21c15111244bea8d298c361d31a72e-0-d031198f58d44b0e91ba2e3f3b188865,重复URL
+湖州文化娱乐,http://hzcm-live.media.hugd.com/613c47f0ab0d4eaa98b21378d0db6ded/0051d31c9dd543a7825eea4e49675b2a.m3u8?auth_key=2277598059-0a5ebfa1c0dc4671b42a60810fc37039-0-fa625b7d1feab612062453c12e3c8887,重复URL
+湖州文化娱乐,https://hzcm-live.media.hugd.com/613c47f0ab0d4eaa98b21378d0db6ded/0051d31c9dd543a7825eea4e49675b2a.m3u8?auth_key=2277598059-0a5ebfa1c0dc4671b42a60810fc37039-0-fa625b7d1feab612062453c12e3c8887,重复URL
 湖州新闻综合,https://hzcm-live.media.hugd.com/3f5fa7d64c7c46a38c6bd8ad35e836cc/65128273761b4731ae53729ea6dcf932.m3u8?auth_key=2277598215-9d21c15111244bea8d298c361d31a72e-0-d031198f58d44b0e91ba2e3f3b188865,重复URL
+湖州新闻综合,http://hzcm-live.media.hugd.com/3f5fa7d64c7c46a38c6bd8ad35e836cc/65128273761b4731ae53729ea6dcf932.m3u8?auth_key=2277598215-9d21c15111244bea8d298c361d31a72e-0-d031198f58d44b0e91ba2e3f3b188865&fbl=,重复URL
 湖州新闻综合,http://hzcm-live.media.hugd.com/3f5fa7d64c7c46a38c6bd8ad35e836cc/65128273761b4731ae53729ea6dcf932.m3u8?auth_key=2277598215-9d21c15111244bea8d298c361d31a72e-0-d031198f58d44b0e91ba2e3f3b188865&amp;fbl=,重复URL
+湖州新闻综合,http://hzcm-live.media.hugd.com/3f5fa7d64c7c46a38c6bd8ad35e836cc/65128273761b4731ae53729ea6dcf932.m3u8?auth_key=2277598215-9d21c15111244bea8d298c361d31a72e-0-d031198f58d44b0e91ba2e3f3b188865,重复URL
+溧水新闻综合,https://mgtv.ottiptv.cc/migu/639737327.m3u8?migutoken=4c07b7afe94ad06d114a6bccae5747804d493ab7b1100069e485b78d3cb91c0fb0dbd92aa90a6157d7066e5b90780fabf5e150e17ebb9bc72b8bb18f43c5acddd1c0fd4d1904a99210aa962135,重复URL
 溧水新闻综合,http://gslbmgsplive.miguvideo.com/migu/kailu/wxxwzh/51/20250604/index.m3u8?msisdn=202509190801368edab7fc3daa499fa4e273d73d8b9f2d&mdspid=&spid=699067&netType=0&sid=5500469349&pid=2028597139&timestamp=20250919080136&Channel_ID=0116_2600000900-99000-201600010010027&ProgramID=639737327&ParentNodeID=-99&assertID=5500469349&client_ip=106.13.250.88&SecurityKey=20250919080136&promotionId=&mvid=5102012612&mcid=500020&playurlVersion=WX-A1-8.9.1-RELEASE&userid=&jmhm=&videocodec=h264&bean=mgspad&tid=android&conFee=0&puData=c3e71707790a9a58ff5c4df8b135c614&ddCalcu=4c13e6e1c795103710b787f9d04ac95af5f8,重复URL
 溧水新闻综合,http://gslbmgsplive.miguvideo.com/migu/kailu/wxxwzh/51/20250604/index.m3u8?msisdn=20251023080144558f016a4098437fa4b5f82b16dbaeb4&mdspid=&spid=699067&netType=0&sid=5500469349&pid=2028597139&timestamp=20251023080144&Channel_ID=0116_2600000900-99000-201600010010027&ProgramID=639737327&ParentNodeID=-99&assertID=5500469349&client_ip=106.13.250.83&SecurityKey=20251023080144&promotionId=&mvid=5102012612&mcid=500020&playurlVersion=WX-A1-8.9.2-RELEASE&userid=&jmhm=&videocodec=h264&bean=mgspad&tid=android&conFee=0&puData=d70adf995324060624c3825a44083d19&ddCalcu=9d17ed023a98d00f4949a553228430c64026,重复URL
 溧水新闻综合,http://gslbmgsplive.miguvideo.com/migu/kailu/wxxwzh/51/20250604/index.m3u8?msisdn=202510240800594a9687dbd7324f45ae45174f1227d3ad&mdspid=&spid=699067&netType=0&sid=5500469349&pid=2028597139&timestamp=20251024080059&Channel_ID=0116_2600000900-99000-201600010010027&ProgramID=639737327&ParentNodeID=-99&assertID=5500469349&client_ip=106.13.250.88&SecurityKey=20251024080059&promotionId=&mvid=5102012612&mcid=500020&playurlVersion=WX-A1-8.9.2-RELEASE&userid=&jmhm=&videocodec=h264&bean=mgspad&tid=android&conFee=0&puData=287022ec4f8292e91b2eca7dd26993d3&ddCalcu=32d8e372909920622edcd47fa8c2e922be19,重复URL
@@ -3980,8 +3975,8 @@ www.izbds.com,https://vd3.bdstatic.com/mda-rkaittm5s06vzzyq/sc/cae_h264/17628698
 滑县新闻,http://tvpull.dxhmt.cn:9081/tv/10526-1.m3u8?%E5%85%B3%E6%B3%A8%E5%BE%AE%E4%BF%A1%E5%85%AC%E4%BC%97%E5%8F%B7[%E6%99%B4%E5%9B%AD],重复URL
 滦平新闻,http://jwplay.hebyun.com.cn/live/LPTV001/1500k/tzwj_video.m3u8,重复URL
 滨海新闻综合,http://traffic.jbh.tjbh.com/live/bhtv10/playlist.m3u8,重复URL
-漫画解说,https://www.goodiptv.club/douyu/5907076,重复URL
 漫画解说,https://yylunbo.ottiptv.cc/yy/1382735568,重复URL
+漫画解说,https://www.goodiptv.club/douyu/5907076,重复URL
 潢川综合,http://tvpull.dxhmt.cn:9081/tv/11526-1.m3u8,重复URL
 潢川综合,http://tvpull.dxhmt.cn:9081/tv/11526-1.m3u8?%E5%85%B3%E6%B3%A8%E5%BE%AE%E4%BF%A1%E5%85%AC%E4%BC%97%E5%8F%B7[%E6%99%B4%E5%9B%AD],重复URL
 潮流音乐,http://play-radio-stream3.hndt.com/now/Or5au0KN/playlist.m3u8,重复URL
@@ -3991,13 +3986,13 @@ www.izbds.com,https://vd3.bdstatic.com/mda-rkaittm5s06vzzyq/sc/cae_h264/17628698
 灵璧综合,http://live.cms.anhuinews.com/video/s10003-lbtv/index.m3u8,重复URL
 灵璧综合,http://live.cms.anhuinews.com/video/s10003-lbtv/index.m3u8?zanhd#http://live.cms.anhuinews.com/video/s10003-lbtv/index.m3u8,重复URL
 狮子山鸟瞰丽江古城,https://gcalic.v.myalicdn.com/gc/ljgcszsnkgc_1/index.m3u8,重复URL
-猫和老鼠,http://www.douzhicloud.site:35455/huya/11352879,重复URL
-玛纳斯,http://218.84.127.245:1026/hls/main1/playlist.m3u8?zxinjd,重复URL
+猫和老鼠,https://live.iill.top/huya/11352879,重复URL
+玛纳斯综合,http://218.84.127.245:1026/hls/main1/playlist.m3u8,重复URL
+玛纳斯综合,http://218.84.127.245:1026/hls/main1/playlist.m3u8?zxinjd,重复URL
 玛纳斯综合,http://218.84.127.245:1026/hls/main1/playlist.m3u8?zxinjd,,重复URL
 珲春新闻,http://stream8.jlntv.cn/hctv/sd/live.m3u8?zjild,重复URL
 瑞丽综合,http://live.ynurl.com/video/s10021-rltv/index.m3u8?zyund,重复URL
 璧山综合,http://222.179.42.129:8181/hls1.m3u8,重复URL
-甄子丹电影,http://www.douzhicloud.site:35455/huya/11352935,重复URL
 甘南县综合,https://stream.hrbtv.net/zxpd/sd/live.m3u8,重复URL
 甘肃卫视,http://58.57.40.22:9901/tsfile/live/1056_1.m3u8,重复URL
 甘肃卫视,http://120.238.94.10:9901/tsfile/live/1079_1.m3u8,重复URL
@@ -4012,7 +4007,6 @@ www.izbds.com,https://vd3.bdstatic.com/mda-rkaittm5s06vzzyq/sc/cae_h264/17628698
 白银综合,https://play.kankanlive.com/live/1720408089419110.m3u8,重复URL
 盈江综合,http://live.ynurl.com/video/s10016-YJTV-2/index.m3u8?zyund,重复URL
 直播中国,https://gcalic.v.myalicdn.com/gc/wgw05_1/index.m3u8?contentid=2820180516001,重复URL
-睛彩广场舞,http://13937899.xyz:35455/itv/3000000020000011523.m3u8?cdn=FifastbLive,重复URL
 睛彩广场舞,http://zjzcf.synology.me:35455/itv/3000000020000011523.m3u8?cdn=FifastbLive,重复URL
 石屏综合,http://live.ynurl.com/video/s10059-SPTV/index.m3u8?zyund,重复URL
 砚山电视台,http://live.ynurl.com/video/s10020-ystv/index.m3u8?zyund,重复URL
@@ -4021,7 +4015,6 @@ www.izbds.com,https://vd3.bdstatic.com/mda-rkaittm5s06vzzyq/sc/cae_h264/17628698
 磐石综合,http://stream3.jlntv.cn:80/aac_psgb/sd/live.m3u8,重复URL
 祁县新闻综合,http://ggpagerl.live.sxmty.com/live/hls/b350dc1ac5da45c2b2233f6eb122ddf4/49d3766c7f204685a2a8f027b234c33d.m3u8?zshanxd,重复URL
 祁门综合,http://zbbf2.ahbztv.com/live/416.m3u8?zanhd,重复URL
-神雕侠侣,http://www.douzhicloud.site:35455/huya/23865171,重复URL
 福州少儿,http://live.zohi.tv/video/s10001-fztv-4/index.m3u8,重复URL
 福建武夷山玉女峰,https://gcalic.v.myalicdn.com/gc/wysynf_1/index.m3u8,重复URL
 福建漳州醉美沙滩翡翠湾,https://gcalic.v.myalicdn.com/gc/fcw03_1/index.m3u8,重复URL
@@ -4084,7 +4077,7 @@ www.izbds.com,https://vd3.bdstatic.com/mda-rkaittm5s06vzzyq/sc/cae_h264/17628698
 西藏卫视,http://36.32.174.67:60080/newlive/live/hls/48/live.m3u8,重复URL
 西藏卫视,http://cssbyd.imwork.net:8082/hls/46/index.m3u8,重复URL
 西藏卫视,http://183.11.239.36:808/hls/64/index.m3u8,重复URL
-西藏卫视,http://113.25.252.226:9901/tsfile/live/1003_1.m3u8,重复URL
+西藏卫视,http://221.2.148.205:8154/tsfile/live/0111_1.m3u8?key=txiptv&playlive=1&authid=0,重复URL
 诸暨新闻综合,http://l.cztvcloud.com/channels/lantian/SXzhuji3/720p.m3u8?zzhed,重复URL
 诸暨新闻综合,https://l.cztvcloud.com/channels/lantian/SXzhuji3/720p.m3u8,重复URL
 象山新闻综合,http://l.cztvcloud.com/channels/lantian/SXxiangshan1/720p.m3u8,重复URL
@@ -4092,16 +4085,16 @@ www.izbds.com,https://vd3.bdstatic.com/mda-rkaittm5s06vzzyq/sc/cae_h264/17628698
 贵州卫视,http://58.57.40.22:9901/tsfile/live/1042_1.m3u8,重复URL
 贵州卫视,http://cssbyd.imwork.net:8082/hls/39/index.m3u8,重复URL
 贵州卫视,http://183.11.239.36:808/hls/49/index.m3u8,重复URL
-贵州卫视,http://222.169.85.8:9901/tsfile/live/0120_1.m3u8,重复URL
 贵州卫视,http://182.150.23.74:808/hls/26/index.m3u8,重复URL
+贵州卫视,http://111.61.236.247:9081/hls/37/index.m3u8,重复URL
 贵州省兴义市万峰林,https://gcalic.v.myalicdn.com/gc/xywfl_1/index.m3u8,重复URL
 赣州公共,https://pili-live-hls-sjxgz2024.sobeylive.com/jxgz2024/396_q_live172526334096251.m3u8,重复URL
 赣州教育,https://pili-live-hls-sjxgz2024.sobeylive.com/jxgz2024/396_q_live172526335287668.m3u8,重复URL
 赣州新闻,https://pili-live-hls-sjxgz2024.sobeylive.com/jxgz2024/396_q_live172526329228525.m3u8,重复URL
 足球频道,https://nmglive.imfc.cn/5n1r1c/182396.m3u8,重复URL
 辉南新闻综合,http://stream5.jlntv.cn/hn/sd/live.m3u8,重复URL
-辉南新闻综合,http://stream5.jlntv.cn/hn/sd/live.m3u8?zjild,重复URL
 辉南新闻综合,http://stream5.jlntv.cn/hn/sd/live.m3u8?%E5%85%B3%E6%B3%A8%E5%BE%AE%E4%BF%A1%E5%85%AC%E4%BC%97%E5%8F%B7[%E6%99%B4%E5%9B%AD],重复URL
+辉南新闻综合,http://stream5.jlntv.cn/hn/sd/live.m3u8?zjild,重复URL
 辽宁卫视,http://58.57.40.22:9901/tsfile/live/1035_1.m3u8,重复URL
 辽宁卫视,http://183.11.239.36:808/hls/47/index.m3u8,重复URL
 辽宁卫视,http://61.156.228.12:8154/tsfile/live/0121_1.m3u8,重复URL
@@ -4109,6 +4102,7 @@ www.izbds.com,https://vd3.bdstatic.com/mda-rkaittm5s06vzzyq/sc/cae_h264/17628698
 辽宁卫视,http://123.130.84.106:8154/tsfile/live/0121_1.m3u8,重复URL
 辽宁都市,https://ls.qingting.fm/live/1099/64k.m3u8,重复URL
 连云港新闻综合,http://gslbmgsplive.miguvideo.com/wd_r2/jstv/lygxinwenzonghe/600/index.m3u8?msisdn=20250903090032646047095bc64a1c968e703401c7fec1&mdspid=&spid=699067&netType=0&sid=5500469369&pid=2028597139&timestamp=20250903090032&Channel_ID=0116_2600037000-99000-200300220100002&ProgramID=639731715&ParentNodeID=-99&assertID=5500469369&client_ip=106.13.250.83&SecurityKey=20250903090032&promotionId=&mvid=5102012621&mcid=500020&playurlVersion=WX-A1-8.8.1-RELEASE&userid=&jmhm=&videocodec=h264&bean=mgspad&tid=android&conFee=0&puData=c19beb3ac61dd99e40036c371af55211&ddCalcu=1c11v29a5bx5eafba31a7c36c16d3d09094e&sv=10004&ct=android,重复URL
+连云港新闻综合,https://mgtv.ottiptv.cc/migu/639731715.m3u8?migutoken=70f90182e47785fca234628a083c2a775b48319c0603f2641b5a891ba90b43816e51fb1b07cad8793011132425ebbc0f1568b3bc433d2f04e40344c5fe163be8bf6490e14ab6b96b4419f3f134,重复URL
 连云港新闻综合,http://gslbmgsplive.miguvideo.com/wd_r2/jstv/lygxinwenzonghe/600/index.m3u8?msisdn=2025102308014346764a53b41f40e58f68d1df3227c8be&mdspid=&spid=699067&netType=0&sid=5500469369&pid=2028597139&timestamp=20251023080143&Channel_ID=0116_2600000900-99000-201600010010027&ProgramID=639731715&ParentNodeID=-99&assertID=5500469369&client_ip=106.13.250.83&SecurityKey=20251023080143&promotionId=&mvid=5102012621&mcid=500020&playurlVersion=WX-A1-8.9.2-RELEASE&userid=&jmhm=&videocodec=h264&bean=mgspad&tid=android&conFee=0&puData=7adf3d6cc0bed6d0855e6f39909c760d&ddCalcu=d70ae6d27f9c309d069c9c30fb6eed565d80,重复URL
 连云港新闻综合,http://gslbmgsplive.miguvideo.com/wd_r2/jstv/lygxinwenzonghe/600/index.m3u8?msisdn=202510240800585b70464e74f54a9fbef4b5d83d2330c2&mdspid=&spid=699067&netType=0&sid=5500469369&pid=2028597139&timestamp=20251024080058&Channel_ID=0116_2600000900-99000-201600010010027&ProgramID=639731715&ParentNodeID=-99&assertID=5500469369&client_ip=106.13.250.88&SecurityKey=20251024080058&promotionId=&mvid=5102012621&mcid=500020&playurlVersion=WX-A1-8.9.2-RELEASE&userid=&jmhm=&videocodec=h264&bean=mgspad&tid=android&conFee=0&puData=6a419a1b77265f44b434d3cc2b7ad8d0&ddCalcu=06dae842d19a907ab12bc7c732d6453f44b4,重复URL
 通化县,http://stream5.jlntv.cn/thx/sd/live.m3u8?zjild,重复URL
@@ -4139,16 +4133,17 @@ www.izbds.com,https://vd3.bdstatic.com/mda-rkaittm5s06vzzyq/sc/cae_h264/17628698
 重庆卫视,http://36.32.174.67:60080/newlive/live/hls/34/live.m3u8,重复URL
 重庆卫视,http://124.116.183.146:9901/tsfile/live/0142_1.m3u8,重复URL
 重庆卫视,http://183.11.239.36:808/hls/53/index.m3u8,重复URL
-重庆卫视,http://222.169.85.8:9901/tsfile/live/0142_1.m3u8,重复URL
 重庆卫视,http://61.136.172.236:9901/tsfile/live/0142_1.m3u8,重复URL
-重庆汽摩,http://183.230.184.51:65500/tntv1.m3u8,重复URL
+重庆卫视,http://61.156.228.12:8154/tsfile/live/0142_1.m3u8,重复URL
 重庆汽摩,http://123.146.162.24:8013/tslslive/PU2vzMI/hls/live_sd.m3u8,重复URL
-重庆汽摩,http://183.230.184.51:65500/tntv1.m3u8?zzhongqd,重复URL
 金川乡村,http://live.jinchuanrmt.com:90/live/jcxc.m3u8?zsicd,重复URL
 金川新闻综合,http://live.jinchuanrmt.com:90/live/zhxw.m3u8?zsicd,重复URL
 金平综合,http://live.ynurl.com/video/s10041-JPTV/index.m3u8?zyund,重复URL
 金鹰卡通,http://58.57.40.22:9901/tsfile/live/1059_1.m3u8,重复URL
 金鹰卡通,http://113.57.93.165:9900/tsfile/live/1000_1.m3u8?key=txiptv&playlive=1&authid=0,重复URL
+金鹰卡通,http://101.66.198.103:9901/tsfile/live/1000_1.m3u8?key=txiptv&playlive=0&authid=0,重复URL
+金鹰卡通,http://101.66.198.198:9901/tsfile/live/1000_1.m3u8?key=txiptv&playlive=0&authid=0,重复URL
+金鹰卡通,http://101.66.198.44:9901/tsfile/live/1000_1.m3u8?key=txiptv&playlive=0&authid=0,重复URL
 钟馗传说,https://yylunbo.ottiptv.cc/yy/1382736839,重复URL
 铜陵新闻综合,https://ls.qingting.fm/live/21303/64k.m3u8,重复URL
 镇江二套社会民生,http://zjtv-wshls.homecdn.com/live/2aa16.m3u8,重复URL
@@ -4161,23 +4156,25 @@ www.izbds.com,https://vd3.bdstatic.com/mda-rkaittm5s06vzzyq/sc/cae_h264/17628698
 长子综合,https://83awgyp5.live.sxmty.com/live/hls/6f6f4b36f9bd42628b718b595ba507ed/724b7e8907a8414d873eb2a2f69bfa18.m3u8?zshanxd,重复URL
 长宁综合,http://cnpull.sccnfb.com:80/live/123456.m3u8,重复URL
 长宁综合,https://m3u8channel-yc.yunxya.com/nmip-media/channellive/channel100103/playlist.m3u8,重复URL
-长沙新闻综合,http://ls.qingting.fm/live/4877.m3u8,重复URL
 长白山电视台,http://stream8.jlntv.cn/cbstv/sd/live.m3u8?zjild,重复URL
 长白朝语,http://hplayer1.juyun.tv:80/camera/11344136.m3u8,重复URL
+陀枪师姐,http://www.douzhicloud.site:35455/huya/29465857,重复URL
 陇川综合,https://zb-live.ynurl.com/longchuan/58f88df3-605e-4c57-865c-8e8f85241ca1.m3u8,重复URL
 陇川综合,http://live.ynurl.com/video/s10027-LCDST/index.m3u8?zyund,重复URL
 陕西体育休闲,http://112.46.105.20:8009/hls/24/index.m3u8,重复URL
+陕西体育休闲,https://mgtv.ottiptv.cc/migu/956909356.m3u8?migutoken=2cd1b3120e6a6d3cec136ca61cb23c24512860d4956d391b8c7d8a1fce58c3fa549930217eede8887c05f73eb24ac9692be10bdd06557f58130ff6717e37e1b6ba38adfacf8e74298fe1d4f48c,重复URL
 陕西体育休闲,http://gslbmgsplive.miguvideo.com/migu/kailu/sxtyxx/51/20250804/index.m3u8?msisdn=20250921080053bb7e3ee981dc4bde95a765fbffef7b9e&mdspid=&spid=600572&netType=0&sid=5910022189&pid=2028597139&timestamp=20250921080053&Channel_ID=0116_2600000900-99000-201600010010027&ProgramID=956909356&ParentNodeID=-99&assertID=5910022189&client_ip=106.13.250.88&SecurityKey=20250921080053&promotionId=&mvid=5900006712&mcid=500020&playurlVersion=WX-A1-8.9.1-RELEASE&userid=&jmhm=&videocodec=h264&bean=mgspad&tid=android&conFee=0&puData=43ffb82e5f9372a440dd84479d27b2f6&ddCalcu=64f3e2f2bf67b028d29e754f4983d7d20a44,重复URL
 陕西体育休闲,http://gslbmgsplive.miguvideo.com/migu/kailu/sxtyxx/51/20250804/index.m3u8?msisdn=20251023080139c026415ca4654e0cb51f36f8105eb6a1&mdspid=&spid=600572&netType=0&sid=5910022189&pid=2028597139&timestamp=20251023080139&Channel_ID=0116_2600000900-99000-201600010010027&ProgramID=956909356&ParentNodeID=-99&assertID=5910022189&client_ip=106.13.250.83&SecurityKey=20251023080139&promotionId=&mvid=5900006712&mcid=500020&playurlVersion=WX-A1-8.9.2-RELEASE&userid=&jmhm=&videocodec=h264&bean=mgspad&tid=android&conFee=0&puData=101f9c0a14d24dc78aa97137482db06c&ddCalcu=c160e012bf6d902c804a71341d7294adac87,重复URL
 陕西体育休闲,http://gslbmgsplive.miguvideo.com/migu/kailu/sxtyxx/51/20250804/index.m3u8?msisdn=20251024080056953be86c14d64c758cd4dbf06a58c942&mdspid=&spid=600572&netType=0&sid=5910022189&pid=2028597139&timestamp=20251024080056&Channel_ID=0116_2600000900-99000-201600010010027&ProgramID=956909356&ParentNodeID=-99&assertID=5910022189&client_ip=106.13.250.88&SecurityKey=20251024080056&promotionId=&mvid=5900006712&mcid=500020&playurlVersion=WX-A1-8.9.2-RELEASE&userid=&jmhm=&videocodec=h264&bean=mgspad&tid=android&conFee=0&puData=d18ceaa4887dd90437843aedd252e8e7&ddCalcu=7de1e882ec62e05a2ad4d8e8a73d4d897034,重复URL
-陕西体育休闲,http://gslbmgsplive.miguvideo.com/migu/kailu/sxtyxx/51/20250804/index.m3u8?msisdn=2025102508005957060912be0d47f78a9e823b236e0022&mdspid=&spid=600572&netType=0&sid=5910022189&pid=2028597139&timestamp=20251025080059&Channel_ID=0116_2600000900-99000-201600010010027&ProgramID=956909356&ParentNodeID=-99&assertID=5910022189&client_ip=106.13.250.90&SecurityKey=20251025080059&promotionId=&mvid=5900006712&mcid=500020&playurlVersion=WX-A1-8.9.2-RELEASE&userid=&jmhm=&videocodec=h264&bean=mgspad&tid=android&conFee=0&puData=25d98077b85839680d0db7d4d6a823de&ddCalcu=e2d5e3d2296880a067d74bd875b8d309d608,重复URL
 陕西公共,http://ls.qingting.fm/live/1222.m3u8,重复URL
+陕西新闻资讯,https://mgtv.ottiptv.cc/migu/956909289.m3u8?migutoken=d4f3f5a8bf93821548ae70c6bd12860956574c27b3b1ef52c88c8e3d72259b1727a6dbf5d6a5de850afac4c7ffe2f2124bb3b558a89906cd32ccc8913f0f22dd74b7a84514b6015bff75903d9c,重复URL
 陕西新闻资讯,http://gslbmgsplive.miguvideo.com/migu/kailu/sxxwzx/51/20250804/index.m3u8?msisdn=20250919080136670d8cf97d464e1f874949e449ebd1ac&mdspid=&spid=600572&netType=0&sid=5910022187&pid=2028597139&timestamp=20250919080136&Channel_ID=0116_2600000900-99000-201600010010027&ProgramID=956909289&ParentNodeID=-99&assertID=5910022187&client_ip=106.13.250.88&SecurityKey=20250919080136&promotionId=&mvid=5900006710&mcid=500020&playurlVersion=WX-A1-8.9.1-RELEASE&userid=&jmhm=&videocodec=h264&bean=mgspad&tid=android&conFee=0&puData=01b1afdabd15fc39dd9264ccca9ac59f&ddCalcu=f091e5b1c16aa09fadcacbcd41652f9cd3d9,重复URL
 陕西新闻资讯,http://gslbmgsplive.miguvideo.com/migu/kailu/sxxwzx/51/20250804/index.m3u8?msisdn=202510230801447f8d4c3a1a3c4ca1bd0de217472d80f2&mdspid=&spid=600572&netType=0&sid=5910022187&pid=2028597139&timestamp=20251023080144&Channel_ID=0116_2600000900-99000-201600010010027&ProgramID=956909289&ParentNodeID=-99&assertID=5910022187&client_ip=106.13.250.83&SecurityKey=20251023080144&promotionId=&mvid=5900006710&mcid=500020&playurlVersion=WX-A1-8.9.2-RELEASE&userid=&jmhm=&videocodec=h264&bean=mgspad&tid=android&conFee=0&puData=6ed563603d847927c8983a33d5b70e32&ddCalcu=263eeed2056760b356d0333da834879982c7,重复URL
 陕西新闻资讯,http://gslbmgsplive.miguvideo.com/migu/kailu/sxxwzx/51/20250804/index.m3u8?msisdn=202510240800591ee112712ed2473aa0d84b8ea3046959&mdspid=&spid=600572&netType=0&sid=5910022187&pid=2028597139&timestamp=20251024080059&Channel_ID=0116_2600000900-99000-201600010010027&ProgramID=956909289&ParentNodeID=-99&assertID=5910022187&client_ip=106.13.250.88&SecurityKey=20251024080059&promotionId=&mvid=5900006710&mcid=500020&playurlVersion=WX-A1-8.9.2-RELEASE&userid=&jmhm=&videocodec=h264&bean=mgspad&tid=android&conFee=0&puData=5661fd15cfb5726d7c6a1eb652fdb094&ddCalcu=4596e062b16df0fd21556cbfeb15a762c67d,重复URL
 陕西洋县国宝朱鹮02,https://gcalic.v.myalicdn.com/gc/zh02_1/index.m3u8,重复URL
 陕西西部电影,http://112.46.105.20:8009/hls/62/index.m3u8,重复URL
 陕西都市青春,http://112.46.105.20:8009/hls/19/index.m3u8,重复URL
+陕西都市青春,https://mgtv.ottiptv.cc/migu/956909358.m3u8?migutoken=c3931ea9d3d7ede24a9d13084dadcc55f7f21b114c6c584ca7defd6492ba46b7286dbd751d0f853f83e998e4b0349c62cf4bc570ac83667c4f6bd49a9411edc68e80c1d7f24da79a264d15912b,重复URL
 陕西都市青春,http://gslbmgsplive.miguvideo.com/migu/kailu/sxdsqc/51/20250804/index.m3u8?msisdn=20250919080136b45ee433a7cf4d688994f00b794d176d&mdspid=&spid=600572&netType=0&sid=5910022190&pid=2028597139&timestamp=20250919080136&Channel_ID=0116_2600000900-99000-201600010010027&ProgramID=956909358&ParentNodeID=-99&assertID=5910022190&client_ip=106.13.250.88&SecurityKey=20250919080136&promotionId=&mvid=5900006713&mcid=500020&playurlVersion=WX-A1-8.9.1-RELEASE&userid=&jmhm=&videocodec=h264&bean=mgspad&tid=android&conFee=0&puData=9db1317be8c80566b10f130aebe87c29&ddCalcu=992decb1716830e1b7ebae083c18f00516b6,重复URL
 陕西都市青春,http://gslbmgsplive.miguvideo.com/migu/kailu/sxdsqc/51/20250804/index.m3u8?msisdn=202510230801444202628b64cc49f4bfb9f6b1dfb1f491&mdspid=&spid=600572&netType=0&sid=5910022190&pid=2028597139&timestamp=20251023080144&Channel_ID=0116_2600000900-99000-201600010010027&ProgramID=956909358&ParentNodeID=-99&assertID=5910022190&client_ip=106.13.250.83&SecurityKey=20251023080144&promotionId=&mvid=5900006713&mcid=500020&playurlVersion=WX-A1-8.9.2-RELEASE&userid=&jmhm=&videocodec=h264&bean=mgspad&tid=android&conFee=0&puData=83284c876ebb25ecdf72f4eb4dd5a006&ddCalcu=6803e022a86540dcd847b6ee4bfb2275fedc,重复URL
 陕西都市青春,http://gslbmgsplive.miguvideo.com/migu/kailu/sxdsqc/51/20250804/index.m3u8?msisdn=2025102408005947806826798c44e4b89b7ed86b1ba04f&mdspid=&spid=600572&netType=0&sid=5910022190&pid=2028597139&timestamp=20251024080059&Channel_ID=0116_2600000900-99000-201600010010027&ProgramID=956909358&ParentNodeID=-99&assertID=5910022190&client_ip=106.13.250.88&SecurityKey=20251024080059&promotionId=&mvid=5900006713&mcid=500020&playurlVersion=WX-A1-8.9.2-RELEASE&userid=&jmhm=&videocodec=h264&bean=mgspad&tid=android&conFee=0&puData=52c95103cb01acfba0783bb6dba5f262&ddCalcu=2562e2c2f96550a1b0d36cbbb0318a7c0fab,重复URL
