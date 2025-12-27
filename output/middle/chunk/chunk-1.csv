@@ -65,8 +65,8 @@
 9 la Loma TV (1080p) [Geo-blocked],https://9laloma.tv/live.m3u8,网络源,https://i.imgur.com/WQP3el2.png
 9Life (720p) [Geo-blocked],https://9now-livestreams.akamaized.net/hls/live/2008313/life-syd/master.m3u8,网络源,https://i.imgur.com/HlJOrGI.png
 9X Jalwa (1080p),https://d35j504z0x2vu2.cloudfront.net/v1/master/0bc8e8376bd8417a1b6761138aa41c26c7309312/9x-jalwa/master.m3u8,网络源,https://i.imgur.com/qubgOi5.png
-9x Jhakaas,https://amg01281-9xmediapvtltd-9xjhakaas-samsungin-ci2cs.amagi.tv/playlist/amg01281-9xmediapvtltd-9xjhakaas-samsungin/playlist.m3u8,网络源,https://i.imgur.com/aZ0f85I.png
-9X Tashan,https://amg01281-9xmediapvtltd-9xtashan-samsungin-xz1sd.amagi.tv/playlist/amg01281-9xmediapvtltd-9xtashan-samsungin/playlist.m3u8,网络源,https://i.imgur.com/MMR1RMF.png
+9X Jhakaas,https://9xjio.wiseplayout.com/9X_Jhakaas/master.m3u8,网络源,https://i.imgur.com/aZ0f85I.png
+9X Tashan,https://9xjio.wiseplayout.com/9X_Tashan/master.m3u8,网络源,https://i.imgur.com/MMR1RMF.png
 9XM (576p),https://d35j504z0x2vu2.cloudfront.net/v1/manifest/0bc8e8376bd8417a1b6761138aa41c26c7309312/9xm/23886666-8fc5-470f-aab1-bd637ed607b1/3.m3u8,网络源,https://i.imgur.com/F17QtN2.png
 10 Bold Adelaide (1080p),https://dce3793146fef017.mediapackage.us-west-2.amazonaws.com/out/v1/55cdf73af7894775ba6de8f57482b66a/CMAF_HLS/index.m3u8,网络源,https://i.imgur.com/2xglh33.png
 10 TV (720p),https://cdn-1.pishow.tv/live/391/master.m3u8,网络源,https://i.imgur.com/TauWtuJ.png
@@ -148,8 +148,9 @@
 90210,http://cfd-v4-service-channel-stitcher-use1-1.prd.pluto.tv/stitch/hls/channel/65a67dd13af63d0008257f17/master.m3u8?appName=web&appVersion=unknown&clientTime=0&deviceDNT=0&deviceId=1b1c5240-4b81-11ef-a8ac-e146e4e7be02&deviceMake=Chrome&deviceModel=web&deviceType=web&deviceVersion=unknown&includeExtendedEvents=false&serverSideAds=false&sid=6e62cae5-9404-4e52-8b20-c5fc2b453e9d,网络源,https://i.imgur.com/xqo5PxO.png
 :Šport (1080p),http://88.212.15.27/live/test_rtvs_sport_hevc/playlist.m3u8,网络源,https://i.imgur.com/oAtcxNZ.png
 ¡OPA! (1080i) [Geo-blocked],https://5fc584f3f19c9.streamlock.net/genteopa/videogenteopa/playlist.m3u8,网络源,https://i.imgur.com/300c1ZH.png
-&flix (480p),https://edge3-moblive.yuppcdn.net/drm/smil:nflixdrm.smil/index.m3u8,网络源,https://upload.wikimedia.org/wikipedia/commons/thumb/e/ec/%26flix_2025.svg/512px-%26flix_2025.svg.png
+&flix (1080p),http://66.102.120.18:8000/play/a022/index.m3u8,网络源,https://upload.wikimedia.org/wikipedia/commons/thumb/e/ec/%26flix_2025.svg/512px-%26flix_2025.svg.png
 &pictures (1080p),http://66.102.120.18:8000/play/a01t/index.m3u8,网络源,https://i.imgur.com/VYh3V8E.png
+&prive HD (1080p),http://163.61.227.29:8000/play/a01h/index.m3u8,网络源,https://i.imgur.com/qyyUlg3.png
 &TV (1080p),https://amg01117-amg01117c1-amgplt0165.playout.now3.amagi.tv/playlist.m3u8,网络源,https://i.imgur.com/32W50Y6.png
 &xplor HD (1080p),http://66.102.120.18:8000/play/a012/index.m3u8,网络源,https://i.imgur.com/9mK6dgM.png
 :24 (1080p),http://88.212.15.27/live/test_trojka_25p/playlist.m3u8,网络源,https://i.imgur.com/tTCuczU.png
@@ -403,7 +404,7 @@ Al Aqsa Channel (416p) [Not 24/7],http://167.172.161.13/hls/feedspare/6udfi7v8a3
 Al Arabiya (1080p),https://live.alarabiya.net/alarabiapublish/alarabiya.smil/playlist.m3u8,网络源,https://i.imgur.com/NXFkYFj.png
 Al Arabiya Al Hadath (1080p) [Not 24/7],https://av.alarabiya.net/alarabiapublish/alhadath.smil/playlist.m3u8,网络源,https://i.imgur.com/De4SEWE.png
 Al Arabiya Business (1080p),https://live.alarabiya.net/alarabiapublish/aswaaq.smil/playlist.m3u8,网络源,https://i.postimg.cc/85MKQbwQ/alarabiyabusiness.png
-Al Arabiya English (1080p),https://shls-live-enc.edgenextcdn.net/out/v1/07a6ab2d57b2453a91bbdd2d46b5865a/index.m3u8,网络源,https://shahid.mbc.net/mediaObject/7cfc0baf-1201-477f-b722-d3099fafe17f?height=230&width=512&croppingPoint=&version=1&type=png
+Al Arabiya English (1080p),https://live.alarabiya.net/alarabiapublish/english/playlist_dvr.m3u8,网络源,https://shahid.mbc.net/mediaObject/7cfc0baf-1201-477f-b722-d3099fafe17f?height=230&width=512&croppingPoint=&version=1&type=png
 Al Arabiya Programs (1080p),https://d1j4r34gq3qw9y.cloudfront.net/out/v1/96804f3a14864641a21c25e8ca9afb74/index.m3u8,网络源,https://i.imgur.com/Hoc3cfO.png
 Al Araby TV (1080p),https://live.kwikmotion.com/alaraby1live/alaraby_abr/playlist.m3u8,网络源,https://i.imgur.com/YMqWEe4.png
 Al Araby TV 2 (1080p),https://live.kwikmotion.com/alaraby2live/alaraby2.smil/playlist.m3u8,网络源,https://i.imgur.com/Gp5mNea.png
@@ -641,6 +642,7 @@ Aniplus Asia (720p),https://amg18481-amg18481c1-amgplt0352.playout.now3.amagi.tv
 Anixe + (360p),https://ma.anixa.tv/clips/stream/anixesd/index.m3u8,网络源,https://i.postimg.cc/yNZ4xcnn/anixeplus.png
 Anixe HD Serie (360p),https://ma.anixa.tv/clips/stream/anixehd/index.m3u8,网络源,https://upload.wikimedia.org/wikipedia/commons/thumb/c/c0/Anixe_HD.svg/512px-Anixe_HD.svg.png
 Anjan (1080p) [Not 24/7],"https://anjantvevent.pc.cdn.bitgravity.com/anjantv/live/amlst:event_anjan_,b400,b800,b1024,b1200,b1500,b4000,.smil/playlist.m3u8",网络源,https://i.imgur.com/sh0yFSf.png
+Anmol Cinema (576p),http://66.102.120.18:8000/play/a01v/index.m3u8,网络源,https://static.wikia.nocookie.net/logopedia/images/d/db/Anmol_Cinema_2025_Logo_%28Low_Quality%29.jpg
 ANN News (720p),https://cdn.ottlive.co.in/annnews/index.m3u8,网络源,https://asianewsnetwork.net/wp-content/uploads/2020/03/cropped-LOGO-NEW.png
 Anshun Comprehensive News Channel,https://hplayer1.juyun.tv/camera/154379194.m3u8,网络源,https://www.tvchinese.net/uploads/tv/anshun.jpg
 ANT1 (1080p) [Geo-blocked],http://d1nfykbwa3n98t.cloudfront.net/out/v1/6e5667da5a6843899a337dea72adb61b/antenna.m3u8,网络源,https://i.imgur.com/ItxKvVS.png
@@ -883,7 +885,7 @@ Azteca Uno (720p) [Geo-blocked],https://mdstrm.com/live-stream-playlist/609b2431
 Azzurra TV (576p),https://ed05.top-ix.org/avtvlive/azzurra/streaming/playlist.m3u8,网络源,https://i.imgur.com/qWIZNEc.png
 B4U Bhojpuri (1080p),https://cdnb4u.wiseplayout.com/B4U_Bhojpuri/master.m3u8,网络源,https://i.imgur.com/NwOQUDp.png
 B4U Kadak (1080p) [Not 24/7],https://cdnb4u.wiseplayout.com/B4U_Kadak/master.m3u8,网络源,https://i.imgur.com/CKLn0ft.png
-B4U Movies India (1080p),https://cdnb4u.wiseplayout.com/B4U_Movies/master.m3u8,网络源,https://i.imgur.com/M9kMFJl.png
+B4U Movies,https://mumt02.tangotv.in/B4UMOVIES/index.m3u8,网络源,https://i.imgur.com/M9kMFJl.png
 B4U Music (1080p),https://cdnb4u.wiseplayout.com/B4U_Music/master.m3u8,网络源,https://i.imgur.com/KSxPLJA.png
 B4U Plus (576p),http://183.89.246.119:8881/play/a08l/index.m3u8,网络源,https://i.postimg.cc/L4Cpy9qt/b4uplus.png
 B15 Fresnillo (1080p),https://s5.mexside.net:1936/lsac/lsac/playlist.m3u8,网络源,https://i.imgur.com/kaUhEQy.png
@@ -976,7 +978,7 @@ BBC Lifestyle Asia (1080p),https://tv.ddns.vn/tv/bbclifestyle/index.m3u8,网络�
 BBC News (1080p) [Geo-blocked],https://vs-cmaf-push-uk-live.akamaized.net/x=4/i=urn:bbc:pips:service:bbc_news_channel_hd/iptv_mse_v0_hevc.mpd,网络源,https://i.imgur.com/vSz2WEp.png
 BBC News (North America) (1080p),https://d2vnbkvjbims7j.cloudfront.net/containerA/LTN/playlist.m3u8,网络源,https://i.imgur.com/vSz2WEp.png
 BBC News Asia Pacific (1080p),https://cdn4.skygo.mn/live/disk1/BBC_News/HLSv3-FTA/BBC_News.m3u8,网络源,https://i.imgur.com/vSz2WEp.png
-BBC News Europe,https://viamotionhsi.netplus.ch/live/eds/bbcworld/browser-HLS8/bbcworld.m3u8,网络源,https://i.imgur.com/vSz2WEp.png
+BBC News Europe,https://dash2.antik.sk/live/test_bbc_world/playlist.m3u8,网络源,https://i.imgur.com/vSz2WEp.png
 BBC One (720p),https://november.queazified.co.uk/ee971134-115e-4418-8d1d-69dff7d4c6eb.m3u8,网络源,https://upload.wikimedia.org/wikipedia/commons/thumb/8/8b/BBC_One_logo_2021.svg/512px-BBC_One_logo_2021.svg.png
 BBC One Channel Islands (1080p) [Geo-blocked],https://vs-cmaf-pushb-uk-live.akamaized.net/x=4/i=urn:bbc:pips:service:bbc_one_channel_islands/iptv_mse_v0_hevc.mpd,网络源,https://upload.wikimedia.org/wikipedia/commons/thumb/8/8b/BBC_One_logo_2021.svg/512px-BBC_One_logo_2021.svg.png
 BBC One East (720p) [Geo-blocked],https://vs-cmaf-pushb-uk-live.akamaized.net/x=4/i=urn:bbc:pips:service:bbc_one_east_yorkshire/pc_hd_abr_v2.mpd,网络源,https://upload.wikimedia.org/wikipedia/commons/thumb/8/8b/BBC_One_logo_2021.svg/512px-BBC_One_logo_2021.svg.png
@@ -997,5 +999,3 @@ BBC One South West (1080p) [Geo-blocked],https://vs-cmaf-pushb-uk-live.akamaized
 BBC One South West HD (720p),https://stream.nexyl.uk/ee971134-115e-4418-8d1d-69dff7d4c6eb.m3u8,网络源,https://upload.wikimedia.org/wikipedia/commons/thumb/8/8b/BBC_One_logo_2021.svg/512px-BBC_One_logo_2021.svg.png
 BBC One Wales (1080p) [Geo-blocked],https://vs-cmaf-pushb-uk-live.akamaized.net/x=4/i=urn:bbc:pips:service:bbc_one_wales_hd/iptv_mse_v0_hevc.mpd,网络源,https://upload.wikimedia.org/wikipedia/commons/thumb/8/8b/BBC_One_logo_2021.svg/512px-BBC_One_logo_2021.svg.png
 BBC One West (1080p) [Geo-blocked],https://vs-cmaf-pushb-uk-live.akamaized.net/x=4/i=urn:bbc:pips:service:bbc_one_west/iptv_mse_v0_hevc.mpd,网络源,https://upload.wikimedia.org/wikipedia/commons/thumb/8/8b/BBC_One_logo_2021.svg/512px-BBC_One_logo_2021.svg.png
-BBC One West Midlands (1080p) [Geo-blocked],https://vs-cmaf-pushb-uk-live.akamaized.net/x=4/i=urn:bbc:pips:service:bbc_one_west_midlands/iptv_mse_v0_hevc.mpd,网络源,https://upload.wikimedia.org/wikipedia/commons/thumb/8/8b/BBC_One_logo_2021.svg/512px-BBC_One_logo_2021.svg.png
-BBC One Yorkshire & Lincolnshire (1080p),http://92.114.85.72:8000/play/a0mp,网络源,https://upload.wikimedia.org/wikipedia/commons/thumb/8/8b/BBC_One_logo_2021.svg/512px-BBC_One_logo_2021.svg.png
