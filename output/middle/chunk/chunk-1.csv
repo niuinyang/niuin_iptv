@@ -148,11 +148,12 @@
 90210,http://cfd-v4-service-channel-stitcher-use1-1.prd.pluto.tv/stitch/hls/channel/65a67dd13af63d0008257f17/master.m3u8?appName=web&appVersion=unknown&clientTime=0&deviceDNT=0&deviceId=1b1c5240-4b81-11ef-a8ac-e146e4e7be02&deviceMake=Chrome&deviceModel=web&deviceType=web&deviceVersion=unknown&includeExtendedEvents=false&serverSideAds=false&sid=6e62cae5-9404-4e52-8b20-c5fc2b453e9d,网络源,https://i.imgur.com/xqo5PxO.png
 :Šport (1080p),http://88.212.15.27/live/test_rtvs_sport_hevc/playlist.m3u8,网络源,https://i.imgur.com/oAtcxNZ.png
 ¡OPA! (1080i) [Geo-blocked],https://5fc584f3f19c9.streamlock.net/genteopa/videogenteopa/playlist.m3u8,网络源,https://i.imgur.com/300c1ZH.png
-&flix (1080p),http://66.102.120.18:8000/play/a022/index.m3u8,网络源,https://xstreamcp-assets-msp.streamready.in/assets/LIVETV/LIVECHANNEL/LIVETV_LIVETVCHANNEL_SYMANDFLIX/images/LOGO_HD/LOGO_HD_image.png
+&flix (480p),https://edge3-moblive.yuppcdn.net/drm/smil:nflixdrm.smil/index.m3u8,网络源,https://xstreamcp-assets-msp.streamready.in/assets/LIVETV/LIVECHANNEL/LIVETV_LIVETVCHANNEL_SYMANDFLIX/images/LOGO_HD/LOGO_HD_image.png
+&flix HD (1080p),http://66.102.120.18:8000/play/a022/index.m3u8,网络源,https://xstreamcp-assets-msp.streamready.in/assets/LIVETV/LIVECHANNEL/LIVETV_LIVETVCHANNEL_SYMANDFLIX/images/LOGO_HD/LOGO_HD_image.png
 &pictures (1080p),http://66.102.120.18:8000/play/a01t/index.m3u8,网络源,https://xstreamcp-assets-msp.streamready.in/assets/LIVETV/LIVECHANNEL/LIVETV_LIVETVCHANNEL_SYMANDPICTURES/images/LOGO_HD/LOGO_HD_image.png
 &prive HD (1080p),http://163.61.227.29:8000/play/a01h/index.m3u8,网络源,https://xstreamcp-assets-msp.streamready.in/assets/LIVETV/LIVECHANNEL/LIVETV_LIVETVCHANNEL_SYMANDPRIVE_HD/images/LOGO_HD/LOGO_HD_image.png
-&TV (576p),http://103.182.170.32:8888/play/a03v,网络源,https://i.imgur.com/32W50Y6.png
-&TV International (1080p),https://amg01117-amg01117c1-amgplt0029.playout.now3.amagi.tv/playlist/amg01117-amg01117c1-amgplt0029/playlist.m3u8,网络源,https://i.imgur.com/32W50Y6.png
+&TV (576p),http://103.182.170.32:8888/play/a03v,网络源,https://i.postimg.cc/NjPB5gtG/andtv.png
+&TV International (1080p),https://amg01117-amg01117c1-amgplt0029.playout.now3.amagi.tv/playlist/amg01117-amg01117c1-amgplt0029/playlist.m3u8,网络源,https://i.postimg.cc/NjPB5gtG/andtv.png
 &xplor HD (1080p),http://66.102.120.18:8000/play/a012/index.m3u8,网络源,https://xstreamcp-assets-msp.streamready.in/assets/LIVETV/LIVECHANNEL/LIVETV_LIVETVCHANNEL_SYMANDXPLOR_HD/images/LOGO_HD/LOGO_HD_image.png
 :24 (1080p),http://88.212.15.27/live/test_trojka_25p/playlist.m3u8,网络源,https://i.imgur.com/tTCuczU.png
 @TV (720p),http://49.0.87.24:1936/HDAttv/Attv/playlist.m3u8,网络源,https://files.catbox.moe/6rj9aw.jpg
@@ -588,6 +589,7 @@ Ananda Barta (720p),https://account19.livebox.co.in/Anandabarta2hls/live.m3u8,�
 Anandham TV (1080p),https://stream.galaxyott.live/live/anandhamtv/index.m3u8,网络源,https://ltsk-cdn.s3.eu-west-1.amazonaws.com/jumpstart/Temp_Live/cdn/HLS/Channel/transparentImages/Anandham-TV-logo_2000_X_1125_Transpharent.png
 ANB News (576p),http://202.164.50.194:8000/play/a02w/index.m3u8,网络源,https://xstreamcp-assets-msp.streamready.in/assets/LIVETV/LIVECHANNEL/LIVETV_LIVETVCHANNEL_ANB_NEWS/images/LOGO_HD/image.png
 Andalucía Televisión (1080p),http://176.65.146.237:8401/play/a09g/index.m3u8,网络源,https://upload.wikimedia.org/wikipedia/commons/thumb/a/a1/Andaluc%C3%ADa_TV_2018_logo.svg/512px-Andaluc%C3%ADa_TV_2018_logo.svg.png
+Ando TV,http://play.kankanlive.com/live/1711956137852982.m3u8,网络源,https://i.imgur.com/EpTsFVu.png
 Andorra TV (1080p),https://live-edge-eu-1.cdn.enetres.net/56495F77FD124FECA75590A906965F2C022/live-3000/index.m3u8,网络源,https://upload.wikimedia.org/wikipedia/commons/3/32/Logo_Andorra_Televisi%C3%B3.png
 Andromeda Italy (720p),https://stitcher-ipv4.pluto.tv/v1/stitch/embed/hls/channel/60802d37ee238e0007c94e64/master.m3u8?advertisingId={PSID}&appVersion=unknown&deviceDNT={TARGETOPT}&deviceId={PSID}&deviceLat=0&deviceLon=0&deviceMake=samsung&deviceModel=samsung&deviceType=samsung-tvplus&deviceVersion=unknown&embedPartner=samsung-tvplus&profileFloor=&profileLimit=&samsung_app_domain={APP_DOMAIN}&samsung_app_name={APP_NAME}&us_privacy=1YNY,网络源,https://i.imgur.com/6ot2lmd.png
 AnewZ,https://53be5ef2d13aa.streamlock.net/cubesanewz-secure/smil:cubesanewz-secure-web.smil/playlist.m3u8,网络源,
@@ -624,7 +626,7 @@ Anime Zone TV (480p),http://animezonetv.net/hls/stream.m3u8,网络源,https://i.
 Aniplus Asia (720p),https://amg18481-amg18481c1-amgplt0352.playout.now3.amagi.tv/playlist/amg18481-amg18481c1-amgplt0352/playlist.m3u8,网络源,https://i.imgur.com/Im3MePy.png
 Anixe + (360p),https://ma.anixa.tv/clips/stream/anixesd/index.m3u8,网络源,https://i.postimg.cc/yNZ4xcnn/anixeplus.png
 Anixe HD Serie (360p),https://ma.anixa.tv/clips/stream/anixehd/index.m3u8,网络源,https://upload.wikimedia.org/wikipedia/commons/thumb/c/c0/Anixe_HD.svg/512px-Anixe_HD.svg.png
-Anjan (1080p) [Not 24/7],"https://anjantvevent.pc.cdn.bitgravity.com/anjantv/live/amlst:event_anjan_,b400,b800,b1024,b1200,b1500,b4000,.smil/playlist.m3u8",网络源,https://i.imgur.com/sh0yFSf.png
+Anjan TV (576p),https://cdn-1.pishow.tv/live/993/master.m3u8,网络源,https://i.imgur.com/sh0yFSf.png
 Anmol Cinema (576p),http://66.102.120.18:8000/play/a01v/index.m3u8,网络源,https://xstreamcp-assets-msp.streamready.in/assets/LIVETV/LIVECHANNEL/LIVETV_LIVETVCHANNEL_ZEE_ANMOL_CINEMA/images/LOGO_HD/LOGO_HD_image.png
 Anmol Cinema 2 (576p),http://110.39.27.47:8001/play/a03w/index.m3u8,网络源,https://xstreamcp-assets-msp.streamready.in/assets/LIVETV/LIVECHANNEL/LIVETV_LIVETVCHANNEL_ZEE_ANMOL_CINEMA_2/images/LOGO_HD/LOGO_HD_image.png
 ANN News (720p),https://cdn.ottlive.co.in/annnews/index.m3u8,网络源,https://asianewsnetwork.net/wp-content/uploads/2020/03/cropped-LOGO-NEW.png
@@ -663,7 +665,6 @@ Anytime TV (1080p),https://tv.anytimemedia.co.za:3673/hybrid/play.m3u8,网络源
 Anzoátegui TV (360p) [Not 24/7],https://vcp2.myplaytv.com/anzoateguitv/anzoateguitv/playlist.m3u8,网络源,https://i.imgur.com/SLqrEOz.png
 APA Tv,http://rtmp.apa.tv/@pagroup!23.m3u8,网络源,https://i.imgur.com/2CSW4V4.png
 apart TV (1080p),https://2-fss-2.streamhoster.com/pl_124/206820-4338160-1/playlist.m3u8,网络源,https://i.imgur.com/IBcMIcZ.png
-APN (576p),http://202.164.50.194:8000/play/a03j/index.m3u8,网络源,https://ltsk-cdn.s3.eu-west-1.amazonaws.com/jumpstart/Temp_Live/cdn/HLS/Channel/transparentImages/APN.png
 Apna Channel (576p),http://66.102.120.18:8000/play/a04z/index.m3u8,网络源,https://i.imgur.com/ICSA4W6.png
 Apna Punjab TV (720p),https://plus.gigabitcdn.net/live-stream/apna-punjab-H3sE/playlist.m3u8,网络源,https://i.imgur.com/IM4D8Wz.png
 Apostol TV (576p),https://live.apostoltv.hu/live/playlist.m3u8,网络源,https://i.imgur.com/C43Cc9N.png
@@ -697,7 +698,6 @@ Arek TV (720p),https://ams.juraganstreaming.com:5443/LiveApp/streams/arektv.m3u8
 Arena Sport 1 (720p),http://91.132.74.5:8000/play/a00k,网络源,https://i.imgur.com/RJrJGbW.png
 Argentinísima Satelital (540p),https://stream1.sersat.com/hls/argentinisima.m3u8,网络源,https://i.imgur.com/xFgJawa.png
 Arges TV (720p),https://btutzctahuf0wjoq.cdn.streamingserver.io/hls/yjvam8hlp2g3u08z02tv0yz66rq3cy.m3u8,网络源,https://i.imgur.com/qufz6nk.png
-Argus News (576p),http://202.164.50.194:8000/play/a01n/index.m3u8,网络源,https://xstreamcp-assets-msp.streamready.in/assets/LIVETV/LIVECHANNEL/LIVETV_LIVETVCHANNEL_ARGUS/images/LOGO_HD/image.png
 Arica TV (480p) [Not 24/7],https://5eff35271151c.streamlock.net:1936/8002/8002/playlist.m3u8,网络源,https://i.imgur.com/I67WOgT.png
 Arirang Radio (720p),http://amdlive-ch01.ctnd.com.edgesuite.net/arirang_3ch/smil:arirang_3ch.smil/playlist.m3u8,网络源,https://i.imgur.com/dtfiG9k.png
 Arirang TV (1080p),http://amdlive-ch01.ctnd.com.edgesuite.net/arirang_1ch/smil:arirang_1ch.smil/playlist.m3u8,网络源,https://i.imgur.com/Asu5pE9.png
@@ -749,7 +749,6 @@ ASMAR TV,https://ss5.domint.net:3034/astv_str/asmartv/playlist.m3u8,网络源,
 Asomavisión (614p),https://asomatv.duckdns.org/livestream/stream.m3u8,网络源,https://i.imgur.com/a5avk5R.png
 Aspire,https://fl1.moveonjoy.com/Aspire/index.m3u8,网络源,https://i.imgur.com/TOM5qO6.png
 Aspire TV Life (720p),https://uptv-aspiretvlife-klowdtv.amagi.tv/playlist.m3u8,网络源,
-Assam Talks (576p),http://202.164.50.194:8000/play/a054/index.m3u8,网络源,https://xstreamcp-assets-msp.streamready.in/assets/LIVETV/LIVECHANNEL/LIVETV_LIVETVCHANNEL_ASSAM_TALKS/images/LOGO_HD/image.png
 Assassination Classroom,http://cfd-v4-service-channel-stitcher-use1-1.prd.pluto.tv/stitch/hls/channel/65a7d99f4a10d800086083a9/master.m3u8?appName=web&appVersion=unknown&clientTime=0&deviceDNT=0&deviceId=1b1c7951-4b81-11ef-a8ac-e146e4e7be02&deviceMake=Chrome&deviceModel=web&deviceType=web&deviceVersion=unknown&includeExtendedEvents=false&serverSideAds=false&sid=21a7b417-879a-4f02-8497-8a823880cbe4,网络源,
 Assassination Classroom,http://cfd-v4-service-channel-stitcher-use1-1.prd.pluto.tv/stitch/hls/channel/65a7d99f4a10d800086083a9/master.m3u8?appName=web&appVersion=unknown&clientTime=0&deviceDNT=0&deviceId=bc82bb02-4b91-11ef-8a44-83c5e90e038f&deviceMake=Chrome&deviceModel=web&deviceType=web&deviceVersion=unknown&includeExtendedEvents=false&serverSideAds=false&sid=d7de6182-9651-48c2-b822-a1694d110899,网络源,
 Assassination Classroom,http://cfd-v4-service-channel-stitcher-use1-1.prd.pluto.tv/stitch/hls/channel/65a7d99f4a10d800086083a9/master.m3u8?appName=web&appVersion=unknown&clientTime=0&deviceDNT=0&deviceId=84ac0874-4b92-11ef-aece-533610f1ea34&deviceMake=Chrome&deviceModel=web&deviceType=web&deviceVersion=unknown&includeExtendedEvents=false&serverSideAds=false&sid=8cf3451c-2f6e-495e-93bc-62d48d70c6bc,网络源,
@@ -841,7 +840,6 @@ Awesome TV [Geo-blocked],https://488b9e074624.ap-south-1.playback.live-video.net
 Awkward,http://cfd-v4-service-channel-stitcher-use1-1.prd.pluto.tv/stitch/hls/channel/62bc1784120ba80007935aaa/master.m3u8?appName=web&appVersion=unknown&clientTime=0&deviceDNT=0&deviceId=1b1ca062-4b81-11ef-a8ac-e146e4e7be02&deviceMake=Chrome&deviceModel=web&deviceType=web&deviceVersion=unknown&includeExtendedEvents=false&serverSideAds=false&sid=50a5387f-9836-4d86-abe5-44dbc233ba2e,网络源,
 Awkward,http://cfd-v4-service-channel-stitcher-use1-1.prd.pluto.tv/stitch/hls/channel/62bc1784120ba80007935aaa/master.m3u8?appName=web&appVersion=unknown&clientTime=0&deviceDNT=0&deviceId=bc82e214-4b91-11ef-8a44-83c5e90e038f&deviceMake=Chrome&deviceModel=web&deviceType=web&deviceVersion=unknown&includeExtendedEvents=false&serverSideAds=false&sid=06497a37-2586-4025-8811-148a0db9d501,网络源,
 Awkward,http://cfd-v4-service-channel-stitcher-use1-1.prd.pluto.tv/stitch/hls/channel/62bc1784120ba80007935aaa/master.m3u8?appName=web&appVersion=unknown&clientTime=0&deviceDNT=0&deviceId=84ac5692-4b92-11ef-aece-533610f1ea34&deviceMake=Chrome&deviceModel=web&deviceType=web&deviceVersion=unknown&includeExtendedEvents=false&serverSideAds=false&sid=c2c2d7cc-7d4d-4255-a842-24443e529840,网络源,
-AWTV (1080p),https://acesso.ecast.site:3070/live/awtvlive.m3u8,网络源,https://i.imgur.com/2tdMyef.png
 Ax Men,http://cfd-v4-service-channel-stitcher-use1-1.prd.pluto.tv/stitch/hls/channel/6540fe4bbdf3cf0008aa2cdd/master.m3u8?appName=web&appVersion=unknown&clientTime=0&deviceDNT=0&deviceId=2c794331-35fc-11ef-a031-2b5d494037a2&deviceMake=Chrome&deviceModel=web&deviceType=web&deviceVersion=unknown&includeExtendedEvents=false&serverSideAds=false&sid=334b8ad2-5361-4ae2-a1fd-41fb46bc4c2d,网络源,
 Ax Men (720p),https://36dc2f37.wurl.com/master/f36d25e7e52f1ba8d7e56eb859c636563214f541/UmFrdXRlblRWLWdiX0F4TWVuX0hMUw/playlist.m3u8,网络源,
 Ax Men (720p),https://live-manifest.production-public.tubi.io/live/b1fdb228-c169-48b3-b6a3-8dee2dd91839/playlist.m3u8,网络源,
@@ -999,3 +997,5 @@ BBC Red Button 12 (1080p) [Geo-blocked],https://ve-cmaf-push-uk-live.akamaized.n
 BBC Red Button 13 (1080p) [Geo-blocked],https://ve-cmaf-push-uk-live.akamaized.net/x=4/i=urn:bbc:pips:service:uk_bbc_stream_013/iptv_mse_v0_hevc.mpd,网络源,https://i.imgur.com/g2Aga13.png
 BBC Red Button 14 (1080p) [Geo-blocked],https://ve-cmaf-push-uk-live.akamaized.net/x=4/i=urn:bbc:pips:service:uk_bbc_stream_014/iptv_mse_v0_hevc.mpd,网络源,https://i.imgur.com/g2Aga13.png
 BBC Red Button 15 (1080p) [Geo-blocked],https://ve-cmaf-push-uk-live.akamaized.net/x=4/i=urn:bbc:pips:service:uk_bbc_stream_015/iptv_mse_v0_hevc.mpd,网络源,https://i.imgur.com/g2Aga13.png
+BBC Red Button 16 (1080p) [Geo-blocked],https://ve-cmaf-push-uk-live.akamaized.net/x=4/i=urn:bbc:pips:service:uk_bbc_stream_016/iptv_mse_v0_hevc.mpd,网络源,https://i.imgur.com/g2Aga13.png
+BBC Red Button 17 (1080p) [Geo-blocked],https://ve-cmaf-push-uk-live.akamaized.net/x=4/i=urn:bbc:pips:service:uk_bbc_stream_017/iptv_mse_v0_hevc.mpd,网络源,https://i.imgur.com/g2Aga13.png
