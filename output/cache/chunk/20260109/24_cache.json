@@ -1,0 +1,218 @@
+{
+  "http://110.19.181.138:10080/hls/F509Rh7GR/F509Rh7GR_live.m3u8?zneimd": {
+    "0811": {
+      "phash": null,
+      "ahash": null,
+      "dhash": null,
+      "error": "[tcp @ 0x55bd8e911540] Connection to tcp://110.19.181.138:10080 failed: Connection timed out\n[in#0 @ 0x55bd8e94fe00] Error opening input: Connection timed out\nError opening input file http://110.19.181.138:10080/hls/F509Rh7GR/F509Rh7GR_live.m3u8?zneimd.\nError opening input files: Connection timed out\n"
+    }
+  },
+  "http://112.46.105.20:8009/hls/18/index.m3u8": {
+    "0811": {
+      "phash": "a8ff21de41a55aa4",
+      "ahash": "c0c0c1d9bdbf0303",
+      "dhash": "030b0b332921d797",
+      "error": null
+    }
+  },
+  "http://112.46.105.20:8009/hls/19/index.m3u8": {
+    "0811": {
+      "phash": "9c4fe1f2c117788c",
+      "ahash": "fff11b1f9f870f7f",
+      "dhash": "cc633375293ffe97",
+      "error": null
+    }
+  },
+  "http://112.46.105.20:8009/hls/20/index.m3u8": {
+    "0811": {
+      "phash": "fe90007d4b7b4b0b",
+      "ahash": "c286868183838393",
+      "dhash": "2424242327263777",
+      "error": null
+    }
+  },
+  "http://ebsonairios.ebs.co.kr/ebsutablet500k/tablet500k/playlist.m3u8": {
+    "0811": {
+      "phash": "bf4631814cac8f79",
+      "ahash": "3be4b3b3b08fcfcf",
+      "dhash": "e34c666775389a9e",
+      "error": null
+    }
+  },
+  "http://jsmov2.a.yximgs.com/bs3/video-hls/5203346449046555193_hlsb.m3u8": {
+    "0811": {
+      "phash": "c111beeec45879a9",
+      "ahash": "ff6f084860e0ffff",
+      "dhash": "c08a9aaaeaa240c4",
+      "error": null
+    }
+  },
+  "http://live.dxhmt.cn:9081/tv/10425-1.m3u8": {
+    "0811": {
+      "phash": "d3e52ddb2226298b",
+      "ahash": "e0fa7c7c7cfc8c0c",
+      "dhash": "2622e0c459592829",
+      "error": null
+    }
+  },
+  "http://live.dxhmt.cn:9081/tv/11024-1.m3u8": {
+    "0811": {
+      "phash": "b4e8d83e29954b2b",
+      "ahash": "d0c66e0703060747",
+      "dhash": "b69cccee5f6cacac",
+      "error": null
+    }
+  },
+  "http://tpc.x3322.net:9901/tsfile/live/1010_1.m3u8": {
+    "0811": {
+      "phash": null,
+      "ahash": null,
+      "dhash": null,
+      "error": ""
+    }
+  },
+  "http://www.douzhicloud.site:35455/douyu/4246519": {
+    "0811": {
+      "phash": "dc77be3fa8942240",
+      "ahash": "87c2407868081e3e",
+      "dhash": "270494d0d399b4b4",
+      "error": null
+    }
+  },
+  "http://www.douzhicloud.site:35455/huya/11342435": {
+    "0811": {
+      "phash": "9631658639cf38d9",
+      "ahash": "86270d1d1c3f3c00",
+      "dhash": "2ccdd95db5e5e5d0",
+      "error": null
+    }
+  },
+  "http://www.douzhicloud.site:35455/huya/11352876": {
+    "0811": {
+      "phash": null,
+      "ahash": null,
+      "dhash": null,
+      "error": "[in#0 @ 0x5586d4fe3e00] Error opening input: Server returned 403 Forbidden (access denied)\nError opening input file http://www.douzhicloud.site:35455/huya/11352876.\nError opening input files: Server returned 403 Forbidden (access denied)\n"
+    }
+  },
+  "http://www.douzhicloud.site:35455/huya/23903183": {
+    "0811": {
+      "phash": null,
+      "ahash": null,
+      "dhash": null,
+      "error": "[http @ 0x556354829500] Stream ends prematurely at 139737, should be 18446744073709551615\n    Last message repeated 1 times\n[http @ 0x556354829500] Stream ends prematurely at 13, should be 18446744073709551615\n[in#0/flv @ 0x556354828e00] Error during demuxing: Input/output error\n[in#0/flv @ 0x556354828e00] Error retrieving a packet from demuxer: Input/output error\n"
+    }
+  },
+  "http://www.douzhicloud.site:35455/huya/29465847": {
+    "0811": {
+      "phash": "c03f1ee7c8241f3a",
+      "ahash": "00001068f8f2747c",
+      "dhash": "b0b0309091c684b9",
+      "error": null
+    }
+  },
+  "https://hls.cntv.lxdns.com/asp/hls/2000/0303000a/3/default/f0a47e155d32450daa1d36a04fd7d262/2000.m3u8": {
+    "0811": {
+      "phash": "81c73e609f37601f",
+      "ahash": "ff7f7e7e7e400000",
+      "dhash": "f0d2d0f0d08edef0",
+      "error": null
+    }
+  },
+  "https://jwcdnqx.hebyun.com.cn/live/xtcsshpd/1500k/tzwj_video.m3u8": {
+    "0811": {
+      "phash": "e1a7e1bf38732620",
+      "ahash": "f37b730011306040",
+      "dhash": "c6c3c7b3b141da91",
+      "error": null
+    }
+  },
+  "https://newcntv.qcloudcdn.com/asp/hls/2000/0303000a/3/default/d2454bbb542d4613a9db478dab2addfd/2000.m3u8": {
+    "0811": {
+      "phash": "87d478639f3f4218",
+      "ahash": "ffff7f3f3f200000",
+      "dhash": "e890d06060cdaaf8",
+      "error": null
+    }
+  },
+  "https://other.ottiptv.cc/cwjd.m3u8": {
+    "0811": {
+      "phash": "c1c1c19d7e666363",
+      "ahash": "787a6070607c3c00",
+      "dhash": "d6d2c3c3c1c8d8c3",
+      "error": null
+    }
+  },
+  "https://stream.ads.ottera.tv/playlist.m3u8?network_id=743": {
+    "0811": {
+      "phash": "f0420f2d7abb0dd2",
+      "ahash": "00f0fcece70f4f00",
+      "dhash": "88c1c89895d69cb8",
+      "error": null
+    }
+  },
+  "https://yylunbo.ottiptv.cc/yy/1352946111": {
+    "0811": {
+      "phash": "8686cf5fd891c9a1",
+      "ahash": "bf37777706000000",
+      "dhash": "6564c5c4547a5ab3",
+      "error": null
+    }
+  },
+  "https://yylunbo.ottiptv.cc/yy/1353518742": {
+    "0811": {
+      "phash": "95ac6a72d60e8fe0",
+      "ahash": "0000bfbfff000000",
+      "dhash": "003676668c4a0000",
+      "error": null
+    }
+  },
+  "https://yylunbo.ottiptv.cc/yy/1354930912": {
+    "0811": {
+      "phash": null,
+      "ahash": null,
+      "dhash": null,
+      "error": "no_output"
+    }
+  },
+  "https://yylunbo.ottiptv.cc/yy/1354932355": {
+    "0811": {
+      "phash": "c3813c7e6e686a17",
+      "ahash": "007e7f7cfefd0c00",
+      "dhash": "98d8c8d948c9d94c",
+      "error": null
+    }
+  },
+  "https://yylunbo.ottiptv.cc/yy/1354932359": {
+    "0811": {
+      "phash": "91d8902fb762f439",
+      "ahash": "5e5e5e383a181c7e",
+      "dhash": "9cb0b0f2f2f2b8bc",
+      "error": null
+    }
+  },
+  "https://yylunbo.ottiptv.cc/yy/1354932379": {
+    "0811": {
+      "phash": "cd33b60d322d98e5",
+      "ahash": "0420181838183b3c",
+      "dhash": "ecc8d4f0f0f07230",
+      "error": null
+    }
+  },
+  "https://yylunbo.ottiptv.cc/yy/1354932395": {
+    "0811": {
+      "phash": "fcec853e21874e94",
+      "ahash": "fbfbf1c381001f7f",
+      "dhash": "363607071f2774e3",
+      "error": null
+    }
+  },
+  "https://yylunbo.ottiptv.cc/yy/1355171231": {
+    "0811": {
+      "phash": "b5c74a38920b67bc",
+      "ahash": "0010322fcf070100",
+      "dhash": "26aaea5c1c0e0b09",
+      "error": null
+    }
+  }
+}
