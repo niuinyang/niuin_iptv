@@ -272,6 +272,7 @@ Elim TV (720p),#EXTVLCOPT:http-user-agent=Mozilla/5.0 (Windows NT 10.0 Win64 x64
 Enter-Film (1080p),#EXTVLCOPT:http-user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/130.0.0.0 Safari/537.36,无效URL（非 http/https/rtsp 开头）
 eQtv,#EXTVLCOPT:http-user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36,无效URL（非 http/https/rtsp 开头）
 Equalympic (1080p),#EXTVLCOPT:http-user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/149.0.0.0 Safari/537.36,无效URL（非 http/https/rtsp 开头）
+ESPN Extra Latin America (1080p),#EXTVLCOPT:http-user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/145.0.0.0 Safari/537.36,无效URL（非 http/https/rtsp 开头）
 EsTuTele (720p),#EXTVLCOPT:http-referrer=https://player.streamingconnect.com/,无效URL（非 http/https/rtsp 开头）
 ET Now (720p) [Geo-blocked],#EXTVLCOPT:http-referrer=https://www.timesnownews.com/,无效URL（非 http/https/rtsp 开头）
 ETV (Mongolia) (1080p),#EXTVLCOPT:http-user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/144.0.0.0 Safari/537.36,无效URL（非 http/https/rtsp 开头）
@@ -368,7 +369,7 @@ Kapital TV (1080p),#EXTVLCOPT:http-referrer=https://kapitaltv.ro/,无效URL（�
 KBS World (720p),#EXTVLCOPT:http-referrer=https://cinerama.uz/,无效URL（非 http/https/rtsp 开头）
 Kentron TV (1080p),#EXTVLCOPT:http-user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/149.0.0.0 Safari/537.36,无效URL（非 http/https/rtsp 开头）
 Keshet 12 (1080p),#EXTVLCOPT:http-user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/149.0.0.0 Safari/537.36,无效URL（非 http/https/rtsp 开头）
-KidZone Max (1080p) [Geo-blocked],#EXTVLCOPT:http-referrer=https://kidzonemax.lt,无效URL（非 http/https/rtsp 开头）
+KidZone Max SD (1080p) [Geo-blocked],#EXTVLCOPT:http-referrer=https://kidzonemax.lt,无效URL（非 http/https/rtsp 开头）
 Kino 1 (Ukraine) (1080p),#EXTVLCOPT:http-user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/149.0.0.0 Safari/537.36,无效URL（非 http/https/rtsp 开头）
 Kino 2 (1080p),#EXTVLCOPT:http-user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/130.0.0.0 Safari/537.36,无效URL（非 http/https/rtsp 开头）
 Kino Barrandov,#EXTVLCOPT:http-user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/149.0.0.0 Safari/537.36,无效URL（非 http/https/rtsp 开头）
@@ -473,6 +474,7 @@ Nick Jr. (Czech Republic),#EXTVLCOPT:http-user-agent=Mozilla/5.0 (Windows NT 10.
 Nick Jr. (Hungary),#EXTVLCOPT:http-user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36,无效URL（非 http/https/rtsp 开头）
 Nickelodeon (Brazil) (480p),#EXTVLCOPT:http-user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/149.0.0.0 Safari/537.36,无效URL（非 http/https/rtsp 开头）
 Nickelodeon (Czech Republic),#EXTVLCOPT:http-user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36,无效URL（非 http/https/rtsp 开头）
+Nickelodeon (France) (504p),#EXTVLCOPT:http-user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/154.0.0.0 Safari/537.36,无效URL（非 http/https/rtsp 开头）
 Nickelodeon (Hungary),#EXTVLCOPT:http-user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/130.0.0.0 Safari/537.36,无效URL（非 http/https/rtsp 开头）
 Nickelodeon (Romania),#EXTVLCOPT:http-referrer=https://cool-tv.net/,无效URL（非 http/https/rtsp 开头）
 Nicktoons (Hungary),#EXTVLCOPT:http-user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36,无效URL（非 http/https/rtsp 开头）
@@ -1139,7 +1141,6 @@ VOA美国之音,https://voa-ingest.akamaized.net/hls/live/2033878/tvmc08/playlis
 世界地理,http://120.76.248.139/live/bfgd/4200000177.m3u8,重复URL
 梨园,https://dxtx.hntv.tv/live/lypd.m3u8?txSecret=10c771842a0be59e8b575d765173ec96&txTime=7B923E0A&wsSecret=41543190cdf375f1c73207222bb96542&wsTime=1769313549,重复URL
 哈哈炫动,http://ottrrs.hl.chinamobile.com/PLTV/88888888/224/3221225657/index.m3u8,重复URL
-哈哈炫动,http://63.141.230.178:82/gslb/zbdq5.m3u8?id=xdkthd,重复URL
 哈哈炫动,http://kkk.888.3116598.xyz/api.php?n=tttt&id=QZUKbL&tk=FgM0vQMejxvG,重复URL
 新闻综合,https://m3u8channel.yunxya.com/nmip-media/channellive/channel100028/playlist.m3u8,重复URL
 欢笑剧场,http://38.75.136.137:98/gslb/dsdqpub/hxjchd.m3u8?auth=testpub,重复URL
@@ -1263,10 +1264,6 @@ VOA美国之音,https://voa-ingest.akamaized.net/hls/live/2033878/tvmc08/playlis
 龙游生活娱乐,http://l.cztvcloud.com/channels/lantian/SXlongyou2/720p.m3u8?zzhed,重复URL
 山东教育,https://test1.live.sdetv.com.cn/live/dianshizhibo/playlist.m3u8,重复URL
 优漫卡通,http://ottrrs.hl.chinamobile.com/PLTV/88888888/224/3221225656/index.m3u8,重复URL
-优漫卡通,http://118.113.40.13:1234/626064703,重复URL
-优漫卡通,http://36.36.238.246:7788/626064703,重复URL
-优漫卡通,http://182.85.163.86:1234/626064703,重复URL
-优漫卡通,http://114.240.111.49:7788/626064703,重复URL
 优漫卡通,http://kkk.jjjj.jiduo.me/api.php?n=tttt&id=2476&tk=a0c4f6cfaba3,重复URL
 南京少儿,http://nklive.nbs.cn/hls/e0981f3f-1a20-4a59-b8d1-17feb83a4610/index.m3u8,重复URL
 南京教科,http://nklive.nbs.cn/hls/75b3c462-b831-4de7-a34b-5d3221db2069/index.m3u8,重复URL
