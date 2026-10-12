@@ -611,6 +611,7 @@ CCTV-15,http://[2409:8087:1a0a:df::404b]/ottrrs.hl.chinamobile.com/TVOD/88888888
 5Sport (1080p),http://str2.iptvhd.ru:8080/5sport/index.m3u8,网络源,https://i.imgur.com/dRVsB89.png
 5Stars (1080p),http://89.33.29.115:8080/IL_5Stars/index.m3u8,网络源,https://i.imgur.com/IQtAKIa.png
 5tv,https://617c5175c970b.streamlock.net:4444/tvcinco/live1/playlist.m3u8,网络源,https://i.imgur.com/mSn7ACs.png
+5USA (360p),https://lb.iptvnetwork.net/ls28/10115/playlist.m3u8,网络源,https://i.imgur.com/Pi7so2l.png
 6PR (1080p),https://6prlive.akamaized.net/hls/live/2033806/6PR/index.m3u8,网络源,https://i.imgur.com/Q9iCxg1.png
 6ter (1080p),http://145.239.5.177/314/index.m3u8,网络源,https://i.imgur.com/2nd5Cox.png
 6 TV Gorlovka (720p) [Geo-blocked],http://91.214.48.158:4022/udp/224.2.2.4:10000,网络源,https://upload.wikimedia.org/wikipedia/commons/6/61/TV_6_HD_%E2%80%93_logo.png
@@ -629,7 +630,7 @@ CCTV-15,http://[2409:8087:1a0a:df::404b]/ottrrs.hl.chinamobile.com/TVOD/88888888
 8 La Marina TV (576p),https://streaming005.gestec-video.com/hls/canal24.m3u8,网络源,https://i.imgur.com/BTJvvBK.png
 8NTV (1080p),https://60417ddeaf0d9.streamlock.net/ntv/videontv/playlist.m3u8,网络源,https://i.imgur.com/7ecgGIG.png
 8TV,http://cdn6.163189.xyz/163189/8tv,网络源,https://i.imgur.com/Jkx9W88.png
-8XM HD,https://cdn4.mjunoon.tv:8087/streamtest/131M/chunks.m3u8,网络源,https://i.ibb.co/Kc0xHyBb/8XM-Logo.png
+8XM,https://cdn4.mjunoon.tv:8087/streamtest/131M/chunks.m3u8,网络源,https://i.ibb.co/Kc0xHyBb/8XM-Logo.png
 9Gem (720p) [Geo-blocked],https://9now-livestreams.akamaized.net/hls/live/2008311/gem-syd/master.m3u8,网络源,https://i.imgur.com/cwLzqaw.png
 9Go! (720p) [Geo-blocked],https://9now-livestreams.akamaized.net/hls/live/2008312/go-syd/master.m3u8,网络源,https://i.imgur.com/RLijQI8.png
 9 la Loma TV (1080p) [Geo-blocked],https://9laloma.tv/live.m3u8,网络源,https://i.imgur.com/WQP3el2.png
@@ -726,6 +727,11 @@ CCTV-15,http://[2409:8087:1a0a:df::404b]/ottrrs.hl.chinamobile.com/TVOD/88888888
 1001 Noites (720p) [Not 24/7],https://cdn.jmvstream.com/w/LVW-8155/ngrp:LVW8155_41E1ciuCvO_all/playlist.m3u8,网络源,https://i.imgur.com/dWA9y2J.png
 2900 Happiness,https://jmp2.uk/plu-6720bc6cdaad7f000872a6e2.m3u8,网络源,https://images.pluto.tv/channels/6720bc6cdaad7f000872a6e2/colorLogoPNG.png
 90210,https://jmp2.uk/plu-65a67dd13af63d0008257f17.m3u8,网络源,https://images.pluto.tv/channels/65a67dd13af63d0008257f17/colorLogoPNG.png
+.black (576p),http://stream.mcquack.net/263/index.m3u8,网络源,https://i.imgur.com/Q4A6ci4.png
+.red (576p),http://5.188.159.128:8070/RED/index.m3u8,网络源,https://i.imgur.com/GET9Qut.png
+.red HD (1080p),http://178.134.1.158:8081/red/index.m3u8,网络源,https://i.imgur.com/GET9Qut.png
+.sci-fi (576p),http://stream.mcquack.net/180/index.m3u8,网络源,https://i.imgur.com/nSSUHcg.png
+:24 (1080p),http://88.212.15.27/live/test_trojka_25p/playlist.m3u8,网络源,https://i.imgur.com/tTCuczU.png
 ¡OPA! (720p),https://5f1af61612fb5.streamlock.net/genteopa/videogenteopa_720p/playlist.m3u8,网络源,https://i.imgur.com/300c1ZH.png
 ¡Viva Latino! (1080p),http://stream.mcquack.net/285/index.m3u8,网络源,https://i.imgur.com/KRakHAq.png
 &TV (576p),http://103.151.60.162:2122/play/a020/index.m3u8?hls,网络源,https://xstreamcp-assets-msp.streamready.in/assets/LIVETV/LIVECHANNEL/LIVETV_LIVETVCHANNEL_SYMANDTV/images/LOGO_HD/LOGO_HD_image.png
@@ -733,11 +739,6 @@ CCTV-15,http://[2409:8087:1a0a:df::404b]/ottrrs.hl.chinamobile.com/TVOD/88888888
 &TV International (1080p),https://amg01117-amg01117c1-amgplt0029.playout.now3.amagi.tv/playlist/amg01117-amg01117c1-amgplt0029/playlist.m3u8,网络源,https://xstreamcp-assets-msp.streamready.in/assets/LIVETV/LIVECHANNEL/LIVETV_LIVETVCHANNEL_SYMANDTV/images/LOGO_HD/LOGO_HD_image.png
 &xplor HD (1080p),http://51.75.127.199:3141/andxplorehd/index.m3u8,网络源,https://xstreamcp-assets-msp.streamready.in/assets/LIVETV/LIVECHANNEL/LIVETV_LIVETVCHANNEL_SYMANDXPLOR_HD/images/LOGO_HD/LOGO_HD_image.png
 +TV (576p) [Geo-blocked],https://stream.plustv.by/plustv-web/plustv/playlist.m3u8,网络源,https://static.tildacdn.biz/tild6366-6336-4230-b562-656138633562/___TV-___188-76.webp
-.black (576p),http://stream.mcquack.net/263/index.m3u8,网络源,https://i.imgur.com/Q4A6ci4.png
-.red (576p),http://5.188.159.128:8070/RED/index.m3u8,网络源,https://i.imgur.com/GET9Qut.png
-.red HD (1080p),http://178.134.1.158:8081/red/index.m3u8,网络源,https://i.imgur.com/GET9Qut.png
-.sci-fi (576p),http://stream.mcquack.net/180/index.m3u8,网络源,https://i.imgur.com/nSSUHcg.png
-:24 (1080p),http://88.212.15.27/live/test_trojka_25p/playlist.m3u8,网络源,https://i.imgur.com/tTCuczU.png
 A1 (576p),http://31.148.48.15/A1/index.m3u8,网络源,https://i.imgur.com/2pAHdAi.png
 A1 TV (1080p) [Not 24/7],https://stream.a1mediagroep.nl/hls/a1tv.m3u8,网络源,https://i.imgur.com/JZ1oTM2.png
 A2 (576p),http://str2.iptvhd.ru:8080/Amedia_2/index.m3u8,网络源,https://i.imgur.com/NqHla2V.png
@@ -863,6 +864,7 @@ Acasa HD,http://eb4b8dcf.kablakaka.ru/iptv/AE8BY6FHF5ZGAG/6988/index.m3u8,网络
 Acasa Gold (1080p),http://rpprod.hbbtv.cdn.cra.cz:8080/hbbTV/cme-ro-progold/live_fullhd?offsetSeconds=0,网络源,https://static.wikia.nocookie.net/logopedia/images/f/fb/Acasa_Gold_2022.svg/revision/latest/scale-to-width-down/512
 ACC Digital Network (1080p),https://raycom-accdn-firetv.amagi.tv/playlist.m3u8,网络源,https://i.imgur.com/V6Kaqha.png
 ACC Network (720p),http://23.239.31.26:8989/accnetwork/index.m3u8,网络源,https://i.imgur.com/TpCkbkT.png
+Acces Direct (576p),https://live77cdn2.antenaplay.ro/live2_fast/ch6/stream.m3u8,网络源,https://assets.antenaplay.ro/2026/05/07/BBOXtLtkSKfKAK5pSBag.png
 Access 4 PAC,https://reflect-channel18vod-springfield-il-us.cablecast.tv/live-16/live/stream-4/live.m3u8,网络源,https://i.imgur.com/DQu3gES.png
 Access 19,https://reflect-montgomerycommunitymedia.cablecast.tv/live-8/live/stream-3/live.m3u8,网络源,https://i.imgur.com/7F4LJMT.png
 Access Humboldt (1080p),https://rtmp-live-ingest-ap-northeast-2-universe-dacast-com.akamaized.net/transmuxv1/streams/f08fcd45-1d04-9a8c-39ca-f56091820e5c.m3u8,网络源,https://i.imgur.com/tJl43uM.png
@@ -997,5 +999,3 @@ Al Janoub TV,https://live.alissahost.net/hls/test.m3u8,网络源,https://i.imgur
 Al Jazeera 2 (1080p),https://live-hls-web-aja2-gcp.thehlive.com/AJA2/index.m3u8,网络源,https://i.imgur.com/miq8O1Q.png
 Al Jazeera (1080p),https://live-hls-apps-aja-fa.getaj.net/AJA/01.m3u8,网络源,https://i.imgur.com/7bRVpnu.png
 Al Jazeera English (1080p),https://live-hls-apps-aje-fa.getaj.net/AJE/index.m3u8,网络源,https://i.imgur.com/7bRVpnu.png
-Al Jazeera English HD (576p),http://stream.mcquack.net/131/index.m3u8,网络源,https://i.imgur.com/7bRVpnu.png
-Al Jazeera Documentary (1080p) [Geo-blocked],https://live-hls-apps-ajd-fa.getaj.net/AJD/index.m3u8,网络源,https://i.imgur.com/5dNJlLo.png
