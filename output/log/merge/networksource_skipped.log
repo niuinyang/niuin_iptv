@@ -1,12 +1,17 @@
 频道名,地址,跳过原因
 CTS (HUA-CHI CTS) (1080p),rtmp://59.124.75.138:1935/sat/tv111,无效URL（非 http/https/rtsp 开头）
 www.izbds.com,https://vd2.bdstatic.com/mda-sctj0f96cn79js4n/1080p/cae_h264/1774710384405617311/mda-sctj0f96cn79js4n.mp4,重复URL
+余姚综合,http://l.cztvcloud.com/channels/lantian/SXyuyao1/720p.m3u8?zzhed,重复URL
+余杭未来E频道,http://l.cztvcloud.com/channels/lantian/SXyuhang3/720p.m3u8?zzhed,重复URL
+余杭综合频道,http://l.cztvcloud.com/channels/lantian/SXyuhang1/720p.m3u8?zzhed,重复URL
+嵊泗综合,http://l.cztvcloud.com/channels/lantian/SXshengzhou1/720p.m3u8?zzhed,重复URL
 支持作者,https://vd2.bdstatic.com/mda-sctj0f96cn79js4n/1080p/cae_h264/1774710384405617311/mda-sctj0f96cn79js4n.mp4,重复URL
 数码时代,http://ali-m-l.cztv.com/channels/lantian/channel012/1080p.m3u8,重复URL
 浙江教科影院,http://ali-m-l.cztv.com/channels/lantian/channel004/1080p.m3u8,重复URL
 浙江新闻,http://ali-m-l.cztv.com/channels/lantian/channel007/1080p.m3u8,重复URL
 浙江民生休闲,http://ali-m-l.cztv.com/channels/lantian/channel006/1080p.m3u8,重复URL
 浙江经济生活,http://ali-m-l.cztv.com/channels/lantian/channel003/1080p.m3u8,重复URL
+萧山生活频道,http://l.cztvcloud.com/channels/lantian/SXxiaoshan2/720p.m3u8?zzhed,重复URL
 网神影厅508118,https://live.ottiptv.cc/douyu/508118,重复URL
 [HD]台视,rtmp://f13h.mine.nu/sat/tv071,无效URL（非 http/https/rtsp 开头）
 [HD]东森超视,rtmp://f13h.mine.nu/sat/tv331,无效URL（非 http/https/rtsp 开头）
@@ -23,11 +28,6 @@ CCTV12,http://124.165.251.82:85/tsfile/live/0012_1.m3u8?key=txiptv&playlive=1&au
 CCTV13,http://ottrrs.hl.chinamobile.com/PLTV/88888888/224/3221226537/index.m3u8,重复URL
 CCTV15,http://gmxw.7766.org:808/hls/102/index.m3u8,重复URL
 CCTV16,http://gmxw.7766.org:808/hls/169/index.m3u8,重复URL
-CCTV17,https://live.264788.xyz/channel/cctv17?streamid=f9c36f1e95b5b35eac89cc89583e7c0a&livekey=01WgOR41rriMmMkzNsd0UoaxJRwetZdxIvtVk,重复URL
-CCTV17,https://live.264788.xyz/channel/cctv17?streamid=348c8c0c04a6d2b900e5a3bcb4af8ce1&livekey=01WgOR41rriMmMkzNsd0UoaxJRwetZdxIvtVk,重复URL
-第一剧场,https://live.264788.xyz/channel/diyijuchang?streamid=e9b0fb1ca135a4aeae12944494883794&livekey=01WgOR41rriMmMkzNsd0UoaxJRwetZdxIvtVk,重复URL
-第一剧场,https://live.264788.xyz/channel/diyijuchang?streamid=d81e188b59ece96b7e8f1ce34aea3ef8&livekey=01WgOR41rriMmMkzNsd0UoaxJRwetZdxIvtVk,重复URL
-怀旧剧场,https://live.264788.xyz/channel/huaijiujuchang?streamid=7e5d1abdddde08f588234f3f640f75ff&livekey=01WgOR41rriMmMkzNsd0UoaxJRwetZdxIvtVk,重复URL
 湖南卫视,https://txmov2.a.kwimgs.com/bs3/video-hls/5199687338554291078_hlsb.m3u8,重复URL
 浙江卫视,http://ali-m-l.cztv.com:80/channels/lantian/channel001/1080p.m3u8,重复URL
 浙江卫视,http://ali-m-l.cztv.com/channels/lantian/channel001/1080p.m3u8,重复URL
@@ -35,31 +35,20 @@ CCTV17,https://live.264788.xyz/channel/cctv17?streamid=348c8c0c04a6d2b900e5a3bcb
 东方卫视,http://bp-resource-dfl.bestv.cn/148/3/video.m3u8,重复URL
 东南卫视,http://live.zohi.tv/video/s10001-fztv-3/index.m3u8,重复URL
 深圳卫视,http://gmxw.7766.org:808/hls/45/index.m3u8,重复URL
-四川卫视,https://live.264788.xyz/channel/sichuanweishi4k?streamid=21be5901ee81559c827dc84e46f26452&livekey=01WgOR41rriMmMkzNsd0UoaxJRwetZdxIvtVk,重复URL
-四川卫视,https://live.264788.xyz/channel/sichuanweishi4k?streamid=401bf692a1a8b91298f26077d53316d6&livekey=01WgOR41rriMmMkzNsd0UoaxJRwetZdxIvtVk,重复URL
-宁夏卫视,https://live.264788.xyz/channel/ningxiaweishi?streamid=e1236348f815c36a0429357e5b5c5f10&livekey=01WgOR41rriMmMkzNsd0UoaxJRwetZdxIvtVk,重复URL
-宁夏卫视,https://live.264788.xyz/channel/ningxiaweishi?streamid=1b2952717a920173e66d4a348f9dcb5c&livekey=01WgOR41rriMmMkzNsd0UoaxJRwetZdxIvtVk,重复URL
-宁夏卫视,https://live.264788.xyz/channel/ningxiaweishi?streamid=551474d02bee1c160e1692e22c45ddba&livekey=01WgOR41rriMmMkzNsd0UoaxJRwetZdxIvtVk,重复URL
 山西卫视,http://119.39.9.8:9901/tsfile/live/0118_1.m3u8,重复URL
 广东卫视,https://txmov2.a.kwimgs.com/upic/2023/01/26/09/BMjAyMzAxMjYwOTE3NDVfNzM5MzQzNzIyXzk0NjI1OTUwNTA3XzBfMw==_b_B81ddda927d33445d544befd008e60109.mp4,重复URL
 延边卫视,https://srs.iyb983.cn/video/CYS/index.m3u8,重复URL
 延边卫视,http://l.cztvcloud.com/channels/lantian/SXxinchang2/720p.m3u8,重复URL
 延边卫视,https://srs.iyb983.cn:443/video/CYS/index.m3u8,重复URL
 延边卫视,http://l.cztvcloud.com/channels/lantian/SXxinchang2/720p.m3u8#,重复URL
-新疆卫视,https://live.264788.xyz/channel/xinjiangweishi?streamid=4f481f56ae39ce5d24203471de9df635&livekey=01WgOR41rriMmMkzNsd0UoaxJRwetZdxIvtVk,重复URL
 新疆卫视,http://218.84.12.186:8001/hls/main/playlist.m3u8?zxinjd;http://218.84.12.186:8001/hls/main/playlist.m3u8zxinjd,重复URL
-江西卫视,https://live.264788.xyz/channel/jiangxiweishi?streamid=555198f31caa33506ac6abb70d788959&livekey=01WgOR41rriMmMkzNsd0UoaxJRwetZdxIvtVk,重复URL
 江西卫视,http://112.27.5.218:9901/tsfile/live/faacts/0138_1.m3u8?key=txiptv&playlive=1&authid=0,重复URL
 河南卫视,http://111.59.139.82:11888/tsfile/live/0139_1.m3u8?key=txiptv&playlive=1&authid=0,重复URL
 甘肃卫视,http://218.13.170.98:9901/tsfile/live/0141_1.m3u8,重复URL
-西藏卫视,https://live.264788.xyz/channel/xizangweishi?streamid=4b4e8ea919f1cfd5e43deed1d1675251&livekey=01WgOR41rriMmMkzNsd0UoaxJRwetZdxIvtVk,重复URL
 西藏卫视,http://112.27.5.218:9901/tsfile/live/0111_1.m3u8?key=txiptv&playlive=1&authid=0,重复URL
-贵州卫视,https://live.264788.xyz/channel/guizhouweishi?streamid=091bd59ea031989839c23459bb8cc9d4&livekey=01WgOR41rriMmMkzNsd0UoaxJRwetZdxIvtVk,重复URL
 辽宁卫视,http://61.136.172.236:9901/tsfile/live/0121_1.m3u8?key=txiptv&playlive=1&authid=0,重复URL
 安多卫视,https://liveout.xntv.tv/a65jur/96iln2.m3u8,重复URL
 黑龙江卫视,http://61.136.172.236:9901/tsfile/live/0143_1.m3u8?key=txiptv&playlive=1&authid=0,重复URL
-内蒙古卫视,https://live.264788.xyz/channel/neimengguweishi?streamid=81a015dbecf3031d7d847b7a9b059f67&livekey=01WgOR41rriMmMkzNsd0UoaxJRwetZdxIvtVk,重复URL
-内蒙古卫视,https://live.264788.xyz/channel/neimengguweishi?streamid=3e7340acf8869ac1c7dad1bb836dcd35&livekey=01WgOR41rriMmMkzNsd0UoaxJRwetZdxIvtVk,重复URL
 内蒙古卫视,http://play1-qk.nmtv.cn/live/1769652018126032.m3u8,重复URL
 内蒙古卫视,https://ali-m-l.cztv.com/channels/lantian/channel007/1080p.m3u8,重复URL
 大湾区卫视,http://222.128.55.152:9080/live/dwq.m3u8,重复URL
@@ -82,6 +71,7 @@ CCTV17,https://live.264788.xyz/channel/cctv17?streamid=348c8c0c04a6d2b900e5a3bcb
 世界地理,http://120.76.248.139/live/bfgd/4200000177.m3u8,重复URL
 人与自然,http://newcntv.qcloudcdn.com/asp/hls/1200/0303000a/3/default/1425e1d505654cb48ba82b807b221193/1200.m3u8,重复URL
 航拍中国第二季,http://newcntv.qcloudcdn.com/asp/hls/4000/0303000a/3/default/2bdfdad540b342f592f9817cb7f3b79a/4000.m3u8,重复URL
+梨园,https://dxtx.hntv.tv/live/lypd.m3u8?txSecret=10c771842a0be59e8b575d765173ec96&txTime=7B923E0A&wsSecret=41543190cdf375f1c73207222bb96542&wsTime=1769313549,重复URL
 哈哈炫动,http://ottrrs.hl.chinamobile.com/PLTV/88888888/224/3221225657/index.m3u8,重复URL
 哈哈炫动,http://38.75.136.137:98/gslb/dsdqpub/xdkthd.m3u8?auth=testpub,重复URL
 哈哈炫动,http://kkk.888.3116598.xyz/api.php?n=tttt&id=QZUKbL&tk=FgM0vQMejxvG,重复URL
@@ -92,53 +82,70 @@ CCTV17,https://live.264788.xyz/channel/cctv17?streamid=348c8c0c04a6d2b900e5a3bcb
 湖南爱晚,http://phoneqq.qing.mgtv.com/nn_live/nn_x64/Y2hzPSZkZWY9MSZ1aXA9MTA2LjE0LjM4LjU1JnRlcm09NSZtYWNpZD02ODZlOGNmOGM4OGU3N2VjOWEwNzkzMjg5ZjUzNDg0MmFiZWM0ZjNjJnFpZD0mcmF1dGhfZW5hYmxlPW9mZiZjZG5leF9pZD1xcV9waG9uZV9saXZlJmVzPTE3OTI3MTQ5MjUmdXVpZD05Yjk5MTc3YjQwNmZmMWYwN2NiZTgzYjY0ZTFlNDQ0OS02YTBlMjYzNyZzPTY4YmQ5ZjA5MzhlYmRkODZmNzNmNTE5Mjc0ZjZjMjYyJnVpZD0mbmR2PWlvcy02LjUuMCZ2PTImYXM9MCZfY2FyQ29kZT0w/HNDSJMPP360.m3u8,重复URL
 衡阳新闻综合,https://liveplay-srs.voc.com.cn/hls/tv/183_554704.m3u8,重复URL
 武汉一台新闻综合,https://ls.qingting.fm/live/20198/64k.m3u8,重复URL
+江夏新闻综合,http://59.175.226.142:280/gb28181/xwzh.m3u8?zhubd,重复URL
 荆门新闻综合,http://stream.jmtv.com.cn/xwzh/sd/live.m3u8,重复URL
+荆门新闻综合,https://stream.jmtv.com.cn/xwzh/playlist.m3u8?_upt=3e28e7271664278691,重复URL
 南国都市,http://tencentplay.gztv.com/live/nanguodushi.m3u8?txSecret=140110ae3d6c936a77f94c4f4d85b0d3&txTime=18d57929bd4,重复URL
 南国都市,https://tencentplay.gztv.com/live/nanguodushi.m3u8?txSecret=550af55c0ea34ce492748481415b6dfa&txTime=1903e7b17de,重复URL
 广东民生,http://183.11.239.36:808/hls/18/index.m3u8,重复URL
 广州新闻,http://tencentplay.gztv.com/live/xinwen.m3u8?txSecret=d2c2db0b598c02ec1b5623728434d367&txTime=18d57929bd3,重复URL
 广州竞赛,http://8.138.7.223/tv/gzjs.m3u8,重复URL
 广州综合,http://tencentplay.gztv.com/live/zonghes.m3u8?txSecret=c8dbe86d6f86eb1a21999ab479fd5667&txTime=18d3c4690e8,重复URL
+广州综合,https://tencentplaybusiness.gztv.com/live/zonghes.m3u8,重复URL
+广州综合,https://tencentplay.gztv.com/live/zonghes.m3u8?txSecret=f0147ae6453a80f5989f382368b72aad&txTime=18d00acf487,重复URL
+广州综合,https://tencentplay.gztv.com/live/zonghes.m3u8?txSecret=439b0fd2cf766b363c93a59cbcbe1370&txTime=18d00acf488,重复URL
 上虞文化影院,http://l.cztvcloud.com/channels/lantian/SXshangyu2/720p.m3u8?zzhed,重复URL
 上虞文化影院,http://l.cztvcloud.com/channels/lantian/SXshangyu2/720p.m3u8,重复URL
 上虞新商都,http://l.cztvcloud.com/channels/lantian/SXshangyu3/720p.m3u8,重复URL
 上虞新商都,http://l.cztvcloud.com/channels/lantian/SXshangyu3/720p.m3u8?zzhed,重复URL
 上虞新闻综合,http://l.cztvcloud.com/channels/lantian/SXshangyu1/720p.m3u8?zzhed,重复URL
+东阳影视生活,http://l.cztvcloud.com/channels/lantian/SXdongyang1/720p.m3u8,重复URL
 中国蓝新闻,http://ali-m-l.cztv.com/channels/lantian/channel009/1080p.m3u8,重复URL
 之江纪录,https://ali-m-l.cztv.com/channels/lantian/channel012/1080p.m3u8,重复URL
 之江纪录,https://ali-m-l.cztv.com/channels/lantian/channel12/720p.m3u8,重复URL
 云和新闻综合,http://l.cztvcloud.com/channels/lantian/SXyunhe1/720p.m3u8,重复URL
+云和新闻综合,http://l.cztvcloud.com/channels/lantian/SXyunhe1/720p.m3u8?zzhed,重复URL
 余姚姚江文化,http://l.cztvcloud.com/channels/lantian/SXyuyao3/720p.m3u8?zzhed,重复URL
 余姚姚江文化,https://l.cztvcloud.com/channels/lantian/SXyuyao3/720p.m3u8,重复URL
 余姚综合,http://l.cztvcloud.com/channels/lantian/SXyuyao1/720p.m3u8,重复URL
 余姚综合,http://l.cztvcloud.com/channels/lantian/SXyuyao1/720p.m3u8?cWlkPSZzPTg3OWMwYmMyZDMzYTFhZGY3NDQxMjgyYTg1MmUzNTY0JmVzPTE3MDY2Nzc4NzMmdXVpZD0yMjdiY2MzNGNiNGY0MThlYjRiY2IxYzcwNmZjODNkMS02NzQ3NDY2NyZ2PTImYXM9MCZjZG5leF9pZD10eF9waG9uZV9saXZl,重复URL
 余姚综合,http://l.cztvcloud.com/channels/lantian/SXyuyao1/720p.m3u8?zzhed,重复URL
+余姚综合,https://l.cztvcloud.com/channels/lantian/SXyuyao1/720p.m3u8,重复URL
 余杭未来,http://l.cztvcloud.com/channels/lantian/SXyuhang3/720p.m3u8?zzhed,重复URL
 余杭未来E,http://l.cztvcloud.com/channels/lantian/SXyuhang3/720p.m3u8,重复URL
 余杭综合,http://l.cztvcloud.com/channels/lantian/SXyuhang1/720p.m3u8?zzhed,重复URL
 余杭综合,http://l.cztvcloud.com/channels/lantian/SXyuhang1/720p.m3u8,重复URL
 兰溪新闻综合,http://l.cztvcloud.com/channels/lantian/SXlanxi1/720p.m3u8,重复URL
 兰溪新闻综合,http://l.cztvcloud.com/channels/lantian/SXlanxi1/720p.m3u8?zzhed,重复URL
+嘉兴新闻综合,http://live.zohi.tv/video/s10001-fztv-1/index.m3u8,重复URL
 嘉兴新闻综合,http://tvfile.jyrmt.cn:80/nmip-media/channellive/channel104452/playlist.m3u8,重复URL
 嵊泗综合,http://l.cztvcloud.com/channels/lantian/SXshengzhou1/720p.m3u8?zzhed,重复URL
 嵊泗综合,http://l.cztvcloud.com/channels/lantian/SXshengsi1/720p.m3u8,重复URL
 嵊泗综合,http://l.cztvcloud.com/channels/lantian/SXshengzhou1/720p.m3u8?zzhed#http://l.cztvcloud.com/channels/lantian/SXshengzhou1/720p.m3u8,重复URL
 平湖新闻综合,http://l.cztvcloud.com/channels/lantian/SXpinghu1/720p.m3u8?zzhed,重复URL
 平湖民生休闲,http://l.cztvcloud.com/channels/lantian/SXpinghu2/720p.m3u8?zzhed,重复URL
+平湖民生休闲,http://l.cztvcloud.com/channels/lantian/SXpinghu2/720p.m3u8,重复URL
+庆元综合,http://l.cztvcloud.com/channels/lantian/SXqingyuan1/720p.m3u8?zzhed?,重复URL
 庆元综合,http://l.cztvcloud.com/channels/lantian/SXqingyuan1/720p.m3u8?fbl=,重复URL
 庆元综合,http://l.cztvcloud.com/channels/lantian/SXqingyuan1/720p.m3u8,重复URL
+开化国家公园,http://l.cztvcloud.com/channels/lantian/SXkaihua2/720p.m3u8zzhed,重复URL
+开化国家公园,http://l.cztvcloud.com/channels/lantian/SXkaihua2/720p.m3u8,重复URL
+开化国家公园,http://l.cztvcloud.com/channels/lantian/SXkaihua2/720p.m3u8?zzhed,重复URL
 开化国家公园,http://l.cztvcloud.com/channels/lantian/SXkaihua2/720p.m3u8?zzhed#http://l.cztvcloud.com/channels/lantian/SXkaihua2/720p.m3u8zzhed#http://l.cztvcloud.com/channels/lantian/SXkaihua2/720p.m3u8,重复URL
 开化新闻综合,http://l.cztvcloud.com/channels/lantian/SXkaihua1/720p.m3u8?zzhed,重复URL
 文成综合,http://l.cztvcloud.com/channels/lantian/SXwencheng1/720p.m3u8,重复URL
+文成综合,http://l.cztvcloud.com/channels/lantian/SXwencheng1/720p.m3u8?zzhed?,重复URL
 文成综合,http://l.cztvcloud.com/channels/lantian/SXwencheng1/720p.m3u8?zzhed,重复URL
 新昌新闻综合,https://l.cztvcloud.com/channels/lantian/SXxinchang1/720p.m3u8,重复URL
 新昌生活,http://l.cztvcloud.com/channels/lantian/SXxinchang2/720p.m3u8,重复URL
 普陀电视台,http://l.cztvcloud.com/channels/lantian/SXputuo1/720p.m3u8,重复URL
 普陀电视台,https://l.cztvcloud.com/channels/lantian/SXputuo1/720p.m3u8,重复URL
 松阳综合,http://l.cztvcloud.com/channels/lantian/SXsongyang1/720p.m3u8,重复URL
+松阳综合,http://l.cztvcloud.com/channels/lantian/SXsongyang1/720p.m3u8?zzhed?,重复URL
 武义新闻综合,http://l.cztvcloud.com/channels/lantian/SXwuyi1/720p.m3u8,重复URL
 武义新闻综合,http://l.cztvcloud.com/channels/lantian/SXwuyi1/720p.m3u8?zzhed,重复URL
 洞头综合,http://l.cztvcloud.com/channels/lantian/SXdongtou1/720p.m3u8,重复URL
+洞头综合,http://l.cztvcloud.com/channels/lantian/SXdongtou1/720p.m3u8?zzhed?,重复URL
 浙江休闲台,http://ali-m-l.cztv.com/channels/lantian/channel006/720p.m3u8,重复URL
 浙江公共新闻,http://ali-m-l.cztv.com/channels/lantian/channel07/1080p.m3u8,重复URL
 浙江公共新闻,https://ali-m-l.cztv.com/channels/lantian/channel007/1080p.m3u8,重复URL
@@ -170,6 +177,7 @@ CCTV17,https://live.264788.xyz/channel/cctv17?streamid=348c8c0c04a6d2b900e5a3bcb
 浙江民生休闲,https://ali-m-l.cztv.com/channels/lantian/channel006/1080p.m3u8?,重复URL
 浙江民生休闲,https://ali-m-l.cztv.com/channels/lantian/channel006/1080p.m3u8,重复URL
 浙江生活,http://ali-m-l.cztv.com/channels/lantian/channel03/1080p.m3u8,重复URL
+浙江生活,http://ali-m-l.cztv.com/channels/lantian/channel003/720p.m3u8,重复URL
 浙江生活,http://ali-m-l.cztv.com/channels/lantian/channel003/1080p.m3u8,重复URL
 浙江生活,http://ali-m-l.cztv.com/channels/lantian/channel03/720p.m3u8,重复URL
 浙江生活,http://ls.qingting.fm/live/1099.m3u8,重复URL
@@ -181,11 +189,15 @@ CCTV17,https://live.264788.xyz/channel/cctv17?streamid=348c8c0c04a6d2b900e5a3bcb
 浙江钱江,http://ali-m-l.cztv.com/channels/lantian/channel02/1080p.m3u8,重复URL
 浙江钱江,https://ali-m-l.cztv.com/channels/lantian/channel002/1080p.m3u8,重复URL
 浙江钱江,https://ali-m-l.cztv.com/channels/lantian/channel002/1080p.m3u8?,重复URL
+浙江钱江,http://ali-xwl.cztv.com/live/channel021080Plxw.m3u8,重复URL
+浙江钱江,http://ali-xwl.cztv.com/live/channel02720Plxw.m3u8,重复URL
 海宁新闻综合,https://p2hs.vzan.com/slowlive/317913155078575177/live.m3u8,重复URL
 缙云新闻综合,http://l.cztvcloud.com/channels/lantian/SXjinyun1/720p.m3u8,重复URL
+缙云综合,http://l.cztvcloud.com/channels/lantian/SXjinyun1/720p.m3u8?zzhed?,重复URL
 苍南新闻综合,https://l.cztvcloud.com/channels/lantian/SXcangnan1/720p.m3u8,重复URL
 萧山新闻综合,http://l.cztvcloud.com/channels/lantian/SXxiaoshan1/720p.m3u8?zzhed,重复URL
 萧山新闻综合,https://l.cztvcloud.com/channels/lantian/SXxiaoshan1/720p.m3u8,重复URL
+萧山生活,http://l.cztvcloud.com/channels/lantian/SXxiaoshan2/720p.m3u8,重复URL
 萧山生活,http://l.cztvcloud.com/channels/lantian/SXxiaoshan2/720p.m3u8?zzhed,重复URL
 萧山生活,https://l.cztvcloud.com/channels/lantian/SXxiaoshan2/720p.m3u8,重复URL
 萧山综合,http://l.cztvcloud.com/channels/lantian/SXxiaoshan1/720p.m3u8,重复URL
@@ -197,34 +209,41 @@ CCTV17,https://live.264788.xyz/channel/cctv17?streamid=348c8c0c04a6d2b900e5a3bcb
 遂昌综合,http://l.cztvcloud.com/channels/lantian/SXsuichang1/720p.m3u8,重复URL
 青田电视台,http://l.cztvcloud.com/channels/lantian/SXqingtian1/720p.m3u8,重复URL
 龙泉新闻综合,http://l.cztvcloud.com/channels/lantian/SXlongquan1/720p.m3u8,重复URL
+龙游新闻综合,http://l.cztvcloud.com/channels/lantian/SXlongyou1/720p.m3u8?zzhed,重复URL
 龙游新闻综合,https://l.cztvcloud.com/channels/lantian/SXlongyou1/720p.m3u8,重复URL
+龙游生活娱乐,http://l.cztvcloud.com/channels/lantian/SXlongyou2/720p.m3u8?zzhed,重复URL
 龙游生活娱乐,https://l.cztvcloud.com/channels/lantian/SXlongyou2/720p.m3u8,重复URL
+山东教育,https://test1.live.sdetv.com.cn/live/dianshizhibo/playlist.m3u8,重复URL
 山东新闻,http://ls.qingting.fm/live/60180.m3u8,重复URL
 山东生活,http://ls.qingting.fm/live/60260.m3u8,重复URL
 优漫卡通,http://ottrrs.hl.chinamobile.com/PLTV/88888888/224/3221225656/index.m3u8,重复URL
 优漫卡通,http://39.165.39.49:85/tsfile/live/1092_1.m3u8?key=txiptv&playlive=0&authid=0,重复URL
+南京教科,http://nklive.nbs.cn/hls/75b3c462-b831-4de7-a34b-5d3221db2069/index.m3u8,重复URL
+南京新闻综合,http://nklive.nbs.cn/hls/d511bc9d-a694-4453-b3a2-4fc842cc97a1/index.m3u8,重复URL
 泗洪新闻综合,http://live1.habctv.com/ggpdsl/sd/live.m3u8?zjiangsd#http://live1.habctv.com/ggpdsl/sd/live.m3u8,重复URL
-苏州4k,https://live-auth.51kandianshi.com/szgd/csztv4k_hd.m3u8,重复URL
 苏州文化生活,https://live-auth.51kandianshi.com/szgd/csztv3.m3u8,重复URL
 苏州新闻综合,https://live-auth.51kandianshi.com/szgd/csztv1.m3u8,重复URL
 苏州生活资讯,https://live-auth.51kandianshi.com/szgd/csztv5.m3u8,重复URL
 苏州社会经济,https://live-auth.51kandianshi.com/szgd/csztv2.m3u8,重复URL
 靖江新闻综合,http://ls.qingting.fm/live/23797.m3u8,重复URL
+亳州农村,http://zbbf2.ahbztv.com/live/418.m3u8,重复URL
 亳州农村,http://zbbf2.ahbztv.com/live/418.m3u8?zanhd,重复URL
 六安公共,http://ls.qingting.fm/live/1794199.m3u8,重复URL
 六安新闻综合,http://ls.qingting.fm/live/267.m3u8,重复URL
 固镇新闻,http://www.guzhenm.com:7001/hls/hd-live.m3u8?%E5%85%B3%E6%B3%A8%E5%BE%AE%E4%BF%A1%E5%85%AC%E4%BC%97%E5%8F%B7[%E6%99%B4%E5%9B%AD],重复URL
-安徽导视,http://dspdhls.appcoo.com:8888/live/dspd/index.m3u8,重复URL
+固镇新闻,http://www.guzhenm.com:7001/hls/hd-live.m3u8,重复URL
 广德新闻综合,https://live.gdtv.ah.cn/live/newsTV.m3u8,重复URL
 祁门综合,http://zbbf2.ahbztv.com/live/416.m3u8?zanhd,重复URL
 铜陵新闻综合,https://ls.qingting.fm/live/21303/64k.m3u8,重复URL
 海南少儿,http://nn.7x9d.cn/地方台8563/海南.php?id=sepd,重复URL
 海南新闻,http://ls.qingting.fm/live/1861.m3u8,重复URL
 辽宁体育,http://120.76.248.139/live/bfgd/4200000611.m3u8,重复URL
+辽宁都市,https://ls.qingting.fm/live/1099/64k.m3u8,重复URL
 陕西公共,http://ls.qingting.fm/live/1222.m3u8,重复URL
 万荣综合,http://60.222.246.220:19433/hls1.m3u8,重复URL
 大宁综合,http://live.daningtv.com/aac_dngb/playlist.m3u8,重复URL
 太谷新闻综合,https://p2.vzan.com/slowlive/596867413819827251/live.m3u8?zbid=1725814272&amp;amp;tpid=1516989100&amp;amp;type=0,重复URL
+太谷新闻综合,https://p2.vzan.com/slowlive/596867413819827251/live.m3u8?zbid=1725814272&tpid=1516989100&type=0,重复URL
 平遥新闻综合,https://tntgjhjb.live.sxmty.com/live/hls/3a4585ac11ec4e1bb07b419101b370c3/baf63e2b313440c2a25d7859f9b73b05-1.m3u8?zshanxd,重复URL
 怀仁综合,https://1yp7hc5p.live.sxmty.com/live/hls/bff8529922344209985b6e49baa9555a/efa2543628fc4a7ea93d3d6c975f77dc-1.m3u8,重复URL
 长子综合,https://www.wxhcgbds.com:8081/channelTv/WXTV_1.m3u8?zshanxd,重复URL
@@ -234,7 +253,11 @@ CCTV17,https://live.264788.xyz/channel/cctv17?streamid=348c8c0c04a6d2b900e5a3bcb
 北京科教,http://120.76.248.139/live/bfgd/4200000113.m3u8,重复URL
 铜梁综合,http://183.64.174.171:40123/ch1.m3u8?zzhongqd,重复URL
 三明新闻综合,http://ls.qingting.fm/live/4885.m3u8,重复URL
+三明新闻综合,https://ls.qingting.fm/live/5022100/64k.m3u8,重复URL
+云霄综合,http://live.zzyxxw.com:85/live/xwzh.m3u8?fujian,重复URL
 云霄综合,https://live.zzyxxw.com:2443/live/xwzh.m3u8,重复URL
+云霄综合,http://live.zzyxxw.com:85/live/xwzh.m3u8,重复URL
+云霄综合,http://live.zzyxxw.com:85/live/xwzh.m3u8?fujian,,重复URL
 厦门卫视,http://ottrrs.hl.chinamobile.com/PLTV/88888888/224/3221226390/index.m3u8,重复URL
 厦门卫视,http://183.11.239.36:808/hls/17/index.m3u8,重复URL
 厦门卫视,http://183.250.156.180:9999/newlive/live/hls/28/live.m3u8,重复URL
@@ -242,6 +265,8 @@ CCTV17,https://live.264788.xyz/channel/cctv17?streamid=348c8c0c04a6d2b900e5a3bcb
 厦门卫视,http://107.150.60.122/live/xmws.m3u8,重复URL
 厦门卫视,http://198.204.228.26/live/xmws.m3u8,重复URL
 厦门卫视,http://63.141.230.178:82/gslb/zbdq5.m3u8?id=xmws,重复URL
+福州少儿,http://live.zohi.tv/video/s10001-fztv-4/index.m3u8,重复URL
+福州生活,http://live.zohi.tv:80/video/s10001-fztv-3/index.m3u8,重复URL
 福州生活,http://live.zohi.tv/video/s10001-fztv-3/index.m3u8,重复URL
 福建新闻,http://satellitepull.cnr.cn/live/wx32fjxwgb/playlist.m3u8,重复URL
 福建海峡卫视,http://r.jdshipin.com/WtYt3,重复URL
@@ -250,16 +275,24 @@ CCTV17,https://live.264788.xyz/channel/cctv17?streamid=348c8c0c04a6d2b900e5a3bcb
 甘肃都市,https://satellitepull.cnr.cn/live/wxgsdstb/playlist.m3u8,重复URL
 来宾综合,http://zb.gxlbamc.com:1935/live/lbzh.stream/playlist.m3u8,重复URL
 灌阳新闻综合,https://ls.qingting.fm/live/5043/64k.m3u8,重复URL
+河北农民,http://ls.qingting.fm/live/1650.m3u8,重复URL
 河北农民,https://ls.qingting.fm/live/1650/64k.m3u8,重复URL
+河北农民,https://jwcdnqx.hebyun.com.cn/live/clzhpd/1500k/tzwj_video.m3u8?zhebd,重复URL
 河北都市,https://radio.pull.hebtv.com/live/hebnczx.m3u8,重复URL
 邢台综合,http://jwplay.hebyun.com.cn/live/xtsrmtzs/1500k/tzwj_video.m3u8,重复URL
+邢台综合,https://jwplay.hebyun.com.cn:443/live/xtsrmtzs/1500k/tzwj_video.m3u8,重复URL
 邯郸公共频道,https://jwcdnqx.hebyun.com.cn/live/hdgg/1500k/tzwj_video.m3u8,重复URL
+邯郸新闻,https://jwcdnqx.hebyun.com.cn/live/hdxwzh/1500k/tzwj_video.m3u8,重复URL
 邯郸科技教育,https://jwcdnqx.hebyun.com.cn/live/hdkj/1500k/tzwj_video.m3u8,重复URL
 七台河新闻综合,http://live.qthnews.org.cn:1935/live/live1/800k/tzwj_video.m3u8,重复URL
+哈尔滨娱乐,http://stream.hrbtv.net/ylpd/sd/live.m3u8?zheild,重复URL
 哈尔滨娱乐,https://stream.hrbtv.net/ylpd/sd/live.m3u8,重复URL
+哈尔滨影视,http://stream.hrbtv.net/yspd/sd/live.m3u8?zheild,重复URL
 哈尔滨新闻综合,http://stream.hrbtv.net/xwzh/sd/live.m3u8?zheild,重复URL
+哈尔滨生活,http://stream.hrbtv.net/shpd/sd/live.m3u8?zheild,重复URL
 哈尔滨资讯,http://stream.hrbtv.net/zxpd/sd/live.m3u8,重复URL
 甘南县综合,https://stream.hrbtv.net/zxpd/sd/live.m3u8,重复URL
+黑龙江少儿,https://ls.qingting.fm/live/4972/64k.m3u8,重复URL
 黑龙江新闻法治,https://ls.qingting.fm/live/4974/64k.m3u8,重复URL
 东丰综合,http://stream3.jlntv.cn:80/aac_dfgb/playlist.m3u8,重复URL
 东丰综合,http://stream5.jlntv.cn/df/sd/live.m3u8?zjild,重复URL
@@ -302,6 +335,7 @@ CCTV17,https://live.264788.xyz/channel/cctv17?streamid=348c8c0c04a6d2b900e5a3bcb
 安多卫视,http://ottrrs.hl.chinamobile.com/PLTV/88888888/224/3221225659/index.m3u8,重复URL
 安多卫视,http://kkk.888.3116598.xyz/api.php?n=tttt&id=rdOvlL&tk=FgM0vQMejxvG,重复URL
 安多卫视,http://kkk.888.3116598.xyz/api.php?n=tttt&id=wRMQR6&tk=FgM0vQMejxvG,重复URL
+西宁新闻综合,https://liveout.xntv.tv/a65jur/96iln2.m3u8?zqinghd,重复URL
 西宁新闻综合,https://liveout.xntv.tv/a65jur/96iln2.m3u8,重复URL
 乐至综合,http://175.155.106.72:89/live1/live1.m3u8?zsicd,重复URL
 井研综合,http://tvfile.jyrmt.cn/nmip-media/channellive/channel104452/playlist.m3u8,重复URL
@@ -309,16 +343,27 @@ CCTV17,https://live.264788.xyz/channel/cctv17?streamid=348c8c0c04a6d2b900e5a3bcb
 名山综合,https://m3u8channel-bx.yunxya.com/nmip-media/channellive/channel104666/playlist.m3u8,重复URL
 夹江新闻综合,http://tvfile.jjrm.org.cn/nmip-media/channellive/channel106282/playlist.m3u8?zsicd,重复URL
 广安公共,http://live1.gatv.com.cn:85/live/GGPD_ggpdzm.m3u8?zsicd,重复URL
+广安公共,http://live1.gatv.com.cn:85/live/GGPD.m3u8,重复URL
+广安公共,http://live1.gatv.com.cn:85/live/GGPD_ggpdzm.m3u8,重复URL
 康巴卫视,http://ottrrs.hl.chinamobile.com/PLTV/88888888/224/3221225660/index.m3u8,重复URL
 康巴卫视,http://kkk.888.3116598.xyz/api.php?n=tttt&id=mwhS1w&tk=FgM0vQMejxvG,重复URL
 康巴卫视,http://kkk.888.3116598.xyz/api.php?n=tttt&id=slYPRK&tk=FgM0vQMejxvG,重复URL
+旺苍新闻综合,http://live.spccmc.com:90/live/spxwzh.m3u8?%E5%85%B3%E6%B3%A8%E5%BE%AE%E4%BF%A1%E5%85%AC%E4%BC%97%E5%8F%B7[%E6%99%B4%E5%9B%AD],重复URL
 旺苍新闻综合,http://channel.wcrmt.cn:80/nmip-media/channellive/channel105268/playlist.m3u8,重复URL
+松潘新闻综合,http://live.spccmc.com:90/live/spxwzh.m3u8,重复URL
+松潘新闻综合,http://live.spccmc.com:90/live/spxwzh.m3u8?zsicd,重复URL
+汶川新闻综合,http://live.iwcmt.cn:90/live/zhxw.m3u8?zsicd,重复URL
 汶川新闻综合,http://live.iwcmt.cn:90/live/zhxw.m3u8,重复URL
+汶川新闻综合,http://file.ysxtv.cn/cms/videos/nmip-media/channellive/channel4/playlist.m3u8?zsicd#rtmp://tv.mcrm.org.cn:1935/channellive/tv01,重复URL
+沐川综合,http://file.ysxtv.cn/cms/videos/nmip-media/channellive/channel4/playlist.m3u8?zsicd,重复URL
+泸县新闻综合,http://lxfile.lxxcb.cn:80/nmip-media/channellive/channel103799/playlist.m3u8,重复URL
+泸县新闻综合,http://lxfile.lxxcb.cn/nmip-media/channellive/channel103799/playlist.m3u8?zsicd,重复URL
+泸县新闻综合,http://lxfile.lxxcb.cn/nmip-media/channellive/channel103799/playlist.m3u8,重复URL
 荥经综合,https://m3u8channel-yj.yunxya.com/nmip-media/channellive/channel101140/playlist.m3u8,重复URL
 营山电视台,http://file.ysxtv.cn/cms/videos/nmip-media/channellive/channel4/playlist.m3u8?zsicd#http://file.ysxtv.cn/cms/videos/nmip-media/channellive/channel4/playlist.m3u8,重复URL
-金川乡村,http://live.jinchuanrmt.com:90/live/jcxc.m3u8?zsicd,重复URL
-金川新闻综合,http://live.jinchuanrmt.com:90/live/zhxw.m3u8?zsicd,重复URL
+金川新闻综合,http://139.203.180.9:90/live/zhxw.m3u8,重复URL
 雅安新闻综合,https://play.yunxya.com/channellive/xinwen.m3u8,重复URL
+青川综合,http://qcfile.qcrmt.com/nmip-media/channellive/channel100933/playlist.m3u8,重复URL
 天津卫视,http://ottrrs.hl.chinamobile.com/PLTV/88888888/224/3221226459/index.m3u8,重复URL
 天津卫视,http://ottrrs.hl.chinamobile.com/PLTV/88888888/224/3221225740/index.m3u8,重复URL
 天津卫视,http://107.150.60.122/live/tjwshd.m3u8,重复URL
@@ -420,6 +465,7 @@ CCTV17,https://live.264788.xyz/channel/cctv17?streamid=348c8c0c04a6d2b900e5a3bcb
 1+1 Ukraina (1080p),#EXTVLCOPT:http-user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36,无效URL（非 http/https/rtsp 开头）
 2+2 (1080p),#EXTVLCOPT:http-user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/130.0.0.0 Safari/537.36,无效URL（非 http/https/rtsp 开头）
 2M Monde (360p),#EXTVLCOPT:http-referrer=http://www.radio2m.ma/,无效URL（非 http/https/rtsp 开头）
+4TV News (576p),#EXTVLCOPT:http-user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/147.0.0.0 Safari/537.36,无效URL（非 http/https/rtsp 开头）
 6 sotok (1080p),#EXTVLCOPT:http-user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/149.0.0.0 Safari/537.36,无效URL（非 http/https/rtsp 开头）
 7/8 TV,#EXTVLCOPT:http-user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/149.0.0.0 Safari/537.3,无效URL（非 http/https/rtsp 开头）
 12tv (720p),#EXTVLCOPT:http-referrer=https://player.streamingconnect.com/,无效URL（非 http/https/rtsp 开头）
@@ -428,6 +474,7 @@ CCTV17,https://live.264788.xyz/channel/cctv17?streamid=348c8c0c04a6d2b900e5a3bcb
 101tv Sevilla,#EXTVLCOPT:http-referrer=https://player.instantvideocloud.net/,无效URL（非 http/https/rtsp 开头）
 Aastha (576p),#EXTVLCOPT:http-user-agent=#EXTVLCOPT:http-user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/147.0.0.0 Safari/537.36,无效URL（非 http/https/rtsp 开头）
 Aastha Bhajan (576p),#EXTVLCOPT:http-user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/147.0.0.0 Safari/537.36,无效URL（非 http/https/rtsp 开头）
+ABP Sanjha (576p),#EXTVLCOPT:http-user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/147.0.0.0 Safari/537.36,无效URL（非 http/https/rtsp 开头）
 Acento TV,#EXTVLCOPT:http-referrer=https://acentotv01.streamprolive.com/i/cp/hls/player.html,无效URL（非 http/https/rtsp 开头）
 Advocate Broadcasting Network,srt://105.113.54.98:4001,无效URL（非 http/https/rtsp 开头）
 AFBTV Kupang (1080p) [Not 24/7],#EXTVLCOPT:http-referrer=https://afbtvkupang.com/,无效URL（非 http/https/rtsp 开头）
@@ -440,6 +487,8 @@ AMC Europe Hungary,#EXTVLCOPT:http-user-agent=Mozilla/5.0 (Windows NT 10.0; Win6
 AMC Europe Romania,#EXTVLCOPT:http-referrer=https://cool-tv.net/,无效URL（非 http/https/rtsp 开头）
 America TV (720p),#EXTVLCOPT:http-user-agent=Mozilla/5.0 (Linux; Android 13; Pixel 7) AppleWebKit/537.36 (KHTML, como Gecko) Chrome/112.0.0.0 Mobile Safari/537.36,无效URL（非 http/https/rtsp 开头）
 Aneflix Live (720p),#EXTVLCOPT:http-referrer=https://vaughn.live/,无效URL（非 http/https/rtsp 开头）
+Anmol Cinema 2 (576p),#EXTVLCOPT:http-user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/147.0.0.0 Safari/537.36,无效URL（非 http/https/rtsp 开头）
+Anmol Cinema (576p),#EXTVLCOPT:http-user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/147.0.0.0 Safari/537.36,无效URL（非 http/https/rtsp 开头）
 ANT1 (1080p) [Geo-blocked],#EXTVLCOPT:http-referrer=http://watch.antennaplus.gr,无效URL（非 http/https/rtsp 开头）
 Antena 1 (Peru) (1080p),#EXTVLCOPT:http-user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/124.0.0.0 Safari/537.36,无效URL（非 http/https/rtsp 开头）
 Antena 3 CNN (1080p),#EXTVLCOPT:http-user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/155.0.0.0 Safari/537.36 Edg/155.0.0.0,无效URL（非 http/https/rtsp 开头）
@@ -454,6 +503,7 @@ Armenia Premium (720p),#EXTVLCOPT:http-user-agent=Mozilla/5.0 (Windows NT 10.0; 
 Armenia TV Satellite (576p),#EXTVLCOPT:http-user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/149.0.0.0 Safari/537.36,无效URL（非 http/https/rtsp 开头）
 ARY Musik (1080p),#EXTVLCOPT:http-referrer=https://live.arydigital.tv/,无效URL（非 http/https/rtsp 开头）
 AsianBox (1080p),#EXTVLCOPT:http-user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/144.0.0.0 Safari/537.36,无效URL（非 http/https/rtsp 开头）
+Asianet Suvarna News (576p),#EXTVLCOPT:http-user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/147.0.0.0 Safari/537.36,无效URL（非 http/https/rtsp 开头）
 Astha TV (1080p),#EXTVLCOPT:http-referrer=https://asthatv.com/,无效URL（非 http/https/rtsp 开头）
 Astro Blitar TV (720p),#EXTVLCOPT:http-referrer=https://abtelevisi.com/,无效URL（非 http/https/rtsp 开头）
 ATV (Armenia) (1080p),#EXTVLCOPT:http-user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/149.0.0.0 Safari/537.36,无效URL（非 http/https/rtsp 开头）
@@ -602,6 +652,25 @@ Dali TV (720p),http://www.dalitv.com.tw:4568/live/dali/index.m3u8,重复URL
 Dance TV [Geo-blocked],#EXTVLCOPT:http-referrer=https://www.dens.tv/,无效URL（非 http/https/rtsp 开头）
 Davika TV (480p),#EXTVLCOPT:http-referrer=https://davikatv.co/livestreaming/,无效URL（非 http/https/rtsp 开头）
 DAZN 1 Portugal,#EXTVLCOPT:http-user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/156.0.0.0 Safari/537.36,无效URL（非 http/https/rtsp 开头）
+DD Arun Prabha (576p),#EXTVLCOPT:http-user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/147.0.0.0 Safari/537.36,无效URL（非 http/https/rtsp 开头）
+DD Assam (576p),#EXTVLCOPT:http-user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/147.0.0.0 Safari/537.36,无效URL（非 http/https/rtsp 开头）
+DD Bangla (576p),#EXTVLCOPT:http-user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/147.0.0.0 Safari/537.36,无效URL（非 http/https/rtsp 开头）
+DD Girnar (576p),#EXTVLCOPT:http-user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/147.0.0.0 Safari/537.36,无效URL（非 http/https/rtsp 开头）
+DD Goa (576p),#EXTVLCOPT:http-user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/147.0.0.0 Safari/537.36,无效URL（非 http/https/rtsp 开头）
+DD Haryana (576p),#EXTVLCOPT:http-user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/147.0.0.0 Safari/537.36,无效URL（非 http/https/rtsp 开头）
+DD Himachal Pradesh (576p),#EXTVLCOPT:http-user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/147.0.0.0 Safari/537.36,无效URL（非 http/https/rtsp 开头）
+DD Jharkhand (576p),#EXTVLCOPT:http-user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/147.0.0.0 Safari/537.36,无效URL（非 http/https/rtsp 开头）
+DD Kashir (576p),#EXTVLCOPT:http-user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/147.0.0.0 Safari/537.36,无效URL（非 http/https/rtsp 开头）
+DD Malayalam (576p),#EXTVLCOPT:http-user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/147.0.0.0 Safari/537.36,无效URL（非 http/https/rtsp 开头）
+DD Manipur (576p),#EXTVLCOPT:http-user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/147.0.0.0 Safari/537.36,无效URL（非 http/https/rtsp 开头）
+DD Mizoram (576p),#EXTVLCOPT:http-user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/147.0.0.0 Safari/537.36,无效URL（非 http/https/rtsp 开头）
+DD Nagaland (576p),#EXTVLCOPT:http-user-agent=#EXTVLCOPT:http-user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/147.0.0.0 Safari/537.36,无效URL（非 http/https/rtsp 开头）
+DD News HD (1080p),#EXTVLCOPT:http-user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/147.0.0.0 Safari/537.36,无效URL（非 http/https/rtsp 开头）
+DD Punjabi (576p),#EXTVLCOPT:http-user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/147.0.0.0 Safari/537.36,无效URL（非 http/https/rtsp 开头）
+DD Sahyadri (576p),#EXTVLCOPT:http-user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/147.0.0.0 Safari/537.36,无效URL（非 http/https/rtsp 开头）
+DD Tamil (576p),#EXTVLCOPT:http-user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/147.0.0.0 Safari/537.36,无效URL（非 http/https/rtsp 开头）
+DD Tripura (576p),#EXTVLCOPT:http-user-agent=#EXTVLCOPT:http-user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/147.0.0.0 Safari/537.36,无效URL（非 http/https/rtsp 开头）
+DD Yadagiri (576p),#EXTVLCOPT:http-user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/147.0.0.0 Safari/537.36,无效URL（非 http/https/rtsp 开头）
 Del Rey TV (1080p),#EXTVLCOPT:http-referrer=https://tvonline.com.py/,无效URL（非 http/https/rtsp 开头）
 Dens Knowledge [Geo-blocked],#EXTVLCOPT:http-referrer=https://www.dens.tv/,无效URL（非 http/https/rtsp 开头）
 Dens Life & Style [Geo-blocked],#EXTVLCOPT:http-referrer=https://www.dens.tv/,无效URL（非 http/https/rtsp 开头）
@@ -662,6 +731,7 @@ Euronews Bulgaria,#EXTVLCOPT:http-user-agent=Mozilla/5.0 (Windows NT 10.0; Win64
 Eurosport 3 Polska,#EXTVLCOPT:http-user-agent=Enigma2,无效URL（非 http/https/rtsp 开头）
 Eurosport 4K Czechia,#EXTVLCOPT:http-user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/130.0.0.0 Safari/537.36,无效URL（非 http/https/rtsp 开头）
 Exclusiv TV,rtmp://89.28.25.122/live/tnt_md,无效URL（非 http/https/rtsp 开头）
+FashionTV (India) (576p),#EXTVLCOPT:http-user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/147.0.0.0 Safari/537.36,无效URL（非 http/https/rtsp 开头）
 Fauna (576p),#EXTVLCOPT:http-user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/149.0.0.0 Safari/537.36,无效URL（非 http/https/rtsp 开头）
 FEM3,#EXTVLCOPT:http-user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/130.0.0.0 Safari/537.36,无效URL（非 http/https/rtsp 开头）
 FEVA TV (1080p),#EXTVLCOPT:http-user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/145.0.0.0 Safari/537.36 Edg/145.0.0.0,无效URL（非 http/https/rtsp 开头）
@@ -717,6 +787,7 @@ Gribu visu zinat (576p),#EXTVLCOPT:http-referrer=https://void.greenhosting.ru/,�
 GTV (Ghana) (540p),#EXTVLCOPT:http-referrer=https://liveghanatv.com/,无效URL（非 http/https/rtsp 开头）
 GTV (Mongolia) (1080p),#EXTVLCOPT:http-user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/144.0.0.0 Safari/537.36,无效URL（非 http/https/rtsp 开头）
 Guangzhou TV,https://tencentplaybusiness.gztv.com/live/zonghes.m3u8,重复URL
+Gulistan News (576p),#EXTVLCOPT:http-user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/147.0.0.0 Safari/537.36,无效URL（非 http/https/rtsp 开头）
 Gulli,#EXTVLCOPT:http-user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/149.0.0.0 Safari/537.3,无效URL（非 http/https/rtsp 开头）
 H2,#EXTVLCOPT:http-user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/149.0.0.0 Safari/537.3,无效URL（非 http/https/rtsp 开头）
 H2 HD,#EXTVLCOPT:http-user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/124.0.0.0 Safari/537.36,无效URL（非 http/https/rtsp 开头）
@@ -747,8 +818,14 @@ ICTV2 (1080p),#EXTVLCOPT:http-user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x6
 ICTV (Ukraine) (1080p),#EXTVLCOPT:http-user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/130.0.0.0 Safari/537.36,无效URL（非 http/https/rtsp 开头）
 Impact TV (Romania) (1080p),#EXTVLCOPT:http-referrer=https://tvimpact.ro/,无效URL（非 http/https/rtsp 开头）
 IMPD TV Worldwide (1080p),#EXTVLCOPT:http-referrer=https://igrejamundial.nuvemplay.live,无效URL（非 http/https/rtsp 开头）
+India News Gujarati (576p),#EXTVLCOPT:http-user-agent=#EXTVLCOPT:http-user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/147.0.0.0 Safari/537.36,无效URL（非 http/https/rtsp 开头）
+India News Haryana (576p),#EXTVLCOPT:http-user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/147.0.0.0 Safari/537.36,无效URL（非 http/https/rtsp 开头）
+India News Madhya Pradesh/Chhattisgarh (576p),#EXTVLCOPT:http-user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/147.0.0.0 Safari/537.36,无效URL（非 http/https/rtsp 开头）
+India News Rajasthan (576p),#EXTVLCOPT:http-user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/147.0.0.0 Safari/537.36,无效URL（非 http/https/rtsp 开头）
+India News Uttar Pradesh (576p),#EXTVLCOPT:http-user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/147.0.0.0 Safari/537.36,无效URL（非 http/https/rtsp 开头）
 Indigenous TV (720p),http://streamipcf.akamaized.net/live/_definst_/smil:liveabr.smil/playlist.m3u8,重复URL
 Indonesiana.TV (720p),#EXTVLCOPT:http-referrer=https://indonesiana.tv/,无效URL（非 http/https/rtsp 开头）
+INH 24x7 (576p),#EXTVLCOPT:http-user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/147.0.0.0 Safari/537.36,无效URL（非 http/https/rtsp 开头）
 InRating TV (1080p),#EXTVLCOPT:http-user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/149.0.0.0 Safari/537.36,无效URL（非 http/https/rtsp 开头）
 Inter (1080p),#EXTVLCOPT:http-user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/130.0.0.0 Safari/537.36,无效URL（非 http/https/rtsp 开头）
 Italiana (1080p),#EXTVLCOPT:http-user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/149.0.0.0 Safari/537.36,无效URL（非 http/https/rtsp 开头）
@@ -759,7 +836,6 @@ JimJam,#EXTVLCOPT:http-user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) Appl
 Jocky TV,#EXTVLCOPT:http-user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36,无效URL（非 http/https/rtsp 开头）
 Juntos TV (Peru) (1080p),#EXTVLCOPT:http-user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/150.0.0.0 Safari/537.36,无效URL（非 http/https/rtsp 开头）
 K1 (1080p),#EXTVLCOPT:http-user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/130.0.0.0 Safari/537.36,无效URL（非 http/https/rtsp 开头）
-Kapital TV (1080p),#EXTVLCOPT:http-referrer=https://kapitaltv.ro/,无效URL（非 http/https/rtsp 开头）
 KBS World (720p),#EXTVLCOPT:http-referrer=https://cinerama.uz/,无效URL（非 http/https/rtsp 开头）
 Kentron TV (1080p),#EXTVLCOPT:http-user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/149.0.0.0 Safari/537.36,无效URL（非 http/https/rtsp 开头）
 Keshet 12 (1080p),#EXTVLCOPT:http-user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/149.0.0.0 Safari/537.36,无效URL（非 http/https/rtsp 开头）
@@ -805,6 +881,8 @@ M4 Sport (1080p),#EXTVLCOPT:http-user-agent=Mozilla/5.0 (Windows NT 10.0; Win64;
 M6 HD (1080p),#EXTVLCOPT:http-user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/149.0.0.0 Safari/537.3,无效URL（非 http/https/rtsp 开头）
 Madu TV (1080p) [Not 24/7],#EXTVLCOPT:http-referrer=https://madu.tv/live-streaming/,无效URL（非 http/https/rtsp 开头）
 Magyar Mozi TV,#EXTVLCOPT:http-user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/130.0.0.0 Safari/537.36,无效URL（非 http/https/rtsp 开头）
+Maha Movie (576p),#EXTVLCOPT:http-user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/147.0.0.0 Safari/537.36,无效URL（非 http/https/rtsp 开头）
+Maha Punjabi (576p),#EXTVLCOPT:http-user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/147.0.0.0 Safari/537.36,无效URL（非 http/https/rtsp 开头）
 MakroDigital Television (1080p),#EXTVLCOPT:http-referrer=https://makrodigitaltelevision.com,无效URL（非 http/https/rtsp 开头）
 Malchin TV (1080p),#EXTVLCOPT:http-user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/144.0.0.0 Safari/537.36,无效URL（非 http/https/rtsp 开头）
 Mason TV (1080p),#EXTVLCOPT:http-user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/149.0.0.0 Safari/537.36,无效URL（非 http/https/rtsp 开头）
@@ -821,6 +899,7 @@ Mega Extreno HD (720p),#EXTVLCOPT:http-referrer=https://vaughn.live/,无效URL�
 Megogo Music,#EXTVLCOPT:http-user-agent=curl/8.16.0,无效URL（非 http/https/rtsp 开头）
 Mezzo (576p),#EXTVLCOPT:http-user-agent=Enigma2,无效URL（非 http/https/rtsp 开头）
 MGSTV (360p) [Not 24/7],#EXTVLCOPT:http-referrer=https://mgstv.co.id/live-streaming/,无效URL（非 http/https/rtsp 开头）
+MH One (576p),#EXTVLCOPT:http-user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/147.0.0.0 Safari/537.36,无效URL（非 http/https/rtsp 开头）
 Military History (720p),#EXTVLCOPT:http-referrer=https://bhoomtv.org/,无效URL（非 http/https/rtsp 开头）
 Minimax (Hungary),#EXTVLCOPT:http-user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36,无效URL（非 http/https/rtsp 开头）
 Minimax (Romania),#EXTVLCOPT:http-referrer=https://cool-tv.net/,无效URL（非 http/https/rtsp 开头）
@@ -871,6 +950,7 @@ National Geographic Wild (Hungary),#EXTVLCOPT:http-user-agent=Mozilla/5.0 (Windo
 National Geographic Wild (Romania),#EXTVLCOPT:http-referrer=https://cool-tv.net/,无效URL（非 http/https/rtsp 开头）
 National Geographic Wild (Turkiye),#EXTVLCOPT:http-user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/130.0.0.0 Safari/537.36,无效URL（非 http/https/rtsp 开头）
 Nauka (Ukraine) (576p),#EXTVLCOPT:http-user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/149.0.0.0 Safari/537.36,无效URL（非 http/https/rtsp 开头）
+Naxatra News (576p),#EXTVLCOPT:http-user-agent=#EXTVLCOPT:http-user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/147.0.0.0 Safari/537.36,无效URL（非 http/https/rtsp 开头）
 NDTV Marathi (1080p),#EXTVLCOPT:http-referrer=https://marathi.ndtv.com/,无效URL（非 http/https/rtsp 开头）
 Nei Monggol TV (960p),#EXTVLCOPT:http-user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/144.0.0.0 Safari/537.36,无效URL（非 http/https/rtsp 开头）
 New Channel (480p),#EXTVLCOPT:http-referrer=https://splay.bamboo-cloud.com/channel/6ab2104508fd5ee36702e3d4,无效URL（非 http/https/rtsp 开头）
@@ -887,6 +967,7 @@ Nickelodeon (Romania),#EXTVLCOPT:http-referrer=https://cool-tv.net/,无效URL（
 Nicktoons (Hungary),#EXTVLCOPT:http-user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36,无效URL（非 http/https/rtsp 开头）
 Nicktoons (Romania),#EXTVLCOPT:http-referrer=https://cool-tv.net/,无效URL（非 http/https/rtsp 开头）
 Nile Drama (576p),#EXTVLCOPT:http-referrer=https://entv.dz/,无效URL（非 http/https/rtsp 开头）
+Nireekshana TV (576p),#EXTVLCOPT:http-user-agent=#EXTVLCOPT:http-user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/147.0.0.0 Safari/537.36,无效URL（非 http/https/rtsp 开头）
 Northeast Live (720p),#EXTVLCOPT:http-referrer=https://server.thelegitpro.in/northeastlive/northeastlive/embed.html,无效URL（非 http/https/rtsp 开头）
 Nos Isla TV (1080p) [Not 24/7],#EXTVLCOPT:http-user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/77.0.3865.90 Safari/537.36,无效URL（非 http/https/rtsp 开头）
 Nostalgia (Bulgaria),#EXTVLCOPT:http-user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/149.0.0.0 Safari/537.3,无效URL（非 http/https/rtsp 开头）
@@ -986,7 +1067,6 @@ RTV El Vendrell (1080p),#EXTVLCOPT:http-user-agent=Mozilla/5.0 (Windows NT 10.0;
 RTV Manilva (1080p) [Not 24/7],#EXTVLCOPT:http-referrer=https://player.castr.com/live_e2ae1780dc2a11eca660b7b17b7952a5,无效URL（非 http/https/rtsp 开头）
 RTVC Cardedeu (1080p),#EXTVLCOPT:http-user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/83.0.4103.97 Safari/537.36 CrKey/1.44.191160,无效URL（非 http/https/rtsp 开头）
 RTVi (576p),#EXTVLCOPT:http-user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/149.0.0.0 Safari/537.36,无效URL（非 http/https/rtsp 开头）
-S Play Event (1080p),#EXTVLCOPT:http-referrer=https://splay.bamboo-cloud.com/channel/6aa1fc1f063044342e102703,无效URL（非 http/https/rtsp 开头）
 Salam TV (720p),#EXTVLCOPT:http-referrer=salamtelevisi.com,无效URL（非 http/https/rtsp 开头）
 Salt TV (Ukraine) (1080p),#EXTVLCOPT:http-user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/130.0.0.0 Safari/537.36,无效URL（非 http/https/rtsp 开头）
 Sangaji TV (720p),#EXTVLCOPT:http-referrer=https://sangajitv.co.id/,无效URL（非 http/https/rtsp 开头）
@@ -1070,6 +1150,7 @@ STB (1080p),#EXTVLCOPT:http-user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64)
 Story4,#EXTVLCOPT:http-user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/149.0.0.0 Safari/537.36,无效URL（非 http/https/rtsp 开头）
 Story4 Czechia,#EXTVLCOPT:http-user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/130.0.0.0 Safari/537.36,无效URL（非 http/https/rtsp 开头）
 STS Love (576i),#EXTVLCOPT:http-user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/144.0.0.0 Safari/537.36,无效URL（非 http/https/rtsp 开头）
+STV Haryana News (576p),#EXTVLCOPT:http-user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/147.0.0.0 Safari/537.36,无效URL（非 http/https/rtsp 开头）
 Suara Surabaya Visual Radio (720p),#EXTVLCOPT:http-referrer=https://www.suarasurabaya.net/,无效URL（非 http/https/rtsp 开头）
 Suld TV (1080p),#EXTVLCOPT:http-user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/144.0.0.0 Safari/537.36,无效URL（非 http/https/rtsp 开头）
 Super TV2,#EXTVLCOPT:http-user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/130.0.0.0 Safari/537.36,无效URL（非 http/https/rtsp 开头）
@@ -1134,6 +1215,7 @@ TV8 (Lithuania) (576p),#EXTVLCOPT:http-user-agent=Mozilla/5.0 (Windows NT 10.0; 
 TV8 (Mongolia) (1080p),#EXTVLCOPT:http-user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/144.0.0.0 Safari/537.36,无效URL（非 http/https/rtsp 开头）
 TV9 (Mongolia) (1080p),#EXTVLCOPT:http-user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/144.0.0.0 Safari/537.36,无效URL（非 http/https/rtsp 开头）
 TV 25 (1080p),#EXTVLCOPT:http-user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/144.0.0.0 Safari/537.36,无效URL（非 http/https/rtsp 开头）
+TV 100 (India) (576p),#EXTVLCOPT:http-user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/147.0.0.0 Safari/537.36,无效URL（非 http/https/rtsp 开头）
 TV1000,#EXTVLCOPT:http-user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/149.0.0.0 Safari/537.3,无效URL（非 http/https/rtsp 开头）
 TV Bahia (1080i),#EXTVLCOPT:http-user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/129.0.0.0 Safari/537.36,无效URL（非 http/https/rtsp 开头）
 TV Barrandov,#EXTVLCOPT:http-user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/130.0.0.0 Safari/537.36,无效URL（非 http/https/rtsp 开头）
@@ -1219,6 +1301,7 @@ Xtrema Cartoons,#EXTVLCOPT:http-referrer=https://xtrematv.com/?p=1390,无效URL�
 Xtrema Cine Clasico,#EXTVLCOPT:http-referrer=https://xtrematv.com/?p=1460,无效URL（非 http/https/rtsp 开头）
 Xtrema Terror,#EXTVLCOPT:http-referrer=https://xtrematv.com/?p=1456,无效URL（非 http/https/rtsp 开头）
 Yes Movies Action (1080p),#EXTVLCOPT:http-user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/130.0.0.0 Safari/537.36,无效URL（非 http/https/rtsp 开头）
+Zee Action (576p),#EXTVLCOPT:http-user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/147.0.0.0 Safari/537.36,无效URL（非 http/https/rtsp 开头）
 Zenebutik,#EXTVLCOPT:http-user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/130.0.0.0 Safari/537.36,无效URL（非 http/https/rtsp 开头）
 Zoom (Israel) (576p),#EXTVLCOPT:http-user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/149.0.0.0 Safari/537.36,无效URL（非 http/https/rtsp 开头）
 Zoom (Ukraine) (1080p),#EXTVLCOPT:http-user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/130.0.0.0 Safari/537.36,无效URL（非 http/https/rtsp 开头）
@@ -1244,6 +1327,7 @@ CCTV-4,http://38.75.136.137:98/gslb/dsdqpub/cctv4k.m3u8?auth=testpub,重复URL
 CCTV-5,http://107.150.60.122/live/cctv5hd.m3u8,重复URL
 CCTV-5,http://38.75.136.137:98/gslb/dsdqpub/cctv5p.m3u8?auth=testpub,重复URL
 CCTV-5+,http://38.75.136.137:98/gslb/dsdqbv/cctv5p.m3u8?auth=test20251009,重复URL
+CCTV-5+,http://223.78.65.165:9901/tsfile/live/0006_1.m3u8?key=txiptv&playlive=1&authid=0,重复URL
 CCTV-5+,http://120.76.248.139/live/bfgd/4200000246.m3u8,重复URL
 CCTV-6,http://69.30.245.50/live/cctv6.m3u8,重复URL
 CCTV-6,http://198.204.240.250:82/live/cctv6.m3u8,重复URL
@@ -1401,7 +1485,6 @@ CETV-4,http://ottrrs.hl.chinamobile.com/PLTV/88888888/224/3221225783/index.m3u8,
 河南卫视,http://38.75.136.137:98/gslb/dsdqpub/hawshd.m3u8?auth=testpub,重复URL
 吉林卫视,http://63.141.230.178:82/gslb/zbdq5.m3u8?id=jlwshd,重复URL
 吉林卫视,http://107.150.60.122/live/jlwshd.m3u8,重复URL
-吉林卫视,http://221.7.175.154:8445/tsfile/live/1014_1.m3u8?key=txiptv&playlive=1&authid=0,重复URL
 吉林卫视,http://38.75.136.137:98/gslb/dsdqpub/jlwshd.m3u8?auth=testpub,重复URL
 江苏卫视,http://63.141.230.178:82/gslb/zbdq5.m3u8?id=jswshd,重复URL
 江苏卫视,http://107.150.60.122/live/jswshd.m3u8,重复URL
@@ -1537,6 +1620,7 @@ CETV-4,http://ottrrs.hl.chinamobile.com/PLTV/88888888/224/3221225783/index.m3u8,
 萧山生活,http://l.cztvcloud.com/channels/lantian/SXxiaoshan2/720p.m3u8,重复URL
 萧山生活,https://l.cztvcloud.com/channels/lantian/SXxiaoshan2/720p.m3u8,重复URL
 萧山生活,http://l.cztvcloud.com/channels/lantian/SXxiaoshan2/720p.m3u8?zzhed,重复URL
+萧山生活,http://l.cztvcloud.com/channels/lantian/SXxiaoshan2/720p.m3u8?zzhed?,重复URL
 缙云综合,http://l.cztvcloud.com/channels/lantian/SXjinyun1/720p.m3u8?zzhed?,重复URL
 缙云综合,http://l.cztvcloud.com/channels/lantian/SXjinyun1/720p.m3u8?zzhed,重复URL
 缙云新闻综合,http://l.cztvcloud.com/channels/lantian/SXjinyun1/720p.m3u8,重复URL
@@ -1579,6 +1663,7 @@ CETV-4,http://ottrrs.hl.chinamobile.com/PLTV/88888888/224/3221225783/index.m3u8,
 余杭未来E,http://l.cztvcloud.com/channels/lantian/SXyuhang3/720p.m3u8,重复URL
 余姚综合,https://l.cztvcloud.com/channels/lantian/SXyuyao1/720p.m3u8,重复URL
 余姚综合,http://l.cztvcloud.com/channels/lantian/SXyuyao1/720p.m3u8?zzhed,重复URL
+余姚综合,http://l.cztvcloud.com/channels/lantian/SXyuyao1/720p.m3u8?,重复URL
 余姚新闻综合,http://l.cztvcloud.com/channels/lantian/SXyuyao1/720p.m3u8,重复URL
 余姚新闻综合,http://l.cztvcloud.com/channels/lantian/SXyuyao1/720p.m3u8?cWlkPSZzPTg3OWMwYmMyZDMzYTFhZGY3NDQxMjgyYTg1MmUzNTY0JmVzPTE3MDY2Nzc4NzMmdXVpZD0yMjdiY2MzNGNiNGY0MThlYjRiY2IxYzcwNmZjODNkMS02NzQ3NDY2NyZ2PTImYXM9MCZjZG5leF9pZD10eF9waG9uZV9saXZl,重复URL
 余姚姚江文化,https://l.cztvcloud.com/channels/lantian/SXyuyao3/720p.m3u8,重复URL
@@ -1607,7 +1692,10 @@ CETV-4,http://ottrrs.hl.chinamobile.com/PLTV/88888888/224/3221225783/index.m3u8,
 无锡都市资讯,http://stream.thmz.com/wxtv3/sd/live.m3u8?zjiangsd#http://stream.thmz.com/wxtv3/sd/live.m3u8?_upt=978cd8731706199708#http://stream.thmz.com/wxtv3/playlist.m3u8#http://stream.thmz.com/wxtv3/playlist.m3u8?_upt=1758133b1706166861,重复URL
 泗洪新闻综合,http://live1.habctv.com/ggpdsl/sd/live.m3u8?zjiangsd#http://live1.habctv.com/ggpdsl/sd/live.m3u8,重复URL
 涟水电视台综合,rtmp://lianshui-tv-hls.cm.jstv.com/lianshui-tv/lsxw,无效URL（非 http/https/rtsp 开头）
+涟水电视台综合,http://live1.habctv.com/ggpdsl/sd/live.m3u8?zjiangsd,重复URL
+涟水电视台综合,http://live1.habctv.com/ggpdsl/sd/live.m3u8,重复URL
 淮安影院娱乐,http://live1.habctv.com/ysylsl/sd/live.m3u8?zjiangsd,重复URL
+淮安影院娱乐,http://live1.habctv.com/ysylsl/sd/live.m3u8,重复URL
 滨海新闻综合,http://traffic.jbh.tjbh.com/live/bhtv10/playlist.m3u8,重复URL
 苏州4k,https://live-auth.51kandianshi.com/szgd/csztv1.m3u8,重复URL
 苏州文化生活,https://live-auth.51kandianshi.com/szgd/csztv3.m3u8,重复URL
@@ -1637,6 +1725,7 @@ CETV-4,http://ottrrs.hl.chinamobile.com/PLTV/88888888/224/3221225783/index.m3u8,
 广西新闻,http://38.75.136.137:98/gslb/dsdqpub/gxxw.m3u8?auth=testpub,重复URL
 广西新闻,http://107.150.60.122/live/gxxw.m3u8,重复URL
 广西新闻,http://192.151.150.154/live/gxxw.m3u8,重复URL
+南宁影视娱乐,http://hls.nntv.cn/nnlive/YSYL_244.m3u8,重复URL
 乐至综合,http://175.155.106.72:89/live1/live1.m3u8?zsicd,重复URL
 井研综合,http://tvfile.jyrmt.cn/nmip-media/channellive/channel104452/playlist.m3u8,重复URL
 剑阁综合,https://m3u8.channel.dzsm.com/nmip-media/channellive/channel105549/playlist.m3u8,重复URL
@@ -1690,10 +1779,14 @@ CETV-4,http://ottrrs.hl.chinamobile.com/PLTV/88888888/224/3221225783/index.m3u8,
 海南新闻,http://ls.qingting.fm/live/1861.m3u8,重复URL
 梨园,https://dxtx.hntv.tv/live/lypd.m3u8?txSecret=10c771842a0be59e8b575d765173ec96&txTime=7B923E0A&wsSecret=41543190cdf375f1c73207222bb96542&wsTime=1769313549,重复URL
 唐河一套,http://tvpull.dxhmt.cn:9081/tv/11328-1.m3u8?zhend#http://tvpull.dxhmt.cn:9081/tv/11328-1.m3u8,重复URL
+荥阳综合,http://tvpull.dxhmt.cn:9081/tv/10182-1.m3u8,重复URL
 荥阳综合,http://tvpull.dxhmt.cn:9081/tv/10182-1.m3u8?wsSecret=df15530a0abec41b14bca00fc96270d1&wsTime=1654956569,重复URL
+荥阳综合,http://tvpull.dxhmt.cn:9081/tv/10182-1.m3u8?zhend,重复URL
 河南都市,http://1.94.31.214/php/hntv.php?id=hnds,重复URL
 永城综合,http://tvpull.dxhmt.cn:9081/tv/11481-1.m3u8,重复URL
 新野综合,http://tvpull.dxhmt.cn:9081/tv/11329-1.m3u8?zhend,重复URL
+新野综合,http://tvpull.dxhmt.cn:9081/tv/11329-1.m3u8?zhend?,重复URL
+新野综合,http://tvpull.dxhmt.cn:9081/tv/11329-1.m3u8,重复URL
 开封文化旅游,http://tvpull.dxhmt.cn:9081/tv/10200-3.m3u8?zhend,,重复URL
 邯郸科技教育,https://jwcdnqx.hebyun.com.cn/live/hdkj/1500k/tzwj_video.m3u8,重复URL
 邯郸公共,https://jwcdnqx.hebyun.com.cn/live/hdgg/1500k/tzwj_video.m3u8,重复URL
@@ -1716,6 +1809,7 @@ CETV-4,http://ottrrs.hl.chinamobile.com/PLTV/88888888/224/3221225783/index.m3u8,
 甘肃都市,https://satellitepull.cnr.cn/live/wxgsdstb/playlist.m3u8,重复URL
 嘉峪关综合,http://play.kankanlive.com/live/1720583434627241.m3u8,重复URL
 天祝综合,https://play.kankanlive.com/live/1656487214793905.m3u8,重复URL
+张掖新闻综合,https://play.kankanlive.com/live/1720583434627241.m3u8,重复URL
 永昌综合,https://play.kankanlive.com/live/1652755738635915.m3u8,重复URL
 渭源新闻,http://play.kankanlive.com/live/1720408280309109.m3u8,重复URL
 白银综合,http://play.kankanlive.com/live/1720408089419110.m3u8,重复URL
@@ -1753,8 +1847,13 @@ CETV-4,http://ottrrs.hl.chinamobile.com/PLTV/88888888/224/3221225783/index.m3u8,
 吉林乡村,https://satellitepull.cnr.cn/live/wxjlxcgb/playlist.m3u8,重复URL
 长白朝语,http://hplayer1.juyun.tv:80/camera/11344136.m3u8,重复URL
 内蒙古经济生活,https://ls.qingting.fm/live/1885/64k.m3u8,重复URL
+文山州公共,http://m3u8.channel.wsrtv.com.cn/cms/videos/nmip-media/channellive/channel8/playlist.m3u8,重复URL
+文山州公共,http://m3u8.channel.wsrtv.com.cn/cms/videos/nmip-media/channellive/channel8/playlist.m3u8?zyund,重复URL
+文山州新闻综合,http://m3u8.channel.wsrtv.com.cn/cms/videos/nmip-media/channellive/channel7/playlist.m3u8?zyund,重复URL
 易门综合,https://zb-live.ynurl.com/yimen/3b75a2f9-7941-46b7-992d-a9796fbca5fe.m3u8,重复URL
 通海电视台,https://zb-live.ynurl.com/tonghai/3bfe3a9e-48e6-4c1e-8770-1df66447cc6c.m3u8,重复URL
+云南都市,https://hwapi.yntv.net/62hdvf/rjwt14.m3u8,重复URL
+云南娱乐,https://hwapi.yntv.net/62hdvf/q9vs1b.m3u8,重复URL
 安多卫视,https://liveout.xntv.tv/a65jur/96iln2.m3u8,重复URL
 西宁新闻综合,https://liveout.xntv.tv/a65jur/96iln2.m3u8,重复URL
 西宁新闻综合,rtmp://liveout.xntv.tv/a65jur/96iln2,无效URL（非 http/https/rtsp 开头）
@@ -1869,5 +1968,6 @@ NewTV动作电影,https://iptv.catvod.com/live.php?id=NewTV%E5%8A%A8%E4%BD%9C%E7
 中华小当家,https://live.iill.top/huya/11342413,重复URL
 猫和老鼠,https://live.iill.top/huya/11352879,重复URL
 猫和老鼠,http://live.iill.top/huya.php?id=11352879,重复URL
+音乐现场,https://satellitepull.cnr.cn/live/wx32nmgyygb/playlist.m3u8,重复URL
 笑傲江湖,https://live.iill.top/huya/23865142,重复URL
 三国演义,https://live.iill.top/huya/11602081,重复URL
