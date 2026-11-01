@@ -294,6 +294,7 @@ CCTV12,http://192.168.50.18:20231/rtp/239.21.1.156:5002?fcc=150.138.8.132:8027,�
 CCTV13,http://192.168.50.18:20231/rtp/239.21.2.3:5002?fcc=150.138.8.132:8027,济南电信组播,https://raw.githubusercontent.com/sumingyd/IPTV-Scanner-Editor-Pro/main/img/CCTV13.png,,央视频道,,,,,,精准匹配,100.0,无,未排序
 CCTV14,http://192.168.50.18:20231/rtp/239.21.1.157:5002?fcc=150.138.8.132:8027,济南电信组播,https://raw.githubusercontent.com/sumingyd/IPTV-Scanner-Editor-Pro/main/img/CCTV14.png,,央视频道,,,,,,精准匹配,100.0,无,未排序
 CCTV15,http://192.168.50.18:20231/rtp/239.21.2.4:5002?fcc=150.138.8.132:8027,济南电信组播,https://raw.githubusercontent.com/sumingyd/IPTV-Scanner-Editor-Pro/main/img/CCTV15.png,,央视频道,,,,,,精准匹配,100.0,无,未排序
+CCTV-16 奥林匹克,http://192.168.50.18:20231/rtp/239.21.2.51:5002?fcc=150.138.8.132:8027,济南电信组播,https://raw.githubusercontent.com/sumingyd/IPTV-Scanner-Editor-Pro/main/img/CCTV16.png,,待标准化,,,,,,未匹配,0.0,无,未排序
 CCTV-16 奥林匹克,http://192.168.50.18:20231/rtp/239.21.2.110:5002?fcc=150.138.8.132:8027,济南电信组播,https://raw.githubusercontent.com/sumingyd/IPTV-Scanner-Editor-Pro/main/img/CCTV16.png,,待标准化,,,,,,未匹配,0.0,无,未排序
 CCTV17,http://192.168.50.18:20231/rtp/239.21.1.186:5002?fcc=150.138.8.132:8027,济南电信组播,https://raw.githubusercontent.com/sumingyd/IPTV-Scanner-Editor-Pro/main/img/CCTV17.png,,央视频道,,,,,,精准匹配,100.0,无,未排序
 湖南卫视,http://192.168.50.18:20231/rtp/239.21.1.158:5002?fcc=150.138.8.132:8027,济南电信组播,https://raw.githubusercontent.com/sumingyd/IPTV-Scanner-Editor-Pro/main/img/湖南卫视.png,,卫视频道,,,,,,精准匹配,100.0,无,未排序
@@ -331,7 +332,6 @@ CCTV17,http://192.168.50.18:20231/rtp/239.21.1.186:5002?fcc=150.138.8.132:8027,�
 新疆卫视,http://192.168.50.18:20231/rtp/239.21.2.187:5002?fcc=150.138.8.132:8027,济南电信组播,https://raw.githubusercontent.com/sumingyd/IPTV-Scanner-Editor-Pro/main/img/新疆卫视.png,,卫视频道,,,,,,精准匹配,100.0,无,未排序
 新疆卫视,http://192.168.50.18:20231/rtp/239.21.1.45:5002?fcc=150.138.8.132:8027,济南电信组播,https://raw.githubusercontent.com/sumingyd/IPTV-Scanner-Editor-Pro/main/img/新疆卫视.png,,卫视频道,,,,,,精准匹配,100.0,无,未排序
 甘肃卫视,http://192.168.50.18:20231/rtp/239.21.2.22:5002?fcc=150.138.8.132:8027,济南电信组播,https://raw.githubusercontent.com/sumingyd/IPTV-Scanner-Editor-Pro/main/img/甘肃卫视.png,,卫视频道,,,,,,精准匹配,100.0,无,未排序
-青海卫视,http://192.168.50.18:20231/rtp/239.21.2.51:5002?fcc=150.138.8.132:8027,济南电信组播,https://raw.githubusercontent.com/sumingyd/IPTV-Scanner-Editor-Pro/main/img/青海卫视.png,,卫视频道,,,,,,精准匹配,100.0,无,未排序
 青海卫视,http://192.168.50.18:20231/rtp/239.21.2.85:5002?fcc=150.138.8.132:8027,济南电信组播,https://raw.githubusercontent.com/sumingyd/IPTV-Scanner-Editor-Pro/main/img/青海卫视.png,,卫视频道,,,,,,精准匹配,100.0,无,未排序
 西藏卫视,http://192.168.50.18:20231/rtp/239.21.2.186:5002?fcc=150.138.8.132:8027,济南电信组播,https://raw.githubusercontent.com/sumingyd/IPTV-Scanner-Editor-Pro/main/img/西藏卫视.png,,卫视频道,,,,,,精准匹配,100.0,无,未排序
 西藏卫视,http://192.168.50.18:20231/rtp/239.21.1.46:5002?fcc=150.138.8.132:8027,济南电信组播,https://raw.githubusercontent.com/sumingyd/IPTV-Scanner-Editor-Pro/main/img/西藏卫视.png,,卫视频道,,,,,,精准匹配,100.0,无,未排序
@@ -2159,7 +2159,7 @@ Fb Tv,https://t.freetv.fun/live/fb-tv.m3u8,网络源,https://epg.pw/media/images
 [BD]vevo schlager pop,https://t.freetv.fun/live/vevo-schlager-pop.m3u8,网络源,https://epg.pw/media/uploads/tmp_logo/2016/08/12/20160812131347436928_29.jpg,8.601,待标准化,h264,1920x1080,29.97002997002997,有音频,0.5677,未匹配,0.0,0.349,未排序
 Ok Stendal,https://t.freetv.fun/live/ok-stendal.m3u8,网络源,https://epg.pw/media/,1.459,待确认分组,h264,1920x1080,25.0,有音频,0.5625,模糊匹配（>90%）,100.0,0.4193,未排序
 Super Tv,https://t.freetv.fun/live/super-tv-2.m3u8,网络源,https://epg.pw/media/,1.964,待确认分组,h264,1280x720,25.0,有音频,0.5208,模糊匹配（>90%）,100.0,0.8932,未排序
-Comedy Tv,https://t.freetv.fun/live/comedy-tv-1.m3u8,网络源,https://epg.pw/media/uploads/tmp_logo/2017/01/07/20170107004535375333_93.png,2.702,待确认分组,h264,1280x720,29.97002997002997,有音频,0.5885,模糊匹配（>90%）,100.0,0.5547,未排序
+Comedy.TV,https://t.freetv.fun/live/comedy-tv-1.m3u8,网络源,https://epg.pw/media/uploads/tmp_logo/2017/01/07/20170107004535375333_93.png,2.702,未分类,h264,1280x720,29.97002997002997,有音频,0.5885,模糊匹配（>90%）,100.0,0.5547,未排序
 [SD]союз,https://t.freetv.fun/live/soiuz-4.m3u8,网络源,https://epg.pw/media/uploads/tmp_logo/2015/02/20/20150220200547791847_91.jpg,2.206,待标准化,h264,720x576,25.0,有音频,0.5833,未匹配,0.0,0.5521,未排序
 Rede TV! Es,https://t.freetv.fun/live/rede-tv-es.m3u8,网络源,https://epg.pw/media/uploads/tmp_logo/2017/07/22/20170722221706125748_61.png,3.344,待确认分组,h264,1920x1080,30.0,有音频,0.5417,模糊匹配（>90%）,100.0,0.5365,未排序
 Showtime,https://t.freetv.fun/live/showtime-s.m3u8,网络源,https://epg.pw/media/images/channel/2025/01/30/large/20250130005547573438_56.png,1.517,待确认分组,h264,960x540,29.97002997002997,有音频,0.5677,模糊匹配（>90%）,94.11764705882352,0.5339,未排序
@@ -9940,7 +9940,7 @@ CCTV12,https://t.freetv.fun/live/cctv12-4.m3u8,网络源,https://epg.pw/media/im
 Hits,https://t.freetv.fun/live/hits-6.m3u8,网络源,https://epg.pw/media/images/channel/2024/06/11/large/20240611010918611570_10.jpg,4.837,待确认分组,h264,1920x1080,30.0,有音频,0.4792,模糊匹配（>90%）,100.0,0.4323,未排序
 [HD]tv9 telegu,https://t.freetv.fun/live/tv9-telegu.m3u8,网络源,https://epg.pw/media/img/logo/ETV_telgu.png,10.81,待标准化,h264,1280x720,25.0,有音频,0.5208,未匹配,0.0,0.4089,未排序
 [VGA]cctv4美洲,https://t.freetv.fun/live/cctv4mei-zhou-1.php,网络源,https://epg.pw/media/images/channel/2025/01/25/large/20250125001917639668_91.png,7.834,待标准化,h264,854x480,25.0,有音频,0.4844,未匹配,0.0,0.0,未排序
-Comedy Tv,https://t.freetv.fun/live/comedy-tv-2.m3u8,网络源,https://epg.pw/media/uploads/tmp_logo/2014/05/30/20140530192249250718_54.png,3.66,待确认分组,h264,384x216,29.97002997002997,有音频,0.5,模糊匹配（>90%）,100.0,0.5964,未排序
+Comedy.TV,https://t.freetv.fun/live/comedy-tv-2.m3u8,网络源,https://epg.pw/media/uploads/tmp_logo/2014/05/30/20140530192249250718_54.png,3.66,未分类,h264,384x216,29.97002997002997,有音频,0.5,模糊匹配（>90%）,100.0,0.5964,未排序
 FOX Sports,https://t.freetv.fun/live/fox-sports-2-2.m3u8,网络源,https://epg.pw/media/images/channel/2024/03/14/large/20240314005216219785_15.png,1.663,国际频道,h264,426x240,30.0,有音频,0.6094,精准匹配,100.0,0.5443,未排序
 Dance Tv,https://t.freetv.fun/live/dance-tv-1.m3u8,网络源,https://epg.pw/media/uploads/tmp_logo/2017/07/22/20170722220410619348_13.png,3.718,待确认分组,h264,1920x1080,25.0,有音频,0.5312,模糊匹配（>90%）,100.0,0.4844,未排序
 [HD]fifa plus united states,https://t.freetv.fun/live/fifa-plus-united-states.m3u8,网络源,https://epg.pw/media/images/channel/2022/08/06/large/20220806135716055628_86.jpg,1.641,待标准化,h264,1280x720,29.97002997002997,有音频,0.5469,未匹配,0.0,0.4531,未排序
@@ -10439,7 +10439,7 @@ Costa Noroeste Tv,https://limited31.todostreaming.es/live/noroestetv-livestream.
 e.tv,https://sb.err.ee/live/etv.m3u8,网络源,https://i.imgur.com/5URjPgG.png,8.58,待确认分组,h264,1280x720,25.0,有音频,0.6094,模糊匹配（>90%）,100.0,0.888,未排序
 Estrella News,https://estrella-news-oando.amagi.tv/playlist.m3u8,网络源,https://i.imgur.com/HRrkhLq.png,3.487,待确认分组,h264,384x216,30.0,有音频,0.5208,模糊匹配（>90%）,100.0,0.5312,未排序
 Ewtn Ukraine,https://cdn3.wowza.com/1/WjduMm1tYnlwNXQx/M01NV3Uz/hls/live/playlist.m3u8,网络源,,3.997,待确认分组,h264,320x180,25.0,有音频,0.5677,模糊匹配（>90%）,100.0,0.4818,未排序
-Es Tv,https://live.artidijitalmedya.com/artidijital_estv/estv/playlist.m3u8,网络源,https://i.imgur.com/epAEBrp.png,5.233,未分类,h264,1280x720,50.0,有音频,0.5208,模糊匹配（>90%）,100.0,0.5599,未排序
+ES.TV,https://live.artidijitalmedya.com/artidijital_estv/estv/playlist.m3u8,网络源,https://i.imgur.com/epAEBrp.png,5.233,未分类,h264,1280x720,50.0,有音频,0.5208,模糊匹配（>90%）,100.0,0.5599,未排序
 Fortuna Tv,https://edge1.socialsmart.tv/ftvturk/bant1/playlist.m3u8,网络源,https://i.imgur.com/ZbUSlOC.png,3.198,待确认分组,h264,1280x720,50.0,有音频,0.5729,模糊匹配（>90%）,100.0,0.5156,未排序
 Duronto Tv,https://tvsen4.aynaott.com/durontotv/index.m3u8,网络源,https://i.imgur.com/gXsddRK.png,3.066,待确认分组,h264,1280x720,25.0,有音频,0.5729,模糊匹配（>90%）,100.0,0.6042,未排序
 Etv 2,https://sb.err.ee/live/etv2.m3u8,网络源,https://i.imgur.com/fUjGHDa.png,7.481,待确认分组,h264,1280x720,25.0,有音频,0.5677,模糊匹配（>90%）,100.0,0.7839,未排序
@@ -10688,7 +10688,7 @@ Dokusat,https://muc3.iptv-playoutcenter.de/dokusat/dokusat1/playlist.m3u8,网络
 Fanduel Sports Network,https://fl1.moveonjoy.com/PAC_12/index.m3u8,网络源,https://upload.wikimedia.org/wikipedia/commons/thumb/9/94/FanDuel_Sports_Network_logo.svg/330px-FanDuel_Sports_Network_logo.svg.png,3.76,待确认分组,h264,1280x720,59.94005994005994,有音频,0.6146,模糊匹配（>90%）,100.0,0.6719,未排序
 Farra Play,http://159.203.148.226/live/farra.m3u8,网络源,https://i.imgur.com/bXWzstH.png,1.916,待确认分组,h264,,,有音频,0.5781,模糊匹配（>90%）,100.0,0.5729,未排序
 Euronews西语,https://d35j504z0x2vu2.cloudfront.net/v1/master/0bc8e8376bd8417a1b6761138aa41c26c7309312/euronews-spa/euronews-es.m3u8,网络源,https://i.imgur.com/8t9mdg9.png,9.219,国际频道（小语种）,h264,1280x720,25.0,有音频,0.5417,精准匹配,100.0,0.4974,未排序
-Comedy Tv,https://fl1.moveonjoy.com/Comedy_TV/index.m3u8,网络源,https://i.imgur.com/KLfXnba.png,3.877,待确认分组,h264,1280x720,29.97002997002997,有音频,0.5833,模糊匹配（>90%）,100.0,0.474,未排序
+Comedy.TV,https://fl1.moveonjoy.com/Comedy_TV/index.m3u8,网络源,https://i.imgur.com/KLfXnba.png,3.877,未分类,h264,1280x720,29.97002997002997,有音频,0.5833,模糊匹配（>90%）,100.0,0.474,未排序
 Etv Abhiruchi,https://d2tbworamivdmb.cloudfront.net/v1/master/9d43eacaed199f8d5883927e7aef514a8a08e108/ETV_ABHIRUCHI_H264-3_cloud-in/index.m3u8,网络源,https://i.imgur.com/3D5SN3E.png,11.538,待确认分组,h264,1920x1080,25.0,有音频,0.5521,模糊匹配（>90%）,100.0,0.4974,未排序
 Evrokom (360p),https://live.ecomservice.bg/hls/stream.m3u8,网络源,,3.545,待标准化,h264,640x360,29.97002997002997,有音频,0.5312,未匹配,0.0,0.5677,未排序
 Ebs Cinema,https://rpn.bozztv.com/ebstv/ebscinema/index.m3u8,网络源,https://i.imgur.com/fewPTFE.png,1.556,待确认分组,h264,1280x720,30.0,有音频,0.4583,模糊匹配（>90%）,100.0,0.5495,未排序
