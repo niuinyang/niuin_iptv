@@ -160,6 +160,7 @@ CCTV-17,https://live.264788.xyz/channel/cctv17?streamid=f9c36f1e95b5b35eac89cc89
 新沂新闻,http://live.xysrmt.cn/xwzh/sd/live.m3u8?zjiangsd",重复URL
 新沂生活,http://live.xysrmt.cn/shpd/sd/live.m3u8?zjiangsd,重复URL
 涟水电视台综合,rtmp://lianshui-tv-hls.cm.jstv.com/lianshui-tv/lsxw,无效URL（非 http/https/rtsp 开头）
+滨海新闻综合,http://traffic.jbh.tjbh.com/live/bhtv10/playlist.m3u8,重复URL
 苏州4k,https://live-auth.51kandianshi.com/szgd/csztv1.m3u8,重复URL
 苏州文化生活,https://live-auth.51kandianshi.com/szgd/csztv3.m3u8,重复URL
 苏州新闻综合,https://live-auth.51kandianshi.com/szgd/csztv1.m3u8,重复URL
@@ -185,7 +186,10 @@ CCTV-17,https://live.264788.xyz/channel/cctv17?streamid=f9c36f1e95b5b35eac89cc89
 广安公共,http://live1.gatv.com.cn:85/live/GGPD.m3u8,重复URL
 广安公共,http://live1.gatv.com.cn:85/live/GGPD_ggpdzm.m3u8,重复URL
 旺苍新闻综合,http://channel.wcrmt.cn:80/nmip-media/channellive/channel105268/playlist.m3u8,重复URL
+旺苍新闻综合,http://live.spccmc.com:90/live/spxwzh.m3u8?%E5%85%B3%E6%B3%A8%E5%BE%AE%E4%BF%A1%E5%85%AC%E4%BC%97%E5%8F%B7[%E6%99%B4%E5%9B%AD],重复URL
 松潘新闻综合,http://live.spccmc.com:90/live/spxwzh.m3u8?%E5%85%B3%E6%B3%A8%E5%BE%AE%E4%BF%A1%E5%85%AC%E4%BC%97%E5%8F%B7[%E6%99%B4%E5%9B%AD],重复URL
+松潘新闻综合,http://live.spccmc.com:90/live/spxwzh.m3u8?zsicd,重复URL
+松潘新闻综合,http://live.spccmc.com:90/live/spxwzh.m3u8,重复URL
 汶川新闻综合,http://live.iwcmt.cn:90/live/zhxw.m3u8?zsicd,重复URL
 汶川新闻综合,rtmp://live.iwcmt.cn:1936/live/zhxw,无效URL（非 http/https/rtsp 开头）
 汶川新闻综合,http://live.iwcmt.cn:90/live/zhxw.m3u8,重复URL
@@ -194,6 +198,7 @@ CCTV-17,https://live.264788.xyz/channel/cctv17?streamid=f9c36f1e95b5b35eac89cc89
 泸县新闻综合,http://lxfile.lxxcb.cn/nmip-media/channellive/channel103799/playlist.m3u8,重复URL
 泸县新闻综合,http://lxfile.lxxcb.cn:80/nmip-media/channellive/channel103799/playlist.m3u8,重复URL
 泸县新闻综合,http://lxfile.lxxcb.cn/nmip-media/channellive/channel103799/playlist.m3u8?zsicd,重复URL
+泸县新闻综合,https://m3u8channel.ganzitv.com/nmip-media/channellive/channel1/playlist.m3u8,重复URL
 甘孜综合,https://m3u8channel.ganzitv.com/nmip-media/channellive/channel1/playlist.m3u8,重复URL
 石棉综合,http://live.hyxrmt.com:85/live/xwpd.m3u8,重复URL
 荥经综合,https://m3u8channel-yj.yunxya.com/nmip-media/channellive/channel101140/playlist.m3u8,重复URL
@@ -634,15 +639,6 @@ CHC家庭影院,http://38.75.136.137:98/gslb/dsdqpub/chcjt.m3u8?auth=testpub,重
 CHC家庭影院,http://63.141.230.178:82/gslb/zbdq5.m3u8?id=chcjt,重复URL
 CHC家庭影院,http://107.150.60.122/live/chcjt.m3u8,重复URL
 经典电影,https://txmov2.a.kwimgs.com/bs3/video-hls/5211790793651941963_hlsb.m3u8,重复URL
-电影_梁家辉,http://live.metshop.top/huya/11342429?cdn=alicdn,重复URL
-电影_功夫片,http://live.metshop.top/huya/11352941?cdn=alicdn,重复URL
-电影_犯罪片,http://live.metshop.top/huya/11352974?cdn=alicdn,重复URL
-电影_丧尸片,http://live.metshop.top/huya/21059578?cdn=alicdn,重复URL
-电影_动作电影,http://live.metshop.top/huya/11602077?cdn=alicdn,重复URL
-电影_搞笑喜剧,http://live.metshop.top/huya/11342423?cdn=alicdn,重复URL
-电影_谍战片,http://live.metshop.top/huya/21059587?cdn=alicdn,重复URL
-电影_谍战片,http://live.metshop.top/huya/21059585?cdn=alicdn,重复URL
-电影_贺岁片,http://live.metshop.top/huya/11601971?cdn=alicdn,重复URL
 三国演义,https://live.iill.top/huya/11602081,重复URL
 动作电影,https://iptv.catvod.com/live.php?id=NewTV%E5%8A%A8%E4%BD%9C%E7%94%B5%E5%BD%B1,重复URL
 惊悚悬疑,http://ottrrs.hl.chinamobile.com/PLTV/88888888/224/3221225665/index.m3u8,重复URL
@@ -681,6 +677,7 @@ CNA,http://d2e1asnsl7br7b.cloudfront.net/7782e205e72f43aeb4a48ec97f66ebbe/index_
 易中天品三国,https://live.ottiptv.cc/yy/1354931498,重复URL
 航拍中国第二季,http://newcntv.qcloudcdn.com/asp/hls/4000/0303000a/3/default/2bdfdad540b342f592f9817cb7f3b79a/4000.m3u8,重复URL
 梨园,https://dxtx.hntv.tv/live/lypd.m3u8?txSecret=10c771842a0be59e8b575d765173ec96&txTime=7B923E0A&wsSecret=41543190cdf375f1c73207222bb96542&wsTime=1769313549,重复URL
+动漫秀场,https://stream1.freetv.fun/7e65432fb94551c8a7abf4afa8996c11471807bf9cf6ec1a3e49a2c25b2c1f58.m3u8,重复URL
 哈哈炫动,http://ottrrs.hl.chinamobile.com/PLTV/88888888/224/3221225657/index.m3u8,重复URL
 哈哈炫动,http://38.75.136.137:98/gslb/dsdqpub/xdkthd.m3u8?auth=testpub,重复URL
 新闻综合,https://m3u8channel.yunxya.com/nmip-media/channellive/channel100028/playlist.m3u8,重复URL
@@ -891,7 +888,6 @@ CNA,http://d2e1asnsl7br7b.cloudfront.net/7782e205e72f43aeb4a48ec97f66ebbe/index_
 万荣综合,http://60.222.246.220:19433/hls1.m3u8,重复URL
 古县综合,https://l2fpdktp.live.sxmty.com/live/hls/e4c3b363cc4549788e2d983f403e07db/d99ce1eb686e41b9afc888110bd95aa7.m3u8?zshanxd,重复URL
 大宁综合,http://live.daningtv.com/aac_dngb/playlist.m3u8,重复URL
-太谷新闻综合,http://p2.vzan.com/slowlive/596867413819827251/live.m3u8,重复URL
 太谷新闻综合,https://p2.vzan.com/slowlive/596867413819827251/live.m3u8?zbid=1725814272&amp;amp;tpid=1516989100&amp;amp;type=0,重复URL
 太谷新闻综合,https://p2.vzan.com/slowlive/596867413819827251/live.m3u8?zbid=1725814272&tpid=1516989100&type=0,重复URL
 定襄综合,http://lbyzztfe.live.sxmty.com/live/hls/645ff4c60e0a49f0a203abbd73dd8be9/0720e665f10f48e98c9639f4f492fb4a-1.m3u8?zshanxd,重复URL
@@ -901,7 +897,6 @@ CNA,http://d2e1asnsl7br7b.cloudfront.net/7782e205e72f43aeb4a48ec97f66ebbe/index_
 北京新闻,https://satellitepull.cnr.cn/live/wxbjxwgb/playlist.m3u8,重复URL
 北京科教,http://120.76.248.139/live/bfgd/4200000113.m3u8,重复URL
 江津新闻综合,http://222.179.155.21:1935/ch1.m3u8?zzhongqd,重复URL
-铜梁综合,http://183.64.174.171:40123/ch1.m3u8?zzhongqd,重复URL
 三明新闻综合,http://ls.qingting.fm/live/4885.m3u8,重复URL
 三明新闻综合,https://ls.qingting.fm/live/5022100/64k.m3u8,重复URL
 云霄综合,http://live.zzyxxw.com:85/live/xwzh.m3u8?fujian,重复URL
@@ -1032,6 +1027,7 @@ CNA,http://d2e1asnsl7br7b.cloudfront.net/7782e205e72f43aeb4a48ec97f66ebbe/index_
 伊犁经济法制,http://110.153.180.106:55555/out_4/index.m3u8?zxinjd,重复URL
 伊犁维吾尔,http://110.153.180.106:55555/out_2/index.m3u8,重复URL
 伊犁维吾尔,http://110.153.180.106:55555/out_2/index.m3u8?zxinjd,重复URL
+兵团五师双河新闻综合,http://liveout.btzx.com.cn/62ds9e/4nxdih.m3u8?fbl=,重复URL
 奎屯哈萨克语,http://218.84.12.186:8002/hls/main/playlist.m3u8?zxinjd,重复URL
 新疆卫视,http://ottrrs.hl.chinamobile.com/PLTV/88888888/224/3221225635/index.m3u8,重复URL
 新疆卫视,http://ottrrs.hl.chinamobile.com/PLTV/88888888/224/3221226460/index.m3u8,重复URL
@@ -1065,8 +1061,6 @@ CNA,http://d2e1asnsl7br7b.cloudfront.net/7782e205e72f43aeb4a48ec97f66ebbe/index_
 101tv Antequera (720p) [Geo-blocked],#EXTVLCOPT:http-referrer=https://player.instantvideocloud.net/,无效URL（非 http/https/rtsp 开头）
 101tv Malaga,#EXTVLCOPT:http-referrer=https://player.instantvideocloud.net/,无效URL（非 http/https/rtsp 开头）
 101tv Sevilla,#EXTVLCOPT:http-referrer=https://player.instantvideocloud.net/,无效URL（非 http/https/rtsp 开头）
-Aastha Bhajan (576p),#EXTVLCOPT:http-user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/147.0.0.0 Safari/537.36,无效URL（非 http/https/rtsp 开头）
-Aastha Gujarati (576p),#EXTVLCOPT:http-user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/147.0.0.0 Safari/537.36,无效URL（非 http/https/rtsp 开头）
 ABP Sanjha (576p),#EXTVLCOPT:http-user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/147.0.0.0 Safari/537.36,无效URL（非 http/https/rtsp 开头）
 Acento TV,#EXTVLCOPT:http-referrer=https://acentotv01.streamprolive.com/i/cp/hls/player.html,无效URL（非 http/https/rtsp 开头）
 Advocate Broadcasting Network,srt://102.89.119.176:4001,无效URL（非 http/https/rtsp 开头）
@@ -1099,7 +1093,6 @@ Armenia TV Satellite (576p),#EXTVLCOPT:http-user-agent=Mozilla/5.0 (Windows NT 1
 ARY Musik (1080p),#EXTVLCOPT:http-referrer=https://live.arydigital.tv/,无效URL（非 http/https/rtsp 开头）
 AsianBox (1080p),#EXTVLCOPT:http-user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/144.0.0.0 Safari/537.36,无效URL（非 http/https/rtsp 开头）
 Asianet Middle East (576p),#EXTVLCOPT:http-user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/147.0.0.0 Safari/537.36,无效URL（非 http/https/rtsp 开头）
-Asianet Suvarna News (576p),#EXTVLCOPT:http-user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/147.0.0.0 Safari/537.36,无效URL（非 http/https/rtsp 开头）
 Astha TV (1080p),#EXTVLCOPT:http-referrer=https://asthatv.com/,无效URL（非 http/https/rtsp 开头）
 Astro Blitar TV (720p),#EXTVLCOPT:http-referrer=https://abtelevisi.com/,无效URL（非 http/https/rtsp 开头）
 ATV (Armenia) (1080p),#EXTVLCOPT:http-user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/149.0.0.0 Safari/537.36,无效URL（非 http/https/rtsp 开头）
@@ -1128,14 +1121,6 @@ BBC First Turkiye,#EXTVLCOPT:http-user-agent=Mozilla/5.0 (Windows NT 10.0; Win64
 BBC NL (360p),#EXTVLCOPT:http-user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/154.0.0.0 Safari/537.36,无效URL（非 http/https/rtsp 开头）
 BDN (1080p),#EXTVLCOPT:http-user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/83.0.4103.97 Safari/537.36 CrKey/1.44.191160,无效URL（非 http/https/rtsp 开头）
 Beautiful Life TV (720p),https://5ddce30eb4b55.streamlock.net/bltvhd/bltv1/playlist.m3u8,重复URL
-beIN Sports 2,#EXTVLCOPT:http-user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/156.0.0.0 Safari/537.36,无效URL（非 http/https/rtsp 开头）
-beIN Sports 3,#EXTVLCOPT:http-user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/156.0.0.0 Safari/537.36,无效URL（非 http/https/rtsp 开头）
-beIN Sports 4,#EXTVLCOPT:http-user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/156.0.0.0 Safari/537.36,无效URL（非 http/https/rtsp 开头）
-beIN Sports 5,#EXTVLCOPT:http-user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/156.0.0.0 Safari/537.36,无效URL（非 http/https/rtsp 开头）
-beIN Sports 6,#EXTVLCOPT:http-user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/156.0.0.0 Safari/537.36,无效URL（非 http/https/rtsp 开头）
-beIN Sports 7,#EXTVLCOPT:http-user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/156.0.0.0 Safari/537.36,无效URL（非 http/https/rtsp 开头）
-beIN Sports 8,#EXTVLCOPT:http-user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/156.0.0.0 Safari/537.36,无效URL（非 http/https/rtsp 开头）
-beIN Sports 9,#EXTVLCOPT:http-user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/156.0.0.0 Safari/537.36,无效URL（非 http/https/rtsp 开头）
 Bem Mais TV (1080p),#EXTVLCOPT:http-referrer=https://bemmaistv.com.br/,无效URL（非 http/https/rtsp 开头）
 Berita RTM (1080p),#EXTVLCOPT:http-referrer=https://rtm-player.glueapi.io/,无效URL（非 http/https/rtsp 开头）
 BeritaSatu (1080p),#EXTVLCOPT:http-referrer=https://www.beritasatu.com/beritasatu-live-streaming,无效URL（非 http/https/rtsp 开头）
@@ -1299,7 +1284,6 @@ Dens Knowledge [Geo-blocked],#EXTVLCOPT:http-referrer=https://www.dens.tv/,无�
 Dens Life & Style [Geo-blocked],#EXTVLCOPT:http-referrer=https://www.dens.tv/,无效URL（非 http/https/rtsp 开头）
 Dens Play [Geo-blocked],#EXTVLCOPT:http-referrer=https://www.dens.tv/,无效URL（非 http/https/rtsp 开头）
 Dens ShowBiz [Geo-blocked],#EXTVLCOPT:http-referrer=https://www.dens.tv/,无效URL（非 http/https/rtsp 开头）
-Dharm Sandesh (576p),#EXTVLCOPT:http-user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/147.0.0.0 Safari/537.36,无效URL（非 http/https/rtsp 开头）
 Diema,#EXTVLCOPT:http-user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/149.0.0.0 Safari/537.3,无效URL（非 http/https/rtsp 开头）
 Diema Family,#EXTVLCOPT:http-user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/149.0.0.0 Safari/537.3,无效URL（非 http/https/rtsp 开头）
 Digital 15 (1080p),#EXTVLCOPT:http-referrer=https://telemicro.com.do/players/15tv/index_pc.php,无效URL（非 http/https/rtsp 开头）
@@ -1411,6 +1395,7 @@ FunBox UHD SD (720p),#EXTVLCOPT:http-user-agent=Mozilla/5.0 (Windows NT 10.0; Wi
 FX Latin America South,#EXTVLCOPT:http-user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/154.0.0.0 Safari/537.36,无效URL（非 http/https/rtsp 开头）
 Galaxy TV (720p) [Not 24/7],#EXTVLCOPT:http-referrer=https://player.castr.com/live_43351ad0f3b411ed81c78fcc31887c54,无效URL（非 http/https/rtsp 开头）
 Gametoon (720p),#EXTVLCOPT:http-user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/124.0.0.0 Safari/537.36,无效URL（非 http/https/rtsp 开头）
+Gen,#EXTVLCOPT:http-referrer=https%3A//gentv.desdepylabs.com/External/gentv,无效URL（非 http/https/rtsp 开头）
 Global Social TV (720p) [Not 24/7],#EXTVLCOPT:http-referrer=https://player.castr.com/,无效URL（非 http/https/rtsp 开头）
 Global TV (Mongolia) (1080p),#EXTVLCOPT:http-user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/144.0.0.0 Safari/537.36,无效URL（非 http/https/rtsp 开头）
 Go3 Sport 1 (1080p),#EXTVLCOPT:http-user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/149.0.0.0 Safari/537.36,无效URL（非 http/https/rtsp 开头）
@@ -1423,7 +1408,6 @@ Gribu visu zinat (576p),#EXTVLCOPT:http-referrer=https://void.greenhosting.ru/,�
 GTV (Ghana) (540p),#EXTVLCOPT:http-referrer=https://liveghanatv.com/,无效URL（非 http/https/rtsp 开头）
 GTV (Mongolia) (1080p),#EXTVLCOPT:http-user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/144.0.0.0 Safari/537.36,无效URL（非 http/https/rtsp 开头）
 Guangzhou TV,https://tencentplaybusiness.gztv.com/live/zonghes.m3u8,重复URL
-Gulistan News (576p),#EXTVLCOPT:http-user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/147.0.0.0 Safari/537.36,无效URL（非 http/https/rtsp 开头）
 Gulli (1080p),#EXTVLCOPT:http-user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/149.0.0.0 Safari/537.3,无效URL（非 http/https/rtsp 开头）
 H2,#EXTVLCOPT:http-user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/149.0.0.0 Safari/537.3,无效URL（非 http/https/rtsp 开头）
 H2 HD,#EXTVLCOPT:http-user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/124.0.0.0 Safari/537.36,无效URL（非 http/https/rtsp 开头）
@@ -1457,7 +1441,6 @@ ICTV (Ukraine) (1080p),#EXTVLCOPT:http-user-agent=Mozilla/5.0 (Windows NT 10.0; 
 Impact TV (Romania) (1080p),#EXTVLCOPT:http-referrer=https://tvimpact.ro/,无效URL（非 http/https/rtsp 开头）
 IMPD TV Worldwide (1080p),#EXTVLCOPT:http-referrer=https://igrejamundial.nuvemplay.live,无效URL（非 http/https/rtsp 开头）
 India News (576p),#EXTVLCOPT:http-user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/147.0.0.0 Safari/537.36,无效URL（非 http/https/rtsp 开头）
-India News Gujarati (576p),#EXTVLCOPT:http-user-agent=#EXTVLCOPT:http-user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/147.0.0.0 Safari/537.36,无效URL（非 http/https/rtsp 开头）
 India News Haryana (576p),#EXTVLCOPT:http-user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/147.0.0.0 Safari/537.36,无效URL（非 http/https/rtsp 开头）
 India News Madhya Pradesh/Chhattisgarh (576p),#EXTVLCOPT:http-user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/147.0.0.0 Safari/537.36,无效URL（非 http/https/rtsp 开头）
 India News Punjab/Himachal (576p),#EXTVLCOPT:http-user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/147.0.0.0 Safari/537.36,无效URL（非 http/https/rtsp 开头）
@@ -1544,6 +1527,7 @@ Mediaset Italia Australia (1080p),#EXTVLCOPT:http-user-agent=Mozilla/5.0 (Window
 Mediaset Italia USA (1080p),#EXTVLCOPT:http-user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/149.0.0.0 Safari/537.36,无效URL（非 http/https/rtsp 开头）
 Mega Extreno HD (720p),#EXTVLCOPT:http-referrer=https://vaughn.live/,无效URL（非 http/https/rtsp 开头）
 Megogo Music,#EXTVLCOPT:http-user-agent=curl/8.16.0,无效URL（非 http/https/rtsp 开头）
+Mezzo,#EXTVLCOPT:http-user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/156.0.0.0 Safari/537.36,无效URL（非 http/https/rtsp 开头）
 MGSTV (360p) [Not 24/7],#EXTVLCOPT:http-referrer=https://mgstv.co.id/live-streaming/,无效URL（非 http/https/rtsp 开头）
 Mh 1 News (576p),#EXTVLCOPT:http-user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/147.0.0.0 Safari/537.36,无效URL（非 http/https/rtsp 开头）
 MH One (576p),#EXTVLCOPT:http-user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/147.0.0.0 Safari/537.36,无效URL（非 http/https/rtsp 开头）
@@ -1575,7 +1559,6 @@ MTV (France),#EXTVLCOPT:http-user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64
 MTV (India) (576p),#EXTVLCOPT:http-referrer=https://bhoomtv.org/,无效URL（非 http/https/rtsp 开头）
 MTV (India) HD (396p),#EXTVLCOPT:http-referrer=https://bhoomtv.me/,无效URL（非 http/https/rtsp 开头）
 MTV Global,#EXTVLCOPT:http-user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/149.0.0.0 Safari/537.3,无效URL（非 http/https/rtsp 开头）
-Munsif TV (576p),#EXTVLCOPT:http-user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/147.0.0.0 Safari/537.36,无效URL（非 http/https/rtsp 开头）
 Musawa Channel (1080p) [Not 24/7],#EXTVLCOPT:http-user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/92.0.4515.131 Safari/537.36,无效URL（非 http/https/rtsp 开头）
 Music Box Polska Ukraine,#EXTVLCOPT:http-referrer=http://live.tvstitch.com/,无效URL（非 http/https/rtsp 开头）
 Music India (576p),#EXTVLCOPT:http-user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/147.0.0.0 Safari/537.36,无效URL（非 http/https/rtsp 开头）
@@ -1848,6 +1831,7 @@ STV Haryana News (576p),#EXTVLCOPT:http-user-agent=Mozilla/5.0 (Windows NT 10.0;
 Suara Surabaya Visual Radio (720p),#EXTVLCOPT:http-referrer=https://www.suarasurabaya.net/,无效URL（非 http/https/rtsp 开头）
 Suld TV (1080p),#EXTVLCOPT:http-user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/144.0.0.0 Safari/537.36,无效URL（非 http/https/rtsp 开头）
 Super TV2,#EXTVLCOPT:http-user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/130.0.0.0 Safari/537.36,无效URL（非 http/https/rtsp 开头）
+SuperTennis,#EXTVLCOPT:http-user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/156.0.0.0 Safari/537.36,无效URL（非 http/https/rtsp 开头）
 Suspilne. Krym (1080p),#EXTVLCOPT:http-user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/149.0.0.0 Safari/537.36,无效URL（非 http/https/rtsp 开头）
 Suspilne. Sport (1080p),#EXTVLCOPT:http-user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/149.0.0.0 Safari/537.36,无效URL（非 http/https/rtsp 开头）
 Svit+ (1080p),#EXTVLCOPT:http-user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/149.0.0.0 Safari/537.36,无效URL（非 http/https/rtsp 开头）
@@ -1858,7 +1842,6 @@ Tele 7 (720p),#EXTVLCOPT:http-user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x6
 Tele Yucatan (1080p) [Geo-blocked],#EXTVLCOPT:http-referrer=https://www.teleyucatan.gob.mx/,无效URL（非 http/https/rtsp 开头）
 Telearuba (1080p) [Not 24/7],#EXTVLCOPT:http-user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/77.0.3865.90 Safari/537.36,无效URL（非 http/https/rtsp 开头）
 TeleBilbao (384p),#EXTVLCOPT:http-user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/83.0.4103.97 Safari/537.36 CrKey/1.44.191160,无效URL（非 http/https/rtsp 开头）
-Telecafe (Russia) (720p),#EXTVLCOPT:http-user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/144.0.0.0 Safari/537.36,无效URL（非 http/https/rtsp 开头）
 Telecaribe Plus (720p),#EXTVLCOPT:http-user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/83.0.4103.97 Safari/537.36 CrKey/1.44.191160,无效URL（非 http/https/rtsp 开头）
 Telecentro (Dominican Republic) (1080p),#EXTVLCOPT:http-referrer=https://telemicro.com.do/players/13tv/index_pc.php,无效URL（非 http/https/rtsp 开头）
 Telecine Cult,#EXTVLCOPT:http-user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/156.0.0.0 Safari/537.36,无效URL（非 http/https/rtsp 开头）
@@ -1952,7 +1935,6 @@ USM TV (1080p),#EXTVLCOPT:http-referrer=https://usmtv.id/live-tv/,无效URL（�
 Uvagut TV (1080p),#EXTVLCOPT:http-referrer=https://www.uvagut.tv/,无效URL（非 http/https/rtsp 开头）
 Valles Visio (1080p),#EXTVLCOPT:http-user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/83.0.4103.97 Safari/537.36 CrKey/1.44.191160,无效URL（非 http/https/rtsp 开头）
 Vasanth TV (576p),#EXTVLCOPT:http-user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/147.0.0.0 Safari/537.36,无效URL（非 http/https/rtsp 开头）
-Vedic (576p),#EXTVLCOPT:http-user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/147.0.0.0 Safari/537.36,无效URL（非 http/https/rtsp 开头）
 Vendhar TV (576p),#EXTVLCOPT:http-user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/147.0.0.0 Safari/537.36,无效URL（非 http/https/rtsp 开头）
 Veronica / Disney Jr. (360p),#EXTVLCOPT:http-user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/154.0.0.0 Safari/537.36,无效URL（非 http/https/rtsp 开头）
 Viasat2,#EXTVLCOPT:http-user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/130.0.0.0 Safari/537.36,无效URL（非 http/https/rtsp 开头）
